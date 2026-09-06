@@ -11,24 +11,32 @@
       padding: 0;
       width: 100%;
       min-height: 100%;
+      background: #ffffff;
     }
 
     body {
-      background-image: url("Wi%20Fi.png");
-      background-repeat: no-repeat;
-      background-position: top center;
-      background-size: 100% auto;
-      background-color: #dfbd88;
+      overflow-x: hidden;
     }
 
-    .page {
+    .wifi-page {
       width: 100%;
-      aspect-ratio: 3 / 4;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .wifi-page img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
   </style>
 </head>
 
 <body>
-  <div class="page"></div>
+
+  <div class="wifi-page">
+    <img src="Wi%20Fi.png" alt="303 Oyster Bay Wi-Fi details">
+  </div>
+
 </body>
 </html>
