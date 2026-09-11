@@ -7,59 +7,33 @@
   <title>Waste Segregation | 303 Oyster Bay</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     html,
     body {
       margin: 0;
       padding: 0;
       width: 100%;
       min-height: 100%;
+      background: #ffffff;
     }
 
     body {
-      background: #f4efe3;
-      font-family: Georgia, "Times New Roman", serif;
-      text-align: center;
-      padding: 16px;
-    }
-
-    .page {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
 
     .guide {
       display: block;
-      width: 100%;
-      height: auto;
-      margin: 0 auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+      width: 1200px;
+      height: 1600px;
+      max-width: 100%;
+      object-fit: contain;
     }
 
-    .footer {
-      margin: 16px 0 8px;
-      color: #555;
-      font-size: 14px;
-      letter-spacing: 0.4px;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 8px;
-      }
-
+    @media (max-width: 1200px) {
       .guide {
-        border-radius: 8px;
-      }
-
-      .footer {
-        font-size: 12px;
-        margin-top: 12px;
+        width: 100%;
+        height: auto;
       }
     }
   </style>
@@ -67,19 +41,11 @@
 
 <body>
 
-  <main class="page">
-
-    <img
-      class="guide"
-      src="Waste%20Seggregation.png"
-      alt="303 Oyster Bay Wet and Dry Waste Segregation Guide"
-    >
-
-    <div class="footer">
-      303 OYSTER BAY · SURATHKAL · MANGALURU
-    </div>
-
-  </main>
+  <img
+    class="guide"
+    src="Waste%20Seggregation.png"
+    alt="303 Oyster Bay Wet and Dry Waste Segregation Guide"
+  >
 
 </body>
 </html>
