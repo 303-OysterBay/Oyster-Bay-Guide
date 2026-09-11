@@ -11,32 +11,40 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
       background: #f4efe3;
       font-family: Georgia, "Times New Roman", serif;
       text-align: center;
+      padding: 16px;
     }
 
     .page {
-      max-width: 900px;
+      width: 100%;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
-    img {
+    .guide {
       display: block;
       width: 100%;
       height: auto;
+      margin: 0 auto;
       border-radius: 12px;
       box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
     }
 
     .footer {
-      margin-top: 18px;
+      margin: 16px 0 8px;
       color: #555;
       font-size: 14px;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.4px;
     }
 
     @media (max-width: 600px) {
@@ -44,7 +52,7 @@
         padding: 8px;
       }
 
-      img {
+      .guide {
         border-radius: 8px;
       }
 
@@ -58,9 +66,10 @@
 
 <body>
 
-  <div class="page">
+  <main class="page">
 
     <img
+      class="guide"
       src="Waste%20Segregation.png"
       alt="303 Oyster Bay Wet and Dry Waste Segregation Guide"
     >
@@ -69,7 +78,7 @@
       303 OYSTER BAY · SURATHKAL · MANGALURU
     </div>
 
-  </div>
+  </main>
 
 </body>
 </html>
