@@ -4,12 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>303 Oyster Bay</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 html,body{
   margin:0;
@@ -41,6 +44,7 @@ body{
   text-align:center;
 }
 
+/* Guest Favourite badge */
 .guest-favourite-wrap{
   position:absolute;
   top:-3px;
@@ -59,6 +63,7 @@ body{
   transform:translateX(-3px);
 }
 
+/* Main logo */
 .logo{
   display:block;
   width:min(64vw,390px);
@@ -66,6 +71,7 @@ body{
   margin:0 auto;
 }
 
+/* Tagline */
 .tagline{
   margin:3px auto 18px;
   font-size:clamp(17px,2.15vw,23px);
@@ -75,6 +81,7 @@ body{
   letter-spacing:.01em;
 }
 
+/* Dividers */
 .divider{
   width:100%;
   height:1px;
@@ -82,6 +89,7 @@ body{
   margin:0 auto;
 }
 
+/* Feature strip */
 .amenities{
   display:grid;
   grid-template-columns:repeat(5,1fr);
@@ -110,25 +118,25 @@ body{
   background:rgba(75,47,27,.43);
 }
 
+/* ORIGINAL ELEGANT ICON TREATMENT */
 .amenity-icon{
   width:27px;
   height:27px;
   margin-bottom:5px;
-  color:#402514;
-  stroke:#402514;
-  stroke-width:2.25;
+  color:#4b2f1b;
+  stroke:#4b2f1b;
+  stroke-width:1.65;
   stroke-linecap:round;
   stroke-linejoin:round;
-  filter:drop-shadow(0 1px .4px rgba(45,25,12,.35));
 }
 
+/* Feature labels */
 .amenity-title{
-  color:#3d2515;
+  color:#4b2f1b;
   font-size:clamp(14px,1.75vw,19px);
   line-height:1.02;
-  font-weight:600;
+  font-weight:500;
   letter-spacing:-.01em;
-  text-shadow:0 1px .35px rgba(255,240,218,.28);
 }
 
 .amenity.compound .amenity-title{
@@ -137,17 +145,17 @@ body{
 
 .amenity-subtitle{
   margin-top:1px;
-  color:#4a2c18;
+  color:#4b2f1b;
   font-size:clamp(12px,1.5vw,16px);
   line-height:1;
   font-style:italic;
-  font-weight:500;
-  text-shadow:0 1px .35px rgba(255,240,218,.25);
+  font-weight:400;
 }
 
+/* Cards */
 .cards{
   max-width:1120px;
-  margin:0 auto;
+  margin:8px auto 0;
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:16px;
@@ -199,23 +207,30 @@ body{
   font-weight:300;
 }
 
+/*
+  SIGNATURE:
+  It is kept OUTSIDE the card layout.
+  The negative margin only moves the signature visually upward;
+  it cannot resize, compress or reposition the cards.
+*/
 .signature{
   position:relative;
   z-index:4;
   width:max-content;
   max-width:90%;
-  margin:-10px auto 0;
-  transform:translateY(4px);
+  margin:-7px auto 0;
+  transform:none;
   text-align:center;
   font-family:"Allura",cursive;
-  font-size:clamp(27px,4.1vw,43px);
-  line-height:.78;
-  color:#4b2a16;
-  text-shadow:0 1px .5px rgba(255,240,218,.2);
+  font-size:clamp(25px,3.2vw,36px);
+  line-height:1;
+  color:#4b2f1b;
   pointer-events:none;
 }
 
+/* Mobile */
 @media (max-width:700px){
+
   .page{
     padding:17px 10px 18px;
   }
@@ -253,16 +268,18 @@ body{
     top:1px;
   }
 
+  /* Thin elegant mobile icons restored */
   .amenity-icon{
     width:22px;
     height:22px;
     margin-bottom:4px;
-    stroke-width:2.35;
+    stroke-width:1.65;
   }
 
   .amenity-title{
     font-size:13px;
     line-height:.98;
+    font-weight:500;
   }
 
   .amenity.compound .amenity-title{
@@ -271,9 +288,15 @@ body{
 
   .amenity-subtitle{
     font-size:11.5px;
+    font-weight:400;
   }
 
+  /*
+    Cards get their own breathing space below
+    the feature divider. Their dimensions are untouched.
+  */
   .cards{
+    margin-top:8px;
     gap:9px;
   }
 
@@ -292,60 +315,94 @@ body{
     font-size:17px;
   }
 
-  /* Small, centred signature lifted into the Explore/Gallery area */
+  /*
+    Small centred signature.
+    It sits just below the cards and rises slightly
+    into their lower edge without affecting their layout.
+  */
   .signature{
-    margin:-14px auto 0;
-    transform:translateY(1px);
-    font-size:28px;
-    line-height:.72;
+    margin:-6px auto 0;
+    font-size:23px;
+    line-height:1;
   }
 }
 
 @media (min-width:701px){
   .signature{
-    margin:-14px auto 0;
-    transform:translateY(2px);
+    margin:-8px auto 0;
+    font-size:clamp(27px,3.2vw,36px);
   }
 }
 </style>
 </head>
 
 <body>
+
 <main class="page">
+
   <div class="hero">
 
+    <!-- Guest Favourite -->
     <div class="guest-favourite-wrap">
-      <img class="guest-favourite" src="guest-favourite.png" alt="Airbnb Guest Favourite">
+      <img
+        class="guest-favourite"
+        src="guest-favourite.png"
+        alt="Airbnb Guest Favourite">
     </div>
 
-    <img class="logo" src="logo.png" alt="303 Oyster Bay">
+    <!-- Logo -->
+    <img
+      class="logo"
+      src="logo.png"
+      alt="303 Oyster Bay">
 
-    <div class="tagline">Where the sea slows you down.</div>
+    <!-- Tagline -->
+    <div class="tagline">
+      Where the sea slows you down.
+    </div>
 
     <div class="divider"></div>
 
+    <!-- FEATURES -->
     <section class="amenities" aria-label="Apartment features">
 
+      <!-- 2 Bedrooms -->
       <div class="amenity">
+
         <svg class="amenity-icon" viewBox="0 0 48 48" aria-hidden="true">
           <path d="M6 31V18h24c7 0 12 4 12 10v3H6Z"/>
           <path d="M6 31v8M42 31v8M6 35h36"/>
           <path d="M9 18v-5h13v5"/>
         </svg>
-        <div class="amenity-title">2 Bedrooms</div>
-        <div class="amenity-subtitle">Sleeps 4 + 1</div>
+
+        <div class="amenity-title">
+          2 Bedrooms
+        </div>
+
+        <div class="amenity-subtitle">
+          Sleeps 4 + 1
+        </div>
+
       </div>
 
+      <!-- Sea Views -->
       <div class="amenity compound">
+
         <svg class="amenity-icon" viewBox="0 0 48 48" aria-hidden="true">
           <path d="M4 16c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
           <path d="M4 24c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
           <path d="M4 32c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
         </svg>
-        <div class="amenity-title">Uninterrupted<br>Sea Views</div>
+
+        <div class="amenity-title">
+          Uninterrupted<br>Sea Views
+        </div>
+
       </div>
 
+      <!-- Full Kitchen -->
       <div class="amenity compound">
+
         <svg class="amenity-icon" viewBox="0 0 48 48" aria-hidden="true">
           <rect x="7" y="7" width="34" height="34" rx="3"/>
           <circle cx="17" cy="17" r="5"/>
@@ -353,10 +410,16 @@ body{
           <circle cx="17" cy="31" r="5"/>
           <circle cx="31" cy="31" r="5"/>
         </svg>
-        <div class="amenity-title">Full Kitchen</div>
+
+        <div class="amenity-title">
+          Full Kitchen
+        </div>
+
       </div>
 
+      <!-- Free Parking -->
       <div class="amenity compound">
+
         <svg class="amenity-icon" viewBox="0 0 56 48" aria-hidden="true">
           <path d="M8 31h40"/>
           <path d="M11 31v-7l7-8h21l9 8v7"/>
@@ -365,54 +428,114 @@ body{
           <circle cx="41" cy="34" r="5"/>
           <path d="M8 31h-2M48 31h2"/>
         </svg>
-        <div class="amenity-title">Free Parking</div>
+
+        <div class="amenity-title">
+          Free Parking
+        </div>
+
       </div>
 
+      <!-- Wi-Fi -->
       <div class="amenity compound">
+
         <svg class="amenity-icon" viewBox="0 0 48 48" aria-hidden="true">
           <path d="M14 30a5 5 0 0 1 7 0"/>
           <path d="M9 25a12 12 0 0 1 17 0"/>
           <path d="M4 20a19 19 0 0 1 27 0"/>
           <circle cx="24" cy="34" r="2.2" fill="currentColor" stroke="none"/>
         </svg>
-        <div class="amenity-title">High-Speed<br>Wi-Fi</div>
+
+        <div class="amenity-title">
+          High-Speed<br>Wi-Fi
+        </div>
+
       </div>
 
     </section>
 
     <div class="divider"></div>
 
+    <!-- CARDS -->
     <section class="cards" aria-label="Explore 303 Oyster Bay">
 
+      <!-- Your Stay -->
       <a class="card" href="arrival-guide.html">
-        <img src="your-stay.PNG" alt="Your Stay">
-        <div class="card-label">Your Stay</div>
-        <span class="card-arrow" aria-hidden="true">→</span>
+
+        <img
+          src="your-stay.PNG"
+          alt="Your Stay">
+
+        <div class="card-label">
+          Your Stay
+        </div>
+
+        <span class="card-arrow" aria-hidden="true">
+          →
+        </span>
+
       </a>
 
+      <!-- The Apartment -->
       <a class="card" href="The%20Apartment.pdf">
-        <img src="apartment.jpg" alt="The Apartment">
-        <div class="card-label">The Apartment</div>
-        <span class="card-arrow" aria-hidden="true">→</span>
+
+        <img
+          src="apartment.jpg"
+          alt="The Apartment">
+
+        <div class="card-label">
+          The Apartment
+        </div>
+
+        <span class="card-arrow" aria-hidden="true">
+          →
+        </span>
+
       </a>
 
+      <!-- Explore -->
       <a class="card" href="In%20and%20around.pdf">
-        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Surathkal%20Light%20House%20Beach%20and%20Boats%20Karnataka%20India.jpg" alt="Surathkal Lighthouse and Beach">
-        <div class="card-label">Explore</div>
-        <span class="card-arrow" aria-hidden="true">→</span>
+
+        <img
+          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Surathkal%20Light%20House%20Beach%20and%20Boats%20Karnataka%20India.jpg"
+          alt="Surathkal Lighthouse and Beach">
+
+        <div class="card-label">
+          Explore
+        </div>
+
+        <span class="card-arrow" aria-hidden="true">
+          →
+        </span>
+
       </a>
 
+      <!-- Gallery -->
       <a class="card" href="gallery.html">
-        <img src="gallery.jpg" alt="Gallery">
-        <div class="card-label">Gallery</div>
-        <span class="card-arrow" aria-hidden="true">→</span>
+
+        <img
+          src="gallery.jpg"
+          alt="Gallery">
+
+        <div class="card-label">
+          Gallery
+        </div>
+
+        <span class="card-arrow" aria-hidden="true">
+          →
+        </span>
+
       </a>
 
     </section>
 
-    <div class="signature">See you by the Sea</div>
+    <!-- SIGNATURE -->
+    <div class="signature">
+      See you by the Sea
+    </div>
 
   </div>
+
 </main>
+
 </body>
 </html>
