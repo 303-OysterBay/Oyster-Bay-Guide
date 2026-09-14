@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>303 Oyster Bay — Home</title>
+
+  <meta name="description"
+        content="303 Oyster Bay, Surathkal, Mangaluru — your beachside home away from home.">
+
+  <style>
+    :root {
+      --page-width: 1200px;
+      --page-height: 1600px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      background: #f4f1e9;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .page {
+      position: relative;
+      width: min(100vw, var(--page-width));
+      aspect-ratio: 1200 / 1600;
+      overflow: hidden;
+      background: #fffdf7;
+    }
+
+    .page img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 1200px) {
+      .page {
+        width: 100vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page" aria-label="303 Oyster Bay Home Page">
+
+    <img
+      src="Home Page.png"
+      alt="303 Oyster Bay Home Page"
+    >
+
+  </main>
+
+</body>
+</html>
