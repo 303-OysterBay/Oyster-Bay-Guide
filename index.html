@@ -3,323 +3,404 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>303 Oyster Bay</title>
 
 <style>
-*{box-sizing:border-box}
 
-html,body{
-    margin:0;
-    padding:0;
-    width:100%;
+* {
+    box-sizing: border-box;
 }
 
-body{
-    background:#d8ae7a;
-    color:#493426;
-    font-family:Arial,sans-serif;
-    overflow-x:hidden;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
-.page{
-    width:100%;
-    min-height:100vh;
-    padding:clamp(25px,5vw,65px) clamp(16px,4vw,55px) 35px;
+body {
+    background: #d7ac76;
+    color: #4b3627;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    padding: clamp(18px, 3vw, 38px) clamp(12px, 3vw, 38px) 25px;
+
     background:
-        linear-gradient(rgba(216,174,122,.08),rgba(216,174,122,.08)),
-        url("sand-background.png") center top/100% auto no-repeat;
+        linear-gradient(
+            rgba(215,172,118,.06),
+            rgba(215,172,118,.06)
+        ),
+        url("sand-background.png") center top / 100% auto no-repeat;
 }
 
-/* HERO */
 
-.hero{
-    max-width:1000px;
-    margin:auto;
-    text-align:center;
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+    text-align: center;
+    margin: 0 auto;
 }
 
-.logo{
-    display:block;
-    width:min(80vw,500px);
-    height:auto;
-    margin:0 auto 12px;
+.logo {
+    display: block;
+    width: min(58vw, 370px);
+    height: auto;
+    margin: 0 auto 8px;
 }
 
-.welcome{
-    margin:0 0 7px;
-    font-size:clamp(10px,1.5vw,15px);
-    font-weight:bold;
-    letter-spacing:.3em;
-    text-transform:uppercase;
+.tagline {
+    margin: 0 auto 25px;
+    font-family: Georgia, serif;
+    font-size: clamp(20px, 3vw, 32px);
+    line-height: 1.08;
+    font-style: italic;
+    color: #4b3627;
 }
 
-.tagline{
-    margin:0 auto 35px;
-    font-family:Georgia,serif;
-    font-size:clamp(22px,3.4vw,38px);
-    line-height:1.15;
-    font-style:italic;
+
+/* =========================
+   ICONS
+   ========================= */
+
+.icon {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
-/* FEATURES */
 
-.features{
-    max-width:1050px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    border-top:1px solid rgba(70,45,28,.3);
-    border-bottom:1px solid rgba(70,45,28,.3);
+/* =========================
+   FEATURES
+   ========================= */
+
+.features {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    border-top: 1px solid rgba(70,45,28,.28);
+    border-bottom: 1px solid rgba(70,45,28,.28);
 }
 
-.feature{
-    padding:18px 6px;
-    text-align:center;
-    border-right:1px solid rgba(70,45,28,.2);
+.feature {
+    min-width: 0;
+    padding: 13px 5px 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    border-right: 1px solid rgba(70,45,28,.18);
 }
 
-.feature:last-child{
-    border-right:0;
+.feature:last-child {
+    border-right: none;
 }
 
-.feature-icon{
-    font-size:clamp(22px,3vw,32px);
-    line-height:1;
-    margin-bottom:8px;
+.feature .icon {
+    width: 27px;
+    height: 27px;
+    margin-bottom: 6px;
 }
 
-.feature-text{
-    font-size:clamp(8px,1.15vw,12px);
-    line-height:1.35;
-    font-weight:bold;
-    text-transform:uppercase;
+.feature-text {
+    font-size: clamp(8px, 1.05vw, 11px);
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
 }
 
-/* GUIDE */
 
-.guide{
-    max-width:1100px;
-    margin:clamp(38px,6vw,70px) auto 0;
+/* =========================
+   CARDS
+   ========================= */
+
+.cards {
+    width: 100%;
+    max-width: 1100px;
+    margin: 24px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: clamp(10px, 2vw, 22px);
 }
 
-.heading{
-    margin:0 0 22px;
-    text-align:center;
-    font-size:clamp(10px,1.4vw,14px);
-    letter-spacing:.25em;
-    text-transform:uppercase;
+.card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    background: #fff9ee;
+
+    box-shadow:
+        0 6px 18px rgba(66,43,28,.14);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
-/* CARDS */
+.card:hover {
+    transform: translateY(-3px);
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:clamp(13px,2.5vw,28px);
+    box-shadow:
+        0 10px 24px rgba(66,43,28,.20);
 }
 
-.card{
-    display:block;
-    color:inherit;
-    text-decoration:none;
-    background:rgba(255,249,239,.95);
-    box-shadow:0 8px 25px rgba(65,43,28,.15);
-    transition:.2s ease;
+
+/* =========================
+   CARD IMAGE
+   ========================= */
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
 }
 
-.card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 30px rgba(65,43,28,.22);
+.card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.card-image{
-    width:100%;
-    aspect-ratio:4/3;
-    overflow:hidden;
+
+/* =========================
+   CARD TITLE
+   ========================= */
+
+.card-title {
+    min-height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 8px 6px;
+
+    font-family: Georgia, serif;
+    font-size: clamp(19px, 2.5vw, 28px);
+    line-height: 1;
+    font-weight: 600;
+
+    text-align: center;
+
+    color: #4b3627;
 }
 
-.card-image img{
-    width:100%;
-    height:100%;
-    display:block;
-    object-fit:cover;
+
+/* =========================
+   BOTTOM
+   ========================= */
+
+.bottom {
+    max-width: 800px;
+    margin: 38px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(28px, 7vw, 70px);
 }
 
-.card-info{
-    display:grid;
-    grid-template-columns:auto 1fr auto;
-    align-items:center;
-    gap:12px;
-    padding:15px;
+.favourite {
+    display: block;
+    width: min(30vw, 190px);
+    height: auto;
 }
 
-.card-icon{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    background:#ead5b7;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:19px;
+.sea {
+    text-align: center;
 }
 
-.card-title{
-    margin:0 0 3px;
-    font-family:Georgia,serif;
-    font-size:clamp(18px,2.4vw,28px);
-    line-height:1;
+.shell {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 1px;
 }
 
-.card-text{
-    margin:0;
-    font-size:clamp(9px,1.1vw,12px);
-    line-height:1.4;
-    color:#6a5543;
+.sea-text {
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-size: clamp(27px, 4vw, 43px);
+    line-height: .95;
+    font-style: italic;
+
+    color: #4b3627;
 }
 
-.arrow{
-    font-size:22px;
-    color:#76583e;
+.sea-sub {
+    margin: 7px 0 0;
+
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+
+    color: #67503c;
 }
 
-/* BOTTOM */
 
-.bottom{
-    max-width:900px;
-    margin:65px auto 0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:clamp(35px,8vw,100px);
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+    margin-top: 22px;
+
+    text-align: center;
+
+    font-size: 7px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+
+    color: rgba(68,46,31,.58);
 }
 
-.favourite{
-    width:min(250px,42vw);
-    height:auto;
-}
 
-.sea{
-    text-align:center;
-}
+/* =========================
+   MOBILE
+   ========================= */
 
-.shell{
-    font-size:32px;
-}
+@media (max-width: 600px) {
 
-.sea-text{
-    margin:2px 0 0;
-    font-family:cursive;
-    font-size:clamp(34px,5vw,58px);
-}
-
-.sea-sub{
-    margin:5px 0 0;
-    font-family:Georgia,serif;
-    font-style:italic;
-    font-size:14px;
-}
-
-.footer{
-    margin-top:35px;
-    text-align:center;
-    font-size:8px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    opacity:.65;
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-    .page{
-        padding:25px 12px 25px;
+    .page {
+        padding: 16px 10px 20px;
     }
 
-    .logo{
-        width:88vw;
+    .logo {
+        width: 64vw;
+        max-width: 290px;
+        margin-bottom: 6px;
     }
 
-    .tagline{
-        margin-bottom:28px;
+    .tagline {
+        font-size: 21px;
+        margin-bottom: 20px;
     }
 
-    .features{
-        grid-template-columns:repeat(5,1fr);
+    .feature {
+        padding: 11px 2px 10px;
     }
 
-    .feature{
-        padding:12px 2px;
+    .feature .icon {
+        width: 23px;
+        height: 23px;
+        margin-bottom: 5px;
     }
 
-    .feature-icon{
-        font-size:21px;
+    .feature-text {
+        font-size: 7px;
+        line-height: 1.25;
     }
 
-    .feature-text{
-        font-size:7px;
+    .cards {
+        margin-top: 18px;
+        gap: 9px;
     }
 
-    .cards{
-        gap:10px;
+    .card-title {
+        min-height: 47px;
+        font-size: 18px;
     }
 
-    .card-info{
-        grid-template-columns:32px 1fr 15px;
-        gap:7px;
-        padding:10px;
+    .bottom {
+        margin-top: 32px;
+        gap: 25px;
     }
 
-    .card-icon{
-        width:32px;
-        height:32px;
-        font-size:15px;
+    .favourite {
+        width: 145px;
     }
 
-    .card-title{
-        font-size:17px;
+    .sea-text {
+        font-size: 31px;
     }
 
-    .card-text{
-        font-size:8px;
+    .sea-sub {
+        font-size: 10px;
     }
 
-    .arrow{
-        font-size:16px;
+    .shell {
+        width: 22px;
+        height: 22px;
     }
 
-    .bottom{
-        flex-direction:column;
-        gap:30px;
-        margin-top:55px;
-    }
-
-    .favourite{
-        width:230px;
-    }
-
-    .sea-text{
-        font-size:48px;
+    .footer {
+        margin-top: 18px;
     }
 }
 
-@media(max-width:350px){
 
-    .cards{
-        grid-template-columns:1fr;
+/* =========================
+   VERY SMALL PHONES
+   ========================= */
+
+@media (max-width: 360px) {
+
+    .logo {
+        width: 61vw;
     }
 
-    .feature-text{
-        font-size:6.5px;
+    .tagline {
+        font-size: 19px;
+    }
+
+    .feature-text {
+        font-size: 6.5px;
+    }
+
+    .cards {
+        gap: 7px;
+    }
+
+    .card-title {
+        min-height: 43px;
+        font-size: 16px;
+    }
+
+    .bottom {
+        gap: 18px;
+    }
+
+    .favourite {
+        width: 125px;
+    }
+
+    .sea-text {
+        font-size: 27px;
     }
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="page">
+
 
     <!-- HERO -->
 
@@ -331,8 +412,6 @@ body{
             alt="303 Oyster Bay"
         >
 
-        <p class="welcome">Welcome to</p>
-
         <p class="tagline">
             Enjoy the beach. Enjoy the views.<br>
             Relax. Rewind.
@@ -341,187 +420,217 @@ body{
     </header>
 
 
-    <!-- FEATURES -->
+    <!-- PROPERTY FEATURES -->
 
     <section class="features">
 
+
+        <!-- BEDROOMS -->
+
         <div class="feature">
-            <div class="feature-icon">🛏</div>
+
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M3 18V9"/>
+                <path d="M3 14h18v4"/>
+                <path d="M6 14v-3h5c2 0 3 1 3 3"/>
+                <path d="M3 18h18"/>
+                <path d="M5 18v2"/>
+                <path d="M19 18v2"/>
+            </svg>
+
             <div class="feature-text">
                 2 Bedrooms<br>
                 Sleeps 4 + 1
             </div>
+
         </div>
 
+
+        <!-- SEA VIEWS -->
+
         <div class="feature">
-            <div class="feature-icon">≋</div>
+
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M2 8c3-2 5-2 8 0s5 2 8 0 4-2 6 0"/>
+                <path d="M2 13c3-2 5-2 8 0s5 2 8 0 4-2 6 0"/>
+                <path d="M2 18c3-2 5-2 8 0s5 2 8 0 4-2 6 0"/>
+            </svg>
+
             <div class="feature-text">
                 Uninterrupted<br>
                 Sea Views
             </div>
+
         </div>
 
+
+        <!-- KITCHEN -->
+
         <div class="feature">
-            <div class="feature-icon">♨</div>
+
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M4 10h16"/>
+                <path d="M5 10l1 9h12l1-9"/>
+                <path d="M8 7c0-2 1-3 2-4"/>
+                <path d="M12 7V3"/>
+                <path d="M16 7c0-2-1-3-2-4"/>
+                <path d="M8 19v2"/>
+                <path d="M16 19v2"/>
+            </svg>
+
             <div class="feature-text">
                 Full Kitchen<br>
                 & Appliances
             </div>
+
         </div>
 
+
+        <!-- PARKING -->
+
         <div class="feature">
-            <div class="feature-icon">🚗</div>
+
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M5 16l1.5-6h11L19 16"/>
+                <path d="M7 10l1.5-3h7L17 10"/>
+                <path d="M4 16h16"/>
+                <circle cx="8" cy="16.5" r="1.3"/>
+                <circle cx="16" cy="16.5" r="1.3"/>
+            </svg>
+
             <div class="feature-text">
                 Free<br>
                 Parking
             </div>
+
         </div>
 
+
+        <!-- WI-FI -->
+
         <div class="feature">
-            <div class="feature-icon">⌁</div>
+
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M3 8.5c5-4 13-4 18 0"/>
+                <path d="M6.5 12c3.2-2.5 7.8-2.5 11 0"/>
+                <path d="M9.8 15.5c1.4-1.1 3-1.1 4.4 0"/>
+                <circle cx="12" cy="19" r="1"/>
+            </svg>
+
             <div class="feature-text">
                 High-Speed<br>
                 Wi-Fi
             </div>
-        </div>
-
-    </section>
-
-
-    <!-- GUIDE -->
-
-    <section class="guide">
-
-        <h2 class="heading">
-            Your Oyster Bay Guide
-        </h2>
-
-
-        <div class="cards">
-
-            <!-- YOUR STAY -->
-
-            <a href="arrival-guide.html" class="card">
-
-                <div class="card-image">
-                    <img
-                        src="your-stay.PNG"
-                        alt="Your Stay"
-                    >
-                </div>
-
-                <div class="card-info">
-
-                    <div class="card-icon">⌂</div>
-
-                    <div>
-                        <h3 class="card-title">Your Stay</h3>
-                        <p class="card-text">
-                            Check-in, check-out, house rules, Wi-Fi and more
-                        </p>
-                    </div>
-
-                    <div class="arrow">→</div>
-
-                </div>
-
-            </a>
-
-
-            <!-- THE APARTMENT -->
-
-            <a href="The%20Apartment.pdf" class="card">
-
-                <div class="card-image">
-                    <img
-                        src="apartment.jpg"
-                        alt="The Apartment"
-                    >
-                </div>
-
-                <div class="card-info">
-
-                    <div class="card-icon">⌘</div>
-
-                    <div>
-                        <h3 class="card-title">The Apartment</h3>
-                        <p class="card-text">
-                            Appliances, how things work and useful guides
-                        </p>
-                    </div>
-
-                    <div class="arrow">→</div>
-
-                </div>
-
-            </a>
-
-
-            <!-- EXPLORE -->
-
-            <a href="In%20and%20around.pdf" class="card">
-
-                <div class="card-image">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Kapu_Beach_Lighthouse_.jpg"
-                        alt="Kapu Beach"
-                    >
-                </div>
-
-                <div class="card-info">
-
-                    <div class="card-icon">⌖</div>
-
-                    <div>
-                        <h3 class="card-title">Explore Mangaluru</h3>
-                        <p class="card-text">
-                            Beaches, food, tips and things to do
-                        </p>
-                    </div>
-
-                    <div class="arrow">→</div>
-
-                </div>
-
-            </a>
-
-
-            <!-- GALLERY -->
-
-            <a href="gallery.html" class="card">
-
-                <div class="card-image">
-                    <img
-                        src="gallery.jpg"
-                        alt="303 Oyster Bay"
-                    >
-                </div>
-
-                <div class="card-info">
-
-                    <div class="card-icon">◉</div>
-
-                    <div>
-                        <h3 class="card-title">Gallery</h3>
-                        <p class="card-text">
-                            Photos of the apartment, views and surroundings
-                        </p>
-                    </div>
-
-                    <div class="arrow">→</div>
-
-                </div>
-
-            </a>
 
         </div>
 
     </section>
 
 
-    <!-- BOTTOM -->
+    <!-- NAVIGATION CARDS -->
+
+    <section class="cards">
+
+
+        <!-- YOUR STAY -->
+
+        <a
+            href="arrival-guide.html"
+            class="card"
+        >
+
+            <div class="card-image">
+
+                <img
+                    src="your-stay.PNG"
+                    alt="Your Stay"
+                >
+
+            </div>
+
+            <h2 class="card-title">
+                Your Stay
+            </h2>
+
+        </a>
+
+
+        <!-- THE APARTMENT -->
+
+        <a
+            href="The%20Apartment.pdf"
+            class="card"
+        >
+
+            <div class="card-image">
+
+                <img
+                    src="apartment.jpg"
+                    alt="The Apartment"
+                >
+
+            </div>
+
+            <h2 class="card-title">
+                The Apartment
+            </h2>
+
+        </a>
+
+
+        <!-- EXPLORE AROUND -->
+
+        <a
+            href="In%20and%20around.pdf"
+            class="card"
+        >
+
+            <div class="card-image">
+
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Kapu_Beach_Lighthouse_.jpg"
+                    alt="Explore Around"
+                >
+
+            </div>
+
+            <h2 class="card-title">
+                Explore Around
+            </h2>
+
+        </a>
+
+
+        <!-- GALLERY -->
+
+        <a
+            href="gallery.html"
+            class="card"
+        >
+
+            <div class="card-image">
+
+                <img
+                    src="gallery.jpg"
+                    alt="Gallery"
+                >
+
+            </div>
+
+            <h2 class="card-title">
+                Gallery
+            </h2>
+
+        </a>
+
+
+    </section>
+
+
+    <!-- CLOSING -->
 
     <section class="bottom">
+
 
         <img
             src="guest-favourite.png"
@@ -529,9 +638,24 @@ body{
             alt="Airbnb Guest Favourite"
         >
 
+
         <div class="sea">
 
-            <div class="shell">🐚</div>
+            <svg
+                class="shell"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="M4 19c0-7 3-13 8-15 5 2 8 8 8 15"/>
+                <path d="M4 19h16"/>
+                <path d="M12 4v15"/>
+                <path d="M8 7c1.5 3 2.3 7 2.3 12"/>
+                <path d="M16 7c-1.5 3-2.3 7-2.3 12"/>
+            </svg>
 
             <p class="sea-text">
                 Sea you by the sea
@@ -549,6 +673,7 @@ body{
     <footer class="footer">
         303 Oyster Bay · Surathkal · Mangaluru
     </footer>
+
 
 </div>
 
