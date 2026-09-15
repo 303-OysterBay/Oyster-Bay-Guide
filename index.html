@@ -13,102 +13,113 @@
 
 <style>
 
+/* =========================================================
+   BASIC RESET
+   ========================================================= */
+
 *{
-  box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 html,
 body{
-  margin:0;
-  padding:0;
-  min-height:100%;
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
 }
 
 body{
-  background:#d8ad78;
-  color:#4b2f1b;
-  font-family:"Cormorant Garamond",serif;
+    background:#d8ad78;
+    color:#4b2f1b;
+    font-family:"Cormorant Garamond",serif;
 }
 
 
 /* =========================================================
-   PAGE
+   PAGE BACKGROUND
    ========================================================= */
 
 .page{
-  width:100%;
-  min-height:100vh;
+    position:relative;
 
-  padding:
-    18px
-    10px
-    55px;
+    width:100%;
+    min-height:100vh;
 
-  background:
-    linear-gradient(
-      rgba(215,172,118,.04),
-      rgba(215,172,118,.04)
-    ),
-    url("sand-background.png")
-    center top /
-    cover
-    no-repeat;
+    padding:
+        20px
+        10px
+        120px;
 
-  overflow:hidden;
+    background:
+        linear-gradient(
+            rgba(215,172,118,.035),
+            rgba(215,172,118,.035)
+        ),
+        url("sand-background.png")
+        center top /
+        cover
+        no-repeat;
+
+    overflow:hidden;
 }
 
-
 .hero{
-  position:relative;
-  width:100%;
-  max-width:1120px;
-  margin:0 auto;
-  text-align:center;
+    position:relative;
+
+    width:100%;
+    max-width:1120px;
+
+    margin:0 auto;
+
+    text-align:center;
 }
 
 
 /* =========================================================
    AIRBNB GUEST FAVOURITE
-   KEPT COMPLETELY INDEPENDENT OF THE MAIN CONTENT
+   ABSOLUTELY INDEPENDENT OF THE LOGO
    ========================================================= */
 
 .guest-favourite-wrap{
-  position:absolute;
+    position:absolute;
 
-  top:0;
-  right:0;
+    top:0;
+    right:0;
 
-  width:78px;
+    width:78px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    z-index:50;
 
-  z-index:20;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
 }
 
 .guest-favourite{
-  display:block;
-  width:100%;
-  height:auto;
+    display:block;
 
-  /* tiny optical correction only */
-  transform:translateX(-2px);
+    width:100%;
+    height:auto;
+
+    transform:translateX(-2px);
 }
 
 
 /* =========================================================
    MAIN LOGO
-   CONTENT STARTS LOWER, WHILE GUEST FAVOURITE DOES NOT MOVE
    ========================================================= */
 
 .logo{
-  display:block;
+    display:block;
 
-  width:min(66vw,330px);
-  height:auto;
+    width:min(66vw,330px);
+    height:auto;
 
-  margin:52px auto 0;
+    margin:
+        54px
+        auto
+        0;
 }
 
 
@@ -117,29 +128,31 @@ body{
    ========================================================= */
 
 .tagline{
-  margin:2px auto 14px;
+    margin:
+        3px
+        auto
+        15px;
 
-  font-size:17px;
-  line-height:1.05;
+    font-size:17px;
 
-  font-style:italic;
-  font-weight:500;
+    line-height:1.05;
 
-  letter-spacing:.01em;
+    font-style:italic;
+    font-weight:500;
+
+    letter-spacing:.01em;
 }
 
 
 /* =========================================================
-   DIVIDER
+   DIVIDERS
    ========================================================= */
 
 .divider{
-  width:100%;
-  height:1px;
+    width:100%;
+    height:1px;
 
-  background:rgba(75,47,27,.48);
-
-  margin:0 auto;
+    background:rgba(75,47,27,.46);
 }
 
 
@@ -148,152 +161,166 @@ body{
    ========================================================= */
 
 .amenities{
-  display:grid;
+    display:grid;
 
-  grid-template-columns:
-    repeat(5,minmax(0,1fr));
+    grid-template-columns:
+        repeat(5,minmax(0,1fr));
 
-  width:100%;
-  max-width:1000px;
+    width:100%;
+    max-width:1000px;
 
-  margin:0 auto;
+    margin:0 auto;
 
-  padding:9px 0 10px;
+    padding:
+        10px
+        0
+        11px;
 }
 
 .amenity{
-  min-width:0;
+    position:relative;
 
-  padding:0 4px;
+    min-width:0;
 
-  display:flex;
-  flex-direction:column;
+    padding:
+        0
+        4px;
 
-  align-items:center;
-  justify-content:flex-start;
+    display:flex;
+    flex-direction:column;
 
-  position:relative;
+    align-items:center;
+    justify-content:flex-start;
 }
 
 .amenity:not(:last-child)::after{
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  right:0;
-  top:1px;
+    top:1px;
+    right:0;
 
-  width:1px;
-  height:57px;
+    width:1px;
+    height:59px;
 
-  background:rgba(75,47,27,.43);
+    background:rgba(75,47,27,.40);
 }
 
 
-/* ORIGINAL ELEGANT ICONS */
+/* =========================================================
+   ELEGANT THIN ICONS
+   ========================================================= */
 
 .amenity-icon{
-  width:22px;
-  height:22px;
+    width:23px;
+    height:23px;
 
-  margin-bottom:4px;
+    margin-bottom:4px;
 
-  color:#4b2f1b;
-  stroke:#4b2f1b;
+    fill:none;
 
-  stroke-width:1.65;
+    stroke:#4b2f1b;
 
-  stroke-linecap:round;
-  stroke-linejoin:round;
+    stroke-width:1.35;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
 }
 
 .amenity-title{
-  color:#4b2f1b;
+    color:#4b2f1b;
 
-  font-size:13px;
-  line-height:.98;
+    font-size:13px;
 
-  font-weight:500;
+    line-height:.98;
 
-  letter-spacing:-.01em;
+    font-weight:500;
+
+    letter-spacing:-.01em;
 }
 
 .amenity.compound .amenity-title{
-  font-size:12.5px;
+    font-size:12.5px;
 }
 
 .amenity-subtitle{
-  margin-top:1px;
+    margin-top:1px;
 
-  color:#4b2f1b;
+    color:#4b2f1b;
 
-  font-size:11.5px;
-  line-height:1;
+    font-size:11.5px;
 
-  font-style:italic;
-  font-weight:400;
+    line-height:1;
+
+    font-style:italic;
+
+    font-weight:400;
 }
 
 
 /* =========================================================
-   CARD AREA
-   IMPORTANT:
-   position:relative allows the signature to be positioned
-   against this area without affecting the grid.
+   CARD GRID
    ========================================================= */
 
 .cards{
-  position:relative;
+    position:relative;
 
-  width:100%;
-  max-width:1120px;
+    width:100%;
 
-  margin:9px auto 0;
+    margin:
+        10px
+        auto
+        0;
 
-  display:grid;
+    display:grid;
 
-  grid-template-columns:
-    repeat(2,minmax(0,1fr));
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
 
-  gap:9px;
+    gap:9px;
 }
 
 
 /* =========================================================
-   INDIVIDUAL CARD
+   CARD
    ========================================================= */
 
 .card{
-  display:block;
+    position:relative;
 
-  position:relative;
+    display:block;
 
-  width:100%;
+    width:100%;
 
-  aspect-ratio:4 / 3;
+    /*
+       Slightly taller than the previous version.
+       This reveals more of the actual photographs.
+    */
+    aspect-ratio:1.25 / 1;
 
-  overflow:hidden;
+    overflow:hidden;
 
-  border-radius:2px;
+    border-radius:3px;
 
-  background:#f7eee2;
+    background:#f7eee2;
 
-  color:#4b2f1b;
+    color:#4b2f1b;
 
-  text-decoration:none;
+    text-decoration:none;
 
-  box-shadow:
-    0 4px 13px
-    rgba(55,30,12,.22);
+    box-shadow:
+        0 4px 13px
+        rgba(55,30,12,.20);
 }
 
 .card img{
-  display:block;
+    display:block;
 
-  width:100%;
-  height:100%;
+    width:100%;
+    height:100%;
 
-  object-fit:cover;
+    object-fit:cover;
 }
 
 
@@ -302,108 +329,293 @@ body{
    ========================================================= */
 
 .card-label{
-  position:absolute;
+    position:absolute;
 
-  left:0;
-  right:0;
-  bottom:0;
+    left:0;
+    right:0;
+    bottom:0;
 
-  min-height:31px;
+    min-height:34px;
 
-  padding:
-    5px
-    38px
-    5px
-    7px;
+    padding:
+        5px
+        38px
+        5px
+        7px;
 
-  background:rgba(250,243,234,.94);
+    background:
+        rgba(250,243,234,.94);
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
-  justify-content:center;
+    align-items:center;
+    justify-content:center;
 
-  font-size:17px;
+    color:#4b2f1b;
 
-  line-height:1;
+    font-size:18px;
 
-  font-weight:500;
+    line-height:1;
 
-  text-align:center;
+    font-weight:500;
 
-  z-index:3;
+    text-align:center;
+
+    z-index:3;
 }
 
 
 /* =========================================================
-   ARROW
-   ANCHORED TO THE CARD ITSELF
+   CARD ARROWS
+   EACH ARROW BELONGS TO ITS OWN CARD
    ========================================================= */
 
 .card-arrow{
-  position:absolute;
+    position:absolute;
 
-  right:9px;
-  bottom:6px;
+    right:9px;
+    bottom:7px;
 
-  z-index:6;
+    z-index:8;
 
-  font-family:Arial,sans-serif;
+    color:#4b2f1b;
 
-  font-size:17px;
-  line-height:19px;
+    font-family:Arial,sans-serif;
 
-  font-weight:300;
+    font-size:18px;
 
-  color:#4b2f1b;
+    line-height:18px;
+
+    font-weight:300;
 }
 
 
 /* =========================================================
    HANDWRITTEN SIGNATURE
-
-   CRITICAL:
-   This is absolutely positioned against .cards.
-
-   It therefore CANNOT:
-   - shrink the cards
-   - move the cards
-   - push Gallery away
-   - change the grid height
+   ABSOLUTELY POSITIONED — NEVER AFFECTS CARD LAYOUT
    ========================================================= */
 
 .signature{
-  position:absolute;
+    position:absolute;
 
-  z-index:8;
+    z-index:20;
 
-  left:50%;
+    left:50%;
 
-  width:78%;
+    /*
+       Positioned relative to the card grid.
+       This is deliberately outside normal document flow.
+    */
+    bottom:-34px;
 
-  bottom:-34px;
+    width:82%;
 
-  transform:
-    translateX(-50%)
-    rotate(-10deg);
+    color:#4b2f1b;
 
-  transform-origin:center center;
+    font-family:"Allura",cursive;
 
-  font-family:"Allura",cursive;
+    font-size:27px;
 
-  font-size:28px;
+    font-weight:400;
 
-  line-height:1;
+    line-height:1;
 
-  font-weight:400;
+    white-space:nowrap;
 
-  color:#4b2f1b;
+    text-align:center;
 
-  white-space:nowrap;
+    transform:
+        translateX(-50%)
+        rotate(-10deg);
 
-  text-align:center;
+    transform-origin:center center;
 
-  pointer-events:none;
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   BOTTOM BEACH DETAIL
+   SUBTLE SHELLS + SAND + GRASS
+   ========================================================= */
+
+.bottom-beach{
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:105px;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            ellipse at 76% 82%,
+            rgba(255,246,225,.72) 0 5px,
+            transparent 6px
+        ),
+        radial-gradient(
+            ellipse at 82% 91%,
+            rgba(255,247,226,.78) 0 4px,
+            transparent 5px
+        ),
+        radial-gradient(
+            ellipse at 71% 94%,
+            rgba(244,229,199,.85) 0 3px,
+            transparent 4px
+        );
+}
+
+
+/* large shell */
+
+.shell-large{
+    position:absolute;
+
+    right:7%;
+    bottom:12px;
+
+    width:54px;
+    height:42px;
+
+    border:
+        1.5px solid
+        rgba(111,74,43,.48);
+
+    border-radius:
+        52% 48%
+        46% 44% /
+        65% 60%
+        40% 38%;
+
+    transform:
+        rotate(-10deg);
+
+    opacity:.72;
+}
+
+.shell-large::before,
+.shell-large::after{
+    content:"";
+
+    position:absolute;
+
+    top:5px;
+    bottom:5px;
+
+    width:1px;
+
+    background:rgba(111,74,43,.35);
+}
+
+.shell-large::before{
+    left:35%;
+    transform:rotate(-12deg);
+}
+
+.shell-large::after{
+    right:35%;
+    transform:rotate(12deg);
+}
+
+
+/* smaller shells */
+
+.shell-small{
+    position:absolute;
+
+    width:26px;
+    height:19px;
+
+    border:
+        1px solid
+        rgba(111,74,43,.42);
+
+    border-radius:
+        55% 45%
+        45% 40%;
+
+    opacity:.65;
+}
+
+.shell-one{
+    right:18%;
+    bottom:17px;
+    transform:rotate(18deg);
+}
+
+.shell-two{
+    right:26%;
+    bottom:8px;
+    transform:rotate(-24deg) scale(.7);
+}
+
+
+/* beach grass */
+
+.grass{
+    position:absolute;
+
+    bottom:-8px;
+
+    width:110px;
+    height:95px;
+
+    opacity:.34;
+
+    transform-origin:bottom center;
+}
+
+.grass.left{
+    left:-12px;
+    transform:rotate(-8deg);
+}
+
+.grass.right{
+    right:-14px;
+    transform:rotate(10deg);
+}
+
+.grass span{
+    position:absolute;
+
+    bottom:0;
+    left:50%;
+
+    width:1px;
+    height:88px;
+
+    background:rgba(87,69,40,.45);
+
+    transform-origin:bottom center;
+}
+
+.grass span:nth-child(1){
+    transform:rotate(-32deg);
+}
+
+.grass span:nth-child(2){
+    transform:rotate(-20deg);
+}
+
+.grass span:nth-child(3){
+    transform:rotate(-8deg);
+}
+
+.grass span:nth-child(4){
+    transform:rotate(7deg);
+}
+
+.grass span:nth-child(5){
+    transform:rotate(21deg);
+}
+
+.grass span:nth-child(6){
+    transform:rotate(34deg);
 }
 
 
@@ -413,114 +625,132 @@ body{
 
 @media (min-width:701px){
 
-  .page{
-    padding:
-      28px
-      4vw
-      70px;
-  }
+    .page{
+        padding:
+            28px
+            4vw
+            130px;
+    }
 
-  .guest-favourite-wrap{
-    top:0;
-    right:0;
+    .guest-favourite-wrap{
+        top:0;
+        right:0;
 
-    width:clamp(82px,11vw,118px);
-  }
+        width:clamp(90px,11vw,120px);
+    }
 
-  .guest-favourite{
-    transform:translateX(-3px);
-  }
+    .guest-favourite{
+        transform:translateX(-3px);
+    }
 
-  .logo{
-    width:min(64vw,390px);
+    .logo{
+        width:min(64vw,390px);
 
-    margin:56px auto 0;
-  }
+        margin:
+            58px
+            auto
+            0;
+    }
 
-  .tagline{
-    margin:
-      3px auto
-      18px;
+    .tagline{
+        margin:
+            4px
+            auto
+            19px;
 
-    font-size:
-      clamp(17px,2.15vw,23px);
-  }
+        font-size:
+            clamp(18px,2.15vw,23px);
+    }
 
-  .amenities{
-    padding:
-      11px 0
-      12px;
-  }
+    .amenities{
+        padding:
+            11px
+            0
+            12px;
+    }
 
-  .amenity{
-    padding:0 10px;
-  }
+    .amenity{
+        padding:
+            0
+            10px;
+    }
 
-  .amenity:not(:last-child)::after{
-    height:66px;
-    top:2px;
-  }
+    .amenity:not(:last-child)::after{
+        top:2px;
+        height:67px;
+    }
 
-  .amenity-icon{
-    width:27px;
-    height:27px;
+    .amenity-icon{
+        width:27px;
+        height:27px;
 
-    margin-bottom:5px;
-  }
+        margin-bottom:5px;
 
-  .amenity-title{
-    font-size:
-      clamp(14px,1.75vw,19px);
-  }
+        stroke-width:1.35;
+    }
 
-  .amenity.compound .amenity-title{
-    font-size:
-      clamp(13px,1.65vw,18px);
-  }
+    .amenity-title{
+        font-size:
+            clamp(14px,1.75vw,19px);
+    }
 
-  .amenity-subtitle{
-    font-size:
-      clamp(12px,1.5vw,16px);
-  }
+    .amenity.compound .amenity-title{
+        font-size:
+            clamp(13px,1.65vw,18px);
+    }
 
-  .cards{
-    margin-top:9px;
-    gap:16px;
-  }
+    .amenity-subtitle{
+        font-size:
+            clamp(12px,1.5vw,16px);
+    }
 
-  .card-label{
-    min-height:39px;
+    .cards{
+        margin-top:10px;
 
-    padding:
-      6px
-      46px
-      6px
-      12px;
+        gap:16px;
+    }
 
-    font-size:
-      clamp(17px,2.2vw,25px);
-  }
+    .card{
+        aspect-ratio:1.40 / 1;
+    }
 
-  .card-arrow{
-    right:13px;
-    bottom:10px;
+    .card-label{
+        min-height:40px;
 
-    font-size:21px;
-    line-height:22px;
-  }
+        padding:
+            6px
+            46px
+            6px
+            12px;
 
-  .signature{
-    width:72%;
+        font-size:
+            clamp(18px,2.2vw,25px);
+    }
 
-    bottom:-47px;
+    .card-arrow{
+        right:13px;
+        bottom:10px;
 
-    font-size:
-      clamp(30px,3.4vw,43px);
+        font-size:21px;
+        line-height:21px;
+    }
 
-    transform:
-      translateX(-50%)
-      rotate(-10deg);
-  }
+    .signature{
+        bottom:-52px;
+
+        width:72%;
+
+        font-size:
+            clamp(34px,3.6vw,45px);
+
+        transform:
+            translateX(-50%)
+            rotate(-10deg);
+    }
+
+    .bottom-beach{
+        height:125px;
+    }
 }
 
 
@@ -530,167 +760,202 @@ body{
 
 @media (max-width:700px){
 
-  .page{
-    padding:
-      18px
-      10px
-      60px;
-  }
+    .page{
+        padding:
+            18px
+            10px
+            125px;
+    }
 
-  /*
-    Badge stays at the very top-right.
-    It does NOT move down with the logo.
-  */
+    /*
+       Guest Favourite remains completely independent.
+    */
 
-  .guest-favourite-wrap{
-    top:0;
-    right:0;
+    .guest-favourite-wrap{
+        top:0;
+        right:0;
 
-    width:78px;
-  }
+        width:78px;
+    }
 
-  .guest-favourite{
-    transform:translateX(-2px);
-  }
-
-
-  /*
-    Extra breathing space is created here only.
-    This moves the logo/content down WITHOUT moving
-    the Guest Favourite badge.
-  */
-
-  .logo{
-    width:min(66vw,330px);
-
-    margin:52px auto 0;
-  }
+    .guest-favourite{
+        transform:translateX(-2px);
+    }
 
 
-  .tagline{
-    margin:
-      2px auto
-      14px;
+    /*
+       Main content begins lower,
+       creating the breathing space requested.
+    */
 
-    font-size:17px;
-  }
+    .logo{
+        width:min(66vw,330px);
 
-
-  .amenities{
-    padding:
-      9px 0
-      10px;
-  }
-
-
-  .amenity{
-    padding:
-      0 4px;
-  }
+        margin:
+            54px
+            auto
+            0;
+    }
 
 
-  .amenity:not(:last-child)::after{
-    height:57px;
-    top:1px;
-  }
+    .tagline{
+        margin:
+            3px
+            auto
+            15px;
+
+        font-size:17px;
+    }
 
 
-  /* Thin elegant icons retained */
-  .amenity-icon{
-    width:22px;
-    height:22px;
-
-    margin-bottom:4px;
-
-    stroke-width:1.65;
-  }
+    .amenities{
+        padding:
+            9px
+            0
+            10px;
+    }
 
 
-  .amenity-title{
-    font-size:13px;
-    line-height:.98;
-  }
-
-  .amenity.compound .amenity-title{
-    font-size:12.5px;
-  }
-
-  .amenity-subtitle{
-    font-size:11.5px;
-  }
+    .amenity{
+        padding:
+            0
+            4px;
+    }
 
 
-  /*
-    Fixed two-column grid.
-    Nothing below is allowed to affect its dimensions.
-  */
-
-  .cards{
-    margin-top:9px;
-
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
-
-    gap:9px;
-  }
+    .amenity:not(:last-child)::after{
+        top:1px;
+        height:59px;
+    }
 
 
-  .card{
-    aspect-ratio:4 / 3;
-  }
+    /*
+       Thin elegant icons.
+       Absolutely no heavy fill or thick stroke.
+    */
+
+    .amenity-icon{
+        width:23px;
+        height:23px;
+
+        margin-bottom:4px;
+
+        stroke-width:1.35;
+    }
 
 
-  .card-label{
-    min-height:31px;
+    .amenity-title{
+        font-size:13px;
+        line-height:.98;
+    }
 
-    padding:
-      5px
-      38px
-      5px
-      7px;
+    .amenity.compound .amenity-title{
+        font-size:12.5px;
+    }
 
-    font-size:17px;
-  }
-
-
-  /*
-    Each arrow remains physically attached
-    to its own card.
-  */
-
-  .card-arrow{
-    right:9px;
-    bottom:6px;
-
-    font-size:17px;
-    line-height:19px;
-  }
+    .amenity-subtitle{
+        font-size:11.5px;
+    }
 
 
-  /*
-    SIGNATURE
+    /*
+       TWO-COLUMN CARD GRID
+       slightly taller than before.
+    */
 
-    It is now a true handwritten overlay.
-    It rises from lower-left toward upper-right.
+    .cards{
+        margin-top:10px;
 
-    Because it is absolutely positioned against
-    .cards, it cannot alter Gallery or Explore.
-  */
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
 
-  .signature{
-    left:50%;
+        gap:9px;
+    }
 
-    width:78%;
 
-    bottom:-30px;
+    .card{
+        aspect-ratio:1.25 / 1;
+    }
 
-    font-size:25px;
 
-    transform:
-      translateX(-50%)
-      rotate(-10deg);
-  }
+    .card-label{
+        min-height:34px;
 
+        padding:
+            5px
+            38px
+            5px
+            7px;
+
+        font-size:18px;
+    }
+
+
+    /*
+       Arrow permanently belongs to this card.
+    */
+
+    .card-arrow{
+        right:9px;
+        bottom:7px;
+
+        font-size:18px;
+        line-height:18px;
+    }
+
+
+    /*
+       Handwritten signature:
+       strong upward diagonal,
+       ending around the Gallery white label.
+    */
+
+    .signature{
+        left:50%;
+
+        bottom:-32px;
+
+        width:82%;
+
+        font-size:25px;
+
+        transform:
+            translateX(-50%)
+            rotate(-10deg);
+    }
+
+
+    /*
+       Beach decoration stays BELOW the composition.
+       It does not interfere with the cards.
+    */
+
+    .bottom-beach{
+        height:112px;
+    }
+
+    .shell-large{
+        right:6%;
+        bottom:13px;
+
+        width:48px;
+        height:37px;
+    }
+
+    .shell-one{
+        right:18%;
+        bottom:16px;
+    }
+
+    .shell-two{
+        right:28%;
+        bottom:7px;
+    }
+
+    .grass{
+        width:95px;
+        height:82px;
+    }
 }
 
 </style>
@@ -701,7 +966,7 @@ body{
 
 <main class="page">
 
-  <div class="hero">
+<div class="hero">
 
 
     <!-- =====================================================
@@ -710,22 +975,22 @@ body{
 
     <div class="guest-favourite-wrap">
 
-      <img
-        class="guest-favourite"
-        src="guest-favourite.png"
-        alt="Airbnb Guest Favourite">
+        <img
+            class="guest-favourite"
+            src="guest-favourite.png"
+            alt="Airbnb Guest Favourite">
 
     </div>
 
 
     <!-- =====================================================
-         MAIN LOGO
+         LOGO
          ===================================================== -->
 
     <img
-      class="logo"
-      src="logo.png"
-      alt="303 Oyster Bay">
+        class="logo"
+        src="logo.png"
+        alt="303 Oyster Bay">
 
 
     <!-- =====================================================
@@ -733,7 +998,7 @@ body{
          ===================================================== -->
 
     <div class="tagline">
-      Where the sea slows you down.
+        Where the sea slows you down.
     </div>
 
 
@@ -745,166 +1010,163 @@ body{
          ===================================================== -->
 
     <section
-      class="amenities"
-      aria-label="Apartment features">
+        class="amenities"
+        aria-label="Apartment features">
 
 
-      <!-- 2 Bedrooms -->
+        <!-- 2 Bedrooms -->
 
-      <div class="amenity">
+        <div class="amenity">
 
-        <svg
-          class="amenity-icon"
-          viewBox="0 0 48 48"
-          aria-hidden="true">
+            <svg
+                class="amenity-icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true">
 
-          <path d="M6 31V18h24c7 0 12 4 12 10v3H6Z"/>
-          <path d="M6 31v8M42 31v8M6 35h36"/>
-          <path d="M9 18v-5h13v5"/>
+                <path d="M6 31V18h24c7 0 12 4 12 10v3H6Z"/>
+                <path d="M6 31v8M42 31v8M6 35h36"/>
+                <path d="M9 18v-5h13v5"/>
 
-        </svg>
+            </svg>
 
-        <div class="amenity-title">
-          2 Bedrooms
+            <div class="amenity-title">
+                2 Bedrooms
+            </div>
+
+            <div class="amenity-subtitle">
+                Sleeps 4 + 1
+            </div>
+
         </div>
 
-        <div class="amenity-subtitle">
-          Sleeps 4 + 1
+
+        <!-- Uninterrupted Sea Views -->
+
+        <div class="amenity compound">
+
+            <svg
+                class="amenity-icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true">
+
+                <path d="M4 16c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
+                <path d="M4 24c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
+                <path d="M4 32c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
+
+            </svg>
+
+            <div class="amenity-title">
+                Uninterrupted<br>
+                Sea Views
+            </div>
+
         </div>
 
-      </div>
 
+        <!-- Full Kitchen -->
 
-      <!-- Uninterrupted Sea Views -->
+        <div class="amenity compound">
 
-      <div class="amenity compound">
+            <svg
+                class="amenity-icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true">
 
-        <svg
-          class="amenity-icon"
-          viewBox="0 0 48 48"
-          aria-hidden="true">
+                <rect
+                    x="7"
+                    y="7"
+                    width="34"
+                    height="34"
+                    rx="3"/>
 
-          <path d="M4 16c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
-          <path d="M4 24c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
-          <path d="M4 32c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
+                <circle
+                    cx="17"
+                    cy="17"
+                    r="5"/>
 
-        </svg>
+                <circle
+                    cx="31"
+                    cy="17"
+                    r="5"/>
 
-        <div class="amenity-title">
-          Uninterrupted<br>
-          Sea Views
+                <circle
+                    cx="17"
+                    cy="31"
+                    r="5"/>
+
+                <circle
+                    cx="31"
+                    cy="31"
+                    r="5"/>
+
+            </svg>
+
+            <div class="amenity-title">
+                Full Kitchen
+            </div>
+
         </div>
 
-      </div>
 
+        <!-- Free Parking -->
 
-      <!-- Full Kitchen -->
+        <div class="amenity compound">
 
-      <div class="amenity compound">
+            <svg
+                class="amenity-icon"
+                viewBox="0 0 56 48"
+                aria-hidden="true">
 
-        <svg
-          class="amenity-icon"
-          viewBox="0 0 48 48"
-          aria-hidden="true">
+                <path d="M8 31h40"/>
+                <path d="M11 31v-7l7-8h21l9 8v7"/>
+                <path d="M18 16l5-6h13l7 6"/>
 
-          <rect
-            x="7"
-            y="7"
-            width="34"
-            height="34"
-            rx="3"/>
+                <circle
+                    cx="17"
+                    cy="34"
+                    r="5"/>
 
-          <circle
-            cx="17"
-            cy="17"
-            r="5"/>
+                <circle
+                    cx="41"
+                    cy="34"
+                    r="5"/>
 
-          <circle
-            cx="31"
-            cy="17"
-            r="5"/>
+                <path d="M8 31h-2M48 31h2"/>
 
-          <circle
-            cx="17"
-            cy="31"
-            r="5"/>
+            </svg>
 
-          <circle
-            cx="31"
-            cy="31"
-            r="5"/>
+            <div class="amenity-title">
+                Free Parking
+            </div>
 
-        </svg>
-
-        <div class="amenity-title">
-          Full Kitchen
         </div>
 
-      </div>
 
+        <!-- High-Speed Wi-Fi -->
 
-      <!-- Free Parking -->
+        <div class="amenity compound">
 
-      <div class="amenity compound">
+            <svg
+                class="amenity-icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true">
 
-        <svg
-          class="amenity-icon"
-          viewBox="0 0 56 48"
-          aria-hidden="true">
+                <path d="M5 18a28 28 0 0 1 38 0"/>
+                <path d="M10 24a20 20 0 0 1 28 0"/>
+                <path d="M16 30a12 12 0 0 1 16 0"/>
+                <circle
+                    cx="24"
+                    cy="36"
+                    r="1.7"/>
 
-          <path d="M8 31h40"/>
-          <path d="M11 31v-7l7-8h21l9 8v7"/>
-          <path d="M18 16l5-6h13l7 6"/>
+            </svg>
 
-          <circle
-            cx="17"
-            cy="34"
-            r="5"/>
+            <div class="amenity-title">
+                High-Speed<br>
+                Wi-Fi
+            </div>
 
-          <circle
-            cx="41"
-            cy="34"
-            r="5"/>
-
-          <path d="M8 31h-2M48 31h2"/>
-
-        </svg>
-
-        <div class="amenity-title">
-          Free Parking
         </div>
-
-      </div>
-
-
-      <!-- High-Speed Wi-Fi -->
-
-      <div class="amenity compound">
-
-        <svg
-          class="amenity-icon"
-          viewBox="0 0 48 48"
-          aria-hidden="true">
-
-          <path d="M14 30a5 5 0 0 1 7 0"/>
-          <path d="M9 25a12 12 0 0 1 17 0"/>
-          <path d="M4 20a19 19 0 0 1 27 0"/>
-
-          <circle
-            cx="24"
-            cy="34"
-            r="2.2"
-            fill="currentColor"
-            stroke="none"/>
-
-        </svg>
-
-        <div class="amenity-title">
-          High-Speed<br>
-          Wi-Fi
-        </div>
-
-      </div>
 
     </section>
 
@@ -913,118 +1175,150 @@ body{
 
 
     <!-- =====================================================
-         CARDS
+         FOUR CARDS
          ===================================================== -->
 
     <section
-      class="cards"
-      aria-label="Explore 303 Oyster Bay">
+        class="cards"
+        aria-label="Explore 303 Oyster Bay">
 
 
-      <!-- YOUR STAY -->
+        <!-- YOUR STAY -->
 
-      <a
-        class="card"
-        href="arrival-guide.html">
+        <a
+            class="card"
+            href="arrival-guide.html">
 
-        <img
-          src="your-stay.PNG"
-          alt="Your Stay">
+            <img
+                src="your-stay.PNG"
+                alt="Your Stay">
 
-        <div class="card-label">
-          Your Stay
+            <div class="card-label">
+                Your Stay
+            </div>
+
+            <span
+                class="card-arrow"
+                aria-hidden="true">
+                →
+            </span>
+
+        </a>
+
+
+        <!-- THE APARTMENT -->
+
+        <a
+            class="card"
+            href="The%20Apartment.pdf">
+
+            <img
+                src="apartment.jpg"
+                alt="The Apartment">
+
+            <div class="card-label">
+                The Apartment
+            </div>
+
+            <span
+                class="card-arrow"
+                aria-hidden="true">
+                →
+            </span>
+
+        </a>
+
+
+        <!-- EXPLORE -->
+
+        <a
+            class="card"
+            href="In%20and%20around.pdf">
+
+            <img
+                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Surathkal%20Light%20House%20Beach%20and%20Boats%20Karnataka%20India.jpg"
+                alt="Surathkal Lighthouse and Beach">
+
+            <div class="card-label">
+                Explore
+            </div>
+
+            <span
+                class="card-arrow"
+                aria-hidden="true">
+                →
+            </span>
+
+        </a>
+
+
+        <!-- GALLERY -->
+
+        <a
+            class="card"
+            href="gallery.html">
+
+            <img
+                src="gallery.jpg"
+                alt="Gallery">
+
+            <div class="card-label">
+                Gallery
+            </div>
+
+            <span
+                class="card-arrow"
+                aria-hidden="true">
+                →
+            </span>
+
+        </a>
+
+
+        <!-- =================================================
+             HANDWRITTEN CLOSING
+             ================================================= -->
+
+        <div class="signature">
+            See you by the Sea
         </div>
-
-        <span
-          class="card-arrow"
-          aria-hidden="true">
-          →
-        </span>
-
-      </a>
-
-
-      <!-- THE APARTMENT -->
-
-      <a
-        class="card"
-        href="The%20Apartment.pdf">
-
-        <img
-          src="apartment.jpg"
-          alt="The Apartment">
-
-        <div class="card-label">
-          The Apartment
-        </div>
-
-        <span
-          class="card-arrow"
-          aria-hidden="true">
-          →
-        </span>
-
-      </a>
-
-
-      <!-- EXPLORE -->
-
-      <a
-        class="card"
-        href="In%20and%20around.pdf">
-
-        <img
-          src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Surathkal%20Light%20House%20Beach%20and%20Boats%20Karnataka%20India.jpg"
-          alt="Surathkal Lighthouse and Beach">
-
-        <div class="card-label">
-          Explore
-        </div>
-
-        <span
-          class="card-arrow"
-          aria-hidden="true">
-          →
-        </span>
-
-      </a>
-
-
-      <!-- GALLERY -->
-
-      <a
-        class="card"
-        href="gallery.html">
-
-        <img
-          src="gallery.jpg"
-          alt="Gallery">
-
-        <div class="card-label">
-          Gallery
-        </div>
-
-        <span
-          class="card-arrow"
-          aria-hidden="true">
-          →
-        </span>
-
-      </a>
-
-
-      <!-- =================================================
-           HANDWRITTEN SIGNATURE
-           ABSOLUTELY POSITIONED INSIDE CARD AREA
-           ================================================= -->
-
-      <div class="signature">
-        See you by the Sea
-      </div>
 
     </section>
 
-  </div>
+</div>
+
+
+<!-- =========================================================
+     BOTTOM BEACH DECORATION
+     ========================================================= -->
+
+<div class="bottom-beach">
+
+    <div class="grass left">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="grass right">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="shell-large"></div>
+
+    <div class="shell-small shell-one"></div>
+
+    <div class="shell-small shell-two"></div>
+
+</div>
 
 </main>
 
