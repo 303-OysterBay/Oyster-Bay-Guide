@@ -14,7 +14,7 @@
 <style>
 
 /* =========================================================
-   BASIC RESET
+   RESET
    ========================================================= */
 
 *{
@@ -37,7 +37,7 @@ body{
 
 
 /* =========================================================
-   PAGE BACKGROUND
+   PAGE
    ========================================================= */
 
 .page{
@@ -49,7 +49,7 @@ body{
     padding:
         20px
         10px
-        120px;
+        125px;
 
     background:
         linear-gradient(
@@ -63,6 +63,11 @@ body{
 
     overflow:hidden;
 }
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero{
     position:relative;
@@ -78,18 +83,22 @@ body{
 
 /* =========================================================
    AIRBNB GUEST FAVOURITE
-   ABSOLUTELY INDEPENDENT OF THE LOGO
+
+   IMPORTANT:
+   This is anchored to .page, NOT .hero.
+   Therefore the logo can move vertically without moving
+   the Guest Favourite badge.
    ========================================================= */
 
 .guest-favourite-wrap{
     position:absolute;
 
-    top:0;
-    right:0;
+    top:20px;
+    right:10px;
 
     width:78px;
 
-    z-index:50;
+    z-index:100;
 
     display:flex;
     align-items:flex-start;
@@ -102,12 +111,12 @@ body{
     width:100%;
     height:auto;
 
-    transform:translateX(-2px);
+    transform:none;
 }
 
 
 /* =========================================================
-   MAIN LOGO
+   LOGO
    ========================================================= */
 
 .logo{
@@ -145,7 +154,7 @@ body{
 
 
 /* =========================================================
-   DIVIDERS
+   DIVIDER
    ========================================================= */
 
 .divider{
@@ -209,7 +218,7 @@ body{
 
 
 /* =========================================================
-   ELEGANT THIN ICONS
+   THIN ELEGANT ICONS
    ========================================================= */
 
 .amenity-icon{
@@ -283,7 +292,7 @@ body{
 
 
 /* =========================================================
-   CARD
+   CARDS
    ========================================================= */
 
 .card{
@@ -294,8 +303,8 @@ body{
     width:100%;
 
     /*
-       Slightly taller than the previous version.
-       This reveals more of the actual photographs.
+       Slightly taller than the earlier version so that
+       more of the photographs remain visible.
     */
     aspect-ratio:1.25 / 1;
 
@@ -321,6 +330,27 @@ body{
     height:100%;
 
     object-fit:cover;
+}
+
+
+/* =========================================================
+   EXPLORE IMAGE
+
+   The lighthouse image is deliberately shown farther out.
+   The complete source image is retained rather than making
+   the lighthouse look excessively zoomed in.
+   ========================================================= */
+
+.card.explore-card{
+    background:#75c8ee;
+}
+
+.card.explore-card img{
+    object-fit:contain;
+
+    object-position:center center;
+
+    background:#75c8ee;
 }
 
 
@@ -366,8 +396,9 @@ body{
 
 
 /* =========================================================
-   CARD ARROWS
-   EACH ARROW BELONGS TO ITS OWN CARD
+   ARROWS
+
+   Each arrow is locked to its own card.
    ========================================================= */
 
 .card-arrow{
@@ -391,8 +422,10 @@ body{
 
 
 /* =========================================================
-   HANDWRITTEN SIGNATURE
-   ABSOLUTELY POSITIONED — NEVER AFFECTS CARD LAYOUT
+   SEE YOU BY THE SEA
+
+   Absolutely positioned.
+   It cannot change card dimensions or move Gallery.
    ========================================================= */
 
 .signature{
@@ -402,11 +435,7 @@ body{
 
     left:50%;
 
-    /*
-       Positioned relative to the card grid.
-       This is deliberately outside normal document flow.
-    */
-    bottom:-34px;
+    bottom:-32px;
 
     width:82%;
 
@@ -414,7 +443,7 @@ body{
 
     font-family:"Allura",cursive;
 
-    font-size:27px;
+    font-size:25px;
 
     font-weight:400;
 
@@ -436,7 +465,9 @@ body{
 
 /* =========================================================
    BOTTOM BEACH DETAIL
-   SUBTLE SHELLS + SAND + GRASS
+
+   Decorative layer only.
+   It does NOT participate in document layout.
    ========================================================= */
 
 .bottom-beach{
@@ -446,41 +477,80 @@ body{
     right:0;
     bottom:0;
 
-    height:105px;
+    height:112px;
 
-    z-index:2;
+    z-index:30;
 
     pointer-events:none;
-
-    background:
-        radial-gradient(
-            ellipse at 76% 82%,
-            rgba(255,246,225,.72) 0 5px,
-            transparent 6px
-        ),
-        radial-gradient(
-            ellipse at 82% 91%,
-            rgba(255,247,226,.78) 0 4px,
-            transparent 5px
-        ),
-        radial-gradient(
-            ellipse at 71% 94%,
-            rgba(244,229,199,.85) 0 3px,
-            transparent 4px
-        );
 }
 
 
-/* large shell */
+/* =========================================================
+   SMALL SAND DUMPS / GRANULAR PATCHES
+   ========================================================= */
+
+.sand-dump{
+    position:absolute;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 35%,
+            rgba(255,247,228,.88) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 62% 42%,
+            rgba(239,219,183,.85) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 48% 68%,
+            rgba(255,244,218,.78) 0 1.5px,
+            transparent 2.5px
+        );
+
+    opacity:.85;
+}
+
+.sand-one{
+    right:15%;
+    bottom:20px;
+
+    width:65px;
+    height:26px;
+}
+
+.sand-two{
+    right:29%;
+    bottom:10px;
+
+    width:42px;
+    height:18px;
+}
+
+.sand-three{
+    left:19%;
+    bottom:14px;
+
+    width:34px;
+    height:16px;
+}
+
+
+/* =========================================================
+   LARGE SHELL
+   ========================================================= */
 
 .shell-large{
     position:absolute;
 
     right:7%;
-    bottom:12px;
+    bottom:13px;
 
-    width:54px;
-    height:42px;
+    width:48px;
+    height:37px;
 
     border:
         1.5px solid
@@ -509,21 +579,26 @@ body{
 
     width:1px;
 
-    background:rgba(111,74,43,.35);
+    background:
+        rgba(111,74,43,.35);
 }
 
 .shell-large::before{
     left:35%;
+
     transform:rotate(-12deg);
 }
 
 .shell-large::after{
     right:35%;
+
     transform:rotate(12deg);
 }
 
 
-/* smaller shells */
+/* =========================================================
+   SMALL SHELLS
+   ========================================================= */
 
 .shell-small{
     position:absolute;
@@ -544,26 +619,32 @@ body{
 
 .shell-one{
     right:18%;
-    bottom:17px;
+    bottom:16px;
+
     transform:rotate(18deg);
 }
 
 .shell-two{
-    right:26%;
-    bottom:8px;
-    transform:rotate(-24deg) scale(.7);
+    right:28%;
+    bottom:7px;
+
+    transform:
+        rotate(-24deg)
+        scale(.7);
 }
 
 
-/* beach grass */
+/* =========================================================
+   BEACH GRASS
+   ========================================================= */
 
 .grass{
     position:absolute;
 
     bottom:-8px;
 
-    width:110px;
-    height:95px;
+    width:95px;
+    height:82px;
 
     opacity:.34;
 
@@ -572,11 +653,13 @@ body{
 
 .grass.left{
     left:-12px;
+
     transform:rotate(-8deg);
 }
 
 .grass.right{
     right:-14px;
+
     transform:rotate(10deg);
 }
 
@@ -587,9 +670,10 @@ body{
     left:50%;
 
     width:1px;
-    height:88px;
+    height:76px;
 
-    background:rgba(87,69,40,.45);
+    background:
+        rgba(87,69,40,.45);
 
     transform-origin:bottom center;
 }
@@ -632,16 +716,19 @@ body{
             130px;
     }
 
+
+    /*
+       Badge is now relative to PAGE,
+       not HERO.
+    */
+
     .guest-favourite-wrap{
-        top:0;
-        right:0;
+        top:28px;
+        right:4vw;
 
         width:clamp(90px,11vw,120px);
     }
 
-    .guest-favourite{
-        transform:translateX(-3px);
-    }
 
     .logo{
         width:min(64vw,390px);
@@ -651,6 +738,7 @@ body{
             auto
             0;
     }
+
 
     .tagline{
         margin:
@@ -662,6 +750,7 @@ body{
             clamp(18px,2.15vw,23px);
     }
 
+
     .amenities{
         padding:
             11px
@@ -669,16 +758,19 @@ body{
             12px;
     }
 
+
     .amenity{
         padding:
             0
             10px;
     }
 
+
     .amenity:not(:last-child)::after{
         top:2px;
         height:67px;
     }
+
 
     .amenity-icon{
         width:27px;
@@ -689,20 +781,24 @@ body{
         stroke-width:1.35;
     }
 
+
     .amenity-title{
         font-size:
             clamp(14px,1.75vw,19px);
     }
+
 
     .amenity.compound .amenity-title{
         font-size:
             clamp(13px,1.65vw,18px);
     }
 
+
     .amenity-subtitle{
         font-size:
             clamp(12px,1.5vw,16px);
     }
+
 
     .cards{
         margin-top:10px;
@@ -710,9 +806,11 @@ body{
         gap:16px;
     }
 
+
     .card{
         aspect-ratio:1.40 / 1;
     }
+
 
     .card-label{
         min-height:40px;
@@ -727,6 +825,7 @@ body{
             clamp(18px,2.2vw,25px);
     }
 
+
     .card-arrow{
         right:13px;
         bottom:10px;
@@ -734,6 +833,7 @@ body{
         font-size:21px;
         line-height:21px;
     }
+
 
     .signature{
         bottom:-52px;
@@ -748,9 +848,11 @@ body{
             rotate(-10deg);
     }
 
+
     .bottom-beach{
         height:125px;
     }
+
 }
 
 
@@ -767,25 +869,29 @@ body{
             125px;
     }
 
+
     /*
-       Guest Favourite remains completely independent.
+       THIS IS THE IMPORTANT FIX.
+
+       The badge is anchored to the PAGE.
+       It no longer follows the logo.
     */
 
     .guest-favourite-wrap{
-        top:0;
-        right:0;
+        top:18px;
+        right:10px;
 
         width:78px;
     }
 
+
     .guest-favourite{
-        transform:translateX(-2px);
+        transform:none;
     }
 
 
     /*
-       Main content begins lower,
-       creating the breathing space requested.
+       Logo position remains exactly as established.
     */
 
     .logo{
@@ -830,8 +936,7 @@ body{
 
 
     /*
-       Thin elegant icons.
-       Absolutely no heavy fill or thick stroke.
+       THIN ICONS — RESTORED ELEGANCE
     */
 
     .amenity-icon{
@@ -849,9 +954,11 @@ body{
         line-height:.98;
     }
 
+
     .amenity.compound .amenity-title{
         font-size:12.5px;
     }
+
 
     .amenity-subtitle{
         font-size:11.5px;
@@ -859,8 +966,7 @@ body{
 
 
     /*
-       TWO-COLUMN CARD GRID
-       slightly taller than before.
+       TWO-COLUMN GRID
     */
 
     .cards{
@@ -873,8 +979,27 @@ body{
     }
 
 
+    /*
+       Taller cards = more photograph visible.
+    */
+
     .card{
         aspect-ratio:1.25 / 1;
+    }
+
+
+    /*
+       EXPLORE:
+       complete lighthouse image shown without
+       the previous aggressive crop.
+    */
+
+    .card.explore-card img{
+        object-fit:contain;
+
+        object-position:center center;
+
+        background:#75c8ee;
     }
 
 
@@ -892,7 +1017,7 @@ body{
 
 
     /*
-       Arrow permanently belongs to this card.
+       ARROWS STAY WITH THEIR OWN CARDS.
     */
 
     .card-arrow{
@@ -905,9 +1030,7 @@ body{
 
 
     /*
-       Handwritten signature:
-       strong upward diagonal,
-       ending around the Gallery white label.
+       SIGNATURE — unchanged from approved version.
     */
 
     .signature{
@@ -926,13 +1049,13 @@ body{
 
 
     /*
-       Beach decoration stays BELOW the composition.
-       It does not interfere with the cards.
+       BOTTOM DECORATION
     */
 
     .bottom-beach{
         height:112px;
     }
+
 
     .shell-large{
         right:6%;
@@ -942,20 +1065,42 @@ body{
         height:37px;
     }
 
+
     .shell-one{
         right:18%;
         bottom:16px;
     }
+
 
     .shell-two{
         right:28%;
         bottom:7px;
     }
 
+
+    .sand-one{
+        right:15%;
+        bottom:20px;
+    }
+
+
+    .sand-two{
+        right:29%;
+        bottom:10px;
+    }
+
+
+    .sand-three{
+        left:19%;
+        bottom:14px;
+    }
+
+
     .grass{
         width:95px;
         height:82px;
     }
+
 }
 
 </style>
@@ -966,11 +1111,12 @@ body{
 
 <main class="page">
 
-<div class="hero">
-
 
     <!-- =====================================================
          AIRBNB GUEST FAVOURITE
+
+         OUTSIDE .hero deliberately.
+         This is what locks it to the page corner.
          ===================================================== -->
 
     <div class="guest-favourite-wrap">
@@ -983,342 +1129,361 @@ body{
     </div>
 
 
-    <!-- =====================================================
-         LOGO
-         ===================================================== -->
-
-    <img
-        class="logo"
-        src="logo.png"
-        alt="303 Oyster Bay">
-
-
-    <!-- =====================================================
-         TAGLINE
-         ===================================================== -->
-
-    <div class="tagline">
-        Where the sea slows you down.
-    </div>
-
-
-    <div class="divider"></div>
-
-
-    <!-- =====================================================
-         FEATURES
-         ===================================================== -->
-
-    <section
-        class="amenities"
-        aria-label="Apartment features">
-
-
-        <!-- 2 Bedrooms -->
-
-        <div class="amenity">
-
-            <svg
-                class="amenity-icon"
-                viewBox="0 0 48 48"
-                aria-hidden="true">
-
-                <path d="M6 31V18h24c7 0 12 4 12 10v3H6Z"/>
-                <path d="M6 31v8M42 31v8M6 35h36"/>
-                <path d="M9 18v-5h13v5"/>
-
-            </svg>
-
-            <div class="amenity-title">
-                2 Bedrooms
-            </div>
-
-            <div class="amenity-subtitle">
-                Sleeps 4 + 1
-            </div>
-
-        </div>
-
-
-        <!-- Uninterrupted Sea Views -->
-
-        <div class="amenity compound">
-
-            <svg
-                class="amenity-icon"
-                viewBox="0 0 48 48"
-                aria-hidden="true">
-
-                <path d="M4 16c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
-                <path d="M4 24c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
-                <path d="M4 32c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
-
-            </svg>
-
-            <div class="amenity-title">
-                Uninterrupted<br>
-                Sea Views
-            </div>
-
-        </div>
-
-
-        <!-- Full Kitchen -->
-
-        <div class="amenity compound">
-
-            <svg
-                class="amenity-icon"
-                viewBox="0 0 48 48"
-                aria-hidden="true">
-
-                <rect
-                    x="7"
-                    y="7"
-                    width="34"
-                    height="34"
-                    rx="3"/>
-
-                <circle
-                    cx="17"
-                    cy="17"
-                    r="5"/>
-
-                <circle
-                    cx="31"
-                    cy="17"
-                    r="5"/>
-
-                <circle
-                    cx="17"
-                    cy="31"
-                    r="5"/>
-
-                <circle
-                    cx="31"
-                    cy="31"
-                    r="5"/>
-
-            </svg>
-
-            <div class="amenity-title">
-                Full Kitchen
-            </div>
-
-        </div>
-
-
-        <!-- Free Parking -->
-
-        <div class="amenity compound">
-
-            <svg
-                class="amenity-icon"
-                viewBox="0 0 56 48"
-                aria-hidden="true">
-
-                <path d="M8 31h40"/>
-                <path d="M11 31v-7l7-8h21l9 8v7"/>
-                <path d="M18 16l5-6h13l7 6"/>
-
-                <circle
-                    cx="17"
-                    cy="34"
-                    r="5"/>
-
-                <circle
-                    cx="41"
-                    cy="34"
-                    r="5"/>
-
-                <path d="M8 31h-2M48 31h2"/>
-
-            </svg>
-
-            <div class="amenity-title">
-                Free Parking
-            </div>
-
-        </div>
-
-
-        <!-- High-Speed Wi-Fi -->
-
-        <div class="amenity compound">
-
-            <svg
-                class="amenity-icon"
-                viewBox="0 0 48 48"
-                aria-hidden="true">
-
-                <path d="M5 18a28 28 0 0 1 38 0"/>
-                <path d="M10 24a20 20 0 0 1 28 0"/>
-                <path d="M16 30a12 12 0 0 1 16 0"/>
-                <circle
-                    cx="24"
-                    cy="36"
-                    r="1.7"/>
-
-            </svg>
-
-            <div class="amenity-title">
-                High-Speed<br>
-                Wi-Fi
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <div class="divider"></div>
-
-
-    <!-- =====================================================
-         FOUR CARDS
-         ===================================================== -->
-
-    <section
-        class="cards"
-        aria-label="Explore 303 Oyster Bay">
-
-
-        <!-- YOUR STAY -->
-
-        <a
-            class="card"
-            href="arrival-guide.html">
-
-            <img
-                src="your-stay.PNG"
-                alt="Your Stay">
-
-            <div class="card-label">
-                Your Stay
-            </div>
-
-            <span
-                class="card-arrow"
-                aria-hidden="true">
-                →
-            </span>
-
-        </a>
-
-
-        <!-- THE APARTMENT -->
-
-        <a
-            class="card"
-            href="The%20Apartment.pdf">
-
-            <img
-                src="apartment.jpg"
-                alt="The Apartment">
-
-            <div class="card-label">
-                The Apartment
-            </div>
-
-            <span
-                class="card-arrow"
-                aria-hidden="true">
-                →
-            </span>
-
-        </a>
-
-
-        <!-- EXPLORE -->
-
-        <a
-            class="card"
-            href="In%20and%20around.pdf">
-
-            <img
-                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Surathkal%20Light%20House%20Beach%20and%20Boats%20Karnataka%20India.jpg"
-                alt="Surathkal Lighthouse and Beach">
-
-            <div class="card-label">
-                Explore
-            </div>
-
-            <span
-                class="card-arrow"
-                aria-hidden="true">
-                →
-            </span>
-
-        </a>
-
-
-        <!-- GALLERY -->
-
-        <a
-            class="card"
-            href="gallery.html">
-
-            <img
-                src="gallery.jpg"
-                alt="Gallery">
-
-            <div class="card-label">
-                Gallery
-            </div>
-
-            <span
-                class="card-arrow"
-                aria-hidden="true">
-                →
-            </span>
-
-        </a>
+    <div class="hero">
 
 
         <!-- =================================================
-             HANDWRITTEN CLOSING
+             LOGO
              ================================================= -->
 
-        <div class="signature">
-            See you by the Sea
+        <img
+            class="logo"
+            src="logo.png"
+            alt="303 Oyster Bay">
+
+
+        <!-- =================================================
+             TAGLINE
+             ================================================= -->
+
+        <div class="tagline">
+            Where the sea slows you down.
         </div>
 
-    </section>
 
-</div>
+        <div class="divider"></div>
 
 
-<!-- =========================================================
-     BOTTOM BEACH DECORATION
-     ========================================================= -->
+        <!-- =================================================
+             FEATURES
+             ================================================= -->
 
-<div class="bottom-beach">
+        <section
+            class="amenities"
+            aria-label="Apartment features">
 
-    <div class="grass left">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+
+            <!-- 2 Bedrooms -->
+
+            <div class="amenity">
+
+                <svg
+                    class="amenity-icon"
+                    viewBox="0 0 48 48"
+                    aria-hidden="true">
+
+                    <path d="M6 31V18h24c7 0 12 4 12 10v3H6Z"/>
+                    <path d="M6 31v8M42 31v8M6 35h36"/>
+                    <path d="M9 18v-5h13v5"/>
+
+                </svg>
+
+                <div class="amenity-title">
+                    2 Bedrooms
+                </div>
+
+                <div class="amenity-subtitle">
+                    Sleeps 4 + 1
+                </div>
+
+            </div>
+
+
+            <!-- Uninterrupted Sea Views -->
+
+            <div class="amenity compound">
+
+                <svg
+                    class="amenity-icon"
+                    viewBox="0 0 48 48"
+                    aria-hidden="true">
+
+                    <path d="M4 16c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
+                    <path d="M4 24c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
+                    <path d="M4 32c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
+
+                </svg>
+
+                <div class="amenity-title">
+                    Uninterrupted<br>
+                    Sea Views
+                </div>
+
+            </div>
+
+
+            <!-- Full Kitchen -->
+
+            <div class="amenity compound">
+
+                <svg
+                    class="amenity-icon"
+                    viewBox="0 0 48 48"
+                    aria-hidden="true">
+
+                    <rect
+                        x="7"
+                        y="7"
+                        width="34"
+                        height="34"
+                        rx="3"/>
+
+                    <circle
+                        cx="17"
+                        cy="17"
+                        r="5"/>
+
+                    <circle
+                        cx="31"
+                        cy="17"
+                        r="5"/>
+
+                    <circle
+                        cx="17"
+                        cy="31"
+                        r="5"/>
+
+                    <circle
+                        cx="31"
+                        cy="31"
+                        r="5"/>
+
+                </svg>
+
+                <div class="amenity-title">
+                    Full Kitchen
+                </div>
+
+            </div>
+
+
+            <!-- Free Parking -->
+
+            <div class="amenity compound">
+
+                <svg
+                    class="amenity-icon"
+                    viewBox="0 0 56 48"
+                    aria-hidden="true">
+
+                    <path d="M8 31h40"/>
+                    <path d="M11 31v-7l7-8h21l9 8v7"/>
+                    <path d="M18 16l5-6h13l7 6"/>
+
+                    <circle
+                        cx="17"
+                        cy="34"
+                        r="5"/>
+
+                    <circle
+                        cx="41"
+                        cy="34"
+                        r="5"/>
+
+                    <path d="M8 31h-2M48 31h2"/>
+
+                </svg>
+
+                <div class="amenity-title">
+                    Free Parking
+                </div>
+
+            </div>
+
+
+            <!-- High-Speed Wi-Fi -->
+
+            <div class="amenity compound">
+
+                <svg
+                    class="amenity-icon"
+                    viewBox="0 0 48 48"
+                    aria-hidden="true">
+
+                    <path d="M5 18a28 28 0 0 1 38 0"/>
+                    <path d="M10 24a20 20 0 0 1 28 0"/>
+                    <path d="M16 30a12 12 0 0 1 16 0"/>
+
+                    <circle
+                        cx="24"
+                        cy="36"
+                        r="1.7"/>
+
+                </svg>
+
+                <div class="amenity-title">
+                    High-Speed<br>
+                    Wi-Fi
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="divider"></div>
+
+
+        <!-- =================================================
+             FOUR CARDS
+             ================================================= -->
+
+        <section
+            class="cards"
+            aria-label="Explore 303 Oyster Bay">
+
+
+            <!-- YOUR STAY -->
+
+            <a
+                class="card"
+                href="arrival-guide.html">
+
+                <img
+                    src="your-stay.PNG"
+                    alt="Your Stay">
+
+                <div class="card-label">
+                    Your Stay
+                </div>
+
+                <span
+                    class="card-arrow"
+                    aria-hidden="true">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- THE APARTMENT -->
+
+            <a
+                class="card"
+                href="The%20Apartment.pdf">
+
+                <img
+                    src="apartment.jpg"
+                    alt="The Apartment">
+
+                <div class="card-label">
+                    The Apartment
+                </div>
+
+                <span
+                    class="card-arrow"
+                    aria-hidden="true">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- EXPLORE -->
+
+            <a
+                class="card explore-card"
+                href="In%20and%20around.pdf">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Surathkal%20Light%20House%20Beach%20and%20Boats%20Karnataka%20India.jpg"
+                    alt="Surathkal Lighthouse and Beach">
+
+                <div class="card-label">
+                    Explore
+                </div>
+
+                <span
+                    class="card-arrow"
+                    aria-hidden="true">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- GALLERY -->
+
+            <a
+                class="card"
+                href="gallery.html">
+
+                <img
+                    src="gallery.jpg"
+                    alt="Gallery">
+
+                <div class="card-label">
+                    Gallery
+                </div>
+
+                <span
+                    class="card-arrow"
+                    aria-hidden="true">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- =================================================
+                 HANDWRITTEN CLOSING
+                 ================================================= -->
+
+            <div class="signature">
+                See you by the Sea
+            </div>
+
+        </section>
+
     </div>
 
-    <div class="grass right">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+
+    <!-- =====================================================
+         BOTTOM BEACH DETAIL
+         ===================================================== -->
+
+    <div class="bottom-beach">
+
+
+        <!-- beach grass -->
+
+        <div class="grass left">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="grass right">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <!-- shells -->
+
+        <div class="shell-large"></div>
+
+        <div class="shell-small shell-one"></div>
+
+        <div class="shell-small shell-two"></div>
+
+
+        <!-- granular sand patches -->
+
+        <div class="sand-dump sand-one"></div>
+
+        <div class="sand-dump sand-two"></div>
+
+        <div class="sand-dump sand-three"></div>
+
     </div>
-
-    <div class="shell-large"></div>
-
-    <div class="shell-small shell-one"></div>
-
-    <div class="shell-small shell-two"></div>
-
-</div>
 
 </main>
 
