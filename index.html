@@ -4,1078 +4,412 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>303 Oyster Bay</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<title>303 Oyster Bay — Guest Guide</title>
 
 <style>
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html,
-body{
-    width:100%;
-    min-height:100%;
-}
-
-body{
-    overflow-x:hidden;
-
-    background:
-        linear-gradient(
-            rgba(222,198,158,.10),
-            rgba(222,198,158,.10)
-        ),
-        url("sand-background.jpg
-        ?v=20260915");
-
-    background-size:cover;
-    background-position:center top;
-    background-attachment:fixed;
-
-    color:#573314;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-}
-
-
-/* =========================================================
-   PAGE
-   ========================================================= */
-
-.page{
-    width:min(1200px,100%);
-    min-height:0;
-    margin:0 auto;
-
-    padding:
-        24px
-        clamp(18px,4vw,48px)
-        0;
-}
-
-
-/* =========================================================
-   TOP BRANDING
-   ========================================================= */
-
-.top{
-    position:relative;
-    z-index:2;
-    text-align:center;
-}
-
-.guest-favourite{
-    display:block;
-
-    width:clamp(100px,11vw,140px);
-    height:auto;
-
-    margin:0 auto 5px;
-
-    object-fit:contain;
-}
-
-.logo{
-    display:block;
-
-    width:clamp(235px,31vw,360px);
-    max-width:82vw;
-    height:auto;
-
-    margin:0 auto;
-
-    object-fit:contain;
-}
-
-.tagline{
-    margin-top:4px;
-
-    font-size:clamp(13px,1.5vw,18px);
-    line-height:1.25;
-
-    font-style:italic;
-
-    color:#67431f;
-}
-
-
-/* =========================================================
-   FOUR MAIN CARDS
-   ========================================================= */
-
-.cards{
-    position:relative;
-    z-index:2;
-
-    width:100%;
-    max-width:1040px;
-
-    margin:26px auto 0;
-
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:18px;
-}
-
-.card{
-    display:block;
-
-    overflow:hidden;
-
-    text-decoration:none;
-
-    color:#573314;
-
-    background:#f7ead5;
-
-    border-radius:9px;
-
-    box-shadow:
-        0 5px 14px rgba(73,45,20,.19),
-        0 1px 2px rgba(73,45,20,.14);
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-}
-
-.card:hover{
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 8px 18px rgba(73,45,20,.23),
-        0 2px 3px rgba(73,45,20,.15);
-}
-
-
-/* =========================================================
-   CARD IMAGES
-   ========================================================= */
-
-.card-image{
-    display:block;
-
-    width:100%;
-
-    height:clamp(205px,20vw,285px);
-
-    object-fit:cover;
-}
-
-.card-explore .card-image{
-    object-position:center center;
-}
-
-.card-gallery .card-image{
-    object-position:center center;
-}
-
-
-/* =========================================================
-   CARD CAPTION
-   ========================================================= */
-
-.card-caption{
-    min-height:52px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:
-        9px 15px 9px 18px;
-
-    background:#f8ecd8;
-
-    border-top:
-        1px solid rgba(110,72,36,.10);
-}
-
-.card-title{
-    font-size:clamp(18px,2vw,25px);
-    line-height:1;
-    font-weight:normal;
-}
-
-.arrow{
-    flex:none;
-    font-size:23px;
-    line-height:1;
-}
-
-
-/* =========================================================
-   FEATURE BAND
-   ========================================================= */
-
-.features{
-    width:100%;
-    max-width:1040px;
-
-    margin:21px auto 0;
-
-    padding:14px 3px;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(5,1fr);
-
-    background:
-        rgba(249,237,215,.97);
-
-    border-radius:10px;
-
-    box-shadow:
-        0 5px 14px rgba(73,45,20,.12);
-}
-
-.feature{
-    min-width:0;
-
-    display:flex;
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:0 9px;
-
-    border-right:
-        1px solid rgba(105,70,38,.19);
-}
-
-.feature:last-child{
-    border-right:none;
-}
-
-
-/* =========================================================
-   FEATURE ICONS
-   ========================================================= */
-
-.icon{
-    width:28px;
-    height:28px;
-
-    margin-bottom:5px;
-
-    color:#684321;
-}
-
-.icon svg{
-    width:100%;
-    height:100%;
-
-    display:block;
-
-    fill:none;
-
-    stroke:currentColor;
-
-    stroke-width:1.5;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
-.feature-main{
-    font-size:clamp(11px,1.15vw,16px);
-    line-height:1.1;
-}
-
-.feature-sub{
-    margin-top:3px;
-
-    font-size:clamp(10px,1vw,13px);
-
-    line-height:1.05;
-
-    font-style:italic;
-
-    color:#795b3b;
-}
-
-
-/* =========================================================
-   BEACH END SECTION
-   ========================================================= */
-
-.bottom{
-    position:relative;
-
-    width:100%;
-
-    height:150px;
-
-    margin-top:2px;
-
-    overflow:hidden;
-
-    /*
-       The bottom remains the same beach texture.
-       It does NOT introduce another artwork/page.
-    */
-}
-
-
-/* =========================================================
-   DEEPLY ENGRAVED "SEE YOU BY THE SEA"
-   ========================================================= */
-
-.signature{
-    position:absolute;
-
-    z-index:5;
-
-    left:50%;
-    top:8px;
-
-    transform:
-        translateX(-50%)
-        rotate(-5deg);
-
-    width:max-content;
-    max-width:96%;
-
-    white-space:nowrap;
-
-    font-family:
-        "Kalam",
-        "Caveat",
-        cursive;
-
-    font-size:
-        clamp(42px,6vw,72px);
-
-    font-weight:700;
-
-    line-height:.92;
-
-    letter-spacing:-1.5px;
-
-    /*
-       Deep brown base — deliberately much darker
-       than the previous version.
-    */
-
-    color:#71451f;
-
-    /*
-       This creates the actual carved effect:
-
-       dark lower/right wall
-       lighter upper/left sand lip
-       dark inner shadow
-       soft surrounding depression
-    */
-
-    text-shadow:
-
-        /* bright raised sand edge */
-        -1px -1px 0 rgba(249,226,187,.72),
-
-        -2px -2px 1px rgba(244,219,178,.42),
-
-        /* deep carved wall */
-        2px 3px 0 rgba(91,51,21,.52),
-
-        3px 4px 3px rgba(83,47,20,.38),
-
-        /* inner depression */
-        0 1px 5px rgba(74,42,18,.45),
-
-        /* surrounding sand shadow */
-        0 4px 8px rgba(82,49,22,.18);
-}
-
-
-/*
-   Additional soft depression immediately around
-   the handwriting. This is NOT an underline.
-*/
-
-.signature::before{
-    content:"";
-
-    position:absolute;
-
-    z-index:-1;
-
-    left:-2%;
-    right:-2%;
-
-    top:7%;
-    bottom:2%;
-
-    border-radius:45%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(91,54,25,.14) 0%,
-            rgba(91,54,25,.08) 45%,
-            transparent 72%
-        );
-
-    filter:blur(5px);
-
-    transform:rotate(1deg);
-
-    opacity:.72;
-}
-
-
-/* =========================================================
-   NATURAL BEACH FOREGROUND
-   ========================================================= */
-
-/*
-   These are subtle shell / pebble shapes integrated into
-   the beach rather than decorative cartoon objects.
-*/
-
-.beach-foreground{
-    position:absolute;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:70px;
-
-    z-index:3;
-
-    pointer-events:none;
-
-    background:
-        radial-gradient(
-            ellipse at 4% 85%,
-            rgba(239,222,190,.95) 0 8px,
-            rgba(183,141,92,.38) 9px 11px,
-            transparent 12px
-        ),
-
-        radial-gradient(
-            ellipse at 8% 96%,
-            rgba(247,231,198,.98) 0 13px,
-            rgba(137,96,53,.35) 14px 16px,
-            transparent 17px
-        ),
-
-        radial-gradient(
-            ellipse at 13% 90%,
-            rgba(228,207,169,.95) 0 5px,
-            rgba(119,81,42,.35) 6px 8px,
-            transparent 9px
-        ),
-
-        radial-gradient(
-            ellipse at 87% 93%,
-            rgba(246,226,187,.98) 0 15px,
-            rgba(136,91,46,.36) 16px 18px,
-            transparent 19px
-        ),
-
-        radial-gradient(
-            ellipse at 92% 82%,
-            rgba(231,210,174,.96) 0 7px,
-            rgba(124,82,43,.34) 8px 10px,
-            transparent 11px
-        ),
-
-        radial-gradient(
-            ellipse at 76% 98%,
-            rgba(247,230,193,.95) 0 5px,
-            rgba(128,87,46,.32) 6px 8px,
-            transparent 9px
-        );
-
-    opacity:.82;
-}
-
-
-/*
-   Very fine wet-sand highlights at the bottom.
-*/
-
-.beach-foreground::before{
-    content:"";
-
-    position:absolute;
-
-    left:-3%;
-    right:-3%;
-    bottom:2px;
-
-    height:25px;
-
-    background:
-        repeating-linear-gradient(
-            168deg,
-            transparent 0 13px,
-            rgba(255,245,220,.20) 14px 15px,
-            transparent 16px 24px
-        );
-
-    opacity:.55;
-
-    transform:skewX(-5deg);
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media(max-width:850px){
-
-    .page{
-        padding:
-            20px 26px 0;
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    * {
+        box-sizing: border-box;
     }
 
-    .guest-favourite{
-        width:115px;
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
     }
 
-    .logo{
-        width:300px;
-        max-width:72vw;
+    body {
+        background: #d8ad73;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
-    .cards{
-        margin-top:22px;
-        gap:14px;
-    }
 
-    .card-image{
-        height:220px;
-    }
+    /* =========================================================
+       PAGE
+       ========================================================= */
 
-    .features{
-        margin-top:17px;
-        padding:13px 2px;
-    }
+    .home-page {
+        width: 100%;
+        height: 100svh;
+        min-height: 100svh;
 
-    .feature{
-        padding:0 5px;
-    }
+        margin: 0 auto;
 
-    .icon{
-        width:25px;
-        height:25px;
-    }
-
-    .bottom{
-        height:130px;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media(max-width:600px){
-
-    body{
-        background-attachment:scroll;
-    }
-
-    .page{
-        padding:
-            16px 14px 0;
-    }
-
-    .guest-favourite{
-        width:94px;
-        margin-bottom:3px;
-    }
-
-    .logo{
-        width:235px;
-        max-width:78vw;
-    }
-
-    .tagline{
-        margin-top:2px;
-        font-size:12px;
-    }
-
-    .cards{
-        margin-top:18px;
-        gap:10px;
-    }
-
-    .card{
-        border-radius:7px;
-    }
-
-    .card-image{
-        height:145px;
-    }
-
-    .card-caption{
-        min-height:42px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         padding:
-            7px 9px 7px 11px;
-    }
+            clamp(12px, 2.2vh, 28px)
+            clamp(14px, 4vw, 55px)
+            clamp(12px, 2vh, 22px);
 
-    .card-title{
-        font-size:15px;
-    }
+        background-image: url("sand-background.jpg");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
 
-    .arrow{
-        font-size:18px;
-    }
-
-
-    /* FEATURE BAND — unchanged */
-
-    .features{
-        margin-top:13px;
-
-        padding:9px 0;
-
-        border-radius:7px;
-    }
-
-    .feature{
-        padding:0 3px;
-    }
-
-    .icon{
-        width:20px;
-        height:20px;
-
-        margin-bottom:3px;
-    }
-
-    .feature-main{
-        font-size:9.5px;
-        line-height:1.05;
-    }
-
-    .feature-sub{
-        font-size:8px;
-        margin-top:2px;
+        overflow: hidden;
     }
 
 
-    /* ONLY THE CLOSING AREA */
+    /* =========================================================
+       GUEST FAVOURITE
+       ========================================================= */
 
-    .bottom{
-        height:105px;
+    .guest-favourite {
+        display: block;
 
-        margin-top:1px;
+        width:
+            clamp(90px, 9vw, 125px);
+
+        height: auto;
+
+        margin:
+            0 auto
+            clamp(5px, 0.8vh, 10px);
     }
 
-    .signature{
-        top:8px;
 
-        font-size:43px;
+    /* =========================================================
+       PROPERTY LOGO
+       ========================================================= */
 
-        letter-spacing:-1.3px;
+    .brand {
+        width: 100%;
 
-        transform:
-            translateX(-50%)
-            rotate(-5deg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        flex-shrink: 0;
     }
 
-    .beach-foreground{
-        height:48px;
-    }
-}
+    .brand-logo {
+        display: block;
 
+        width:
+            clamp(190px, 29vw, 330px);
 
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
+        max-width: 58%;
 
-@media(max-width:380px){
-
-    .page{
-        padding-left:10px;
-        padding-right:10px;
+        height: auto;
     }
 
-    .guest-favourite{
-        width:88px;
+    .tagline {
+        margin:
+            clamp(2px, 0.4vh, 5px)
+            0
+            clamp(7px, 1.1vh, 13px);
+
+        color: #684827;
+
+        font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+        font-size:
+            clamp(12px, 1.45vw, 19px);
+
+        font-style: italic;
+
+        line-height: 1.15;
+
+        text-align: center;
     }
 
-    .logo{
-        width:220px;
+
+    /* =========================================================
+       DIVIDER
+       ========================================================= */
+
+    .divider {
+        width: 100%;
+        max-width: 1080px;
+
+        height: 1px;
+
+        margin:
+            0 0
+            clamp(8px, 1.2vh, 15px);
+
+        background:
+            rgba(104, 72, 39, 0.38);
+
+        flex-shrink: 0;
     }
 
-    .cards{
-        gap:8px;
+
+    /* =========================================================
+       PHOTO GRID
+       ========================================================= */
+
+    .card-grid {
+        width: 100%;
+        max-width: 1080px;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap:
+            clamp(8px, 1.25vw, 16px);
+
+        flex: 1 1 auto;
+
+        min-height: 0;
     }
 
-    .card-image{
-        height:130px;
+
+    /* =========================================================
+       CARDS
+       ========================================================= */
+
+    .stay-card {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+
+        min-width: 0;
+        min-height: 0;
+
+        text-decoration: none;
+
+        overflow: hidden;
+
+        border-radius:
+            clamp(12px, 1.6vw, 22px);
+
+        background: #f6ead4;
+
+        box-shadow:
+            0 5px 16px rgba(70, 40, 15, 0.18);
+
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease;
     }
 
-    .card-caption{
-        min-height:39px;
+    .stay-card:hover {
+        transform: translateY(-2px);
 
-        padding-left:8px;
-        padding-right:7px;
+        box-shadow:
+            0 8px 22px rgba(70, 40, 15, 0.24);
     }
 
-    .card-title{
-        font-size:13px;
+
+    /* =========================================================
+       CARD IMAGE
+       ========================================================= */
+
+    .card-image {
+        width: 100%;
+
+        flex: 1 1 auto;
+
+        min-height: 0;
+
+        object-fit: cover;
+
+        display: block;
     }
 
-    .arrow{
-        font-size:16px;
+
+    /* =========================================================
+       CARD CAPTION
+       ========================================================= */
+
+    .card-caption {
+        flex-shrink: 0;
+
+        min-height:
+            clamp(34px, 4.4vh, 55px);
+
+        padding:
+            0
+            clamp(11px, 1.8vw, 22px);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background:
+            rgba(248, 238, 217, 0.96);
+
+        color: #684827;
     }
 
-    .feature-main{
-        font-size:8.5px;
+    .card-title {
+        font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+        font-size:
+            clamp(14px, 1.7vw, 22px);
+
+        line-height: 1;
+
+        font-weight: 600;
     }
 
-    .feature-sub{
-        font-size:7.3px;
+    .card-arrow {
+        font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+        font-size:
+            clamp(18px, 2vw, 27px);
+
+        line-height: 1;
+
+        margin-left: 8px;
     }
 
-    .bottom{
-        height:96px;
+
+    /* =========================================================
+       FEATURES BAND
+       ========================================================= */
+
+    .features-band {
+        width: 100%;
+        max-width: 1080px;
+
+        flex-shrink: 0;
+
+        margin-top:
+            clamp(8px, 1.3vh, 15px);
+
+        padding:
+            clamp(7px, 1.1vh, 13px)
+            0;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr));
+
+        background:
+            rgba(247, 232, 204, 0.90);
+
+        border:
+            1px solid rgba(255,255,255,0.45);
+
+        border-radius:
+            clamp(11px, 1.4vw, 18px);
+
+        box-shadow:
+            0 4px 14px rgba(70, 40, 15, 0.10);
     }
 
-    .signature{
-        font-size:36px;
+
+    /* =========================================================
+       FEATURE
+       ========================================================= */
+
+    .feature {
+        min-width: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding:
+            0
+            clamp(5px, 0.8vw, 12px);
+
+        text-align: center;
     }
 
-    .beach-foreground{
-        height:43px;
+    .feature + .feature {
+        border-left:
+            1px solid rgba(104, 72, 39, 0.25);
     }
-}
 
-</style>
-</head>
 
+    /* =========================================================
+       FEATURE ICONS
+       ========================================================= */
 
-<body>
+    .feature-icon {
+        width:
+            clamp(22px, 2.6vw, 34px);
 
-<div class="page">
+        height:
+            clamp(22px, 2.6vw, 34px);
 
+        margin-bottom:
+            clamp(2px, 0.4vh, 5px);
 
-    <!-- =====================================================
-         TOP BRANDING
-         ===================================================== -->
+        fill: none;
 
-    <header class="top">
+        stroke: #684827;
 
-        <img
-            class="guest-favourite"
-            src="guest-favourite.png?v=20260915"
-            alt="Airbnb Guest Favourite">
+        stroke-width: 2;
 
-        <img
-            class="logo"
-            src="logo.png?v=20260915"
-            alt="303 Oyster Bay">
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
 
-        <div class="tagline">
-            Where the sea slows you down.
-        </div>
 
-    </header>
+    /* =========================================================
+       FEATURE TEXT
+       ========================================================= */
 
+    .feature-title {
+        color: #684827;
 
-    <!-- =====================================================
-         FOUR MAIN CARDS
-         ===================================================== -->
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
 
-    <main class="cards">
+        font-size:
+            clamp(8px, 1vw, 13px);
 
+        font-weight: 700;
 
-        <a
-            class="card"
-            href="your-stay.html"
-        >
+        letter-spacing:
+            clamp(0.3px, 0.08vw, 1px);
 
-            <img
-                class="card-image"
-                src="your-stay.PNG?v=20260915"
-                alt="Your Stay"
-            >
+        line-height: 1.12;
+    }
 
-            <div class="card-caption">
+    .feature-subtitle {
+        margin-top: 2px;
 
-                <span class="card-title">
-                    Your Stay
-                </span>
+        color: #7b6247;
 
-                <span class="arrow">
-                    →
-                </span>
+        font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
 
-            </div>
+        font-size:
+            clamp(7px, 0.85vw, 11px);
 
-        </a>
+        font-style: italic;
 
+        line-height: 1.05;
+    }
 
-        <a
-            class="card"
-            href="the-apartment.html"
-        >
 
-            <img
-                class="card-image"
-                src="apartment.jpg?v=20260915"
-                alt="The Apartment"
-            >
+    /* =========================================================
+       MEDIUM / SHORT DESKTOP SCREENS
+       ========================================================= */
 
-            <div class="card-caption">
+    @media (max-height: 760px) and (min-width: 601px) {
 
-                <span class="card-title">
-                    The Apartment
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <a
-            class="card card-explore"
-            href="in-and-around.html"
-        >
-
-            <img
-                class="card-image"
-                src="Lighthouse.jpg?v=20260915"
-                alt="Surathkal Lighthouse"
-            >
-
-            <div class="card-caption">
-
-                <span class="card-title">
-                    Explore
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <a
-            class="card card-gallery"
-            href="gallery.html"
-        >
-
-            <img
-                class="card-image"
-                src="gallery.jpg?v=20260915"
-                alt="303 Oyster Bay Gallery"
-            >
-
-            <div class="card-caption">
-
-                <span class="card-title">
-                    Gallery
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </a>
-
-
-    </main>
-
-
-    <!-- =====================================================
-         FEATURE BAND
-         ===================================================== -->
-
-    <section class="features">
-
-
-        <div class="feature">
-
-            <div class="icon">
-
-                <svg viewBox="0 0 32 32">
-
-                    <path d="M4 22v-7h24v7"/>
-                    <path d="M4 19h24"/>
-                    <path d="M7 15v-4h7a3 3 0 0 1 3 3v1"/>
-                    <path d="M4 25v-3"/>
-                    <path d="M28 25v-3"/>
-
-                </svg>
-
-            </div>
-
-            <div class="feature-main">
-                2 Bedrooms
-            </div>
-
-            <div class="feature-sub">
-                Sleeps 4 + 1
-            </div>
-
-        </div>
-
-
-        <div class="feature">
-
-            <div class="icon">
-
-                <svg viewBox="0 0 32 32">
-
-                    <path
-                        d="M3 12c4 0 4 4 8 4s4-4 8-4 4 4 10 4"
-                    />
-
-                    <path
-                        d="M3 19c4 0 4 4 8 4s4-4 8-4 4 4 10 4"
-                    />
-
-                </svg>
-
-            </div>
-
-            <div class="feature-main">
-                Uninterrupted<br>
-                Sea Views
-            </div>
-
-        </div>
-
-
-        <div class="feature">
-
-            <div class="icon">
-
-                <svg viewBox="0 0 32 32">
-
-                    <rect
-                        x="5"
-                        y="6"
-                        width="22"
-                        height="20"
-                        rx="2"
-                    />
-
-                    <circle cx="11" cy="12" r="2"/>
-                    <circle cx="20" cy="12" r="2"/>
-                    <circle cx="11" cy="20" r="2"/>
-                    <circle cx="20" cy="20" r="2"/>
-
-                </svg>
-
-            </div>
-
-            <div class="feature-main">
-                Full Kitchen
-            </div>
-
-        </div>
-
-
-        <div class="feature">
-
-            <div class="icon">
-
-                <svg viewBox="0 0 32 32">
-
-                    <path d="M5 21v-7l3-7h16l3 7v7"/>
-                    <path d="M8 14h16"/>
-                    <path d="M9 21v3"/>
-                    <path d="M23 21v3"/>
-
-                    <circle cx="10" cy="19" r="1.5"/>
-                    <circle cx="22" cy="19" r="1.5"/>
-
-                </svg>
-
-            </div>
-
-            <div class="feature-main">
-                Free Parking
-            </div>
-
-        </div>
-
-
-        <div class="feature">
-
-            <div class="icon">
-
-                <svg viewBox="0 0 32 32">
-
-                    <path d="M5 12c7-6 15-6 22 0"/>
-                    <path d="M9 17c4-4 10-4 14 0"/>
-                    <path d="M13 21c2-2 4-2 6 0"/>
-
-                    <circle
-                        cx="16"
-                        cy="25"
-                        r="1"
-                    />
-
-                </svg>
-
-            </div>
-
-            <div class="feature-main">
-                High-Speed<br>
-                Wi-Fi
-            </div>
-
-        </div>
-
-
-    </section>
-
-
-    <!-- =====================================================
-         BEACH SIGN-OFF
-         ===================================================== -->
-
-    <footer class="bottom">
-
-        <div class="signature">
-            See you by the Sea
-        </div>
-
-        <div class="beach-foreground"></div>
-
-    </footer>
-
-
-</div>
-
-</body>
-</html>
+        .home-page {
+            padding
