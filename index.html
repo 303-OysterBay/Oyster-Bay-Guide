@@ -8,10 +8,6 @@
 
 <style>
 
-    /* =========================================================
-       RESET
-       ========================================================= */
-
     * {
         box-sizing: border-box;
     }
@@ -158,7 +154,8 @@
 
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
         gap:
             clamp(8px, 1.25vw, 16px);
@@ -406,10 +403,688 @@
 
 
     /* =========================================================
-       MEDIUM / SHORT DESKTOP SCREENS
+       SHORT DESKTOP SCREENS
        ========================================================= */
 
     @media (max-height: 760px) and (min-width: 601px) {
 
         .home-page {
-            padding
+            padding-top: 9px;
+            padding-bottom: 9px;
+        }
+
+        .guest-favourite {
+            width: 82px;
+            margin-bottom: 3px;
+        }
+
+        .brand-logo {
+            width: 225px;
+        }
+
+        .tagline {
+            font-size: 12px;
+            margin-top: 1px;
+            margin-bottom: 6px;
+        }
+
+        .divider {
+            margin-bottom: 7px;
+        }
+
+        .card-grid {
+            gap: 8px;
+        }
+
+        .card-caption {
+            min-height: 32px;
+        }
+
+        .card-title {
+            font-size: 14px;
+        }
+
+        .card-arrow {
+            font-size: 18px;
+        }
+
+        .features-band {
+            margin-top: 7px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+
+        .feature-icon {
+            width: 22px;
+            height: 22px;
+            margin-bottom: 2px;
+        }
+
+        .feature-title {
+            font-size: 8px;
+        }
+
+        .feature-subtitle {
+            font-size: 7px;
+        }
+    }
+
+
+    /* =========================================================
+       TABLETS
+       ========================================================= */
+
+    @media (max-width: 700px) {
+
+        .home-page {
+            padding:
+                10px
+                12px
+                10px;
+        }
+
+        .guest-favourite {
+            width: 78px;
+            margin-bottom: 3px;
+        }
+
+        .brand-logo {
+            width: 205px;
+            max-width: 60%;
+        }
+
+        .tagline {
+            font-size: 11px;
+            margin-bottom: 6px;
+        }
+
+        .divider {
+            margin-bottom: 7px;
+        }
+
+        .card-grid {
+            gap: 7px;
+        }
+
+        .card-caption {
+            min-height: 31px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .card-title {
+            font-size: 13px;
+        }
+
+        .card-arrow {
+            font-size: 17px;
+        }
+
+        .features-band {
+            margin-top: 7px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+
+        .feature-icon {
+            width: 21px;
+            height: 21px;
+        }
+
+        .feature-title {
+            font-size: 7.5px;
+        }
+
+        .feature-subtitle {
+            font-size: 6.5px;
+        }
+    }
+
+
+    /* =========================================================
+       PHONES
+       ========================================================= */
+
+    @media (max-width: 500px) {
+
+        .home-page {
+            padding:
+                7px
+                8px
+                8px;
+        }
+
+        .guest-favourite {
+            width: 68px;
+            margin-bottom: 1px;
+        }
+
+        .brand-logo {
+            width: 175px;
+            max-width: 63%;
+        }
+
+        .tagline {
+            font-size: 10px;
+            margin-top: 1px;
+            margin-bottom: 5px;
+        }
+
+        .divider {
+            margin-bottom: 6px;
+        }
+
+        .card-grid {
+            gap: 6px;
+        }
+
+        .stay-card {
+            border-radius: 10px;
+        }
+
+        .card-caption {
+            min-height: 28px;
+            padding:
+                0
+                8px;
+        }
+
+        .card-title {
+            font-size: 11px;
+        }
+
+        .card-arrow {
+            font-size: 15px;
+        }
+
+        .features-band {
+            margin-top: 6px;
+            padding:
+                5px
+                0;
+            border-radius: 9px;
+        }
+
+        .feature {
+            padding:
+                0
+                3px;
+        }
+
+        .feature-icon {
+            width: 18px;
+            height: 18px;
+            margin-bottom: 2px;
+        }
+
+        .feature-title {
+            font-size: 6.5px;
+            letter-spacing: 0;
+        }
+
+        .feature-subtitle {
+            font-size: 5.5px;
+        }
+    }
+
+
+    /* =========================================================
+       VERY SMALL PHONES
+       ========================================================= */
+
+    @media (max-width: 380px) {
+
+        .home-page {
+            padding:
+                5px
+                6px
+                6px;
+        }
+
+        .guest-favourite {
+            width: 60px;
+        }
+
+        .brand-logo {
+            width: 155px;
+        }
+
+        .tagline {
+            font-size: 9px;
+            margin-bottom: 4px;
+        }
+
+        .divider {
+            margin-bottom: 5px;
+        }
+
+        .card-grid {
+            gap: 5px;
+        }
+
+        .card-caption {
+            min-height: 25px;
+            padding:
+                0
+                7px;
+        }
+
+        .card-title {
+            font-size: 10px;
+        }
+
+        .card-arrow {
+            font-size: 13px;
+        }
+
+        .features-band {
+            margin-top: 5px;
+            padding:
+                4px
+                0;
+        }
+
+        .feature-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .feature-title {
+            font-size: 5.8px;
+        }
+
+        .feature-subtitle {
+            display: none;
+        }
+    }
+
+
+    /* =========================================================
+       VERY SHORT PHONE SCREENS
+       ========================================================= */
+
+    @media (max-height: 620px) and (max-width: 500px) {
+
+        .guest-favourite {
+            width: 55px;
+        }
+
+        .brand-logo {
+            width: 145px;
+        }
+
+        .tagline {
+            font-size: 8px;
+            margin-bottom: 3px;
+        }
+
+        .divider {
+            margin-bottom: 4px;
+        }
+
+        .card-caption {
+            min-height: 23px;
+        }
+
+        .card-title {
+            font-size: 9px;
+        }
+
+        .card-arrow {
+            font-size: 12px;
+        }
+
+        .features-band {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+
+        .feature-icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        .feature-title {
+            font-size: 5px;
+        }
+    }
+
+</style>
+</head>
+
+
+<body>
+
+<main class="home-page">
+
+
+    <!-- =====================================================
+         GUEST FAVOURITE
+         ===================================================== -->
+
+    <img
+        class="guest-favourite"
+        src="guest-favourite.png"
+        alt="Airbnb Guest Favourite"
+    >
+
+
+    <!-- =====================================================
+         303 OYSTER BAY BRANDING
+         ===================================================== -->
+
+    <header class="brand">
+
+        <img
+            class="brand-logo"
+            src="logo.png"
+            alt="303 Oyster Bay — Surathkal · Mangaluru"
+        >
+
+        <p class="tagline">
+            Where the sea slows you down.
+        </p>
+
+    </header>
+
+
+    <!-- =====================================================
+         DIVIDER
+         ===================================================== -->
+
+    <div class="divider"></div>
+
+
+    <!-- =====================================================
+         MAIN NAVIGATION CARDS
+         ===================================================== -->
+
+    <section class="card-grid" aria-label="303 Oyster Bay">
+
+
+        <!-- YOUR STAY -->
+
+        <a
+            class="stay-card"
+            href="arrival-guide.html"
+            aria-label="Your Stay"
+        >
+
+            <img
+                class="card-image"
+                src="your-stay.PNG"
+                alt="Sea view from 303 Oyster Bay"
+            >
+
+            <div class="card-caption">
+
+                <span class="card-title">
+                    Your Stay
+                </span>
+
+                <span class="card-arrow">
+                    →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- THE APARTMENT -->
+
+        <a
+            class="stay-card"
+            href="The%20Apartment.pdf"
+            aria-label="The Apartment"
+        >
+
+            <img
+                class="card-image"
+                src="apartment.jpg"
+                alt="Living and dining area at 303 Oyster Bay"
+            >
+
+            <div class="card-caption">
+
+                <span class="card-title">
+                    The Apartment
+                </span>
+
+                <span class="card-arrow">
+                    →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- EXPLORE -->
+
+        <a
+            class="stay-card"
+            href="In%20and%20around.pdf"
+            aria-label="Explore"
+        >
+
+            <img
+                class="card-image"
+                src="Lighthouse.jpg"
+                alt="Surathkal lighthouse and coast"
+            >
+
+            <div class="card-caption">
+
+                <span class="card-title">
+                    Explore
+                </span>
+
+                <span class="card-arrow">
+                    →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- GALLERY -->
+
+        <a
+            class="stay-card"
+            href="gallery.html"
+            aria-label="Gallery"
+        >
+
+            <img
+                class="card-image"
+                src="gallery.jpg"
+                alt="303 Oyster Bay apartment"
+            >
+
+            <div class="card-caption">
+
+                <span class="card-title">
+                    Gallery
+                </span>
+
+                <span class="card-arrow">
+                    →
+                </span>
+
+            </div>
+
+        </a>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         FEATURES BAND
+         ===================================================== -->
+
+    <section
+        class="features-band"
+        aria-label="Property features"
+    >
+
+
+        <!-- 2 BEDROOMS -->
+
+        <div class="feature">
+
+            <svg
+                class="feature-icon"
+                viewBox="0 0 64 64"
+                aria-hidden="true"
+            >
+                <path d="M8 48V27h48v21"/>
+                <path d="M8 38h48"/>
+                <path d="M14 27v-7h14v7"/>
+                <path d="M8 48h48"/>
+            </svg>
+
+            <div class="feature-title">
+                2 Bedrooms
+            </div>
+
+            <div class="feature-subtitle">
+                Sleeps 4 + 1
+            </div>
+
+        </div>
+
+
+        <!-- SEA VIEWS -->
+
+        <div class="feature">
+
+            <svg
+                class="feature-icon"
+                viewBox="0 0 64 64"
+                aria-hidden="true"
+            >
+                <path d="M6 23c7-7 14-7 21 0s14 7 21 0 7-7 10-4"/>
+                <path d="M6 34c7-7 14-7 21 0s14 7 21 0 7-7 10-4"/>
+                <path d="M6 45c7-7 14-7 21 0s14 7 21 0 7-7 10-4"/>
+            </svg>
+
+            <div class="feature-title">
+                Uninterrupted<br>Sea Views
+            </div>
+
+        </div>
+
+
+        <!-- FULL KITCHEN -->
+
+        <div class="feature">
+
+            <svg
+                class="feature-icon"
+                viewBox="0 0 64 64"
+                aria-hidden="true"
+            >
+                <rect
+                    x="10"
+                    y="12"
+                    width="44"
+                    height="40"
+                    rx="3"
+                />
+
+                <circle
+                    cx="22"
+                    cy="25"
+                    r="4"
+                />
+
+                <circle
+                    cx="42"
+                    cy="25"
+                    r="4"
+                />
+
+                <circle
+                    cx="22"
+                    cy="40"
+                    r="4"
+                />
+
+                <circle
+                    cx="42"
+                    cy="40"
+                    r="4"
+                />
+            </svg>
+
+            <div class="feature-title">
+                Full Kitchen
+            </div>
+
+        </div>
+
+
+        <!-- FREE PARKING -->
+
+        <div class="feature">
+
+            <svg
+                class="feature-icon"
+                viewBox="0 0 64 64"
+                aria-hidden="true"
+            >
+                <path d="M8 42h48"/>
+                <path d="M13 42v-9l6-12h26l6 12v9"/>
+                <path d="M18 21l-3-7"/>
+                <path d="M46 21l3-7"/>
+                <circle cx="20" cy="43" r="5"/>
+                <circle cx="44" cy="43" r="5"/>
+                <path d="M23 29h18"/>
+            </svg>
+
+            <div class="feature-title">
+                Free Parking
+            </div>
+
+        </div>
+
+
+        <!-- WI-FI -->
+
+        <div class="feature">
+
+            <svg
+                class="feature-icon"
+                viewBox="0 0 64 64"
+                aria-hidden="true"
+            >
+                <path d="M8 25c14-13 34-13 48 0"/>
+                <path d="M17 35c9-8 21-8 30 0"/>
+                <path d="M26 45c4-4 8-4 12 0"/>
+
+                <circle
+                    cx="32"
+                    cy="53"
+                    r="2"
+                    fill="#684827"
+                    stroke="none"
+                />
+            </svg>
+
+            <div class="feature-title">
+                High-Speed<br>Wi-Fi
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+</body>
+</html>
