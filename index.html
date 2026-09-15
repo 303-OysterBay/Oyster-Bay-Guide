@@ -3,18 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>303 Oyster Bay</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 <style>
+
 *{
   box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
   margin:0;
   padding:0;
   min-height:100%;
@@ -26,113 +30,191 @@ body{
   font-family:"Cormorant Garamond",serif;
 }
 
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
 .page{
   width:100%;
   min-height:100vh;
-  padding:17px 10px 18px;
+
+  padding:
+    18px
+    10px
+    55px;
+
   background:
-    linear-gradient(rgba(215,172,118,.04),rgba(215,172,118,.04)),
-    url("sand-background.png") center top / cover no-repeat;
-  background-attachment:scroll;
+    linear-gradient(
+      rgba(215,172,118,.04),
+      rgba(215,172,118,.04)
+    ),
+    url("sand-background.png")
+    center top /
+    cover
+    no-repeat;
+
   overflow:hidden;
 }
 
+
 .hero{
   position:relative;
+  width:100%;
   max-width:1120px;
   margin:0 auto;
   text-align:center;
 }
 
-/* Airbnb Guest Favourite — independent of the main content */
+
+/* =========================================================
+   AIRBNB GUEST FAVOURITE
+   KEPT COMPLETELY INDEPENDENT OF THE MAIN CONTENT
+   ========================================================= */
+
 .guest-favourite-wrap{
   position:absolute;
-  top:-1px;
+
+  top:0;
   right:0;
+
   width:78px;
+
   display:flex;
-  justify-content:center;
   align-items:center;
-  z-index:10;
+  justify-content:center;
+
+  z-index:20;
 }
 
 .guest-favourite{
   display:block;
   width:100%;
   height:auto;
+
+  /* tiny optical correction only */
   transform:translateX(-2px);
 }
 
-/* Main logo — content deliberately starts lower */
+
+/* =========================================================
+   MAIN LOGO
+   CONTENT STARTS LOWER, WHILE GUEST FAVOURITE DOES NOT MOVE
+   ========================================================= */
+
 .logo{
   display:block;
+
   width:min(66vw,330px);
   height:auto;
-  margin:44px auto 0;
+
+  margin:52px auto 0;
 }
 
+
+/* =========================================================
+   TAGLINE
+   ========================================================= */
+
 .tagline{
-  margin:1px auto 13px;
+  margin:2px auto 14px;
+
   font-size:17px;
   line-height:1.05;
+
   font-style:italic;
   font-weight:500;
+
   letter-spacing:.01em;
 }
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
 
 .divider{
   width:100%;
   height:1px;
+
   background:rgba(75,47,27,.48);
+
   margin:0 auto;
 }
 
-/* Feature strip */
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
 .amenities{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+
+  grid-template-columns:
+    repeat(5,minmax(0,1fr));
+
+  width:100%;
   max-width:1000px;
+
   margin:0 auto;
-  padding:8px 0 9px;
+
+  padding:9px 0 10px;
 }
 
 .amenity{
   min-width:0;
+
   padding:0 4px;
+
   display:flex;
   flex-direction:column;
+
   align-items:center;
   justify-content:flex-start;
+
   position:relative;
 }
 
 .amenity:not(:last-child)::after{
   content:"";
+
   position:absolute;
+
   right:0;
   top:1px;
+
   width:1px;
   height:57px;
+
   background:rgba(75,47,27,.43);
 }
 
-/* Original thin, elegant icons */
+
+/* ORIGINAL ELEGANT ICONS */
+
 .amenity-icon{
   width:22px;
   height:22px;
+
   margin-bottom:4px;
+
   color:#4b2f1b;
   stroke:#4b2f1b;
+
   stroke-width:1.65;
+
   stroke-linecap:round;
   stroke-linejoin:round;
 }
 
 .amenity-title{
   color:#4b2f1b;
+
   font-size:13px;
   line-height:.98;
+
   font-weight:500;
+
   letter-spacing:-.01em;
 }
 
@@ -142,95 +224,185 @@ body{
 
 .amenity-subtitle{
   margin-top:1px;
+
   color:#4b2f1b;
+
   font-size:11.5px;
   line-height:1;
+
   font-style:italic;
   font-weight:400;
 }
 
-/* Four cards */
+
+/* =========================================================
+   CARD AREA
+   IMPORTANT:
+   position:relative allows the signature to be positioned
+   against this area without affecting the grid.
+   ========================================================= */
+
 .cards{
+  position:relative;
+
   width:100%;
   max-width:1120px;
-  margin:8px auto 0;
+
+  margin:9px auto 0;
+
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
   gap:9px;
 }
 
+
+/* =========================================================
+   INDIVIDUAL CARD
+   ========================================================= */
+
 .card{
   display:block;
-  text-decoration:none;
-  color:#4b2f1b;
-  background:#f7eee2;
-  border-radius:2px;
-  overflow:hidden;
-  box-shadow:0 4px 13px rgba(55,30,12,.22);
+
   position:relative;
+
+  width:100%;
+
   aspect-ratio:4 / 3;
+
+  overflow:hidden;
+
+  border-radius:2px;
+
+  background:#f7eee2;
+
+  color:#4b2f1b;
+
+  text-decoration:none;
+
+  box-shadow:
+    0 4px 13px
+    rgba(55,30,12,.22);
 }
 
 .card img{
+  display:block;
+
   width:100%;
   height:100%;
+
   object-fit:cover;
-  display:block;
 }
 
-/* White caption strip */
+
+/* =========================================================
+   CARD LABEL
+   ========================================================= */
+
 .card-label{
   position:absolute;
+
   left:0;
   right:0;
   bottom:0;
+
   min-height:31px;
-  padding:5px 35px 5px 7px;
+
+  padding:
+    5px
+    38px
+    5px
+    7px;
+
   background:rgba(250,243,234,.94);
+
   display:flex;
+
   align-items:center;
   justify-content:center;
+
   font-size:17px;
+
   line-height:1;
+
   font-weight:500;
+
   text-align:center;
+
+  z-index:3;
 }
 
-/* Arrow is anchored INSIDE its own caption strip */
+
+/* =========================================================
+   ARROW
+   ANCHORED TO THE CARD ITSELF
+   ========================================================= */
+
 .card-arrow{
   position:absolute;
+
   right:9px;
   bottom:6px;
-  z-index:3;
+
+  z-index:6;
+
   font-family:Arial,sans-serif;
+
   font-size:17px;
   line-height:19px;
+
   font-weight:300;
+
   color:#4b2f1b;
 }
 
-/*
-  HANDWRITTEN SIGNATURE
 
-  It is a separate visual element.
-  It does not form part of the card grid.
-  The negative margin allows it to overlap the lower
-  centre of Explore/Gallery without changing their size.
-*/
+/* =========================================================
+   HANDWRITTEN SIGNATURE
+
+   CRITICAL:
+   This is absolutely positioned against .cards.
+
+   It therefore CANNOT:
+   - shrink the cards
+   - move the cards
+   - push Gallery away
+   - change the grid height
+   ========================================================= */
+
 .signature{
-  position:relative;
+  position:absolute;
+
   z-index:8;
-  width:max-content;
-  max-width:88%;
-  margin:-17px auto 0;
-  text-align:center;
-  font-family:"Allura",cursive;
-  font-size:27px;
-  line-height:1;
-  color:#4b2f1b;
-  white-space:nowrap;
-  transform:rotate(-10deg);
+
+  left:50%;
+
+  width:78%;
+
+  bottom:-34px;
+
+  transform:
+    translateX(-50%)
+    rotate(-10deg);
+
   transform-origin:center center;
+
+  font-family:"Allura",cursive;
+
+  font-size:28px;
+
+  line-height:1;
+
+  font-weight:400;
+
+  color:#4b2f1b;
+
+  white-space:nowrap;
+
+  text-align:center;
+
   pointer-events:none;
 }
 
@@ -242,11 +414,16 @@ body{
 @media (min-width:701px){
 
   .page{
-    padding:22px 4vw 30px;
+    padding:
+      28px
+      4vw
+      70px;
   }
 
   .guest-favourite-wrap{
-    top:-3px;
+    top:0;
+    right:0;
+
     width:clamp(82px,11vw,118px);
   }
 
@@ -256,16 +433,23 @@ body{
 
   .logo{
     width:min(64vw,390px);
-    margin:44px auto 0;
+
+    margin:56px auto 0;
   }
 
   .tagline{
-    font-size:clamp(17px,2.15vw,23px);
-    margin:3px auto 18px;
+    margin:
+      3px auto
+      18px;
+
+    font-size:
+      clamp(17px,2.15vw,23px);
   }
 
   .amenities{
-    padding:11px 0 12px;
+    padding:
+      11px 0
+      12px;
   }
 
   .amenity{
@@ -280,48 +464,238 @@ body{
   .amenity-icon{
     width:27px;
     height:27px;
+
     margin-bottom:5px;
   }
 
   .amenity-title{
-    font-size:clamp(14px,1.75vw,19px);
+    font-size:
+      clamp(14px,1.75vw,19px);
   }
 
   .amenity.compound .amenity-title{
-    font-size:clamp(13px,1.65vw,18px);
+    font-size:
+      clamp(13px,1.65vw,18px);
   }
 
   .amenity-subtitle{
-    font-size:clamp(12px,1.5vw,16px);
+    font-size:
+      clamp(12px,1.5vw,16px);
   }
 
   .cards{
-    margin-top:8px;
+    margin-top:9px;
     gap:16px;
   }
 
   .card-label{
     min-height:39px;
-    padding:6px 42px 6px 12px;
-    font-size:clamp(17px,2.2vw,25px);
+
+    padding:
+      6px
+      46px
+      6px
+      12px;
+
+    font-size:
+      clamp(17px,2.2vw,25px);
   }
 
   .card-arrow{
     right:13px;
     bottom:10px;
+
     font-size:21px;
     line-height:22px;
   }
 
   .signature{
-    margin:-24px auto 0;
-    font-size:clamp(30px,3.3vw,42px);
-    transform:rotate(-10deg);
+    width:72%;
+
+    bottom:-47px;
+
+    font-size:
+      clamp(30px,3.4vw,43px);
+
+    transform:
+      translateX(-50%)
+      rotate(-10deg);
   }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:700px){
+
+  .page{
+    padding:
+      18px
+      10px
+      60px;
+  }
+
+  /*
+    Badge stays at the very top-right.
+    It does NOT move down with the logo.
+  */
+
+  .guest-favourite-wrap{
+    top:0;
+    right:0;
+
+    width:78px;
+  }
+
+  .guest-favourite{
+    transform:translateX(-2px);
+  }
+
+
+  /*
+    Extra breathing space is created here only.
+    This moves the logo/content down WITHOUT moving
+    the Guest Favourite badge.
+  */
+
+  .logo{
+    width:min(66vw,330px);
+
+    margin:52px auto 0;
+  }
+
+
+  .tagline{
+    margin:
+      2px auto
+      14px;
+
+    font-size:17px;
+  }
+
+
+  .amenities{
+    padding:
+      9px 0
+      10px;
+  }
+
+
+  .amenity{
+    padding:
+      0 4px;
+  }
+
+
+  .amenity:not(:last-child)::after{
+    height:57px;
+    top:1px;
+  }
+
+
+  /* Thin elegant icons retained */
+  .amenity-icon{
+    width:22px;
+    height:22px;
+
+    margin-bottom:4px;
+
+    stroke-width:1.65;
+  }
+
+
+  .amenity-title{
+    font-size:13px;
+    line-height:.98;
+  }
+
+  .amenity.compound .amenity-title{
+    font-size:12.5px;
+  }
+
+  .amenity-subtitle{
+    font-size:11.5px;
+  }
+
+
+  /*
+    Fixed two-column grid.
+    Nothing below is allowed to affect its dimensions.
+  */
+
+  .cards{
+    margin-top:9px;
+
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+
+    gap:9px;
+  }
+
+
+  .card{
+    aspect-ratio:4 / 3;
+  }
+
+
+  .card-label{
+    min-height:31px;
+
+    padding:
+      5px
+      38px
+      5px
+      7px;
+
+    font-size:17px;
+  }
+
+
+  /*
+    Each arrow remains physically attached
+    to its own card.
+  */
+
+  .card-arrow{
+    right:9px;
+    bottom:6px;
+
+    font-size:17px;
+    line-height:19px;
+  }
+
+
+  /*
+    SIGNATURE
+
+    It is now a true handwritten overlay.
+    It rises from lower-left toward upper-right.
+
+    Because it is absolutely positioned against
+    .cards, it cannot alter Gallery or Explore.
+  */
+
+  .signature{
+    left:50%;
+
+    width:78%;
+
+    bottom:-30px;
+
+    font-size:25px;
+
+    transform:
+      translateX(-50%)
+      rotate(-10deg);
+  }
+
 }
 
 </style>
 </head>
+
 
 <body>
 
@@ -329,23 +703,35 @@ body{
 
   <div class="hero">
 
-    <!-- Airbnb Guest Favourite -->
+
+    <!-- =====================================================
+         AIRBNB GUEST FAVOURITE
+         ===================================================== -->
+
     <div class="guest-favourite-wrap">
+
       <img
         class="guest-favourite"
         src="guest-favourite.png"
         alt="Airbnb Guest Favourite">
+
     </div>
 
 
-    <!-- 303 Oyster Bay -->
+    <!-- =====================================================
+         MAIN LOGO
+         ===================================================== -->
+
     <img
       class="logo"
       src="logo.png"
       alt="303 Oyster Bay">
 
 
-    <!-- Tagline -->
+    <!-- =====================================================
+         TAGLINE
+         ===================================================== -->
+
     <div class="tagline">
       Where the sea slows you down.
     </div>
@@ -354,17 +740,28 @@ body{
     <div class="divider"></div>
 
 
-    <!-- Apartment Features -->
-    <section class="amenities" aria-label="Apartment features">
+    <!-- =====================================================
+         FEATURES
+         ===================================================== -->
+
+    <section
+      class="amenities"
+      aria-label="Apartment features">
 
 
       <!-- 2 Bedrooms -->
+
       <div class="amenity">
 
-        <svg class="amenity-icon" viewBox="0 0 48 48" aria-hidden="true">
+        <svg
+          class="amenity-icon"
+          viewBox="0 0 48 48"
+          aria-hidden="true">
+
           <path d="M6 31V18h24c7 0 12 4 12 10v3H6Z"/>
           <path d="M6 31v8M42 31v8M6 35h36"/>
           <path d="M9 18v-5h13v5"/>
+
         </svg>
 
         <div class="amenity-title">
@@ -379,30 +776,64 @@ body{
 
 
       <!-- Uninterrupted Sea Views -->
+
       <div class="amenity compound">
 
-        <svg class="amenity-icon" viewBox="0 0 48 48" aria-hidden="true">
+        <svg
+          class="amenity-icon"
+          viewBox="0 0 48 48"
+          aria-hidden="true">
+
           <path d="M4 16c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
           <path d="M4 24c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
           <path d="M4 32c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4 4-4 8-4"/>
+
         </svg>
 
         <div class="amenity-title">
-          Uninterrupted<br>Sea Views
+          Uninterrupted<br>
+          Sea Views
         </div>
 
       </div>
 
 
       <!-- Full Kitchen -->
+
       <div class="amenity compound">
 
-        <svg class="amenity-icon" viewBox="0 0 48 48" aria-hidden="true">
-          <rect x="7" y="7" width="34" height="34" rx="3"/>
-          <circle cx="17" cy="17" r="5"/>
-          <circle cx="31" cy="17" r="5"/>
-          <circle cx="17" cy="31" r="5"/>
-          <circle cx="31" cy="31" r="5"/>
+        <svg
+          class="amenity-icon"
+          viewBox="0 0 48 48"
+          aria-hidden="true">
+
+          <rect
+            x="7"
+            y="7"
+            width="34"
+            height="34"
+            rx="3"/>
+
+          <circle
+            cx="17"
+            cy="17"
+            r="5"/>
+
+          <circle
+            cx="31"
+            cy="17"
+            r="5"/>
+
+          <circle
+            cx="17"
+            cy="31"
+            r="5"/>
+
+          <circle
+            cx="31"
+            cy="31"
+            r="5"/>
+
         </svg>
 
         <div class="amenity-title">
@@ -413,15 +844,30 @@ body{
 
 
       <!-- Free Parking -->
+
       <div class="amenity compound">
 
-        <svg class="amenity-icon" viewBox="0 0 56 48" aria-hidden="true">
+        <svg
+          class="amenity-icon"
+          viewBox="0 0 56 48"
+          aria-hidden="true">
+
           <path d="M8 31h40"/>
           <path d="M11 31v-7l7-8h21l9 8v7"/>
           <path d="M18 16l5-6h13l7 6"/>
-          <circle cx="17" cy="34" r="5"/>
-          <circle cx="41" cy="34" r="5"/>
+
+          <circle
+            cx="17"
+            cy="34"
+            r="5"/>
+
+          <circle
+            cx="41"
+            cy="34"
+            r="5"/>
+
           <path d="M8 31h-2M48 31h2"/>
+
         </svg>
 
         <div class="amenity-title">
@@ -432,17 +878,30 @@ body{
 
 
       <!-- High-Speed Wi-Fi -->
+
       <div class="amenity compound">
 
-        <svg class="amenity-icon" viewBox="0 0 48 48" aria-hidden="true">
+        <svg
+          class="amenity-icon"
+          viewBox="0 0 48 48"
+          aria-hidden="true">
+
           <path d="M14 30a5 5 0 0 1 7 0"/>
           <path d="M9 25a12 12 0 0 1 17 0"/>
           <path d="M4 20a19 19 0 0 1 27 0"/>
-          <circle cx="24" cy="34" r="2.2" fill="currentColor" stroke="none"/>
+
+          <circle
+            cx="24"
+            cy="34"
+            r="2.2"
+            fill="currentColor"
+            stroke="none"/>
+
         </svg>
 
         <div class="amenity-title">
-          High-Speed<br>Wi-Fi
+          High-Speed<br>
+          Wi-Fi
         </div>
 
       </div>
@@ -453,12 +912,20 @@ body{
     <div class="divider"></div>
 
 
-    <!-- Four Navigation Cards -->
-    <section class="cards" aria-label="Explore 303 Oyster Bay">
+    <!-- =====================================================
+         CARDS
+         ===================================================== -->
+
+    <section
+      class="cards"
+      aria-label="Explore 303 Oyster Bay">
 
 
-      <!-- Your Stay -->
-      <a class="card" href="arrival-guide.html">
+      <!-- YOUR STAY -->
+
+      <a
+        class="card"
+        href="arrival-guide.html">
 
         <img
           src="your-stay.PNG"
@@ -468,15 +935,20 @@ body{
           Your Stay
         </div>
 
-        <span class="card-arrow" aria-hidden="true">
+        <span
+          class="card-arrow"
+          aria-hidden="true">
           →
         </span>
 
       </a>
 
 
-      <!-- The Apartment -->
-      <a class="card" href="The%20Apartment.pdf">
+      <!-- THE APARTMENT -->
+
+      <a
+        class="card"
+        href="The%20Apartment.pdf">
 
         <img
           src="apartment.jpg"
@@ -486,15 +958,20 @@ body{
           The Apartment
         </div>
 
-        <span class="card-arrow" aria-hidden="true">
+        <span
+          class="card-arrow"
+          aria-hidden="true">
           →
         </span>
 
       </a>
 
 
-      <!-- Explore -->
-      <a class="card" href="In%20and%20around.pdf">
+      <!-- EXPLORE -->
+
+      <a
+        class="card"
+        href="In%20and%20around.pdf">
 
         <img
           src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Surathkal%20Light%20House%20Beach%20and%20Boats%20Karnataka%20India.jpg"
@@ -504,15 +981,20 @@ body{
           Explore
         </div>
 
-        <span class="card-arrow" aria-hidden="true">
+        <span
+          class="card-arrow"
+          aria-hidden="true">
           →
         </span>
 
       </a>
 
 
-      <!-- Gallery -->
-      <a class="card" href="gallery.html">
+      <!-- GALLERY -->
+
+      <a
+        class="card"
+        href="gallery.html">
 
         <img
           src="gallery.jpg"
@@ -522,19 +1004,25 @@ body{
           Gallery
         </div>
 
-        <span class="card-arrow" aria-hidden="true">
+        <span
+          class="card-arrow"
+          aria-hidden="true">
           →
         </span>
 
       </a>
 
+
+      <!-- =================================================
+           HANDWRITTEN SIGNATURE
+           ABSOLUTELY POSITIONED INSIDE CARD AREA
+           ================================================= -->
+
+      <div class="signature">
+        See you by the Sea
+      </div>
+
     </section>
-
-
-    <!-- Handwritten Closing -->
-    <div class="signature">
-      See you by the Sea
-    </div>
 
   </div>
 
