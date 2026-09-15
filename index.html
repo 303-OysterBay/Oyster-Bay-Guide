@@ -3,35 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#d8bd91">
+
 <title>303 Oyster Bay</title>
 
+<!-- Handwritten font for the sand-written sign-off -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
-html{
+html,
+body{
     width:100%;
     min-height:100%;
-    background:#d8bd91;
 }
 
 body{
-    width:100%;
-    min-height:100vh;
     overflow-x:hidden;
+
     background:
-        linear-gradient(rgba(222,199,160,.16),rgba(222,199,160,.16)),
+        linear-gradient(
+            rgba(222,198,158,.10),
+            rgba(222,198,158,.10)
+        ),
         url("sand-background.png?v=20260915");
+
     background-size:cover;
-    background-position:center;
+    background-position:center top;
     background-attachment:fixed;
+
     color:#573314;
-    font-family:Georgia,"Times New Roman",serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 }
+
 
 /* =========================================================
    PAGE
@@ -39,144 +54,183 @@ body{
 
 .page{
     width:min(1200px,100%);
-    margin:0 auto;
     min-height:100vh;
-    position:relative;
-    padding:28px 48px 0;
+    margin:0 auto;
+
+    padding:
+        24px
+        clamp(18px,4vw,48px)
+        28px;
 }
+
 
 /* =========================================================
    TOP BRANDING
    ========================================================= */
 
 .top{
-    text-align:center;
     position:relative;
-    z-index:3;
+    z-index:2;
+
+    text-align:center;
 }
 
 .guest-favourite{
     display:block;
-    width:clamp(105px,12vw,145px);
+
+    width:clamp(100px,11vw,140px);
     height:auto;
-    margin:0 auto 7px;
+
+    margin:
+        0 auto 5px;
+
     object-fit:contain;
 }
 
 .logo{
     display:block;
-    width:clamp(220px,31vw,355px);
+
+    width:clamp(235px,31vw,360px);
+    max-width:82vw;
     height:auto;
+
     margin:0 auto;
+
     object-fit:contain;
 }
 
 .tagline{
-    margin-top:3px;
-    font-size:clamp(13px,1.45vw,18px);
-    line-height:1.2;
+    margin-top:4px;
+
+    font-size:clamp(13px,1.5vw,18px);
+    line-height:1.25;
+
     font-style:italic;
-    color:#65401f;
-    letter-spacing:.15px;
+
+    color:#67431f;
+
+    letter-spacing:.1px;
 }
 
-/* =========================================================
-   DECORATIVE TOP WAVE / FOAM
-   ========================================================= */
-
-.top-foam{
-    position:absolute;
-    top:-10px;
-    left:-35px;
-    width:170px;
-    height:100px;
-    opacity:.72;
-    pointer-events:none;
-    background:
-        radial-gradient(ellipse at 10% 20%,rgba(255,255,255,.82) 0 10%,transparent 11%),
-        radial-gradient(ellipse at 25% 30%,rgba(255,255,255,.62) 0 12%,transparent 13%),
-        radial-gradient(ellipse at 43% 20%,rgba(255,255,255,.55) 0 9%,transparent 10%),
-        radial-gradient(ellipse at 55% 40%,rgba(255,255,255,.5) 0 11%,transparent 12%);
-    filter:blur(1px);
-    transform:rotate(-10deg);
-}
 
 /* =========================================================
-   MAIN FOUR CARDS
+   FOUR MAIN CARDS
    ========================================================= */
 
 .cards{
     position:relative;
     z-index:2;
+
     width:100%;
     max-width:1040px;
-    margin:27px auto 0;
+
+    margin:
+        26px auto 0;
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:18px;
 }
 
 .card{
-    position:relative;
     display:block;
-    min-width:0;
-    text-decoration:none;
-    color:#573314;
-    background:#f6ead5;
-    border-radius:9px;
+
     overflow:hidden;
+
+    text-decoration:none;
+
+    color:#573314;
+
+    background:#f7ead5;
+
+    border-radius:9px;
+
     box-shadow:
-        0 6px 16px rgba(76,47,22,.20),
-        0 1px 2px rgba(76,47,22,.16);
-    transition:transform .22s ease,box-shadow .22s ease;
+        0 5px 14px rgba(73,45,20,.19),
+        0 1px 2px rgba(73,45,20,.14);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
 .card:hover{
-    transform:translateY(-3px);
+    transform:translateY(-2px);
+
     box-shadow:
-        0 10px 22px rgba(76,47,22,.24),
-        0 2px 4px rgba(76,47,22,.15);
+        0 8px 18px rgba(73,45,20,.23),
+        0 2px 3px rgba(73,45,20,.15);
 }
+
+
+/* =========================================================
+   CARD IMAGES
+   ========================================================= */
 
 .card-image{
     display:block;
+
     width:100%;
+
     height:clamp(205px,20vw,285px);
+
     object-fit:cover;
 }
 
+
+/* Lighthouse */
+
 .card-explore .card-image{
-    /*
-       Lighthouse.jpg is portrait.
-       This crop deliberately keeps the lighthouse,
-       rock, boat and sandy foreground visible.
-    */
-    object-position:center 48%;
+    object-position:center center;
 }
+
+
+/* Gallery */
+
+.card-gallery .card-image{
+    object-position:center center;
+}
+
+
+/* =========================================================
+   CARD CAPTION
+   ========================================================= */
 
 .card-caption{
     min-height:52px;
-    padding:9px 15px 9px 18px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:15px;
-    background:rgba(250,238,216,.97);
-    border-top:1px solid rgba(117,79,42,.12);
+
+    padding:
+        9px 15px 9px 18px;
+
+    background:#f8ecd8;
+
+    border-top:
+        1px solid rgba(110,72,36,.10);
 }
 
 .card-title{
     font-size:clamp(18px,2vw,25px);
+
     line-height:1;
+
     font-weight:normal;
 }
 
 .arrow{
-    flex:0 0 auto;
-    font-family:Georgia,"Times New Roman",serif;
+    flex:none;
+
     font-size:23px;
+
     line-height:1;
 }
+
 
 /* =========================================================
    FEATURE BAND
@@ -185,155 +239,243 @@ body{
 .features{
     width:100%;
     max-width:1040px;
-    margin:22px auto 0;
-    padding:15px 4px;
+
+    margin:
+        21px auto 0;
+
+    padding:
+        14px 3px;
+
     display:grid;
-    grid-template-columns:repeat(5,1fr);
-    background:rgba(248,236,214,.96);
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    background:
+        rgba(249,237,215,.97);
+
     border-radius:10px;
-    box-shadow:0 5px 14px rgba(76,47,22,.12);
+
+    box-shadow:
+        0 5px 14px rgba(73,45,20,.12);
 }
 
 .feature{
     min-width:0;
+
     display:flex;
     flex-direction:column;
+
     align-items:center;
     justify-content:center;
+
     text-align:center;
-    padding:0 10px;
-    border-right:1px solid rgba(99,66,34,.20);
+
+    padding:
+        0 9px;
+
+    border-right:
+        1px solid rgba(105,70,38,.19);
 }
 
 .feature:last-child{
     border-right:none;
 }
 
+
+/* =========================================================
+   FEATURE ICONS
+   ========================================================= */
+
 .icon{
     width:28px;
     height:28px;
+
     margin-bottom:5px;
-    color:#694421;
+
+    color:#684321;
 }
 
 .icon svg{
     width:100%;
     height:100%;
+
     display:block;
+
     fill:none;
+
     stroke:currentColor;
+
     stroke-width:1.5;
+
     stroke-linecap:round;
     stroke-linejoin:round;
 }
 
 .feature-main{
-    font-size:clamp(12px,1.2vw,16px);
+    font-size:clamp(11px,1.15vw,16px);
+
     line-height:1.1;
-    font-weight:normal;
+
     white-space:normal;
 }
 
 .feature-sub{
     margin-top:3px;
+
     font-size:clamp(10px,1vw,13px);
+
     line-height:1.05;
+
     font-style:italic;
+
     color:#795b3b;
 }
 
+
 /* =========================================================
-   BOTTOM SIGN-OFF
+   BOTTOM AREA
    ========================================================= */
 
 .bottom{
     position:relative;
+
     width:100%;
-    min-height:175px;
+
+    height:
+        clamp(120px,15vw,175px);
+
     margin-top:10px;
+
     overflow:hidden;
 }
 
-.signature{
-    position:relative;
-    z-index:3;
-    width:max-content;
-    max-width:90%;
-    margin:13px auto 0;
-    color:#5a3417;
-    font-family:
-        "Snell Roundhand",
-        "Segoe Script",
-        "Brush Script MT",
-        "URW Chancery L",
-        cursive;
-    font-size:clamp(38px,5.3vw,65px);
-    font-weight:500;
-    font-style:italic;
-    line-height:1;
-    transform:rotate(-4deg);
-    white-space:nowrap;
-}
-
-/*
-   The approved design has the handwritten sign-off,
-   but NO underline beneath it.
-*/
-
-.shell-foreground{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:-2px;
-    width:100%;
-    height:150px;
-    z-index:1;
-    background-image:url("Home%20Page.png?v=20260915");
-    background-repeat:no-repeat;
-    background-position:center bottom;
-    background-size:100% auto;
-    pointer-events:none;
-}
-
-/*
-   Soft sand fade prevents the source artwork from
-   producing a visible rectangular edge.
-*/
-.bottom-fade{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    height:95px;
-    z-index:2;
-    pointer-events:none;
-    background:linear-gradient(
-        to bottom,
-        rgba(216,189,145,0),
-        rgba(216,189,145,.03) 25%,
-        rgba(216,189,145,.18) 60%,
-        rgba(216,189,145,.45)
-    );
-}
 
 /* =========================================================
-   RESPONSIVE — TABLET
+   SEE YOU BY THE SEA
+   ========================================================= */
+
+/*
+   This is intentionally NOT a conventional elegant script.
+
+   It uses a loose handwritten font and a subtle pressed-into-
+   sand effect so it feels like something written with a finger
+   rather than printed typography.
+*/
+
+.signature{
+    position:absolute;
+
+    z-index:2;
+
+    left:50%;
+    top:18px;
+
+    transform:
+        translateX(-50%)
+        rotate(-5deg);
+
+    width:max-content;
+    max-width:94%;
+
+    white-space:nowrap;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size:
+        clamp(42px,6vw,72px);
+
+    font-weight:600;
+
+    line-height:.9;
+
+    letter-spacing:-1.5px;
+
+    color:
+        rgba(112,76,39,.76);
+
+    /*
+       Slight light/dark relief gives the appearance
+       of an impression in sand rather than ink.
+    */
+
+    text-shadow:
+        1px 1px 0 rgba(245,226,191,.55),
+        -1px -1px 0 rgba(121,82,42,.20),
+        0 2px 3px rgba(112,76,39,.10);
+}
+
+
+/*
+   Small irregular secondary stroke around the writing.
+   This is deliberately subtle — NO underline.
+*/
+
+.signature::after{
+    content:"";
+
+    position:absolute;
+
+    left:7%;
+    right:2%;
+
+    bottom:-7px;
+
+    height:3px;
+
+    opacity:.18;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(112,76,39,.65) 18%,
+            rgba(112,76,39,.40) 48%,
+            rgba(112,76,39,.58) 76%,
+            transparent 100%
+        );
+
+    border-radius:50%;
+
+    transform:
+        rotate(-1deg)
+        scaleY(.55);
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   NO Home Page.png
+   NO secondary four-image panel
+   NO duplicate artwork
+   ========================================================= */
+
+.bottom::before,
+.bottom::after{
+    content:none;
+}
+
+
+/* =========================================================
+   TABLET
    ========================================================= */
 
 @media(max-width:850px){
 
     .page{
-        padding:23px 26px 0;
+        padding:
+            20px 26px 24px;
     }
 
     .guest-favourite{
-        width:120px;
-        margin-bottom:5px;
+        width:115px;
     }
 
     .logo{
         width:300px;
-        max-width:70vw;
+        max-width:72vw;
     }
 
     .cards{
@@ -351,7 +493,8 @@ body{
     }
 
     .feature{
-        padding:0 5px;
+        padding:
+            0 5px;
     }
 
     .icon{
@@ -360,16 +503,13 @@ body{
     }
 
     .bottom{
-        min-height:150px;
-    }
-
-    .shell-foreground{
-        height:130px;
+        height:145px;
     }
 }
 
+
 /* =========================================================
-   RESPONSIVE — MOBILE
+   MOBILE
    ========================================================= */
 
 @media(max-width:600px){
@@ -379,18 +519,13 @@ body{
     }
 
     .page{
-        padding:16px 14px 0;
-    }
-
-    .top-foam{
-        left:-55px;
-        top:-15px;
-        transform:scale(.75) rotate(-10deg);
-        transform-origin:top left;
+        padding:
+            16px 14px 20px;
     }
 
     .guest-favourite{
         width:94px;
+
         margin-bottom:3px;
     }
 
@@ -401,11 +536,13 @@ body{
 
     .tagline{
         margin-top:2px;
+
         font-size:12px;
     }
 
     .cards{
         margin-top:18px;
+
         gap:10px;
     }
 
@@ -417,14 +554,11 @@ body{
         height:145px;
     }
 
-    .card-explore .card-image{
-        object-position:center 49%;
-    }
-
     .card-caption{
         min-height:42px;
-        padding:7px 9px 7px 11px;
-        gap:5px;
+
+        padding:
+            7px 9px 7px 11px;
     }
 
     .card-title{
@@ -435,52 +569,67 @@ body{
         font-size:18px;
     }
 
+
+    /* Feature strip */
+
     .features{
         margin-top:13px;
+
         padding:9px 0;
+
         border-radius:7px;
     }
 
     .feature{
-        padding:0 3px;
+        padding:
+            0 3px;
     }
 
     .icon{
         width:20px;
         height:20px;
+
         margin-bottom:3px;
     }
 
     .feature-main{
         font-size:9.5px;
+
         line-height:1.05;
     }
 
     .feature-sub{
         font-size:8px;
+
         margin-top:2px;
     }
 
+
+    /* Handwritten sign-off */
+
     .bottom{
-        min-height:125px;
+        height:118px;
+
         margin-top:5px;
     }
 
     .signature{
-        margin-top:10px;
-        font-size:38px;
+        top:17px;
+
+        font-size:42px;
+
+        letter-spacing:-1.2px;
+
+        transform:
+            translateX(-50%)
+            rotate(-5deg);
     }
 
-    .shell-foreground{
-        height:115px;
-        background-size:auto 155px;
-        background-position:center bottom;
-    }
-
-    .bottom-fade{
-        height:65px;
+    .signature::after{
+        bottom:-5px;
     }
 }
+
 
 /* =========================================================
    VERY SMALL PHONES
@@ -511,6 +660,7 @@ body{
 
     .card-caption{
         min-height:39px;
+
         padding-left:8px;
         padding-right:7px;
     }
@@ -532,20 +682,21 @@ body{
     }
 
     .signature{
-        font-size:33px;
+        font-size:35px;
     }
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="page">
 
-    <div class="top-foam"></div>
 
     <!-- =====================================================
-         BRANDING
+         TOP
          ===================================================== -->
 
     <header class="top">
@@ -558,7 +709,7 @@ body{
         <img
             class="logo"
             src="logo.png?v=20260915"
-            alt="303 Oyster Bay — Surathkal, Mangaluru">
+            alt="303 Oyster Bay">
 
         <div class="tagline">
             Where the sea slows you down.
@@ -568,57 +719,123 @@ body{
 
 
     <!-- =====================================================
-         MAIN NAVIGATION CARDS
+         FOUR MAIN NAVIGATION CARDS
          ===================================================== -->
 
     <main class="cards">
 
-        <a class="card" href="your-stay.html">
+
+        <!-- YOUR STAY -->
+
+        <a
+            class="card"
+            href="your-stay.html"
+        >
+
             <img
                 class="card-image"
                 src="your-stay.PNG?v=20260915"
-                alt="Your Stay">
+                alt="Your Stay"
+            >
+
             <div class="card-caption">
-                <span class="card-title">Your Stay</span>
-                <span class="arrow">→</span>
+
+                <span class="card-title">
+                    Your Stay
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
             </div>
+
         </a>
 
 
-        <a class="card" href="the-apartment.html">
+        <!-- THE APARTMENT -->
+
+        <a
+            class="card"
+            href="the-apartment.html"
+        >
+
             <img
                 class="card-image"
                 src="apartment.jpg?v=20260915"
-                alt="The Apartment">
+                alt="The Apartment"
+            >
+
             <div class="card-caption">
-                <span class="card-title">The Apartment</span>
-                <span class="arrow">→</span>
+
+                <span class="card-title">
+                    The Apartment
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
             </div>
+
         </a>
 
 
-        <a class="card card-explore" href="in-and-around.html">
+        <!-- EXPLORE / LIGHTHOUSE -->
+
+        <a
+            class="card card-explore"
+            href="in-and-around.html"
+        >
+
             <img
                 class="card-image"
                 src="Lighthouse.jpg?v=20260915"
-                alt="Surathkal Lighthouse">
+                alt="Surathkal Lighthouse"
+            >
+
             <div class="card-caption">
-                <span class="card-title">Explore</span>
-                <span class="arrow">→</span>
+
+                <span class="card-title">
+                    Explore
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
             </div>
+
         </a>
 
 
-        <a class="card" href="gallery.html">
+        <!-- GALLERY -->
+
+        <a
+            class="card card-gallery"
+            href="gallery.html"
+        >
+
             <img
                 class="card-image"
-                src="Gallery.png?v=20260915"
-                alt="303 Oyster Bay Gallery">
+                src="gallery.jpg?v=20260915"
+                alt="303 Oyster Bay Gallery"
+            >
+
             <div class="card-caption">
-                <span class="card-title">Gallery</span>
-                <span class="arrow">→</span>
+
+                <span class="card-title">
+                    Gallery
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
             </div>
+
         </a>
+
 
     </main>
 
@@ -629,81 +846,210 @@ body{
 
     <section class="features">
 
-        <!-- BEDROOMS -->
+
+        <!-- 2 BEDROOMS -->
+
         <div class="feature">
+
             <div class="icon">
+
                 <svg viewBox="0 0 32 32">
+
                     <path d="M4 22v-7h24v7"/>
+
                     <path d="M4 19h24"/>
-                    <path d="M7 15v-4h7a3 3 0 0 1 3 3v1"/>
-                    <path d="M4 25v-3M28 25v-3"/>
+
+                    <path
+                        d="M7 15v-4h7a3 3 0 0 1 3 3v1"
+                    />
+
+                    <path d="M4 25v-3"/>
+
+                    <path d="M28 25v-3"/>
+
                 </svg>
+
             </div>
-            <div class="feature-main">2 Bedrooms</div>
-            <div class="feature-sub">Sleeps 4 + 1</div>
+
+            <div class="feature-main">
+                2 Bedrooms
+            </div>
+
+            <div class="feature-sub">
+                Sleeps 4 + 1
+            </div>
+
         </div>
 
 
         <!-- SEA VIEWS -->
+
         <div class="feature">
+
             <div class="icon">
+
                 <svg viewBox="0 0 32 32">
-                    <path d="M3 12c4 0 4 4 8 4s4-4 8-4 4 4 10 4"/>
-                    <path d="M3 19c4 0 4 4 8 4s4-4 8-4 4 4 10 4"/>
+
+                    <path
+                        d="M3 12c4 0 4 4 8 4s4-4 8-4 4 4 10 4"
+                    />
+
+                    <path
+                        d="M3 19c4 0 4 4 8 4s4-4 8-4 4 4 10 4"
+                    />
+
                 </svg>
+
             </div>
-            <div class="feature-main">Uninterrupted<br>Sea Views</div>
+
+            <div class="feature-main">
+                Uninterrupted<br>
+                Sea Views
+            </div>
+
         </div>
 
 
         <!-- KITCHEN -->
+
         <div class="feature">
+
             <div class="icon">
+
                 <svg viewBox="0 0 32 32">
-                    <rect x="5" y="6" width="22" height="20" rx="2"/>
-                    <circle cx="11" cy="12" r="2"/>
-                    <circle cx="20" cy="12" r="2"/>
-                    <circle cx="11" cy="20" r="2"/>
-                    <circle cx="20" cy="20" r="2"/>
+
+                    <rect
+                        x="5"
+                        y="6"
+                        width="22"
+                        height="20"
+                        rx="2"
+                    />
+
+                    <circle
+                        cx="11"
+                        cy="12"
+                        r="2"
+                    />
+
+                    <circle
+                        cx="20"
+                        cy="12"
+                        r="2"
+                    />
+
+                    <circle
+                        cx="11"
+                        cy="20"
+                        r="2"
+                    />
+
+                    <circle
+                        cx="20"
+                        cy="20"
+                        r="2"
+                    />
+
                 </svg>
+
             </div>
-            <div class="feature-main">Full Kitchen</div>
+
+            <div class="feature-main">
+                Full Kitchen
+            </div>
+
         </div>
 
 
         <!-- PARKING -->
+
         <div class="feature">
+
             <div class="icon">
+
                 <svg viewBox="0 0 32 32">
-                    <path d="M5 21v-7l3-7h16l3 7v7"/>
+
+                    <path
+                        d="M5 21v-7l3-7h16l3 7v7"
+                    />
+
                     <path d="M8 14h16"/>
-                    <path d="M9 21v3M23 21v3"/>
-                    <circle cx="10" cy="19" r="1.5"/>
-                    <circle cx="22" cy="19" r="1.5"/>
+
+                    <path d="M9 21v3"/>
+
+                    <path d="M23 21v3"/>
+
+                    <circle
+                        cx="10"
+                        cy="19"
+                        r="1.5"
+                    />
+
+                    <circle
+                        cx="22"
+                        cy="19"
+                        r="1.5"
+                    />
+
                 </svg>
+
             </div>
-            <div class="feature-main">Free Parking</div>
+
+            <div class="feature-main">
+                Free Parking
+            </div>
+
         </div>
 
 
         <!-- WI-FI -->
+
         <div class="feature">
+
             <div class="icon">
+
                 <svg viewBox="0 0 32 32">
-                    <path d="M5 12c7-6 15-6 22 0"/>
-                    <path d="M9 17c4-4 10-4 14 0"/>
-                    <path d="M13 21c2-2 4-2 6 0"/>
-                    <circle cx="16" cy="25" r="1"/>
+
+                    <path
+                        d="M5 12c7-6 15-6 22 0"
+                    />
+
+                    <path
+                        d="M9 17c4-4 10-4 14 0"
+                    />
+
+                    <path
+                        d="M13 21c2-2 4-2 6 0"
+                    />
+
+                    <circle
+                        cx="16"
+                        cy="25"
+                        r="1"
+                    />
+
                 </svg>
+
             </div>
-            <div class="feature-main">High-Speed<br>Wi-Fi</div>
+
+            <div class="feature-main">
+                High-Speed<br>
+                Wi-Fi
+            </div>
+
         </div>
+
 
     </section>
 
 
     <!-- =====================================================
-         SIGN-OFF / BEACH FOREGROUND
+         HAND-WRITTEN SAND SIGN-OFF
+
+         IMPORTANT:
+         There is deliberately NO Home Page.png here.
+         Therefore the accidental mini four-image artwork
+         cannot appear below the feature band.
          ===================================================== -->
 
     <footer class="bottom">
@@ -712,10 +1058,8 @@ body{
             See you by the Sea
         </div>
 
-        <div class="shell-foreground"></div>
-        <div class="bottom-fade"></div>
-
     </footer>
+
 
 </div>
 
