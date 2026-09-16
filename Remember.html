@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0, viewport-fit=cover"
->
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <title>303 OYSTER BAY • Remember</title>
 
@@ -18,23 +15,31 @@ content="width=device-width, initial-scale=1.0, viewport-fit=cover"
    RESET
    ========================================================= */
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html,
-body{
-width:100%;
-height:100%;
-overflow:hidden;
+html {
+    width: 100%;
+    min-height: 100%;
 }
 
-body{
-font-family:Georgia,"Times New Roman",serif;
-background:#e8d8bd;
-color:#463322;
+body {
+    width: 100%;
+    min-height: 100%;
+
+    color: #463322;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background: #e8d8bd;
+
+    overflow-x: hidden;
 }
 
 
@@ -42,59 +47,61 @@ color:#463322;
    PAGE
    ========================================================= */
 
-.remember-page{
-position:relative;
-width:100%;
-height:100svh;
-min-height:100svh;
-overflow:hidden;
+.remember-page {
 
-background-image:url("sand-background.jpg");
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    padding-bottom: 125px;
+
+    background-image:
+        url("sand-background.jpg");
+
+    background-size: cover;
+
+    background-position:
+        center top;
+
+    background-repeat: repeat-y;
 }
 
 
 /* =========================================================
-   SALT SAND STORIES IMAGE
-   EXACT SAVED ASSET
+   SALT SAND STORIES
+   CENTRED — FACE ON
    ========================================================= */
 
-.salt-stories{
-position:absolute;
+.salt-stories {
 
-top:12px;
-left:50%;
+    display: block;
 
-transform:translateX(-50%);
+    width: 205px;
 
-width:285px;
-max-width:62%;
+    max-width: 55vw;
 
-height:auto;
+    height: auto;
 
-z-index:5;
+    margin:
+        18px
+        auto
+        26px
+        auto;
 }
 
 
 /* =========================================================
-   GALLERY CONTENT
+   CONTENT
    ========================================================= */
 
-.remember-content{
-position:absolute;
+.remember-content {
 
-left:0;
-right:0;
+    width: 100%;
 
-top:205px;
-bottom:132px;
+    padding-left: 18px;
 
-overflow:hidden;
-
-padding-left:24px;
-padding-right:0;
+    padding-right: 0;
 }
 
 
@@ -102,20 +109,35 @@ padding-right:0;
    CATEGORY
    ========================================================= */
 
-.category{
-width:100%;
-margin-bottom:18px;
+.category {
+
+    width: 100%;
+
+    margin-bottom: 27px;
 }
 
-.category-title{
-margin-bottom:7px;
 
-font-size:18px;
-font-weight:normal;
+/* =========================================================
+   CATEGORY TITLE
+   ========================================================= */
 
-letter-spacing:1px;
+.category-title {
 
-color:#463322;
+    margin:
+        0
+        0
+        7px
+        0;
+
+    color: #463322;
+
+    font-size: 21px;
+
+    font-weight: normal;
+
+    letter-spacing: 0.3px;
+
+    line-height: 1.1;
 }
 
 
@@ -123,139 +145,176 @@ color:#463322;
    PHOTO ROW
    ========================================================= */
 
-.photo-row{
-display:flex;
+.photo-row {
 
-flex-wrap:nowrap;
+    display: flex;
 
-gap:12px;
+    flex-wrap: nowrap;
 
-width:100%;
+    gap: 10px;
 
-overflow-x:auto;
-overflow-y:hidden;
+    width: 100%;
 
-padding-right:20px;
+    overflow-x: auto;
 
-scrollbar-width:none;
--ms-overflow-style:none;
+    overflow-y: hidden;
+
+    padding:
+        0
+        18px
+        7px
+        0;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+
+    -webkit-overflow-scrolling: touch;
 }
 
-.photo-row::-webkit-scrollbar{
-display:none;
+.photo-row::-webkit-scrollbar {
+    display: none;
 }
 
 
 /* =========================================================
-   PHOTO CARDS
+   PHOTO CARD
    ========================================================= */
 
-.photo-card{
+.photo-card {
 
-flex:0 0 142px;
+    flex:
+        0 0
+        145px;
 
-width:142px;
-height:124px;
+    width: 145px;
 
-padding:6px 6px 17px;
+    height: 132px;
 
-border:none;
+    padding:
+        6px
+        6px
+        13px;
 
-border-radius:10px;
+    border:
+        1px solid
+        rgba(255,255,255,0.7);
 
-background:#f4ead7;
+    border-radius: 15px;
 
-box-shadow:
-0 2px 6px rgba(70,42,20,.20);
+    background: #f4ead7;
 
-cursor:pointer;
+    box-shadow:
+        0 3px 8px
+        rgba(70,42,20,0.20);
+
+    cursor: pointer;
+
+    appearance: none;
+
+    -webkit-appearance: none;
 }
 
-.photo-card img{
 
-display:block;
+/* =========================================================
+   PHOTO
+   ========================================================= */
 
-width:100%;
-height:100%;
+.photo-card img {
 
-object-fit:cover;
+    display: block;
 
-border-radius:7px;
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 10px;
 }
 
 
 /* =========================================================
    BOTTOM NAVIGATION
-   HOME | STAY | LOGO | LIVE | EXPLORE
    ========================================================= */
 
-.bottom-nav{
+.bottom-nav {
 
-position:absolute;
+    position: fixed;
 
-left:0;
-right:0;
-bottom:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
-height:132px;
+    height: 112px;
 
-z-index:20;
+    z-index: 50;
 
-display:flex;
+    display: flex;
 
-align-items:flex-end;
+    align-items: flex-end;
 
-justify-content:center;
+    justify-content: center;
 
-padding:
-0
-24px
-17px;
-}
+    padding:
+        0
+        20px
+        8px;
 
-
-/* HORIZONTAL LINE */
-
-.bottom-nav::before{
-
-content:"";
-
-position:absolute;
-
-left:2%;
-right:2%;
-
-top:25px;
-
-height:1px;
-
-background:rgba(70,51,34,.72);
-
-z-index:0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(232,216,189,0),
+            rgba(232,216,189,0.78) 25%,
+            rgba(232,216,189,0.96) 55%,
+            rgba(232,216,189,1) 100%
+        );
 }
 
 
 /* =========================================================
-   NAV SIDES
+   NAV TOP LINE
    ========================================================= */
 
-.nav-side{
+.bottom-nav::before {
 
-position:relative;
+    content: "";
 
-z-index:2;
+    position: absolute;
 
-display:flex;
+    left: 20px;
+    right: 20px;
 
-align-items:flex-end;
+    top: 22px;
 
-justify-content:center;
+    height: 1px;
 
-flex:1;
+    background:
+        rgba(70,51,34,0.62);
+}
 
-max-width:420px;
 
-height:104px;
+/* =========================================================
+   NAV SIDE
+   ========================================================= */
+
+.nav-side {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    flex: 1;
+
+    max-width: 235px;
+
+    height: 79px;
 }
 
 
@@ -263,62 +322,68 @@ height:104px;
    NAV ITEM
    ========================================================= */
 
-.nav-item{
+.nav-item {
 
-width:50%;
+    width: 50%;
 
-display:flex;
+    height: 74px;
 
-flex-direction:column;
+    display: flex;
 
-align-items:center;
+    flex-direction: column;
 
-justify-content:flex-end;
+    align-items: center;
 
-height:100px;
+    justify-content: flex-end;
 
-text-decoration:none;
+    gap: 5px;
 
-color:#463322;
+    text-decoration: none;
 
-gap:7px;
+    color: #463322;
 
-font-family:Arial,Helvetica,sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-font-size:16px;
+    font-size: 12px;
 
-line-height:1;
-}
-
-
-/* VERTICAL DIVIDERS */
-
-.nav-item + .nav-item{
-
-border-left:
-1px solid
-rgba(70,51,34,.55);
+    line-height: 1;
 }
 
 
 /* =========================================================
-   NAV ICON
+   NAV DIVIDERS
    ========================================================= */
 
-.nav-icon{
+.nav-item + .nav-item {
 
-width:45px;
-height:45px;
+    border-left:
+        1px solid
+        rgba(70,51,34,0.42);
+}
 
-fill:none;
 
-stroke:#463322;
+/* =========================================================
+   SMALLER ICONS
+   ========================================================= */
 
-stroke-width:2.3;
+.nav-icon {
 
-stroke-linecap:round;
+    width: 28px;
 
-stroke-linejoin:round;
+    height: 28px;
+
+    fill: none;
+
+    stroke: #463322;
+
+    stroke-width: 2.1;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
 }
 
 
@@ -326,37 +391,35 @@ stroke-linejoin:round;
    CENTRAL LOGO
    ========================================================= */
 
-.logo-wrap{
+.logo-wrap {
 
-position:relative;
+    position: relative;
 
-z-index:3;
+    z-index: 4;
 
-flex:0 0 285px;
+    flex:
+        0 0
+        155px;
 
-height:117px;
+    height: 84px;
 
-display:flex;
+    display: flex;
 
-align-items:flex-end;
+    align-items: flex-end;
 
-justify-content:center;
-
-padding:
-0
-10px
-0;
+    justify-content: center;
 }
 
-.logo-wrap img{
 
-display:block;
+.logo-wrap img {
 
-width:255px;
+    display: block;
 
-max-width:100%;
+    width: 150px;
 
-height:auto;
+    max-width: 100%;
+
+    height: auto;
 }
 
 
@@ -364,101 +427,104 @@ height:auto;
    LIGHTBOX
    ========================================================= */
 
-.lightbox{
+.lightbox {
 
-position:fixed;
+    position: fixed;
 
-inset:0;
+    inset: 0;
 
-display:none;
+    display: none;
 
-align-items:center;
+    align-items: center;
 
-justify-content:center;
+    justify-content: center;
 
-background:
-rgba(35,25,16,.90);
+    background:
+        rgba(35,25,16,0.92);
 
-z-index:100;
+    z-index: 100;
 }
 
-.lightbox.active{
-display:flex;
-}
-
-
-.lightbox-image{
-
-max-width:88vw;
-
-max-height:82vh;
-
-object-fit:contain;
-
-border-radius:8px;
-
-box-shadow:
-0 8px 30px rgba(0,0,0,.35);
+.lightbox.active {
+    display: flex;
 }
 
 
-/* CLOSE + ARROWS */
+.lightbox-image {
+
+    max-width: 88vw;
+
+    max-height: 82vh;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(0,0,0,0.35);
+}
+
 
 .lightbox-close,
-.lightbox-arrow{
+.lightbox-arrow {
 
-position:absolute;
+    position: absolute;
 
-border:none;
+    border: none;
 
-border-radius:50%;
+    border-radius: 50%;
 
-background:
-rgba(244,234,215,.95);
+    background:
+        rgba(244,234,215,0.95);
 
-color:#463322;
+    color: #463322;
 
-text-align:center;
+    text-align: center;
 
-cursor:pointer;
+    cursor: pointer;
 }
 
 
-.lightbox-close{
+.lightbox-close {
 
-top:18px;
-right:20px;
+    top: 18px;
 
-width:42px;
-height:42px;
+    right: 20px;
 
-font-size:25px;
+    width: 42px;
 
-line-height:42px;
+    height: 42px;
+
+    font-size: 25px;
+
+    line-height: 42px;
 }
 
 
-.lightbox-arrow{
+.lightbox-arrow {
 
-top:50%;
+    top: 50%;
 
-transform:translateY(-50%);
+    transform:
+        translateY(-50%);
 
-width:44px;
-height:44px;
+    width: 44px;
 
-font-size:27px;
+    height: 44px;
 
-line-height:44px;
+    font-size: 27px;
+
+    line-height: 44px;
 }
 
 
-.lightbox-prev{
-left:14px;
+.lightbox-prev {
+    left: 14px;
 }
 
-.lightbox-next{
-right:14px;
+.lightbox-next {
+    right: 14px;
 }
 
 
@@ -466,120 +532,121 @@ right:14px;
    DESKTOP
    ========================================================= */
 
-@media(min-width:700px){
+@media (min-width: 700px) {
 
-.salt-stories{
+    .salt-stories {
 
-top:14px;
+        width: 260px;
 
-width:330px;
-
-max-width:30%;
-}
-
-
-.remember-content{
-
-top:235px;
-
-bottom:150px;
-
-padding-left:42px;
-}
+        margin:
+            22px
+            auto
+            38px
+            auto;
+    }
 
 
-.category{
+    .remember-content {
 
-margin-bottom:24px;
-}
+        padding-left: 40px;
 
-
-.category-title{
-
-font-size:21px;
-
-margin-bottom:9px;
-}
+        padding-right: 20px;
+    }
 
 
-.photo-row{
+    .category {
 
-gap:14px;
-}
-
-
-.photo-card{
-
-flex-basis:185px;
-
-width:185px;
-
-height:155px;
-
-padding:7px 7px 20px;
-}
+        margin-bottom: 38px;
+    }
 
 
-.photo-card img{
+    .category-title {
 
-border-radius:8px;
-}
+        font-size: 27px;
 
-
-/* BOTTOM */
-
-.bottom-nav{
-
-height:150px;
-
-padding-bottom:21px;
-}
+        margin-bottom: 9px;
+    }
 
 
-.bottom-nav::before{
+    .photo-row {
 
-top:29px;
-}
-
-
-.nav-side{
-
-max-width:450px;
-
-height:116px;
-}
+        gap: 14px;
+    }
 
 
-.nav-item{
+    .photo-card {
 
-height:110px;
+        flex-basis: 185px;
 
-font-size:17px;
+        width: 185px;
 
-gap:8px;
-}
+        height: 165px;
 
+        padding:
+            8px
+            8px
+            16px;
 
-.nav-icon{
-
-width:48px;
-height:48px;
-}
-
-
-.logo-wrap{
-
-flex-basis:310px;
-
-height:133px;
-}
+        border-radius: 18px;
+    }
 
 
-.logo-wrap img{
+    .bottom-nav {
 
-width:275px;
-}
+        height: 130px;
 
+        padding-bottom: 12px;
+    }
+
+
+    .bottom-nav::before {
+
+        top: 26px;
+
+        left: 5%;
+
+        right: 5%;
+    }
+
+
+    .nav-side {
+
+        max-width: 300px;
+
+        height: 96px;
+    }
+
+
+    .nav-item {
+
+        height: 88px;
+
+        font-size: 15px;
+
+        gap: 7px;
+    }
+
+
+    .nav-icon {
+
+        width: 36px;
+
+        height: 36px;
+    }
+
+
+    .logo-wrap {
+
+        flex-basis: 220px;
+
+        height: 108px;
+    }
+
+
+    .logo-wrap img {
+
+        width: 215px;
+    }
 }
 
 
@@ -587,1152 +654,894 @@ width:275px;
    SMALL PHONES
    ========================================================= */
 
-@media(max-width:390px){
+@media (max-width: 390px) {
 
-.salt-stories{
+    .remember-page {
 
-top:8px;
+        padding-bottom: 105px;
+    }
 
-width:245px;
 
-max-width:70%;
-}
+    .salt-stories {
 
+        width: 175px;
 
-.remember-content{
+        max-width: 52vw;
 
-top:166px;
+        margin:
+            14px
+            auto
+            22px
+            auto;
+    }
 
-bottom:108px;
 
-padding-left:13px;
-}
+    .remember-content {
 
+        padding-left: 15px;
+    }
 
-.category{
 
-margin-bottom:11px;
-}
+    .category {
 
+        margin-bottom: 21px;
+    }
 
-.category-title{
 
-font-size:14px;
+    .category-title {
 
-margin-bottom:5px;
-}
+        font-size: 20px;
 
+        margin-bottom: 6px;
+    }
 
-.photo-row{
 
-gap:8px;
-}
+    .photo-row {
 
+        gap: 8px;
+    }
 
-.photo-card{
 
-flex-basis:116px;
+    .photo-card {
 
-width:116px;
+        flex-basis: 128px;
 
-height:101px;
+        width: 128px;
 
-padding:5px 5px 14px;
+        height: 116px;
 
-border-radius:9px;
-}
+        padding:
+            5px
+            5px
+            11px;
 
+        border-radius: 14px;
+    }
 
-.photo-card img{
 
-border-radius:6px;
-}
+    .photo-card img {
 
+        border-radius: 9px;
+    }
 
-/* BOTTOM */
 
-.bottom-nav{
+    .bottom-nav {
 
-height:108px;
+        height: 103px;
 
-padding:
-0
-9px
-9px;
-}
+        padding-left: 12px;
 
+        padding-right: 12px;
+    }
 
-.bottom-nav::before{
 
-top:20px;
-}
+    .bottom-nav::before {
 
+        top: 20px;
 
-.nav-side{
+        left: 15px;
 
-height:83px;
-}
+        right: 15px;
+    }
 
 
-.nav-item{
+    .nav-side {
 
-height:79px;
+        height: 73px;
 
-font-size:12px;
+        max-width: 205px;
+    }
 
-gap:5px;
-}
 
+    .nav-item {
 
-.nav-icon{
+        height: 68px;
 
-width:34px;
+        font-size: 11px;
 
-height:34px;
+        gap: 4px;
+    }
 
-stroke-width:2.2;
-}
 
+    .nav-icon {
 
-.logo-wrap{
+        width: 27px;
 
-flex-basis:180px;
+        height: 27px;
+    }
 
-height:94px;
 
-padding:0 4px;
-}
+    .logo-wrap {
 
+        flex-basis: 138px;
 
-.logo-wrap img{
+        height: 77px;
+    }
 
-width:174px;
-}
 
-}
+    .logo-wrap img {
 
-
-/* =========================================================
-   VERY SHORT PHONES
-   ========================================================= */
-
-@media(max-height:700px){
-
-.salt-stories{
-
-width:215px;
-
-top:6px;
-}
-
-
-.remember-content{
-
-top:145px;
-
-bottom:96px;
-}
-
-
-.category{
-
-margin-bottom:7px;
-}
-
-
-.category-title{
-
-font-size:12px;
-
-margin-bottom:3px;
-}
-
-
-.photo-row{
-
-gap:6px;
-}
-
-
-.photo-card{
-
-flex-basis:101px;
-
-width:101px;
-
-height:83px;
-
-padding:4px 4px 12px;
-}
-
-
-.bottom-nav{
-
-height:96px;
-
-padding-bottom:7px;
-}
-
-
-.bottom-nav::before{
-
-top:17px;
-}
-
-
-.nav-side{
-
-height:74px;
-}
-
-
-.nav-item{
-
-height:70px;
-
-font-size:11px;
-
-gap:4px;
-}
-
-
-.nav-icon{
-
-width:30px;
-
-height:30px;
-}
-
-
-.logo-wrap{
-
-flex-basis:155px;
-
-height:82px;
-}
-
-
-.logo-wrap img{
-
-width:150px;
-}
-
+        width: 134px;
+    }
 }
 
 </style>
-
 </head>
 
 
 <body>
 
+
 <main class="remember-page">
 
 
-<!-- =====================================================
-     EXACT SALT SAND STORIES IMAGE
-     THE IMAGE ITSELF CONTAINS
-     "AT 303 OYSTER BAY"
-     ===================================================== -->
+    <!-- =====================================================
+         SALT SAND STORIES
+         ===================================================== -->
 
-<img
-src="Salt Sand Stories.png"
-class="salt-stories"
-alt="Salt Sand Stories at 303 Oyster Bay"
->
+    <img
+        src="Salt Sand Stories.png"
+        class="salt-stories"
+        alt="Salt Sand Stories"
+    >
 
 
-<!-- =====================================================
-     GALLERY
-     ===================================================== -->
+    <!-- =====================================================
+         GALLERY CONTENT
+         ===================================================== -->
 
-<main class="remember-content">
-
-
-<!-- ================= SEA VIEWS ================= -->
-
-<section class="category">
-
-<h2 class="category-title">
-Sea Views
-</h2>
-
-<div class="photo-row">
-
-<button
-class="photo-card"
-data-category="Sea Views"
-data-index="0"
->
-<img
-src="Sea View1.jpg"
-alt="Sea View 1"
->
-</button>
-
-<button
-class="photo-card"
-data-category="Sea Views"
-data-index="1"
->
-<img
-src="Sea View2.jpg"
-alt="Sea View 2"
->
-</button>
-
-<button
-class="photo-card"
-data-category="Sea Views"
-data-index="2"
->
-<img
-src="Sea View3.jpg"
-alt="Sea View 3"
->
-</button>
-
-<button
-class="photo-card"
-data-category="Sea Views"
-data-index="3"
->
-<img
-src="Sea View4.jpg"
-alt="Sea View 4"
->
-</button>
-
-<button
-class="photo-card"
-data-category="Sea Views"
-data-index="4"
->
-<img
-src="Sea View5.jpg"
-alt="Sea View 5"
->
-</button>
-
-</div>
-
-</section>
+    <div class="remember-content">
 
 
+        <!-- =================================================
+             SEA VIEWS
+             ================================================= -->
 
-<!-- ================= LIVING ================= -->
+        <section class="category">
 
-<section class="category">
+            <h2 class="category-title">
+                Sea Views
+            </h2>
 
-<h2 class="category-title">
-Living
-</h2>
+            <div class="photo-row">
 
-<div class="photo-row">
+                <button class="photo-card"
+                        data-category="Sea Views"
+                        data-index="0">
+                    <img src="Sea View1.jpg"
+                         alt="Sea View 1">
+                </button>
 
-<button
-class="photo-card"
-data-category="Living"
-data-index="0"
->
-<img
-src="Living1.jpg"
-alt="Living 1"
->
-</button>
+                <button class="photo-card"
+                        data-category="Sea Views"
+                        data-index="1">
+                    <img src="Sea View2.jpg"
+                         alt="Sea View 2">
+                </button>
 
-<button
-class="photo-card"
-data-category="Living"
-data-index="1"
->
-<img
-src="Living2.jpg"
-alt="Living 2"
->
-</button>
+                <button class="photo-card"
+                        data-category="Sea Views"
+                        data-index="2">
+                    <img src="Sea View3.jpg"
+                         alt="Sea View 3">
+                </button>
 
-<button
-class="photo-card"
-data-category="Living"
-data-index="2"
->
-<img
-src="Living3.jpg"
-alt="Living 3"
->
-</button>
+                <button class="photo-card"
+                        data-category="Sea Views"
+                        data-index="3">
+                    <img src="Sea View4.jpg"
+                         alt="Sea View 4">
+                </button>
 
-<button
-class="photo-card"
-data-category="Living"
-data-index="3"
->
-<img
-src="Living4.jpg"
-alt="Living 4"
->
-</button>
+                <button class="photo-card"
+                        data-category="Sea Views"
+                        data-index="4">
+                    <img src="Sea View5.jpg"
+                         alt="Sea View 5">
+                </button>
 
-<button
-class="photo-card"
-data-category="Living"
-data-index="4"
->
-<img
-src="Living5.jpg"
-alt="Living 5"
->
-</button>
+            </div>
 
-<button
-class="photo-card"
-data-category="Living"
-data-index="5"
->
-<img
-src="Living6.jpg"
-alt="Living 6"
->
-</button>
-
-<button
-class="photo-card"
-data-category="Living"
-data-index="6"
->
-<img
-src="Living7.jpg"
-alt="Living 7"
->
-</button>
-
-</div>
-
-</section>
+        </section>
 
 
+        <!-- =================================================
+             LIVING
+             ================================================= -->
 
-<!-- ================= BEDROOM ================= -->
+        <section class="category">
 
-<section class="category">
+            <h2 class="category-title">
+                Living
+            </h2>
 
-<h2 class="category-title">
-Bedroom
-</h2>
+            <div class="photo-row">
 
-<div class="photo-row">
+                <button class="photo-card"
+                        data-category="Living"
+                        data-index="0">
+                    <img src="Living1.jpg"
+                         alt="Living 1">
+                </button>
 
-<button
-class="photo-card"
-data-category="Bedroom"
-data-index="0"
->
-<img
-src="Bedroom1.jpg"
-alt="Bedroom 1"
->
-</button>
+                <button class="photo-card"
+                        data-category="Living"
+                        data-index="1">
+                    <img src="Living2.jpg"
+                         alt="Living 2">
+                </button>
 
-<button
-class="photo-card"
-data-category="Bedroom"
-data-index="1"
->
-<img
-src="Bedroom2.jpg"
-alt="Bedroom 2"
->
-</button>
+                <button class="photo-card"
+                        data-category="Living"
+                        data-index="2">
+                    <img src="Living3.jpg"
+                         alt="Living 3">
+                </button>
 
-<button
-class="photo-card"
-data-category="Bedroom"
-data-index="2"
->
-<img
-src="Bedroom3.jpg"
-alt="Bedroom 3"
->
-</button>
+                <button class="photo-card"
+                        data-category="Living"
+                        data-index="3">
+                    <img src="Living4.jpg"
+                         alt="Living 4">
+                </button>
 
-<button
-class="photo-card"
-data-category="Bedroom"
-data-index="3"
->
-<img
-src="Bedroom4.jpg"
-alt="Bedroom 4"
->
-</button>
+                <button class="photo-card"
+                        data-category="Living"
+                        data-index="4">
+                    <img src="Living5.jpg"
+                         alt="Living 5">
+                </button>
 
-<button
-class="photo-card"
-data-category="Bedroom"
-data-index="4"
->
-<img
-src="Bedroom5.jpg"
-alt="Bedroom 5"
->
-</button>
+                <button class="photo-card"
+                        data-category="Living"
+                        data-index="5">
+                    <img src="Living6.jpg"
+                         alt="Living 6">
+                </button>
 
-<button
-class="photo-card"
-data-category="Bedroom"
-data-index="5"
->
-<img
-src="Bedroom6.jpg"
-alt="Bedroom 6"
->
-</button>
+                <button class="photo-card"
+                        data-category="Living"
+                        data-index="6">
+                    <img src="Living7.jpg"
+                         alt="Living 7">
+                </button>
 
-<button
-class="photo-card"
-data-category="Bedroom"
-data-index="6"
->
-<img
-src="Bedroom7.jpg"
-alt="Bedroom 7"
->
-</button>
+            </div>
 
-</div>
-
-</section>
+        </section>
 
 
+        <!-- =================================================
+             BEDROOM
+             ================================================= -->
 
-<!-- ================= KITCHEN ================= -->
+        <section class="category">
 
-<section class="category">
+            <h2 class="category-title">
+                Bedroom
+            </h2>
 
-<h2 class="category-title">
-Kitchen
-</h2>
+            <div class="photo-row">
 
-<div class="photo-row">
+                <button class="photo-card"
+                        data-category="Bedroom"
+                        data-index="0">
+                    <img src="Bedroom1.jpg"
+                         alt="Bedroom 1">
+                </button>
 
-<button
-class="photo-card"
-data-category="Kitchen"
-data-index="0"
->
-<img
-src="Kitchen1.jpg"
-alt="Kitchen 1"
->
-</button>
+                <button class="photo-card"
+                        data-category="Bedroom"
+                        data-index="1">
+                    <img src="Bedroom2.jpg"
+                         alt="Bedroom 2">
+                </button>
 
-<button
-class="photo-card"
-data-category="Kitchen"
-data-index="1"
->
-<img
-src="Kitchen2.jpg"
-alt="Kitchen 2"
->
-</button>
+                <button class="photo-card"
+                        data-category="Bedroom"
+                        data-index="2">
+                    <img src="Bedroom3.jpg"
+                         alt="Bedroom 3">
+                </button>
 
-<button
-class="photo-card"
-data-category="Kitchen"
-data-index="2"
->
-<img
-src="Kitchen3.jpg"
-alt="Kitchen 3"
->
-</button>
+                <button class="photo-card"
+                        data-category="Bedroom"
+                        data-index="3">
+                    <img src="Bedroom4.jpg"
+                         alt="Bedroom 4">
+                </button>
 
-<button
-class="photo-card"
-data-category="Kitchen"
-data-index="3"
->
-<img
-src="Kitchen4.jpg"
-alt="Kitchen 4"
->
-</button>
+                <button class="photo-card"
+                        data-category="Bedroom"
+                        data-index="4">
+                    <img src="Bedroom5.jpg"
+                         alt="Bedroom 5">
+                </button>
 
-<button
-class="photo-card"
-data-category="Kitchen"
-data-index="4"
->
-<img
-src="Kitchen5.jpg"
-alt="Kitchen 5"
->
-</button>
+                <button class="photo-card"
+                        data-category="Bedroom"
+                        data-index="5">
+                    <img src="Bedroom6.jpg"
+                         alt="Bedroom 6">
+                </button>
 
-<button
-class="photo-card"
-data-category="Kitchen"
-data-index="5"
->
-<img
-src="Kitchen6.jpg"
-alt="Kitchen 6"
->
-</button>
+                <button class="photo-card"
+                        data-category="Bedroom"
+                        data-index="6">
+                    <img src="Bedroom7.jpg"
+                         alt="Bedroom 7">
+                </button>
 
-<button
-class="photo-card"
-data-category="Kitchen"
-data-index="6"
->
-<img
-src="Kitchen7.jpg"
-alt="Kitchen 7"
->
-</button>
+            </div>
 
-<button
-class="photo-card"
-data-category="Kitchen"
-data-index="7"
->
-<img
-src="Kitchen8.jpg"
-alt="Kitchen 8"
->
-</button>
+        </section>
 
-</div>
 
-</section>
+        <!-- =================================================
+             KITCHEN
+             ================================================= -->
+
+        <section class="category">
+
+            <h2 class="category-title">
+                Kitchen
+            </h2>
+
+            <div class="photo-row">
+
+                <button class="photo-card"
+                        data-category="Kitchen"
+                        data-index="0">
+                    <img src="Kitchen1.jpg"
+                         alt="Kitchen 1">
+                </button>
+
+                <button class="photo-card"
+                        data-category="Kitchen"
+                        data-index="1">
+                    <img src="Kitchen2.jpg"
+                         alt="Kitchen 2">
+                </button>
+
+                <button class="photo-card"
+                        data-category="Kitchen"
+                        data-index="2">
+                    <img src="Kitchen3.jpg"
+                         alt="Kitchen 3">
+                </button>
+
+                <button class="photo-card"
+                        data-category="Kitchen"
+                        data-index="3">
+                    <img src="Kitchen4.jpg"
+                         alt="Kitchen 4">
+                </button>
+
+                <button class="photo-card"
+                        data-category="Kitchen"
+                        data-index="4">
+                    <img src="Kitchen5.jpg"
+                         alt="Kitchen 5">
+                </button>
+
+                <button class="photo-card"
+                        data-category="Kitchen"
+                        data-index="5">
+                    <img src="Kitchen6.jpg"
+                         alt="Kitchen 6">
+                </button>
+
+                <button class="photo-card"
+                        data-category="Kitchen"
+                        data-index="6">
+                    <img src="Kitchen7.jpg"
+                         alt="Kitchen 7">
+                </button>
+
+                <button class="photo-card"
+                        data-category="Kitchen"
+                        data-index="7">
+                    <img src="Kitchen8.jpg"
+                         alt="Kitchen 8">
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         BOTTOM NAVIGATION
+         ===================================================== -->
+
+    <nav class="bottom-nav"
+         aria-label="Main navigation">
+
+
+        <!-- LEFT -->
+
+        <div class="nav-side">
+
+
+            <!-- HOME -->
+
+            <a class="nav-item"
+               href="index.html"
+               aria-label="Home">
+
+                <svg class="nav-icon"
+                     viewBox="0 0 64 64"
+                     aria-hidden="true">
+
+                    <path d="M9 29 L32 9 L55 29"/>
+                    <path d="M15 26 V55 H49 V26"/>
+                    <path d="M27 55 V38 H37 V55"/>
+
+                </svg>
+
+                <span>Home</span>
+
+            </a>
+
+
+            <!-- STAY -->
+
+            <a class="nav-item"
+               href="arrival-guide.html"
+               aria-label="Stay">
+
+                <svg class="nav-icon"
+                     viewBox="0 0 64 64"
+                     aria-hidden="true">
+
+                    <path d="M8 35 H56 V53 H8 Z"/>
+                    <path d="M12 35 V25 C12 20 16 17 21 17 H43 C48 17 52 20 52 25 V35"/>
+                    <path d="M18 27 H30 V35"/>
+                    <path d="M34 27 H46 V35"/>
+                    <path d="M8 43 H56"/>
+
+                </svg>
+
+                <span>Stay</span>
+
+            </a>
+
+        </div>
+
+
+        <!-- CENTRAL LOGO -->
+
+        <div class="logo-wrap">
+
+            <img src="logo.png"
+                 alt="303 Oyster Bay">
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div class="nav-side">
+
+
+            <!-- LIVE -->
+
+            <a class="nav-item"
+               href="live.html"
+               aria-label="Live">
+
+                <svg class="nav-icon"
+                     viewBox="0 0 64 64"
+                     aria-hidden="true">
+
+                    <path d="M9 46 H55"/>
+                    <path d="M14 46 V27 H50 V46"/>
+                    <path d="M14 27 V18 H50 V27"/>
+                    <path d="M21 18 V11 H43 V18"/>
+                    <path d="M19 34 H45"/>
+                    <path d="M24 27 V34"/>
+                    <path d="M40 27 V34"/>
+
+                </svg>
+
+                <span>Live</span>
+
+            </a>
+
+
+            <!-- EXPLORE -->
+
+            <a class="nav-item"
+               href="In%20and%20around.pdf"
+               aria-label="Explore">
+
+                <svg class="nav-icon"
+                     viewBox="0 0 64 64"
+                     aria-hidden="true">
+
+                    <path d="M25 55 H39"/>
+                    <path d="M27 55 V20 H37 V55"/>
+                    <path d="M22 20 H42"/>
+                    <path d="M25 20 L21 25 H43 L39 20"/>
+                    <path d="M29 12 H35 V20"/>
+                    <path d="M18 31 H10"/>
+                    <path d="M46 31 H54"/>
+                    <path d="M19 40 H11"/>
+                    <path d="M45 40 H53"/>
+
+                </svg>
+
+                <span>Explore</span>
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         LIGHTBOX
+         ===================================================== -->
+
+    <div class="lightbox"
+         id="lightbox">
+
+        <button class="lightbox-close"
+                id="lightboxClose"
+                aria-label="Close">
+            ×
+        </button>
+
+        <button class="lightbox-arrow lightbox-prev"
+                id="lightboxPrev"
+                aria-label="Previous">
+            ‹
+        </button>
+
+        <img class="lightbox-image"
+             id="lightboxImage"
+             src=""
+             alt="">
+
+        <button class="lightbox-arrow lightbox-next"
+                id="lightboxNext"
+                aria-label="Next">
+            ›
+        </button>
+
+    </div>
 
 
 </main>
 
 
-
-<!-- =====================================================
-     BOTTOM NAVIGATION
-
-     HOME | STAY | LOGO | LIVE | EXPLORE
-     ===================================================== -->
-
-<nav
-class="bottom-nav"
-aria-label="Main navigation"
->
-
-
-<!-- ================= LEFT ================= -->
-
-<div class="nav-side">
-
-
-<!-- HOME -->
-
-<a
-class="nav-item"
-href="index.html"
-aria-label="Home"
->
-
-<svg
-class="nav-icon"
-viewBox="0 0 64 64"
-aria-hidden="true"
->
-
-<path d="M9 29 L32 9 L55 29"/>
-
-<path d="M15 26 V55 H49 V26"/>
-
-<path d="M27 55 V38 H37 V55"/>
-
-</svg>
-
-<span>
-Home
-</span>
-
-</a>
-
-
-
-<!-- STAY -->
-
-<a
-class="nav-item"
-href="arrival-guide.html"
-aria-label="Stay"
->
-
-<svg
-class="nav-icon"
-viewBox="0 0 64 64"
-aria-hidden="true"
->
-
-<path d="M8 35 H56 V53 H8 Z"/>
-
-<path d="M12 35 V25 C12 20 16 17 21 17 H43 C48 17 52 20 52 25 V35"/>
-
-<path d="M18 27 H30 V35"/>
-
-<path d="M34 27 H46 V35"/>
-
-<path d="M8 43 H56"/>
-
-</svg>
-
-<span>
-Stay
-</span>
-
-</a>
-
-
-</div>
-
-
-
-<!-- ================= CENTRAL LOGO ================= -->
-
-<div class="logo-wrap">
-
-<img
-src="logo.png"
-alt="303 Oyster Bay"
->
-
-</div>
-
-
-
-<!-- ================= RIGHT ================= -->
-
-<div class="nav-side">
-
-
-<!-- LIVE -->
-
-<a
-class="nav-item"
-href="live.html"
-aria-label="Live"
->
-
-<svg
-class="nav-icon"
-viewBox="0 0 64 64"
-aria-hidden="true"
->
-
-<path d="M8 43 H56"/>
-
-<path d="M11 43 V27"/>
-
-<path d="M53 43 V27"/>
-
-<path d="M11 35 H53"/>
-
-<path d="M15 27 V21 C15 18 18 16 22 16 H28 C31 16 33 18 33 21 V27"/>
-
-<path d="M33 27 V22 C33 19 36 17 40 17 H44 C49 17 53 20 53 25 V27"/>
-
-<path d="M16 43 V49"/>
-
-<path d="M48 43 V49"/>
-
-</svg>
-
-<span>
-Live
-</span>
-
-</a>
-
-
-
-<!-- EXPLORE -->
-
-<a
-class="nav-item"
-href="In%20and%20around.pdf"
-aria-label="Explore"
->
-
-<svg
-class="nav-icon"
-viewBox="0 0 64 64"
-aria-hidden="true"
->
-
-<path d="M25 55 H39"/>
-
-<path d="M27 55 V20 H37 V55"/>
-
-<path d="M22 20 H42"/>
-
-<path d="M25 20 L21 25 H43 L39 20"/>
-
-<path d="M29 12 H35 V20"/>
-
-<path d="M18 31 H10"/>
-
-<path d="M46 31 H54"/>
-
-<path d="M19 40 H11"/>
-
-<path d="M45 40 H53"/>
-
-</svg>
-
-<span>
-Explore
-</span>
-
-</a>
-
-
-</div>
-
-</nav>
-
-
-
-<!-- =====================================================
-     LIGHTBOX
-     ===================================================== -->
-
-<div
-class="lightbox"
-id="lightbox"
->
-
-<button
-class="lightbox-close"
-id="lightboxClose"
-aria-label="Close"
->
-×
-</button>
-
-
-<button
-class="lightbox-arrow lightbox-prev"
-id="lightboxPrev"
-aria-label="Previous"
->
-‹
-</button>
-
-
-<img
-class="lightbox-image"
-id="lightboxImage"
-src=""
-alt=""
->
-
-
-<button
-class="lightbox-arrow lightbox-next"
-id="lightboxNext"
-aria-label="Next"
->
-›
-</button>
-
-</div>
-
-
-
-<!-- =====================================================
-     JAVASCRIPT
-     ===================================================== -->
-
 <script>
+
+/* =========================================================
+   GALLERY DATA
+   ========================================================= */
 
 const galleryData = {
 
-"Sea Views":[
-"Sea View1.jpg",
-"Sea View2.jpg",
-"Sea View3.jpg",
-"Sea View4.jpg",
-"Sea View5.jpg"
-],
+    "Sea Views": [
+        "Sea View1.jpg",
+        "Sea View2.jpg",
+        "Sea View3.jpg",
+        "Sea View4.jpg",
+        "Sea View5.jpg"
+    ],
 
-"Living":[
-"Living1.jpg",
-"Living2.jpg",
-"Living3.jpg",
-"Living4.jpg",
-"Living5.jpg",
-"Living6.jpg",
-"Living7.jpg"
-],
+    "Living": [
+        "Living1.jpg",
+        "Living2.jpg",
+        "Living3.jpg",
+        "Living4.jpg",
+        "Living5.jpg",
+        "Living6.jpg",
+        "Living7.jpg"
+    ],
 
-"Bedroom":[
-"Bedroom1.jpg",
-"Bedroom2.jpg",
-"Bedroom3.jpg",
-"Bedroom4.jpg",
-"Bedroom5.jpg",
-"Bedroom6.jpg",
-"Bedroom7.jpg"
-],
+    "Bedroom": [
+        "Bedroom1.jpg",
+        "Bedroom2.jpg",
+        "Bedroom3.jpg",
+        "Bedroom4.jpg",
+        "Bedroom5.jpg",
+        "Bedroom6.jpg",
+        "Bedroom7.jpg"
+    ],
 
-"Kitchen":[
-"Kitchen1.jpg",
-"Kitchen2.jpg",
-"Kitchen3.jpg",
-"Kitchen4.jpg",
-"Kitchen5.jpg",
-"Kitchen6.jpg",
-"Kitchen7.jpg",
-"Kitchen8.jpg"
-]
+    "Kitchen": [
+        "Kitchen1.jpg",
+        "Kitchen2.jpg",
+        "Kitchen3.jpg",
+        "Kitchen4.jpg",
+        "Kitchen5.jpg",
+        "Kitchen6.jpg",
+        "Kitchen7.jpg",
+        "Kitchen8.jpg"
+    ]
 
 };
 
 
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
 const lightbox =
-document.getElementById("lightbox");
+    document.getElementById("lightbox");
 
 const lightboxImage =
-document.getElementById("lightboxImage");
+    document.getElementById("lightboxImage");
 
 const lightboxClose =
-document.getElementById("lightboxClose");
+    document.getElementById("lightboxClose");
 
 const lightboxPrev =
-document.getElementById("lightboxPrev");
+    document.getElementById("lightboxPrev");
 
 const lightboxNext =
-document.getElementById("lightboxNext");
-
+    document.getElementById("lightboxNext");
 
 let currentCategory = "";
 
 let currentIndex = 0;
 
 
+/* =========================================================
+   OPEN
+   ========================================================= */
 
-/* OPEN */
+function openLightbox(category, index) {
 
-function openLightbox(category,index){
+    currentCategory = category;
 
-currentCategory = category;
+    currentIndex = index;
 
-currentIndex = index;
+    lightboxImage.src =
+        galleryData[category][index];
 
-lightboxImage.src =
-galleryData[category][index];
-
-lightboxImage.alt =
-category;
-
-lightbox.classList.add("active");
-
+    lightbox.classList.add("active");
 }
 
 
-/* CLOSE */
+/* =========================================================
+   CLOSE
+   ========================================================= */
 
-function closeLightbox(){
+function closeLightbox() {
 
-lightbox.classList.remove("active");
+    lightbox.classList.remove("active");
 
-lightboxImage.src = "";
-
+    lightboxImage.src = "";
 }
 
 
-/* NEXT */
+/* =========================================================
+   NEXT
+   ========================================================= */
 
-function showNext(){
+function showNext() {
 
-const images =
-galleryData[currentCategory];
+    const images =
+        galleryData[currentCategory];
 
-currentIndex =
-(currentIndex + 1) % images.length;
+    currentIndex =
+        (currentIndex + 1) %
+        images.length;
 
-lightboxImage.src =
-images[currentIndex];
-
+    lightboxImage.src =
+        images[currentIndex];
 }
 
 
-/* PREVIOUS */
+/* =========================================================
+   PREVIOUS
+   ========================================================= */
 
-function showPrevious(){
+function showPrevious() {
 
-const images =
-galleryData[currentCategory];
+    const images =
+        galleryData[currentCategory];
 
-currentIndex =
-(currentIndex - 1 + images.length)
-% images.length;
+    currentIndex =
+        (currentIndex - 1 + images.length) %
+        images.length;
 
-lightboxImage.src =
-images[currentIndex];
-
+    lightboxImage.src =
+        images[currentIndex];
 }
 
 
-/* PHOTO CLICK */
+/* =========================================================
+   PHOTO CLICK
+   ========================================================= */
 
 document
-.querySelectorAll(".photo-card")
-.forEach(card => {
+    .querySelectorAll(".photo-card")
+    .forEach(card => {
 
-card.addEventListener(
-"click",
-() => {
+        card.addEventListener(
+            "click",
+            () => {
 
-openLightbox(
-card.dataset.category,
-Number(card.dataset.index)
+                openLightbox(
+                    card.dataset.category,
+                    Number(card.dataset.index)
+                );
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   LIGHTBOX CONTROLS
+   ========================================================= */
+
+lightboxClose.addEventListener(
+    "click",
+    closeLightbox
 );
 
-});
-
-});
-
-
-/* BUTTONS */
-
-lightboxClose
-.addEventListener(
-"click",
-closeLightbox
+lightboxNext.addEventListener(
+    "click",
+    showNext
 );
 
-lightboxNext
-.addEventListener(
-"click",
-showNext
-);
-
-lightboxPrev
-.addEventListener(
-"click",
-showPrevious
+lightboxPrev.addEventListener(
+    "click",
+    showPrevious
 );
 
 
-/* CLICK OUTSIDE */
+/* =========================================================
+   CLICK OUTSIDE
+   ========================================================= */
 
-lightbox
-.addEventListener(
-"click",
-event => {
+lightbox.addEventListener(
+    "click",
+    event => {
 
-if(event.target === lightbox){
+        if (
+            event.target === lightbox
+        ) {
 
-closeLightbox();
+            closeLightbox();
 
-}
+        }
 
-});
-
-
-/* KEYBOARD */
-
-document
-.addEventListener(
-"keydown",
-event => {
-
-if(
-!lightbox.classList.contains("active")
-){
-
-return;
-
-}
-
-if(event.key === "Escape"){
-
-closeLightbox();
-
-}
-
-if(event.key === "ArrowRight"){
-
-showNext();
-
-}
-
-if(event.key === "ArrowLeft"){
-
-showPrevious();
-
-}
-
-});
+    }
+);
 
 
-/* =====================================================
-   MOBILE SWIPE
-   ===================================================== */
+/* =========================================================
+   KEYBOARD
+   ========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            !lightbox.classList.contains("active")
+        ) {
+
+            return;
+
+        }
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeLightbox();
+
+        }
+
+        if (
+            event.key === "ArrowRight"
+        ) {
+
+            showNext();
+
+        }
+
+        if (
+            event.key === "ArrowLeft"
+        ) {
+
+            showPrevious();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SWIPE
+   ========================================================= */
 
 let touchStartX = 0;
 
+lightbox.addEventListener(
+    "touchstart",
+    event => {
 
-lightbox
-.addEventListener(
-"touchstart",
-event => {
+        touchStartX =
+            event.changedTouches[0].screenX;
 
-touchStartX =
-event.changedTouches[0].screenX;
-
-},
-{passive:true}
+    },
+    {
+        passive: true
+    }
 );
 
 
-lightbox
-.addEventListener(
-"touchend",
-event => {
+lightbox.addEventListener(
+    "touchend",
+    event => {
 
-const difference =
-event.changedTouches[0].screenX
--
-touchStartX;
+        const touchEndX =
+            event.changedTouches[0].screenX;
 
-if(Math.abs(difference) < 40){
+        const difference =
+            touchEndX - touchStartX;
 
-return;
+        if (
+            Math.abs(difference) < 40
+        ) {
 
-}
+            return;
 
-if(difference < 0){
+        }
 
-showNext();
+        if (
+            difference < 0
+        ) {
 
-}
-else{
+            showNext();
 
-showPrevious();
+        } else {
 
-}
+            showPrevious();
 
-},
-{passive:true}
+        }
+
+    },
+    {
+        passive: true
+    }
 );
 
 </script>
 
-
-</main>
-
 </body>
-
 </html>
