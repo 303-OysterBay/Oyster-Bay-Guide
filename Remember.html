@@ -448,36 +448,27 @@ height:58px;
 
 .logo-area {
 
-    position: relative;
-
-    z-index: 70;
-
-    flex: 0 0 102px;
-
-    height: 73px;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    justify-content: center;
-
-    pointer-events: auto;
-
-    background: transparent;
-
-    box-shadow: none;
+  .sand-logo {
+    position:absolute;
+    left:50%;
+    bottom:2px;
+    z-index:40;
+    width:125px;
+    transform:translateX(-50%);
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    text-decoration:none;
+    background:transparent;
+    pointer-events:auto;
 }
 
-
-.logo-area img {
-
-   display:block;
+.sand-logo img {
+    display:block;
     width:125px;
     height:auto;
     background:transparent;
     box-shadow:none;
-    transform:translateY(-8px);
 }
 
 
@@ -1125,56 +1116,61 @@ height:58px;
 
     <nav class="bottom-nav">
 
+<!-- INDEPENDENT LOGO — PART OF THE SAND/PAGE -->
+<a href="index.html" class="sand-logo" aria-label="303 Oyster Bay Home">
+    <img src="logo.png" alt="303 Oyster Bay">
+</a>
 
-        <!-- LEFT BAND -->
+<!-- FIXED BOTTOM NAVIGATION -->
+<nav class="bottom-nav">
 
-        <div class="nav-band left-band">
+    <div class="nav-band left-band">
 
+        <a href="index.html" class="nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.5 12 3l9 7.5"></path>
+                <path d="M5 9.5V21h14V9.5"></path>
+                <path d="M9 21v-7h6v7"></path>
+            </svg>
+            <span>Home</span>
+        </a>
 
-            <!-- HOME -->
+        <a href="arrival-guide.html" class="nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h7a4 4 0 0 1 4 4v10H8a4 4 0 0 0-4 4V5z"></path>
+                <path d="M20 5h-5"></path>
+                <path d="M15 9h5v10h-5"></path>
+            </svg>
+            <span>Stay</span>
+        </a>
 
-            <a href="index.html"
-               class="nav-item">
+    </div>
 
-                <svg class="nav-icon"
-                     viewBox="0 0 24 24">
+    <div class="nav-band right-band">
 
-                    <path d="M3 11.5L12 4l9 7.5"></path>
+        <a href="live.html" class="nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 8c2.2 0 2.2 2 4.5 2S9.8 8 12 8s2.2 2 4.5 2S18.8 8 21 8"></path>
+                <path d="M3 13c2.2 0 2.2 2 4.5 2s2.3-2 4.5-2 2.2 2 4.5 2 2.3-2 4.5-2"></path>
+                <path d="M3 18c2.2 0 2.2 2 4.5 2s2.3-2 4.5-2 2.2 2 4.5 2 2.3-2 4.5-2"></path>
+            </svg>
+            <span>Live</span>
+        </a>
 
-                    <path d="M5.5 10.5V20h13v-9.5"></path>
+        <a href="In%20and%20around.pdf" class="nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 21h6"></path>
+                <path d="M10 17h4"></path>
+                <path d="M8 14h8"></path>
+                <path d="M9 14V8l3-4 3 4v6"></path>
+                <path d="M12 4v13"></path>
+            </svg>
+            <span>Explore</span>
+        </a>
 
-                    <path d="M9.5 20v-5.5h5V20"></path>
+    </div>
 
-                </svg>
-
-                <span>Home</span>
-
-            </a>
-
-
-            <!-- STAY -->
-
-            <a href="arrival-guide.html"
-               class="nav-item">
-
-                <svg class="nav-icon"
-                     viewBox="0 0 24 24">
-
-                    <path d="M4 19V8"></path>
-
-                    <path d="M4 14h16v5"></path>
-
-                    <path d="M7 14V9.5c0-1.4 1-2.5 2.5-2.5h3c1.4 0 2.5 1.1 2.5 2.5V14"></path>
-
-                    <path d="M4 19h17"></path>
-
-                </svg>
-
-                <span>Stay</span>
-
-            </a>
-
-        </div>
+</nav>
 
 
         <!-- =================================================
