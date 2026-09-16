@@ -11,7 +11,6 @@
 
 <title>Gallery | 303 OYSTER BAY</title>
 
-
 <style>
 
 /* =========================================================
@@ -32,9 +31,7 @@ body {
 
 body {
     overflow-x: hidden;
-
     background: #d8b27c;
-
     color: #5b3b23;
 
     font-family:
@@ -45,7 +42,7 @@ body {
 
 
 /* =========================================================
-   MAIN PAGE
+   PAGE
    ========================================================= */
 
 .gallery-page {
@@ -55,38 +52,44 @@ body {
 
     position: relative;
 
-    overflow: hidden;
+    overflow-x: hidden;
 
     background-color: #d8b27c;
+
+    /*
+       IMPORTANT:
+       One background image only.
+       No repeat.
+       No second wave appearing at the bottom.
+    */
 
     background-image:
         url("sand-background.jpg");
 
     background-repeat:
-        repeat-y;
+        no-repeat;
 
     background-position:
         center top;
 
     background-size:
-        1200px auto;
+        cover;
 }
 
 
 /* =========================================================
-   MAIN CONTENT
+   CONTENT
    ========================================================= */
 
 .gallery-content {
 
     width: 100%;
-
     max-width: 1200px;
 
     margin: 0 auto;
 
     padding:
-        18px
+        12px
         clamp(18px, 3vw, 36px)
         0;
 }
@@ -110,7 +113,7 @@ body {
 
     justify-content: center;
 
-    margin-bottom: 8px;
+    margin-bottom: 3px;
 }
 
 
@@ -146,12 +149,14 @@ body {
     color:
         #5b3b23;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
     font-size:
         15px;
 
-    line-height: 1;
+    line-height:
+        1;
 
     box-shadow:
         0 2px 6px rgba(80, 50, 25, 0.14);
@@ -162,7 +167,8 @@ body {
     font-size:
         20px;
 
-    line-height: 1;
+    line-height:
+        1;
 }
 
 
@@ -179,12 +185,18 @@ body {
 
     z-index: 5;
 
+    /*
+       Approximately 20% larger than the previous version.
+    */
+
     width:
-        clamp(125px, 15vw, 190px);
+        clamp(150px, 18vw, 225px);
 
-    height: auto;
+    height:
+        auto;
 
-    display: block;
+    display:
+        block;
 }
 
 
@@ -194,9 +206,11 @@ body {
 
 .gallery-title {
 
-    margin: 32px 0 0 0;
+    margin:
+        55px 0 0 0;
 
-    padding: 0;
+    padding:
+        0;
 
     color:
         #5b3b23;
@@ -226,30 +240,34 @@ body {
 
 .gallery-category {
 
-    width: 100%;
+    width:
+        100%;
 
     margin:
-        0 0 19px 0;
+        0 0 18px 0;
 }
 
 
 /* =========================================================
-   CATEGORY HEADER
+   CATEGORY HEADING
    ========================================================= */
 
 .category-heading {
 
-    width: 100%;
+    width:
+        100%;
 
     height:
         32px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
     margin-bottom:
-        7px;
+        6px;
 }
 
 
@@ -271,7 +289,8 @@ body {
     margin-right:
         8px;
 
-    fill: none;
+    fill:
+        none;
 
     stroke:
         #5b3b23;
@@ -288,7 +307,7 @@ body {
 
 
 /* =========================================================
-   CATEGORY TITLE
+   CATEGORY NAME
    ========================================================= */
 
 .category-name {
@@ -337,7 +356,7 @@ body {
 
 
 /* =========================================================
-   HORIZONTAL PHOTO STRIP
+   PHOTO STRIP
    ========================================================= */
 
 .photo-strip {
@@ -361,9 +380,7 @@ body {
         hidden;
 
     padding:
-        0
-        0
-        5px;
+        0 0 3px 0;
 
     scrollbar-width:
         none;
@@ -383,17 +400,20 @@ body {
 
 /* =========================================================
    PHOTO CARD
-
-   Four complete images + part of fifth on phone.
    ========================================================= */
 
 .photo-card {
 
+    /*
+       Four images remain completely visible,
+       with part of the fifth one showing.
+    */
+
     flex:
-        0 0 clamp(145px, 16vw, 190px);
+        0 0 clamp(135px, 16vw, 190px);
 
     width:
-        clamp(145px, 16vw, 190px);
+        clamp(135px, 16vw, 190px);
 
     aspect-ratio:
         1.42 / 1;
@@ -446,7 +466,7 @@ body {
 
 
 /* =========================================================
-   FOOTER / LOGO AREA
+   FOOTER
    ========================================================= */
 
 .gallery-footer {
@@ -460,8 +480,10 @@ body {
     margin:
         0 auto;
 
-    min-height:
-        250px;
+    /*
+       No artificial 220/250px blank area.
+       Logo follows the gallery naturally.
+    */
 
     display:
         flex;
@@ -473,17 +495,14 @@ body {
         center;
 
     padding:
-        35px
         20px
-        38px;
-
-    position:
-        relative;
+        20px
+        30px;
 }
 
 
 /* =========================================================
-   REAL 303 LOGO
+   303 LOGO
    ========================================================= */
 
 .footer-logo {
@@ -533,8 +552,7 @@ body {
         rgba(35, 24, 15, 0.91);
 
     padding:
-        45px
-        55px;
+        45px 55px;
 }
 
 .lightbox.active {
@@ -544,7 +562,7 @@ body {
 
 
 /* =========================================================
-   LIGHTBOX IMAGE
+   ENLARGED IMAGE
    ========================================================= */
 
 .lightbox-image {
@@ -579,7 +597,7 @@ body {
 
 
 /* =========================================================
-   CLOSE BUTTON
+   CLOSE
    ========================================================= */
 
 .lightbox-close {
@@ -683,7 +701,7 @@ body {
 
 
 /* =========================================================
-   LIGHTBOX COUNTER
+   COUNTER
    ========================================================= */
 
 .lightbox-counter {
@@ -712,58 +730,6 @@ body {
 
 
 /* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-    .gallery-content {
-
-        padding:
-            14px
-            14px
-            0;
-    }
-
-    .gallery-header {
-
-        height:
-            165px;
-
-        margin-bottom:
-            7px;
-    }
-
-    .gallery-title {
-
-        margin-top:
-            34px;
-    }
-
-    .gallery-category {
-
-        margin-bottom:
-            18px;
-    }
-
-    .photo-card {
-
-        flex-basis:
-            155px;
-
-        width:
-            155px;
-    }
-
-    .gallery-footer {
-
-        min-height:
-            230px;
-    }
-}
-
-
-/* =========================================================
    PHONE
    ========================================================= */
 
@@ -772,19 +738,26 @@ body {
     .gallery-page {
 
         /*
-           Keep the background as texture.
-           It is NOT stretched to the length of the page.
+           Single sand background.
+           It will not repeat and therefore cannot
+           create another wave at the bottom.
         */
 
         background-size:
-            600px auto;
+            cover;
+
+        background-position:
+            center top;
+
+        background-repeat:
+            no-repeat;
     }
 
 
     .gallery-content {
 
         padding:
-            10px
+            8px
             10px
             0;
     }
@@ -797,10 +770,10 @@ body {
     .gallery-header {
 
         height:
-            155px;
+            180px;
 
         margin-bottom:
-            2px;
+            0;
     }
 
 
@@ -817,8 +790,7 @@ body {
             2px;
 
         padding:
-            8px
-            12px;
+            8px 12px;
 
         font-size:
             14px;
@@ -826,7 +798,7 @@ body {
 
 
     /* -----------------------------
-       SALT / SAND / STORIES
+       SALT SAND STORIES
        ----------------------------- */
 
     .salt-stories {
@@ -837,19 +809,24 @@ body {
         right:
             0;
 
+        /*
+           Larger than previous version.
+           Still kept in the upper-right corner.
+        */
+
         width:
-            126px;
+            150px;
     }
 
 
     /* -----------------------------
-       TITLE
+       GALLERY
        ----------------------------- */
 
     .gallery-title {
 
         margin-top:
-            34px;
+            74px;
 
         font-size:
             48px;
@@ -904,7 +881,7 @@ body {
 
 
     /* -----------------------------
-       PHOTOS
+       THUMBNAILS
        ----------------------------- */
 
     .photo-strip {
@@ -912,23 +889,23 @@ body {
         gap:
             8px;
 
-        padding-bottom:
-            3px;
+        padding:
+            0 0 3px 0;
     }
 
     .photo-card {
 
         /*
-           Phone width:
-           4 images fit comfortably,
-           with the fifth peeping out.
+           Deliberately narrow enough to show
+           four complete images plus a clear
+           slice of image #5.
         */
 
         flex:
-            0 0 21.8vw;
+            0 0 82px;
 
         width:
-            21.8vw;
+            82px;
 
         aspect-ratio:
             1.42 / 1;
@@ -944,13 +921,13 @@ body {
 
     .gallery-footer {
 
-        min-height:
-            220px;
-
         padding:
-            25px
+            18px
             15px
-            35px;
+            28px;
+
+        min-height:
+            0;
     }
 
     .footer-logo {
@@ -970,7 +947,6 @@ body {
     .lightbox {
 
         padding:
-            40px
             40px;
     }
 
@@ -1002,13 +978,11 @@ body {
     }
 
     .lightbox-prev {
-
         left:
             7px;
     }
 
     .lightbox-next {
-
         right:
             7px;
     }
@@ -1025,10 +999,13 @@ body {
     .gallery-header {
 
         height:
-            150px;
+            175px;
     }
 
     .gallery-title {
+
+        margin-top:
+            72px;
 
         font-size:
             45px;
@@ -1037,7 +1014,7 @@ body {
     .salt-stories {
 
         width:
-            118px;
+            145px;
     }
 
     .category-name {
@@ -1049,22 +1026,34 @@ body {
     .photo-card {
 
         flex-basis:
-            21.7vw;
+            78px;
 
         width:
-            21.7vw;
-    }
-
-    .gallery-footer {
-
-        min-height:
-            205px;
+            78px;
     }
 
     .footer-logo {
 
         width:
             180px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP / TABLET
+   ========================================================= */
+
+@media (min-width: 601px) {
+
+    .gallery-footer {
+
+        padding-top:
+            25px;
+
+        padding-bottom:
+            35px;
     }
 
 }
@@ -1081,7 +1070,7 @@ body {
 
 
     <!-- =====================================================
-         TOP CONTENT
+         GALLERY CONTENT
          ===================================================== -->
 
     <div class="gallery-content">
@@ -1105,12 +1094,6 @@ body {
 
             </a>
 
-
-            <!--
-                GALLERY-SPECIFIC ASSET
-                Uploaded to repository as:
-                Salt Sand Stories.png
-            -->
 
             <img
                 src="Salt%20Sand%20Stories.png"
@@ -1770,16 +1753,15 @@ const lightboxCounter =
 
 
 /* =========================================================
-   CURRENT POSITION
+   CURRENT IMAGE
    ========================================================= */
 
 let currentCategory = "";
-
 let currentIndex = 0;
 
 
 /* =========================================================
-   OPEN LIGHTBOX
+   OPEN
    ========================================================= */
 
 function openLightbox(
@@ -1805,7 +1787,7 @@ function openLightbox(
 
 
 /* =========================================================
-   UPDATE LIGHTBOX
+   UPDATE
    ========================================================= */
 
 function updateLightbox() {
@@ -1884,7 +1866,7 @@ function previousImage() {
 
 
 /* =========================================================
-   THUMBNAIL CLICK
+   THUMBNAIL CLICKS
    ========================================================= */
 
 document
@@ -1929,7 +1911,7 @@ lightboxNext.addEventListener(
 
 
 /* =========================================================
-   CLOSE BY CLICKING OUTSIDE
+   OUTSIDE CLICK
    ========================================================= */
 
 lightbox.addEventListener(
@@ -1987,7 +1969,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   SWIPE ON ENLARGED IMAGE
+   MOBILE SWIPE
    ========================================================= */
 
 let touchStartX = 0;
