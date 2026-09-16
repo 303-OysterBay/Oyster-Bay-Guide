@@ -322,7 +322,7 @@ body {
     flex-shrink: 0;
 
     min-height:
-        clamp(70px, 9vw, 112px);
+        clamp(76px, 9vw, 112px);
 
     padding:
         clamp(7px, 1vw, 13px)
@@ -333,7 +333,7 @@ body {
     grid-template-columns:
         repeat(5, minmax(0, 1fr));
 
-    align-items: center;
+    align-items: stretch;
 
     background:
         rgba(250, 240, 219, 0.94);
@@ -423,6 +423,8 @@ body {
    ========================================================= */
 
 .feature-title {
+    width: 100%;
+
     margin: 0;
 
     color: #604027;
@@ -437,11 +439,24 @@ body {
 
     font-weight: 700;
 
-    line-height: 1.05;
+    line-height: 1.08;
 
     text-align: center;
 
-    white-space: nowrap;
+    white-space: normal;
+}
+
+
+/* =========================================================
+   CONTROLLED TWO-LINE FEATURE TEXT
+   ========================================================= */
+
+.feature-title.two-line {
+    line-height: 1.05;
+}
+
+.feature-title.two-line span {
+    display: block;
 }
 
 
@@ -528,7 +543,7 @@ body {
     }
 
     .features {
-        min-height: 72px;
+        min-height: 76px;
         border-radius: 18px;
     }
 
@@ -540,6 +555,7 @@ body {
 
     .feature-title {
         font-size: 9px;
+        line-height: 1.05;
     }
 
     .feature-subtitle {
@@ -611,8 +627,10 @@ body {
         font-size: 23px;
     }
 
+    /* ONE SINGLE FEATURES BAND */
+
     .features {
-        min-height: 68px;
+        min-height: 76px;
 
         padding:
             5px
@@ -639,7 +657,13 @@ body {
     .feature-title {
         font-size: 8.5px;
 
-        letter-spacing: -0.15px;
+        line-height: 1.05;
+
+        white-space: normal;
+    }
+
+    .feature-title.two-line {
+        line-height: 1.02;
     }
 
     .feature-subtitle {
@@ -702,8 +726,10 @@ body {
         font-size: 20px;
     }
 
+    /* ONE SINGLE FEATURES BAND */
+
     .features {
-        min-height: 64px;
+        min-height: 70px;
 
         border-radius: 15px;
     }
@@ -717,6 +743,7 @@ body {
 
     .feature-title {
         font-size: 7.7px;
+        line-height: 1.03;
     }
 
     .feature-subtitle {
@@ -769,16 +796,19 @@ body {
     }
 
     .features {
-        min-height: 58px;
+        min-height: 64px;
     }
 
     .feature svg {
         width: 21px;
         height: 21px;
+
+        margin-bottom: 2px;
     }
 
     .feature-title {
         font-size: 7px;
+        line-height: 1.02;
     }
 
     .feature-subtitle {
@@ -802,20 +832,25 @@ body {
     <header class="header">
 
         <!-- Airbnb Guest Favourite -->
+
         <img
             class="guest-favourite"
             src="guest-favourite.png"
             alt="Airbnb Guest Favourite"
         >
 
+
         <!-- 303 Oyster Bay Logo -->
+
         <img
             class="property-logo"
             src="logo.png"
             alt="303 Oyster Bay — Surathkal · Mangaluru"
         >
 
+
         <!-- Tagline -->
+
         <p class="tagline">
             Where the sea slows you down.
         </p>
@@ -827,8 +862,10 @@ body {
          FOUR SQUARE NAVIGATION CARDS
          ===================================================== -->
 
-    <section class="card-grid"
-        aria-label="303 Oyster Bay sections">
+    <section
+        class="card-grid"
+        aria-label="303 Oyster Bay sections"
+    >
 
 
         <!-- YOUR STAY -->
@@ -951,7 +988,7 @@ body {
 
 
     <!-- =====================================================
-         FEATURES
+         FEATURES — ONE SINGLE CONTINUOUS BAND
          ===================================================== -->
 
     <section
@@ -1026,7 +1063,7 @@ body {
         </div>
 
 
-        <!-- SEA VIEWS -->
+        <!-- UNINTERRUPTED SEA VIEWS -->
 
         <div class="feature">
 
@@ -1061,8 +1098,9 @@ body {
 
             </svg>
 
-            <p class="feature-title">
-                Uninterrupted Sea Views
+            <p class="feature-title two-line">
+                <span>Uninterrupted</span>
+                <span>Sea Views</span>
             </p>
 
         </div>
@@ -1216,8 +1254,9 @@ body {
 
             </svg>
 
-            <p class="feature-title">
-                High-Speed Wi-Fi
+            <p class="feature-title two-line">
+                <span>High-Speed</span>
+                <span>Wi-Fi</span>
             </p>
 
         </div>
