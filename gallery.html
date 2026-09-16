@@ -11,6 +11,7 @@
 
 <title>Gallery | 303 OYSTER BAY</title>
 
+
 <style>
 
 /* =========================================================
@@ -23,45 +24,39 @@
 
 html,
 body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
-    min-height: 100%;
 }
 
 body {
-    overflow-x: hidden;
-    background: #d8b27c;
-    color: #5b3b23;
+    overflow: hidden;
 
     font-family:
         Arial,
         Helvetica,
         sans-serif;
+
+    color: #5b3b23;
 }
 
 
 /* =========================================================
-   PAGE
+   COMPLETE GALLERY SCREEN
    ========================================================= */
 
 .gallery-page {
 
     width: 100%;
-    min-height: 100vh;
+    height: 100svh;
+    min-height: 100svh;
 
     position: relative;
 
-    overflow-x: hidden;
+    overflow: hidden;
 
     background-color: #d8b27c;
-
-    /*
-       IMPORTANT:
-       One background image only.
-       No repeat.
-       No second wave appearing at the bottom.
-    */
 
     background-image:
         url("sand-background.jpg");
@@ -78,20 +73,25 @@ body {
 
 
 /* =========================================================
-   CONTENT
+   MAIN CONTENT AREA
    ========================================================= */
 
 .gallery-content {
 
-    width: 100%;
-    max-width: 1200px;
+    position: absolute;
 
-    margin: 0 auto;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
 
     padding:
-        12px
-        clamp(18px, 3vw, 36px)
+        8px
+        14px
         0;
+
+    overflow: hidden;
 }
 
 
@@ -105,15 +105,9 @@ body {
 
     width: 100%;
 
-    height: 170px;
+    height: 150px;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    margin-bottom: 3px;
+    flex-shrink: 0;
 }
 
 
@@ -125,23 +119,22 @@ body {
 
     position: absolute;
 
-    top: 0;
-    left: 0;
+    top: 2px;
+    left: 2px;
 
-    z-index: 10;
+    z-index: 20;
 
     display: flex;
 
     align-items: center;
 
-    gap: 7px;
+    gap: 6px;
 
     padding:
         8px
-        14px;
+        13px;
 
-    border-radius:
-        24px;
+    border-radius: 24px;
 
     background:
         rgba(250, 239, 217, 0.96);
@@ -153,7 +146,7 @@ body {
         none;
 
     font-size:
-        15px;
+        14px;
 
     line-height:
         1;
@@ -165,7 +158,7 @@ body {
 .home-arrow {
 
     font-size:
-        20px;
+        19px;
 
     line-height:
         1;
@@ -183,14 +176,10 @@ body {
     top: 0;
     right: 0;
 
-    z-index: 5;
-
-    /*
-       Approximately 20% larger than the previous version.
-    */
+    z-index: 15;
 
     width:
-        clamp(150px, 18vw, 225px);
+        175px;
 
     height:
         auto;
@@ -206,11 +195,18 @@ body {
 
 .gallery-title {
 
-    margin:
-        55px 0 0 0;
+    position: absolute;
 
-    padding:
-        0;
+    left: 0;
+    right: 0;
+
+    top: 67px;
+
+    margin: 0;
+
+    padding: 0;
+
+    text-align: center;
 
     color:
         #5b3b23;
@@ -221,30 +217,27 @@ body {
         sans-serif;
 
     font-size:
-        clamp(48px, 6vw, 72px);
+        48px;
 
     font-weight:
         400;
 
     line-height:
         1;
-
-    text-align:
-        center;
 }
 
 
 /* =========================================================
-   CATEGORY
+   CATEGORY AREA
    ========================================================= */
 
 .gallery-category {
 
-    width:
-        100%;
+    width: 100%;
 
-    margin:
-        0 0 18px 0;
+    margin: 0 0 13px 0;
+
+    padding: 0;
 }
 
 
@@ -254,20 +247,15 @@ body {
 
 .category-heading {
 
-    width:
-        100%;
+    width: 100%;
 
-    height:
-        32px;
+    height: 29px;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    margin-bottom:
-        6px;
+    margin-bottom: 5px;
 }
 
 
@@ -278,16 +266,16 @@ body {
 .category-icon {
 
     flex:
-        0 0 30px;
+        0 0 27px;
 
     width:
-        30px;
+        27px;
 
     height:
-        30px;
+        27px;
 
     margin-right:
-        8px;
+        7px;
 
     fill:
         none;
@@ -296,7 +284,7 @@ body {
         #5b3b23;
 
     stroke-width:
-        1.8;
+        1.7;
 
     stroke-linecap:
         round;
@@ -307,7 +295,7 @@ body {
 
 
 /* =========================================================
-   CATEGORY NAME
+   CATEGORY TITLE
    ========================================================= */
 
 .category-name {
@@ -325,7 +313,7 @@ body {
         #5b3b23;
 
     font-size:
-        clamp(22px, 2.7vw, 32px);
+        22px;
 
     font-weight:
         400;
@@ -348,42 +336,36 @@ body {
         1px;
 
     margin-left:
-        10px;
+        9px;
 
     background:
-        rgba(91, 59, 35, 0.48);
+        rgba(91, 59, 35, 0.50);
 }
 
 
 /* =========================================================
-   PHOTO STRIP
+   HORIZONTAL PHOTO STRIP
    ========================================================= */
 
 .photo-strip {
 
-    width:
-        100%;
+    width: 100%;
 
-    display:
-        flex;
+    display: flex;
 
-    flex-wrap:
-        nowrap;
+    flex-wrap: nowrap;
 
-    gap:
-        10px;
+    gap: 8px;
 
-    overflow-x:
-        auto;
-
-    overflow-y:
-        hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
 
     padding:
-        0 0 3px 0;
+        0 0 2px 0;
 
-    scrollbar-width:
-        none;
+    margin: 0;
+
+    scrollbar-width: none;
 
     -webkit-overflow-scrolling:
         touch;
@@ -393,30 +375,24 @@ body {
 }
 
 .photo-strip::-webkit-scrollbar {
-    display:
-        none;
+    display: none;
 }
 
 
 /* =========================================================
-   PHOTO CARD
+   PHOTO
    ========================================================= */
 
 .photo-card {
 
-    /*
-       Four images remain completely visible,
-       with part of the fifth one showing.
-    */
-
     flex:
-        0 0 clamp(135px, 16vw, 190px);
+        0 0 82px;
 
     width:
-        clamp(135px, 16vw, 190px);
+        82px;
 
-    aspect-ratio:
-        1.42 / 1;
+    height:
+        58px;
 
     padding:
         0;
@@ -425,10 +401,10 @@ body {
         0;
 
     border:
-        none;
+        0;
 
     border-radius:
-        12px;
+        10px;
 
     overflow:
         hidden;
@@ -436,17 +412,20 @@ body {
     background:
         #ead6b2;
 
-    box-shadow:
-        0 2px 6px rgba(70, 42, 20, 0.13);
+    display:
+        block;
 
     cursor:
         pointer;
 
-    display:
-        block;
+    box-shadow:
+        0 2px 5px rgba(70, 42, 20, 0.14);
 
-    flex-shrink:
-        0;
+    appearance:
+        none;
+
+    -webkit-appearance:
+        none;
 }
 
 .photo-card img {
@@ -466,38 +445,34 @@ body {
 
 
 /* =========================================================
-   FOOTER
+   BOTTOM LOGO
    ========================================================= */
 
 .gallery-footer {
 
-    width:
-        100%;
+    position: absolute;
 
-    max-width:
-        1200px;
+    left: 0;
+    right: 0;
 
-    margin:
-        0 auto;
+    bottom: 0;
 
-    /*
-       No artificial 220/250px blank area.
-       Logo follows the gallery naturally.
-    */
+    width: 100%;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        flex-end;
+    align-items: flex-end;
 
-    justify-content:
-        center;
+    justify-content: center;
 
     padding:
-        20px
-        20px
-        30px;
+        0
+        0
+        18px;
+
+    z-index: 10;
+
+    pointer-events: none;
 }
 
 
@@ -511,10 +486,10 @@ body {
         block;
 
     width:
-        clamp(190px, 24vw, 290px);
+        190px;
 
     max-width:
-        65%;
+        55%;
 
     height:
         auto;
@@ -530,39 +505,32 @@ body {
 
 .lightbox {
 
-    position:
-        fixed;
+    position: fixed;
 
-    inset:
-        0;
+    inset: 0;
 
-    z-index:
-        1000;
+    z-index: 1000;
 
-    display:
-        none;
+    display: none;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
     background:
-        rgba(35, 24, 15, 0.91);
+        rgba(35, 24, 15, 0.92);
 
     padding:
-        45px 55px;
+        40px;
 }
 
 .lightbox.active {
-    display:
-        flex;
+    display: flex;
 }
 
 
 /* =========================================================
-   ENLARGED IMAGE
+   LARGE IMAGE
    ========================================================= */
 
 .lightbox-image {
@@ -574,7 +542,7 @@ body {
         90vw;
 
     max-height:
-        84vh;
+        82vh;
 
     width:
         auto;
@@ -586,7 +554,7 @@ body {
         contain;
 
     border-radius:
-        14px;
+        13px;
 
     box-shadow:
         0 10px 35px rgba(0, 0, 0, 0.40);
@@ -606,16 +574,19 @@ body {
         absolute;
 
     top:
-        14px;
+        13px;
 
     right:
-        15px;
+        13px;
 
     width:
-        44px;
+        42px;
 
     height:
-        44px;
+        42px;
+
+    padding:
+        0;
 
     border:
         none;
@@ -630,10 +601,10 @@ body {
         #5b3b23;
 
     font-size:
-        30px;
+        29px;
 
     line-height:
-        44px;
+        42px;
 
     text-align:
         center;
@@ -644,7 +615,7 @@ body {
 
 
 /* =========================================================
-   LIGHTBOX NAVIGATION
+   LIGHTBOX PREVIOUS / NEXT
    ========================================================= */
 
 .lightbox-nav {
@@ -659,10 +630,13 @@ body {
         translateY(-50%);
 
     width:
-        44px;
+        42px;
 
     height:
-        44px;
+        42px;
+
+    padding:
+        0;
 
     border:
         none;
@@ -677,10 +651,10 @@ body {
         #5b3b23;
 
     font-size:
-        34px;
+        32px;
 
     line-height:
-        42px;
+        40px;
 
     text-align:
         center;
@@ -691,12 +665,12 @@ body {
 
 .lightbox-prev {
     left:
-        12px;
+        8px;
 }
 
 .lightbox-next {
     right:
-        12px;
+        8px;
 }
 
 
@@ -710,7 +684,7 @@ body {
         absolute;
 
     bottom:
-        16px;
+        14px;
 
     left:
         50%;
@@ -722,7 +696,7 @@ body {
         #f5ead6;
 
     font-size:
-        13px;
+        12px;
 
     white-space:
         nowrap;
@@ -730,268 +704,99 @@ body {
 
 
 /* =========================================================
-   PHONE
+   DESKTOP
    ========================================================= */
 
-@media (max-width: 600px) {
-
-    .gallery-page {
-
-        /*
-           Single sand background.
-           It will not repeat and therefore cannot
-           create another wave at the bottom.
-        */
-
-        background-size:
-            cover;
-
-        background-position:
-            center top;
-
-        background-repeat:
-            no-repeat;
-    }
-
+@media (min-width: 601px) {
 
     .gallery-content {
 
+        max-width:
+            1200px;
+
+        left:
+            50%;
+
+        transform:
+            translateX(-50%);
+
         padding:
-            8px
-            10px
-            0;
+            12px 30px 0;
     }
 
-
-    /* -----------------------------
-       HEADER
-       ----------------------------- */
 
     .gallery-header {
 
         height:
             180px;
-
-        margin-bottom:
-            0;
     }
 
-
-    /* -----------------------------
-       HOME
-       ----------------------------- */
-
-    .home-button {
-
-        top:
-            2px;
-
-        left:
-            2px;
-
-        padding:
-            8px 12px;
-
-        font-size:
-            14px;
-    }
-
-
-    /* -----------------------------
-       SALT SAND STORIES
-       ----------------------------- */
 
     .salt-stories {
 
-        top:
-            0;
-
-        right:
-            0;
-
-        /*
-           Larger than previous version.
-           Still kept in the upper-right corner.
-        */
-
         width:
-            150px;
+            220px;
     }
 
-
-    /* -----------------------------
-       GALLERY
-       ----------------------------- */
 
     .gallery-title {
 
-        margin-top:
-            74px;
+        top:
+            82px;
 
         font-size:
-            48px;
+            64px;
     }
 
-
-    /* -----------------------------
-       CATEGORY
-       ----------------------------- */
 
     .gallery-category {
 
         margin-bottom:
-            15px;
+            17px;
     }
 
-    .category-heading {
-
-        height:
-            29px;
-
-        margin-bottom:
-            5px;
-    }
-
-    .category-icon {
-
-        flex-basis:
-            27px;
-
-        width:
-            27px;
-
-        height:
-            27px;
-
-        margin-right:
-            7px;
-    }
 
     .category-name {
 
         font-size:
-            22px;
-    }
-
-    .category-line {
-
-        margin-left:
-            9px;
+            27px;
     }
 
 
-    /* -----------------------------
-       THUMBNAILS
-       ----------------------------- */
+    .photo-card {
+
+        flex-basis:
+            150px;
+
+        width:
+            150px;
+
+        height:
+            105px;
+
+        border-radius:
+            12px;
+    }
+
 
     .photo-strip {
 
         gap:
-            8px;
-
-        padding:
-            0 0 3px 0;
-    }
-
-    .photo-card {
-
-        /*
-           Deliberately narrow enough to show
-           four complete images plus a clear
-           slice of image #5.
-        */
-
-        flex:
-            0 0 82px;
-
-        width:
-            82px;
-
-        aspect-ratio:
-            1.42 / 1;
-
-        border-radius:
             10px;
     }
 
 
-    /* -----------------------------
-       FOOTER
-       ----------------------------- */
-
-    .gallery-footer {
-
-        padding:
-            18px
-            15px
-            28px;
-
-        min-height:
-            0;
-    }
-
     .footer-logo {
 
         width:
-            195px;
-
-        max-width:
-            65%;
-    }
-
-
-    /* -----------------------------
-       LIGHTBOX
-       ----------------------------- */
-
-    .lightbox {
-
-        padding:
-            40px;
-    }
-
-    .lightbox-image {
-
-        max-width:
-            88vw;
-
-        max-height:
-            80vh;
-
-        border-radius:
-            11px;
-    }
-
-    .lightbox-nav {
-
-        width:
-            40px;
-
-        height:
-            40px;
-
-        font-size:
-            30px;
-
-        line-height:
-            38px;
-    }
-
-    .lightbox-prev {
-        left:
-            7px;
-    }
-
-    .lightbox-next {
-        right:
-            7px;
+            260px;
     }
 
 }
 
 
 /* =========================================================
-   VERY SMALL PHONE
+   VERY SMALL PHONES
    ========================================================= */
 
 @media (max-width: 390px) {
@@ -999,38 +804,46 @@ body {
     .gallery-header {
 
         height:
-            175px;
+            146px;
     }
 
-    .gallery-title {
-
-        margin-top:
-            72px;
-
-        font-size:
-            45px;
-    }
 
     .salt-stories {
 
         width:
-            145px;
+            165px;
     }
 
-    .category-name {
+
+    .gallery-title {
+
+        top:
+            65px;
 
         font-size:
-            21px;
+            46px;
     }
+
+
+    .gallery-category {
+
+        margin-bottom:
+            12px;
+    }
+
 
     .photo-card {
 
         flex-basis:
-            78px;
+            80px;
 
         width:
-            78px;
+            80px;
+
+        height:
+            57px;
     }
+
 
     .footer-logo {
 
@@ -1042,18 +855,90 @@ body {
 
 
 /* =========================================================
-   DESKTOP / TABLET
+   SHORT SCREENS
    ========================================================= */
 
-@media (min-width: 601px) {
+@media (max-height: 750px) and (max-width: 600px) {
+
+    .gallery-header {
+
+        height:
+            132px;
+    }
+
+
+    .salt-stories {
+
+        width:
+            155px;
+    }
+
+
+    .gallery-title {
+
+        top:
+            58px;
+
+        font-size:
+            43px;
+    }
+
+
+    .gallery-category {
+
+        margin-bottom:
+            8px;
+    }
+
+
+    .category-heading {
+
+        height:
+            27px;
+
+        margin-bottom:
+            3px;
+    }
+
+
+    .category-icon {
+
+        width:
+            25px;
+
+        height:
+            25px;
+
+        flex-basis:
+            25px;
+    }
+
+
+    .category-name {
+
+        font-size:
+            20px;
+    }
+
+
+    .photo-card {
+
+        height:
+            54px;
+    }
+
+
+    .footer-logo {
+
+        width:
+            170px;
+    }
+
 
     .gallery-footer {
 
-        padding-top:
-            25px;
-
         padding-bottom:
-            35px;
+            10px;
     }
 
 }
@@ -1070,7 +955,7 @@ body {
 
 
     <!-- =====================================================
-         GALLERY CONTENT
+         MAIN CONTENT
          ===================================================== -->
 
     <div class="gallery-content">
@@ -1161,7 +1046,6 @@ body {
 
 
             </div>
-
 
 
             <div class="photo-strip">
@@ -1281,7 +1165,6 @@ body {
 
 
             </div>
-
 
 
             <div class="photo-strip">
@@ -1405,7 +1288,6 @@ body {
 
 
             </div>
-
 
 
             <div class="photo-strip">
@@ -1539,7 +1421,6 @@ body {
             </div>
 
 
-
             <div class="photo-strip">
 
 
@@ -1613,7 +1494,7 @@ body {
 
 
     <!-- =====================================================
-         BOTTOM LOGO
+         BOTTOM JUSTIFIED LOGO
          ===================================================== -->
 
     <footer class="gallery-footer">
@@ -1629,7 +1510,7 @@ body {
 
 
     <!-- =====================================================
-         LIGHTBOX
+         IMAGE LIGHTBOX
          ===================================================== -->
 
     <div
@@ -1682,14 +1563,11 @@ body {
     </div>
 
 
-</main>
-
-
 
 <script>
 
 /* =========================================================
-   GALLERY DATA
+   IMAGE LISTS
    ========================================================= */
 
 const galleryData = {
@@ -1761,7 +1639,7 @@ let currentIndex = 0;
 
 
 /* =========================================================
-   OPEN
+   OPEN LIGHTBOX
    ========================================================= */
 
 function openLightbox(
@@ -1787,7 +1665,7 @@ function openLightbox(
 
 
 /* =========================================================
-   UPDATE
+   UPDATE LIGHTBOX
    ========================================================= */
 
 function updateLightbox() {
@@ -1813,7 +1691,7 @@ function updateLightbox() {
 
 
 /* =========================================================
-   CLOSE
+   CLOSE LIGHTBOX
    ========================================================= */
 
 function closeLightbox() {
@@ -1828,7 +1706,7 @@ function closeLightbox() {
 
 
 /* =========================================================
-   NEXT
+   NEXT IMAGE
    ========================================================= */
 
 function nextImage() {
@@ -1837,7 +1715,9 @@ function nextImage() {
         galleryData[currentCategory];
 
     currentIndex =
-        (currentIndex + 1) %
+        (
+            currentIndex + 1
+        ) %
         images.length;
 
     updateLightbox();
@@ -1845,7 +1725,7 @@ function nextImage() {
 
 
 /* =========================================================
-   PREVIOUS
+   PREVIOUS IMAGE
    ========================================================= */
 
 function previousImage() {
@@ -1866,7 +1746,7 @@ function previousImage() {
 
 
 /* =========================================================
-   THUMBNAIL CLICKS
+   THUMBNAIL CLICK
    ========================================================= */
 
 document
@@ -1911,7 +1791,7 @@ lightboxNext.addEventListener(
 
 
 /* =========================================================
-   OUTSIDE CLICK
+   CLOSE BY CLICKING OUTSIDE IMAGE
    ========================================================= */
 
 lightbox.addEventListener(
@@ -1949,19 +1829,25 @@ document.addEventListener(
         if (
             event.key === "Escape"
         ) {
+
             closeLightbox();
+
         }
 
         if (
             event.key === "ArrowRight"
         ) {
+
             nextImage();
+
         }
 
         if (
             event.key === "ArrowLeft"
         ) {
+
             previousImage();
+
         }
 
     }
@@ -1969,7 +1855,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   MOBILE SWIPE
+   SWIPE LEFT / RIGHT ON LARGE IMAGE
    ========================================================= */
 
 let touchStartX = 0;
@@ -2005,8 +1891,11 @@ lightbox.addEventListener(
         if (
             Math.abs(distance) < 45
         ) {
+
             return;
+
         }
+
 
         if (
             distance < 0
@@ -2028,6 +1917,8 @@ lightbox.addEventListener(
 
 </script>
 
+
+</main>
 
 </body>
 </html>
