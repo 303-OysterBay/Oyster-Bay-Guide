@@ -43,16 +43,16 @@ body {
 
 
 /* =========================================================
-   COMPLETE GALLERY SCREEN
+   COMPLETE ONE-SCREEN GALLERY
    ========================================================= */
 
 .gallery-page {
 
+    position: relative;
+
     width: 100%;
     height: 100svh;
     min-height: 100svh;
-
-    position: relative;
 
     overflow: hidden;
 
@@ -73,7 +73,7 @@ body {
 
 
 /* =========================================================
-   MAIN CONTENT AREA
+   CONTENT
    ========================================================= */
 
 .gallery-content {
@@ -105,9 +105,12 @@ body {
 
     width: 100%;
 
-    height: 150px;
+    /*
+       Deliberately compact.
+       This gives more room to the gallery rows.
+    */
 
-    flex-shrink: 0;
+    height: 140px;
 }
 
 
@@ -134,7 +137,8 @@ body {
         8px
         13px;
 
-    border-radius: 24px;
+    border-radius:
+        24px;
 
     background:
         rgba(250, 239, 217, 0.96);
@@ -178,8 +182,12 @@ body {
 
     z-index: 15;
 
+    /*
+       Larger and much more readable.
+    */
+
     width:
-        175px;
+        180px;
 
     height:
         auto;
@@ -200,13 +208,18 @@ body {
     left: 0;
     right: 0;
 
-    top: 67px;
+    /*
+       Pulled upward to balance the larger
+       Salt Sand Stories artwork.
+    */
+
+    top: 56px;
 
     margin: 0;
-
     padding: 0;
 
-    text-align: center;
+    text-align:
+        center;
 
     color:
         #5b3b23;
@@ -217,7 +230,7 @@ body {
         sans-serif;
 
     font-size:
-        48px;
+        47px;
 
     font-weight:
         400;
@@ -228,34 +241,42 @@ body {
 
 
 /* =========================================================
-   CATEGORY AREA
+   CATEGORY
    ========================================================= */
 
 .gallery-category {
 
-    width: 100%;
+    width:
+        100%;
 
-    margin: 0 0 13px 0;
+    margin:
+        0 0 13px 0;
 
-    padding: 0;
+    padding:
+        0;
 }
 
 
 /* =========================================================
-   CATEGORY HEADING
+   CATEGORY HEADER
    ========================================================= */
 
 .category-heading {
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 29px;
+    height:
+        29px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    margin-bottom: 5px;
+    margin-bottom:
+        5px;
 }
 
 
@@ -349,23 +370,32 @@ body {
 
 .photo-strip {
 
-    width: 100%;
+    width:
+        100%;
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: nowrap;
+    flex-wrap:
+        nowrap;
 
-    gap: 8px;
+    gap:
+        8px;
 
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x:
+        auto;
+
+    overflow-y:
+        hidden;
 
     padding:
         0 0 2px 0;
 
-    margin: 0;
+    margin:
+        0;
 
-    scrollbar-width: none;
+    scrollbar-width:
+        none;
 
     -webkit-overflow-scrolling:
         touch;
@@ -375,24 +405,31 @@ body {
 }
 
 .photo-strip::-webkit-scrollbar {
-    display: none;
+    display:
+        none;
 }
 
 
 /* =========================================================
-   PHOTO
+   PHOTO CARD
    ========================================================= */
 
 .photo-card {
 
+    /*
+       Larger than before.
+       Four images remain complete and
+       the fifth visibly peeps in.
+    */
+
     flex:
-        0 0 82px;
+        0 0 100px;
 
     width:
-        82px;
+        100px;
 
     height:
-        58px;
+        70px;
 
     padding:
         0;
@@ -401,10 +438,10 @@ body {
         0;
 
     border:
-        0;
+        none;
 
     border-radius:
-        10px;
+        11px;
 
     overflow:
         hidden;
@@ -450,29 +487,38 @@ body {
 
 .gallery-footer {
 
-    position: absolute;
+    position:
+        absolute;
 
-    left: 0;
-    right: 0;
+    left:
+        0;
 
-    bottom: 0;
+    right:
+        0;
 
-    width: 100%;
+    bottom:
+        0;
 
-    display: flex;
+    width:
+        100%;
 
-    align-items: flex-end;
+    display:
+        flex;
 
-    justify-content: center;
+    align-items:
+        flex-end;
+
+    justify-content:
+        center;
 
     padding:
-        0
-        0
-        18px;
+        0 0 12px 0;
 
-    z-index: 10;
+    z-index:
+        10;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 }
 
 
@@ -486,10 +532,10 @@ body {
         block;
 
     width:
-        190px;
+        195px;
 
     max-width:
-        55%;
+        58%;
 
     height:
         auto;
@@ -505,17 +551,23 @@ body {
 
 .lightbox {
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
-    z-index: 1000;
+    z-index:
+        1000;
 
-    display: none;
+    display:
+        none;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
     background:
         rgba(35, 24, 15, 0.92);
@@ -525,12 +577,13 @@ body {
 }
 
 .lightbox.active {
-    display: flex;
+    display:
+        flex;
 }
 
 
 /* =========================================================
-   LARGE IMAGE
+   ENLARGED IMAGE
    ========================================================= */
 
 .lightbox-image {
@@ -615,7 +668,7 @@ body {
 
 
 /* =========================================================
-   LIGHTBOX PREVIOUS / NEXT
+   LIGHTBOX NAVIGATION
    ========================================================= */
 
 .lightbox-nav {
@@ -742,7 +795,7 @@ body {
     .gallery-title {
 
         top:
-            82px;
+            78px;
 
         font-size:
             64px;
@@ -804,58 +857,88 @@ body {
     .gallery-header {
 
         height:
-            146px;
+            136px;
     }
 
 
     .salt-stories {
 
         width:
-            165px;
+            170px;
     }
 
 
     .gallery-title {
 
         top:
-            65px;
+            54px;
 
         font-size:
-            46px;
+            45px;
     }
 
 
     .gallery-category {
 
         margin-bottom:
-            12px;
+            11px;
+    }
+
+
+    .category-heading {
+
+        height:
+            28px;
+
+        margin-bottom:
+            4px;
+    }
+
+
+    .category-icon {
+
+        width:
+            26px;
+
+        height:
+            26px;
+
+        flex-basis:
+            26px;
+    }
+
+
+    .category-name {
+
+        font-size:
+            21px;
     }
 
 
     .photo-card {
 
         flex-basis:
-            80px;
+            94px;
 
         width:
-            80px;
+            94px;
 
         height:
-            57px;
+            67px;
     }
 
 
     .footer-logo {
 
         width:
-            180px;
+            185px;
     }
 
 }
 
 
 /* =========================================================
-   SHORT SCREENS
+   SHORT PHONE SCREENS
    ========================================================= */
 
 @media (max-height: 750px) and (max-width: 600px) {
@@ -863,7 +946,7 @@ body {
     .gallery-header {
 
         height:
-            132px;
+            125px;
     }
 
 
@@ -877,24 +960,24 @@ body {
     .gallery-title {
 
         top:
-            58px;
+            50px;
 
         font-size:
-            43px;
+            42px;
     }
 
 
     .gallery-category {
 
         margin-bottom:
-            8px;
+            7px;
     }
 
 
     .category-heading {
 
         height:
-            27px;
+            26px;
 
         margin-bottom:
             3px;
@@ -904,13 +987,13 @@ body {
     .category-icon {
 
         width:
-            25px;
+            24px;
 
         height:
-            25px;
+            24px;
 
         flex-basis:
-            25px;
+            24px;
     }
 
 
@@ -923,8 +1006,14 @@ body {
 
     .photo-card {
 
+        flex-basis:
+            90px;
+
+        width:
+            90px;
+
         height:
-            54px;
+            63px;
     }
 
 
@@ -938,7 +1027,7 @@ body {
     .gallery-footer {
 
         padding-bottom:
-            10px;
+            8px;
     }
 
 }
@@ -955,7 +1044,7 @@ body {
 
 
     <!-- =====================================================
-         MAIN CONTENT
+         MAIN GALLERY CONTENT
          ===================================================== -->
 
     <div class="gallery-content">
@@ -1494,7 +1583,7 @@ body {
 
 
     <!-- =====================================================
-         BOTTOM JUSTIFIED LOGO
+         BOTTOM-JUSTIFIED LOGO
          ===================================================== -->
 
     <footer class="gallery-footer">
@@ -1510,7 +1599,7 @@ body {
 
 
     <!-- =====================================================
-         IMAGE LIGHTBOX
+         LIGHTBOX
          ===================================================== -->
 
     <div
@@ -1567,7 +1656,7 @@ body {
 <script>
 
 /* =========================================================
-   IMAGE LISTS
+   PLACEHOLDER IMAGE DATA
    ========================================================= */
 
 const galleryData = {
@@ -1635,6 +1724,7 @@ const lightboxCounter =
    ========================================================= */
 
 let currentCategory = "";
+
 let currentIndex = 0;
 
 
@@ -1771,7 +1861,7 @@ document
 
 
 /* =========================================================
-   BUTTONS
+   LIGHTBOX BUTTONS
    ========================================================= */
 
 lightboxClose.addEventListener(
@@ -1791,7 +1881,7 @@ lightboxNext.addEventListener(
 
 
 /* =========================================================
-   CLOSE BY CLICKING OUTSIDE IMAGE
+   CLICK OUTSIDE IMAGE
    ========================================================= */
 
 lightbox.addEventListener(
@@ -1823,8 +1913,11 @@ document.addEventListener(
                 "active"
             )
         ) {
+
             return;
+
         }
+
 
         if (
             event.key === "Escape"
@@ -1834,6 +1927,7 @@ document.addEventListener(
 
         }
 
+
         if (
             event.key === "ArrowRight"
         ) {
@@ -1841,6 +1935,7 @@ document.addEventListener(
             nextImage();
 
         }
+
 
         if (
             event.key === "ArrowLeft"
@@ -1855,7 +1950,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   SWIPE LEFT / RIGHT ON LARGE IMAGE
+   MOBILE SWIPE
    ========================================================= */
 
 let touchStartX = 0;
@@ -1887,6 +1982,7 @@ lightbox.addEventListener(
         const distance =
             touchEndX -
             touchStartX;
+
 
         if (
             Math.abs(distance) < 45
