@@ -37,21 +37,25 @@ body {
 
 
 /* =========================================================
-   PAGE
+   MAIN PAGE
    ========================================================= */
 
 .remember-page {
+
     position: relative;
+
     width: 100%;
     min-height: 100vh;
     min-height: 100svh;
 
-    padding-bottom: 105px;
+    padding-bottom: 92px;
 
     background-image: url("sand-background.jpg");
     background-size: cover;
     background-position: center top;
     background-repeat: repeat-y;
+
+    overflow-x: hidden;
 }
 
 
@@ -60,13 +64,15 @@ body {
    ========================================================= */
 
 .salt-stories {
+
     display: block;
 
-    width: 250px;
-    max-width: 68vw;
+    width: 275px;
+    max-width: 72vw;
+
     height: auto;
 
-    margin: 9px auto 7px auto;
+    margin: 4px auto 2px auto;
 }
 
 
@@ -75,8 +81,10 @@ body {
    ========================================================= */
 
 .remember-content {
+
     width: 100%;
-    padding: 0 0 0 18px;
+
+    padding-left: 15px;
 }
 
 
@@ -85,24 +93,29 @@ body {
    ========================================================= */
 
 .category {
+
     width: 100%;
-    margin-bottom: 17px;
+
+    margin-bottom: 12px;
 }
 
 
 /* =========================================================
-   SECTION TITLE
+   CATEGORY TITLE
    ========================================================= */
 
 .category-title {
-    margin: 0 0 5px 0;
-    padding: 0;
+
+    margin: 0 0 3px 0;
 
     color: #463322;
 
-    font-size: 17px;
+    font-size: 16px;
+
     font-weight: normal;
-    letter-spacing: 0.2px;
+
+    letter-spacing: 0.1px;
+
     line-height: 1.05;
 }
 
@@ -112,19 +125,22 @@ body {
    ========================================================= */
 
 .photo-row {
+
     display: flex;
+
     flex-wrap: nowrap;
 
-    gap: 9px;
+    gap: 8px;
 
     width: 100%;
 
     overflow-x: auto;
     overflow-y: hidden;
 
-    padding: 0 15px 3px 0;
+    padding: 0 12px 2px 0;
 
     scrollbar-width: none;
+
     -ms-overflow-style: none;
 
     -webkit-overflow-scrolling: touch;
@@ -140,20 +156,22 @@ body {
    ========================================================= */
 
 .photo-card {
-    flex: 0 0 145px;
 
-    width: 145px;
-    height: 130px;
+    flex: 0 0 110px;
 
-    padding: 6px 6px 12px;
+    width: 110px;
+    height: 99px;
 
-    border: 1px solid rgba(255,255,255,0.72);
-    border-radius: 15px;
+    padding: 5px 5px 9px;
+
+    border: 1px solid rgba(255,255,255,0.78);
+
+    border-radius: 13px;
 
     background: #f4ead7;
 
     box-shadow:
-        0 3px 7px rgba(70,42,20,0.18);
+        0 2px 6px rgba(70,42,20,0.17);
 
     cursor: pointer;
 
@@ -161,7 +179,9 @@ body {
     -webkit-appearance: none;
 }
 
+
 .photo-card img {
+
     display: block;
 
     width: 100%;
@@ -169,12 +189,30 @@ body {
 
     object-fit: cover;
 
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 
 /* =========================================================
+   =========================================================
    BOTTOM NAVIGATION
+   =========================================================
+   =========================================================
+
+   IMPORTANT STRUCTURE:
+
+   LEFT BAND       LOGO / SAND        RIGHT BAND
+   ┌─────────────┐                   ┌─────────────┐
+   │ Home │ Stay │      LOGO         │ Live │ Explore│
+   └─────────────┘                   └─────────────┘
+
+   The centre is NOT part of the band.
+   The logo sits directly on the sand.
+   ========================================================= */
+
+
+/* =========================================================
+   NAVIGATION CONTAINER
    ========================================================= */
 
 .bottom-nav {
@@ -185,86 +223,79 @@ body {
     right: 0;
     bottom: 0;
 
-    width: 100%;
-    height: 96px;
+    height: 82px;
 
     z-index: 50;
 
     display: flex;
+
     align-items: flex-end;
+
     justify-content: center;
 
-    padding: 0 12px 5px;
+    padding: 0 0 3px 0;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(232,216,189,0),
-            rgba(232,216,189,0.80) 25%,
-            rgba(232,216,189,0.96) 55%,
-            rgba(232,216,189,1) 100%
-        );
+    pointer-events: none;
 }
 
 
 /* =========================================================
-   HORIZONTAL RULES
-   STOP BEFORE THE LOGO
+   LEFT / RIGHT BANDS
    ========================================================= */
 
-.bottom-nav::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 14px;
-    right: calc(50% + 55px);
-
-    top: 18px;
-
-    height: 1px;
-
-    background: rgba(70,51,34,0.55);
-}
-
-
-.bottom-nav::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: calc(50% + 55px);
-    right: 14px;
-
-    top: 18px;
-
-    height: 1px;
-
-    background: rgba(70,51,34,0.55);
-}
-
-
-/* =========================================================
-   LEFT / RIGHT NAV GROUPS
-   ========================================================= */
-
-.nav-side {
+.nav-band {
 
     position: relative;
 
-    z-index: 3;
+    height: 66px;
 
     display: flex;
 
-    align-items: flex-end;
-    justify-content: center;
+    align-items: stretch;
 
-    width: 100%;
-    max-width: 170px;
+    pointer-events: auto;
 
-    height: 67px;
+    background:
+        rgba(244,234,215,0.91);
+
+    border-top:
+        1px solid rgba(255,255,255,0.65);
+
+    border-bottom:
+        1px solid rgba(120,90,55,0.16);
+
+    box-shadow:
+        0 -2px 8px rgba(70,42,20,0.08);
+}
+
+
+/* =========================================================
+   LEFT BAND
+   ========================================================= */
+
+.left-band {
+
+    flex: 1;
+
+    border-radius:
+        0 30px 30px 0;
+
+    margin-right: 0;
+}
+
+
+/* =========================================================
+   RIGHT BAND
+   ========================================================= */
+
+.right-band {
+
+    flex: 1;
+
+    border-radius:
+        30px 0 0 30px;
+
+    margin-left: 0;
 }
 
 
@@ -276,17 +307,23 @@ body {
 
     position: relative;
 
-    width: 50%;
-    height: 62px;
+    flex: 1;
+
+    min-width: 0;
+
+    height: 65px;
 
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
+
     justify-content: flex-end;
 
-    gap: 4px;
+    gap: 3px;
+
+    padding-bottom: 5px;
 
     text-decoration: none;
 
@@ -297,57 +334,31 @@ body {
         Helvetica,
         sans-serif;
 
-    font-size: 10px;
+    font-size: 9px;
 
     line-height: 1;
 }
 
 
 /* =========================================================
-   DIVIDER BETWEEN HOME / STAY
+   DIVIDER HOME / STAY
    ========================================================= */
 
-.left-nav .nav-item + .nav-item {
+.left-band .nav-item + .nav-item {
 
     border-left:
-        1px solid
-        rgba(70,51,34,0.36);
+        1px solid rgba(70,51,34,0.36);
 }
 
 
 /* =========================================================
-   DIVIDER BETWEEN STAY / LOGO
+   DIVIDER LIVE / EXPLORE
    ========================================================= */
 
-.left-nav .nav-item:last-child {
-
-    border-right:
-        1px solid
-        rgba(70,51,34,0.36);
-}
-
-
-/* =========================================================
-   DIVIDER BETWEEN LOGO / LIVE
-   ========================================================= */
-
-.right-nav .nav-item:first-child {
+.right-band .nav-item + .nav-item {
 
     border-left:
-        1px solid
-        rgba(70,51,34,0.36);
-}
-
-
-/* =========================================================
-   DIVIDER BETWEEN LIVE / EXPLORE
-   ========================================================= */
-
-.right-nav .nav-item + .nav-item {
-
-    border-left:
-        1px solid
-        rgba(70,51,34,0.36);
+        1px solid rgba(70,51,34,0.36);
 }
 
 
@@ -357,8 +368,8 @@ body {
 
 .nav-icon {
 
-    width: 23px;
-    height: 23px;
+    width: 21px;
+    height: 21px;
 
     fill: none;
 
@@ -367,40 +378,43 @@ body {
     stroke-width: 1.8;
 
     stroke-linecap: round;
+
     stroke-linejoin: round;
 }
 
 
 /* =========================================================
-   CENTRAL LOGO
+   INDEPENDENT CENTRAL LOGO
    ========================================================= */
 
-.logo-wrap {
+.logo-area {
 
     position: relative;
 
-    z-index: 6;
+    z-index: 60;
 
-    flex: 0 0 110px;
+    flex: 0 0 104px;
 
-    height: 69px;
+    height: 76px;
 
     display: flex;
 
     align-items: flex-end;
+
     justify-content: center;
 
-    background:
-        rgba(232,216,189,0.94);
+    pointer-events: auto;
+
+    /* NO background.
+       The sand texture remains visible here. */
 }
 
 
-.logo-wrap img {
+.logo-area img {
 
     display: block;
 
-    width: 104px;
-    max-width: 100%;
+    width: 98px;
 
     height: auto;
 }
@@ -419,6 +433,7 @@ body {
     display: none;
 
     align-items: center;
+
     justify-content: center;
 
     background:
@@ -426,6 +441,7 @@ body {
 
     z-index: 100;
 }
+
 
 .lightbox.active {
     display: flex;
@@ -435,6 +451,7 @@ body {
 .lightbox-image {
 
     max-width: 88vw;
+
     max-height: 82vh;
 
     object-fit: contain;
@@ -447,29 +464,12 @@ body {
 
 
 /* =========================================================
-   LIGHTBOX BUTTONS
+   LIGHTBOX CLOSE
    ========================================================= */
 
-.lightbox-close,
-.lightbox-arrow {
+.lightbox-close {
 
     position: absolute;
-
-    border: none;
-    border-radius: 50%;
-
-    background:
-        rgba(244,234,215,0.95);
-
-    color: #463322;
-
-    text-align: center;
-
-    cursor: pointer;
-}
-
-
-.lightbox-close {
 
     top: 18px;
     right: 20px;
@@ -477,12 +477,32 @@ body {
     width: 42px;
     height: 42px;
 
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(244,234,215,0.95);
+
+    color: #463322;
+
     font-size: 25px;
+
     line-height: 42px;
+
+    text-align: center;
+
+    cursor: pointer;
 }
 
 
+/* =========================================================
+   LIGHTBOX ARROWS
+   ========================================================= */
+
 .lightbox-arrow {
+
+    position: absolute;
 
     top: 50%;
 
@@ -491,8 +511,22 @@ body {
     width: 44px;
     height: 44px;
 
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(244,234,215,0.95);
+
+    color: #463322;
+
     font-size: 27px;
+
     line-height: 44px;
+
+    text-align: center;
+
+    cursor: pointer;
 }
 
 
@@ -500,119 +534,122 @@ body {
     left: 14px;
 }
 
+
 .lightbox-next {
     right: 14px;
 }
 
 
 /* =========================================================
-   DESKTOP
+   LARGER SCREENS
    ========================================================= */
 
 @media (min-width: 700px) {
 
+    .remember-page {
+        padding-bottom: 105px;
+    }
+
+
     .salt-stories {
+
         width: 330px;
+
         max-width: 42vw;
-        margin: 15px auto 8px;
+
+        margin: 10px auto 6px;
     }
 
 
     .remember-content {
+
         padding-left: 40px;
-        padding-right: 20px;
     }
 
 
     .category {
-        margin-bottom: 28px;
+
+        margin-bottom: 22px;
     }
 
 
     .category-title {
-        font-size: 22px;
-        margin-bottom: 7px;
+
+        font-size: 21px;
+
+        margin-bottom: 5px;
     }
 
 
     .photo-row {
-        gap: 13px;
+
+        gap: 12px;
     }
 
 
     .photo-card {
-        flex-basis: 180px;
-        width: 180px;
-        height: 160px;
 
-        padding: 8px 8px 15px;
+        flex-basis: 175px;
 
-        border-radius: 18px;
+        width: 175px;
+
+        height: 155px;
+
+        padding: 7px 7px 13px;
+
+        border-radius: 17px;
+    }
+
+
+    .photo-card img {
+        border-radius: 10px;
     }
 
 
     .bottom-nav {
 
-        height: 112px;
+        height: 105px;
 
-        padding-left: 25px;
-        padding-right: 25px;
-        padding-bottom: 8px;
+        padding-bottom: 6px;
     }
 
 
-    .bottom-nav::before {
+    .nav-band {
 
-        left: 5%;
-        right: calc(50% + 70px);
-
-        top: 22px;
-    }
-
-
-    .bottom-nav::after {
-
-        left: calc(50% + 70px);
-        right: 5%;
-
-        top: 22px;
-    }
-
-
-    .nav-side {
-
-        max-width: 250px;
-        height: 80px;
+        height: 72px;
     }
 
 
     .nav-item {
 
-        height: 74px;
+        height: 71px;
 
-        font-size: 12px;
+        font-size: 11px;
 
-        gap: 5px;
+        gap: 4px;
+
+        padding-bottom: 7px;
     }
 
 
     .nav-icon {
 
-        width: 27px;
-        height: 27px;
+        width: 25px;
+        height: 25px;
     }
 
 
-    .logo-wrap {
+    .logo-area {
 
-        flex-basis: 140px;
-        height: 86px;
+        flex-basis: 135px;
+
+        height: 90px;
     }
 
 
-    .logo-wrap img {
+    .logo-area img {
 
-        width: 130px;
+        width: 125px;
     }
 }
 
@@ -624,123 +661,111 @@ body {
 @media (max-width: 360px) {
 
     .remember-page {
-        padding-bottom: 96px;
+
+        padding-bottom: 90px;
     }
 
 
     .salt-stories {
 
-        width: 225px;
-        max-width: 70vw;
+        width: 255px;
 
-        margin: 7px auto 5px;
+        max-width: 72vw;
+
+        margin: 3px auto 1px;
     }
 
 
     .remember-content {
-        padding-left: 14px;
+
+        padding-left: 13px;
     }
 
 
     .category {
-        margin-bottom: 15px;
+
+        margin-bottom: 10px;
     }
 
 
     .category-title {
 
-        font-size: 16px;
+        font-size: 15px;
 
-        margin-bottom: 4px;
+        margin-bottom: 3px;
     }
 
 
     .photo-row {
-        gap: 8px;
+
+        gap: 7px;
     }
 
 
     .photo-card {
 
-        flex-basis: 125px;
+        flex-basis: 102px;
 
-        width: 125px;
-        height: 113px;
+        width: 102px;
 
-        padding: 5px 5px 9px;
+        height: 92px;
 
-        border-radius: 13px;
+        padding: 4px 4px 8px;
+
+        border-radius: 12px;
     }
 
 
     .photo-card img {
-        border-radius: 9px;
+
+        border-radius: 8px;
     }
 
 
     .bottom-nav {
 
-        height: 92px;
+        height: 79px;
 
-        padding-left: 8px;
-        padding-right: 8px;
-        padding-bottom: 4px;
+        padding-bottom: 2px;
     }
 
 
-    .bottom-nav::before {
+    .nav-band {
 
-        left: 9px;
-        right: calc(50% + 49px);
-
-        top: 17px;
-    }
-
-
-    .bottom-nav::after {
-
-        left: calc(50% + 49px);
-        right: 9px;
-
-        top: 17px;
-    }
-
-
-    .nav-side {
-
-        max-width: 145px;
-        height: 64px;
+        height: 63px;
     }
 
 
     .nav-item {
 
-        height: 59px;
+        height: 62px;
 
-        font-size: 9px;
+        font-size: 8px;
 
-        gap: 3px;
+        gap: 2px;
+
+        padding-bottom: 4px;
     }
 
 
     .nav-icon {
 
-        width: 21px;
-        height: 21px;
+        width: 20px;
+        height: 20px;
     }
 
 
-    .logo-wrap {
+    .logo-area {
 
-        flex-basis: 98px;
+        flex-basis: 94px;
 
-        height: 66px;
+        height: 73px;
     }
 
 
-    .logo-wrap img {
+    .logo-area img {
 
-        width: 94px;
+        width: 89px;
     }
 }
 
@@ -767,7 +792,7 @@ body {
 
 
     <!-- =====================================================
-         PHOTO CONTENT
+         GALLERY
          ===================================================== -->
 
     <div class="remember-content">
@@ -1039,9 +1064,9 @@ body {
     <nav class="bottom-nav">
 
 
-        <!-- LEFT -->
+        <!-- LEFT BAND -->
 
-        <div class="nav-side left-nav">
+        <div class="nav-band left-band">
 
 
             <!-- HOME -->
@@ -1090,20 +1115,24 @@ body {
         </div>
 
 
-        <!-- CENTRAL LOGO -->
+        <!-- =================================================
+             CENTRAL LOGO — COMPLETELY INDEPENDENT
+             ================================================= -->
 
         <a href="index.html"
-           class="logo-wrap">
+           class="logo-area">
 
-            <img src="logo.png"
-                 alt="303 Oyster Bay">
+            <img
+                src="logo.png"
+                alt="303 Oyster Bay"
+            >
 
         </a>
 
 
-        <!-- RIGHT -->
+        <!-- RIGHT BAND -->
 
-        <div class="nav-side right-nav">
+        <div class="nav-band right-band">
 
 
             <!-- LIVE -->
@@ -1127,7 +1156,7 @@ body {
             </a>
 
 
-            <!-- EXPLORE -->
+            <!-- EXPLORE — LIGHTHOUSE -->
 
             <a href="In%20and%20around.pdf"
                class="nav-item">
@@ -1135,11 +1164,23 @@ body {
                 <svg class="nav-icon"
                      viewBox="0 0 24 24">
 
-                    <circle cx="12"
-                            cy="12"
-                            r="8"></circle>
+                    <path d="M9 21h6"></path>
 
-                    <path d="M15.5 8.5l-2 5-5 2 2-5z"></path>
+                    <path d="M10 21l1-15h2l1 15"></path>
+
+                    <path d="M8 6h8"></path>
+
+                    <path d="M9 9h6"></path>
+
+                    <path d="M7 21h10"></path>
+
+                    <path d="M12 3v2"></path>
+
+                    <path d="M8 3h8"></path>
+
+                    <path d="M5 1l7 2 7-2"></path>
+
+                    <path d="M4 3l8-2 8 2"></path>
 
                 </svg>
 
@@ -1191,7 +1232,7 @@ body {
 <script>
 
 /* =========================================================
-   IMAGE COLLECTION
+   GALLERIES
    ========================================================= */
 
 const galleries = {
@@ -1239,7 +1280,7 @@ const galleries = {
 
 
 /* =========================================================
-   LIGHTBOX
+   LIGHTBOX ELEMENTS
    ========================================================= */
 
 const lightbox =
@@ -1263,12 +1304,13 @@ let currentIndex = 0;
 
 
 /* =========================================================
-   OPEN IMAGE
+   OPEN
    ========================================================= */
 
 function openLightbox(category, index) {
 
     currentCategory = category;
+
     currentIndex = index;
 
     lightboxImage.src =
@@ -1292,7 +1334,6 @@ function closeLightbox() {
     lightbox.classList.remove("active");
 
     document.body.style.overflow = "";
-
 }
 
 
@@ -1332,7 +1373,7 @@ function previousImage() {
 
 
 /* =========================================================
-   PHOTO CLICK
+   PHOTO BUTTONS
    ========================================================= */
 
 document
@@ -1352,7 +1393,7 @@ document
 
 
 /* =========================================================
-   CONTROLS
+   LIGHTBOX CONTROLS
    ========================================================= */
 
 lightboxClose.addEventListener(
@@ -1372,7 +1413,7 @@ lightboxPrev.addEventListener(
 
 
 /* =========================================================
-   BACKDROP CLICK
+   BACKDROP
    ========================================================= */
 
 lightbox.addEventListener(
@@ -1380,7 +1421,9 @@ lightbox.addEventListener(
     function(event) {
 
         if (event.target === lightbox) {
+
             closeLightbox();
+
         }
 
     }
