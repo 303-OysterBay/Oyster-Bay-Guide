@@ -446,28 +446,48 @@ height:58px;
    The sand is visible completely through the centre.
    ========================================================= */
 
-.logo-area {
+
 
   .sand-logo {
     position:absolute;
     left:50%;
     bottom:2px;
+
     z-index:40;
+
     width:125px;
+    height:auto;
+
     transform:translateX(-50%);
-    display:flex;
-    align-items:flex-end;
-    justify-content:center;
+
+    display:block;
+
     text-decoration:none;
+
     background:transparent;
+
     pointer-events:auto;
+
+    overflow:visible;
 }
 
 .sand-logo img {
     display:block;
+
     width:125px;
+    max-width:125px;
+
     height:auto;
+    max-height:none;
+
+    object-fit:contain;
+
+    margin:0;
+    padding:0;
+
     background:transparent;
+
+    border:0;
     box-shadow:none;
 }
 
