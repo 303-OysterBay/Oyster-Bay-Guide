@@ -4,13 +4,10 @@
 
 <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
->
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <title>Gallery | 303 OYSTER BAY</title>
-
 
 <style>
 
@@ -32,22 +29,16 @@ body {
 
 body {
     overflow: hidden;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     color: #5b3b23;
 }
 
 
 /* =========================================================
-   COMPLETE ONE-SCREEN GALLERY
+   PAGE
    ========================================================= */
 
 .gallery-page {
-
     position: relative;
 
     width: 100%;
@@ -57,27 +48,18 @@ body {
     overflow: hidden;
 
     background-color: #d8b27c;
-
-    background-image:
-        url("sand-background.jpg");
-
-    background-repeat:
-        no-repeat;
-
-    background-position:
-        center top;
-
-    background-size:
-        cover;
+    background-image: url("sand-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
 }
 
 
 /* =========================================================
-   CONTENT
+   MAIN CONTENT
    ========================================================= */
 
 .gallery-content {
-
     position: absolute;
 
     top: 0;
@@ -86,10 +68,7 @@ body {
     width: 100%;
     height: 100%;
 
-    padding:
-        8px
-        14px
-        0;
+    padding: 7px 14px 0;
 
     overflow: hidden;
 }
@@ -100,26 +79,24 @@ body {
    ========================================================= */
 
 .gallery-header {
-
     position: relative;
 
     width: 100%;
 
     /*
-       Deliberately compact.
-       This gives more room to the gallery rows.
+       Compact header.
+       Most of the screen belongs to the gallery.
     */
 
-    height: 140px;
+    height: 126px;
 }
 
 
 /* =========================================================
-   HOME BUTTON
+   HOME
    ========================================================= */
 
 .home-button {
-
     position: absolute;
 
     top: 2px;
@@ -128,44 +105,28 @@ body {
     z-index: 20;
 
     display: flex;
-
     align-items: center;
-
     gap: 6px;
 
-    padding:
-        8px
-        13px;
+    padding: 8px 13px;
 
-    border-radius:
-        24px;
+    border-radius: 24px;
 
-    background:
-        rgba(250, 239, 217, 0.96);
+    background: rgba(250, 239, 217, 0.96);
 
-    color:
-        #5b3b23;
+    color: #5b3b23;
 
-    text-decoration:
-        none;
+    text-decoration: none;
 
-    font-size:
-        14px;
+    font-size: 14px;
+    line-height: 1;
 
-    line-height:
-        1;
-
-    box-shadow:
-        0 2px 6px rgba(80, 50, 25, 0.14);
+    box-shadow: 0 2px 6px rgba(80, 50, 25, 0.14);
 }
 
 .home-arrow {
-
-    font-size:
-        19px;
-
-    line-height:
-        1;
+    font-size: 19px;
+    line-height: 1;
 }
 
 
@@ -174,7 +135,6 @@ body {
    ========================================================= */
 
 .salt-stories {
-
     position: absolute;
 
     top: 0;
@@ -183,17 +143,15 @@ body {
     z-index: 15;
 
     /*
-       Larger and much more readable.
+       Proper visual presence.
+       Larger without changing its position.
     */
 
-    width:
-        180px;
+    width: 215px;
 
-    height:
-        auto;
+    height: auto;
 
-    display:
-        block;
+    display: block;
 }
 
 
@@ -202,41 +160,26 @@ body {
    ========================================================= */
 
 .gallery-title {
-
     position: absolute;
 
     left: 0;
     right: 0;
 
-    /*
-       Pulled upward to balance the larger
-       Salt Sand Stories artwork.
-    */
-
-    top: 56px;
+    top: 67px;
 
     margin: 0;
     padding: 0;
 
-    text-align:
-        center;
+    text-align: center;
 
-    color:
-        #5b3b23;
+    color: #5b3b23;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
-    font-size:
-        47px;
+    font-size: 45px;
+    font-weight: 400;
 
-    font-weight:
-        400;
-
-    line-height:
-        1;
+    line-height: 1;
 }
 
 
@@ -245,15 +188,10 @@ body {
    ========================================================= */
 
 .gallery-category {
+    width: 100%;
 
-    width:
-        100%;
-
-    margin:
-        0 0 13px 0;
-
-    padding:
-        0;
+    margin: 0 0 9px 0;
+    padding: 0;
 }
 
 
@@ -262,21 +200,13 @@ body {
    ========================================================= */
 
 .category-heading {
+    width: 100%;
+    height: 27px;
 
-    width:
-        100%;
+    display: flex;
+    align-items: center;
 
-    height:
-        29px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    margin-bottom:
-        5px;
+    margin-bottom: 4px;
 }
 
 
@@ -285,199 +215,147 @@ body {
    ========================================================= */
 
 .category-icon {
+    flex: 0 0 26px;
 
-    flex:
-        0 0 27px;
+    width: 26px;
+    height: 26px;
 
-    width:
-        27px;
+    margin-right: 7px;
 
-    height:
-        27px;
+    fill: none;
 
-    margin-right:
-        7px;
+    stroke: #5b3b23;
 
-    fill:
-        none;
+    stroke-width: 1.7;
 
-    stroke:
-        #5b3b23;
-
-    stroke-width:
-        1.7;
-
-    stroke-linecap:
-        round;
-
-    stroke-linejoin:
-        round;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 
 /* =========================================================
-   CATEGORY TITLE
+   CATEGORY NAME
    ========================================================= */
 
 .category-name {
+    flex: 0 0 auto;
 
-    flex:
-        0 0 auto;
+    margin: 0;
+    padding: 0;
 
-    margin:
-        0;
+    color: #5b3b23;
 
-    padding:
-        0;
+    font-size: 21px;
+    font-weight: 400;
 
-    color:
-        #5b3b23;
-
-    font-size:
-        22px;
-
-    font-weight:
-        400;
-
-    line-height:
-        1;
+    line-height: 1;
 }
 
 
 /* =========================================================
-   CATEGORY LINE
+   LINE
    ========================================================= */
 
 .category-line {
+    flex: 1 1 auto;
 
-    flex:
-        1 1 auto;
+    height: 1px;
 
-    height:
-        1px;
+    margin-left: 9px;
 
-    margin-left:
-        9px;
-
-    background:
-        rgba(91, 59, 35, 0.50);
+    background: rgba(91, 59, 35, 0.50);
 }
 
 
 /* =========================================================
-   HORIZONTAL PHOTO STRIP
+   PHOTO STRIP
    ========================================================= */
 
 .photo-strip {
+    width: 100%;
 
-    width:
-        100%;
+    display: flex;
+    flex-wrap: nowrap;
 
-    display:
-        flex;
+    gap: 8px;
 
-    flex-wrap:
-        nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
 
-    gap:
-        8px;
+    padding: 0 0 2px 0;
+    margin: 0;
 
-    overflow-x:
-        auto;
+    scrollbar-width: none;
 
-    overflow-y:
-        hidden;
+    -webkit-overflow-scrolling: touch;
 
-    padding:
-        0 0 2px 0;
-
-    margin:
-        0;
-
-    scrollbar-width:
-        none;
-
-    -webkit-overflow-scrolling:
-        touch;
-
-    overscroll-behavior-x:
-        contain;
+    overscroll-behavior-x: contain;
 }
 
 .photo-strip::-webkit-scrollbar {
-    display:
-        none;
+    display: none;
 }
 
 
 /* =========================================================
-   PHOTO CARD
+   POLAROID CARD
    ========================================================= */
 
 .photo-card {
 
     /*
-       Larger than before.
-       Four images remain complete and
-       the fifth visibly peeps in.
+       IMPORTANT:
+       Width remains narrow so the fifth image
+       visibly peeps into the screen.
+
+       Height increases to consume vertical
+       real estate and create the Polaroid effect.
     */
 
-    flex:
-        0 0 100px;
+    flex: 0 0 96px;
 
-    width:
-        100px;
+    width: 96px;
 
-    height:
-        70px;
+    height: 88px;
 
-    padding:
-        0;
+    padding: 5px 5px 13px 5px;
 
-    margin:
-        0;
+    margin: 0;
 
-    border:
-        none;
+    border: 0;
 
-    border-radius:
-        11px;
+    border-radius: 9px;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
-    background:
-        #ead6b2;
+    background: #f4ead7;
 
-    display:
-        block;
+    display: block;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
     box-shadow:
-        0 2px 5px rgba(70, 42, 20, 0.14);
+        0 2px 5px rgba(70, 42, 20, 0.18);
 
-    appearance:
-        none;
-
-    -webkit-appearance:
-        none;
+    appearance: none;
+    -webkit-appearance: none;
 }
+
+
+/* =========================================================
+   POLAROID IMAGE
+   ========================================================= */
 
 .photo-card img {
 
-    display:
-        block;
+    display: block;
 
-    width:
-        100%;
+    width: 100%;
+    height: 100%;
 
-    height:
-        100%;
+    object-fit: cover;
 
-    object-fit:
-        cover;
+    border-radius: 6px;
 }
 
 
@@ -487,61 +365,38 @@ body {
 
 .gallery-footer {
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
-    right:
-        0;
+    width: 100%;
 
-    bottom:
-        0;
+    display: flex;
 
-    width:
-        100%;
+    align-items: flex-end;
+    justify-content: center;
 
-    display:
-        flex;
+    padding: 0 0 9px 0;
 
-    align-items:
-        flex-end;
+    z-index: 10;
 
-    justify-content:
-        center;
-
-    padding:
-        0 0 12px 0;
-
-    z-index:
-        10;
-
-    pointer-events:
-        none;
+    pointer-events: none;
 }
 
 
-/* =========================================================
-   303 LOGO
-   ========================================================= */
-
 .footer-logo {
 
-    display:
-        block;
+    display: block;
 
-    width:
-        195px;
+    width: 190px;
 
-    max-width:
-        58%;
+    max-width: 58%;
 
-    height:
-        auto;
+    height: auto;
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 }
 
 
@@ -551,69 +406,49 @@ body {
 
 .lightbox {
 
-    position:
-        fixed;
+    position: fixed;
 
-    inset:
-        0;
+    inset: 0;
 
-    z-index:
-        1000;
+    z-index: 1000;
 
-    display:
-        none;
+    display: none;
 
-    align-items:
-        center;
+    align-items: center;
+    justify-content: center;
 
-    justify-content:
-        center;
+    background: rgba(35, 24, 15, 0.92);
 
-    background:
-        rgba(35, 24, 15, 0.92);
-
-    padding:
-        40px;
+    padding: 40px;
 }
 
 .lightbox.active {
-    display:
-        flex;
+    display: flex;
 }
 
 
 /* =========================================================
-   ENLARGED IMAGE
+   LARGE IMAGE
    ========================================================= */
 
 .lightbox-image {
 
-    display:
-        block;
+    display: block;
 
-    max-width:
-        90vw;
+    max-width: 90vw;
+    max-height: 82vh;
 
-    max-height:
-        82vh;
+    width: auto;
+    height: auto;
 
-    width:
-        auto;
+    object-fit: contain;
 
-    height:
-        auto;
-
-    object-fit:
-        contain;
-
-    border-radius:
-        13px;
+    border-radius: 13px;
 
     box-shadow:
         0 10px 35px rgba(0, 0, 0, 0.40);
 
-    user-select:
-        none;
+    user-select: none;
 }
 
 
@@ -623,47 +458,29 @@ body {
 
 .lightbox-close {
 
-    position:
-        absolute;
+    position: absolute;
 
-    top:
-        13px;
+    top: 13px;
+    right: 13px;
 
-    right:
-        13px;
+    width: 42px;
+    height: 42px;
 
-    width:
-        42px;
+    padding: 0;
 
-    height:
-        42px;
+    border: none;
+    border-radius: 50%;
 
-    padding:
-        0;
+    background: #f5ead6;
 
-    border:
-        none;
+    color: #5b3b23;
 
-    border-radius:
-        50%;
+    font-size: 29px;
+    line-height: 42px;
 
-    background:
-        #f5ead6;
+    text-align: center;
 
-    color:
-        #5b3b23;
-
-    font-size:
-        29px;
-
-    line-height:
-        42px;
-
-    text-align:
-        center;
-
-    cursor:
-        pointer;
+    cursor: pointer;
 }
 
 
@@ -673,57 +490,38 @@ body {
 
 .lightbox-nav {
 
-    position:
-        absolute;
+    position: absolute;
 
-    top:
-        50%;
+    top: 50%;
 
-    transform:
-        translateY(-50%);
+    transform: translateY(-50%);
 
-    width:
-        42px;
+    width: 42px;
+    height: 42px;
 
-    height:
-        42px;
+    padding: 0;
 
-    padding:
-        0;
+    border: none;
+    border-radius: 50%;
 
-    border:
-        none;
+    background: #f5ead6;
 
-    border-radius:
-        50%;
+    color: #5b3b23;
 
-    background:
-        #f5ead6;
+    font-size: 32px;
+    line-height: 40px;
 
-    color:
-        #5b3b23;
+    text-align: center;
 
-    font-size:
-        32px;
-
-    line-height:
-        40px;
-
-    text-align:
-        center;
-
-    cursor:
-        pointer;
+    cursor: pointer;
 }
 
 .lightbox-prev {
-    left:
-        8px;
+    left: 8px;
 }
 
 .lightbox-next {
-    right:
-        8px;
+    right: 8px;
 }
 
 
@@ -733,26 +531,18 @@ body {
 
 .lightbox-counter {
 
-    position:
-        absolute;
+    position: absolute;
 
-    bottom:
-        14px;
+    bottom: 14px;
+    left: 50%;
 
-    left:
-        50%;
+    transform: translateX(-50%);
 
-    transform:
-        translateX(-50%);
+    color: #f5ead6;
 
-    color:
-        #f5ead6;
+    font-size: 12px;
 
-    font-size:
-        12px;
-
-    white-space:
-        nowrap;
+    white-space: nowrap;
 }
 
 
@@ -764,85 +554,94 @@ body {
 
     .gallery-content {
 
-        max-width:
-            1200px;
+        max-width: 1200px;
 
-        left:
-            50%;
+        left: 50%;
 
-        transform:
-            translateX(-50%);
+        transform: translateX(-50%);
 
-        padding:
-            12px 30px 0;
+        padding: 12px 30px 0;
     }
 
 
     .gallery-header {
 
-        height:
-            180px;
+        height: 172px;
     }
 
 
     .salt-stories {
 
-        width:
-            220px;
+        width: 260px;
     }
 
 
     .gallery-title {
 
-        top:
-            78px;
+        top: 76px;
 
-        font-size:
-            64px;
+        font-size: 62px;
     }
 
 
     .gallery-category {
 
-        margin-bottom:
-            17px;
+        margin-bottom: 15px;
+    }
+
+
+    .category-heading {
+
+        height: 31px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .category-icon {
+
+        width: 29px;
+        height: 29px;
+
+        flex-basis: 29px;
     }
 
 
     .category-name {
 
-        font-size:
-            27px;
-    }
-
-
-    .photo-card {
-
-        flex-basis:
-            150px;
-
-        width:
-            150px;
-
-        height:
-            105px;
-
-        border-radius:
-            12px;
+        font-size: 26px;
     }
 
 
     .photo-strip {
 
-        gap:
-            10px;
+        gap: 10px;
+    }
+
+
+    .photo-card {
+
+        flex-basis: 145px;
+
+        width: 145px;
+
+        height: 125px;
+
+        padding: 7px 7px 18px 7px;
+
+        border-radius: 12px;
+    }
+
+
+    .photo-card img {
+
+        border-radius: 8px;
     }
 
 
     .footer-logo {
 
-        width:
-            260px;
+        width: 255px;
     }
 
 }
@@ -854,84 +653,54 @@ body {
 
 @media (max-width: 390px) {
 
+    .gallery-content {
+
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
     .gallery-header {
 
-        height:
-            136px;
+        height: 123px;
     }
 
 
     .salt-stories {
 
-        width:
-            170px;
+        width: 205px;
     }
 
 
     .gallery-title {
 
-        top:
-            54px;
+        top: 65px;
 
-        font-size:
-            45px;
+        font-size: 43px;
     }
 
 
     .gallery-category {
 
-        margin-bottom:
-            11px;
-    }
-
-
-    .category-heading {
-
-        height:
-            28px;
-
-        margin-bottom:
-            4px;
-    }
-
-
-    .category-icon {
-
-        width:
-            26px;
-
-        height:
-            26px;
-
-        flex-basis:
-            26px;
-    }
-
-
-    .category-name {
-
-        font-size:
-            21px;
+        margin-bottom: 8px;
     }
 
 
     .photo-card {
 
-        flex-basis:
-            94px;
+        flex-basis: 94px;
 
-        width:
-            94px;
+        width: 94px;
 
-        height:
-            67px;
+        height: 86px;
+
+        padding: 5px 5px 12px 5px;
     }
 
 
     .footer-logo {
 
-        width:
-            185px;
+        width: 182px;
     }
 
 }
@@ -945,89 +714,74 @@ body {
 
     .gallery-header {
 
-        height:
-            125px;
+        height: 116px;
     }
 
 
     .salt-stories {
 
-        width:
-            155px;
+        width: 190px;
     }
 
 
     .gallery-title {
 
-        top:
-            50px;
+        top: 58px;
 
-        font-size:
-            42px;
+        font-size: 40px;
     }
 
 
     .gallery-category {
 
-        margin-bottom:
-            7px;
+        margin-bottom: 6px;
     }
 
 
     .category-heading {
 
-        height:
-            26px;
+        height: 25px;
 
-        margin-bottom:
-            3px;
+        margin-bottom: 3px;
     }
 
 
     .category-icon {
 
-        width:
-            24px;
+        width: 23px;
+        height: 23px;
 
-        height:
-            24px;
-
-        flex-basis:
-            24px;
+        flex-basis: 23px;
     }
 
 
     .category-name {
 
-        font-size:
-            20px;
+        font-size: 19px;
     }
 
 
     .photo-card {
 
-        flex-basis:
-            90px;
+        flex-basis: 90px;
 
-        width:
-            90px;
+        width: 90px;
 
-        height:
-            63px;
+        height: 80px;
+
+        padding: 5px 5px 11px 5px;
     }
 
 
     .footer-logo {
 
-        width:
-            170px;
+        width: 168px;
     }
 
 
     .gallery-footer {
 
-        padding-bottom:
-            8px;
+        padding-bottom: 7px;
     }
 
 }
@@ -1043,620 +797,642 @@ body {
 <main class="gallery-page">
 
 
-    <!-- =====================================================
-         MAIN GALLERY CONTENT
-         ===================================================== -->
+<div class="gallery-content">
 
-    <div class="gallery-content">
 
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
-        <!-- =================================================
-             HEADER
-             ================================================= -->
+<header class="gallery-header">
 
-        <header class="gallery-header">
 
+<a
+    href="index.html"
+    class="home-button"
+>
 
-            <a
-                href="index.html"
-                class="home-button"
-            >
+    <span class="home-arrow">←</span>
 
-                <span class="home-arrow">←</span>
+    <span>Home</span>
 
-                <span>Home</span>
+</a>
 
-            </a>
 
+<img
+    src="Salt%20Sand%20Stories.png"
+    class="salt-stories"
+    alt="Salt Sand Stories"
+>
 
-            <img
-                src="Salt%20Sand%20Stories.png"
-                class="salt-stories"
-                alt="Salt Sand Stories"
-            >
 
+<h1 class="gallery-title">
+    Gallery
+</h1>
 
-            <h1 class="gallery-title">
-                Gallery
-            </h1>
 
+</header>
 
-        </header>
 
 
+<!-- =====================================================
+     SEA VIEWS
+     ===================================================== -->
 
-        <!-- =================================================
-             SEA VIEWS
-             ================================================= -->
+<section class="gallery-category">
 
-        <section class="gallery-category">
 
+<div class="category-heading">
 
-            <div class="category-heading">
 
+<svg
+    class="category-icon"
+    viewBox="0 0 64 64"
+    aria-hidden="true"
+>
 
-                <svg
-                    class="category-icon"
-                    viewBox="0 0 64 64"
-                    aria-hidden="true"
-                >
+<path
+    d="M8 44
+       C15 38 23 38 31 44
+       C39 38 48 38 56 44"
+/>
 
-                    <path
-                        d="M8 44
-                           C15 38 23 38 31 44
-                           C39 38 48 38 56 44"
-                    />
+<path
+    d="M10 34
+       C17 28 24 28 31 34
+       C38 28 47 28 54 34"
+/>
 
-                    <path
-                        d="M10 34
-                           C17 28 24 28 31 34
-                           C38 28 47 28 54 34"
-                    />
+<path d="M32 9 V26"/>
 
-                    <path
-                        d="M32 9 V26"
-                    />
+<path
+    d="M24 17
+       C27 14 29 12 32 12
+       C35 12 37 14 40 17"
+/>
 
-                    <path
-                        d="M24 17
-                           C27 14 29 12 32 12
-                           C35 12 37 14 40 17"
-                    />
+</svg>
 
-                </svg>
 
+<h2 class="category-name">
+    Sea Views
+</h2>
 
-                <h2 class="category-name">
-                    Sea Views
-                </h2>
 
+<div class="category-line"></div>
 
-                <div class="category-line"></div>
 
+</div>
 
-            </div>
 
+<div class="photo-strip">
 
-            <div class="photo-strip">
 
+<button
+    class="photo-card"
+    data-category="Sea Views"
+    data-index="0"
+>
 
-                <button
-                    class="photo-card"
-                    data-category="Sea Views"
-                    data-index="0"
-                >
-                    <img
-                        src="your-stay.PNG"
-                        alt="Sea View"
-                    >
-                </button>
+<img
+    src="your-stay.PNG"
+    alt="Sea View"
+>
 
+</button>
 
-                <button
-                    class="photo-card"
-                    data-category="Sea Views"
-                    data-index="1"
-                >
-                    <img
-                        src="your-stay.PNG"
-                        alt="Sea View"
-                    >
-                </button>
 
+<button
+    class="photo-card"
+    data-category="Sea Views"
+    data-index="1"
+>
 
-                <button
-                    class="photo-card"
-                    data-category="Sea Views"
-                    data-index="2"
-                >
-                    <img
-                        src="your-stay.PNG"
-                        alt="Sea View"
-                    >
-                </button>
+<img
+    src="your-stay.PNG"
+    alt="Sea View"
+>
 
+</button>
 
-                <button
-                    class="photo-card"
-                    data-category="Sea Views"
-                    data-index="3"
-                >
-                    <img
-                        src="your-stay.PNG"
-                        alt="Sea View"
-                    >
-                </button>
 
+<button
+    class="photo-card"
+    data-category="Sea Views"
+    data-index="2"
+>
 
-                <button
-                    class="photo-card"
-                    data-category="Sea Views"
-                    data-index="4"
-                >
-                    <img
-                        src="your-stay.PNG"
-                        alt="Sea View"
-                    >
-                </button>
+<img
+    src="your-stay.PNG"
+    alt="Sea View"
+>
 
+</button>
 
-            </div>
 
-        </section>
+<button
+    class="photo-card"
+    data-category="Sea Views"
+    data-index="3"
+>
 
-
-
-        <!-- =================================================
-             LIVING
-             ================================================= -->
+<img
+    src="your-stay.PNG"
+    alt="Sea View"
+>
 
-        <section class="gallery-category">
+</button>
 
-
-            <div class="category-heading">
-
-
-                <svg
-                    class="category-icon"
-                    viewBox="0 0 64 64"
-                    aria-hidden="true"
-                >
 
-                    <path
-                        d="M13 31 V23
-                           C13 18 17 15 22 15
-                           H42
-                           C47 15 51 18 51 23
-                           V31"
-                    />
+<button
+    class="photo-card"
+    data-category="Sea Views"
+    data-index="4"
+>
 
-                    <path
-                        d="M8 31 H56 V47 H8 Z"
-                    />
+<img
+    src="your-stay.PNG"
+    alt="Sea View"
+>
 
-                    <path
-                        d="M13 47 V53"
-                    />
+</button>
 
-                    <path
-                        d="M51 47 V53"
-                    />
 
-                </svg>
+</div>
 
+</section>
 
-                <h2 class="category-name">
-                    Living
-                </h2>
 
 
-                <div class="category-line"></div>
+<!-- =====================================================
+     LIVING
+     ===================================================== -->
 
+<section class="gallery-category">
 
-            </div>
 
+<div class="category-heading">
 
-            <div class="photo-strip">
 
+<svg
+    class="category-icon"
+    viewBox="0 0 64 64"
+    aria-hidden="true"
+>
 
-                <button
-                    class="photo-card"
-                    data-category="Living"
-                    data-index="0"
-                >
-                    <img
-                        src="apartment.jpg"
-                        alt="Living Room"
-                    >
-                </button>
+<path
+    d="M13 31 V23
+       C13 18 17 15 22 15
+       H42
+       C47 15 51 18 51 23
+       V31"
+/>
 
+<path
+    d="M8 31 H56 V47 H8 Z"
+/>
 
-                <button
-                    class="photo-card"
-                    data-category="Living"
-                    data-index="1"
-                >
-                    <img
-                        src="apartment.jpg"
-                        alt="Living Room"
-                    >
-                </button>
+<path d="M13 47 V53"/>
 
+<path d="M51 47 V53"/>
 
-                <button
-                    class="photo-card"
-                    data-category="Living"
-                    data-index="2"
-                >
-                    <img
-                        src="apartment.jpg"
-                        alt="Living Room"
-                    >
-                </button>
+</svg>
 
 
-                <button
-                    class="photo-card"
-                    data-category="Living"
-                    data-index="3"
-                >
-                    <img
-                        src="apartment.jpg"
-                        alt="Living Room"
-                    >
-                </button>
+<h2 class="category-name">
+    Living
+</h2>
 
 
-                <button
-                    class="photo-card"
-                    data-category="Living"
-                    data-index="4"
-                >
-                    <img
-                        src="apartment.jpg"
-                        alt="Living Room"
-                    >
-                </button>
+<div class="category-line"></div>
 
 
-            </div>
+</div>
 
-        </section>
 
+<div class="photo-strip">
 
 
-        <!-- =================================================
-             BEDROOM
-             ================================================= -->
+<button
+    class="photo-card"
+    data-category="Living"
+    data-index="0"
+>
 
-        <section class="gallery-category">
+<img
+    src="apartment.jpg"
+    alt="Living Room"
+>
 
+</button>
 
-            <div class="category-heading">
 
+<button
+    class="photo-card"
+    data-category="Living"
+    data-index="1"
+>
 
-                <svg
-                    class="category-icon"
-                    viewBox="0 0 64 64"
-                    aria-hidden="true"
-                >
+<img
+    src="apartment.jpg"
+    alt="Living Room"
+>
 
-                    <path
-                        d="M9 32 H55 V48 H9 Z"
-                    />
+</button>
 
-                    <path
-                        d="M13 32 V24
-                           C13 19 17 16 22 16
-                           H42
-                           C47 16 51 19 51 24
-                           V32"
-                    />
 
-                    <path
-                        d="M9 40 H55"
-                    />
+<button
+    class="photo-card"
+    data-category="Living"
+    data-index="2"
+>
 
-                    <path
-                        d="M14 48 V54"
-                    />
+<img
+    src="apartment.jpg"
+    alt="Living Room"
+>
 
-                    <path
-                        d="M50 48 V54"
-                    />
+</button>
 
-                </svg>
 
+<button
+    class="photo-card"
+    data-category="Living"
+    data-index="3"
+>
 
-                <h2 class="category-name">
-                    Bedroom
-                </h2>
+<img
+    src="apartment.jpg"
+    alt="Living Room"
+>
 
+</button>
 
-                <div class="category-line"></div>
 
+<button
+    class="photo-card"
+    data-category="Living"
+    data-index="4"
+>
 
-            </div>
+<img
+    src="apartment.jpg"
+    alt="Living Room"
+>
 
+</button>
 
-            <div class="photo-strip">
 
+</div>
 
-                <button
-                    class="photo-card"
-                    data-category="Bedroom"
-                    data-index="0"
-                >
-                    <img
-                        src="gallery.jpg"
-                        alt="Bedroom"
-                    >
-                </button>
+</section>
 
 
-                <button
-                    class="photo-card"
-                    data-category="Bedroom"
-                    data-index="1"
-                >
-                    <img
-                        src="gallery.jpg"
-                        alt="Bedroom"
-                    >
-                </button>
 
+<!-- =====================================================
+     BEDROOM
+     ===================================================== -->
 
-                <button
-                    class="photo-card"
-                    data-category="Bedroom"
-                    data-index="2"
-                >
-                    <img
-                        src="gallery.jpg"
-                        alt="Bedroom"
-                    >
-                </button>
+<section class="gallery-category">
 
 
-                <button
-                    class="photo-card"
-                    data-category="Bedroom"
-                    data-index="3"
-                >
-                    <img
-                        src="gallery.jpg"
-                        alt="Bedroom"
-                    >
-                </button>
+<div class="category-heading">
 
 
-                <button
-                    class="photo-card"
-                    data-category="Bedroom"
-                    data-index="4"
-                >
-                    <img
-                        src="gallery.jpg"
-                        alt="Bedroom"
-                    >
-                </button>
+<svg
+    class="category-icon"
+    viewBox="0 0 64 64"
+    aria-hidden="true"
+>
 
+<path d="M9 32 H55 V48 H9 Z"/>
 
-            </div>
+<path
+    d="M13 32 V24
+       C13 19 17 16 22 16
+       H42
+       C47 16 51 19 51 24
+       V32"
+/>
 
-        </section>
+<path d="M9 40 H55"/>
 
+<path d="M14 48 V54"/>
 
+<path d="M50 48 V54"/>
 
-        <!-- =================================================
-             KITCHEN
-             ================================================= -->
+</svg>
 
-        <section class="gallery-category">
 
+<h2 class="category-name">
+    Bedroom
+</h2>
 
-            <div class="category-heading">
 
+<div class="category-line"></div>
 
-                <svg
-                    class="category-icon"
-                    viewBox="0 0 64 64"
-                    aria-hidden="true"
-                >
 
-                    <rect
-                        x="9"
-                        y="9"
-                        width="46"
-                        height="46"
-                        rx="5"
-                    />
+</div>
 
-                    <circle
-                        cx="22"
-                        cy="22"
-                        r="5"
-                    />
 
-                    <circle
-                        cx="42"
-                        cy="22"
-                        r="5"
-                    />
+<div class="photo-strip">
 
-                    <circle
-                        cx="22"
-                        cy="42"
-                        r="5"
-                    />
 
-                    <circle
-                        cx="42"
-                        cy="42"
-                        r="5"
-                    />
+<button
+    class="photo-card"
+    data-category="Bedroom"
+    data-index="0"
+>
 
-                </svg>
+<img
+    src="gallery.jpg"
+    alt="Bedroom"
+>
 
+</button>
 
-                <h2 class="category-name">
-                    Kitchen
-                </h2>
 
+<button
+    class="photo-card"
+    data-category="Bedroom"
+    data-index="1"
+>
 
-                <div class="category-line"></div>
+<img
+    src="gallery.jpg"
+    alt="Bedroom"
+>
 
+</button>
 
-            </div>
 
+<button
+    class="photo-card"
+    data-category="Bedroom"
+    data-index="2"
+>
 
-            <div class="photo-strip">
+<img
+    src="gallery.jpg"
+    alt="Bedroom"
+>
 
+</button>
 
-                <button
-                    class="photo-card"
-                    data-category="Kitchen"
-                    data-index="0"
-                >
-                    <img
-                        src="Blank%20Kitchen.png"
-                        alt="Kitchen"
-                    >
-                </button>
 
+<button
+    class="photo-card"
+    data-category="Bedroom"
+    data-index="3"
+>
 
-                <button
-                    class="photo-card"
-                    data-category="Kitchen"
-                    data-index="1"
-                >
-                    <img
-                        src="Blank%20Kitchen.png"
-                        alt="Kitchen"
-                    >
-                </button>
+<img
+    src="gallery.jpg"
+    alt="Bedroom"
+>
 
+</button>
 
-                <button
-                    class="photo-card"
-                    data-category="Kitchen"
-                    data-index="2"
-                >
-                    <img
-                        src="Blank%20Kitchen.png"
-                        alt="Kitchen"
-                    >
-                </button>
 
+<button
+    class="photo-card"
+    data-category="Bedroom"
+    data-index="4"
+>
 
-                <button
-                    class="photo-card"
-                    data-category="Kitchen"
-                    data-index="3"
-                >
-                    <img
-                        src="Blank%20Kitchen.png"
-                        alt="Kitchen"
-                    >
-                </button>
+<img
+    src="gallery.jpg"
+    alt="Bedroom"
+>
 
+</button>
 
-                <button
-                    class="photo-card"
-                    data-category="Kitchen"
-                    data-index="4"
-                >
-                    <img
-                        src="Blank%20Kitchen.png"
-                        alt="Kitchen"
-                    >
-                </button>
 
+</div>
 
-            </div>
+</section>
 
-        </section>
 
 
-    </div>
+<!-- =====================================================
+     KITCHEN
+     ===================================================== -->
 
+<section class="gallery-category">
 
 
-    <!-- =====================================================
-         BOTTOM-JUSTIFIED LOGO
-         ===================================================== -->
+<div class="category-heading">
 
-    <footer class="gallery-footer">
 
-        <img
-            src="logo.png"
-            class="footer-logo"
-            alt="303 OYSTER BAY — SURATHKAL • MANGALURU"
-        >
+<svg
+    class="category-icon"
+    viewBox="0 0 64 64"
+    aria-hidden="true"
+>
 
-    </footer>
+<rect
+    x="9"
+    y="9"
+    width="46"
+    height="46"
+    rx="5"
+/>
 
+<circle
+    cx="22"
+    cy="22"
+    r="5"
+/>
 
+<circle
+    cx="42"
+    cy="22"
+    r="5"
+/>
 
-    <!-- =====================================================
-         LIGHTBOX
-         ===================================================== -->
+<circle
+    cx="22"
+    cy="42"
+    r="5"
+/>
 
-    <div
-        class="lightbox"
-        id="lightbox"
-    >
+<circle
+    cx="42"
+    cy="42"
+    r="5"
+/>
 
+</svg>
 
-        <button
-            class="lightbox-close"
-            id="lightboxClose"
-            aria-label="Close"
-        >
-            ×
-        </button>
 
+<h2 class="category-name">
+    Kitchen
+</h2>
 
-        <button
-            class="lightbox-nav lightbox-prev"
-            id="lightboxPrev"
-            aria-label="Previous image"
-        >
-            ‹
-        </button>
 
+<div class="category-line"></div>
 
-        <img
-            class="lightbox-image"
-            id="lightboxImage"
-            src=""
-            alt=""
-        >
 
+</div>
 
-        <button
-            class="lightbox-nav lightbox-next"
-            id="lightboxNext"
-            aria-label="Next image"
-        >
-            ›
-        </button>
 
+<div class="photo-strip">
 
-        <div
-            class="lightbox-counter"
-            id="lightboxCounter"
-        ></div>
 
+<button
+    class="photo-card"
+    data-category="Kitchen"
+    data-index="0"
+>
 
-    </div>
+<img
+    src="Blank%20Kitchen.png"
+    alt="Kitchen"
+>
+
+</button>
+
+
+<button
+    class="photo-card"
+    data-category="Kitchen"
+    data-index="1"
+>
+
+<img
+    src="Blank%20Kitchen.png"
+    alt="Kitchen"
+>
+
+</button>
+
+
+<button
+    class="photo-card"
+    data-category="Kitchen"
+    data-index="2"
+>
+
+<img
+    src="Blank%20Kitchen.png"
+    alt="Kitchen"
+>
+
+</button>
+
+
+<button
+    class="photo-card"
+    data-category="Kitchen"
+    data-index="3"
+>
+
+<img
+    src="Blank%20Kitchen.png"
+    alt="Kitchen"
+>
+
+</button>
+
+
+<button
+    class="photo-card"
+    data-category="Kitchen"
+    data-index="4"
+>
+
+<img
+    src="Blank%20Kitchen.png"
+    alt="Kitchen"
+>
+
+</button>
+
+
+</div>
+
+</section>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     BOTTOM LOGO
+     ===================================================== -->
+
+<footer class="gallery-footer">
+
+<img
+    src="logo.png"
+    class="footer-logo"
+    alt="303 OYSTER BAY — SURATHKAL • MANGALURU"
+>
+
+</footer>
+
+
+
+<!-- =====================================================
+     LIGHTBOX
+     ===================================================== -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+>
+
+
+<button
+    class="lightbox-close"
+    id="lightboxClose"
+    aria-label="Close"
+>
+    ×
+</button>
+
+
+<button
+    class="lightbox-nav lightbox-prev"
+    id="lightboxPrev"
+    aria-label="Previous image"
+>
+    ‹
+</button>
+
+
+<img
+    class="lightbox-image"
+    id="lightboxImage"
+    src=""
+    alt=""
+>
+
+
+<button
+    class="lightbox-nav lightbox-next"
+    id="lightboxNext"
+    aria-label="Next image"
+>
+    ›
+</button>
+
+
+<div
+    class="lightbox-counter"
+    id="lightboxCounter"
+></div>
+
+
+</div>
 
 
 
 <script>
 
 /* =========================================================
-   PLACEHOLDER IMAGE DATA
+   GALLERY DATA
    ========================================================= */
 
 const galleryData = {
@@ -1729,7 +1505,7 @@ let currentIndex = 0;
 
 
 /* =========================================================
-   OPEN LIGHTBOX
+   OPEN
    ========================================================= */
 
 function openLightbox(
@@ -1755,7 +1531,7 @@ function openLightbox(
 
 
 /* =========================================================
-   UPDATE LIGHTBOX
+   UPDATE
    ========================================================= */
 
 function updateLightbox() {
@@ -1781,7 +1557,7 @@ function updateLightbox() {
 
 
 /* =========================================================
-   CLOSE LIGHTBOX
+   CLOSE
    ========================================================= */
 
 function closeLightbox() {
@@ -1796,7 +1572,7 @@ function closeLightbox() {
 
 
 /* =========================================================
-   NEXT IMAGE
+   NEXT
    ========================================================= */
 
 function nextImage() {
@@ -1815,7 +1591,7 @@ function nextImage() {
 
 
 /* =========================================================
-   PREVIOUS IMAGE
+   PREVIOUS
    ========================================================= */
 
 function previousImage() {
@@ -1836,7 +1612,7 @@ function previousImage() {
 
 
 /* =========================================================
-   THUMBNAIL CLICK
+   THUMBNAILS
    ========================================================= */
 
 document
@@ -1861,7 +1637,7 @@ document
 
 
 /* =========================================================
-   LIGHTBOX BUTTONS
+   BUTTONS
    ========================================================= */
 
 lightboxClose.addEventListener(
@@ -1881,7 +1657,7 @@ lightboxNext.addEventListener(
 
 
 /* =========================================================
-   CLICK OUTSIDE IMAGE
+   OUTSIDE CLICK
    ========================================================= */
 
 lightbox.addEventListener(
