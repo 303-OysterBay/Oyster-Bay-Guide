@@ -39,7 +39,6 @@ body {
     width: 100%;
     min-height: 100vh;
     min-height: 100svh;
-
     overflow-x: hidden;
 
     background-image:
@@ -56,7 +55,7 @@ body {
     padding:
         clamp(22px, 5vw, 48px)
         clamp(18px, 4vw, 42px)
-        58px;
+        88px;
 }
 
 
@@ -66,12 +65,9 @@ body {
 
 .top-area {
     position: relative;
-
     text-align: center;
-
     width: 100%;
     max-width: 1100px;
-
     margin: 0 auto;
 
     padding-top: clamp(4px, 1vw, 10px);
@@ -80,23 +76,18 @@ body {
 
 .logo {
     display: block;
-
     width: 178px;
     max-width: 48vw;
     height: auto;
-
     margin: 0 auto 8px;
 }
 
 .tagline {
     margin: 0;
-
     font-size: 15px;
     line-height: 1.25;
     font-weight: 400;
-
     letter-spacing: 0.15px;
-
     color: #59412d;
 }
 
@@ -105,18 +96,22 @@ body {
    AIRBNB GUEST FAVOURITE
    ========================= */
 
-.guest-favourite {
+.guest-favourite-link {
     position: absolute;
-
     top: 8px;
     right: 2.5%;
+    width: 82px;
+
+    z-index: 5;
+    display: block;
+    text-decoration: none;
+}
+
+.guest-favourite {
+    display: block;
 
     width: 82px;
     height: auto;
-
-    display: block;
-
-    z-index: 5;
 
     margin: 0;
     padding: 0;
@@ -124,8 +119,6 @@ body {
     background: transparent;
     border: 0;
     box-shadow: none;
-
-    pointer-events: none;
 }
 
 
@@ -136,24 +129,19 @@ body {
 .home-grid {
     width: 100%;
     max-width: 1100px;
-
     margin: 0 auto;
 
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: clamp(16px, 2.5vw, 28px);
 }
 
 .home-card {
     position: relative;
-
     display: block;
 
     width: 100%;
-
     aspect-ratio: 1.02 / 1;
 
     overflow: hidden;
@@ -171,14 +159,12 @@ body {
 
 .home-card img {
     position: absolute;
-
     inset: 0;
 
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-
     display: block;
 
     transition: transform 0.35s ease;
@@ -188,7 +174,6 @@ body {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background:
@@ -202,16 +187,11 @@ body {
     z-index: 1;
 }
 
-
-/* =========================
-   CARD TEXT
-   ========================= */
-
 .home-card-content {
     position: absolute;
 
     left: 30px;
-    right: 30px;
+    right: 22px;
     bottom: 24px;
 
     z-index: 2;
@@ -219,21 +199,16 @@ body {
 
 .card-title {
     font-size: clamp(35px, 4vw, 49px);
-
     line-height: 0.95;
-
     font-weight: 400;
 
-    margin: 0 0 9px;
+    margin-bottom: 9px;
 
     color: #fff;
-
-    white-space: nowrap;
 }
 
 .card-description {
-    width: 100%;
-    max-width: none;
+    max-width: 78%;
 
     font-family:
         Arial,
@@ -241,46 +216,33 @@ body {
         sans-serif;
 
     font-size: clamp(15px, 1.65vw, 18px);
-
-    line-height: 1.15;
-
+    line-height: 1.28;
     font-weight: 400;
 
     color: #fff;
-
-    white-space: nowrap;
 }
-
-
-/* =========================
-   CARD ARROW
-   TOP RIGHT
-   ========================= */
 
 .card-arrow {
     position: absolute;
 
-    right: 8px;
-    top: 10px;
-    bottom: auto;
+    right: 10px;
+    bottom: 10px;
 
-    width: 18px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     border: none;
     border-radius: 0;
-
     background: transparent;
 
     font-size: 0;
     line-height: 1;
 
-    color: #fff;
+    color: white;
 
     z-index: 5;
 }
@@ -288,18 +250,12 @@ body {
 .card-arrow::after {
     content: "›";
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, sans-serif;
     font-size: 30px;
-
     font-weight: 300;
-
     line-height: 1;
 
-    color: #fff;
+    color: white;
 }
 
 
@@ -311,21 +267,14 @@ body {
     width: 100%;
     max-width: 1100px;
 
-    margin:
-        clamp(30px, 4vw, 44px)
-        auto
-        0;
+    margin: clamp(30px, 4vw, 44px) auto 0;
 
     display: grid;
+    grid-template-columns: repeat(5, 1fr);
 
-    grid-template-columns:
-        repeat(5, 1fr);
+    background: rgba(255, 248, 235, 0.88);
 
-    background:
-        rgba(255, 248, 235, 0.88);
-
-    border:
-        1px solid rgba(80, 55, 35, 0.16);
+    border: 1px solid rgba(80, 55, 35, 0.16);
 
     border-radius: 32px;
 
@@ -341,9 +290,7 @@ body {
     min-height: 118px;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
@@ -351,37 +298,25 @@ body {
 
     text-align: center;
 
-    border-right:
-        1px solid rgba(70, 50, 30, 0.18);
+    border-right: 1px solid rgba(70, 50, 30, 0.20);
 }
 
 .feature:last-child {
     border-right: none;
 }
 
-
-/* Elegant feature icons */
-
 .feature-icon {
-    width: 27px;
-    height: 27px;
+    width: 25px;
+    height: 25px;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 
     fill: none;
-
     stroke: #463322;
-
-    stroke-width: 1.8;
-
+    stroke-width: 2.2;
     stroke-linecap: round;
     stroke-linejoin: round;
-
-    flex-shrink: 0;
 }
-
-
-/* Feature text */
 
 .feature-title {
     font-family:
@@ -389,17 +324,13 @@ body {
         Helvetica,
         sans-serif;
 
-    font-size: 13px;
-
+    font-size: 10px;
     line-height: 1.15;
-
-    letter-spacing: 0;
+    letter-spacing: 0.1px;
 
     color: #463322;
 
     white-space: nowrap;
-
-    text-transform: none;
 }
 
 
@@ -434,14 +365,16 @@ body {
 
     /* Guest Favourite */
 
-    .guest-favourite {
+    .guest-favourite-link {
         top: 5px;
         right: 1.5%;
         width: 72px;
     }
 
+    .guest-favourite {
+        width: 72px;
+    }
 
-    /* Cards */
 
     .home-grid {
         gap: 16px;
@@ -453,69 +386,40 @@ body {
 
     .home-card-content {
         left: 20px;
-        right: 20px;
+        right: 15px;
         bottom: 19px;
     }
 
     .card-title {
-        font-size: 30px;
+        font-size: 34px;
         margin-bottom: 7px;
     }
 
     .card-description {
-        width: 100%;
-        max-width: none;
-
-        font-size: 11.5px;
-
-        line-height: 1.15;
-
-        white-space: nowrap;
+        font-size: 14px;
+        line-height: 1.25;
+        max-width: 82%;
     }
-
-
-    /* Top-right chevron */
 
     .card-arrow {
-        right: 8px !important;
-        top: 8px !important;
-        bottom: auto !important;
-
-        width: 18px;
+        width: 20px;
         height: 20px;
+        font-size: 0;
     }
 
-    .card-arrow::after {
-        font-size: 27px;
-    }
-
-
-    /* Features */
 
     .features-band {
         margin-top: 30px;
-
         border-radius: 29px;
     }
 
     .feature {
         min-height: 100px;
-
-        padding:
-            11px 3px;
-    }
-
-    .feature-icon {
-        width: 27px;
-        height: 27px;
-
-        margin-bottom: 7px;
-
-        stroke-width: 1.8;
+        padding: 11px 4px;
     }
 
     .feature-title {
-        font-size: 11px;
+        font-size: 9px;
     }
 }
 
@@ -541,26 +445,21 @@ body {
 
     .home-card-content {
         left: 16px;
-        right: 16px;
         bottom: 16px;
     }
 
     .card-title {
-        font-size: 27px;
+        font-size: 29px;
     }
 
     .card-description {
-        font-size: 10.5px;
+        font-size: 12px;
     }
 
     .card-arrow {
-        right: 8px !important;
-        top: 8px !important;
-        bottom: auto !important;
-    }
-
-    .card-arrow::after {
-        font-size: 25px;
+        width: 20px;
+        height: 20px;
+        font-size: 0;
     }
 
     .features-band {
@@ -569,18 +468,12 @@ body {
 
     .feature {
         min-height: 91px;
-
         padding-left: 2px;
         padding-right: 2px;
     }
 
-    .feature-icon {
-        width: 25px;
-        height: 25px;
-    }
-
     .feature-title {
-        font-size: 10px;
+        font-size: 8px;
     }
 }
 
@@ -609,11 +502,22 @@ body {
             Where the sea slows you down.
         </h1>
 
-        <img
-            src="guest-favourite.png"
-            alt="Airbnb Guest Favourite"
-            class="guest-favourite"
+
+        <!-- Airbnb Guest Favourite -->
+
+        <a
+            href="https://www.airbnb.co.in/h/303oysterbay"
+            target="_blank"
+            rel="noopener"
+            class="guest-favourite-link"
+            aria-label="View 303 Oyster Bay on Airbnb"
         >
+            <img
+                src="guest-favourite.png"
+                alt="Airbnb Guest Favourite"
+                class="guest-favourite"
+            >
+        </a>
 
     </header>
 
@@ -628,7 +532,10 @@ body {
 
         <!-- STAY -->
 
-        <a href="arrival-guide.html" class="home-card">
+        <a
+            href="arrival-guide.html"
+            class="home-card"
+        >
 
             <img
                 src="Sea View1.jpg"
@@ -645,10 +552,10 @@ body {
                     Arrival • Wi-Fi • House Rules
                 </div>
 
-            </div>
+                <div class="card-arrow">
+                    →
+                </div>
 
-            <div class="card-arrow">
-                →
             </div>
 
         </a>
@@ -657,7 +564,10 @@ body {
 
         <!-- LIVE -->
 
-        <a href="live.html" class="home-card">
+        <a
+            href="live.html"
+            class="home-card"
+        >
 
             <img
                 src="Living1.jpg"
@@ -674,10 +584,10 @@ body {
                     Rooms • Comfort • Kitchen
                 </div>
 
-            </div>
+                <div class="card-arrow">
+                    →
+                </div>
 
-            <div class="card-arrow">
-                →
             </div>
 
         </a>
@@ -686,7 +596,10 @@ body {
 
         <!-- EXPLORE -->
 
-        <a href="In%20and%20around.pdf" class="home-card">
+        <a
+            href="In%20and%20around.pdf"
+            class="home-card"
+        >
 
             <img
                 src="Lighthouse.jpg"
@@ -703,10 +616,10 @@ body {
                     Beaches • Food • Mangaluru
                 </div>
 
-            </div>
+                <div class="card-arrow">
+                    →
+                </div>
 
-            <div class="card-arrow">
-                →
             </div>
 
         </a>
@@ -715,7 +628,10 @@ body {
 
         <!-- REMEMBER -->
 
-        <a href="Remember.html" class="home-card">
+        <a
+            href="Remember.html"
+            class="home-card"
+        >
 
             <img
                 src="Bedroom1.jpg"
@@ -729,17 +645,16 @@ body {
                 </div>
 
                 <div class="card-description">
-                    Sea Views • Living • Bedroom • Kitchen
+                    Sea Views • Living
+                </div>
+
+                <div class="card-arrow">
+                    →
                 </div>
 
             </div>
 
-            <div class="card-arrow">
-                →
-            </div>
-
         </a>
-
 
     </main>
 
@@ -769,7 +684,7 @@ body {
             </svg>
 
             <div class="feature-title">
-                2 bedrooms
+                2 Bedrooms
             </div>
 
         </div>
@@ -792,7 +707,7 @@ body {
             </svg>
 
             <div class="feature-title">
-                sleeps 4+1
+                Sleeps 4+1
             </div>
 
         </div>
@@ -821,7 +736,7 @@ body {
             </svg>
 
             <div class="feature-title">
-                hi-speed Wi-Fi
+                Hi-Speed Wi-Fi
             </div>
 
         </div>
@@ -845,7 +760,7 @@ body {
             </svg>
 
             <div class="feature-title">
-                free parking
+                Free Parking
             </div>
 
         </div>
@@ -869,7 +784,7 @@ body {
             </svg>
 
             <div class="feature-title">
-                full kitchen
+                Full Kitchen
             </div>
 
         </div>
