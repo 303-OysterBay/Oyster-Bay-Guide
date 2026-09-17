@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 >
 
-<title>303 OYSTER BAY • Stay</title>
+<title>303 OYSTER BAY • Arrival</title>
 
 
 <style>
@@ -41,7 +41,7 @@ body{
 
 /* =========================================================
    SAND BACKGROUND
-   MASTER
+   FROZEN MASTER
    ========================================================= */
 
 .arrival-page{
@@ -63,7 +63,7 @@ body{
 
 /* =========================================================
    GUEST FAVOURITE
-   MASTER
+   FROZEN MASTER
    ========================================================= */
 
 .guest-favourite-link{
@@ -95,29 +95,512 @@ body{
 
 
 /* =========================================================
-   MAIN STAY LANDING CONTENT
+   ARRIVAL CONTENT
+   ONE VIEWPORT
    ========================================================= */
 
 .arrival-content{
 
     position:absolute;
 
-    left:0;
-    right:0;
+    left:50%;
+    top:10px;
 
-    top:0;
-    bottom:55px;
+    transform:translateX(-50%);
 
-    width:100%;
+    width:calc(100% - 26px);
+    max-width:920px;
+
+    height:calc(100% - 155px);
 
     overflow:hidden;
+
+    background:#f8f0df;
+
+    border-radius:12px;
+
+    padding:18px 16px 14px;
+
+    z-index:5;
 
 }
 
 
 /* =========================================================
+   TITLE
+   ========================================================= */
+
+.arrival-title{
+
+    text-align:center;
+
+    color:#173f70;
+
+    font-size:38px;
+
+    line-height:.95;
+
+    letter-spacing:-1px;
+
+    font-weight:bold;
+
+    margin-bottom:3px;
+}
+
+
+.arrival-subtitle{
+
+    text-align:center;
+
+    color:#173f70;
+
+    font-size:17px;
+
+    line-height:1.05;
+
+    font-style:italic;
+
+    margin-bottom:12px;
+}
+
+
+/* =========================================================
+   ARRIVAL OPTIONS
+   ========================================================= */
+
+.arrival-options{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    width:100%;
+
+    margin-bottom:10px;
+}
+
+
+.arrival-option{
+
+    text-align:center;
+
+    padding:0 8px;
+
+    border-right:1px solid #a9c5ce;
+}
+
+.arrival-option:last-child{
+
+    border-right:none;
+}
+
+
+/* =========================================================
+   ICONS
+   ========================================================= */
+
+.arrival-icon{
+
+    width:38px;
+    height:38px;
+
+    margin:0 auto 4px;
+
+    display:block;
+
+    color:#173f70;
+}
+
+
+.arrival-icon svg{
+
+    width:100%;
+    height:100%;
+
+    display:block;
+}
+
+
+.arrival-option h2{
+
+    color:#173f70;
+
+    font-size:14px;
+
+    line-height:1.05;
+
+    min-height:31px;
+
+    margin-bottom:4px;
+}
+
+
+.arrival-option .distance{
+
+    font-size:13px;
+
+    line-height:1.1;
+
+    color:#26394e;
+}
+
+
+.arrival-option .time{
+
+    font-size:13px;
+
+    line-height:1.1;
+
+    color:#26394e;
+
+    margin-top:2px;
+}
+
+
+.arrival-option .road-copy{
+
+    font-size:11px;
+
+    line-height:1.15;
+
+    color:#26394e;
+
+    padding:0 3px;
+}
+
+
+/* =========================================================
+   MAIN IMAGE + MAP
+   ========================================================= */
+
+.arrival-middle{
+
+    display:grid;
+
+    grid-template-columns:1.65fr .75fr;
+
+    gap:10px;
+
+    width:100%;
+
+    margin-bottom:8px;
+}
+
+
+.exterior-image{
+
+    width:100%;
+
+    height:255px;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:11px;
+}
+
+
+.maps-card{
+
+    border:1px solid #ead9b8;
+
+    border-radius:11px;
+
+    background:#fbf5e8;
+
+    padding:9px 8px 7px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+
+.maps-title{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:5px;
+
+    color:#173f70;
+
+    font-size:17px;
+
+    line-height:1;
+
+    font-weight:bold;
+
+    margin-bottom:5px;
+}
+
+
+.maps-pin{
+
+    font-size:22px;
+    line-height:1;
+}
+
+
+.maps-copy{
+
+    color:#26394e;
+
+    font-size:11px;
+
+    line-height:1.15;
+
+    margin-bottom:6px;
+}
+
+
+.maps-qr{
+
+    width:130px;
+    height:130px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin-bottom:6px;
+}
+
+
+.maps-button{
+
+    width:100%;
+
+    background:#173f70;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:18px;
+
+    padding:7px 5px;
+
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    line-height:1;
+}
+
+
+/* =========================================================
+   PARKING
+   ========================================================= */
+
+.parking-strip{
+
+    width:100%;
+
+    min-height:48px;
+
+    border:1px solid #ead9b8;
+
+    border-radius:10px;
+
+    background:#fbf5e8;
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:8px;
+
+    padding:5px 12px;
+}
+
+
+.parking-icon{
+
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    background:#173f70;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-family:Arial,sans-serif;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    flex:0 0 38px;
+}
+
+
+.parking-divider{
+
+    width:1px;
+
+    height:34px;
+
+    background:#a9c5ce;
+
+    margin:0 12px;
+}
+
+
+.parking-text{
+
+    flex:1;
+}
+
+
+.parking-title{
+
+    color:#173f70;
+
+    font-size:20px;
+
+    line-height:1;
+
+    font-weight:bold;
+
+    margin-bottom:2px;
+}
+
+
+.parking-copy{
+
+    color:#26394e;
+
+    font-size:12px;
+
+    line-height:1.1;
+}
+
+
+.car-icon{
+
+    width:38px;
+    height:38px;
+
+    color:#173f70;
+
+    margin-left:10px;
+}
+
+
+/* =========================================================
+   GUEST ID BLOCK
+   ========================================================= */
+
+.guest-id-block{
+
+    width:100%;
+
+    min-height:105px;
+
+    border-radius:11px;
+
+    background:#e6f1f5;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:10px 14px;
+}
+
+
+.id-icon{
+
+    width:105px;
+
+    flex:0 0 105px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+
+.id-icon svg{
+
+    width:78px;
+    height:60px;
+
+    display:block;
+}
+
+
+.id-divider{
+
+    width:1px;
+
+    height:80px;
+
+    background:#8eb5c5;
+
+    margin:0 14px 0 4px;
+}
+
+
+.id-copy{
+
+    flex:1;
+
+    color:#26394e;
+}
+
+
+.id-title{
+
+    color:#173f70;
+
+    font-size:19px;
+
+    line-height:1;
+
+    font-weight:bold;
+
+    margin-bottom:6px;
+}
+
+
+.id-copy p{
+
+    font-size:11.5px;
+
+    line-height:1.22;
+
+    margin-bottom:6px;
+}
+
+.id-copy p:last-child{
+
+    margin-bottom:0;
+}
+
+
+/* =========================================================
    303 OYSTER BAY LOGO
-   MASTER
+   FROZEN MASTER
    ========================================================= */
 
 .sand-logo{
@@ -140,6 +623,7 @@ body{
     -webkit-tap-highlight-color:transparent;
 }
 
+
 .sand-logo img{
 
     display:block;
@@ -150,7 +634,7 @@ body{
 
 
 /* =========================================================
-   FROZEN STAY PAGE BOTTOM NAV
+   FROZEN STAY PAGE NAVIGATION
    ========================================================= */
 
 .bottom-nav{
@@ -191,6 +675,7 @@ body{
 
 /* =========================================================
    INVISIBLE NAVIGATION HOTSPOTS
+   FROZEN MASTER
    ========================================================= */
 
 .nav-hotspot{
@@ -217,12 +702,11 @@ body{
 }
 
 
-/* LEFT */
-
 .hotspot-home{
     left:0;
     width:17%;
 }
+
 
 .hotspot-stay{
     left:17%;
@@ -230,12 +714,11 @@ body{
 }
 
 
-/* RIGHT */
-
 .hotspot-live{
     right:18%;
     width:18%;
 }
+
 
 .hotspot-explore{
     right:0;
@@ -245,7 +728,7 @@ body{
 
 /* =========================================================
    TABLET / DESKTOP
-   MASTER
+   FROZEN MASTER VALUES
    ========================================================= */
 
 @media(min-width:700px){
@@ -261,6 +744,7 @@ body{
 
 
     .bottom-nav{
+
         height:155px;
     }
 
@@ -273,6 +757,7 @@ body{
 
 
     .nav-hotspot{
+
         height:125px;
     }
 
@@ -281,7 +766,7 @@ body{
 
 /* =========================================================
    SMALL PHONES
-   MASTER
+   FROZEN MASTER VALUES
    ========================================================= */
 
 @media(max-width:390px){
@@ -296,6 +781,7 @@ body{
 
 
     .bottom-nav{
+
         height:108px;
     }
 
@@ -308,6 +794,7 @@ body{
 
 
     .nav-hotspot{
+
         height:90px;
     }
 
@@ -316,7 +803,7 @@ body{
 
 /* =========================================================
    VERY SMALL PHONES
-   MASTER
+   FROZEN MASTER VALUES
    ========================================================= */
 
 @media(max-width:360px){
@@ -328,6 +815,7 @@ body{
 
 
     .bottom-nav{
+
         height:100px;
     }
 
@@ -340,6 +828,7 @@ body{
 
 
     .nav-hotspot{
+
         height:84px;
     }
 
@@ -356,107 +845,453 @@ body{
 <main class="arrival-page">
 
 
-    <!-- =====================================================
-         GUEST FAVOURITE
-         ===================================================== -->
+<!-- =====================================================
+     GUEST FAVOURITE
+     ===================================================== -->
 
-    <a
-        href="https://www.airbnb.co.in/h/303oysterbay"
-        class="guest-favourite-link"
-        target="_blank"
-        rel="noopener"
-        aria-label="303 Oyster Bay on Airbnb"
+<a
+    href="https://www.airbnb.co.in/h/303oysterbay"
+    class="guest-favourite-link"
+    target="_blank"
+    rel="noopener"
+    aria-label="303 Oyster Bay on Airbnb"
+>
+
+    <img
+        src="guest-favourite.png"
+        class="guest-favourite"
+        alt="Airbnb Guest Favourite"
     >
 
-        <img
-            src="guest-favourite.png"
-            class="guest-favourite"
-            alt="Airbnb Guest Favourite"
-        >
-
-    </a>
+</a>
 
 
-    <!-- =====================================================
-         STAY / ARRIVAL LANDING PAGE
-         ===================================================== -->
+<!-- =====================================================
+     ARRIVAL GUIDE CONTENT
+     ===================================================== -->
 
-    <div class="arrival-content">
+<div class="arrival-content">
+
+
+    <h1 class="arrival-title">
+        ARRIVAL
+    </h1>
+
+
+    <div class="arrival-subtitle">
+        Your seaside stay is closer than you think
+    </div>
+
+
+    <!-- =================================================
+         FOUR ARRIVAL OPTIONS
+         ================================================= -->
+
+    <div class="arrival-options">
+
+
+        <!-- AIRPORT -->
+
+        <div class="arrival-option">
+
+            <div class="arrival-icon">
+
+                <svg viewBox="0 0 64 64"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="4"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+
+                    <path d="M32 7v50"/>
+                    <path d="M27 21 9 34"/>
+                    <path d="M37 21 55 34"/>
+                    <path d="M27 43 18 56"/>
+                    <path d="M37 43 46 56"/>
+                    <path d="M27 21 22 9"/>
+                    <path d="M37 21 42 9"/>
+
+                </svg>
+
+            </div>
+
+            <h2>
+                Mangaluru<br>
+                International Airport<br>
+                (IXE)
+            </h2>
+
+            <div class="distance">
+                18 km
+            </div>
+
+            <div class="time">
+                30 – 40 mins
+            </div>
+
+        </div>
+
+
+        <!-- JUNCTION -->
+
+        <div class="arrival-option">
+
+            <div class="arrival-icon">
+
+                <svg viewBox="0 0 64 64"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="4"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+
+                    <rect x="15" y="8" width="34" height="43" rx="5"/>
+                    <path d="M20 51 13 58"/>
+                    <path d="M44 51 51 58"/>
+                    <circle cx="24" cy="39" r="3"/>
+                    <circle cx="40" cy="39" r="3"/>
+                    <path d="M23 17h18"/>
+                    <path d="M26 26h12"/>
+
+                </svg>
+
+            </div>
+
+            <h2>
+                Mangaluru Junction<br>
+                Railway Station<br>
+                (MAJN)
+            </h2>
+
+            <div class="distance">
+                20 km
+            </div>
+
+            <div class="time">
+                35 – 45 mins
+            </div>
+
+        </div>
+
+
+        <!-- CENTRAL -->
+
+        <div class="arrival-option">
+
+            <div class="arrival-icon">
+
+                <svg viewBox="0 0 64 64"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="4"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+
+                    <rect x="15" y="8" width="34" height="43" rx="5"/>
+                    <path d="M20 51 13 58"/>
+                    <path d="M44 51 51 58"/>
+                    <circle cx="24" cy="39" r="3"/>
+                    <circle cx="40" cy="39" r="3"/>
+                    <path d="M23 17h18"/>
+                    <path d="M26 26h12"/>
+
+                </svg>
+
+            </div>
+
+            <h2>
+                Mangaluru Central<br>
+                Railway Station<br>
+                (MAQ)
+            </h2>
+
+            <div class="distance">
+                17 km
+            </div>
+
+            <div class="time">
+                30 – 40 mins
+            </div>
+
+        </div>
+
+
+        <!-- ROAD -->
+
+        <div class="arrival-option">
+
+            <div class="arrival-icon">
+
+                <svg viewBox="0 0 64 64"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="4"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+
+                    <path d="M12 37 18 19h28l6 18"/>
+                    <path d="M9 37h46v12H9z"/>
+                    <circle cx="19" cy="49" r="4"/>
+                    <circle cx="45" cy="49" r="4"/>
+                    <path d="M22 27h20"/>
+
+                </svg>
+
+            </div>
+
+            <h2>
+                By Car / Road
+            </h2>
+
+            <div class="road-copy">
+                Well connected via NH66.
+                A smooth and scenic drive
+                along the coast.
+            </div>
+
+        </div>
 
     </div>
 
 
-    <!-- =====================================================
-         INDEPENDENT 303 OYSTER BAY LOGO
-         ===================================================== -->
+    <!-- =================================================
+         EXTERIOR + GOOGLE MAPS
+         ================================================= -->
+
+    <div class="arrival-middle">
+
+
+        <img
+            src="Exterior.jpg"
+            class="exterior-image"
+            alt="Exterior of 303 Oyster Bay"
+        >
+
+
+        <div class="maps-card">
+
+            <div class="maps-title">
+
+                <span class="maps-pin">●</span>
+
+                <span>
+                    OPEN IN<br>
+                    GOOGLE MAPS
+                </span>
+
+            </div>
+
+
+            <div class="maps-copy">
+                Scan this QR code to get directions
+                to 303 Oyster Bay on Google Maps.
+            </div>
+
+
+            <img
+                src="Directions.png"
+                class="maps-qr"
+                alt="Google Maps QR code for 303 Oyster Bay"
+            >
+
+
+            <a
+                href="https://maps.google.com/?q=303+Oyster+Bay,+Surathkal,+Mangaluru"
+                class="maps-button"
+                target="_blank"
+                rel="noopener"
+            >
+                ↗ &nbsp; Open in Google Maps
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         PARKING
+         ================================================= -->
+
+    <div class="parking-strip">
+
+
+        <div class="parking-icon">
+            P
+        </div>
+
+
+        <div class="parking-divider"></div>
+
+
+        <div class="parking-text">
+
+            <div class="parking-title">
+                PARKING
+            </div>
+
+            <div class="parking-copy">
+                Parking is available in the premises for our guests.
+            </div>
+
+        </div>
+
+
+        <div class="car-icon">
+
+            <svg viewBox="0 0 64 64"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="4"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+
+                <path d="M12 37 18 19h28l6 18"/>
+                <path d="M9 37h46v12H9z"/>
+                <circle cx="19" cy="49" r="4"/>
+                <circle cx="45" cy="49" r="4"/>
+                <path d="M22 27h20"/>
+
+            </svg>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         GUEST IDS & ACCESS
+         ================================================= -->
+
+    <div class="guest-id-block">
+
+
+        <div class="id-icon">
+
+            <svg viewBox="0 0 100 80"
+                 fill="none"
+                 stroke="#173f70"
+                 stroke-width="5"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+
+                <rect x="8" y="10" width="84" height="60" rx="7"/>
+
+                <circle cx="30" cy="32" r="9"/>
+
+                <path d="M18 53c3-8 21-8 24 0"/>
+
+                <path d="M53 29h24"/>
+                <path d="M53 41h24"/>
+                <path d="M53 53h17"/>
+
+            </svg>
+
+        </div>
+
+
+        <div class="id-divider"></div>
+
+
+        <div class="id-copy">
+
+            <div class="id-title">
+                GUEST IDs &amp; ACCESS DETAILS
+            </div>
+
+
+            <p>
+                Please share government approved photo IDs
+                for all members of the travelling group,
+                including children, at least 24 hours before
+                check-in for pre-arrival verification.
+            </p>
+
+
+            <p>
+                Once the verification is complete, your access
+                codes and check-in instructions will be sent to you.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     INDEPENDENT 303 OYSTER BAY LOGO
+     FROZEN MASTER
+     ===================================================== -->
+
+<a
+    href="index.html"
+    class="sand-logo"
+    aria-label="303 Oyster Bay Home"
+>
+
+    <img
+        src="logo.png"
+        alt="303 Oyster Bay"
+    >
+
+</a>
+
+
+<!-- =====================================================
+     FROZEN STAY PAGE BOTTOM NAV
+     ===================================================== -->
+
+<nav
+    class="bottom-nav"
+    aria-label="Main navigation"
+>
+
+
+    <img
+        src="Stay Page Bottom Nav.png"
+        class="bottom-nav-image"
+        alt=""
+        aria-hidden="true"
+    >
+
+
+    <!-- INVISIBLE CLICK AREAS -->
 
     <a
         href="index.html"
-        class="sand-logo"
-        aria-label="303 Oyster Bay Home"
-    >
-
-        <img
-            src="logo.png"
-            alt="303 Oyster Bay"
-        >
-
-    </a>
+        class="nav-hotspot hotspot-home"
+        aria-label="Home"
+    ></a>
 
 
-    <!-- =====================================================
-         FROZEN STAY NAVIGATION
-         ===================================================== -->
-
-    <nav
-        class="bottom-nav"
-        aria-label="Main navigation"
-    >
-
-        <img
-            src="Stay Page Bottom Nav.png"
-            class="bottom-nav-image"
-            alt=""
-            aria-hidden="true"
-        >
+    <a
+        href="arrival.html"
+        class="nav-hotspot hotspot-stay"
+        aria-label="Stay"
+    ></a>
 
 
-        <!-- =================================================
-             INVISIBLE CLICK AREAS
-             ================================================= -->
-
-        <a
-            href="index.html"
-            class="nav-hotspot hotspot-home"
-            aria-label="Home"
-        ></a>
+    <a
+        href="live.html"
+        class="nav-hotspot hotspot-live"
+        aria-label="Live"
+    ></a>
 
 
-        <a
-            href="arrival.html"
-            class="nav-hotspot hotspot-stay"
-            aria-label="Stay"
-        ></a>
+    <a
+        href="In%20and%20around.pdf"
+        class="nav-hotspot hotspot-explore"
+        aria-label="Explore"
+    ></a>
 
 
-        <a
-            href="live.html"
-            class="nav-hotspot hotspot-live"
-            aria-label="Live"
-        ></a>
-
-
-        <a
-            href="In%20and%20around.pdf"
-            class="nav-hotspot hotspot-explore"
-            aria-label="Explore"
-        ></a>
-
-    </nav>
+</nav>
 
 
 </main>
-
 
 </body>
 
