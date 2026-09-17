@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no,
+               viewport-fit=cover">
 
-<title>303 Oyster Bay • Remember</title>
+<title>303 OYSTER BAY • Remember</title>
 
 <style>
 
@@ -29,99 +34,37 @@ body{
 }
 
 body{
-    background:#e8d8bd;
-    color:#463322;
+    background:#d9bc91;
+    color:#4d3522;
     font-family:Georgia,"Times New Roman",serif;
 }
 
 
 /* =========================================================
-   SAND PAGE
+   THE SINGLE VIEWPORT
    ========================================================= */
 
 .remember-page{
+
     position:relative;
 
     width:100%;
+    height:100vh;
     height:100svh;
-    min-height:100svh;
+    height:100dvh;
 
     overflow:hidden;
 
     background-image:url("sand-background.jpg");
     background-size:cover;
-    background-position:center;
+    background-position:center top;
     background-repeat:no-repeat;
 }
 
 
 /* =========================================================
-   TOP AREA
-   ========================================================= */
-
-.page-header{
-    position:relative;
-    width:100%;
-    height:108px;
-}
-
-
-/* =========================================================
-   SALT • SAND • STORIES
-   HAND-WRITTEN / PRESSED INTO THE SAND
-   ========================================================= */
-
-.sand-stories{
-
-    position:absolute;
-
-    top:18px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:220px;
-
-    text-align:center;
-
-    font-family:
-        "Bradley Hand",
-        "Chalkboard SE",
-        "Marker Felt",
-        "Segoe Print",
-        cursive;
-
-    font-size:28px;
-
-    font-weight:500;
-
-    line-height:.98;
-
-    letter-spacing:1.4px;
-
-    color:rgba(92,61,37,.66);
-
-    /*
-       Raised light edge + recessed dark edge.
-       This makes the lettering look pressed into
-       the sand rather than printed on it.
-    */
-
-    text-shadow:
-        1px 1px 0 rgba(255,248,229,.78),
-        2px 2px 2px rgba(86,56,33,.18),
-        -1px -1px 0 rgba(80,50,29,.42);
-
-    z-index:8;
-}
-
-.sand-stories span{
-    display:block;
-}
-
-
-/* =========================================================
-   AIRBNB GUEST FAVOURITE
+   GUEST FAVOURITE
+   FIXED TO THE SAND COMPOSITION
    ========================================================= */
 
 .guest-favourite-link{
@@ -131,20 +74,22 @@ body{
     top:7px;
     right:8px;
 
-    width:72px;
+    width:70px;
+
+    z-index:60;
 
     display:block;
 
-    z-index:15;
-
     text-decoration:none;
+
+    pointer-events:auto;
 }
 
 .guest-favourite{
 
     display:block;
 
-    width:72px;
+    width:70px;
     height:auto;
 
     margin:0;
@@ -159,20 +104,94 @@ body{
 
 
 /* =========================================================
+   SALT • SAND • STORIES
+
+   HAND-ENGRAVED / PRESSED INTO THE SAND
+
+   Brown rather than grey/black.
+   Multiple very soft highlights and shadows create
+   the impression of an indentation in the sand.
+   ========================================================= */
+
+.sand-stories{
+
+    position:absolute;
+
+    top:17px;
+    left:50%;
+
+    width:220px;
+
+    transform:
+        translateX(-50%)
+        rotate(-2.5deg);
+
+    z-index:20;
+
+    text-align:center;
+
+    font-family:
+        "Bradley Hand",
+        "Segoe Print",
+        "Chalkboard SE",
+        "Marker Felt",
+        cursive;
+
+    font-size:32px;
+
+    font-weight:600;
+
+    line-height:.88;
+
+    letter-spacing:-1.2px;
+
+    color:#80532f;
+
+    /* engraved sand effect */
+    text-shadow:
+
+        /* light sand catching the upper edge */
+        1px 1px 0 rgba(255,238,205,.58),
+
+        /* darker recessed edge */
+        -1px -1px 0 rgba(103,65,34,.45),
+
+        /* inner depth */
+        0 2px 1px rgba(91,56,28,.28),
+
+        /* soft surrounding depression */
+        0 3px 5px rgba(91,56,28,.13);
+
+    pointer-events:none;
+}
+
+.sand-stories span{
+    display:block;
+}
+
+
+/* =========================================================
    GALLERY AREA
+
+   The whole page does not scroll.
+   Only each individual photo row can scroll horizontally.
    ========================================================= */
 
 .remember-content{
 
-    position:relative;
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    top:124px;
+    bottom:70px;
 
     width:100%;
 
-    height:calc(100svh - 108px - 82px);
-
     overflow:hidden;
 
-    padding-left:13px;
+    padding-left:11px;
     padding-right:0;
 }
 
@@ -182,21 +201,30 @@ body{
    ========================================================= */
 
 .category{
+
     width:100%;
-    margin-bottom:8px;
+
+    margin-bottom:7px;
 }
+
+
+/* =========================================================
+   CATEGORY HEADINGS
+   ========================================================= */
 
 .category-title{
 
-    margin-bottom:4px;
+    margin:0 0 3px 0;
 
-    font-size:13px;
+    font-size:15px;
 
     font-weight:normal;
 
-    letter-spacing:1.3px;
+    line-height:1;
 
-    color:#463322;
+    color:#4b3320;
+
+    letter-spacing:0;
 }
 
 
@@ -217,12 +245,21 @@ body{
     overflow-x:auto;
     overflow-y:hidden;
 
-    padding-right:4px;
+    padding:
+        0
+        10px
+        3px
+        0;
 
     scrollbar-width:none;
+
     -ms-overflow-style:none;
 
     -webkit-overflow-scrolling:touch;
+
+    overscroll-behavior-x:contain;
+
+    touch-action:pan-x;
 }
 
 .photo-row::-webkit-scrollbar{
@@ -236,25 +273,28 @@ body{
 
 .photo-card{
 
-    flex:0 0 96px;
+    flex:0 0 108px;
 
-    width:96px;
-    height:88px;
+    width:108px;
+    height:94px;
 
-    padding:5px 5px 13px;
+    padding:4px 4px 8px;
 
-    border:0;
-    border-radius:9px;
+    border:1px solid rgba(255,255,255,.82);
+
+    border-radius:13px;
 
     background:#f4ead7;
 
     box-shadow:
-        0 2px 5px rgba(70,42,20,.18);
+        0 2px 5px rgba(70,42,20,.16);
 
     cursor:pointer;
 
     appearance:none;
     -webkit-appearance:none;
+
+    scroll-snap-align:start;
 }
 
 .photo-card img{
@@ -266,50 +306,26 @@ body{
 
     object-fit:cover;
 
-    border-radius:6px;
-}
-
-
-/* =========================================================
-   303 OYSTER BAY LOGO
-   ---------------------------------------------------------
-   IMPORTANT:
-   THIS IS PART OF THE SAND BACKGROUND.
-   IT IS NOT INSIDE THE NAVIGATION.
-   ========================================================= */
-
-.sand-logo{
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:24px;
-
-    transform:translateX(-50%);
-
-    width:145px;
-
-    height:auto;
-
-    z-index:12;
-
-    pointer-events:none;
-
-    filter:
-        drop-shadow(
-            0 2px 2px rgba(55,38,24,.16)
-        );
+    border-radius:8px;
 }
 
 
 /* =========================================================
    BOTTOM NAVIGATION
-   ---------------------------------------------------------
-   ONLY FOUR NAV ITEMS:
-   HOME | STAY | LIVE | EXPLORE
 
-   THE CENTRE LOGO IS NOT HERE.
+   IMPORTANT ARCHITECTURE:
+
+   LEFT BAND:
+       HOME | STAY
+
+   CENTRE:
+       TRANSPARENT SAND
+       LARGE LOGO SITS HERE
+
+   RIGHT BAND:
+       LIVE | EXPLORE
+
+   The logo is NOT inside this navigation.
    ========================================================= */
 
 .bottom-nav{
@@ -318,34 +334,90 @@ body{
 
     left:0;
     right:0;
-
     bottom:7px;
 
     height:57px;
 
-    z-index:30;
+    z-index:40;
 
-    display:grid;
+    display:flex;
 
-    grid-template-columns:
-        1fr
-        1fr
-        1fr
-        1fr;
+    align-items:stretch;
 
-    gap:5px;
-
-    padding:0 7px;
+    justify-content:center;
 
     pointer-events:none;
 }
 
 
 /* =========================================================
-   INDIVIDUAL NAV BANDS
+   NAV BANDS
+
+   Each band occupies half the screen minus the centre
+   logo space.
+   ========================================================= */
+
+.nav-band{
+
+    height:57px;
+
+    display:flex;
+
+    align-items:stretch;
+
+    pointer-events:auto;
+
+    background:
+        rgba(247,238,221,.93);
+
+    border-top:
+        1px solid rgba(255,255,255,.78);
+
+    border-bottom:
+        1px solid rgba(112,78,43,.14);
+
+    box-shadow:
+        0 -2px 7px rgba(70,42,20,.07);
+}
+
+
+/* left side */
+
+.left-band{
+
+    width:calc(50% - 72px);
+
+    border-radius:
+        28px
+        0
+        0
+        28px;
+}
+
+
+/* right side */
+
+.right-band{
+
+    width:calc(50% - 72px);
+
+    border-radius:
+        0
+        28px
+        28px
+        0;
+}
+
+
+/* =========================================================
+   NAV ITEM
    ========================================================= */
 
 .nav-item{
+
+    position:relative;
+
+    flex:1;
 
     height:57px;
 
@@ -354,33 +426,37 @@ body{
     flex-direction:column;
 
     align-items:center;
+
     justify-content:center;
 
-    gap:3px;
+    gap:2px;
 
     text-decoration:none;
 
-    color:#463322;
+    color:#4d3522;
 
     font-family:
         Arial,
         Helvetica,
         sans-serif;
 
-    font-size:10px;
+    font-size:9px;
 
-    letter-spacing:.45px;
+    line-height:1;
 
-    background:rgba(248,239,220,.90);
+    -webkit-tap-highlight-color:transparent;
+}
 
-    border-radius:7px;
 
-    border:1px solid rgba(255,250,238,.28);
+/* =========================================================
+   NAV DIVIDERS
+   ========================================================= */
 
-    box-shadow:
-        0 1px 3px rgba(70,42,20,.10);
+.left-band .nav-item + .nav-item,
+.right-band .nav-item + .nav-item{
 
-    pointer-events:auto;
+    border-left:
+        1px solid rgba(77,53,34,.28);
 }
 
 
@@ -390,17 +466,78 @@ body{
 
 .nav-icon{
 
-    width:24px;
-    height:24px;
+    width:22px;
+    height:22px;
 
     fill:none;
 
-    stroke:#463322;
+    stroke:#4d3522;
 
-    stroke-width:2;
+    stroke-width:1.8;
 
     stroke-linecap:round;
+
     stroke-linejoin:round;
+}
+
+
+/* =========================================================
+   THE CENTRAL LOGO
+
+   THIS IS PART OF THE SAND.
+
+   It is deliberately larger than the navigation items
+   and therefore rises visually above the nav band.
+
+   It does NOT have a cream background.
+   It does NOT belong to the nav.
+   ========================================================= */
+
+.sand-logo{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:1px;
+
+    transform:
+        translateX(-50%);
+
+    width:145px;
+    height:auto;
+
+    z-index:50;
+
+    display:block;
+
+    margin:0;
+    padding:0;
+
+    background:transparent;
+
+    border:0;
+
+    box-shadow:none;
+
+    pointer-events:none;
+}
+
+.sand-logo img{
+
+    display:block;
+
+    width:100%;
+    height:auto;
+
+    margin:0;
+    padding:0;
+
+    background:transparent;
+
+    border:0;
+
+    box-shadow:none;
 }
 
 
@@ -414,21 +551,25 @@ body{
 
     inset:0;
 
-    z-index:100;
-
     display:none;
 
     align-items:center;
     justify-content:center;
 
-    background:rgba(25,18,11,.94);
+    background:
+        rgba(35,25,16,.94);
 
-    padding:20px;
+    z-index:100;
 }
 
 .lightbox.active{
     display:flex;
 }
+
+
+/* =========================================================
+   LIGHTBOX IMAGE
+   ========================================================= */
 
 .lightbox-image{
 
@@ -437,11 +578,16 @@ body{
 
     object-fit:contain;
 
-    border-radius:3px;
+    border-radius:4px;
 
     box-shadow:
         0 8px 30px rgba(0,0,0,.45);
 }
+
+
+/* =========================================================
+   LIGHTBOX CONTROLS
+   ========================================================= */
 
 .lightbox-close,
 .lightbox-prev,
@@ -462,21 +608,21 @@ body{
 
     cursor:pointer;
 
-    font-family:Arial,Helvetica,sans-serif;
-
-    z-index:110;
+    -webkit-tap-highlight-color:transparent;
 }
+
 
 .lightbox-close{
 
-    top:15px;
-    right:20px;
+    top:14px;
+    right:15px;
 
     width:42px;
     height:42px;
 
     font-size:34px;
 }
+
 
 .lightbox-prev,
 .lightbox-next{
@@ -491,6 +637,7 @@ body{
     font-size:48px;
 }
 
+
 .lightbox-prev{
     left:8px;
 }
@@ -498,6 +645,11 @@ body{
 .lightbox-next{
     right:8px;
 }
+
+
+/* =========================================================
+   LIGHTBOX COUNTER
+   ========================================================= */
 
 .lightbox-counter{
 
@@ -510,7 +662,10 @@ body{
 
     color:#fff;
 
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     font-size:13px;
 
@@ -519,13 +674,19 @@ body{
 
 
 /* =========================================================
-   DESKTOP
+   TABLETS / DESKTOP
    ========================================================= */
 
 @media(min-width:700px){
 
-    .page-header{
-        height:150px;
+    .guest-favourite-link{
+        top:12px;
+        right:18px;
+        width:88px;
+    }
+
+    .guest-favourite{
+        width:88px;
     }
 
     .sand-stories{
@@ -534,43 +695,33 @@ body{
 
         width:300px;
 
-        font-size:36px;
+        font-size:44px;
 
-        letter-spacing:1.8px;
-    }
-
-    .guest-favourite-link{
-
-        top:12px;
-        right:18px;
-
-        width:88px;
-    }
-
-    .guest-favourite{
-        width:88px;
+        letter-spacing:-1.5px;
     }
 
     .remember-content{
 
-        height:calc(100svh - 150px - 105px);
+        top:155px;
+
+        bottom:95px;
 
         padding-left:30px;
     }
 
     .category{
-        margin-bottom:17px;
+        margin-bottom:13px;
     }
 
     .category-title{
 
-        font-size:16px;
+        font-size:20px;
 
-        margin-bottom:7px;
+        margin-bottom:6px;
     }
 
     .photo-row{
-        gap:12px;
+        gap:11px;
     }
 
     .photo-card{
@@ -580,105 +731,99 @@ body{
         width:150px;
         height:138px;
 
-        padding:7px 7px 19px;
+        padding:7px 7px 12px;
+
+        border-radius:16px;
     }
 
     .photo-card img{
-        border-radius:7px;
+        border-radius:8px;
     }
-
-
-    /* LOGO REMAINS PART OF SAND */
-
-    .sand-logo{
-
-        width:205px;
-
-        bottom:29px;
-    }
-
-
-    /* NAV IS STILL ONLY FOUR ITEMS */
 
     .bottom-nav{
 
         bottom:10px;
 
-        height:64px;
+        height:72px;
+    }
 
-        gap:8px;
+    .left-band,
+    .right-band{
 
-        padding:0 22px;
+        height:72px;
+
+        width:calc(50% - 102px);
     }
 
     .nav-item{
 
-        height:64px;
+        height:72px;
 
-        font-size:14px;
+        font-size:12px;
 
         gap:4px;
-
-        border-radius:8px;
     }
 
     .nav-icon{
 
-        width:31px;
-        height:31px;
+        width:28px;
+        height:28px;
+    }
+
+    .sand-logo{
+
+        width:205px;
+
+        bottom:0;
     }
 }
 
 
 /* =========================================================
-   SMALL PHONES
+   VERY SMALL PHONES
    ========================================================= */
 
-@media(max-width:390px){
+@media(max-width:360px){
 
-    .page-header{
-        height:103px;
+    .guest-favourite-link{
+
+        top:5px;
+        right:5px;
+
+        width:62px;
+    }
+
+    .guest-favourite{
+        width:62px;
     }
 
     .sand-stories{
 
-        top:17px;
+        top:15px;
 
-        width:200px;
+        width:195px;
 
-        font-size:25px;
-
-        letter-spacing:1px;
-    }
-
-    .guest-favourite-link{
-
-        top:6px;
-        right:6px;
-
-        width:66px;
-    }
-
-    .guest-favourite{
-        width:66px;
+        font-size:29px;
     }
 
     .remember-content{
 
-        height:calc(100svh - 103px - 77px);
+        top:116px;
 
-        padding-left:11px;
+        bottom:67px;
+
+        padding-left:10px;
     }
 
     .category{
-        margin-bottom:7px;
+        margin-bottom:6px;
     }
 
     .category-title{
 
-        font-size:12px;
+        font-size:14px;
 
-        margin-bottom:3px;
+        margin-bottom:2px;
     }
 
     .photo-row{
@@ -687,90 +832,77 @@ body{
 
     .photo-card{
 
-        flex-basis:91px;
+        flex-basis:101px;
 
-        width:91px;
-        height:84px;
+        width:101px;
+        height:88px;
 
-        padding:5px 5px 12px;
+        padding:4px 4px 7px;
+
+        border-radius:12px;
     }
 
-
-    /* LOGO IS IN THE SAND, NOT THE NAV */
-
-    .sand-logo{
-
-        width:128px;
-
-        bottom:24px;
+    .photo-card img{
+        border-radius:7px;
     }
-
-
-    /* FOUR LIGHT NAV BANDS */
 
     .bottom-nav{
 
         bottom:5px;
 
         height:53px;
+    }
 
-        gap:4px;
+    .left-band,
+    .right-band{
 
-        padding:0 5px;
+        height:53px;
+
+        width:calc(50% - 61px);
     }
 
     .nav-item{
 
         height:53px;
 
-        font-size:9px;
+        font-size:8px;
 
         gap:2px;
-
-        border-radius:6px;
     }
 
     .nav-icon{
 
-        width:23px;
-        height:23px;
+        width:20px;
+        height:20px;
+    }
+
+    .sand-logo{
+
+        width:122px;
+
+        bottom:0;
     }
 }
 
 
 /* =========================================================
-   VERY SHORT PHONES
+   SHORT SCREENS
    ========================================================= */
 
 @media(max-height:700px){
 
-    .page-header{
-        height:94px;
-    }
-
     .sand-stories{
 
-        top:13px;
+        top:11px;
 
-        width:180px;
-
-        font-size:21px;
-    }
-
-    .guest-favourite-link{
-
-        top:5px;
-
-        width:60px;
-    }
-
-    .guest-favourite{
-        width:60px;
+        font-size:27px;
     }
 
     .remember-content{
 
-        height:calc(100svh - 94px - 70px);
+        top:105px;
+
+        bottom:63px;
     }
 
     .category{
@@ -778,18 +910,11 @@ body{
     }
 
     .category-title{
-        font-size:11px;
+        font-size:13px;
     }
 
     .photo-card{
-        height:76px;
-    }
-
-    .sand-logo{
-
-        width:112px;
-
-        bottom:22px;
+        height:78px;
     }
 
     .bottom-nav{
@@ -797,25 +922,33 @@ body{
         bottom:4px;
 
         height:49px;
+    }
 
-        gap:3px;
+    .left-band,
+    .right-band{
+        height:49px;
     }
 
     .nav-item{
-
         height:49px;
-
-        font-size:8px;
+        font-size:7.5px;
     }
 
     .nav-icon{
+        width:19px;
+        height:19px;
+    }
 
-        width:21px;
-        height:21px;
+    .sand-logo{
+
+        width:112px;
+
+        bottom:0;
     }
 }
 
 </style>
+
 </head>
 
 
@@ -825,308 +958,314 @@ body{
 <main class="remember-page">
 
 
-    <!-- =====================================================
-         SALT • SAND • STORIES
-         DIRECTLY ON THE SAND
-         ===================================================== -->
-
-    <header class="page-header">
-
-        <div
-            class="sand-stories"
-            aria-label="Salt Sand Stories"
-        >
-
-            <span>Salt</span>
-            <span>Sand</span>
-            <span>Stories</span>
-
-        </div>
-
-
-        <!-- GUEST FAVOURITE -->
-
-        <a
-            href="https://www.airbnb.co.in/h/303oysterbay"
-            target="_blank"
-            rel="noopener"
-            class="guest-favourite-link"
-            aria-label="View 303 Oyster Bay on Airbnb"
-        >
-
-            <img
-                src="guest-favourite.png"
-                class="guest-favourite"
-                alt="Airbnb Guest Favourite"
-            >
-
-        </a>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         GALLERY
-         ===================================================== -->
-
-    <main class="remember-content">
-
-
-        <!-- SEA VIEWS -->
-
-        <section class="category">
-
-            <h2 class="category-title">
-                Sea Views
-            </h2>
-
-            <div class="photo-row">
-
-                <button class="photo-card"
-                        data-image="Sea View1.jpg">
-                    <img src="Sea View1.jpg"
-                         alt="Sea View 1">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Sea View2.jpg">
-                    <img src="Sea View2.jpg"
-                         alt="Sea View 2">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Sea View3.jpg">
-                    <img src="Sea View3.jpg"
-                         alt="Sea View 3">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Sea View4.jpg">
-                    <img src="Sea View4.jpg"
-                         alt="Sea View 4">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Sea View5.jpg">
-                    <img src="Sea View5.jpg"
-                         alt="Sea View 5">
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- LIVING -->
-
-        <section class="category">
-
-            <h2 class="category-title">
-                Living
-            </h2>
-
-            <div class="photo-row">
-
-                <button class="photo-card"
-                        data-image="Living1.jpg">
-                    <img src="Living1.jpg"
-                         alt="Living 1">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Living2.jpg">
-                    <img src="Living2.jpg"
-                         alt="Living 2">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Living3.jpg">
-                    <img src="Living3.jpg"
-                         alt="Living 3">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Living4.jpg">
-                    <img src="Living4.jpg"
-                         alt="Living 4">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Living5.jpg">
-                    <img src="Living5.jpg"
-                         alt="Living 5">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Living6.jpg">
-                    <img src="Living6.jpg"
-                         alt="Living 6">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Living7.jpg">
-                    <img src="Living7.jpg"
-                         alt="Living 7">
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- BEDROOM -->
-
-        <section class="category">
-
-            <h2 class="category-title">
-                Bedroom
-            </h2>
-
-            <div class="photo-row">
-
-                <button class="photo-card"
-                        data-image="Bedroom1.jpg">
-                    <img src="Bedroom1.jpg"
-                         alt="Bedroom 1">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Bedroom2.jpg">
-                    <img src="Bedroom2.jpg"
-                         alt="Bedroom 2">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Bedroom3.jpg">
-                    <img src="Bedroom3.jpg"
-                         alt="Bedroom 3">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Bedroom4.jpg">
-                    <img src="Bedroom4.jpg"
-                         alt="Bedroom 4">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Bedroom5.jpg">
-                    <img src="Bedroom5.jpg"
-                         alt="Bedroom 5">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Bedroom6.jpg">
-                    <img src="Bedroom6.jpg"
-                         alt="Bedroom 6">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Bedroom7.jpg">
-                    <img src="Bedroom7.jpg"
-                         alt="Bedroom 7">
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- KITCHEN -->
-
-        <section class="category">
-
-            <h2 class="category-title">
-                Kitchen
-            </h2>
-
-            <div class="photo-row">
-
-                <button class="photo-card"
-                        data-image="Kitchen1.jpg">
-                    <img src="Kitchen1.jpg"
-                         alt="Kitchen 1">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Kitchen2.jpg">
-                    <img src="Kitchen2.jpg"
-                         alt="Kitchen 2">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Kitchen3.jpg">
-                    <img src="Kitchen3.jpg"
-                         alt="Kitchen 3">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Kitchen4.jpg">
-                    <img src="Kitchen4.jpg"
-                         alt="Kitchen 4">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Kitchen5.jpg">
-                    <img src="Kitchen5.jpg"
-                         alt="Kitchen 5">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Kitchen6.jpg">
-                    <img src="Kitchen6.jpg"
-                         alt="Kitchen 6">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Kitchen7.jpg">
-                    <img src="Kitchen7.jpg"
-                         alt="Kitchen 7">
-                </button>
-
-                <button class="photo-card"
-                        data-image="Kitchen8.jpg">
-                    <img src="Kitchen8.jpg"
-                         alt="Kitchen 8">
-                </button>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- =====================================================
-         303 OYSTER BAY LOGO
-         
-         THIS IS PART OF THE SAND.
-         IT IS COMPLETELY OUTSIDE THE NAVIGATION.
-         ===================================================== -->
+<!-- =====================================================
+     GUEST FAVOURITE
+     FIXED TO THE SAND
+     ===================================================== -->
+
+<a
+    href="https://www.airbnb.co.in/h/303oysterbay"
+    target="_blank"
+    rel="noopener"
+    class="guest-favourite-link"
+    aria-label="View 303 Oyster Bay on Airbnb"
+>
 
     <img
-        src="logo.png"
-        class="sand-logo"
-        alt="303 Oyster Bay"
+        src="guest-favourite.png"
+        class="guest-favourite"
+        alt="Airbnb Guest Favourite"
     >
 
+</a>
 
 
-    <!-- =====================================================
-         NAVIGATION
-         
-         ONLY:
-         HOME | STAY | LIVE | EXPLORE
-         
-         NO LOGO HERE.
-         ===================================================== -->
+<!-- =====================================================
+     HAND-ENGRAVED TITLE
+     ===================================================== -->
 
-    <nav
-        class="bottom-nav"
-        aria-label="Main navigation"
-    >
+<div
+    class="sand-stories"
+    aria-label="Salt Sand Stories"
+>
+
+    <span>Salt</span>
+    <span>Sand</span>
+    <span>Stories</span>
+
+</div>
+
+
+<!-- =====================================================
+     GALLERY
+     ===================================================== -->
+
+<div class="remember-content">
+
+
+<!-- =====================================================
+     SEA VIEWS
+     ===================================================== -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        Sea Views
+    </h2>
+
+    <div class="photo-row">
+
+        <button
+            class="photo-card"
+            data-image="Sea View1.jpg"
+        >
+            <img
+                src="Sea View1.jpg"
+                alt="Sea View 1"
+            >
+        </button>
+
+        <button
+            class="photo-card"
+            data-image="Sea View2.jpg"
+        >
+            <img
+                src="Sea View2.jpg"
+                alt="Sea View 2"
+            >
+        </button>
+
+        <button
+            class="photo-card"
+            data-image="Sea View3.jpg"
+        >
+            <img
+                src="Sea View3.jpg"
+                alt="Sea View 3"
+            >
+        </button>
+
+        <button
+            class="photo-card"
+            data-image="Sea View4.jpg"
+        >
+            <img
+                src="Sea View4.jpg"
+                alt="Sea View 4"
+            >
+        </button>
+
+        <button
+            class="photo-card"
+            data-image="Sea View5.jpg"
+        >
+            <img
+                src="Sea View5.jpg"
+                alt="Sea View 5"
+            >
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LIVING
+     ===================================================== -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        Living
+    </h2>
+
+    <div class="photo-row">
+
+        <button class="photo-card"
+                data-image="Living1.jpg">
+            <img src="Living1.jpg" alt="Living 1">
+        </button>
+
+        <button class="photo-card"
+                data-image="Living2.jpg">
+            <img src="Living2.jpg" alt="Living 2">
+        </button>
+
+        <button class="photo-card"
+                data-image="Living3.jpg">
+            <img src="Living3.jpg" alt="Living 3">
+        </button>
+
+        <button class="photo-card"
+                data-image="Living4.jpg">
+            <img src="Living4.jpg" alt="Living 4">
+        </button>
+
+        <button class="photo-card"
+                data-image="Living5.jpg">
+            <img src="Living5.jpg" alt="Living 5">
+        </button>
+
+        <button class="photo-card"
+                data-image="Living6.jpg">
+            <img src="Living6.jpg" alt="Living 6">
+        </button>
+
+        <button class="photo-card"
+                data-image="Living7.jpg">
+            <img src="Living7.jpg" alt="Living 7">
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BEDROOM
+     ===================================================== -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        Bedroom
+    </h2>
+
+    <div class="photo-row">
+
+        <button class="photo-card"
+                data-image="Bedroom1.jpg">
+            <img src="Bedroom1.jpg" alt="Bedroom 1">
+        </button>
+
+        <button class="photo-card"
+                data-image="Bedroom2.jpg">
+            <img src="Bedroom2.jpg" alt="Bedroom 2">
+        </button>
+
+        <button class="photo-card"
+                data-image="Bedroom3.jpg">
+            <img src="Bedroom3.jpg" alt="Bedroom 3">
+        </button>
+
+        <button class="photo-card"
+                data-image="Bedroom4.jpg">
+            <img src="Bedroom4.jpg" alt="Bedroom 4">
+        </button>
+
+        <button class="photo-card"
+                data-image="Bedroom5.jpg">
+            <img src="Bedroom5.jpg" alt="Bedroom 5">
+        </button>
+
+        <button class="photo-card"
+                data-image="Bedroom6.jpg">
+            <img src="Bedroom6.jpg" alt="Bedroom 6">
+        </button>
+
+        <button class="photo-card"
+                data-image="Bedroom7.jpg">
+            <img src="Bedroom7.jpg" alt="Bedroom 7">
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     KITCHEN
+     ===================================================== -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        Kitchen
+    </h2>
+
+    <div class="photo-row">
+
+        <button class="photo-card"
+                data-image="Kitchen1.jpg">
+            <img src="Kitchen1.jpg" alt="Kitchen 1">
+        </button>
+
+        <button class="photo-card"
+                data-image="Kitchen2.jpg">
+            <img src="Kitchen2.jpg" alt="Kitchen 2">
+        </button>
+
+        <button class="photo-card"
+                data-image="Kitchen3.jpg">
+            <img src="Kitchen3.jpg" alt="Kitchen 3">
+        </button>
+
+        <button class="photo-card"
+                data-image="Kitchen4.jpg">
+            <img src="Kitchen4.jpg" alt="Kitchen 4">
+        </button>
+
+        <button class="photo-card"
+                data-image="Kitchen5.jpg">
+            <img src="Kitchen5.jpg" alt="Kitchen 5">
+        </button>
+
+        <button class="photo-card"
+                data-image="Kitchen6.jpg">
+            <img src="Kitchen6.jpg" alt="Kitchen 6">
+        </button>
+
+        <button class="photo-card"
+                data-image="Kitchen7.jpg">
+            <img src="Kitchen7.jpg" alt="Kitchen 7">
+        </button>
+
+        <button class="photo-card"
+                data-image="Kitchen8.jpg">
+            <img src="Kitchen8.jpg" alt="Kitchen 8">
+        </button>
+
+    </div>
+
+</section>
+
+
+</div>
+
+
+<!-- =====================================================
+     LOGO
+
+     IMPORTANT:
+     This is NOT part of the navigation.
+
+     It belongs to the sand canvas and sits between
+     the two navigation groups.
+     ===================================================== -->
+
+<img
+    src="logo.png"
+    class="sand-logo"
+    alt="303 Oyster Bay"
+>
+
+
+<!-- =====================================================
+     BOTTOM NAVIGATION
+
+     HOME | STAY | [SAND + LOGO] | LIVE | EXPLORE
+     ===================================================== -->
+
+<nav
+    class="bottom-nav"
+    aria-label="Main navigation"
+>
+
+
+    <!-- LEFT GROUP -->
+
+    <div class="nav-band left-band">
 
 
         <!-- HOME -->
@@ -1143,9 +1282,7 @@ body{
             >
 
                 <path d="M7 22.5 24 8l17 14.5"/>
-
                 <path d="M11 21v19h26V21"/>
-
                 <path d="M19 40V27h10v13"/>
 
             </svg>
@@ -1169,13 +1306,9 @@ body{
             >
 
                 <path d="M8 34V22"/>
-
                 <path d="M8 29h32"/>
-
                 <path d="M12 29v-7h10c4 0 6 3 6 7"/>
-
                 <path d="M8 34v4"/>
-
                 <path d="M40 34v4"/>
 
             </svg>
@@ -1183,6 +1316,14 @@ body{
             <span>Stay</span>
 
         </a>
+
+
+    </div>
+
+
+    <!-- RIGHT GROUP -->
+
+    <div class="nav-band right-band">
 
 
         <!-- LIVE -->
@@ -1199,9 +1340,7 @@ body{
             >
 
                 <path d="M7 31c5-7 10-7 17 0s12 7 17 0"/>
-
                 <path d="M11 37h26"/>
-
                 <path d="M13 25c3-5 7-7 11-7s8 2 11 7"/>
 
             </svg>
@@ -1241,61 +1380,68 @@ body{
         </a>
 
 
-    </nav>
-
-
-
-    <!-- =====================================================
-         LIGHTBOX
-         ===================================================== -->
-
-    <div
-        class="lightbox"
-        id="lightbox"
-        aria-hidden="true"
-    >
-
-        <button
-            class="lightbox-close"
-            id="lightboxClose"
-            aria-label="Close"
-        >
-            ×
-        </button>
-
-        <button
-            class="lightbox-prev"
-            id="lightboxPrev"
-            aria-label="Previous image"
-        >
-            ‹
-        </button>
-
-        <img
-            class="lightbox-image"
-            id="lightboxImage"
-            src=""
-            alt=""
-        >
-
-        <button
-            class="lightbox-next"
-            id="lightboxNext"
-            aria-label="Next image"
-        >
-            ›
-        </button>
-
-        <div
-            class="lightbox-counter"
-            id="lightboxCounter"
-        ></div>
-
     </div>
 
 
-</main>
+</nav>
 
+
+<!-- =====================================================
+     LIGHTBOX
+     ===================================================== -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true"
+>
+
+
+    <button
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Close"
+    >
+        ×
+    </button>
+
+
+    <button
+        class="lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Previous image"
+    >
+        ‹
+    </button>
+
+
+    <img
+        class="lightbox-image"
+        id="lightboxImage"
+        src=""
+        alt=""
+    >
+
+
+    <button
+        class="lightbox-next"
+        id="lightboxNext"
+        aria-label="Next image"
+    >
+        ›
+    </button>
+
+
+    <div
+        class="lightbox-counter"
+        id="lightboxCounter"
+    ></div>
+
+
+</div>
+
+
+</main>
 
 
 <script>
@@ -1327,10 +1473,13 @@ const lightboxNext =
 const lightboxCounter =
     document.getElementById("lightboxCounter");
 
+
 let currentIndex = 0;
 
 
-/* OPEN */
+/* =========================================================
+   OPEN IMAGE
+   ========================================================= */
 
 function openLightbox(index){
 
@@ -1361,7 +1510,9 @@ function openLightbox(index){
 }
 
 
-/* CLOSE */
+/* =========================================================
+   CLOSE
+   ========================================================= */
 
 function closeLightbox(){
 
@@ -1376,7 +1527,9 @@ function closeLightbox(){
 }
 
 
-/* NEXT */
+/* =========================================================
+   NEXT
+   ========================================================= */
 
 function nextImage(){
 
@@ -1388,7 +1541,9 @@ function nextImage(){
 }
 
 
-/* PREVIOUS */
+/* =========================================================
+   PREVIOUS
+   ========================================================= */
 
 function previousImage(){
 
@@ -1400,7 +1555,9 @@ function previousImage(){
 }
 
 
-/* PHOTO CLICK */
+/* =========================================================
+   PHOTO CLICK
+   ========================================================= */
 
 photoCards.forEach(
     (card,index) => {
@@ -1414,7 +1571,9 @@ photoCards.forEach(
 );
 
 
-/* BUTTONS */
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 
 lightboxClose.addEventListener(
     "click",
@@ -1432,7 +1591,9 @@ lightboxPrev.addEventListener(
 );
 
 
-/* OUTSIDE CLICK */
+/* =========================================================
+   CLICK OUTSIDE IMAGE
+   ========================================================= */
 
 lightbox.addEventListener(
     "click",
@@ -1446,7 +1607,9 @@ lightbox.addEventListener(
 );
 
 
-/* KEYBOARD */
+/* =========================================================
+   KEYBOARD
+   ========================================================= */
 
 document.addEventListener(
     "keydown",
@@ -1474,9 +1637,12 @@ document.addEventListener(
 );
 
 
-/* TOUCH SWIPE */
+/* =========================================================
+   LIGHTBOX SWIPE
+   ========================================================= */
 
 let touchStartX = 0;
+
 
 lightbox.addEventListener(
     "touchstart",
@@ -1488,6 +1654,7 @@ lightbox.addEventListener(
     },
     {passive:true}
 );
+
 
 lightbox.addEventListener(
     "touchend",
@@ -1517,4 +1684,5 @@ lightbox.addEventListener(
 </script>
 
 </body>
+
 </html>
