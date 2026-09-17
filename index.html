@@ -210,22 +210,20 @@ body {
 .home-card-content {
     position: absolute;
 
-    left: 30px;
-    right: 30px;
-    bottom: 24px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 
     z-index: 2;
 
-    /*
-       Keeps all four card titles and descriptions
-       in the same lower visual zone.
-    */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-}
 
+    padding: 0 30px 24px 30px;
+}
 .card-title {
     font-size: clamp(35px, 4vw, 49px);
 
@@ -268,20 +266,18 @@ body {
 .card-arrow {
     position: absolute;
 
-    right: 6px;
-    bottom: 20px;
+    right: 8px;
+    top: 10px;
 
     width: 18px;
     height: 22px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     border: none;
     border-radius: 0;
-
     background: transparent;
 
     font-size: 0;
@@ -304,7 +300,6 @@ body {
 
     color: #fff;
 }
-
 
 /* =========================
    FEATURES BAND
@@ -451,11 +446,11 @@ body {
         border-radius: 27px;
     }
 
-    .home-card-content {
-        left: 20px;
-        right: 20px;
-        bottom: 19px;
-    }
+   .home-card-content {
+    left: 20px;
+    right: 20px;
+    bottom: 19px;
+}
 
     .card-title {
         font-size: 30px;
@@ -476,13 +471,13 @@ body {
 
     /* Small clean chevron */
 
-    .card-arrow {
-        right: 2px;
-        bottom: 4px;
+   .card-arrow {
+    right: 8px;
+    top: 8px;
 
-        width: 18px;
-        height: 20px;
-    }
+    width: 18px;
+    height: 20px;
+}
 
     .card-arrow::after {
         font-size: 27px;
