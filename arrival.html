@@ -10,7 +10,6 @@
 
 /* =========================================================
    FROZEN BASE TEMPLATE
-   DO NOT CHANGE
    ========================================================= */
 
 *{
@@ -35,7 +34,6 @@ body{
 
 /* =========================================================
    FROZEN PAGE
-   DO NOT CHANGE
    ========================================================= */
 
 .remember-page{
@@ -54,7 +52,6 @@ body{
 
 /* =========================================================
    ARRIVAL CONTENT BOX
-   PAGE CONTENT ONLY
    ========================================================= */
 
 .arrival-content{
@@ -63,11 +60,7 @@ body{
     left:12px;
     right:12px;
 
-    /* MOVED SIGNIFICANTLY HIGHER */
     top:18px;
-
-    /* MOVED UP BY THE SAME AMOUNT
-       SO BOX HEIGHT DOES NOT INCREASE */
     bottom:100px;
 
     background:#f8f0df;
@@ -87,7 +80,7 @@ body{
 
 /* =========================================================
    GUEST FAVOURITE
-   LOCKED RELATIONSHIP WITH ARRIVAL HEADER
+   LOCKED
    ========================================================= */
 
 .arrival-content .guest-favourite-link{
@@ -138,12 +131,14 @@ body{
 
     color:#463322;
 
-    margin-bottom:4px;
+    margin-bottom:5px;
 }
 
 .arrival-subtitle{
-    font-size:11px;
-    line-height:1.25;
+    font-size:10.5px;
+    line-height:1;
+
+    white-space:nowrap;
 
     color:#6b5540;
 }
@@ -168,7 +163,7 @@ body{
 
     text-align:center;
 
-    padding:8px 10px 7px;
+    padding:8px 10px 8px;
 
     border-top:1px solid rgba(112,69,31,.24);
 
@@ -179,16 +174,63 @@ body{
     border-right:none;
 }
 
+
+/* =========================================================
+   MATURE LINE ICONS
+   ========================================================= */
+
 .arrival-icon{
-    width:25px;
-    height:25px;
+    width:28px;
+    height:28px;
 
     margin:0 auto 7px;
 
     display:block;
 
     color:#70451f;
+
+    stroke:currentColor;
+
+    stroke-width:2.2;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
 }
+
+
+/* AIRCRAFT */
+
+.aircraft-icon .aircraft-body{
+    fill:none;
+}
+
+.aircraft-icon .aircraft-wing{
+    fill:none;
+}
+
+
+/* RAILWAY */
+
+.rail-icon .rail-building{
+    fill:none;
+}
+
+.rail-icon .rail-window{
+    fill:none;
+}
+
+
+/* CAR */
+
+.car-icon .car-body{
+    fill:none;
+}
+
+.car-icon .wheel{
+    fill:none;
+}
+
 
 .arrival-option h3{
     font-size:10px;
@@ -261,7 +303,6 @@ body{
 
 /* =========================================================
    GOOGLE MAPS
-   ONE INTEGRATED UNIT
    ========================================================= */
 
 .maps-box{
@@ -271,7 +312,7 @@ body{
 
     background:#eee2cc;
 
-    padding:9px 12px;
+    padding:8px 12px;
 
     display:flex;
 
@@ -288,13 +329,14 @@ body{
     font-family:Arial,sans-serif;
 
     font-size:9px;
+
     font-weight:700;
 
-    letter-spacing:.7px;
+    letter-spacing:.8px;
 
     color:#463322;
 
-    margin-bottom:6px;
+    margin-bottom:5px;
 }
 
 .maps-qr{
@@ -308,22 +350,64 @@ body{
     margin:0 auto 5px;
 }
 
+
+/* =========================================================
+   RECOGNISABLE GOOGLE MAPS ACTION
+   ========================================================= */
+
 .maps-link{
-    display:inline-block;
+    display:flex;
 
-    color:#70451f;
+    align-items:center;
+    justify-content:center;
 
-    text-decoration:underline;
+    gap:6px;
 
-    text-underline-offset:2px;
+    min-height:25px;
+
+    padding:5px 10px;
+
+    border-radius:7px;
+
+    background:#ffffff;
+
+    border:1px solid rgba(70,51,34,.14);
+
+    box-shadow:
+        0 1px 3px rgba(70,42,20,.16);
+
+    color:#463322;
+
+    text-decoration:none;
 
     font-family:Arial,sans-serif;
 
-    font-size:8.5px;
+    font-size:8px;
 
-    line-height:1.1;
+    font-weight:600;
+
+    line-height:1;
+
+    white-space:nowrap;
 
     cursor:pointer;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+.maps-pin{
+    width:13px;
+    height:13px;
+
+    flex:0 0 13px;
+
+    display:block;
+}
+
+.maps-arrow{
+    font-size:10px;
+
+    line-height:1;
 }
 
 
@@ -427,7 +511,6 @@ body{
 
 /* =========================================================
    FROZEN BOTTOM NAVIGATION
-   DO NOT CHANGE
    ========================================================= */
 
 .bottom-nav{
@@ -465,7 +548,6 @@ body{
 
 /* =========================================================
    FROZEN INDEPENDENT 303 LOGO
-   DO NOT CHANGE
    ========================================================= */
 
 .sand-logo{
@@ -497,7 +579,6 @@ body{
 
 /* =========================================================
    FROZEN INVISIBLE NAVIGATION HOTSPOTS
-   DO NOT CHANGE
    ========================================================= */
 
 .nav-hotspot{
@@ -512,6 +593,7 @@ body{
     display:block;
 
     background:transparent;
+
     border:0;
 
     text-decoration:none;
@@ -582,7 +664,7 @@ body{
     }
 
     .arrival-subtitle{
-        font-size:9px;
+        font-size:8.8px;
     }
 
     .arrival-options{
@@ -594,8 +676,8 @@ body{
     }
 
     .arrival-icon{
-        width:20px;
-        height:20px;
+        width:21px;
+        height:21px;
 
         margin-bottom:4px;
     }
@@ -645,7 +727,24 @@ body{
     }
 
     .maps-link{
-        font-size:6.8px;
+        min-height:21px;
+
+        padding:4px 6px;
+
+        gap:4px;
+
+        font-size:6.4px;
+    }
+
+    .maps-pin{
+        width:10px;
+        height:10px;
+
+        flex-basis:10px;
+    }
+
+    .maps-arrow{
+        font-size:8px;
     }
 
     .parking-box{
@@ -743,7 +842,7 @@ body{
     }
 
     .arrival-subtitle{
-        font-size:8px;
+        font-size:7.8px;
     }
 
     .arrival-option{
@@ -752,8 +851,8 @@ body{
     }
 
     .arrival-icon{
-        width:18px;
-        height:18px;
+        width:19px;
+        height:19px;
     }
 
     .arrival-option h3{
@@ -780,7 +879,22 @@ body{
     }
 
     .maps-link{
-        font-size:6.2px;
+        min-height:19px;
+
+        padding:3px 5px;
+
+        font-size:5.8px;
+    }
+
+    .maps-pin{
+        width:9px;
+        height:9px;
+
+        flex-basis:9px;
+    }
+
+    .maps-arrow{
+        font-size:7px;
     }
 
     .parking-copy p,
@@ -823,7 +937,6 @@ body{
 
 <!-- =====================================================
      AIRBNB GUEST FAVOURITE
-     LOCKED WITH ARRIVAL HEADER
      ===================================================== -->
 
 <a
@@ -847,7 +960,9 @@ body{
 
 <div class="arrival-header">
 
-    <h1 class="arrival-title">ARRIVAL</h1>
+    <h1 class="arrival-title">
+        ARRIVAL
+    </h1>
 
     <p class="arrival-subtitle">
         Your seaside stay is closer than you think
@@ -863,27 +978,52 @@ body{
 <div class="arrival-options">
 
 
-<!-- AIRPORT -->
+<!-- =====================================================
+     AIRPORT
+     ===================================================== -->
 
 <div class="arrival-option">
 
-<svg class="arrival-icon"
-     viewBox="0 0 64 64"
-     fill="none"
-     xmlns="http://www.w3.org/2000/svg">
+<svg
+    class="arrival-icon aircraft-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+>
 
+    <!-- aircraft fuselage -->
     <path
-        d="M10 45L54 45"
+        class="aircraft-body"
+        d="M31 10
+           C32.2 9.5 33.8 9.5 35 10
+           L37 31
+           L51 40
+           C52.5 41 52 43.2 50.2 43.2
+           H37
+           L35 53
+           H31
+           L29 43.2
+           H15.8
+           C14 43.2 13.5 41 15 40
+           L29 31
+           L31 10Z"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"/>
+        stroke-width="2.2"
+        stroke-linejoin="round"
+    />
 
+    <!-- wings -->
     <path
-        d="M28 39L20 17L24 15L36 34L47 28L50 31L39 39"
+        class="aircraft-wing"
+        d="M29.5 28
+           L13 19
+           M35.5 28
+           L52 19"
         stroke="currentColor"
-        stroke-width="3"
+        stroke-width="2.2"
         stroke-linecap="round"
-        stroke-linejoin="round"/>
+    />
 
 </svg>
 
@@ -902,31 +1042,60 @@ body{
 </div>
 
 
-<!-- MAJN -->
+<!-- =====================================================
+     MAJN
+     ===================================================== -->
 
 <div class="arrival-option">
 
-<svg class="arrival-icon"
-     viewBox="0 0 64 64"
-     fill="none"
-     xmlns="http://www.w3.org/2000/svg">
+<svg
+    class="arrival-icon rail-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+>
 
+    <!-- station roof -->
     <path
-        d="M13 48H51"
+        d="M10 25
+           L32 12
+           L54 25"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"/>
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
 
+    <!-- station structure -->
     <path
-        d="M18 43V23L32 14L46 23V43"
+        class="rail-building"
+        d="M16 25V46
+           M48 25V46
+           M22 25V46
+           M42 25V46"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linejoin="round"/>
+        stroke-width="2.2"
+    />
 
+    <!-- central entrance -->
     <path
-        d="M25 43V30H39V43"
+        class="rail-window"
+        d="M27 46V32
+           H37
+           V46"
         stroke="currentColor"
-        stroke-width="3"/>
+        stroke-width="2.2"
+        stroke-linejoin="round"
+    />
+
+    <!-- platform -->
+    <path
+        d="M10 49H54"
+        stroke="currentColor"
+        stroke-width="2.4"
+        stroke-linecap="round"
+    />
 
 </svg>
 
@@ -945,31 +1114,60 @@ body{
 </div>
 
 
-<!-- MAQ -->
+<!-- =====================================================
+     MAQ
+     ===================================================== -->
 
 <div class="arrival-option">
 
-<svg class="arrival-icon"
-     viewBox="0 0 64 64"
-     fill="none"
-     xmlns="http://www.w3.org/2000/svg">
+<svg
+    class="arrival-icon rail-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+>
 
+    <!-- station roof -->
     <path
-        d="M11 46H53"
+        d="M10 25
+           L32 12
+           L54 25"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"/>
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
 
+    <!-- station structure -->
     <path
-        d="M16 42V25L32 16L48 25V42"
+        class="rail-building"
+        d="M16 25V46
+           M48 25V46
+           M22 25V46
+           M42 25V46"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linejoin="round"/>
+        stroke-width="2.2"
+    />
 
+    <!-- central entrance -->
     <path
-        d="M24 42V31H40V42"
+        class="rail-window"
+        d="M27 46V32
+           H37
+           V46"
         stroke="currentColor"
-        stroke-width="3"/>
+        stroke-width="2.2"
+        stroke-linejoin="round"
+    />
+
+    <!-- platform -->
+    <path
+        d="M10 49H54"
+        stroke="currentColor"
+        stroke-width="2.4"
+        stroke-linecap="round"
+    />
 
 </svg>
 
@@ -988,46 +1186,75 @@ body{
 </div>
 
 
-<!-- BY CAR -->
+<!-- =====================================================
+     BY CAR
+     ===================================================== -->
 
 <div class="arrival-option">
 
-<svg class="arrival-icon"
-     viewBox="0 0 64 64"
-     fill="none"
-     xmlns="http://www.w3.org/2000/svg">
+<svg
+    class="arrival-icon car-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+>
 
+    <!-- car roof -->
     <path
-        d="M12 42H52"
+        d="M16 37
+           L21 25
+           H43
+           L48 37"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"/>
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
 
+    <!-- body -->
     <path
-        d="M17 42V32L22 23H42L48 32V42"
+        class="car-body"
+        d="M12 37
+           H52
+           V47
+           H12
+           V37Z"
         stroke="currentColor"
-        stroke-width="3"
-        stroke-linejoin="round"/>
+        stroke-width="2.4"
+        stroke-linejoin="round"
+    />
 
+    <!-- windows -->
+    <path
+        d="M22 27
+           L19 36
+           H45
+           L42 27
+           Z"
+        stroke="currentColor"
+        stroke-width="2.1"
+        stroke-linejoin="round"
+    />
+
+    <!-- wheels -->
     <circle
-        cx="23"
-        cy="43"
+        class="wheel"
+        cx="21"
+        cy="47"
         r="4"
         stroke="currentColor"
-        stroke-width="3"/>
+        stroke-width="2.4"
+    />
 
     <circle
-        cx="41"
-        cy="43"
+        class="wheel"
+        cx="43"
+        cy="47"
         r="4"
         stroke="currentColor"
-        stroke-width="3"/>
-
-    <path
-        d="M22 32H47"
-        stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"/>
+        stroke-width="2.4"
+    />
 
 </svg>
 
@@ -1068,13 +1295,13 @@ body{
 <div class="maps-box">
 
     <div class="maps-title">
-        OPEN IN GOOGLE MAPS
+        SCAN FOR DIRECTIONS
     </div>
 
     <img
         src="Directions.png"
         class="maps-qr"
-        alt="Google Maps directions QR code"
+        alt="Scan for directions to 303 Oyster Bay"
     >
 
     <a
@@ -1082,8 +1309,43 @@ body{
         class="maps-link"
         target="_blank"
         rel="noopener"
+        aria-label="Open 303 Oyster Bay in Google Maps"
     >
-        ↗ Open in Google Maps
+
+        <!-- MAP PIN -->
+        <svg
+            class="maps-pin"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+        >
+            <path
+                d="M20 10
+                   C20 15.5 12 22 12 22
+                   C12 22 4 15.5 4 10
+                   C4 5.6 7.6 2 12 2
+                   C16.4 2 20 5.6 20 10Z"
+                stroke="#4285F4"
+                stroke-width="2"
+            />
+
+            <circle
+                cx="12"
+                cy="10"
+                r="2.5"
+                fill="#EA4335"
+            />
+        </svg>
+
+        <span>
+            Open in Google Maps
+        </span>
+
+        <span class="maps-arrow">
+            ↗
+        </span>
+
     </a>
 
 </div>
@@ -1097,24 +1359,32 @@ body{
 
 <div class="parking-box">
 
-<svg class="parking-icon"
-     viewBox="0 0 64 64"
-     fill="none"
-     xmlns="http://www.w3.org/2000/svg">
+<svg
+    class="parking-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+>
 
     <circle
         cx="32"
         cy="32"
         r="22"
         stroke="currentColor"
-        stroke-width="3"/>
+        stroke-width="3"
+    />
 
     <path
-        d="M27 44V20H35C40 20 43 23 43 28C43 33 40 36 35 36H27"
+        d="M27 44V20H35
+           C40 20 43 23 43 28
+           C43 33 40 36 35 36
+           H27"
         stroke="currentColor"
         stroke-width="3"
         stroke-linecap="round"
-        stroke-linejoin="round"/>
+        stroke-linejoin="round"
+    />
 
 </svg>
 
@@ -1177,7 +1447,10 @@ body{
      FROZEN STAY PAGE BOTTOM NAV
      ===================================================== -->
 
-<nav class="bottom-nav" aria-label="Main navigation">
+<nav
+    class="bottom-nav"
+    aria-label="Main navigation"
+>
 
     <img
         src="Stay Page Bottom Nav.png"
@@ -1187,7 +1460,7 @@ body{
     >
 
 
-    <!-- INVISIBLE CLICK AREAS -->
+    <!-- HOME -->
 
     <a
         href="index.html"
@@ -1196,6 +1469,8 @@ body{
     </a>
 
 
+    <!-- STAY -->
+
     <a
         href="arrival.html"
         class="nav-hotspot hotspot-stay"
@@ -1203,12 +1478,16 @@ body{
     </a>
 
 
+    <!-- LIVE -->
+
     <a
         href="live.html"
         class="nav-hotspot hotspot-live"
         aria-label="Live">
     </a>
 
+
+    <!-- EXPLORE -->
 
     <a
         href="In%20and%20around.pdf"
