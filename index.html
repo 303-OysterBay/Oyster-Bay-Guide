@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -100,6 +101,7 @@ body {
     position: absolute;
     top: 8px;
     right: 2.5%;
+
     width: 82px;
 
     z-index: 5;
@@ -187,11 +189,16 @@ body {
     z-index: 1;
 }
 
+
+/* =========================
+   CARD TEXT
+   ========================= */
+
 .home-card-content {
     position: absolute;
 
     left: 30px;
-    right: 22px;
+    right: 30px;
     bottom: 24px;
 
     z-index: 2;
@@ -222,14 +229,24 @@ body {
     color: #fff;
 }
 
+
+/* =========================
+   CARD ARROW
+   =========================
+   IMPORTANT:
+   Arrow is OUTSIDE the text block
+   so it does not move the heading.
+   ========================= */
+
 .card-arrow {
     position: absolute;
 
-    right: 10px;
-    bottom: 10px;
+    right: 8px;
+    top: 10px;
+    bottom: auto;
 
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 22px;
 
     display: flex;
     align-items: center;
@@ -242,7 +259,7 @@ body {
     font-size: 0;
     line-height: 1;
 
-    color: white;
+    color: #fff;
 
     z-index: 5;
 }
@@ -250,12 +267,16 @@ body {
 .card-arrow::after {
     content: "›";
 
-    font-family: Arial, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     font-size: 30px;
     font-weight: 300;
     line-height: 1;
 
-    color: white;
+    color: #fff;
 }
 
 
@@ -376,6 +397,8 @@ body {
     }
 
 
+    /* Cards */
+
     .home-grid {
         gap: 16px;
     }
@@ -401,12 +424,24 @@ body {
         max-width: 82%;
     }
 
+
+    /* Arrow */
+
     .card-arrow {
-        width: 20px;
+        right: 8px !important;
+        top: 8px !important;
+        bottom: auto !important;
+
+        width: 18px;
         height: 20px;
-        font-size: 0;
     }
 
+    .card-arrow::after {
+        font-size: 27px;
+    }
+
+
+    /* Features */
 
     .features-band {
         margin-top: 30px;
@@ -445,6 +480,7 @@ body {
 
     .home-card-content {
         left: 16px;
+        right: 14px;
         bottom: 16px;
     }
 
@@ -457,9 +493,16 @@ body {
     }
 
     .card-arrow {
-        width: 20px;
+        right: 8px !important;
+        top: 8px !important;
+        bottom: auto !important;
+
+        width: 18px;
         height: 20px;
-        font-size: 0;
+    }
+
+    .card-arrow::after {
+        font-size: 25px;
     }
 
     .features-band {
@@ -503,7 +546,9 @@ body {
         </h1>
 
 
-        <!-- Airbnb Guest Favourite -->
+        <!-- =========================
+             AIRBNB GUEST FAVOURITE
+             ========================= -->
 
         <a
             href="https://www.airbnb.co.in/h/303oysterbay"
@@ -512,11 +557,13 @@ body {
             class="guest-favourite-link"
             aria-label="View 303 Oyster Bay on Airbnb"
         >
+
             <img
                 src="guest-favourite.png"
                 alt="Airbnb Guest Favourite"
                 class="guest-favourite"
             >
+
         </a>
 
     </header>
@@ -530,7 +577,9 @@ body {
     <main class="home-grid">
 
 
-        <!-- STAY -->
+        <!-- =========================
+             STAY
+             ========================= -->
 
         <a
             href="arrival-guide.html"
@@ -552,17 +601,19 @@ body {
                     Arrival • Wi-Fi • House Rules
                 </div>
 
-                <div class="card-arrow">
-                    →
-                </div>
+            </div>
 
+            <div class="card-arrow">
+                →
             </div>
 
         </a>
 
 
 
-        <!-- LIVE -->
+        <!-- =========================
+             LIVE
+             ========================= -->
 
         <a
             href="live.html"
@@ -584,17 +635,19 @@ body {
                     Rooms • Comfort • Kitchen
                 </div>
 
-                <div class="card-arrow">
-                    →
-                </div>
+            </div>
 
+            <div class="card-arrow">
+                →
             </div>
 
         </a>
 
 
 
-        <!-- EXPLORE -->
+        <!-- =========================
+             EXPLORE
+             ========================= -->
 
         <a
             href="In%20and%20around.pdf"
@@ -616,17 +669,19 @@ body {
                     Beaches • Food • Mangaluru
                 </div>
 
-                <div class="card-arrow">
-                    →
-                </div>
+            </div>
 
+            <div class="card-arrow">
+                →
             </div>
 
         </a>
 
 
 
-        <!-- REMEMBER -->
+        <!-- =========================
+             REMEMBER
+             ========================= -->
 
         <a
             href="Remember.html"
@@ -648,10 +703,10 @@ body {
                     Sea Views • Living
                 </div>
 
-                <div class="card-arrow">
-                    →
-                </div>
+            </div>
 
+            <div class="card-arrow">
+                →
             </div>
 
         </a>
@@ -676,11 +731,13 @@ body {
                 viewBox="0 0 32 32"
                 aria-hidden="true"
             >
+
                 <path d="M5 25V14h22v11"/>
                 <path d="M5 19h22"/>
                 <path d="M8 14V9h7c2 0 3 1 3 3v2"/>
                 <path d="M5 25v3"/>
                 <path d="M27 25v3"/>
+
             </svg>
 
             <div class="feature-title">
@@ -700,10 +757,12 @@ body {
                 viewBox="0 0 32 32"
                 aria-hidden="true"
             >
+
                 <circle cx="11" cy="10" r="4"/>
                 <circle cx="21" cy="10" r="4"/>
                 <path d="M4 25c0-5 3-8 7-8s7 3 7 8"/>
                 <path d="M14 25c0-5 3-8 7-8s7 3 7 8"/>
+
             </svg>
 
             <div class="feature-title">
@@ -723,9 +782,11 @@ body {
                 viewBox="0 0 32 32"
                 aria-hidden="true"
             >
+
                 <path d="M4 12c8-7 16-7 24 0"/>
                 <path d="M8 17c5-4 11-4 16 0"/>
                 <path d="M12 22c3-2 5-2 8 0"/>
+
                 <circle
                     cx="16"
                     cy="26"
@@ -733,6 +794,7 @@ body {
                     fill="#463322"
                     stroke="none"
                 />
+
             </svg>
 
             <div class="feature-title">
@@ -752,11 +814,13 @@ body {
                 viewBox="0 0 32 32"
                 aria-hidden="true"
             >
+
                 <path d="M6 20l2-8h16l2 8"/>
                 <path d="M5 20h22v6H5z"/>
                 <circle cx="9" cy="26" r="1.5"/>
                 <circle cx="23" cy="26" r="1.5"/>
                 <path d="M10 15h12"/>
+
             </svg>
 
             <div class="feature-title">
@@ -776,11 +840,13 @@ body {
                 viewBox="0 0 32 32"
                 aria-hidden="true"
             >
+
                 <path d="M8 5v11"/>
                 <path d="M5 5v7c0 2 1 3 3 3s3-1 3-3V5"/>
                 <path d="M8 16v11"/>
                 <path d="M21 5v22"/>
                 <path d="M21 5c4 2 5 6 5 10h-5"/>
+
             </svg>
 
             <div class="feature-title">
@@ -791,7 +857,6 @@ body {
 
 
     </section>
-
 
 </div>
 
