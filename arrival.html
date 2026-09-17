@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<title>303 OYSTER BAY • Stay</title>
+
+
+<style>
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:#e8d8bd;
+    color:#463322;
+}
+
+
+/* =========================================================
+   SAND BACKGROUND
+   MASTER
+   ========================================================= */
+
+.arrival-page{
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+    min-height:100%;
+
+    overflow:hidden;
+
+    background-image:url("sand-background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+
+/* =========================================================
+   GUEST FAVOURITE
+   MASTER
+   ========================================================= */
+
+.guest-favourite-link{
+
+    position:absolute;
+
+    top:12px;
+    right:9px;
+
+    width:150px;
+    max-width:30%;
+
+    height:auto;
+
+    z-index:15;
+
+    display:block;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+.guest-favourite{
+
+    display:block;
+
+    width:100%;
+    height:auto;
+}
+
+
+/* =========================================================
+   MAIN STAY LANDING CONTENT
+   ========================================================= */
+
+.arrival-content{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    top:0;
+    bottom:55px;
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+
+/* =========================================================
+   303 OYSTER BAY LOGO
+   MASTER
+   ========================================================= */
+
+.sand-logo{
+
+    position:absolute;
+
+    left:50%;
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    width:125px;
+
+    z-index:40;
+
+    display:block;
+
+    pointer-events:auto;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+.sand-logo img{
+
+    display:block;
+
+    width:100%;
+    height:auto;
+}
+
+
+/* =========================================================
+   FROZEN STAY PAGE BOTTOM NAV
+   ========================================================= */
+
+.bottom-nav{
+
+    position:fixed;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    width:100%;
+    height:135px;
+
+    z-index:30;
+
+    pointer-events:none;
+}
+
+
+.bottom-nav-image{
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:auto;
+
+    display:block;
+
+    pointer-events:none;
+
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+
+/* =========================================================
+   INVISIBLE NAVIGATION HOTSPOTS
+   ========================================================= */
+
+.nav-hotspot{
+
+    position:absolute;
+
+    bottom:0;
+
+    height:110px;
+
+    z-index:45;
+
+    display:block;
+
+    background:transparent;
+
+    border:0;
+
+    text-decoration:none;
+
+    pointer-events:auto;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+
+/* LEFT */
+
+.hotspot-home{
+    left:0;
+    width:17%;
+}
+
+.hotspot-stay{
+    left:17%;
+    width:18%;
+}
+
+
+/* RIGHT */
+
+.hotspot-live{
+    right:18%;
+    width:18%;
+}
+
+.hotspot-explore{
+    right:0;
+    width:18%;
+}
+
+
+/* =========================================================
+   TABLET / DESKTOP
+   MASTER
+   ========================================================= */
+
+@media(min-width:700px){
+
+    .guest-favourite-link{
+
+        width:210px;
+        max-width:none;
+
+        top:16px;
+        right:18px;
+    }
+
+
+    .bottom-nav{
+        height:155px;
+    }
+
+
+    .sand-logo{
+
+        width:85px;
+        bottom:0px;
+    }
+
+
+    .nav-hotspot{
+        height:125px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   MASTER
+   ========================================================= */
+
+@media(max-width:390px){
+
+    .guest-favourite-link{
+
+        width:125px;
+
+        top:7px;
+        right:6px;
+    }
+
+
+    .bottom-nav{
+        height:108px;
+    }
+
+
+    .sand-logo{
+
+        width:110px;
+        bottom:20px;
+    }
+
+
+    .nav-hotspot{
+        height:90px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   MASTER
+   ========================================================= */
+
+@media(max-width:360px){
+
+    .guest-favourite-link{
+
+        width:115px;
+    }
+
+
+    .bottom-nav{
+        height:100px;
+    }
+
+
+    .sand-logo{
+
+        width:85px;
+        bottom:21px;
+    }
+
+
+    .nav-hotspot{
+        height:84px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<main class="arrival-page">
+
+
+    <!-- =====================================================
+         GUEST FAVOURITE
+         ===================================================== -->
+
+    <a
+        href="https://www.airbnb.co.in/h/303oysterbay"
+        class="guest-favourite-link"
+        target="_blank"
+        rel="noopener"
+        aria-label="303 Oyster Bay on Airbnb"
+    >
+
+        <img
+            src="guest-favourite.png"
+            class="guest-favourite"
+            alt="Airbnb Guest Favourite"
+        >
+
+    </a>
+
+
+    <!-- =====================================================
+         STAY / ARRIVAL LANDING PAGE
+         ===================================================== -->
+
+    <div class="arrival-content">
+
+    </div>
+
+
+    <!-- =====================================================
+         INDEPENDENT 303 OYSTER BAY LOGO
+         ===================================================== -->
+
+    <a
+        href="index.html"
+        class="sand-logo"
+        aria-label="303 Oyster Bay Home"
+    >
+
+        <img
+            src="logo.png"
+            alt="303 Oyster Bay"
+        >
+
+    </a>
+
+
+    <!-- =====================================================
+         FROZEN STAY NAVIGATION
+         ===================================================== -->
+
+    <nav
+        class="bottom-nav"
+        aria-label="Main navigation"
+    >
+
+        <img
+            src="Stay Page Bottom Nav.png"
+            class="bottom-nav-image"
+            alt=""
+            aria-hidden="true"
+        >
+
+
+        <!-- =================================================
+             INVISIBLE CLICK AREAS
+             ================================================= -->
+
+        <a
+            href="index.html"
+            class="nav-hotspot hotspot-home"
+            aria-label="Home"
+        ></a>
+
+
+        <a
+            href="arrival.html"
+            class="nav-hotspot hotspot-stay"
+            aria-label="Stay"
+        ></a>
+
+
+        <a
+            href="live.html"
+            class="nav-hotspot hotspot-live"
+            aria-label="Live"
+        ></a>
+
+
+        <a
+            href="In%20and%20around.pdf"
+            class="nav-hotspot hotspot-explore"
+            aria-label="Explore"
+        ></a>
+
+    </nav>
+
+
+</main>
+
+
+</body>
+
+</html>
