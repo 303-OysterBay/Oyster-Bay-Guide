@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0,
                maximum-scale=5.0, user-scalable=yes">
@@ -9,94 +10,104 @@
 <title>303 OYSTER BAY • Home</title>
 
 <style>
-    * {
-        box-sizing: border-box;
-    }
 
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        min-height: 100%;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    body {
-        font-family: Georgia, "Times New Roman", serif;
-        background: #d9b37a;
-        color: #463322;
-    }
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
 
-    /* =========================
-       MAIN PAGE
-       ========================= */
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #d9b37a;
+    color: #463322;
+}
 
-    .home-page {
-        position: relative;
-        width: 100%;
-        min-height: 100vh;
-        min-height: 100svh;
-        overflow-x: hidden;
 
-        background-image:
-            linear-gradient(
-                rgba(220, 177, 120, 0.04),
-                rgba(220, 177, 120, 0.04)
-            ),
-            url("sand-background.jpg");
+/* =========================
+   MAIN PAGE
+   ========================= */
 
-        background-size: cover;
-        background-position: center center;
-        background-attachment: scroll;
+.home-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
 
-        padding:
-            clamp(22px, 5vw, 48px)
-            clamp(18px, 4vw, 42px)
-            88px;
-    }
+    overflow-x: hidden;
 
-    /* =========================
-       TOP AREA
-       ========================= */
+    background-image:
+        linear-gradient(
+            rgba(220, 177, 120, 0.04),
+            rgba(220, 177, 120, 0.04)
+        ),
+        url("sand-background.jpg");
 
-    .top-area {
-        position: relative;
-        text-align: center;
-        width: 100%;
-        max-width: 1100px;
-        margin: 0 auto;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
 
-        padding-top: clamp(4px, 1vw, 10px);
-        padding-bottom: clamp(34px, 5vw, 58px);
-    }
+    padding:
+        clamp(22px, 5vw, 48px)
+        clamp(18px, 4vw, 42px)
+        58px;
+}
 
-    .logo {
-        display: block;
-        width: 178px;
-        max-width: 48vw;
-        height: auto;
-        margin: 0 auto 8px;
-    }
 
-    .tagline {
-        margin: 0;
-        font-size: 15px;
-        line-height: 1.25;
-        font-weight: 400;
-        letter-spacing: 0.15px;
-        color: #59412d;
-    }
+/* =========================
+   TOP AREA
+   ========================= */
 
-    /* =========================
-       AIRBNB GUEST FAVOURITE
-       Fixed to the SAND / PAGE,
-       NOT to the viewport
-       ========================= */
+.top-area {
+    position: relative;
 
-   .guest-favourite {
+    text-align: center;
+
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding-top: clamp(4px, 1vw, 10px);
+    padding-bottom: clamp(34px, 5vw, 58px);
+}
+
+.logo {
+    display: block;
+
+    width: 178px;
+    max-width: 48vw;
+    height: auto;
+
+    margin: 0 auto 8px;
+}
+
+.tagline {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.25;
+    font-weight: 400;
+
+    letter-spacing: 0.15px;
+
+    color: #59412d;
+}
+
+
+/* =========================
+   AIRBNB GUEST FAVOURITE
+   ========================= */
+
+.guest-favourite {
     position: absolute;
 
-    /* Frozen to the sand/page composition */
     top: 8px;
     right: 2.5%;
 
@@ -117,185 +128,380 @@
     pointer-events: none;
 }
 
-    /* =========================
-       FOUR HOME CARDS
-       ========================= */
 
-    .home-grid {
-        width: 100%;
-        max-width: 1100px;
-        margin: 0 auto;
+/* =========================
+   FOUR HOME CARDS
+   ========================= */
 
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+.home-grid {
+    width: 100%;
+    max-width: 1100px;
 
-        gap: clamp(16px, 2.5vw, 28px);
-    }
+    margin: 0 auto;
 
-    .home-card {
-        position: relative;
-        display: block;
+    display: grid;
 
-        width: 100%;
-        aspect-ratio: 1.02 / 1;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-        overflow: hidden;
+    gap: clamp(16px, 2.5vw, 28px);
+}
 
-        border-radius: 30px;
+.home-card {
+    position: relative;
 
-        text-decoration: none;
-        color: white;
+    display: block;
 
-        box-shadow:
-            0 5px 12px rgba(50, 30, 15, 0.18);
+    width: 100%;
 
-        background: #8e6848;
-    }
+    aspect-ratio: 1.02 / 1;
 
-    .home-card img {
-        position: absolute;
-        inset: 0;
+    overflow: hidden;
 
-        width: 100%;
-        height: 100%;
+    border-radius: 30px;
 
-        object-fit: cover;
+    text-decoration: none;
+    color: white;
 
-        display: block;
+    box-shadow:
+        0 5px 12px rgba(50, 30, 15, 0.18);
 
-        transition: transform 0.35s ease;
-    }
+    background: #8e6848;
+}
 
-    .home-card::after {
-        content: "";
-
-        position: absolute;
-        inset: 0;
-
-        background:
-            linear-gradient(
-                to top,
-                rgba(25, 16, 9, 0.72) 0%,
-                rgba(25, 16, 9, 0.28) 42%,
-                rgba(25, 16, 9, 0.02) 72%
-            );
-
-        z-index: 1;
-    }
-
-    .home-card-content {
-        position: absolute;
-
-        left: 30px;
-        right: 22px;
-        bottom: 24px;
-
-        z-index: 2;
-    }
-
-    .card-title {
-        font-size: clamp(35px, 4vw, 49px);
-        line-height: 0.95;
-        font-weight: 400;
-
-        margin-bottom: 9px;
-
-        color: #fff;
-    }
-
-    .card-description {
-        max-width: 78%;
-
-        font-family:
-            Arial,
-            Helvetica,
-            sans-serif;
-
-        font-size: clamp(15px, 1.65vw, 18px);
-        line-height: 1.28;
-        font-weight: 400;
-
-        color: #fff;
-    }
-
-   .card-arrow {
+.home-card img {
     position: absolute;
 
-    right: 10px;
-    bottom: 10px;
+    inset: 0;
 
-    width: 20px;
-    height: 20px;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.35s ease;
+}
+
+.home-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(25, 16, 9, 0.72) 0%,
+            rgba(25, 16, 9, 0.28) 42%,
+            rgba(25, 16, 9, 0.02) 72%
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================
+   CARD CONTENT
+   ========================= */
+
+.home-card-content {
+    position: absolute;
+
+    left: 30px;
+    right: 30px;
+    bottom: 24px;
+
+    z-index: 2;
+
+    /*
+       Keeps all four card titles and descriptions
+       in the same lower visual zone.
+    */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.card-title {
+    font-size: clamp(35px, 4vw, 49px);
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    margin: 0 0 9px;
+
+    color: #fff;
+
+    white-space: nowrap;
+}
+
+.card-description {
+    width: 100%;
+    max-width: none;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: clamp(15px, 1.65vw, 18px);
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    color: #fff;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   COMPACT CHEVRON
+   ========================= */
+
+.card-arrow {
+    position: absolute;
+
+    right: 4px;
+    bottom: 5px;
+
+    width: 18px;
+    height: 22px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border: none;
     border-radius: 0;
+
     background: transparent;
 
     font-size: 0;
     line-height: 1;
 
-    color: white;
+    color: #fff;
 
     z-index: 5;
 }
 
 .card-arrow::after {
     content: "›";
-    font-family: Arial, sans-serif;
+
+    font-family: Arial, Helvetica, sans-serif;
+
     font-size: 30px;
     font-weight: 300;
+
     line-height: 1;
-    color: white;
+
+    color: #fff;
 }
 
-    /* =========================
-       FEATURES BAND
-       ========================= */
+
+/* =========================
+   FEATURES BAND
+   ========================= */
+
+.features-band {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: clamp(30px, 4vw, 44px) auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    background:
+        rgba(255, 248, 235, 0.88);
+
+    border:
+        1px solid rgba(80, 55, 35, 0.16);
+
+    border-radius: 32px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 10px rgba(50, 30, 15, 0.10);
+
+    backdrop-filter: blur(3px);
+}
+
+.feature {
+    min-height: 118px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 8px;
+
+    text-align: center;
+
+    border-right:
+        1px solid rgba(70, 50, 30, 0.18);
+}
+
+.feature:last-child {
+    border-right: none;
+}
+
+
+/* Elegant thin-line icons */
+
+.feature-icon {
+    width: 27px;
+    height: 27px;
+
+    margin-bottom: 8px;
+
+    fill: none;
+
+    stroke: #463322;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    flex-shrink: 0;
+}
+
+
+/* Running-case feature text */
+
+.feature-title {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.15;
+
+    letter-spacing: 0;
+
+    color: #463322;
+
+    white-space: nowrap;
+
+    text-transform: none;
+}
+
+
+/* =========================
+   SMALL PHONES
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .home-page {
+        padding:
+            22px
+            18px
+            58px;
+    }
+
+    .top-area {
+        padding-top: 2px;
+        padding-bottom: 36px;
+    }
+
+    .logo {
+        width: 158px;
+        max-width: 52vw;
+        margin-bottom: 7px;
+    }
+
+    .tagline {
+        font-size: 13px;
+    }
+
+
+    /* Guest Favourite */
+
+    .guest-favourite {
+        top: 5px;
+        right: 1.5%;
+        width: 72px;
+    }
+
+
+    /* Cards */
+
+    .home-grid {
+        gap: 16px;
+    }
+
+    .home-card {
+        border-radius: 27px;
+    }
+
+    .home-card-content {
+        left: 20px;
+        right: 20px;
+        bottom: 19px;
+    }
+
+    .card-title {
+        font-size: 30px;
+        margin-bottom: 7px;
+    }
+
+    .card-description {
+        width: 100%;
+        max-width: none;
+
+        font-size: 12px;
+
+        line-height: 1.15;
+
+        white-space: nowrap;
+    }
+
+
+    /* Small clean chevron */
+
+    .card-arrow {
+        right: 2px;
+        bottom: 4px;
+
+        width: 18px;
+        height: 20px;
+    }
+
+    .card-arrow::after {
+        font-size: 27px;
+    }
+
+
+    /* Features */
 
     .features-band {
-        width: 100%;
-        max-width: 1100px;
+        margin-top: 30px;
 
-        margin: clamp(30px, 4vw, 44px) auto 0;
-
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-
-        background: rgba(255, 248, 235, 0.88);
-
-        border: 1px solid rgba(80, 55, 35, 0.16);
-
-        border-radius: 32px;
-
-        overflow: hidden;
-
-        box-shadow:
-            0 4px 10px rgba(50, 30, 15, 0.10);
-
-        backdrop-filter: blur(3px);
+        border-radius: 29px;
     }
 
     .feature {
-        min-height: 118px;
+        min-height: 100px;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        padding: 15px 8px;
-
-        text-align: center;
-
-        border-right: 1px solid rgba(70, 50, 30, 0.20);
-    }
-
-    .feature:last-child {
-        border-right: none;
+        padding:
+            11px 3px;
     }
 
     .feature-icon {
@@ -304,169 +510,86 @@
 
         margin-bottom: 7px;
 
-        fill: none;
-        stroke: #463322;
-        stroke-width: 2.2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
+        stroke-width: 1.8;
     }
 
     .feature-title {
-        font-family:
-            Arial,
-            Helvetica,
-            sans-serif;
-
-        font-size: 10px;
-        line-height: 1.15;
-        letter-spacing: 0.1px;
-
-        color: #463322;
-        white-space: nowrap;
+        font-size: 8px;
     }
-
-    /* =========================
-       SMALL PHONES
-       ========================= */
-
-    @media (max-width: 600px) {
-
-        .home-page {
-            padding:
-                22px
-                18px
-                58px;
-        }
-
-        .top-area {
-            padding-top: 2px;
-            padding-bottom: 36px;
-        }
-
-        .logo {
-            width: 158px;
-            max-width: 52vw;
-            margin-bottom: 7px;
-        }
-
-        .tagline {
-            font-size: 13px;
-        }
-
-        /* Guest Favourite stays with
-           the sand background */
-        .guest-favourite {
-            top: 5px;
-    right: 1.5%;
-    width: 72px;
-
-        .home-grid {
-            gap: 16px;
-        }
-
-        .home-card {
-            border-radius: 27px;
-        }
-
-        .home-card-content {
-            left: 20px;
-            right: 15px;
-            bottom: 19px;
-        }
-
-        .card-title {
-            font-size: 34px;
-            margin-bottom: 7px;
-        }
-
-        .card-description {
-            font-size: 14px;
-            line-height: 1.25;
-            max-width: 82%;
-        }
-
-        .card-arrow {
-            .card-arrow {
-    width: 20px;
-    height: 20px;
-
-    font-size: 0;
 }
 
-        .features-band {
-            margin-top: 30px;
-            border-radius: 29px;
-        }
 
-        .feature {
-            min-height: 100px;
-            padding: 11px 4px;
-        }
+/* =========================
+   VERY SMALL PHONES
+   ========================= */
 
-        .feature-title {
-            font-size: 9px;
-        }
+@media (max-width: 380px) {
+
+    .home-page {
+        padding-left: 14px;
+        padding-right: 14px;
     }
 
-    /* =========================
-       VERY SMALL PHONES
-       ========================= */
+    .home-grid {
+        gap: 12px;
+    }
 
-    @media (max-width: 380px) {
+    .home-card {
+        border-radius: 24px;
+    }
 
-        .home-page {
-            padding-left: 14px;
-            padding-right: 14px;
-        }
+    .home-card-content {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+    }
 
-        .home-grid {
-            gap: 12px;
-        }
+    .card-title {
+        font-size: 27px;
+    }
 
-        .home-card {
-            border-radius: 24px;
-        }
+    .card-description {
+        font-size: 11px;
+    }
 
-        .home-card-content {
-            left: 16px;
-            bottom: 16px;
-        }
+    .card-arrow {
+        right: 1px;
+        bottom: 3px;
+    }
 
-        .card-title {
-            font-size: 29px;
-        }
+    .card-arrow::after {
+        font-size: 25px;
+    }
 
-        .card-description {
-            font-size: 12px;
-        }
+    .features-band {
+        border-radius: 25px;
+    }
 
-        .card-arrow {
-    width: 20px;
-    height: 20px;
+    .feature {
+        min-height: 91px;
 
-    font-size: 0;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .feature-icon {
+        width: 23px;
+        height: 23px;
+    }
+
+    .feature-title {
+        font-size: 7.5px;
+    }
 }
 
-        .features-band {
-            border-radius: 25px;
-        }
-
-        .feature {
-            min-height: 91px;
-            padding-left: 2px;
-            padding-right: 2px;
-        }
-
-        .feature-title {
-            font-size: 8px;
-        }
-    }
 </style>
 </head>
+
 
 <body>
 
 <div class="home-page">
+
 
     <!-- =========================
          TOP
@@ -484,7 +607,6 @@
             Where the sea slows you down.
         </h1>
 
-        <!-- Airbnb Guest Favourite -->
         <img
             src="guest-favourite.png"
             alt="Airbnb Guest Favourite"
@@ -494,11 +616,13 @@
     </header>
 
 
+
     <!-- =========================
          FOUR DESTINATIONS
          ========================= -->
 
     <main class="home-grid">
+
 
         <!-- STAY -->
 
@@ -526,6 +650,7 @@
             </div>
 
         </a>
+
 
 
         <!-- LIVE -->
@@ -556,6 +681,7 @@
         </a>
 
 
+
         <!-- EXPLORE -->
 
         <a href="In%20and%20around.pdf" class="home-card">
@@ -582,6 +708,7 @@
             </div>
 
         </a>
+
 
 
         <!-- REMEMBER -->
@@ -611,7 +738,9 @@
 
         </a>
 
+
     </main>
+
 
 
     <!-- =========================
@@ -619,6 +748,7 @@
          ========================= -->
 
     <section class="features-band">
+
 
         <!-- 2 BEDROOMS -->
 
@@ -637,10 +767,11 @@
             </svg>
 
             <div class="feature-title">
-                2 Bedrooms
+                2 bedrooms
             </div>
 
         </div>
+
 
 
         <!-- SLEEPS -->
@@ -659,10 +790,11 @@
             </svg>
 
             <div class="feature-title">
-                Sleeps 4+1
+                sleeps 4+1
             </div>
 
         </div>
+
 
 
         <!-- WI-FI -->
@@ -687,10 +819,11 @@
             </svg>
 
             <div class="feature-title">
-                Hi-Speed Wi-Fi
+                hi-speed Wi-Fi
             </div>
 
         </div>
+
 
 
         <!-- PARKING -->
@@ -710,10 +843,11 @@
             </svg>
 
             <div class="feature-title">
-                Free Parking
+                free parking
             </div>
 
         </div>
+
 
 
         <!-- KITCHEN -->
@@ -733,12 +867,14 @@
             </svg>
 
             <div class="feature-title">
-                Full Kitchen
+                full kitchen
             </div>
 
         </div>
 
+
     </section>
+
 
 </div>
 
