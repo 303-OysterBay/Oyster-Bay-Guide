@@ -2,35 +2,29 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0,
-               viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <title>303 OYSTER BAY • Salt Sand Stories</title>
 
 <style>
 
-/* =========================================================
-   RESET
-   ========================================================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 html,
-body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
 }
 
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #e8d8bd;
-    color: #463322;
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:#e8d8bd;
+    color:#463322;
 }
 
 
@@ -38,129 +32,139 @@ body {
    PAGE
    ========================================================= */
 
-.remember-page {
-    position: relative;
-    width: 100%;
-    height: 100svh;
-    min-height: 100svh;
-    overflow: hidden;
+.remember-page{
+    position:relative;
+    width:100%;
+    height:100svh;
+    min-height:100svh;
+    overflow:hidden;
 
-    background-image: url("sand-background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image:url("sand-background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
 
 /* =========================================================
-   SALT • SAND • STORIES
-   HAND-ENGRAVED INTO THE SAND
+   SALT SAND STORIES
+   HAND-ENGRAVED IN BROWN
    ========================================================= */
 
-.sand-title {
-    position: absolute;
-    top: 7px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 235px;
-    height: 124px;
-    z-index: 5;
-    pointer-events: none;
+.sand-title{
+    position:absolute;
+    top:7px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:235px;
+    height:124px;
+
+    z-index:5;
+    pointer-events:none;
 }
 
-.sand-title-inner {
-    position: absolute;
-    inset: 0;
+.sand-title-inner{
+    position:absolute;
+    inset:0;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
-    font-family: "Segoe Print",
-                 "Bradley Hand",
-                 "Comic Sans MS",
-                 cursive;
+    font-family:
+        "Segoe Print",
+        "Bradley Hand",
+        "Comic Sans MS",
+        cursive;
 
-    font-size: 39px;
-    font-weight: 600;
-    line-height: 0.82;
-    letter-spacing: -2px;
+    font-size:39px;
+    font-weight:600;
+    line-height:.82;
+    letter-spacing:-2px;
 
-    color: rgba(111, 71, 38, 0.78);
+    color:rgba(111,71,38,.82);
 
-    transform: rotate(-3deg);
+    transform:rotate(-3deg);
 
     text-shadow:
-        1px 2px 1px rgba(255,244,218,0.52),
-        -1px -1px 1px rgba(126,82,43,0.35),
-        0 2px 3px rgba(96,59,29,0.18);
+        1px 2px 1px rgba(255,244,218,.52),
+        -1px -1px 1px rgba(126,82,43,.35),
+        0 2px 3px rgba(96,59,29,.18);
 }
 
-.sand-title-inner span {
-    display: block;
-}
-
-
-/* =========================================================
-   AIRBNB GUEST FAVOURITE
-   ========================================================= */
-
-.guest-favourite {
-    position: absolute;
-    top: 12px;
-    right: 9px;
-
-    width: 150px;
-    max-width: 30%;
-
-    height: auto;
-
-    z-index: 8;
+.sand-title-inner span{
+    display:block;
 }
 
 
 /* =========================================================
-   GALLERY AREA
+   GUEST FAVOURITE
+   CLICKABLE
    ========================================================= */
 
-.remember-content {
-    position: absolute;
+.guest-favourite-link{
+    position:absolute;
 
-    left: 0;
-    right: 0;
+    top:12px;
+    right:9px;
 
-    top: 132px;
-    bottom: 145px;
+    width:150px;
+    max-width:30%;
 
-    width: 100%;
+    height:auto;
 
-    overflow: hidden;
+    z-index:15;
 
-    padding-left: 14px;
-    padding-right: 0;
+    display:block;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+.guest-favourite{
+    display:block;
+    width:100%;
+    height:auto;
 }
 
 
 /* =========================================================
-   CATEGORY
+   GALLERY
    ========================================================= */
 
-.category {
-    width: 100%;
-    margin-bottom: 8px;
+.remember-content{
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    top:132px;
+    bottom:55px;
+
+    width:100%;
+
+    overflow:hidden;
+
+    padding-left:14px;
+    padding-right:0;
 }
 
-.category-title {
-    margin: 0 0 3px 0;
+.category{
+    width:100%;
+    margin-bottom:8px;
+}
 
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 1;
+.category-title{
+    margin:0 0 3px 0;
 
-    letter-spacing: 0.1px;
+    font-size:15px;
+    font-weight:normal;
+    line-height:1;
 
-    color: #463322;
+    letter-spacing:.1px;
+
+    color:#463322;
 }
 
 
@@ -168,170 +172,193 @@ body {
    PHOTO ROW
    ========================================================= */
 
-.photo-row {
-    display: flex;
-    flex-wrap: nowrap;
+.photo-row{
+    display:flex;
+    flex-wrap:nowrap;
 
-    gap: 7px;
+    gap:7px;
 
-    width: 100%;
+    width:100%;
 
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x:auto;
+    overflow-y:hidden;
 
-    padding: 0 12px 2px 0;
+    padding:0 12px 2px 0;
 
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
 
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling:touch;
 
-    scroll-snap-type: x proximity;
+    scroll-snap-type:x proximity;
 }
 
-.photo-row::-webkit-scrollbar {
-    display: none;
+.photo-row::-webkit-scrollbar{
+    display:none;
 }
 
 
 /* =========================================================
-   PHOTO CARD
+   PHOTO CARDS
    ========================================================= */
 
-.photo-card {
-    flex: 0 0 108px;
+.photo-card{
+    flex:0 0 108px;
 
-    width: 108px;
-    height: 94px;
+    width:108px;
+    height:94px;
 
-    padding: 4px 4px 8px;
+    padding:4px 4px 8px;
 
-    border: 1px solid rgba(255,255,255,0.82);
-    border-radius: 13px;
+    border:1px solid rgba(255,255,255,.82);
+    border-radius:13px;
 
-    background: #f4ead7;
+    background:#f4ead7;
 
     box-shadow:
-        0 2px 5px rgba(70,42,20,0.16);
+        0 2px 5px rgba(70,42,20,.16);
 
-    cursor: pointer;
+    cursor:pointer;
 
-    appearance: none;
-    -webkit-appearance: none;
+    appearance:none;
+    -webkit-appearance:none;
 
-    scroll-snap-align: start;
+    scroll-snap-align:start;
 }
 
-.photo-card img {
-    display: block;
+.photo-card img{
+    display:block;
 
-    width: 100%;
-    height: 100%;
+    width:100%;
+    height:100%;
 
-    object-fit: cover;
+    object-fit:cover;
 
-    border-radius: 8px;
-}
-
-
-/* =========================================================
-   FROZEN BOTTOM NAVIGATION IMAGE
-   ---------------------------------------------------------
-   IMPORTANT:
-   The artwork is NOT recreated in CSS.
-   This is the frozen PNG asset.
-   ========================================================= */
-
-.bottom-nav {
-    position: fixed;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    width: 100%;
-
-    height: 135px;
-
-    z-index: 30;
-
-    pointer-events: none;
-}
-
-
-/* THE FROZEN NAV ARTWORK */
-
-.bottom-nav-image {
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: auto;
-
-    display: block;
-
-    pointer-events: none;
-
-    user-select: none;
-    -webkit-user-drag: none;
+    border-radius:8px;
 }
 
 
 /* =========================================================
-   INVISIBLE CLICKABLE HOTSPOTS
-   ---------------------------------------------------------
-   These sit OVER the frozen artwork.
-   They do not create or alter the artwork.
+   FROZEN BOTTOM NAVIGATION
    ========================================================= */
 
-.nav-hotspot {
-    position: absolute;
+.bottom-nav{
+    position:fixed;
 
-    bottom: 0;
+    left:0;
+    right:0;
+    bottom:0;
 
-    height: 110px;
+    width:100%;
+    height:135px;
 
-    z-index: 35;
+    z-index:30;
 
-    display: block;
-
-    background: transparent;
-
-    border: 0;
-
-    text-decoration: none;
-
-    pointer-events: auto;
-
-    -webkit-tap-highlight-color: transparent;
+    pointer-events:none;
 }
 
 
-/* LEFT PANEL */
+/* FROZEN PNG */
 
-.hotspot-home {
-    left: 0;
-    width: 17%;
+.bottom-nav-image{
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:auto;
+
+    display:block;
+
+    pointer-events:none;
+
+    user-select:none;
+    -webkit-user-drag:none;
 }
 
-.hotspot-stay {
-    left: 17%;
-    width: 18%;
+
+/* =========================================================
+   INDEPENDENT 303 LOGO
+   SITS BETWEEN THE TWO FROZEN NAV PANELS
+   ========================================================= */
+
+.sand-logo{
+    position:absolute;
+
+    left:50%;
+    bottom:29px;
+
+    transform:translateX(-50%);
+
+    width:145px;
+
+    z-index:40;
+
+    display:block;
+
+    pointer-events:auto;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+.sand-logo img{
+    display:block;
+
+    width:100%;
+    height:auto;
 }
 
 
-/* RIGHT PANEL */
+/* =========================================================
+   INVISIBLE NAVIGATION HOTSPOTS
+   ========================================================= */
 
-.hotspot-explore {
-    right: 18%;
-    width: 17%;
+.nav-hotspot{
+    position:absolute;
+
+    bottom:0;
+
+    height:110px;
+
+    z-index:45;
+
+    display:block;
+
+    background:transparent;
+    border:0;
+
+    text-decoration:none;
+
+    pointer-events:auto;
+
+    -webkit-tap-highlight-color:transparent;
 }
 
-.hotspot-remember {
-    right: 0;
-    width: 18%;
+
+/* LEFT */
+
+.hotspot-home{
+    left:0;
+    width:17%;
+}
+
+.hotspot-stay{
+    left:17%;
+    width:18%;
+}
+
+
+/* RIGHT */
+
+.hotspot-live{
+    right:18%;
+    width:18%;
+}
+
+.hotspot-explore{
+    right:0;
+    width:18%;
 }
 
 
@@ -339,142 +366,148 @@ body {
    LIGHTBOX
    ========================================================= */
 
-.lightbox {
-    position: fixed;
+.lightbox{
+    position:fixed;
 
-    inset: 0;
+    inset:0;
 
-    z-index: 100;
+    z-index:100;
 
-    display: none;
+    display:none;
 
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:center;
 
-    background: rgba(20,15,10,0.88);
+    background:rgba(20,15,10,.88);
 }
 
-.lightbox.active {
-    display: flex;
+.lightbox.active{
+    display:flex;
 }
 
-.lightbox-image {
-    max-width: 92vw;
-    max-height: 84vh;
+.lightbox-image{
+    max-width:92vw;
+    max-height:84vh;
 
-    object-fit: contain;
+    object-fit:contain;
 
-    border-radius: 8px;
+    border-radius:8px;
 
     box-shadow:
-        0 8px 30px rgba(0,0,0,0.35);
+        0 8px 30px rgba(0,0,0,.35);
 }
 
 .lightbox-close,
-.lightbox-arrow {
-    position: absolute;
+.lightbox-arrow{
+    position:absolute;
 
-    border: none;
+    border:none;
+    background:transparent;
 
-    background: transparent;
+    color:white;
 
-    color: white;
+    cursor:pointer;
 
-    cursor: pointer;
+    font-family:Arial,sans-serif;
 
-    font-family: Arial, sans-serif;
-
-    z-index: 110;
+    z-index:110;
 }
 
-.lightbox-close {
-    top: 18px;
-    right: 22px;
+.lightbox-close{
+    top:18px;
+    right:22px;
 
-    font-size: 42px;
+    font-size:42px;
 }
 
-.lightbox-arrow {
-    top: 50%;
+.lightbox-arrow{
+    top:50%;
 
-    transform: translateY(-50%);
+    transform:translateY(-50%);
 
-    font-size: 58px;
+    font-size:58px;
 
-    width: 60px;
-    height: 80px;
+    width:60px;
+    height:80px;
 }
 
-.lightbox-prev {
-    left: 8px;
+.lightbox-prev{
+    left:8px;
 }
 
-.lightbox-next {
-    right: 8px;
+.lightbox-next{
+    right:8px;
 }
 
 
 /* =========================================================
-   TABLET / DESKTOP
+   DESKTOP / TABLET
    ========================================================= */
 
-@media (min-width: 700px) {
+@media(min-width:700px){
 
-    .sand-title {
-        width: 290px;
-        height: 150px;
+    .sand-title{
+        width:290px;
+        height:150px;
     }
 
-    .sand-title-inner {
-        font-size: 50px;
+    .sand-title-inner{
+        font-size:50px;
     }
 
-    .guest-favourite {
-        width: 210px;
-        max-width: none;
-        top: 16px;
-        right: 18px;
+    .guest-favourite-link{
+        width:210px;
+        max-width:none;
+
+        top:16px;
+        right:18px;
     }
 
-    .remember-content {
-        top: 155px;
-        bottom: 165px;
-        padding-left: 30px;
+    .remember-content{
+        top:155px;
+        bottom:70px;
+
+        padding-left:30px;
     }
 
-    .category {
-        margin-bottom: 18px;
+    .category{
+        margin-bottom:18px;
     }
 
-    .category-title {
-        font-size: 20px;
-        margin-bottom: 5px;
+    .category-title{
+        font-size:20px;
+        margin-bottom:5px;
     }
 
-    .photo-row {
-        gap: 12px;
+    .photo-row{
+        gap:12px;
     }
 
-    .photo-card {
-        flex-basis: 165px;
-        width: 165px;
-        height: 145px;
+    .photo-card{
+        flex-basis:165px;
+        width:165px;
+        height:145px;
 
-        padding: 7px 7px 13px;
+        padding:7px 7px 13px;
 
-        border-radius: 17px;
+        border-radius:17px;
     }
 
-    .photo-card img {
-        border-radius: 9px;
+    .photo-card img{
+        border-radius:9px;
     }
 
-    .bottom-nav {
-        height: 155px;
+    .bottom-nav{
+        height:155px;
     }
 
-    .nav-hotspot {
-        height: 125px;
+    .sand-logo{
+        width:175px;
+        bottom:31px;
+    }
+
+    .nav-hotspot{
+        height:125px;
     }
 }
 
@@ -483,62 +516,69 @@ body {
    SMALL PHONES
    ========================================================= */
 
-@media (max-width: 390px) {
+@media(max-width:390px){
 
-    .sand-title {
-        width: 235px;
-        height: 124px;
+    .sand-title{
+        width:235px;
+        height:124px;
     }
 
-    .sand-title-inner {
-        font-size: 35px;
+    .sand-title-inner{
+        font-size:35px;
     }
 
-    .guest-favourite {
-        width: 125px;
-        top: 7px;
-        right: 6px;
+    .guest-favourite-link{
+        width:125px;
+
+        top:7px;
+        right:6px;
     }
 
-    .remember-content {
-        top: 121px;
-        bottom: 116px;
-        padding-left: 12px;
+    .remember-content{
+        top:121px;
+        bottom:55px;
+
+        padding-left:12px;
     }
 
-    .category {
-        margin-bottom: 7px;
+    .category{
+        margin-bottom:7px;
     }
 
-    .category-title {
-        font-size: 14px;
-        margin-bottom: 3px;
+    .category-title{
+        font-size:14px;
+        margin-bottom:3px;
     }
 
-    .photo-row {
-        gap: 6px;
+    .photo-row{
+        gap:6px;
     }
 
-    .photo-card {
-        flex-basis: 101px;
-        width: 101px;
-        height: 88px;
+    .photo-card{
+        flex-basis:101px;
+        width:101px;
+        height:88px;
 
-        padding: 4px 4px 7px;
+        padding:4px 4px 7px;
 
-        border-radius: 12px;
+        border-radius:12px;
     }
 
-    .photo-card img {
-        border-radius: 7px;
+    .photo-card img{
+        border-radius:7px;
     }
 
-    .bottom-nav {
-        height: 108px;
+    .bottom-nav{
+        height:108px;
     }
 
-    .nav-hotspot {
-        height: 90px;
+    .sand-logo{
+        width:125px;
+        bottom:23px;
+    }
+
+    .nav-hotspot{
+        height:90px;
     }
 }
 
@@ -547,42 +587,47 @@ body {
    VERY SMALL PHONES
    ========================================================= */
 
-@media (max-width: 360px) {
+@media(max-width:360px){
 
-    .sand-title {
-        width: 225px;
-        height: 120px;
+    .sand-title{
+        width:225px;
+        height:120px;
     }
 
-    .sand-title-inner {
-        font-size: 33px;
+    .sand-title-inner{
+        font-size:33px;
     }
 
-    .guest-favourite {
-        width: 115px;
+    .guest-favourite-link{
+        width:115px;
     }
 
-    .remember-content {
-        top: 118px;
-        bottom: 105px;
+    .remember-content{
+        top:118px;
+        bottom:50px;
     }
 
-    .category-title {
-        font-size: 13px;
+    .category-title{
+        font-size:13px;
     }
 
-    .photo-card {
-        flex-basis: 96px;
-        width: 96px;
-        height: 84px;
+    .photo-card{
+        flex-basis:96px;
+        width:96px;
+        height:84px;
     }
 
-    .bottom-nav {
-        height: 100px;
+    .bottom-nav{
+        height:100px;
     }
 
-    .nav-hotspot {
-        height: 84px;
+    .sand-logo{
+        width:115px;
+        bottom:21px;
+    }
+
+    .nav-hotspot{
+        height:84px;
     }
 }
 
@@ -595,346 +640,308 @@ body {
 <main class="remember-page">
 
 
-    <!-- =====================================================
-         HAND-ENGRAVED TITLE
-         ===================================================== -->
+<!-- =====================================================
+     SALT SAND STORIES
+     ===================================================== -->
 
-    <div class="sand-title" aria-label="Salt Sand Stories">
+<div class="sand-title">
 
-        <div class="sand-title-inner">
-
-            <span>Salt</span>
-            <span>Sand</span>
-            <span>Stories</span>
-
-        </div>
-
+    <div class="sand-title-inner">
+        <span>Salt</span>
+        <span>Sand</span>
+        <span>Stories</span>
     </div>
 
+</div>
 
-    <!-- =====================================================
-         AIRBNB GUEST FAVOURITE
-         ===================================================== -->
 
+<!-- =====================================================
+     AIRBNB GUEST FAVOURITE
+     ===================================================== -->
+
+<a
+    href="https://www.airbnb.co.in/h/303oysterbay"
+    class="guest-favourite-link"
+    target="_blank"
+    rel="noopener"
+    aria-label="303 Oyster Bay on Airbnb"
+>
     <img
         src="guest-favourite.png"
         class="guest-favourite"
         alt="Airbnb Guest Favourite"
     >
+</a>
 
 
-    <!-- =====================================================
-         GALLERY
-         ===================================================== -->
+<!-- =====================================================
+     GALLERY
+     ===================================================== -->
 
-    <div class="remember-content">
+<div class="remember-content">
 
 
-        <!-- SEA VIEWS -->
+<!-- SEA VIEWS -->
 
-        <section class="category">
+<section class="category">
 
-            <h2 class="category-title">
-                Sea Views
-            </h2>
+<h2 class="category-title">Sea Views</h2>
 
-            <div class="photo-row">
+<div class="photo-row">
 
-                <button class="photo-card"
-                        data-category="Sea Views"
-                        data-index="0">
-                    <img src="Sea View1.jpg" alt="Sea View 1">
-                </button>
+<button class="photo-card" data-category="Sea Views" data-index="0">
+<img src="Sea View1.jpg" alt="Sea View 1">
+</button>
 
-                <button class="photo-card"
-                        data-category="Sea Views"
-                        data-index="1">
-                    <img src="Sea View2.jpg" alt="Sea View 2">
-                </button>
+<button class="photo-card" data-category="Sea Views" data-index="1">
+<img src="Sea View2.jpg" alt="Sea View 2">
+</button>
 
-                <button class="photo-card"
-                        data-category="Sea Views"
-                        data-index="2">
-                    <img src="Sea View3.jpg" alt="Sea View 3">
-                </button>
+<button class="photo-card" data-category="Sea Views" data-index="2">
+<img src="Sea View3.jpg" alt="Sea View 3">
+</button>
 
-                <button class="photo-card"
-                        data-category="Sea Views"
-                        data-index="3">
-                    <img src="Sea View4.jpg" alt="Sea View 4">
-                </button>
+<button class="photo-card" data-category="Sea Views" data-index="3">
+<img src="Sea View4.jpg" alt="Sea View 4">
+</button>
 
-                <button class="photo-card"
-                        data-category="Sea Views"
-                        data-index="4">
-                    <img src="Sea View5.jpg" alt="Sea View 5">
-                </button>
+<button class="photo-card" data-category="Sea Views" data-index="4">
+<img src="Sea View5.jpg" alt="Sea View 5">
+</button>
 
-            </div>
+</div>
 
-        </section>
+</section>
 
 
-        <!-- LIVING -->
+<!-- LIVING -->
 
-        <section class="category">
+<section class="category">
 
-            <h2 class="category-title">
-                Living
-            </h2>
+<h2 class="category-title">Living</h2>
 
-            <div class="photo-row">
+<div class="photo-row">
 
-                <button class="photo-card"
-                        data-category="Living"
-                        data-index="0">
-                    <img src="Living1.jpg" alt="Living 1">
-                </button>
+<button class="photo-card" data-category="Living" data-index="0">
+<img src="Living1.jpg" alt="Living 1">
+</button>
 
-                <button class="photo-card"
-                        data-category="Living"
-                        data-index="1">
-                    <img src="Living2.jpg" alt="Living 2">
-                </button>
+<button class="photo-card" data-category="Living" data-index="1">
+<img src="Living2.jpg" alt="Living 2">
+</button>
 
-                <button class="photo-card"
-                        data-category="Living"
-                        data-index="2">
-                    <img src="Living3.jpg" alt="Living 3">
-                </button>
+<button class="photo-card" data-category="Living" data-index="2">
+<img src="Living3.jpg" alt="Living 3">
+</button>
 
-                <button class="photo-card"
-                        data-category="Living"
-                        data-index="3">
-                    <img src="Living4.jpg" alt="Living 4">
-                </button>
+<button class="photo-card" data-category="Living" data-index="3">
+<img src="Living4.jpg" alt="Living 4">
+</button>
 
-                <button class="photo-card"
-                        data-category="Living"
-                        data-index="4">
-                    <img src="Living5.jpg" alt="Living 5">
-                </button>
+<button class="photo-card" data-category="Living" data-index="4">
+<img src="Living5.jpg" alt="Living 5">
+</button>
 
-                <button class="photo-card"
-                        data-category="Living"
-                        data-index="5">
-                    <img src="Living6.jpg" alt="Living 6">
-                </button>
+<button class="photo-card" data-category="Living" data-index="5">
+<img src="Living6.jpg" alt="Living 6">
+</button>
 
-                <button class="photo-card"
-                        data-category="Living"
-                        data-index="6">
-                    <img src="Living7.jpg" alt="Living 7">
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- BEDROOM -->
-
-        <section class="category">
-
-            <h2 class="category-title">
-                Bedroom
-            </h2>
-
-            <div class="photo-row">
-
-                <button class="photo-card"
-                        data-category="Bedroom"
-                        data-index="0">
-                    <img src="Bedroom1.jpg" alt="Bedroom 1">
-                </button>
-
-                <button class="photo-card"
-                        data-category="Bedroom"
-                        data-index="1">
-                    <img src="Bedroom2.jpg" alt="Bedroom 2">
-                </button>
+<button class="photo-card" data-category="Living" data-index="6">
+<img src="Living7.jpg" alt="Living 7">
+</button>
 
-                <button class="photo-card"
-                        data-category="Bedroom"
-                        data-index="2">
-                    <img src="Bedroom3.jpg" alt="Bedroom 3">
-                </button>
+</div>
 
-                <button class="photo-card"
-                        data-category="Bedroom"
-                        data-index="3">
-                    <img src="Bedroom4.jpg" alt="Bedroom 4">
-                </button>
+</section>
 
-                <button class="photo-card"
-                        data-category="Bedroom"
-                        data-index="4">
-                    <img src="Bedroom5.jpg" alt="Bedroom 5">
-                </button>
 
-                <button class="photo-card"
-                        data-category="Bedroom"
-                        data-index="5">
-                    <img src="Bedroom6.jpg" alt="Bedroom 6">
-                </button>
+<!-- BEDROOM -->
 
-                <button class="photo-card"
-                        data-category="Bedroom"
-                        data-index="6">
-                    <img src="Bedroom7.jpg" alt="Bedroom 7">
-                </button>
+<section class="category">
 
-            </div>
+<h2 class="category-title">Bedroom</h2>
 
-        </section>
+<div class="photo-row">
 
+<button class="photo-card" data-category="Bedroom" data-index="0">
+<img src="Bedroom1.jpg" alt="Bedroom 1">
+</button>
 
-        <!-- KITCHEN -->
-
-        <section class="category">
+<button class="photo-card" data-category="Bedroom" data-index="1">
+<img src="Bedroom2.jpg" alt="Bedroom 2">
+</button>
 
-            <h2 class="category-title">
-                Kitchen
-            </h2>
-
-            <div class="photo-row">
-
-                <button class="photo-card"
-                        data-category="Kitchen"
-                        data-index="0">
-                    <img src="Kitchen1.jpg" alt="Kitchen 1">
-                </button>
+<button class="photo-card" data-category="Bedroom" data-index="2">
+<img src="Bedroom3.jpg" alt="Bedroom 3">
+</button>
 
-                <button class="photo-card"
-                        data-category="Kitchen"
-                        data-index="1">
-                    <img src="Kitchen2.jpg" alt="Kitchen 2">
-                </button>
+<button class="photo-card" data-category="Bedroom" data-index="3">
+<img src="Bedroom4.jpg" alt="Bedroom 4">
+</button>
 
-                <button class="photo-card"
-                        data-category="Kitchen"
-                        data-index="2">
-                    <img src="Kitchen3.jpg" alt="Kitchen 3">
-                </button>
+<button class="photo-card" data-category="Bedroom" data-index="4">
+<img src="Bedroom5.jpg" alt="Bedroom 5">
+</button>
 
-                <button class="photo-card"
-                        data-category="Kitchen"
-                        data-index="3">
-                    <img src="Kitchen4.jpg" alt="Kitchen 4">
-                </button>
-
-                <button class="photo-card"
-                        data-category="Kitchen"
-                        data-index="4">
-                    <img src="Kitchen5.jpg" alt="Kitchen 5">
-                </button>
-
-                <button class="photo-card"
-                        data-category="Kitchen"
-                        data-index="5">
-                    <img src="Kitchen6.jpg" alt="Kitchen 6">
-                </button>
-
-                <button class="photo-card"
-                        data-category="Kitchen"
-                        data-index="6">
-                    <img src="Kitchen7.jpg" alt="Kitchen 7">
-                </button>
-
-                <button class="photo-card"
-                        data-category="Kitchen"
-                        data-index="7">
-                    <img src="Kitchen8.jpg" alt="Kitchen 8">
-                </button>
-
-            </div>
-
-        </section>
-
-
-    </div>
-
-
-    <!-- =====================================================
-         FROZEN REMEMBER BOTTOM NAV
-         ===================================================== -->
-
-    <nav class="bottom-nav"
-         aria-label="Main navigation">
-
-        <!-- THE FROZEN ARTWORK -->
-        <img
-            src="Remember Page Bottom Nav.png"
-            class="bottom-nav-image"
-            alt=""
-            aria-hidden="true"
-        >
-
-
-        <!-- INVISIBLE CLICK AREAS -->
-
-        <a
-            href="index.html"
-            class="nav-hotspot hotspot-home"
-            aria-label="Home">
-        </a>
-
-        <a
-            href="arrival-guide.html"
-            class="nav-hotspot hotspot-stay"
-            aria-label="Stay">
-        </a>
-
-        <a
-            href="In%20and%20around.pdf"
-            class="nav-hotspot hotspot-explore"
-            aria-label="Explore">
-        </a>
-
-        <a
-            href="Remember.html"
-            class="nav-hotspot hotspot-remember"
-            aria-label="Remember">
-        </a>
-
-    </nav>
-
-
-    <!-- =====================================================
-         LIGHTBOX
-         ===================================================== -->
-
-    <div class="lightbox" id="lightbox">
-
-        <button
-            class="lightbox-close"
-            id="lightboxClose"
-            aria-label="Close">
-            ×
-        </button>
-
-        <button
-            class="lightbox-arrow lightbox-prev"
-            id="lightboxPrev"
-            aria-label="Previous">
-            ‹
-        </button>
-
-        <img
-            class="lightbox-image"
-            id="lightboxImage"
-            src=""
-            alt=""
-        >
-
-        <button
-            class="lightbox-arrow lightbox-next"
-            id="lightboxNext"
-            aria-label="Next">
-            ›
-        </button>
-
-    </div>
+<button class="photo-card" data-category="Bedroom" data-index="5">
+<img src="Bedroom6.jpg" alt="Bedroom 6">
+</button>
+
+<button class="photo-card" data-category="Bedroom" data-index="6">
+<img src="Bedroom7.jpg" alt="Bedroom 7">
+</button>
+
+</div>
+
+</section>
+
+
+<!-- KITCHEN -->
+
+<section class="category">
+
+<h2 class="category-title">Kitchen</h2>
+
+<div class="photo-row">
+
+<button class="photo-card" data-category="Kitchen" data-index="0">
+<img src="Kitchen1.jpg" alt="Kitchen 1">
+</button>
+
+<button class="photo-card" data-category="Kitchen" data-index="1">
+<img src="Kitchen2.jpg" alt="Kitchen 2">
+</button>
+
+<button class="photo-card" data-category="Kitchen" data-index="2">
+<img src="Kitchen3.jpg" alt="Kitchen 3">
+</button>
+
+<button class="photo-card" data-category="Kitchen" data-index="3">
+<img src="Kitchen4.jpg" alt="Kitchen 4">
+</button>
+
+<button class="photo-card" data-category="Kitchen" data-index="4">
+<img src="Kitchen5.jpg" alt="Kitchen 5">
+</button>
+
+<button class="photo-card" data-category="Kitchen" data-index="5">
+<img src="Kitchen6.jpg" alt="Kitchen 6">
+</button>
+
+<button class="photo-card" data-category="Kitchen" data-index="6">
+<img src="Kitchen7.jpg" alt="Kitchen 7">
+</button>
+
+<button class="photo-card" data-category="Kitchen" data-index="7">
+<img src="Kitchen8.jpg" alt="Kitchen 8">
+</button>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<!-- =====================================================
+     FROZEN REMEMBER PAGE BOTTOM NAV
+     ===================================================== -->
+
+<nav class="bottom-nav" aria-label="Main navigation">
+
+
+<!-- INDEPENDENT LOGO -->
+
+<a
+    href="index.html"
+    class="sand-logo"
+    aria-label="303 Oyster Bay Home"
+>
+
+<img
+    src="logo.png"
+    alt="303 Oyster Bay"
+>
+
+</a>
+
+
+<!-- FROZEN NAV ARTWORK -->
+
+<img
+    src="Remember Page Bottom Nav.png"
+    class="bottom-nav-image"
+    alt=""
+    aria-hidden="true"
+>
+
+
+<!-- INVISIBLE CLICK AREAS -->
+
+<a
+    href="index.html"
+    class="nav-hotspot hotspot-home"
+    aria-label="Home">
+</a>
+
+<a
+    href="arrival-guide.html"
+    class="nav-hotspot hotspot-stay"
+    aria-label="Stay">
+</a>
+
+<a
+    href="live.html"
+    class="nav-hotspot hotspot-live"
+    aria-label="Live">
+</a>
+
+<a
+    href="In%20and%20around.pdf"
+    class="nav-hotspot hotspot-explore"
+    aria-label="Explore">
+</a>
+
+
+</nav>
+
+
+<!-- =====================================================
+     LIGHTBOX
+     ===================================================== -->
+
+<div class="lightbox" id="lightbox">
+
+<button
+    class="lightbox-close"
+    id="lightboxClose"
+    aria-label="Close">
+    ×
+</button>
+
+<button
+    class="lightbox-arrow lightbox-prev"
+    id="lightboxPrev"
+    aria-label="Previous">
+    ‹
+</button>
+
+<img
+    class="lightbox-image"
+    id="lightboxImage"
+    src=""
+    alt=""
+>
+
+<button
+    class="lightbox-arrow lightbox-next"
+    id="lightboxNext"
+    aria-label="Next">
+    ›
+</button>
+
+</div>
 
 
 </main>
@@ -948,7 +955,7 @@ body {
 
 const galleryData = {
 
-    "Sea Views": [
+    "Sea Views":[
         "Sea View1.jpg",
         "Sea View2.jpg",
         "Sea View3.jpg",
@@ -956,7 +963,7 @@ const galleryData = {
         "Sea View5.jpg"
     ],
 
-    "Living": [
+    "Living":[
         "Living1.jpg",
         "Living2.jpg",
         "Living3.jpg",
@@ -966,7 +973,7 @@ const galleryData = {
         "Living7.jpg"
     ],
 
-    "Bedroom": [
+    "Bedroom":[
         "Bedroom1.jpg",
         "Bedroom2.jpg",
         "Bedroom3.jpg",
@@ -976,7 +983,7 @@ const galleryData = {
         "Bedroom7.jpg"
     ],
 
-    "Kitchen": [
+    "Kitchen":[
         "Kitchen1.jpg",
         "Kitchen2.jpg",
         "Kitchen3.jpg",
@@ -1013,7 +1020,7 @@ let currentCategory = "";
 let currentIndex = 0;
 
 
-function openLightbox(category, index) {
+function openLightbox(category,index){
 
     currentCategory = category;
     currentIndex = index;
@@ -1028,7 +1035,7 @@ function openLightbox(category, index) {
 }
 
 
-function closeLightbox() {
+function closeLightbox(){
 
     lightbox.classList.remove("active");
 
@@ -1036,7 +1043,7 @@ function closeLightbox() {
 }
 
 
-function showNext() {
+function showNext(){
 
     const images =
         galleryData[currentCategory];
@@ -1049,7 +1056,7 @@ function showNext() {
 }
 
 
-function showPrevious() {
+function showPrevious(){
 
     const images =
         galleryData[currentCategory];
@@ -1063,12 +1070,15 @@ function showPrevious() {
 }
 
 
-/* PHOTO CLICK */
+/* =========================================================
+   PHOTO CLICK
+   ========================================================= */
 
-document.querySelectorAll(".photo-card")
+document
+.querySelectorAll(".photo-card")
 .forEach(card => {
 
-    card.addEventListener("click", () => {
+    card.addEventListener("click",()=>{
 
         openLightbox(
             card.dataset.category,
@@ -1080,7 +1090,9 @@ document.querySelectorAll(".photo-card")
 });
 
 
-/* LIGHTBOX CONTROLS */
+/* =========================================================
+   LIGHTBOX CONTROLS
+   ========================================================= */
 
 lightboxClose.addEventListener(
     "click",
@@ -1098,42 +1110,52 @@ lightboxPrev.addEventListener(
 );
 
 
-/* CLICK OUTSIDE IMAGE */
+/* =========================================================
+   CLOSE BY CLICKING OUTSIDE IMAGE
+   ========================================================= */
 
-lightbox.addEventListener("click", event => {
+lightbox.addEventListener(
+    "click",
+    event => {
 
-    if (event.target === lightbox) {
-        closeLightbox();
+        if(event.target === lightbox){
+            closeLightbox();
+        }
+
     }
-
-});
-
-
-/* KEYBOARD */
-
-document.addEventListener("keydown", event => {
-
-    if (!lightbox.classList.contains("active")) {
-        return;
-    }
-
-    if (event.key === "Escape") {
-        closeLightbox();
-    }
-
-    if (event.key === "ArrowRight") {
-        showNext();
-    }
-
-    if (event.key === "ArrowLeft") {
-        showPrevious();
-    }
-
-});
+);
 
 
 /* =========================================================
-   SWIPE SUPPORT
+   KEYBOARD
+   ========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(!lightbox.classList.contains("active")){
+            return;
+        }
+
+        if(event.key === "Escape"){
+            closeLightbox();
+        }
+
+        if(event.key === "ArrowRight"){
+            showNext();
+        }
+
+        if(event.key === "ArrowLeft"){
+            showPrevious();
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SWIPE
    ========================================================= */
 
 let touchStartX = 0;
@@ -1146,9 +1168,8 @@ lightbox.addEventListener(
             event.changedTouches[0].screenX;
 
     },
-    { passive: true }
+    {passive:true}
 );
-
 
 lightbox.addEventListener(
     "touchend",
@@ -1160,18 +1181,19 @@ lightbox.addEventListener(
         const difference =
             touchEndX - touchStartX;
 
-        if (Math.abs(difference) < 40) {
+        if(Math.abs(difference) < 40){
             return;
         }
 
-        if (difference < 0) {
+        if(difference < 0){
             showNext();
-        } else {
+        }
+        else{
             showPrevious();
         }
 
     },
-    { passive: true }
+    {passive:true}
 );
 
 </script>
