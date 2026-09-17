@@ -8,7 +8,8 @@
 <meta name="viewport"
       content="width=device-width,
                initial-scale=1.0,
-               maximum-scale=1.0,
+               maximum-scale=5.0,
+               user-scalable=yes,
                viewport-fit=cover">
 
 <title>303 OYSTER BAY • Remember</title>
@@ -40,7 +41,7 @@ body {
 
 
 /* =========================================================
-   ONE SCREEN ONLY
+   ONE SCREEN
    ========================================================= */
 
 .remember-page {
@@ -62,21 +63,15 @@ body {
 
 
 /* =========================================================
-   SAND TITLE
-   =========================================================
-   
-   No Salt Sand Stories image.
-   The lettering is made to look carved into the sand.
+   SALT • SAND • STORIES
    ========================================================= */
 
 .sand-title {
 
     width: 100%;
-
     height: 135px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -86,7 +81,6 @@ body {
 
     overflow: hidden;
 }
-
 
 .sand-title-inner {
 
@@ -114,16 +108,12 @@ body {
 
     text-shadow:
 
-        /* carved depression */
         1px 2px 1px rgba(255,244,218,0.52),
 
-        /* sand edge */
         -1px -1px 1px rgba(126,82,43,0.35),
 
-        /* soft depth */
         0 2px 3px rgba(96,59,29,0.18);
 }
-
 
 .sand-title-inner span {
     display: block;
@@ -131,7 +121,7 @@ body {
 
 
 /* =========================================================
-   MAIN GALLERY AREA
+   MAIN GALLERY
    ========================================================= */
 
 .remember-content {
@@ -142,7 +132,6 @@ body {
     right: 0;
 
     top: 132px;
-
     bottom: 78px;
 
     width: 100%;
@@ -200,20 +189,17 @@ body {
     width: 100%;
 
     overflow-x: auto;
-
     overflow-y: hidden;
 
     padding: 0 12px 2px 0;
 
     scrollbar-width: none;
-
     -ms-overflow-style: none;
 
     -webkit-overflow-scrolling: touch;
 
     scroll-snap-type: x proximity;
 }
-
 
 .photo-row::-webkit-scrollbar {
     display: none;
@@ -229,7 +215,6 @@ body {
     flex: 0 0 108px;
 
     width: 108px;
-
     height: 94px;
 
     padding: 4px 4px 8px;
@@ -246,12 +231,10 @@ body {
     cursor: pointer;
 
     appearance: none;
-
     -webkit-appearance: none;
 
     scroll-snap-align: start;
 }
-
 
 .photo-card img {
 
@@ -267,21 +250,63 @@ body {
 
 
 /* =========================================================
-   BOTTOM NAVIGATION
-   =========================================================
-   
+   INDEPENDENT LOGO
+   ---------------------------------------------------------
    IMPORTANT:
-   
-   The centre is NOT part of either band.
-   
-   Left:
-   [ HOME | STAY ]
-   
-             LOGO
-          on the sand
-   
-   Right:
-   [ LIVE | EXPLORE ]
+   This logo belongs to the sand/page.
+   It is NOT inside the fixed navigation.
+   ========================================================= */
+
+.sand-logo {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 2px;
+
+    width: 125px;
+    height: auto;
+
+    transform: translateX(-50%);
+
+    display: block;
+
+    z-index: 40;
+
+    text-decoration: none;
+
+    background: transparent;
+
+    pointer-events: auto;
+
+    overflow: visible;
+}
+
+.sand-logo img {
+
+    display: block;
+
+    width: 125px;
+    height: auto;
+
+    max-width: none;
+    max-height: none;
+
+    object-fit: contain;
+
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+
+    border: 0;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   FIXED BOTTOM NAVIGATION
    ========================================================= */
 
 .bottom-nav {
@@ -309,14 +334,16 @@ body {
 
 
 /* =========================================================
-   LEFT AND RIGHT NAV BANDS
+   NAVIGATION BANDS
    ========================================================= */
 
 .nav-band {
 
-    position:relative;
-bottom:7px;
-height:58px;
+    position: relative;
+
+    bottom: 7px;
+
+    height: 58px;
 
     flex: 1;
 
@@ -339,26 +366,12 @@ height:58px;
         0 -2px 7px rgba(70,42,20,0.07);
 }
 
-
-/* =========================================================
-   LEFT BAND
-   ========================================================= */
-
 .left-band {
-
-    border-radius:
-        0 28px 28px 0;
+    border-radius: 0 28px 28px 0;
 }
 
-
-/* =========================================================
-   RIGHT BAND
-   ========================================================= */
-
 .right-band {
-
-    border-radius:
-        28px 0 0 28px;
+    border-radius: 28px 0 0 28px;
 }
 
 
@@ -414,7 +427,7 @@ height:58px;
 
 
 /* =========================================================
-   ICONS
+   NAV ICONS
    ========================================================= */
 
 .nav-icon {
@@ -431,64 +444,6 @@ height:58px;
     stroke-linecap: round;
 
     stroke-linejoin: round;
-}
-
-
-/* =========================================================
-   INDEPENDENT LOGO
-   =========================================================
-   
-   NO BACKGROUND.
-   NO BAND.
-   NO SHADOW.
-   NO OPACITY.
-   
-   The sand is visible completely through the centre.
-   ========================================================= */
-
-
-
-  .sand-logo {
-    position:absolute;
-    left:50%;
-    bottom:2px;
-
-    z-index:40;
-
-    width:125px;
-    height:auto;
-
-    transform:translateX(-50%);
-
-    display:block;
-
-    text-decoration:none;
-
-    background:transparent;
-
-    pointer-events:auto;
-
-    overflow:visible;
-}
-
-.sand-logo img {
-    display:block;
-
-    width:125px;
-    max-width:125px;
-
-    height:auto;
-    max-height:none;
-
-    object-fit:contain;
-
-    margin:0;
-    padding:0;
-
-    background:transparent;
-
-    border:0;
-    box-shadow:none;
 }
 
 
@@ -514,16 +469,13 @@ height:58px;
     z-index: 100;
 }
 
-
 .lightbox.active {
     display: flex;
 }
 
-
 .lightbox-image {
 
     max-width: 88vw;
-
     max-height: 82vh;
 
     object-fit: contain;
@@ -601,11 +553,9 @@ height:58px;
     cursor: pointer;
 }
 
-
 .lightbox-prev {
     left: 14px;
 }
-
 
 .lightbox-next {
     right: 14px;
@@ -622,7 +572,6 @@ height:58px;
         height: 185px;
     }
 
-
     .sand-title-inner {
 
         width: 340px;
@@ -630,22 +579,17 @@ height:58px;
         font-size: 48px;
     }
 
-
     .remember-content {
 
         top: 180px;
-
         bottom: 105px;
 
         padding-left: 35px;
     }
 
-
     .category {
-
         margin-bottom: 13px;
     }
-
 
     .category-title {
 
@@ -654,19 +598,15 @@ height:58px;
         margin-bottom: 5px;
     }
 
-
     .photo-row {
-
         gap: 11px;
     }
-
 
     .photo-card {
 
         flex-basis: 165px;
 
         width: 165px;
-
         height: 145px;
 
         padding: 7px 7px 13px;
@@ -674,18 +614,13 @@ height:58px;
         border-radius: 17px;
     }
 
-
     .bottom-nav {
-
         height: 103px;
     }
 
-
     .nav-band {
-
         height: 72px;
     }
-
 
     .nav-item {
 
@@ -698,25 +633,22 @@ height:58px;
         padding-bottom: 7px;
     }
 
-
     .nav-icon {
 
         width: 25px;
         height: 25px;
     }
 
+    .sand-logo {
 
-    .logo-area {
+        width: 125px;
 
-        flex-basis: 135px;
-
-        height: 91px;
+        bottom: 2px;
     }
 
+    .sand-logo img {
 
-    .logo-area img {
-
-        width: 122px;
+        width: 125px;
     }
 }
 
@@ -728,10 +660,8 @@ height:58px;
 @media (max-width: 360px) {
 
     .sand-title {
-
         height: 124px;
     }
-
 
     .sand-title-inner {
 
@@ -740,22 +670,17 @@ height:58px;
         font-size: 35px;
     }
 
-
     .remember-content {
 
         top: 121px;
-
         bottom: 76px;
 
         padding-left: 12px;
     }
 
-
     .category {
-
         margin-bottom: 7px;
     }
-
 
     .category-title {
 
@@ -764,19 +689,15 @@ height:58px;
         margin-bottom: 2px;
     }
 
-
     .photo-row {
-
         gap: 6px;
     }
-
 
     .photo-card {
 
         flex-basis: 101px;
 
         width: 101px;
-
         height: 88px;
 
         padding: 4px 4px 7px;
@@ -784,24 +705,17 @@ height:58px;
         border-radius: 12px;
     }
 
-
     .photo-card img {
-
         border-radius: 7px;
     }
 
-
     .bottom-nav {
-
         height: 75px;
     }
 
-
     .nav-band {
-
         height: 56px;
     }
-
 
     .nav-item {
 
@@ -814,25 +728,22 @@ height:58px;
         padding-bottom: 4px;
     }
 
-
     .nav-icon {
 
         width: 19px;
         height: 19px;
     }
 
+    .sand-logo {
 
-    .logo-area {
+        width: 105px;
 
-        flex-basis: 94px;
-
-        height: 70px;
+        bottom: 2px;
     }
 
+    .sand-logo img {
 
-    .logo-area img {
-
-        width: 86px;
+        width: 105px;
     }
 }
 
@@ -1131,99 +1042,83 @@ height:58px;
 
 
     <!-- =====================================================
-         BOTTOM NAVIGATION
+         INDEPENDENT LOGO
+         This is deliberately OUTSIDE the fixed nav.
+         ===================================================== -->
+
+    <a href="index.html"
+       class="sand-logo"
+       aria-label="303 Oyster Bay Home">
+
+        <img src="logo.png"
+             alt="303 Oyster Bay">
+
+    </a>
+
+
+    <!-- =====================================================
+         FIXED BOTTOM NAVIGATION
          ===================================================== -->
 
     <nav class="bottom-nav">
 
-<!-- INDEPENDENT LOGO — PART OF THE SAND/PAGE -->
-<a href="index.html" class="sand-logo" aria-label="303 Oyster Bay Home">
-    <img src="logo.png" alt="303 Oyster Bay">
-</a>
 
-<!-- FIXED BOTTOM NAVIGATION -->
-<nav class="bottom-nav">
+        <!-- LEFT BAND -->
 
-    <div class="nav-band left-band">
+        <div class="nav-band left-band">
 
-        <a href="index.html" class="nav-item">
-            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 10.5 12 3l9 7.5"></path>
-                <path d="M5 9.5V21h14V9.5"></path>
-                <path d="M9 21v-7h6v7"></path>
-            </svg>
-            <span>Home</span>
-        </a>
+            <a href="index.html"
+               class="nav-item">
 
-        <a href="arrival-guide.html" class="nav-item">
-            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 5h7a4 4 0 0 1 4 4v10H8a4 4 0 0 0-4 4V5z"></path>
-                <path d="M20 5h-5"></path>
-                <path d="M15 9h5v10h-5"></path>
-            </svg>
-            <span>Stay</span>
-        </a>
+                <svg class="nav-icon"
+                     viewBox="0 0 24 24"
+                     aria-hidden="true">
 
-    </div>
+                    <path d="M3 10.5 12 3l9 7.5"></path>
+                    <path d="M5 9.5V21h14V9.5"></path>
+                    <path d="M9 21v-7h6v7"></path>
 
-    <div class="nav-band right-band">
+                </svg>
 
-        <a href="live.html" class="nav-item">
-            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 8c2.2 0 2.2 2 4.5 2S9.8 8 12 8s2.2 2 4.5 2S18.8 8 21 8"></path>
-                <path d="M3 13c2.2 0 2.2 2 4.5 2s2.3-2 4.5-2 2.2 2 4.5 2 2.3-2 4.5-2"></path>
-                <path d="M3 18c2.2 0 2.2 2 4.5 2s2.3-2 4.5-2 2.2 2 4.5 2 2.3-2 4.5-2"></path>
-            </svg>
-            <span>Live</span>
-        </a>
+                <span>Home</span>
 
-        <a href="In%20and%20around.pdf" class="nav-item">
-            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M9 21h6"></path>
-                <path d="M10 17h4"></path>
-                <path d="M8 14h8"></path>
-                <path d="M9 14V8l3-4 3 4v6"></path>
-                <path d="M12 4v13"></path>
-            </svg>
-            <span>Explore</span>
-        </a>
-
-    </div>
-
-</nav>
+            </a>
 
 
-        <!-- =================================================
-             CENTRAL LOGO
-             ================================================= -->
+            <a href="arrival-guide.html"
+               class="nav-item">
 
-        <a href="index.html"
-           class="logo-area">
+                <svg class="nav-icon"
+                     viewBox="0 0 24 24"
+                     aria-hidden="true">
 
-            <img src="logo.png"
-                 alt="303 Oyster Bay">
+                    <path d="M4 5h7a4 4 0 0 1 4 4v10H8a4 4 0 0 0-4 4V5z"></path>
+                    <path d="M20 5h-5"></path>
+                    <path d="M15 9h5v10h-5"></path>
 
-        </a>
+                </svg>
+
+                <span>Stay</span>
+
+            </a>
+
+        </div>
 
 
         <!-- RIGHT BAND -->
 
         <div class="nav-band right-band">
 
-
-            <!-- LIVE -->
-
             <a href="live.html"
                class="nav-item">
 
                 <svg class="nav-icon"
-                     viewBox="0 0 24 24">
+                     viewBox="0 0 24 24"
+                     aria-hidden="true">
 
-                    <path d="M4 16c2.5-2.5 5-2.5 7.5 0s5 2.5 8 0"></path>
-
-                    <path d="M4 12c2.5-2.5 5-2.5 7.5 0s5 2.5 8 0"></path>
-
-                    <path d="M4 8c2.5-2.5 5-2.5 7.5 0s5 2.5 8 0"></path>
+                    <path d="M3 8c2.2 0 2.2 2 4.5 2S9.8 8 12 8s2.2 2 4.5 2S18.8 8 21 8"></path>
+                    <path d="M3 13c2.2 0 2.2 2 4.5 2s2.3-2 4.5-2 2.2 2 4.5 2 2.3-2 4.5-2"></path>
+                    <path d="M3 18c2.2 0 2.2 2 4.5 2s2.3-2 4.5-2 2.2 2 4.5 2 2.3-2 4.5-2"></path>
 
                 </svg>
 
@@ -1232,31 +1127,18 @@ height:58px;
             </a>
 
 
-            <!-- EXPLORE — LIGHTHOUSE -->
-
             <a href="In%20and%20around.pdf"
                class="nav-item">
 
                 <svg class="nav-icon"
-                     viewBox="0 0 24 24">
+                     viewBox="0 0 24 24"
+                     aria-hidden="true">
 
                     <path d="M9 21h6"></path>
-
-                    <path d="M10 21l1-14h4l1 14"></path>
-
-                    <path d="M9 7h6"></path>
-
-                    <path d="M10 10h4"></path>
-
-                    <path d="M12 3v3"></path>
-
-                    <path d="M9 3h6"></path>
-
-                    <path d="M8 21h8"></path>
-
-                    <path d="M7 7l-3 2"></path>
-
-                    <path d="M17 7l3 2"></path>
+                    <path d="M10 17h4"></path>
+                    <path d="M8 14h8"></path>
+                    <path d="M9 14V8l3-4 3 4v6"></path>
+                    <path d="M12 4v13"></path>
 
                 </svg>
 
@@ -1268,6 +1150,7 @@ height:58px;
 
     </nav>
 
+
 </main>
 
 
@@ -1278,24 +1161,20 @@ height:58px;
 <div class="lightbox"
      id="lightbox">
 
-
     <button class="lightbox-close"
             id="lightboxClose">
         ×
     </button>
-
 
     <button class="lightbox-arrow lightbox-prev"
             id="lightboxPrev">
         ‹
     </button>
 
-
     <img class="lightbox-image"
          id="lightboxImage"
          src=""
          alt="">
-
 
     <button class="lightbox-arrow lightbox-next"
             id="lightboxNext">
@@ -1356,7 +1235,7 @@ const galleries = {
 
 
 /* =========================================================
-   LIGHTBOX
+   LIGHTBOX ELEMENTS
    ========================================================= */
 
 const lightbox =
@@ -1397,7 +1276,6 @@ function openLightbox(category, index) {
 
     lightbox.classList.add("active");
 
-    document.body.style.overflow = "hidden";
 }
 
 
@@ -1409,7 +1287,6 @@ function closeLightbox() {
 
     lightbox.classList.remove("active");
 
-    document.body.style.overflow = "hidden";
 }
 
 
@@ -1427,6 +1304,10 @@ function nextImage() {
 
     lightboxImage.src =
         images[currentIndex];
+
+    lightboxImage.alt =
+        currentCategory + " " + (currentIndex + 1);
+
 }
 
 
@@ -1445,6 +1326,10 @@ function previousImage() {
 
     lightboxImage.src =
         images[currentIndex];
+
+    lightboxImage.alt =
+        currentCategory + " " + (currentIndex + 1);
+
 }
 
 
@@ -1538,6 +1423,6 @@ document.addEventListener(
 
 </script>
 
-</body>
 
+</body>
 </html>
