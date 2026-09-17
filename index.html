@@ -204,7 +204,7 @@ body {
 
 
 /* =========================
-   CARD CONTENT
+   CARD TEXT
    ========================= */
 
 .home-card-content {
@@ -217,13 +217,6 @@ body {
     z-index: 2;
 }
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-
-    padding: 0 30px 24px 30px;
-}
 .card-title {
     font-size: clamp(35px, 4vw, 49px);
 
@@ -260,25 +253,28 @@ body {
 
 
 /* =========================
-   COMPACT CHEVRON
+   CARD ARROW
+   TOP RIGHT
    ========================= */
 
 .card-arrow {
     position: absolute;
 
-    right: 8px !important;
-top: 10px !important;
-bottom: auto !important;
+    right: 8px;
+    top: 10px;
+    bottom: auto;
 
     width: 18px;
     height: 22px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border: none;
     border-radius: 0;
+
     background: transparent;
 
     font-size: 0;
@@ -292,15 +288,20 @@ bottom: auto !important;
 .card-arrow::after {
     content: "›";
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     font-size: 30px;
+
     font-weight: 300;
 
     line-height: 1;
 
     color: #fff;
 }
+
 
 /* =========================
    FEATURES BAND
@@ -310,7 +311,10 @@ bottom: auto !important;
     width: 100%;
     max-width: 1100px;
 
-    margin: clamp(30px, 4vw, 44px) auto 0;
+    margin:
+        clamp(30px, 4vw, 44px)
+        auto
+        0;
 
     display: grid;
 
@@ -356,7 +360,7 @@ bottom: auto !important;
 }
 
 
-/* Elegant thin-line icons */
+/* Elegant feature icons */
 
 .feature-icon {
     width: 27px;
@@ -377,7 +381,7 @@ bottom: auto !important;
 }
 
 
-/* Running-case feature text */
+/* Feature text */
 
 .feature-title {
     font-family:
@@ -447,11 +451,11 @@ bottom: auto !important;
         border-radius: 27px;
     }
 
-   .home-card-content {
-    left: 20px;
-    right: 20px;
-    bottom: 19px;
-}
+    .home-card-content {
+        left: 20px;
+        right: 20px;
+        bottom: 19px;
+    }
 
     .card-title {
         font-size: 30px;
@@ -462,7 +466,7 @@ bottom: auto !important;
         width: 100%;
         max-width: none;
 
-        font-size: 12px;
+        font-size: 11.5px;
 
         line-height: 1.15;
 
@@ -470,16 +474,17 @@ bottom: auto !important;
     }
 
 
-    /* Small clean chevron */
+    /* Top-right chevron */
 
-   .card-arrow {
-    right: 8px !important;
-    top: 8px !important;
-    bottom: auto !important;
+    .card-arrow {
+        right: 8px !important;
+        top: 8px !important;
+        bottom: auto !important;
 
-    width: 18px;
-    height: 20px;
+        width: 18px;
+        height: 20px;
     }
+
     .card-arrow::after {
         font-size: 27px;
     }
@@ -501,8 +506,8 @@ bottom: auto !important;
     }
 
     .feature-icon {
-        width: 25px;
-        height: 25px;
+        width: 27px;
+        height: 27px;
 
         margin-bottom: 7px;
 
@@ -545,12 +550,13 @@ bottom: auto !important;
     }
 
     .card-description {
-        font-size: 11px;
+        font-size: 10.5px;
     }
 
     .card-arrow {
-        right: 1px;
-        bottom: 3px;
+        right: 8px !important;
+        top: 8px !important;
+        bottom: auto !important;
     }
 
     .card-arrow::after {
@@ -569,8 +575,8 @@ bottom: auto !important;
     }
 
     .feature-icon {
-        width: 23px;
-        height: 23px;
+        width: 25px;
+        height: 25px;
     }
 
     .feature-title {
@@ -639,10 +645,10 @@ bottom: auto !important;
                     Arrival • Wi-Fi • House Rules
                 </div>
 
-                <div class="card-arrow">
-                    →
-                </div>
+            </div>
 
+            <div class="card-arrow">
+                →
             </div>
 
         </a>
@@ -668,10 +674,10 @@ bottom: auto !important;
                     Rooms • Comfort • Kitchen
                 </div>
 
-                <div class="card-arrow">
-                    →
-                </div>
+            </div>
 
+            <div class="card-arrow">
+                →
             </div>
 
         </a>
@@ -697,10 +703,10 @@ bottom: auto !important;
                     Beaches • Food • Mangaluru
                 </div>
 
-                <div class="card-arrow">
-                    →
-                </div>
+            </div>
 
+            <div class="card-arrow">
+                →
             </div>
 
         </a>
@@ -726,10 +732,10 @@ bottom: auto !important;
                     Sea Views • Living • Bedroom • Kitchen
                 </div>
 
-                <div class="card-arrow">
-                    →
-                </div>
+            </div>
 
+            <div class="card-arrow">
+                →
             </div>
 
         </a>
