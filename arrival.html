@@ -10,6 +10,7 @@
 
 /* =========================================================
    FROZEN BASE TEMPLATE
+   DO NOT CHANGE
    ========================================================= */
 
 *{
@@ -34,6 +35,7 @@ body{
 
 /* =========================================================
    FROZEN PAGE
+   DO NOT CHANGE
    ========================================================= */
 
 .remember-page{
@@ -52,6 +54,7 @@ body{
 
 /* =========================================================
    ARRIVAL CONTENT BOX
+   PAGE CONTENT ONLY
    ========================================================= */
 
 .arrival-content{
@@ -60,17 +63,18 @@ body{
     left:12px;
     right:12px;
 
-    /* Raised considerably higher */
-    top:42px;
+    /* MOVED SIGNIFICANTLY HIGHER */
+    top:18px;
 
-    /* Stops comfortably above the logo/nav */
-    bottom:78px;
+    /* MOVED UP BY THE SAME AMOUNT
+       SO BOX HEIGHT DOES NOT INCREASE */
+    bottom:100px;
 
     background:#f8f0df;
 
     border-radius:16px;
 
-    padding:13px 18px 14px;
+    padding:12px 18px 14px;
 
     overflow:hidden;
 
@@ -83,7 +87,7 @@ body{
 
 /* =========================================================
    GUEST FAVOURITE
-   INSIDE THE ARRIVAL BOX
+   LOCKED RELATIONSHIP WITH ARRIVAL HEADER
    ========================================================= */
 
 .arrival-content .guest-favourite-link{
@@ -120,9 +124,9 @@ body{
 
     text-align:center;
 
-    padding:2px 95px 0;
+    padding:2px 100px 0;
 
-    margin-bottom:14px;
+    margin-bottom:15px;
 }
 
 .arrival-title{
@@ -154,11 +158,9 @@ body{
 
     grid-template-columns:repeat(4,minmax(0,1fr));
 
-    gap:16px;
-
     width:100%;
 
-    margin-bottom:15px;
+    margin-bottom:17px;
 }
 
 .arrival-option{
@@ -166,16 +168,22 @@ body{
 
     text-align:center;
 
-    padding:8px 5px 7px;
+    padding:8px 10px 7px;
 
     border-top:1px solid rgba(112,69,31,.24);
+
+    border-right:1px solid rgba(112,69,31,.28);
+}
+
+.arrival-option:last-child{
+    border-right:none;
 }
 
 .arrival-icon{
     width:25px;
     height:25px;
 
-    margin:0 auto 6px;
+    margin:0 auto 7px;
 
     display:block;
 
@@ -187,9 +195,9 @@ body{
 
     font-weight:normal;
 
-    line-height:1.2;
+    line-height:1.22;
 
-    margin-bottom:5px;
+    margin-bottom:6px;
 
     color:#463322;
 }
@@ -232,7 +240,7 @@ body{
 
 .arrival-photo{
     width:100%;
-    height:125px;
+    height:130px;
 
     overflow:hidden;
 
@@ -253,37 +261,27 @@ body{
 
 /* =========================================================
    GOOGLE MAPS
+   ONE INTEGRATED UNIT
    ========================================================= */
 
 .maps-box{
-    height:125px;
+    height:130px;
 
     border-radius:10px;
 
     background:#eee2cc;
 
-    padding:10px 12px;
+    padding:9px 12px;
 
-    display:grid;
+    display:flex;
 
-    grid-template-columns:70px 1fr;
-
-    column-gap:12px;
+    flex-direction:column;
 
     align-items:center;
-}
 
-.maps-qr{
-    width:70px;
-    height:70px;
+    justify-content:center;
 
-    object-fit:contain;
-
-    display:block;
-}
-
-.maps-copy{
-    min-width:0;
+    text-align:center;
 }
 
 .maps-title{
@@ -296,36 +294,36 @@ body{
 
     color:#463322;
 
-    margin-bottom:5px;
+    margin-bottom:6px;
 }
 
-.maps-copy p{
-    font-size:9px;
+.maps-qr{
+    width:70px;
+    height:70px;
 
-    line-height:1.35;
+    object-fit:contain;
 
-    color:#6b5540;
+    display:block;
 
-    margin-bottom:8px;
+    margin:0 auto 5px;
 }
 
-.maps-button{
+.maps-link{
     display:inline-block;
 
-    padding:5px 8px;
+    color:#70451f;
 
-    border-radius:7px;
+    text-decoration:underline;
 
-    background:#70451f;
-    color:#fff8eb;
-
-    text-decoration:none;
+    text-underline-offset:2px;
 
     font-family:Arial,sans-serif;
 
-    font-size:8px;
+    font-size:8.5px;
 
-    letter-spacing:.2px;
+    line-height:1.1;
+
+    cursor:pointer;
 }
 
 
@@ -339,9 +337,9 @@ body{
 
     width:100%;
 
-    margin-top:12px;
+    margin-top:13px;
 
-    padding:9px 12px;
+    padding:10px 13px;
 
     border-radius:9px;
 
@@ -349,12 +347,12 @@ body{
 }
 
 .parking-icon{
-    width:25px;
-    height:25px;
+    width:26px;
+    height:26px;
 
-    flex:0 0 25px;
+    flex:0 0 26px;
 
-    margin-right:10px;
+    margin-right:11px;
 
     color:#70451f;
 }
@@ -371,13 +369,13 @@ body{
 
     letter-spacing:.55px;
 
-    margin-bottom:3px;
+    margin-bottom:4px;
 
     color:#463322;
 }
 
 .parking-copy p{
-    font-size:9px;
+    font-size:10px;
 
     line-height:1.25;
 
@@ -392,9 +390,9 @@ body{
 .guest-id-box{
     width:100%;
 
-    margin-top:12px;
+    margin-top:13px;
 
-    padding:9px 12px;
+    padding:11px 13px;
 
     border-radius:9px;
 
@@ -409,26 +407,27 @@ body{
 
     letter-spacing:.55px;
 
-    margin-bottom:4px;
+    margin-bottom:5px;
 
     color:#463322;
 }
 
 .guest-id-box p{
-    font-size:8.8px;
+    font-size:9.5px;
 
-    line-height:1.3;
+    line-height:1.34;
 
     color:#6b5540;
 }
 
 .guest-id-box p + p{
-    margin-top:4px;
+    margin-top:5px;
 }
 
 
 /* =========================================================
    FROZEN BOTTOM NAVIGATION
+   DO NOT CHANGE
    ========================================================= */
 
 .bottom-nav{
@@ -466,6 +465,7 @@ body{
 
 /* =========================================================
    FROZEN INDEPENDENT 303 LOGO
+   DO NOT CHANGE
    ========================================================= */
 
 .sand-logo{
@@ -497,6 +497,7 @@ body{
 
 /* =========================================================
    FROZEN INVISIBLE NAVIGATION HOTSPOTS
+   DO NOT CHANGE
    ========================================================= */
 
 .nav-hotspot{
@@ -551,8 +552,8 @@ body{
         left:8px;
         right:8px;
 
-        top:38px;
-        bottom:63px;
+        top:14px;
+        bottom:77px;
 
         padding:9px 10px 9px;
 
@@ -567,9 +568,9 @@ body{
     }
 
     .arrival-header{
-        padding:1px 85px 0;
+        padding:1px 88px 0;
 
-        margin-bottom:9px;
+        margin-bottom:10px;
     }
 
     .arrival-title{
@@ -585,13 +586,11 @@ body{
     }
 
     .arrival-options{
-        gap:6px;
-
-        margin-bottom:9px;
+        margin-bottom:10px;
     }
 
     .arrival-option{
-        padding:5px 2px 5px;
+        padding:5px 4px 5px;
     }
 
     .arrival-icon{
@@ -606,7 +605,7 @@ body{
 
         line-height:1.15;
 
-        margin-bottom:3px;
+        margin-bottom:4px;
     }
 
     .arrival-option p{
@@ -625,57 +624,43 @@ body{
 
     .arrival-photo,
     .maps-box{
-        height:88px;
+        height:91px;
     }
 
     .maps-box{
-        grid-template-columns:45px 1fr;
-
-        column-gap:7px;
-
-        padding:6px;
-    }
-
-    .maps-qr{
-        width:45px;
-        height:45px;
+        padding:5px;
     }
 
     .maps-title{
         font-size:6.8px;
 
-        letter-spacing:.4px;
-
-        margin-bottom:3px;
+        margin-bottom:4px;
     }
 
-    .maps-copy p{
-        font-size:6.8px;
-
-        line-height:1.2;
+    .maps-qr{
+        width:48px;
+        height:48px;
 
         margin-bottom:4px;
     }
 
-    .maps-button{
-        padding:3px 5px;
-
-        font-size:6.5px;
+    .maps-link{
+        font-size:6.8px;
     }
 
     .parking-box{
         margin-top:8px;
 
-        padding:6px 8px;
+        padding:7px 9px;
     }
 
     .parking-icon{
-        width:20px;
-        height:20px;
+        width:21px;
+        height:21px;
 
-        flex-basis:20px;
+        flex-basis:21px;
 
-        margin-right:7px;
+        margin-right:8px;
     }
 
     .parking-title,
@@ -684,20 +669,29 @@ body{
 
         letter-spacing:.4px;
 
-        margin-bottom:2px;
+        margin-bottom:3px;
     }
 
-    .parking-copy p,
-    .guest-id-box p{
-        font-size:7.3px;
+    .parking-copy p{
+        font-size:7.8px;
 
-        line-height:1.18;
+        line-height:1.2;
     }
 
     .guest-id-box{
         margin-top:8px;
 
-        padding:6px 8px;
+        padding:7px 9px;
+    }
+
+    .guest-id-box p{
+        font-size:7.6px;
+
+        line-height:1.22;
+    }
+
+    .guest-id-box p + p{
+        margin-top:4px;
     }
 
 
@@ -728,8 +722,8 @@ body{
         left:7px;
         right:7px;
 
-        top:35px;
-        bottom:58px;
+        top:12px;
+        bottom:72px;
 
         padding:8px 8px 8px;
     }
@@ -739,7 +733,7 @@ body{
     }
 
     .arrival-header{
-        padding-right:79px;
+        padding-right:81px;
 
         margin-bottom:8px;
     }
@@ -752,8 +746,9 @@ body{
         font-size:8px;
     }
 
-    .arrival-options{
-        gap:4px;
+    .arrival-option{
+        padding-left:3px;
+        padding-right:3px;
     }
 
     .arrival-icon{
@@ -772,32 +767,20 @@ body{
 
     .arrival-photo,
     .maps-box{
-        height:80px;
-    }
-
-    .maps-box{
-        grid-template-columns:40px 1fr;
-
-        column-gap:5px;
-    }
-
-    .maps-qr{
-        width:40px;
-        height:40px;
+        height:82px;
     }
 
     .maps-title{
         font-size:6.2px;
     }
 
-    .maps-copy p{
-        font-size:6.2px;
+    .maps-qr{
+        width:42px;
+        height:42px;
     }
 
-    .maps-button{
-        font-size:5.8px;
-
-        padding:2px 4px;
+    .maps-link{
+        font-size:6.2px;
     }
 
     .parking-copy p,
@@ -832,7 +815,7 @@ body{
 
 
 <!-- =====================================================
-     ARRIVAL CONTENT
+     ARRIVAL CONTENT BOX
      ===================================================== -->
 
 <div class="arrival-content">
@@ -840,7 +823,7 @@ body{
 
 <!-- =====================================================
      AIRBNB GUEST FAVOURITE
-     INSIDE THE BOX
+     LOCKED WITH ARRIVAL HEADER
      ===================================================== -->
 
 <a
@@ -904,11 +887,17 @@ body{
 
 </svg>
 
-<h3>Mangaluru International Airport (IXE)</h3>
+<h3>
+    Mangaluru International Airport (IXE)
+</h3>
 
-<p class="arrival-distance">18 km</p>
+<p class="arrival-distance">
+    18 km
+</p>
 
-<p>30 – 40 mins</p>
+<p>
+    30 – 40 mins
+</p>
 
 </div>
 
@@ -941,11 +930,17 @@ body{
 
 </svg>
 
-<h3>Mangaluru Junction Railway Station (MAJN)</h3>
+<h3>
+    Mangaluru Junction Railway Station (MAJN)
+</h3>
 
-<p class="arrival-distance">20 km</p>
+<p class="arrival-distance">
+    20 km
+</p>
 
-<p>35 – 45 mins</p>
+<p>
+    35 – 45 mins
+</p>
 
 </div>
 
@@ -978,11 +973,17 @@ body{
 
 </svg>
 
-<h3>Mangaluru Central Railway Station (MAQ)</h3>
+<h3>
+    Mangaluru Central Railway Station (MAQ)
+</h3>
 
-<p class="arrival-distance">17 km</p>
+<p class="arrival-distance">
+    17 km
+</p>
 
-<p>30 – 40 mins</p>
+<p>
+    30 – 40 mins
+</p>
 
 </div>
 
@@ -1030,7 +1031,9 @@ body{
 
 </svg>
 
-<h3>By Car / Road</h3>
+<h3>
+    By Car / Road
+</h3>
 
 <p>
     Well connected via NH66. A smooth and scenic drive along the coast.
@@ -1048,6 +1051,8 @@ body{
 <div class="arrival-lower">
 
 
+<!-- EXTERIOR -->
+
 <div class="arrival-photo">
 
     <img
@@ -1058,7 +1063,13 @@ body{
 </div>
 
 
+<!-- GOOGLE MAPS -->
+
 <div class="maps-box">
+
+    <div class="maps-title">
+        OPEN IN GOOGLE MAPS
+    </div>
 
     <img
         src="Directions.png"
@@ -1066,26 +1077,14 @@ body{
         alt="Google Maps directions QR code"
     >
 
-    <div class="maps-copy">
-
-        <div class="maps-title">
-            OPEN IN GOOGLE MAPS
-        </div>
-
-        <p>
-            Scan this QR code to get directions to 303 Oyster Bay on Google Maps.
-        </p>
-
-        <a
-            href="https://maps.google.com/?q=303+Oyster+Bay+Surathkal+Mangaluru"
-            class="maps-button"
-            target="_blank"
-            rel="noopener"
-        >
-            ↗ Open in Google Maps
-        </a>
-
-    </div>
+    <a
+        href="https://maps.google.com/?q=303+Oyster+Bay+Surathkal+Mangaluru"
+        class="maps-link"
+        target="_blank"
+        rel="noopener"
+    >
+        ↗ Open in Google Maps
+    </a>
 
 </div>
 
