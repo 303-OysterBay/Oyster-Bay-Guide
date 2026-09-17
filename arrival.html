@@ -52,6 +52,7 @@ body{
 
 /* =========================================================
    ARRIVAL CONTENT BOX
+   STANDARD BOX SIZE
    ========================================================= */
 
 .arrival-content{
@@ -79,8 +80,49 @@ body{
 
 
 /* =========================================================
+   EXISTING SAND BACKGROUND REVEAL
+   ---------------------------------------------------------
+   This is NOT a new wave.
+   It simply reveals the existing sand-background.jpg
+   over the upper-right portion of the beige box.
+   ========================================================= */
+
+.arrival-content::before{
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:1;
+
+    pointer-events:none;
+
+    background-image:url("sand-background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    clip-path:polygon(
+        61% 0%,
+        100% 0%,
+        100% 25%,
+        96% 24%,
+        92% 22%,
+        88% 21%,
+        84% 18%,
+        80% 16%,
+        76% 13%,
+        72% 10%,
+        68% 7%,
+        64% 4%
+    );
+}
+
+
+/* =========================================================
    GUEST FAVOURITE
-   LOCKED
+   LOCKED SIZE + RELATIONSHIP
    ========================================================= */
 
 .arrival-content .guest-favourite-link{
@@ -103,6 +145,7 @@ body{
 
 .arrival-content .guest-favourite{
     display:block;
+
     width:100%;
     height:auto;
 }
@@ -113,29 +156,36 @@ body{
    ========================================================= */
 
 .arrival-header{
+    position:relative;
+
+    z-index:5;
+
     width:100%;
 
     text-align:center;
 
-    padding:2px 100px 0;
+    padding:10px 100px 0;
 
-    margin-bottom:15px;
+    margin-bottom:17px;
 }
 
 .arrival-title{
-    font-size:25px;
+    font-size:27px;
+
     font-weight:normal;
+
     line-height:1;
 
-    letter-spacing:1.5px;
+    letter-spacing:1.6px;
 
     color:#463322;
 
-    margin-bottom:5px;
+    margin-bottom:6px;
 }
 
 .arrival-subtitle{
-    font-size:10.5px;
+    font-size:11px;
+
     line-height:1;
 
     white-space:nowrap;
@@ -149,13 +199,17 @@ body{
    ========================================================= */
 
 .arrival-options{
+    position:relative;
+
+    z-index:5;
+
     display:grid;
 
     grid-template-columns:repeat(4,minmax(0,1fr));
 
     width:100%;
 
-    margin-bottom:17px;
+    margin-bottom:20px;
 }
 
 .arrival-option{
@@ -163,11 +217,11 @@ body{
 
     text-align:center;
 
-    padding:8px 10px 8px;
+    padding:9px 11px 10px;
 
-    border-top:1px solid rgba(112,69,31,.24);
+    border-top:1px solid rgba(112,69,31,.28);
 
-    border-right:1px solid rgba(112,69,31,.28);
+    border-right:1px solid rgba(112,69,31,.30);
 }
 
 .arrival-option:last-child{
@@ -176,14 +230,14 @@ body{
 
 
 /* =========================================================
-   MATURE LINE ICONS
+   MATURE TRANSPORT ICONS
    ========================================================= */
 
 .arrival-icon{
-    width:28px;
-    height:28px;
+    width:30px;
+    height:30px;
 
-    margin:0 auto 7px;
+    margin:0 auto 8px;
 
     display:block;
 
@@ -191,7 +245,7 @@ body{
 
     stroke:currentColor;
 
-    stroke-width:2.2;
+    stroke-width:2.1;
 
     stroke-linecap:round;
 
@@ -201,59 +255,48 @@ body{
 
 /* AIRCRAFT */
 
-.aircraft-icon .aircraft-body{
-    fill:none;
-}
-
-.aircraft-icon .aircraft-wing{
+.aircraft-icon path{
     fill:none;
 }
 
 
 /* RAILWAY */
 
-.rail-icon .rail-building{
-    fill:none;
-}
-
-.rail-icon .rail-window{
+.rail-icon path{
     fill:none;
 }
 
 
 /* CAR */
 
-.car-icon .car-body{
-    fill:none;
-}
-
-.car-icon .wheel{
+.car-icon path,
+.car-icon circle{
     fill:none;
 }
 
 
 .arrival-option h3{
-    font-size:10px;
+    font-size:11px;
 
     font-weight:normal;
 
-    line-height:1.22;
+    line-height:1.25;
 
-    margin-bottom:6px;
+    margin-bottom:7px;
 
     color:#463322;
 }
 
 .arrival-option p{
-    font-size:9px;
+    font-size:10px;
 
-    line-height:1.3;
+    line-height:1.35;
 
     color:#6b5540;
 }
 
 .arrival-distance{
-    font-size:9px !important;
+    font-size:10px !important;
 
     margin-bottom:2px;
 
@@ -266,11 +309,15 @@ body{
    ========================================================= */
 
 .arrival-lower{
+    position:relative;
+
+    z-index:5;
+
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
-    gap:14px;
+    gap:15px;
 
     width:100%;
 }
@@ -282,7 +329,7 @@ body{
 
 .arrival-photo{
     width:100%;
-    height:130px;
+    height:135px;
 
     overflow:hidden;
 
@@ -306,13 +353,13 @@ body{
    ========================================================= */
 
 .maps-box{
-    height:130px;
+    height:135px;
 
     border-radius:10px;
 
     background:#eee2cc;
 
-    padding:8px 12px;
+    padding:9px 12px;
 
     display:flex;
 
@@ -328,7 +375,7 @@ body{
 .maps-title{
     font-family:Arial,sans-serif;
 
-    font-size:9px;
+    font-size:10px;
 
     font-weight:700;
 
@@ -336,23 +383,23 @@ body{
 
     color:#463322;
 
-    margin-bottom:5px;
+    margin-bottom:6px;
 }
 
 .maps-qr{
-    width:70px;
-    height:70px;
+    width:73px;
+    height:73px;
 
     object-fit:contain;
 
     display:block;
 
-    margin:0 auto 5px;
+    margin:0 auto 6px;
 }
 
 
 /* =========================================================
-   RECOGNISABLE GOOGLE MAPS ACTION
+   GOOGLE MAPS CLICKABLE LINK
    ========================================================= */
 
 .maps-link{
@@ -363,18 +410,18 @@ body{
 
     gap:6px;
 
-    min-height:25px;
+    min-height:27px;
 
-    padding:5px 10px;
+    padding:6px 11px;
 
-    border-radius:7px;
+    border-radius:14px;
 
     background:#ffffff;
 
-    border:1px solid rgba(70,51,34,.14);
+    border:1px solid rgba(70,51,34,.12);
 
     box-shadow:
-        0 1px 3px rgba(70,42,20,.16);
+        0 1px 4px rgba(70,42,20,.18);
 
     color:#463322;
 
@@ -382,7 +429,7 @@ body{
 
     font-family:Arial,sans-serif;
 
-    font-size:8px;
+    font-size:8.5px;
 
     font-weight:600;
 
@@ -416,14 +463,19 @@ body{
    ========================================================= */
 
 .parking-box{
+    position:relative;
+
+    z-index:5;
+
     display:flex;
+
     align-items:center;
 
     width:100%;
 
-    margin-top:13px;
+    margin-top:15px;
 
-    padding:10px 13px;
+    padding:12px 15px;
 
     border-radius:9px;
 
@@ -431,12 +483,12 @@ body{
 }
 
 .parking-icon{
-    width:26px;
-    height:26px;
+    width:28px;
+    height:28px;
 
-    flex:0 0 26px;
+    flex:0 0 28px;
 
-    margin-right:11px;
+    margin-right:12px;
 
     color:#70451f;
 }
@@ -448,20 +500,21 @@ body{
 .parking-title{
     font-family:Arial,sans-serif;
 
-    font-size:8.5px;
+    font-size:9px;
+
     font-weight:700;
 
-    letter-spacing:.55px;
+    letter-spacing:.6px;
 
-    margin-bottom:4px;
+    margin-bottom:5px;
 
     color:#463322;
 }
 
 .parking-copy p{
-    font-size:10px;
+    font-size:11px;
 
-    line-height:1.25;
+    line-height:1.3;
 
     color:#6b5540;
 }
@@ -472,11 +525,15 @@ body{
    ========================================================= */
 
 .guest-id-box{
+    position:relative;
+
+    z-index:5;
+
     width:100%;
 
-    margin-top:13px;
+    margin-top:15px;
 
-    padding:11px 13px;
+    padding:13px 15px;
 
     border-radius:9px;
 
@@ -486,26 +543,27 @@ body{
 .guest-id-title{
     font-family:Arial,sans-serif;
 
-    font-size:8.5px;
+    font-size:9px;
+
     font-weight:700;
 
-    letter-spacing:.55px;
+    letter-spacing:.6px;
 
-    margin-bottom:5px;
+    margin-bottom:6px;
 
     color:#463322;
 }
 
 .guest-id-box p{
-    font-size:9.5px;
+    font-size:10.5px;
 
-    line-height:1.34;
+    line-height:1.38;
 
     color:#6b5540;
 }
 
 .guest-id-box p + p{
-    margin-top:5px;
+    margin-top:6px;
 }
 
 
@@ -542,6 +600,7 @@ body{
     pointer-events:none;
 
     user-select:none;
+
     -webkit-user-drag:none;
 }
 
@@ -649,18 +708,33 @@ body{
         right:5px;
     }
 
-    .arrival-header{
-        padding:1px 88px 0;
+    .arrival-content::before{
+        clip-path:polygon(
+            58% 0%,
+            100% 0%,
+            100% 24%,
+            95% 23%,
+            90% 20%,
+            85% 18%,
+            80% 15%,
+            75% 12%,
+            70% 9%,
+            65% 5%
+        );
+    }
 
-        margin-bottom:10px;
+    .arrival-header{
+        padding:7px 88px 0;
+
+        margin-bottom:11px;
     }
 
     .arrival-title{
-        font-size:20px;
+        font-size:21px;
 
         letter-spacing:1.2px;
 
-        margin-bottom:3px;
+        margin-bottom:4px;
     }
 
     .arrival-subtitle{
@@ -668,36 +742,36 @@ body{
     }
 
     .arrival-options{
-        margin-bottom:10px;
+        margin-bottom:11px;
     }
 
     .arrival-option{
-        padding:5px 4px 5px;
+        padding:6px 4px 6px;
     }
 
     .arrival-icon{
         width:21px;
         height:21px;
 
-        margin-bottom:4px;
+        margin-bottom:5px;
     }
 
     .arrival-option h3{
-        font-size:8px;
+        font-size:8.3px;
 
-        line-height:1.15;
+        line-height:1.16;
 
         margin-bottom:4px;
     }
 
     .arrival-option p{
-        font-size:7.4px;
+        font-size:7.5px;
 
-        line-height:1.2;
+        line-height:1.22;
     }
 
     .arrival-distance{
-        font-size:7.4px !important;
+        font-size:7.5px !important;
     }
 
     .arrival-lower{
@@ -729,11 +803,11 @@ body{
     .maps-link{
         min-height:21px;
 
-        padding:4px 6px;
+        padding:4px 7px;
 
         gap:4px;
 
-        font-size:6.4px;
+        font-size:6.3px;
     }
 
     .maps-pin{
@@ -750,7 +824,7 @@ body{
     .parking-box{
         margin-top:8px;
 
-        padding:7px 9px;
+        padding:8px 9px;
     }
 
     .parking-icon{
@@ -780,13 +854,13 @@ body{
     .guest-id-box{
         margin-top:8px;
 
-        padding:7px 9px;
+        padding:8px 9px;
     }
 
     .guest-id-box p{
         font-size:7.6px;
 
-        line-height:1.22;
+        line-height:1.23;
     }
 
     .guest-id-box p + p{
@@ -831,23 +905,32 @@ body{
         width:76px;
     }
 
+    .arrival-content::before{
+        clip-path:polygon(
+            56% 0%,
+            100% 0%,
+            100% 23%,
+            94% 21%,
+            88% 19%,
+            82% 16%,
+            76% 13%,
+            70% 9%,
+            63% 5%
+        );
+    }
+
     .arrival-header{
         padding-right:81px;
 
-        margin-bottom:8px;
+        margin-bottom:9px;
     }
 
     .arrival-title{
-        font-size:18px;
+        font-size:19px;
     }
 
     .arrival-subtitle{
-        font-size:7.8px;
-    }
-
-    .arrival-option{
-        padding-left:3px;
-        padding-right:3px;
+        font-size:7.7px;
     }
 
     .arrival-icon{
@@ -856,12 +939,12 @@ body{
     }
 
     .arrival-option h3{
-        font-size:7.4px;
+        font-size:7.5px;
     }
 
     .arrival-option p,
     .arrival-distance{
-        font-size:6.7px !important;
+        font-size:6.8px !important;
     }
 
     .arrival-photo,
@@ -979,7 +1062,7 @@ body{
 
 
 <!-- =====================================================
-     AIRPORT
+     AIRPORT — PASSENGER AIRCRAFT
      ===================================================== -->
 
 <div class="arrival-option">
@@ -992,37 +1075,32 @@ body{
     aria-hidden="true"
 >
 
-    <!-- aircraft fuselage -->
     <path
-        class="aircraft-body"
-        d="M31 10
-           C32.2 9.5 33.8 9.5 35 10
-           L37 31
-           L51 40
-           C52.5 41 52 43.2 50.2 43.2
-           H37
-           L35 53
-           H31
-           L29 43.2
-           H15.8
-           C14 43.2 13.5 41 15 40
-           L29 31
-           L31 10Z"
-        stroke="currentColor"
-        stroke-width="2.2"
-        stroke-linejoin="round"
+        d="M31.7 9
+           C32.5 8.5 33.5 8.5 34.3 9
+           L36.5 28.5
+           L51.5 38.5
+           C53 39.5 52.3 42 50.5 42
+           H37.5
+           L35.2 53
+           H30.8
+           L28.5 42
+           H15.5
+           C13.7 42 13 39.5 14.5 38.5
+           L29.5 28.5
+           L31.7 9Z"
     />
 
-    <!-- wings -->
     <path
-        class="aircraft-wing"
-        d="M29.5 28
-           L13 19
-           M35.5 28
-           L52 19"
-        stroke="currentColor"
-        stroke-width="2.2"
-        stroke-linecap="round"
+        d="M29.5 28.5L12 19"
+    />
+
+    <path
+        d="M36.5 28.5L54 19"
+    />
+
+    <path
+        d="M18 47H46"
     />
 
 </svg>
@@ -1043,7 +1121,7 @@ body{
 
 
 <!-- =====================================================
-     MAJN
+     MAJN — RAILWAY STATION
      ===================================================== -->
 
 <div class="arrival-option">
@@ -1056,45 +1134,27 @@ body{
     aria-hidden="true"
 >
 
-    <!-- station roof -->
     <path
-        d="M10 25
-           L32 12
-           L54 25"
-        stroke="currentColor"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        d="M8 25L32 11L56 25"
     />
 
-    <!-- station structure -->
     <path
-        class="rail-building"
-        d="M16 25V46
-           M48 25V46
-           M22 25V46
-           M42 25V46"
-        stroke="currentColor"
-        stroke-width="2.2"
+        d="M14 25V46
+           M50 25V46
+           M21 25V46
+           M43 25V46"
     />
 
-    <!-- central entrance -->
     <path
-        class="rail-window"
-        d="M27 46V32
-           H37
-           V46"
-        stroke="currentColor"
-        stroke-width="2.2"
-        stroke-linejoin="round"
+        d="M26 46V31H38V46"
     />
 
-    <!-- platform -->
     <path
-        d="M10 49H54"
-        stroke="currentColor"
-        stroke-width="2.4"
-        stroke-linecap="round"
+        d="M8 50H56"
+    />
+
+    <path
+        d="M25 20H39"
     />
 
 </svg>
@@ -1115,7 +1175,7 @@ body{
 
 
 <!-- =====================================================
-     MAQ
+     MAQ — RAILWAY STATION
      ===================================================== -->
 
 <div class="arrival-option">
@@ -1128,45 +1188,27 @@ body{
     aria-hidden="true"
 >
 
-    <!-- station roof -->
     <path
-        d="M10 25
-           L32 12
-           L54 25"
-        stroke="currentColor"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        d="M8 25L32 11L56 25"
     />
 
-    <!-- station structure -->
     <path
-        class="rail-building"
-        d="M16 25V46
-           M48 25V46
-           M22 25V46
-           M42 25V46"
-        stroke="currentColor"
-        stroke-width="2.2"
+        d="M14 25V46
+           M50 25V46
+           M21 25V46
+           M43 25V46"
     />
 
-    <!-- central entrance -->
     <path
-        class="rail-window"
-        d="M27 46V32
-           H37
-           V46"
-        stroke="currentColor"
-        stroke-width="2.2"
-        stroke-linejoin="round"
+        d="M26 46V31H38V46"
     />
 
-    <!-- platform -->
     <path
-        d="M10 49H54"
-        stroke="currentColor"
-        stroke-width="2.4"
-        stroke-linecap="round"
+        d="M8 50H56"
+    />
+
+    <path
+        d="M25 20H39"
     />
 
 </svg>
@@ -1187,7 +1229,7 @@ body{
 
 
 <!-- =====================================================
-     BY CAR
+     BY CAR — SEDAN
      ===================================================== -->
 
 <div class="arrival-option">
@@ -1200,60 +1242,40 @@ body{
     aria-hidden="true"
 >
 
-    <!-- car roof -->
     <path
-        d="M16 37
-           L21 25
-           H43
-           L48 37"
-        stroke="currentColor"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        d="M12 39H52V48H12V39Z"
     />
 
-    <!-- body -->
     <path
-        class="car-body"
-        d="M12 37
-           H52
-           V47
-           H12
-           V37Z"
-        stroke="currentColor"
-        stroke-width="2.4"
-        stroke-linejoin="round"
+        d="M17 39L21.5 26H42.5L47 39"
     />
 
-    <!-- windows -->
     <path
-        d="M22 27
-           L19 36
-           H45
-           L42 27
-           Z"
-        stroke="currentColor"
-        stroke-width="2.1"
-        stroke-linejoin="round"
+        d="M23 27L20 37H44L41 27"
     />
 
-    <!-- wheels -->
+    <path
+        d="M12 43H8"
+    />
+
+    <path
+        d="M52 43H56"
+    />
+
     <circle
-        class="wheel"
         cx="21"
-        cy="47"
+        cy="48"
         r="4"
-        stroke="currentColor"
-        stroke-width="2.4"
     />
 
     <circle
-        class="wheel"
         cx="43"
-        cy="47"
+        cy="48"
         r="4"
-        stroke="currentColor"
-        stroke-width="2.4"
+    />
+
+    <path
+        d="M24 32H40"
     />
 
 </svg>
@@ -1312,7 +1334,6 @@ body{
         aria-label="Open 303 Oyster Bay in Google Maps"
     >
 
-        <!-- MAP PIN -->
         <svg
             class="maps-pin"
             viewBox="0 0 24 24"
@@ -1320,6 +1341,7 @@ body{
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
         >
+
             <path
                 d="M20 10
                    C20 15.5 12 22 12 22
@@ -1336,6 +1358,7 @@ body{
                 r="2.5"
                 fill="#EA4335"
             />
+
         </svg>
 
         <span>
