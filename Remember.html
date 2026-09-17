@@ -4,13 +4,10 @@
 
 <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
->
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
-<title>Remember • 303 Oyster Bay</title>
-
+<title>303 Oyster Bay • Remember</title>
 
 <style>
 
@@ -32,18 +29,17 @@ body{
 }
 
 body{
-    font-family:Georgia,"Times New Roman",serif;
-    color:#463322;
     background:#e8d8bd;
+    color:#463322;
+    font-family:Georgia,"Times New Roman",serif;
 }
 
 
 /* =========================================================
-   MAIN PAGE
+   SAND PAGE
    ========================================================= */
 
 .remember-page{
-
     position:relative;
 
     width:100%;
@@ -64,54 +60,59 @@ body{
    ========================================================= */
 
 .page-header{
-
     position:relative;
-
     width:100%;
-    height:112px;
-
-    z-index:5;
+    height:108px;
 }
 
 
 /* =========================================================
-   ENGRAVED SALT • SAND • STORIES
+   SALT • SAND • STORIES
+   HAND-WRITTEN / PRESSED INTO THE SAND
    ========================================================= */
 
 .sand-stories{
 
     position:absolute;
 
-    top:20px;
+    top:18px;
     left:50%;
 
     transform:translateX(-50%);
 
-    width:205px;
+    width:220px;
 
     text-align:center;
 
-    font-family:Georgia,"Times New Roman",serif;
+    font-family:
+        "Bradley Hand",
+        "Chalkboard SE",
+        "Marker Felt",
+        "Segoe Print",
+        cursive;
 
-    font-size:25px;
-    line-height:1.02;
+    font-size:28px;
 
-    letter-spacing:2.2px;
+    font-weight:500;
 
-    color:rgba(91,61,38,.72);
+    line-height:.98;
+
+    letter-spacing:1.4px;
+
+    color:rgba(92,61,37,.66);
 
     /*
-       The combination of light and dark shadows gives
-       the impression that the lettering is pressed into
-       the sand rather than sitting on top of it.
+       Raised light edge + recessed dark edge.
+       This makes the lettering look pressed into
+       the sand rather than printed on it.
     */
 
     text-shadow:
-        1px 1px 0 rgba(255,247,224,.62),
-        -1px -1px 0 rgba(92,61,37,.48),
-        0 2px 2px rgba(92,61,37,.20);
+        1px 1px 0 rgba(255,248,229,.78),
+        2px 2px 2px rgba(86,56,33,.18),
+        -1px -1px 0 rgba(80,50,29,.42);
 
-    z-index:5;
+    z-index:8;
 }
 
 .sand-stories span{
@@ -120,17 +121,17 @@ body{
 
 
 /* =========================================================
-   GUEST FAVOURITE
+   AIRBNB GUEST FAVOURITE
    ========================================================= */
 
 .guest-favourite-link{
 
     position:absolute;
 
-    top:10px;
-    right:10px;
+    top:7px;
+    right:8px;
 
-    width:76px;
+    width:72px;
 
     display:block;
 
@@ -143,20 +144,22 @@ body{
 
     display:block;
 
-    width:76px;
+    width:72px;
     height:auto;
 
-    border:0;
     margin:0;
     padding:0;
 
+    border:0;
+
     background:transparent;
+
     box-shadow:none;
 }
 
 
 /* =========================================================
-   GALLERY CONTENT
+   GALLERY AREA
    ========================================================= */
 
 .remember-content{
@@ -165,7 +168,7 @@ body{
 
     width:100%;
 
-    height:calc(100svh - 112px - 92px);
+    height:calc(100svh - 108px - 82px);
 
     overflow:hidden;
 
@@ -179,9 +182,7 @@ body{
    ========================================================= */
 
 .category{
-
     width:100%;
-
     margin-bottom:8px;
 }
 
@@ -243,7 +244,6 @@ body{
     padding:5px 5px 13px;
 
     border:0;
-
     border-radius:9px;
 
     background:#f4ead7;
@@ -254,7 +254,6 @@ body{
     cursor:pointer;
 
     appearance:none;
-
     -webkit-appearance:none;
 }
 
@@ -272,9 +271,45 @@ body{
 
 
 /* =========================================================
+   303 OYSTER BAY LOGO
+   ---------------------------------------------------------
+   IMPORTANT:
+   THIS IS PART OF THE SAND BACKGROUND.
+   IT IS NOT INSIDE THE NAVIGATION.
+   ========================================================= */
+
+.sand-logo{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:24px;
+
+    transform:translateX(-50%);
+
+    width:145px;
+
+    height:auto;
+
+    z-index:12;
+
+    pointer-events:none;
+
+    filter:
+        drop-shadow(
+            0 2px 2px rgba(55,38,24,.16)
+        );
+}
+
+
+/* =========================================================
    BOTTOM NAVIGATION
-   FIVE ELEMENTS IN ONE HORIZONTAL COMPOSITION
-   HOME | STAY | BIG LOGO | LIVE | EXPLORE
+   ---------------------------------------------------------
+   ONLY FOUR NAV ITEMS:
+   HOME | STAY | LIVE | EXPLORE
+
+   THE CENTRE LOGO IS NOT HERE.
    ========================================================= */
 
 .bottom-nav{
@@ -283,10 +318,10 @@ body{
 
     left:0;
     right:0;
-    bottom:5px;
 
-    width:100%;
-    height:91px;
+    bottom:7px;
+
+    height:57px;
 
     z-index:30;
 
@@ -295,119 +330,77 @@ body{
     grid-template-columns:
         1fr
         1fr
-        1.65fr
         1fr
         1fr;
 
-    align-items:end;
+    gap:5px;
 
-    padding:0 5px;
+    padding:0 7px;
 
     pointer-events:none;
 }
 
 
 /* =========================================================
-   NAVIGATION ITEMS
+   INDIVIDUAL NAV BANDS
    ========================================================= */
 
 .nav-item{
 
-    position:relative;
-
-    height:61px;
+    height:57px;
 
     display:flex;
 
+    flex-direction:column;
+
     align-items:center;
     justify-content:center;
+
+    gap:3px;
 
     text-decoration:none;
 
     color:#463322;
 
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    font-size:13px;
+    font-size:10px;
 
-    letter-spacing:.4px;
+    letter-spacing:.45px;
 
-    background:rgba(248,239,220,.92);
+    background:rgba(248,239,220,.90);
 
-    border-right:1px solid rgba(70,51,34,.25);
+    border-radius:7px;
+
+    border:1px solid rgba(255,250,238,.28);
+
+    box-shadow:
+        0 1px 3px rgba(70,42,20,.10);
 
     pointer-events:auto;
-
-    z-index:2;
-}
-
-.nav-item:first-child{
-
-    border-radius:7px 0 0 7px;
-}
-
-.nav-item:nth-child(2){
-
-    border-radius:0;
-}
-
-.nav-item:nth-child(4){
-
-    border-radius:0;
-}
-
-.nav-item:last-child{
-
-    border-right:0;
-
-    border-radius:0 7px 7px 0;
 }
 
 
 /* =========================================================
-   CENTRE LOGO AREA
+   NAV ICONS
    ========================================================= */
 
-.logo-nav{
+.nav-icon{
 
-    position:relative;
+    width:24px;
+    height:24px;
 
-    height:91px;
+    fill:none;
 
-    display:flex;
+    stroke:#463322;
 
-    align-items:flex-end;
+    stroke-width:2;
 
-    justify-content:center;
-
-    pointer-events:none;
-
-    z-index:10;
-}
-
-
-/*
-   The logo is deliberately much larger than the
-   four navigation items and sits higher than them.
-*/
-
-.logo-nav img{
-
-    display:block;
-
-    width:145px;
-    max-width:none;
-
-    height:auto;
-
-    position:relative;
-
-    bottom:18px;
-
-    filter:
-        drop-shadow(0 2px 2px rgba(60,40,25,.12));
-
-    pointer-events:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
 }
 
 
@@ -521,8 +514,6 @@ body{
 
     font-size:13px;
 
-    letter-spacing:.5px;
-
     opacity:.85;
 }
 
@@ -534,35 +525,35 @@ body{
 @media(min-width:700px){
 
     .page-header{
-        height:155px;
+        height:150px;
     }
 
     .sand-stories{
 
-        top:31px;
+        top:28px;
 
-        width:280px;
+        width:300px;
 
-        font-size:34px;
+        font-size:36px;
 
-        letter-spacing:3px;
+        letter-spacing:1.8px;
     }
 
     .guest-favourite-link{
 
-        top:14px;
+        top:12px;
         right:18px;
 
-        width:92px;
+        width:88px;
     }
 
     .guest-favourite{
-        width:92px;
+        width:88px;
     }
 
     .remember-content{
 
-        height:calc(100svh - 155px - 120px);
+        height:calc(100svh - 150px - 105px);
 
         padding-left:30px;
     }
@@ -596,31 +587,45 @@ body{
         border-radius:7px;
     }
 
+
+    /* LOGO REMAINS PART OF SAND */
+
+    .sand-logo{
+
+        width:205px;
+
+        bottom:29px;
+    }
+
+
+    /* NAV IS STILL ONLY FOUR ITEMS */
+
     .bottom-nav{
 
-        height:118px;
+        bottom:10px;
 
-        bottom:8px;
+        height:64px;
 
-        padding:0 18px;
+        gap:8px;
+
+        padding:0 22px;
     }
 
     .nav-item{
 
-        height:72px;
+        height:64px;
 
-        font-size:16px;
+        font-size:14px;
+
+        gap:4px;
+
+        border-radius:8px;
     }
 
-    .logo-nav{
-        height:118px;
-    }
+    .nav-icon{
 
-    .logo-nav img{
-
-        width:220px;
-
-        bottom:24px;
+        width:31px;
+        height:31px;
     }
 }
 
@@ -632,35 +637,35 @@ body{
 @media(max-width:390px){
 
     .page-header{
-        height:108px;
+        height:103px;
     }
 
     .sand-stories{
 
-        top:18px;
+        top:17px;
 
-        width:190px;
+        width:200px;
 
-        font-size:23px;
+        font-size:25px;
 
-        letter-spacing:1.9px;
+        letter-spacing:1px;
     }
 
     .guest-favourite-link{
 
-        top:7px;
-        right:7px;
+        top:6px;
+        right:6px;
 
-        width:69px;
+        width:66px;
     }
 
     .guest-favourite{
-        width:69px;
+        width:66px;
     }
 
     .remember-content{
 
-        height:calc(100svh - 108px - 83px);
+        height:calc(100svh - 103px - 77px);
 
         padding-left:11px;
     }
@@ -690,33 +695,45 @@ body{
         padding:5px 5px 12px;
     }
 
+
+    /* LOGO IS IN THE SAND, NOT THE NAV */
+
+    .sand-logo{
+
+        width:128px;
+
+        bottom:24px;
+    }
+
+
+    /* FOUR LIGHT NAV BANDS */
+
     .bottom-nav{
 
-        bottom:4px;
+        bottom:5px;
 
-        height:83px;
+        height:53px;
 
-        padding:0 3px;
+        gap:4px;
+
+        padding:0 5px;
     }
 
     .nav-item{
 
-        height:55px;
+        height:53px;
 
-        font-size:11px;
+        font-size:9px;
 
-        letter-spacing:.2px;
+        gap:2px;
+
+        border-radius:6px;
     }
 
-    .logo-nav{
-        height:83px;
-    }
+    .nav-icon{
 
-    .logo-nav img{
-
-        width:126px;
-
-        bottom:17px;
+        width:23px;
+        height:23px;
     }
 }
 
@@ -728,32 +745,32 @@ body{
 @media(max-height:700px){
 
     .page-header{
-        height:98px;
+        height:94px;
     }
 
     .sand-stories{
 
-        top:14px;
+        top:13px;
+
+        width:180px;
 
         font-size:21px;
-
-        width:175px;
     }
 
     .guest-favourite-link{
 
-        width:62px;
-
         top:5px;
+
+        width:60px;
     }
 
     .guest-favourite{
-        width:62px;
+        width:60px;
     }
 
     .remember-content{
 
-        height:calc(100svh - 98px - 76px);
+        height:calc(100svh - 94px - 70px);
     }
 
     .category{
@@ -761,39 +778,40 @@ body{
     }
 
     .category-title{
-
         font-size:11px;
-
-        margin-bottom:2px;
     }
 
     .photo-card{
         height:76px;
     }
 
+    .sand-logo{
+
+        width:112px;
+
+        bottom:22px;
+    }
+
     .bottom-nav{
 
-        height:76px;
+        bottom:4px;
 
-        bottom:3px;
+        height:49px;
+
+        gap:3px;
     }
 
     .nav-item{
 
-        height:50px;
+        height:49px;
 
-        font-size:10px;
+        font-size:8px;
     }
 
-    .logo-nav{
-        height:76px;
-    }
+    .nav-icon{
 
-    .logo-nav img{
-
-        width:112px;
-
-        bottom:15px;
+        width:21px;
+        height:21px;
     }
 }
 
@@ -808,23 +826,25 @@ body{
 
 
     <!-- =====================================================
-         ENGRAVED HEADING
+         SALT • SAND • STORIES
+         DIRECTLY ON THE SAND
          ===================================================== -->
 
     <header class="page-header">
 
-        <div class="sand-stories" aria-label="Salt Sand Stories">
+        <div
+            class="sand-stories"
+            aria-label="Salt Sand Stories"
+        >
 
-            <span>SALT</span>
-            <span>SAND</span>
-            <span>STORIES</span>
+            <span>Salt</span>
+            <span>Sand</span>
+            <span>Stories</span>
 
         </div>
 
 
-        <!-- =================================================
-             GUEST FAVOURITE
-             ================================================= -->
+        <!-- GUEST FAVOURITE -->
 
         <a
             href="https://www.airbnb.co.in/h/303oysterbay"
@@ -863,24 +883,34 @@ body{
 
             <div class="photo-row">
 
-                <button class="photo-card" data-image="Sea View1.jpg">
-                    <img src="Sea View1.jpg" alt="Sea View 1">
+                <button class="photo-card"
+                        data-image="Sea View1.jpg">
+                    <img src="Sea View1.jpg"
+                         alt="Sea View 1">
                 </button>
 
-                <button class="photo-card" data-image="Sea View2.jpg">
-                    <img src="Sea View2.jpg" alt="Sea View 2">
+                <button class="photo-card"
+                        data-image="Sea View2.jpg">
+                    <img src="Sea View2.jpg"
+                         alt="Sea View 2">
                 </button>
 
-                <button class="photo-card" data-image="Sea View3.jpg">
-                    <img src="Sea View3.jpg" alt="Sea View 3">
+                <button class="photo-card"
+                        data-image="Sea View3.jpg">
+                    <img src="Sea View3.jpg"
+                         alt="Sea View 3">
                 </button>
 
-                <button class="photo-card" data-image="Sea View4.jpg">
-                    <img src="Sea View4.jpg" alt="Sea View 4">
+                <button class="photo-card"
+                        data-image="Sea View4.jpg">
+                    <img src="Sea View4.jpg"
+                         alt="Sea View 4">
                 </button>
 
-                <button class="photo-card" data-image="Sea View5.jpg">
-                    <img src="Sea View5.jpg" alt="Sea View 5">
+                <button class="photo-card"
+                        data-image="Sea View5.jpg">
+                    <img src="Sea View5.jpg"
+                         alt="Sea View 5">
                 </button>
 
             </div>
@@ -898,32 +928,46 @@ body{
 
             <div class="photo-row">
 
-                <button class="photo-card" data-image="Living1.jpg">
-                    <img src="Living1.jpg" alt="Living 1">
+                <button class="photo-card"
+                        data-image="Living1.jpg">
+                    <img src="Living1.jpg"
+                         alt="Living 1">
                 </button>
 
-                <button class="photo-card" data-image="Living2.jpg">
-                    <img src="Living2.jpg" alt="Living 2">
+                <button class="photo-card"
+                        data-image="Living2.jpg">
+                    <img src="Living2.jpg"
+                         alt="Living 2">
                 </button>
 
-                <button class="photo-card" data-image="Living3.jpg">
-                    <img src="Living3.jpg" alt="Living 3">
+                <button class="photo-card"
+                        data-image="Living3.jpg">
+                    <img src="Living3.jpg"
+                         alt="Living 3">
                 </button>
 
-                <button class="photo-card" data-image="Living4.jpg">
-                    <img src="Living4.jpg" alt="Living 4">
+                <button class="photo-card"
+                        data-image="Living4.jpg">
+                    <img src="Living4.jpg"
+                         alt="Living 4">
                 </button>
 
-                <button class="photo-card" data-image="Living5.jpg">
-                    <img src="Living5.jpg" alt="Living 5">
+                <button class="photo-card"
+                        data-image="Living5.jpg">
+                    <img src="Living5.jpg"
+                         alt="Living 5">
                 </button>
 
-                <button class="photo-card" data-image="Living6.jpg">
-                    <img src="Living6.jpg" alt="Living 6">
+                <button class="photo-card"
+                        data-image="Living6.jpg">
+                    <img src="Living6.jpg"
+                         alt="Living 6">
                 </button>
 
-                <button class="photo-card" data-image="Living7.jpg">
-                    <img src="Living7.jpg" alt="Living 7">
+                <button class="photo-card"
+                        data-image="Living7.jpg">
+                    <img src="Living7.jpg"
+                         alt="Living 7">
                 </button>
 
             </div>
@@ -941,32 +985,46 @@ body{
 
             <div class="photo-row">
 
-                <button class="photo-card" data-image="Bedroom1.jpg">
-                    <img src="Bedroom1.jpg" alt="Bedroom 1">
+                <button class="photo-card"
+                        data-image="Bedroom1.jpg">
+                    <img src="Bedroom1.jpg"
+                         alt="Bedroom 1">
                 </button>
 
-                <button class="photo-card" data-image="Bedroom2.jpg">
-                    <img src="Bedroom2.jpg" alt="Bedroom 2">
+                <button class="photo-card"
+                        data-image="Bedroom2.jpg">
+                    <img src="Bedroom2.jpg"
+                         alt="Bedroom 2">
                 </button>
 
-                <button class="photo-card" data-image="Bedroom3.jpg">
-                    <img src="Bedroom3.jpg" alt="Bedroom 3">
+                <button class="photo-card"
+                        data-image="Bedroom3.jpg">
+                    <img src="Bedroom3.jpg"
+                         alt="Bedroom 3">
                 </button>
 
-                <button class="photo-card" data-image="Bedroom4.jpg">
-                    <img src="Bedroom4.jpg" alt="Bedroom 4">
+                <button class="photo-card"
+                        data-image="Bedroom4.jpg">
+                    <img src="Bedroom4.jpg"
+                         alt="Bedroom 4">
                 </button>
 
-                <button class="photo-card" data-image="Bedroom5.jpg">
-                    <img src="Bedroom5.jpg" alt="Bedroom 5">
+                <button class="photo-card"
+                        data-image="Bedroom5.jpg">
+                    <img src="Bedroom5.jpg"
+                         alt="Bedroom 5">
                 </button>
 
-                <button class="photo-card" data-image="Bedroom6.jpg">
-                    <img src="Bedroom6.jpg" alt="Bedroom 6">
+                <button class="photo-card"
+                        data-image="Bedroom6.jpg">
+                    <img src="Bedroom6.jpg"
+                         alt="Bedroom 6">
                 </button>
 
-                <button class="photo-card" data-image="Bedroom7.jpg">
-                    <img src="Bedroom7.jpg" alt="Bedroom 7">
+                <button class="photo-card"
+                        data-image="Bedroom7.jpg">
+                    <img src="Bedroom7.jpg"
+                         alt="Bedroom 7">
                 </button>
 
             </div>
@@ -984,36 +1042,52 @@ body{
 
             <div class="photo-row">
 
-                <button class="photo-card" data-image="Kitchen1.jpg">
-                    <img src="Kitchen1.jpg" alt="Kitchen 1">
+                <button class="photo-card"
+                        data-image="Kitchen1.jpg">
+                    <img src="Kitchen1.jpg"
+                         alt="Kitchen 1">
                 </button>
 
-                <button class="photo-card" data-image="Kitchen2.jpg">
-                    <img src="Kitchen2.jpg" alt="Kitchen 2">
+                <button class="photo-card"
+                        data-image="Kitchen2.jpg">
+                    <img src="Kitchen2.jpg"
+                         alt="Kitchen 2">
                 </button>
 
-                <button class="photo-card" data-image="Kitchen3.jpg">
-                    <img src="Kitchen3.jpg" alt="Kitchen 3">
+                <button class="photo-card"
+                        data-image="Kitchen3.jpg">
+                    <img src="Kitchen3.jpg"
+                         alt="Kitchen 3">
                 </button>
 
-                <button class="photo-card" data-image="Kitchen4.jpg">
-                    <img src="Kitchen4.jpg" alt="Kitchen 4">
+                <button class="photo-card"
+                        data-image="Kitchen4.jpg">
+                    <img src="Kitchen4.jpg"
+                         alt="Kitchen 4">
                 </button>
 
-                <button class="photo-card" data-image="Kitchen5.jpg">
-                    <img src="Kitchen5.jpg" alt="Kitchen 5">
+                <button class="photo-card"
+                        data-image="Kitchen5.jpg">
+                    <img src="Kitchen5.jpg"
+                         alt="Kitchen 5">
                 </button>
 
-                <button class="photo-card" data-image="Kitchen6.jpg">
-                    <img src="Kitchen6.jpg" alt="Kitchen 6">
+                <button class="photo-card"
+                        data-image="Kitchen6.jpg">
+                    <img src="Kitchen6.jpg"
+                         alt="Kitchen 6">
                 </button>
 
-                <button class="photo-card" data-image="Kitchen7.jpg">
-                    <img src="Kitchen7.jpg" alt="Kitchen 7">
+                <button class="photo-card"
+                        data-image="Kitchen7.jpg">
+                    <img src="Kitchen7.jpg"
+                         alt="Kitchen 7">
                 </button>
 
-                <button class="photo-card" data-image="Kitchen8.jpg">
-                    <img src="Kitchen8.jpg" alt="Kitchen 8">
+                <button class="photo-card"
+                        data-image="Kitchen8.jpg">
+                    <img src="Kitchen8.jpg"
+                         alt="Kitchen 8">
                 </button>
 
             </div>
@@ -1026,12 +1100,33 @@ body{
 
 
     <!-- =====================================================
-         BOTTOM NAVIGATION
-
-         HOME | STAY | 303 OYSTER BAY | LIVE | EXPLORE
+         303 OYSTER BAY LOGO
+         
+         THIS IS PART OF THE SAND.
+         IT IS COMPLETELY OUTSIDE THE NAVIGATION.
          ===================================================== -->
 
-    <nav class="bottom-nav" aria-label="Main navigation">
+    <img
+        src="logo.png"
+        class="sand-logo"
+        alt="303 Oyster Bay"
+    >
+
+
+
+    <!-- =====================================================
+         NAVIGATION
+         
+         ONLY:
+         HOME | STAY | LIVE | EXPLORE
+         
+         NO LOGO HERE.
+         ===================================================== -->
+
+    <nav
+        class="bottom-nav"
+        aria-label="Main navigation"
+    >
 
 
         <!-- HOME -->
@@ -1040,7 +1135,23 @@ body{
             class="nav-item"
             href="index.html"
         >
-            HOME
+
+            <svg
+                class="nav-icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+            >
+
+                <path d="M7 22.5 24 8l17 14.5"/>
+
+                <path d="M11 21v19h26V21"/>
+
+                <path d="M19 40V27h10v13"/>
+
+            </svg>
+
+            <span>Home</span>
+
         </a>
 
 
@@ -1050,20 +1161,28 @@ body{
             class="nav-item"
             href="arrival-guide.html"
         >
-            STAY
-        </a>
 
-
-        <!-- LARGE CENTRE LOGO -->
-
-        <div class="logo-nav">
-
-            <img
-                src="logo.png"
-                alt="303 Oyster Bay"
+            <svg
+                class="nav-icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
             >
 
-        </div>
+                <path d="M8 34V22"/>
+
+                <path d="M8 29h32"/>
+
+                <path d="M12 29v-7h10c4 0 6 3 6 7"/>
+
+                <path d="M8 34v4"/>
+
+                <path d="M40 34v4"/>
+
+            </svg>
+
+            <span>Stay</span>
+
+        </a>
 
 
         <!-- LIVE -->
@@ -1072,7 +1191,23 @@ body{
             class="nav-item"
             href="live.html"
         >
-            LIVE
+
+            <svg
+                class="nav-icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+            >
+
+                <path d="M7 31c5-7 10-7 17 0s12 7 17 0"/>
+
+                <path d="M11 37h26"/>
+
+                <path d="M13 25c3-5 7-7 11-7s8 2 11 7"/>
+
+            </svg>
+
+            <span>Live</span>
+
         </a>
 
 
@@ -1082,7 +1217,27 @@ body{
             class="nav-item"
             href="In%20and%20around.pdf"
         >
-            EXPLORE
+
+            <svg
+                class="nav-icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+            >
+
+                <circle
+                    cx="24"
+                    cy="24"
+                    r="17"
+                />
+
+                <path
+                    d="M29 19l-8 2-2 8 8-2 2-8z"
+                />
+
+            </svg>
+
+            <span>Explore</span>
+
         </a>
 
 
@@ -1108,7 +1263,6 @@ body{
             ×
         </button>
 
-
         <button
             class="lightbox-prev"
             id="lightboxPrev"
@@ -1117,14 +1271,12 @@ body{
             ‹
         </button>
 
-
         <img
             class="lightbox-image"
             id="lightboxImage"
             src=""
             alt=""
         >
-
 
         <button
             class="lightbox-next"
@@ -1133,7 +1285,6 @@ body{
         >
             ›
         </button>
-
 
         <div
             class="lightbox-counter"
@@ -1179,9 +1330,7 @@ const lightboxCounter =
 let currentIndex = 0;
 
 
-/* =========================================================
-   OPEN
-   ========================================================= */
+/* OPEN */
 
 function openLightbox(index){
 
@@ -1212,9 +1361,7 @@ function openLightbox(index){
 }
 
 
-/* =========================================================
-   CLOSE
-   ========================================================= */
+/* CLOSE */
 
 function closeLightbox(){
 
@@ -1229,9 +1376,7 @@ function closeLightbox(){
 }
 
 
-/* =========================================================
-   NEXT
-   ========================================================= */
+/* NEXT */
 
 function nextImage(){
 
@@ -1243,9 +1388,7 @@ function nextImage(){
 }
 
 
-/* =========================================================
-   PREVIOUS
-   ========================================================= */
+/* PREVIOUS */
 
 function previousImage(){
 
@@ -1257,9 +1400,7 @@ function previousImage(){
 }
 
 
-/* =========================================================
-   PHOTO CLICK
-   ========================================================= */
+/* PHOTO CLICK */
 
 photoCards.forEach(
     (card,index) => {
@@ -1273,9 +1414,7 @@ photoCards.forEach(
 );
 
 
-/* =========================================================
-   BUTTONS
-   ========================================================= */
+/* BUTTONS */
 
 lightboxClose.addEventListener(
     "click",
@@ -1293,27 +1432,21 @@ lightboxPrev.addEventListener(
 );
 
 
-/* =========================================================
-   CLOSE BY CLICKING OUTSIDE
-   ========================================================= */
+/* OUTSIDE CLICK */
 
 lightbox.addEventListener(
     "click",
     (event) => {
 
         if(event.target === lightbox){
-
             closeLightbox();
-
         }
 
     }
 );
 
 
-/* =========================================================
-   KEYBOARD
-   ========================================================= */
+/* KEYBOARD */
 
 document.addEventListener(
     "keydown",
@@ -1341,13 +1474,9 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   TOUCH SWIPE
-   ========================================================= */
+/* TOUCH SWIPE */
 
 let touchStartX = 0;
-let touchEndX = 0;
-
 
 lightbox.addEventListener(
     "touchstart",
@@ -1360,12 +1489,11 @@ lightbox.addEventListener(
     {passive:true}
 );
 
-
 lightbox.addEventListener(
     "touchend",
     (event) => {
 
-        touchEndX =
+        const touchEndX =
             event.changedTouches[0].screenX;
 
         const distance =
@@ -1376,13 +1504,10 @@ lightbox.addEventListener(
         }
 
         if(distance < 0){
-
             nextImage();
-
-        }else{
-
+        }
+        else{
             previousImage();
-
         }
 
     },
