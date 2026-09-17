@@ -1,469 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=5.0, user-scalable=yes">
 
 <title>303 OYSTER BAY • Home</title>
 
 <style>
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
-* {
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html,
-body {
-    width:100%;
-    height:100%;
-    overflow:hidden;
-}
-
-body {
-    background:#e7d3b1;
-    color:#463322;
-    font-family:Georgia, "Times New Roman", serif;
-}
-
-
-/* =========================================================
-   HOME PAGE
-   ========================================================= */
-
-.home-page {
-    position:relative;
-
-    width:100%;
-    height:100vh;
-    height:100svh;
-    height:100dvh;
-
-    overflow:hidden;
-
-    background-image:url("sand-background.jpg");
-    background-size:cover;
-    background-position:center top;
-    background-repeat:no-repeat;
-}
-
-
-/* =========================================================
-   BRAND / TOP AREA
-   ========================================================= */
-
-.top-area {
-    position:absolute;
-
-    top:0;
-    left:0;
-    right:0;
-
-    height:29%;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-}
-
-
-/* LARGE LOGO */
-
-.logo {
-    display:block;
-
-    width:178px;
-    height:auto;
-
-    margin-bottom:5px;
-}
-
-
-/* SMALL SUB-SUB HEAD */
-
-.tagline {
-    font-size:15px;
-    line-height:1.15;
-    font-weight:normal;
-
-    letter-spacing:.5px;
-
-    color:rgba(70,51,34,.82);
-
-    max-width:300px;
-}
-
-
-/* =========================================================
-   FOUR MAIN DESTINATION CARDS
-   ========================================================= */
-
-.home-grid {
-    position:absolute;
-
-    left:14px;
-    right:14px;
-
-    top:29%;
-    bottom:18%;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:1fr 1fr;
-
-    gap:12px;
-}
-
-
-/* CARD */
-
-.home-card {
-    position:relative;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-
-    overflow:hidden;
-
-    border-radius:20px;
-
-    text-decoration:none;
-
-    color:#fff;
-
-    background:#80664b;
-
-    box-shadow:
-        0 3px 10px rgba(65,40,20,.22);
-
-    isolation:isolate;
-}
-
-
-/* PHOTO */
-
-.home-card img {
-    position:absolute;
-
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    z-index:-2;
-}
-
-
-/* PHOTO DARKENING */
-
-.home-card::after {
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(35,22,12,.76) 0%,
-            rgba(35,22,12,.30) 42%,
-            rgba(35,22,12,.03) 74%
-        );
-
-    z-index:-1;
-}
-
-
-/* CARD COPY */
-
-.card-copy {
-    position:relative;
-
-    padding:14px 15px 15px;
-}
-
-
-/* CARD TITLE */
-
-.card-title {
-    font-size:25px;
-
-    line-height:1;
-
-    margin-bottom:5px;
-}
-
-
-/* CARD DESCRIPTION */
-
-.card-description {
-    font-family:Arial, Helvetica, sans-serif;
-
-    font-size:10px;
-
-    letter-spacing:.3px;
-
-    line-height:1.25;
-
-    opacity:.96;
-
-    max-width:82%;
-}
-
-
-/* ROUND ARROW */
-
-.card-arrow {
-    position:absolute;
-
-    right:13px;
-    bottom:13px;
-
-    width:30px;
-    height:30px;
-
-    border:1px solid rgba(255,255,255,.78);
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-family:Arial, Helvetica, sans-serif;
-
-    font-size:17px;
-
-    background:rgba(255,255,255,.10);
-}
-
-
-/* =========================================================
-   FEATURES BAND
-   ========================================================= */
-
-.features-band {
-    position:absolute;
-
-    left:14px;
-    right:14px;
-
-    bottom:4%;
-
-    height:11%;
-
-    min-height:62px;
-
-    display:flex;
-
-    align-items:stretch;
-    justify-content:center;
-
-    background:rgba(244,234,215,.94);
-
-    border:1px solid rgba(255,255,255,.72);
-
-    border-radius:24px;
-
-    box-shadow:
-        0 3px 9px rgba(65,40,20,.13);
-
-    overflow:hidden;
-}
-
-
-/* INDIVIDUAL FEATURE */
-
-.feature {
-    flex:1;
-
-    min-width:0;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:5px 3px;
-
-    color:#463322;
-}
-
-
-/* DIVIDERS */
-
-.feature + .feature {
-    border-left:1px solid rgba(70,51,34,.22);
-}
-
-
-/* SIMPLE LINE ICON */
-
-.feature-icon {
-    width:25px;
-    height:25px;
-
-    margin-bottom:4px;
-
-    fill:none;
-
-    stroke:#463322;
-
-    stroke-width:2.2;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
-/* FEATURE TEXT */
-
-.feature-title {
-    font-family:Arial, Helvetica, sans-serif;
-
-    font-size:10px;
-
-    line-height:1.15;
-
-    letter-spacing:.1px;
-}
-
-/* =========================================================
-   SMALL PHONES
-   ========================================================= */
-
-@media (max-width:390px) {
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        font-family: Georgia, "Times New Roman", serif;
+        background: #d9b37a;
+        color: #463322;
+    }
+
+    /* =========================
+       MAIN PAGE
+       ========================= */
+
+    .home-page {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100svh;
+        overflow-x: hidden;
+
+        background-image:
+            linear-gradient(
+                rgba(220, 177, 120, 0.04),
+                rgba(220, 177, 120, 0.04)
+            ),
+            url("sand-background.jpg");
+
+        background-size: cover;
+        background-position: center center;
+        background-attachment: scroll;
+
+        padding:
+            clamp(22px, 5vw, 48px)
+            clamp(18px, 4vw, 42px)
+            88px;
+    }
+
+    /* =========================
+       TOP AREA
+       ========================= */
 
     .top-area {
-        height:28%;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+
+        padding-top: clamp(4px, 1vw, 10px);
+        padding-bottom: clamp(34px, 5vw, 58px);
     }
 
     .logo {
-        width:158px;
-        margin-bottom:4px;
+        display: block;
+        width: 178px;
+        max-width: 48vw;
+        height: auto;
+        margin: 0 auto 8px;
     }
 
     .tagline {
-        font-size:13px;
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.25;
+        font-weight: 400;
+        letter-spacing: 0.15px;
+        color: #59412d;
     }
 
-    .home-grid {
-        top:28%;
-        bottom:19%;
+    /* =========================
+       AIRBNB GUEST FAVOURITE
+       Fixed to the SAND / PAGE,
+       NOT to the viewport
+       ========================= */
 
-        gap:9px;
+    .guest-favourite {
+        position: absolute;
+
+        top: 2px;
+        right: 1.5%;
+
+        width: 82px;
+        height: auto;
+
+        display: block;
+
+        z-index: 5;
+
+        margin: 0;
+        padding: 0;
+
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+
+        pointer-events: none;
+    }
+
+    /* =========================
+       FOUR HOME CARDS
+       ========================= */
+
+    .home-grid {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: clamp(16px, 2.5vw, 28px);
     }
 
     .home-card {
-        border-radius:17px;
+        position: relative;
+        display: block;
+
+        width: 100%;
+        aspect-ratio: 1.02 / 1;
+
+        overflow: hidden;
+
+        border-radius: 30px;
+
+        text-decoration: none;
+        color: white;
+
+        box-shadow:
+            0 5px 12px rgba(50, 30, 15, 0.18);
+
+        background: #8e6848;
     }
 
-    .card-copy {
-        padding:11px 11px 12px;
+    .home-card img {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        display: block;
+
+        transition: transform 0.35s ease;
+    }
+
+    .home-card::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background:
+            linear-gradient(
+                to top,
+                rgba(25, 16, 9, 0.72) 0%,
+                rgba(25, 16, 9, 0.28) 42%,
+                rgba(25, 16, 9, 0.02) 72%
+            );
+
+        z-index: 1;
+    }
+
+    .home-card-content {
+        position: absolute;
+
+        left: 30px;
+        right: 22px;
+        bottom: 24px;
+
+        z-index: 2;
     }
 
     .card-title {
-        font-size:21px;
+        font-size: clamp(35px, 4vw, 49px);
+        line-height: 0.95;
+        font-weight: 400;
+
+        margin-bottom: 9px;
+
+        color: #fff;
     }
 
     .card-description {
-        font-size:8.5px;
+        max-width: 78%;
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        font-size: clamp(15px, 1.65vw, 18px);
+        line-height: 1.28;
+        font-weight: 400;
+
+        color: #fff;
     }
 
     .card-arrow {
-        width:27px;
-        height:27px;
+        position: absolute;
 
-        right:10px;
-        bottom:10px;
+        right: 2px;
+        bottom: 0;
+
+        width: 52px;
+        height: 52px;
+
+        border: 1.5px solid rgba(255,255,255,0.95);
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 1;
+
+        color: white;
     }
+
+    /* =========================
+       FEATURES BAND
+       ========================= */
 
     .features-band {
-        left:10px;
-        right:10px;
+        width: 100%;
+        max-width: 1100px;
 
-        bottom:3%;
+        margin: clamp(30px, 4vw, 44px) auto 0;
 
-        height:13%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
 
-        min-height:58px;
+        background: rgba(255, 248, 235, 0.88);
 
-        border-radius:20px;
+        border: 1px solid rgba(80, 55, 35, 0.16);
+
+        border-radius: 32px;
+
+        overflow: hidden;
+
+        box-shadow:
+            0 4px 10px rgba(50, 30, 15, 0.10);
+
+        backdrop-filter: blur(3px);
     }
 
-  
+    .feature {
+        min-height: 118px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 15px 8px;
+
+        text-align: center;
+
+        border-right: 1px solid rgba(70, 50, 30, 0.20);
+    }
+
+    .feature:last-child {
+        border-right: none;
+    }
+
+    .feature-icon {
+        width: 25px;
+        height: 25px;
+
+        margin-bottom: 7px;
+
+        fill: none;
+        stroke: #463322;
+        stroke-width: 2.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
     }
 
     .feature-title {
-        font-size:9px;
-    }
-}
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
 
+        font-size: 10px;
+        line-height: 1.15;
+        letter-spacing: 0.1px;
 
-/* =========================================================
-   VERY SHORT SCREENS
-   ========================================================= */
-
-@media (max-height:700px) {
-
-    .top-area {
-        height:25%;
+        color: #463322;
+        white-space: nowrap;
     }
 
-    .logo {
-        width:145px;
+    /* =========================
+       SMALL PHONES
+       ========================= */
+
+    @media (max-width: 600px) {
+
+        .home-page {
+            padding:
+                22px
+                18px
+                58px;
+        }
+
+        .top-area {
+            padding-top: 2px;
+            padding-bottom: 36px;
+        }
+
+        .logo {
+            width: 158px;
+            max-width: 52vw;
+            margin-bottom: 7px;
+        }
+
+        .tagline {
+            font-size: 13px;
+        }
+
+        /* Guest Favourite stays with
+           the sand background */
+        .guest-favourite {
+            top: 0;
+            right: 0;
+            width: 72px;
+        }
+
+        .home-grid {
+            gap: 16px;
+        }
+
+        .home-card {
+            border-radius: 27px;
+        }
+
+        .home-card-content {
+            left: 20px;
+            right: 15px;
+            bottom: 19px;
+        }
+
+        .card-title {
+            font-size: 34px;
+            margin-bottom: 7px;
+        }
+
+        .card-description {
+            font-size: 14px;
+            line-height: 1.25;
+            max-width: 82%;
+        }
+
+        .card-arrow {
+            width: 48px;
+            height: 48px;
+
+            font-size: 27px;
+        }
+
+        .features-band {
+            margin-top: 30px;
+            border-radius: 29px;
+        }
+
+        .feature {
+            min-height: 100px;
+            padding: 11px 4px;
+        }
+
+        .feature-title {
+            font-size: 9px;
+        }
     }
 
-    .tagline {
-        font-size:12px;
+    /* =========================
+       VERY SMALL PHONES
+       ========================= */
+
+    @media (max-width: 380px) {
+
+        .home-page {
+            padding-left: 14px;
+            padding-right: 14px;
+        }
+
+        .home-grid {
+            gap: 12px;
+        }
+
+        .home-card {
+            border-radius: 24px;
+        }
+
+        .home-card-content {
+            left: 16px;
+            bottom: 16px;
+        }
+
+        .card-title {
+            font-size: 29px;
+        }
+
+        .card-description {
+            font-size: 12px;
+        }
+
+        .card-arrow {
+            width: 43px;
+            height: 43px;
+            font-size: 24px;
+        }
+
+        .features-band {
+            border-radius: 25px;
+        }
+
+        .feature {
+            min-height: 91px;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        .feature-title {
+            font-size: 8px;
+        }
     }
-
-    .home-grid {
-        top:25%;
-        bottom:20%;
-
-        gap:8px;
-    }
-
-    .features-band {
-        bottom:2%;
-        height:16%;
-    }
-}
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="home-page">
 
-
-    <!-- =====================================================
-         BRAND
-         ===================================================== -->
+    <!-- =========================
+         TOP
+         ========================= -->
 
     <header class="top-area">
 
@@ -477,30 +472,32 @@ body {
             Where the sea slows you down.
         </h1>
 
+        <!-- Airbnb Guest Favourite -->
+        <img
+            src="guest-favourite.png"
+            alt="Airbnb Guest Favourite"
+            class="guest-favourite"
+        >
+
     </header>
 
 
-
-    <!-- =====================================================
+    <!-- =========================
          FOUR DESTINATIONS
-         ===================================================== -->
+         ========================= -->
 
     <main class="home-grid">
 
-
         <!-- STAY -->
 
-        <a
-            href="arrival-guide.html"
-            class="home-card"
-        >
+        <a href="arrival-guide.html" class="home-card">
 
             <img
                 src="Sea View1.jpg"
-                alt="Stay at 303 Oyster Bay"
+                alt="Sea view from 303 Oyster Bay"
             >
 
-            <div class="card-copy">
+            <div class="home-card-content">
 
                 <div class="card-title">
                     Stay
@@ -510,29 +507,25 @@ body {
                     Arrival • Wi-Fi • House Rules
                 </div>
 
-            </div>
+                <div class="card-arrow">
+                    →
+                </div>
 
-            <div class="card-arrow">
-                →
             </div>
 
         </a>
 
 
-
         <!-- LIVE -->
 
-        <a
-            href="live.html"
-            class="home-card"
-        >
+        <a href="live.html" class="home-card">
 
             <img
                 src="Living1.jpg"
-                alt="Live at 303 Oyster Bay"
+                alt="Living room at 303 Oyster Bay"
             >
 
-            <div class="card-copy">
+            <div class="home-card-content">
 
                 <div class="card-title">
                     Live
@@ -542,29 +535,25 @@ body {
                     Rooms • Comfort • Kitchen
                 </div>
 
-            </div>
+                <div class="card-arrow">
+                    →
+                </div>
 
-            <div class="card-arrow">
-                →
             </div>
 
         </a>
 
 
-
         <!-- EXPLORE -->
 
-        <a
-            href="In%20and%20around.pdf"
-            class="home-card"
-        >
+        <a href="In%20and%20around.pdf" class="home-card">
 
             <img
                 src="Lighthouse.jpg"
-                alt="Explore Mangaluru"
+                alt="Lighthouse near Surathkal"
             >
 
-            <div class="card-copy">
+            <div class="home-card-content">
 
                 <div class="card-title">
                     Explore
@@ -574,29 +563,25 @@ body {
                     Beaches • Food • Mangaluru
                 </div>
 
-            </div>
+                <div class="card-arrow">
+                    →
+                </div>
 
-            <div class="card-arrow">
-                →
             </div>
 
         </a>
 
 
-
         <!-- REMEMBER -->
 
-        <a
-            href="Remember.html"
-            class="home-card"
-        >
+        <a href="Remember.html" class="home-card">
 
             <img
                 src="Bedroom1.jpg"
-                alt="Remember 303 Oyster Bay"
+                alt="Bedroom at 303 Oyster Bay"
             >
 
-            <div class="card-copy">
+            <div class="home-card-content">
 
                 <div class="card-title">
                     Remember
@@ -606,25 +591,22 @@ body {
                     Sea Views • Living • Bedroom • Kitchen
                 </div>
 
-            </div>
+                <div class="card-arrow">
+                    →
+                </div>
 
-            <div class="card-arrow">
-                →
             </div>
 
         </a>
 
-
     </main>
 
 
-
-    <!-- =====================================================
+    <!-- =========================
          PROPERTY FEATURES
-         ===================================================== -->
+         ========================= -->
 
     <section class="features-band">
-
 
         <!-- 2 BEDROOMS -->
 
@@ -632,14 +614,14 @@ body {
 
             <svg
                 class="feature-icon"
-                viewBox="0 0 24 24"
+                viewBox="0 0 32 32"
                 aria-hidden="true"
             >
-                <path d="M3 11v9"></path>
-                <path d="M21 11v9"></path>
-                <path d="M3 15h18"></path>
-                <path d="M5 15V9a2 2 0 0 1 2-2h4a3 3 0 0 1 3 3v5"></path>
-                <path d="M14 11h4a3 3 0 0 1 3 3"></path>
+                <path d="M5 25V14h22v11"/>
+                <path d="M5 19h22"/>
+                <path d="M8 14V9h7c2 0 3 1 3 3v2"/>
+                <path d="M5 25v3"/>
+                <path d="M27 25v3"/>
             </svg>
 
             <div class="feature-title">
@@ -649,20 +631,19 @@ body {
         </div>
 
 
-
         <!-- SLEEPS -->
 
         <div class="feature">
 
             <svg
                 class="feature-icon"
-                viewBox="0 0 24 24"
+                viewBox="0 0 32 32"
                 aria-hidden="true"
             >
-                <circle cx="8" cy="8" r="3"></circle>
-                <circle cx="17" cy="9" r="2.5"></circle>
-                <path d="M3 20c0-3 2.2-5 5-5s5 2 5 5"></path>
-                <path d="M14 20c0-2.4 1.4-4 3.5-4 2 0 3.5 1.6 3.5 4"></path>
+                <circle cx="11" cy="10" r="4"/>
+                <circle cx="21" cy="10" r="4"/>
+                <path d="M4 25c0-5 3-8 7-8s7 3 7 8"/>
+                <path d="M14 25c0-5 3-8 7-8s7 3 7 8"/>
             </svg>
 
             <div class="feature-title">
@@ -672,20 +653,25 @@ body {
         </div>
 
 
-
         <!-- WI-FI -->
 
         <div class="feature">
 
             <svg
                 class="feature-icon"
-                viewBox="0 0 24 24"
+                viewBox="0 0 32 32"
                 aria-hidden="true"
             >
-                <path d="M3 8.5a14 14 0 0 1 18 0"></path>
-                <path d="M6 12a9.5 9.5 0 0 1 12 0"></path>
-                <path d="M9.5 15.5a5 5 0 0 1 5 0"></path>
-                <circle cx="12" cy="19" r="1"></circle>
+                <path d="M4 12c8-7 16-7 24 0"/>
+                <path d="M8 17c5-4 11-4 16 0"/>
+                <path d="M12 22c3-2 5-2 8 0"/>
+                <circle
+                    cx="16"
+                    cy="26"
+                    r="1.5"
+                    fill="#463322"
+                    stroke="none"
+                />
             </svg>
 
             <div class="feature-title">
@@ -695,22 +681,20 @@ body {
         </div>
 
 
-
         <!-- PARKING -->
 
         <div class="feature">
 
             <svg
                 class="feature-icon"
-                viewBox="0 0 24 24"
+                viewBox="0 0 32 32"
                 aria-hidden="true"
             >
-                <path d="M5 17l1.5-6h11L19 17"></path>
-                <path d="M4 17h16"></path>
-                <path d="M7 17v2"></path>
-                <path d="M17 17v2"></path>
-                <circle cx="7.5" cy="15.5" r="1"></circle>
-                <circle cx="16.5" cy="15.5" r="1"></circle>
+                <path d="M6 20l2-8h16l2 8"/>
+                <path d="M5 20h22v6H5z"/>
+                <circle cx="9" cy="26" r="1.5"/>
+                <circle cx="23" cy="26" r="1.5"/>
+                <path d="M10 15h12"/>
             </svg>
 
             <div class="feature-title">
@@ -720,21 +704,20 @@ body {
         </div>
 
 
-
-        <!-- FULL KITCHEN -->
+        <!-- KITCHEN -->
 
         <div class="feature">
 
             <svg
                 class="feature-icon"
-                viewBox="0 0 24 24"
+                viewBox="0 0 32 32"
                 aria-hidden="true"
             >
-                <path d="M5 3v8"></path>
-                <path d="M3 3v5a2 2 0 0 0 4 0V3"></path>
-                <path d="M5 11v10"></path>
-                <path d="M14 3v18"></path>
-                <path d="M14 3c4 2 5 5 0 8"></path>
+                <path d="M8 5v11"/>
+                <path d="M5 5v7c0 2 1 3 3 3s3-1 3-3V5"/>
+                <path d="M8 16v11"/>
+                <path d="M21 5v22"/>
+                <path d="M21 5c4 2 5 6 5 10h-5"/>
             </svg>
 
             <div class="feature-title">
@@ -743,12 +726,9 @@ body {
 
         </div>
 
-
     </section>
 
-
 </div>
-
 
 </body>
 </html>
