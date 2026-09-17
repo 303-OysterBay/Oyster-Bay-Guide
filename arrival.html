@@ -80,19 +80,22 @@ body{
 
 
 /* =========================================================
-   EXISTING SAND BACKGROUND REVEAL
+   EXISTING BACKGROUND WAVE — TOP RIGHT
    ---------------------------------------------------------
-   This is NOT a new wave.
-   It simply reveals the existing sand-background.jpg
-   over the upper-right portion of the beige box.
+   Uses the actual sand-background.jpg.
+   No artificial foam/wave is created.
    ========================================================= */
 
 .arrival-content::before{
     content:"";
 
-    position:fixed;
+    position:absolute;
 
-    inset:0;
+    top:0;
+    right:0;
+
+    width:43%;
+    height:92px;
 
     z-index:1;
 
@@ -100,29 +103,39 @@ body{
 
     background-image:url("sand-background.jpg");
     background-size:cover;
-    background-position:center;
+    background-position:left top;
     background-repeat:no-repeat;
 
-    clip-path:polygon(
-        61% 0%,
-        100% 0%,
-        100% 25%,
-        96% 24%,
-        92% 22%,
-        88% 21%,
-        84% 18%,
-        80% 16%,
-        76% 13%,
-        72% 10%,
-        68% 7%,
-        64% 4%
+    /*
+       Smooth organic lower edge rather than
+       a straight/polygon/torn-paper cut.
+    */
+
+    clip-path:ellipse(
+        78% 68% at 100% 0%
     );
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   CONTENT LAYER ABOVE WAVE
+   ========================================================= */
+
+.arrival-header,
+.arrival-options,
+.arrival-lower,
+.parking-box,
+.guest-id-box{
+    position:relative;
+    z-index:5;
 }
 
 
 /* =========================================================
    GUEST FAVOURITE
-   LOCKED SIZE + RELATIONSHIP
+   LOCKED SIZE + POSITION
    ========================================================= */
 
 .arrival-content .guest-favourite-link{
@@ -156,35 +169,31 @@ body{
    ========================================================= */
 
 .arrival-header{
-    position:relative;
-
-    z-index:5;
-
     width:100%;
 
     text-align:center;
 
     padding:10px 100px 0;
 
-    margin-bottom:17px;
+    margin-bottom:15px;
 }
 
 .arrival-title{
-    font-size:27px;
+    font-size:26px;
 
     font-weight:normal;
 
     line-height:1;
 
-    letter-spacing:1.6px;
+    letter-spacing:1.5px;
 
     color:#463322;
 
-    margin-bottom:6px;
+    margin-bottom:5px;
 }
 
 .arrival-subtitle{
-    font-size:11px;
+    font-size:10px;
 
     line-height:1;
 
@@ -199,17 +208,13 @@ body{
    ========================================================= */
 
 .arrival-options{
-    position:relative;
-
-    z-index:5;
-
     display:grid;
 
     grid-template-columns:repeat(4,minmax(0,1fr));
 
     width:100%;
 
-    margin-bottom:20px;
+    margin-bottom:17px;
 }
 
 .arrival-option{
@@ -217,7 +222,7 @@ body{
 
     text-align:center;
 
-    padding:9px 11px 10px;
+    padding:8px 10px 8px;
 
     border-top:1px solid rgba(112,69,31,.28);
 
@@ -234,10 +239,10 @@ body{
    ========================================================= */
 
 .arrival-icon{
-    width:30px;
-    height:30px;
+    width:28px;
+    height:28px;
 
-    margin:0 auto 8px;
+    margin:0 auto 7px;
 
     display:block;
 
@@ -252,51 +257,41 @@ body{
     stroke-linejoin:round;
 }
 
+.arrival-icon path{
+    fill:none;
+}
 
-/* AIRCRAFT */
-
-.aircraft-icon path{
+.arrival-icon circle{
     fill:none;
 }
 
 
-/* RAILWAY */
-
-.rail-icon path{
-    fill:none;
-}
-
-
-/* CAR */
-
-.car-icon path,
-.car-icon circle{
-    fill:none;
-}
-
+/* =========================================================
+   ARRIVAL TEXT
+   ========================================================= */
 
 .arrival-option h3{
-    font-size:11px;
+    font-size:10px;
 
     font-weight:normal;
 
-    line-height:1.25;
+    line-height:1.22;
 
-    margin-bottom:7px;
+    margin-bottom:6px;
 
     color:#463322;
 }
 
 .arrival-option p{
-    font-size:10px;
+    font-size:9px;
 
-    line-height:1.35;
+    line-height:1.28;
 
     color:#6b5540;
 }
 
 .arrival-distance{
-    font-size:10px !important;
+    font-size:9px !important;
 
     margin-bottom:2px;
 
@@ -309,10 +304,6 @@ body{
    ========================================================= */
 
 .arrival-lower{
-    position:relative;
-
-    z-index:5;
-
     display:grid;
 
     grid-template-columns:1fr 1fr;
@@ -329,7 +320,7 @@ body{
 
 .arrival-photo{
     width:100%;
-    height:135px;
+    height:130px;
 
     overflow:hidden;
 
@@ -353,13 +344,13 @@ body{
    ========================================================= */
 
 .maps-box{
-    height:135px;
+    height:130px;
 
     border-radius:10px;
 
     background:#eee2cc;
 
-    padding:9px 12px;
+    padding:8px 12px;
 
     display:flex;
 
@@ -375,7 +366,7 @@ body{
 .maps-title{
     font-family:Arial,sans-serif;
 
-    font-size:10px;
+    font-size:9px;
 
     font-weight:700;
 
@@ -383,23 +374,23 @@ body{
 
     color:#463322;
 
-    margin-bottom:6px;
+    margin-bottom:5px;
 }
 
 .maps-qr{
-    width:73px;
-    height:73px;
+    width:70px;
+    height:70px;
 
     object-fit:contain;
 
     display:block;
 
-    margin:0 auto 6px;
+    margin:0 auto 5px;
 }
 
 
 /* =========================================================
-   GOOGLE MAPS CLICKABLE LINK
+   GOOGLE MAPS BLUE ACTION
    ========================================================= */
 
 .maps-link{
@@ -408,22 +399,15 @@ body{
     align-items:center;
     justify-content:center;
 
-    gap:6px;
+    min-height:26px;
 
-    min-height:27px;
-
-    padding:6px 11px;
+    padding:6px 12px;
 
     border-radius:14px;
 
-    background:#ffffff;
+    background:#4285F4;
 
-    border:1px solid rgba(70,51,34,.12);
-
-    box-shadow:
-        0 1px 4px rgba(70,42,20,.18);
-
-    color:#463322;
+    color:#ffffff;
 
     text-decoration:none;
 
@@ -440,21 +424,9 @@ body{
     cursor:pointer;
 
     -webkit-tap-highlight-color:transparent;
-}
 
-.maps-pin{
-    width:13px;
-    height:13px;
-
-    flex:0 0 13px;
-
-    display:block;
-}
-
-.maps-arrow{
-    font-size:10px;
-
-    line-height:1;
+    box-shadow:
+        0 1px 3px rgba(50,90,160,.25);
 }
 
 
@@ -463,19 +435,15 @@ body{
    ========================================================= */
 
 .parking-box{
-    position:relative;
-
-    z-index:5;
-
     display:flex;
 
     align-items:center;
 
     width:100%;
 
-    margin-top:15px;
+    margin-top:14px;
 
-    padding:12px 15px;
+    padding:10px 14px;
 
     border-radius:9px;
 
@@ -483,12 +451,12 @@ body{
 }
 
 .parking-icon{
-    width:28px;
-    height:28px;
+    width:27px;
+    height:27px;
 
-    flex:0 0 28px;
+    flex:0 0 27px;
 
-    margin-right:12px;
+    margin-right:11px;
 
     color:#70451f;
 }
@@ -500,21 +468,21 @@ body{
 .parking-title{
     font-family:Arial,sans-serif;
 
-    font-size:9px;
+    font-size:8.5px;
 
     font-weight:700;
 
     letter-spacing:.6px;
 
-    margin-bottom:5px;
+    margin-bottom:4px;
 
     color:#463322;
 }
 
 .parking-copy p{
-    font-size:11px;
+    font-size:10.5px;
 
-    line-height:1.3;
+    line-height:1.25;
 
     color:#6b5540;
 }
@@ -525,15 +493,11 @@ body{
    ========================================================= */
 
 .guest-id-box{
-    position:relative;
-
-    z-index:5;
-
     width:100%;
 
-    margin-top:15px;
+    margin-top:13px;
 
-    padding:13px 15px;
+    padding:11px 14px;
 
     border-radius:9px;
 
@@ -543,27 +507,27 @@ body{
 .guest-id-title{
     font-family:Arial,sans-serif;
 
-    font-size:9px;
+    font-size:8.5px;
 
     font-weight:700;
 
     letter-spacing:.6px;
 
-    margin-bottom:6px;
+    margin-bottom:5px;
 
     color:#463322;
 }
 
 .guest-id-box p{
-    font-size:10.5px;
+    font-size:9px;
 
-    line-height:1.38;
+    line-height:1.27;
 
     color:#6b5540;
 }
 
 .guest-id-box p + p{
-    margin-top:6px;
+    margin-top:5px;
 }
 
 
@@ -701,6 +665,15 @@ body{
         border-radius:13px;
     }
 
+    .arrival-content::before{
+        width:48%;
+        height:75px;
+
+        clip-path:ellipse(
+            80% 68% at 100% 0%
+        );
+    }
+
     .arrival-content .guest-favourite-link{
         width:82px;
 
@@ -708,70 +681,55 @@ body{
         right:5px;
     }
 
-    .arrival-content::before{
-        clip-path:polygon(
-            58% 0%,
-            100% 0%,
-            100% 24%,
-            95% 23%,
-            90% 20%,
-            85% 18%,
-            80% 15%,
-            75% 12%,
-            70% 9%,
-            65% 5%
-        );
-    }
-
     .arrival-header{
         padding:7px 88px 0;
 
-        margin-bottom:11px;
+        margin-bottom:10px;
     }
 
     .arrival-title{
-        font-size:21px;
+        font-size:20px;
 
         letter-spacing:1.2px;
 
-        margin-bottom:4px;
+        margin-bottom:3px;
     }
 
     .arrival-subtitle{
-        font-size:8.8px;
+        font-size:8.6px;
     }
 
     .arrival-options{
-        margin-bottom:11px;
+        margin-bottom:10px;
     }
 
     .arrival-option{
-        padding:6px 4px 6px;
+        padding:5px 4px 5px;
     }
 
     .arrival-icon{
         width:21px;
         height:21px;
 
-        margin-bottom:5px;
+        margin-bottom:4px;
     }
 
     .arrival-option h3{
-        font-size:8.3px;
+        font-size:8px;
 
-        line-height:1.16;
+        line-height:1.15;
 
         margin-bottom:4px;
     }
 
     .arrival-option p{
-        font-size:7.5px;
+        font-size:7.3px;
 
-        line-height:1.22;
+        line-height:1.18;
     }
 
     .arrival-distance{
-        font-size:7.5px !important;
+        font-size:7.3px !important;
     }
 
     .arrival-lower{
@@ -780,7 +738,7 @@ body{
 
     .arrival-photo,
     .maps-box{
-        height:91px;
+        height:88px;
     }
 
     .maps-box{
@@ -788,50 +746,37 @@ body{
     }
 
     .maps-title{
-        font-size:6.8px;
+        font-size:6.7px;
 
-        margin-bottom:4px;
+        margin-bottom:3px;
     }
 
     .maps-qr{
-        width:48px;
-        height:48px;
+        width:46px;
+        height:46px;
 
         margin-bottom:4px;
     }
 
     .maps-link{
-        min-height:21px;
+        min-height:20px;
 
         padding:4px 7px;
 
-        gap:4px;
-
-        font-size:6.3px;
-    }
-
-    .maps-pin{
-        width:10px;
-        height:10px;
-
-        flex-basis:10px;
-    }
-
-    .maps-arrow{
-        font-size:8px;
+        font-size:6.1px;
     }
 
     .parking-box{
         margin-top:8px;
 
-        padding:8px 9px;
+        padding:7px 9px;
     }
 
     .parking-icon{
-        width:21px;
-        height:21px;
+        width:20px;
+        height:20px;
 
-        flex-basis:21px;
+        flex-basis:20px;
 
         margin-right:8px;
     }
@@ -846,21 +791,21 @@ body{
     }
 
     .parking-copy p{
-        font-size:7.8px;
+        font-size:7.5px;
 
-        line-height:1.2;
+        line-height:1.18;
     }
 
     .guest-id-box{
         margin-top:8px;
 
-        padding:8px 9px;
+        padding:7px 9px;
     }
 
     .guest-id-box p{
-        font-size:7.6px;
+        font-size:7.2px;
 
-        line-height:1.23;
+        line-height:1.2;
     }
 
     .guest-id-box p + p{
@@ -901,36 +846,27 @@ body{
         padding:8px 8px 8px;
     }
 
-    .arrival-content .guest-favourite-link{
-        width:76px;
+    .arrival-content::before{
+        width:50%;
+        height:68px;
     }
 
-    .arrival-content::before{
-        clip-path:polygon(
-            56% 0%,
-            100% 0%,
-            100% 23%,
-            94% 21%,
-            88% 19%,
-            82% 16%,
-            76% 13%,
-            70% 9%,
-            63% 5%
-        );
+    .arrival-content .guest-favourite-link{
+        width:76px;
     }
 
     .arrival-header{
         padding-right:81px;
 
-        margin-bottom:9px;
+        margin-bottom:8px;
     }
 
     .arrival-title{
-        font-size:19px;
+        font-size:18px;
     }
 
     .arrival-subtitle{
-        font-size:7.7px;
+        font-size:7.6px;
     }
 
     .arrival-icon{
@@ -939,50 +875,39 @@ body{
     }
 
     .arrival-option h3{
-        font-size:7.5px;
+        font-size:7.3px;
     }
 
     .arrival-option p,
     .arrival-distance{
-        font-size:6.8px !important;
+        font-size:6.6px !important;
     }
 
     .arrival-photo,
     .maps-box{
-        height:82px;
+        height:79px;
     }
 
     .maps-title{
-        font-size:6.2px;
+        font-size:6px;
     }
 
     .maps-qr{
-        width:42px;
-        height:42px;
+        width:40px;
+        height:40px;
     }
 
     .maps-link{
-        min-height:19px;
+        min-height:18px;
 
         padding:3px 5px;
 
-        font-size:5.8px;
-    }
-
-    .maps-pin{
-        width:9px;
-        height:9px;
-
-        flex-basis:9px;
-    }
-
-    .maps-arrow{
-        font-size:7px;
+        font-size:5.6px;
     }
 
     .parking-copy p,
     .guest-id-box p{
-        font-size:6.8px;
+        font-size:6.6px;
     }
 
 
@@ -1061,9 +986,7 @@ body{
 <div class="arrival-options">
 
 
-<!-- =====================================================
-     AIRPORT — PASSENGER AIRCRAFT
-     ===================================================== -->
+<!-- AIRPORT -->
 
 <div class="arrival-option">
 
@@ -1099,10 +1022,6 @@ body{
         d="M36.5 28.5L54 19"
     />
 
-    <path
-        d="M18 47H46"
-    />
-
 </svg>
 
 <h3>
@@ -1120,9 +1039,7 @@ body{
 </div>
 
 
-<!-- =====================================================
-     MAJN — RAILWAY STATION
-     ===================================================== -->
+<!-- MAJN -->
 
 <div class="arrival-option">
 
@@ -1174,9 +1091,7 @@ body{
 </div>
 
 
-<!-- =====================================================
-     MAQ — RAILWAY STATION
-     ===================================================== -->
+<!-- MAQ -->
 
 <div class="arrival-option">
 
@@ -1228,9 +1143,7 @@ body{
 </div>
 
 
-<!-- =====================================================
-     BY CAR — SEDAN
-     ===================================================== -->
+<!-- BY CAR -->
 
 <div class="arrival-option">
 
@@ -1300,8 +1213,6 @@ body{
 <div class="arrival-lower">
 
 
-<!-- EXTERIOR -->
-
 <div class="arrival-photo">
 
     <img
@@ -1311,8 +1222,6 @@ body{
 
 </div>
 
-
-<!-- GOOGLE MAPS -->
 
 <div class="maps-box">
 
@@ -1333,42 +1242,7 @@ body{
         rel="noopener"
         aria-label="Open 303 Oyster Bay in Google Maps"
     >
-
-        <svg
-            class="maps-pin"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-        >
-
-            <path
-                d="M20 10
-                   C20 15.5 12 22 12 22
-                   C12 22 4 15.5 4 10
-                   C4 5.6 7.6 2 12 2
-                   C16.4 2 20 5.6 20 10Z"
-                stroke="#4285F4"
-                stroke-width="2"
-            />
-
-            <circle
-                cx="12"
-                cy="10"
-                r="2.5"
-                fill="#EA4335"
-            />
-
-        </svg>
-
-        <span>
-            Open in Google Maps
-        </span>
-
-        <span class="maps-arrow">
-            ↗
-        </span>
-
+        Open in Google Maps
     </a>
 
 </div>
@@ -1483,16 +1357,12 @@ body{
     >
 
 
-    <!-- HOME -->
-
     <a
         href="index.html"
         class="nav-hotspot hotspot-home"
         aria-label="Home">
     </a>
 
-
-    <!-- STAY -->
 
     <a
         href="arrival.html"
@@ -1501,16 +1371,12 @@ body{
     </a>
 
 
-    <!-- LIVE -->
-
     <a
         href="live.html"
         class="nav-hotspot hotspot-live"
         aria-label="Live">
     </a>
 
-
-    <!-- EXPLORE -->
 
     <a
         href="In%20and%20around.pdf"
