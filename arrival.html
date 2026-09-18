@@ -2292,8 +2292,11 @@ function goToSection(index){
 
     const target = sections[index];
 
+    const targetTop =
+        target.getBoundingClientRect().top + window.scrollY;
+
     window.scrollTo({
-        top: target.offsetTop,
+        top: targetTop,
         behavior:"smooth"
     });
 
