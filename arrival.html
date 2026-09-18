@@ -1,22 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width,
-               initial-scale=1.0,
-               viewport-fit=cover">
-
-<title>303 OYSTER BAY • Pre-Arrival</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>303 OYSTER BAY • Arrival Guide</title>
 
 <style>
-
 /* =========================================================
-   FROZEN BASE
+   303 OYSTER BAY — ARRIVAL GUIDE
+   MASTER LAYOUT
    ========================================================= */
 
 *{
@@ -25,39 +17,45 @@
     padding:0;
 }
 
-html{
+html,
+body{
     width:100%;
-    min-height:100%;
+    height:100%;
+}
 
+html{
     scroll-behavior:smooth;
+    scroll-snap-type:y mandatory;
+    overscroll-behavior-y:none;
 }
 
 body{
-    width:100%;
-    min-height:100%;
-
-    overflow-x:hidden;
-    overflow-y:auto;
-
     font-family:Georgia,"Times New Roman",serif;
-
     background:#e8d8bd;
     color:#463322;
+    overflow-x:hidden;
+    overflow-y:auto;
 }
 
 
 /* =========================================================
-   FULL VIEWPORT SECTIONS
+   SIX FULL-VIEWPORT SECTIONS
    ========================================================= */
+
+.guide-page{
+    width:100%;
+    min-height:100%;
+}
 
 .guide-section{
     position:relative;
-
     width:100%;
     height:100svh;
     min-height:100svh;
-
     overflow:hidden;
+
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
 
     background-image:url("sand-background.jpg");
     background-size:cover;
@@ -67,18 +65,13 @@ body{
 
 
 /* =========================================================
-   =========================================================
-   FROZEN TOP NAVIGATION
-   =========================================================
-   The actual PNG artwork remains untouched.
-   It is FIXED to the viewport and therefore remains
-   available throughout the entire scrolling page.
-   =========================================================
+   FIXED TOP NAV
+   Existing artwork is NOT altered.
+   It is simply positioned at the top.
    ========================================================= */
 
 .top-nav{
     position:fixed;
-
     top:0;
     left:0;
 
@@ -86,171 +79,240 @@ body{
     height:auto;
 
     z-index:200;
+    pointer-events:none;
+}
 
+.top-nav-art{
     display:block;
 
-    pointer-events:none;
+    width:100%;
+    height:auto;
 
+    pointer-events:none;
     user-select:none;
     -webkit-user-drag:none;
 }
 
 
 /* =========================================================
-   TOP NAV CLICK / ACTIVE HOTSPOTS
-
-   Five equal navigation zones corresponding to the actual
-   pills in Arrival Page top Nav Bar.png
+   INVISIBLE TOP-NAV INTERACTION AREAS
    ========================================================= */
 
-.top-nav-hotspot{
-    position:fixed;
+.top-nav-hit{
+    position:absolute;
 
-    top:0;
-
-    height:clamp(70px,19vw,100px);
+    top:56%;
+    height:38%;
 
     z-index:210;
 
     display:block;
 
-    background:transparent;
-
-    border:0;
-
-    text-decoration:none;
-
     pointer-events:auto;
+    text-decoration:none;
 
     -webkit-tap-highlight-color:transparent;
 }
 
 
-/* ---------------------------------------------------------
-   ARRIVAL
-   --------------------------------------------------------- */
+/*
+   Five existing pills in the supplied artwork.
+*/
 
-.top-hotspot-prearrival{
+.top-nav-arrival{
     left:0;
     width:21%;
 }
 
-
-/* ---------------------------------------------------------
-   EMERGENCY
-   --------------------------------------------------------- */
-
-.top-hotspot-emergency{
+.top-nav-emergency{
     left:21%;
-    width:20%;
-}
-
-
-/* ---------------------------------------------------------
-   WIFI
-   --------------------------------------------------------- */
-
-.top-hotspot-wifi{
-    left:41%;
-    width:18%;
-}
-
-
-/* ---------------------------------------------------------
-   BEACH MANAGEMENT
-   --------------------------------------------------------- */
-
-.top-hotspot-beach{
-    left:59%;
     width:21%;
 }
 
+.top-nav-wifi{
+    left:42%;
+    width:18%;
+}
 
-/* ---------------------------------------------------------
-   CHECK OUT
-   --------------------------------------------------------- */
+.top-nav-beach{
+    left:60%;
+    width:21%;
+}
 
-.top-hotspot-checkout{
-    left:80%;
-    width:20%;
+.top-nav-checkout{
+    right:0;
+    width:19%;
 }
 
 
 /* =========================================================
-   ACTIVE TOP NAV HIGHLIGHT
-
-   The PNG itself is not altered.
-   A subtle outline is placed over the relevant existing pill.
+   READABILITY WHITENER
+   Very subtle — keeps beach visible.
    ========================================================= */
 
-.top-nav-hotspot.active::after{
-
+.top-nav-hit::before{
     content:"";
 
     position:absolute;
+    inset:4px 3px;
 
-    left:5px;
-    right:5px;
+    border-radius:999px;
 
-    top:7px;
-    bottom:7px;
+    background:rgba(255,255,255,.15);
 
-    border:2px solid rgba(112,69,31,.72);
+    backdrop-filter:blur(1.5px);
+    -webkit-backdrop-filter:blur(1.5px);
 
-    border-radius:30px;
+    z-index:-1;
+}
+
+
+/* =========================================================
+   ACTIVE TOP-NAV HIGHLIGHT
+   NO CIRCLE.
+   NO FILLED COLOUR.
+   ONLY A PILL-SHAPED OUTLINE.
+   ========================================================= */
+
+.top-nav-hit::after{
+    content:"";
+
+    position:absolute;
+    inset:2px 1px;
+
+    border:1.5px solid transparent;
+    border-radius:999px;
+
+    pointer-events:none;
+}
+
+.top-nav-hit.active::after{
+    border-color:rgba(255,255,255,.96);
 
     box-shadow:
-        0 0 0 2px rgba(255,248,231,.45),
-        inset 0 0 10px rgba(255,255,255,.18);
+        0 0 0 1px rgba(70,51,34,.22);
+}
+
+
+/* =========================================================
+   ARRIVAL DROPDOWN
+   CSS = HOVER
+   JS = TOUCH / CLICK
+   ========================================================= */
+
+.top-nav-arrival{
+    z-index:220;
+}
+
+.arrival-dropdown{
+    position:absolute;
+
+    left:8%;
+    top:calc(100% - 4px);
+
+    width:84%;
+    min-width:150px;
+
+    padding:6px;
+
+    border-radius:12px;
+
+    background:rgba(248,240,223,.96);
+
+    border:1px solid rgba(112,69,31,.28);
+
+    box-shadow:
+        0 5px 14px rgba(70,42,20,.20);
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(-5px);
+
+    transition:
+        opacity .18s ease,
+        transform .18s ease,
+        visibility .18s ease;
 
     pointer-events:none;
 }
 
 
-/* =========================================================
-   PRE-ARRIVAL SECTION
-   ========================================================= */
+/*
+   Desktop hover.
+   Touch devices use the .open class via JavaScript.
+*/
 
-.pre-arrival{
-    position:relative;
+.top-nav-arrival:hover .arrival-dropdown,
+.top-nav-arrival.open .arrival-dropdown{
+    opacity:1;
+    visibility:visible;
 
-    width:100%;
-    height:100svh;
-    min-height:100svh;
+    transform:translateY(0);
 
-    overflow:hidden;
+    pointer-events:auto;
+}
 
-    background-image:url("sand-background.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+
+.arrival-dropdown a{
+    display:block;
+
+    padding:9px 10px;
+
+    border-radius:8px;
+
+    color:#463322;
+
+    background:rgba(255,255,255,.18);
+
+    font-family:Arial,sans-serif;
+
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:.45px;
+
+    text-decoration:none;
+
+    white-space:nowrap;
+}
+
+.arrival-dropdown a + a{
+    margin-top:3px;
+}
+
+.arrival-dropdown a:hover,
+.arrival-dropdown a:focus-visible{
+    background:rgba(255,255,255,.52);
+
+    outline:none;
 }
 
 
 /* =========================================================
-   ARRIVAL CONTENT BOX
-
-   IMPORTANT:
-   The box is now TRANSLUCENT so the REAL wave/sand
-   background remains visible underneath it.
-
-   No artificial cut-out is made on the right.
+   PRE-ARRIVAL CONTENT BOX
+   BOTTOM EDGE RETAINED.
+   TOP MOVED UP.
    ========================================================= */
 
 .arrival-content{
-
     position:absolute;
 
     left:12px;
     right:12px;
 
     /*
-       Leave the complete top-nav area clear.
+       The top has been moved upward.
+       The bottom remains at the established position.
     */
 
-    top:clamp(86px,20vw,112px);
-
+    top:clamp(128px,18vw,165px);
     bottom:100px;
+
+    /*
+       Translucent so the actual beach/wave image
+       can show through naturally.
+    */
 
     background:rgba(248,240,223,.88);
 
@@ -267,32 +329,21 @@ body{
 }
 
 
-/* =========================================================
-   IMPORTANT WAVE CORRECTION
-
-   The previous artificial RIGHT-HAND sand cut is removed.
-
-   The actual sand/wave remains underneath the translucent
-   beige box, particularly visible through the LEFT side.
-   ========================================================= */
+/*
+   No artificial right-side cutout.
+*/
 
 .arrival-content::before{
     content:none;
 }
 
 
-/* =========================================================
-   CONTENT ABOVE TRANSPARENCY
-   ========================================================= */
-
 .arrival-header,
 .arrival-options,
 .arrival-lower,
 .parking-box,
 .guest-id-box{
-
     position:relative;
-
     z-index:5;
 }
 
@@ -302,13 +353,13 @@ body{
    ========================================================= */
 
 .arrival-content .guest-favourite-link{
-
     position:absolute;
 
     top:6px;
     right:6px;
 
     width:92px;
+    max-width:none;
 
     height:auto;
 
@@ -320,7 +371,6 @@ body{
 }
 
 .arrival-content .guest-favourite{
-
     display:block;
 
     width:100%;
@@ -333,7 +383,6 @@ body{
    ========================================================= */
 
 .arrival-header{
-
     width:100%;
 
     text-align:center;
@@ -344,7 +393,6 @@ body{
 }
 
 .arrival-title{
-
     font-size:26px;
 
     font-weight:normal;
@@ -359,7 +407,6 @@ body{
 }
 
 .arrival-subtitle{
-
     font-size:10px;
 
     line-height:1;
@@ -375,7 +422,6 @@ body{
    ========================================================= */
 
 .arrival-options{
-
     display:grid;
 
     grid-template-columns:
@@ -387,7 +433,6 @@ body{
 }
 
 .arrival-option{
-
     min-width:0;
 
     text-align:center;
@@ -407,11 +452,10 @@ body{
 
 
 /* =========================================================
-   ARRIVAL ICONS
+   TRANSPORT ICONS
    ========================================================= */
 
 .arrival-icon{
-
     width:28px;
     height:28px;
 
@@ -426,7 +470,6 @@ body{
     stroke-width:2.1;
 
     stroke-linecap:round;
-
     stroke-linejoin:round;
 }
 
@@ -444,7 +487,6 @@ body{
    ========================================================= */
 
 .arrival-option h3{
-
     font-size:10px;
 
     font-weight:normal;
@@ -457,7 +499,6 @@ body{
 }
 
 .arrival-option p{
-
     font-size:9px;
 
     line-height:1.28;
@@ -466,7 +507,6 @@ body{
 }
 
 .arrival-distance{
-
     font-size:9px !important;
 
     margin-bottom:2px;
@@ -476,11 +516,10 @@ body{
 
 
 /* =========================================================
-   LOWER INFORMATION
+   LOWER INFORMATION AREA
    ========================================================= */
 
 .arrival-lower{
-
     display:grid;
 
     grid-template-columns:
@@ -493,11 +532,10 @@ body{
 
 
 /* =========================================================
-   EXTERIOR
+   EXTERIOR IMAGE
    ========================================================= */
 
 .arrival-photo{
-
     width:100%;
     height:130px;
 
@@ -509,7 +547,6 @@ body{
 }
 
 .arrival-photo img{
-
     display:block;
 
     width:100%;
@@ -524,7 +561,6 @@ body{
    ========================================================= */
 
 .maps-box{
-
     height:130px;
 
     border-radius:10px;
@@ -538,14 +574,12 @@ body{
     flex-direction:column;
 
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
 }
 
 .maps-title{
-
     font-family:Arial,sans-serif;
 
     font-size:9px;
@@ -560,7 +594,6 @@ body{
 }
 
 .maps-qr{
-
     width:70px;
     height:70px;
 
@@ -571,13 +604,7 @@ body{
     margin:0 auto 5px;
 }
 
-
-/* =========================================================
-   GOOGLE MAPS BUTTON
-   ========================================================= */
-
 .maps-link{
-
     display:flex;
 
     align-items:center;
@@ -619,7 +646,6 @@ body{
    ========================================================= */
 
 .parking-box{
-
     display:flex;
 
     align-items:center;
@@ -636,7 +662,6 @@ body{
 }
 
 .parking-icon{
-
     width:27px;
     height:27px;
 
@@ -652,7 +677,6 @@ body{
 }
 
 .parking-title{
-
     font-family:Arial,sans-serif;
 
     font-size:8.5px;
@@ -667,7 +691,6 @@ body{
 }
 
 .parking-copy p{
-
     font-size:10.5px;
 
     line-height:1.25;
@@ -677,11 +700,10 @@ body{
 
 
 /* =========================================================
-   GUEST ID
+   GUEST ID SECTION
    ========================================================= */
 
 .guest-id-box{
-
     width:100%;
 
     margin-top:13px;
@@ -694,7 +716,6 @@ body{
 }
 
 .guest-id-title{
-
     font-family:Arial,sans-serif;
 
     font-size:8.5px;
@@ -709,7 +730,6 @@ body{
 }
 
 .guest-id-box p{
-
     font-size:9px;
 
     line-height:1.27;
@@ -723,32 +743,11 @@ body{
 
 
 /* =========================================================
-   PLACEHOLDER SECTIONS
+   OTHER SECTIONS
+   TITLE-ONLY PLACEHOLDER FOR NOW
    ========================================================= */
 
-.placeholder-section{
-
-    position:relative;
-
-    width:100%;
-    height:100svh;
-    min-height:100svh;
-
-    overflow:hidden;
-
-    background-image:url("sand-background.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-}
-
-
-/* =========================================================
-   PLACEHOLDER BEIGE BOX
-   ========================================================= */
-
-.placeholder-box{
-
+.guide-placeholder{
     position:absolute;
 
     left:12px;
@@ -758,35 +757,19 @@ body{
 
     transform:translateY(-50%);
 
-    min-height:170px;
-
-    padding:32px 24px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:rgba(248,240,223,.88);
+    padding:25px 20px;
 
     border-radius:16px;
+
+    background:rgba(248,240,223,.90);
 
     box-shadow:
         0 3px 10px rgba(70,42,20,.13);
 
-    z-index:10;
+    text-align:center;
 }
 
-
-/* =========================================================
-   PLACEHOLDER TITLE
-   ========================================================= */
-
-.placeholder-title{
-
-    margin:0;
-
+.guide-placeholder h2{
     font-size:26px;
 
     font-weight:normal;
@@ -796,46 +779,54 @@ body{
     letter-spacing:1.5px;
 
     color:#463322;
-
-    text-align:center;
 }
 
 
 /* =========================================================
-   GUEST FAVOURITE — PLACEHOLDERS
+   FROZEN 303 OYSTER BAY BOTTOM NAVIGATION
+   DO NOT CHANGE GEOMETRY
    ========================================================= */
 
-.placeholder-section .guest-favourite-link{
+.bottom-nav{
+    position:fixed;
 
-    position:absolute;
+    left:0;
+    right:0;
 
-    top:18px;
-    right:14px;
+    bottom:0;
 
-    width:92px;
-
-    height:auto;
+    width:100%;
+    height:135px;
 
     z-index:30;
 
-    display:block;
+    pointer-events:none;
 }
 
-.placeholder-section .guest-favourite{
+.bottom-nav-image{
+    position:absolute;
 
-    display:block;
+    left:0;
+    bottom:0;
 
     width:100%;
     height:auto;
+
+    display:block;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
 }
 
 
 /* =========================================================
-   FROZEN 303 OYSTER BAY LOGO
+   FROZEN INDEPENDENT 303 LOGO
    ========================================================= */
 
 .sand-logo{
-
     position:absolute;
 
     left:50%;
@@ -856,7 +847,6 @@ body{
 }
 
 .sand-logo img{
-
     display:block;
 
     width:100%;
@@ -865,72 +855,17 @@ body{
 
 
 /* =========================================================
-   =========================================================
-   FROZEN BOTTOM NAVIGATION
-   =========================================================
-   THIS IS THE ORIGINAL STANDARD TEMPLATE.
-   DO NOT CHANGE.
-   =========================================================
-   ========================================================= */
-
-.bottom-nav{
-
-    position:fixed;
-
-    left:0;
-    right:0;
-
-    bottom:0;
-
-    width:100%;
-
-    height:135px;
-
-    z-index:100;
-
-    pointer-events:none;
-}
-
-
-/* ---------------------------------------------------------
-   ORIGINAL FROZEN NAV ARTWORK
-   --------------------------------------------------------- */
-
-.bottom-nav-image{
-
-    position:absolute;
-
-    left:0;
-
-    bottom:0;
-
-    width:100%;
-
-    height:auto;
-
-    display:block;
-
-    pointer-events:none;
-
-    user-select:none;
-
-    -webkit-user-drag:none;
-}
-
-
-/* =========================================================
-   ORIGINAL NAV HOTSPOTS
+   FROZEN INVISIBLE BOTTOM-NAV HOTSPOTS
    ========================================================= */
 
 .nav-hotspot{
-
     position:absolute;
 
     bottom:0;
 
     height:110px;
 
-    z-index:110;
+    z-index:45;
 
     display:block;
 
@@ -945,37 +880,23 @@ body{
     -webkit-tap-highlight-color:transparent;
 }
 
-
-/* LEFT */
-
 .hotspot-home{
-
     left:0;
-
     width:17%;
 }
 
 .hotspot-stay{
-
     left:17%;
-
     width:18%;
 }
 
-
-/* RIGHT */
-
 .hotspot-live{
-
     right:18%;
-
     width:18%;
 }
 
 .hotspot-explore{
-
     right:0;
-
     width:18%;
 }
 
@@ -986,13 +907,39 @@ body{
 
 @media(max-width:390px){
 
-    .arrival-content{
+    .top-nav-hit{
+        top:55%;
+        height:40%;
+    }
 
+    .arrival-dropdown{
+        left:4%;
+
+        width:92%;
+
+        min-width:145px;
+
+        padding:5px;
+    }
+
+    .arrival-dropdown a{
+        padding:8px 9px;
+
+        font-size:8.5px;
+    }
+
+
+    /*
+       PRE-ARRIVAL BOX
+       Top moves upward.
+       Bottom remains fixed.
+    */
+
+    .arrival-content{
         left:8px;
         right:8px;
 
-        top:clamp(78px,20vw,88px);
-
+        top:130px;
         bottom:77px;
 
         padding:9px 10px 9px;
@@ -1000,9 +947,7 @@ body{
         border-radius:13px;
     }
 
-
     .arrival-content .guest-favourite-link{
-
         width:82px;
 
         top:5px;
@@ -1011,22 +956,18 @@ body{
 
 
     .arrival-header{
-
         padding:7px 88px 0;
 
         margin-bottom:10px;
     }
 
-
     .arrival-title{
-
         font-size:20px;
 
         letter-spacing:1.2px;
 
         margin-bottom:3px;
     }
-
 
     .arrival-subtitle{
         font-size:8.6px;
@@ -1037,23 +978,18 @@ body{
         margin-bottom:10px;
     }
 
-
     .arrival-option{
         padding:5px 4px 5px;
     }
 
-
     .arrival-icon{
-
         width:21px;
         height:21px;
 
         margin-bottom:4px;
     }
 
-
     .arrival-option h3{
-
         font-size:8px;
 
         line-height:1.15;
@@ -1061,14 +997,11 @@ body{
         margin-bottom:4px;
     }
 
-
     .arrival-option p{
-
         font-size:7.3px;
 
         line-height:1.18;
     }
-
 
     .arrival-distance{
         font-size:7.3px !important;
@@ -1079,37 +1012,29 @@ body{
         gap:7px;
     }
 
-
     .arrival-photo,
     .maps-box{
         height:88px;
     }
 
-
     .maps-box{
         padding:5px;
     }
 
-
     .maps-title{
-
         font-size:6.7px;
 
         margin-bottom:3px;
     }
 
-
     .maps-qr{
-
         width:46px;
         height:46px;
 
         margin-bottom:4px;
     }
 
-
     .maps-link{
-
         min-height:20px;
 
         padding:4px 7px;
@@ -1119,15 +1044,12 @@ body{
 
 
     .parking-box{
-
         margin-top:8px;
 
         padding:7px 9px;
     }
 
-
     .parking-icon{
-
         width:20px;
         height:20px;
 
@@ -1136,10 +1058,8 @@ body{
         margin-right:8px;
     }
 
-
     .parking-title,
     .guest-id-title{
-
         font-size:7px;
 
         letter-spacing:.4px;
@@ -1147,39 +1067,44 @@ body{
         margin-bottom:3px;
     }
 
-
     .parking-copy p{
-
         font-size:7.5px;
 
         line-height:1.18;
     }
 
-
     .guest-id-box{
-
         margin-top:8px;
 
         padding:7px 9px;
     }
 
-
     .guest-id-box p{
-
         font-size:7.2px;
 
         line-height:1.2;
     }
 
 
-    .guest-id-box p + p{
-        margin-top:4px;
+    .guide-placeholder{
+        left:8px;
+        right:8px;
+
+        padding:20px 14px;
+
+        border-radius:13px;
+    }
+
+    .guide-placeholder h2{
+        font-size:20px;
+
+        letter-spacing:1.2px;
     }
 
 
-    /* -----------------------------------------------
-       FROZEN BOTTOM NAV — UNCHANGED
-       ----------------------------------------------- */
+    /* =====================================================
+       FROZEN BOTTOM NAV
+       ===================================================== */
 
     .bottom-nav{
         height:108px;
@@ -1193,40 +1118,6 @@ body{
     .nav-hotspot{
         height:90px;
     }
-
-
-    /* -----------------------------------------------
-       PLACEHOLDERS
-       ----------------------------------------------- */
-
-    .placeholder-box{
-
-        left:8px;
-        right:8px;
-
-        min-height:145px;
-
-        padding:25px 16px;
-
-        border-radius:13px;
-    }
-
-
-    .placeholder-title{
-
-        font-size:20px;
-
-        letter-spacing:1.2px;
-    }
-
-
-    .placeholder-section .guest-favourite-link{
-
-        width:82px;
-
-        top:7px;
-        right:6px;
-    }
 }
 
 
@@ -1236,80 +1127,68 @@ body{
 
 @media(max-width:360px){
 
-    .arrival-content{
+    .top-nav-hit{
+        top:54%;
+        height:41%;
+    }
 
+    .arrival-content{
         left:7px;
         right:7px;
 
-        top:74px;
-
+        top:124px;
         bottom:72px;
 
         padding:8px 8px 8px;
     }
 
-
     .arrival-content .guest-favourite-link{
         width:76px;
     }
 
-
     .arrival-header{
-
         padding-right:81px;
 
         margin-bottom:8px;
     }
 
-
     .arrival-title{
         font-size:18px;
     }
-
 
     .arrival-subtitle{
         font-size:7.6px;
     }
 
-
     .arrival-icon{
-
         width:19px;
         height:19px;
     }
 
-
     .arrival-option h3{
         font-size:7.3px;
     }
-
 
     .arrival-option p,
     .arrival-distance{
         font-size:6.6px !important;
     }
 
-
     .arrival-photo,
     .maps-box{
         height:79px;
     }
 
-
     .maps-title{
         font-size:6px;
     }
 
-
     .maps-qr{
-
         width:40px;
         height:40px;
     }
 
-
     .maps-link{
-
         min-height:18px;
 
         padding:3px 5px;
@@ -1317,133 +1196,175 @@ body{
         font-size:5.6px;
     }
 
-
     .parking-copy p,
     .guest-id-box p{
         font-size:6.6px;
     }
 
+    .guide-placeholder{
+        left:7px;
+        right:7px;
 
-    /* FROZEN BOTTOM NAV */
+        padding:17px 10px;
+    }
+
+    .guide-placeholder h2{
+        font-size:18px;
+    }
+
+
+    /* =====================================================
+       FROZEN BOTTOM NAV
+       ===================================================== */
 
     .bottom-nav{
         height:100px;
     }
 
     .sand-logo{
-
         width:85px;
-
         bottom:21px;
     }
 
     .nav-hotspot{
         height:84px;
     }
-
-
-    /* PLACEHOLDERS */
-
-    .placeholder-box{
-
-        left:7px;
-        right:7px;
-
-        min-height:135px;
-
-        padding:22px 12px;
-    }
-
-
-    .placeholder-title{
-        font-size:18px;
-    }
-
-
-    .placeholder-section .guest-favourite-link{
-        width:76px;
-    }
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =========================================================
-     =========================================================
-     FIXED TOP NAVIGATION
-     =========================================================
-     ========================================================= -->
+<!-- =======================================================
+     FIXED TOP NAV
+     AVAILABLE THROUGHOUT ENTIRE GUIDE
+     ======================================================= -->
 
-<img
-    src="Arrival Page top Nav Bar.png"
-    class="top-nav"
-    alt=""
-    aria-hidden="true"
->
+<nav class="top-nav" aria-label="Arrival guide navigation">
 
-
-<!-- =========================================================
-     TOP NAV CLICK TARGETS
-     ========================================================= -->
-
-<a
-    href="#pre-arrival"
-    class="top-nav-hotspot top-hotspot-prearrival"
-    data-section="pre-arrival"
-    aria-label="Pre-Arrival">
-</a>
-
-<a
-    href="#self-check-in"
-    class="top-nav-hotspot top-hotspot-emergency"
-    data-section="self-check-in"
-    aria-label="Self Check-in">
-</a>
-
-<a
-    href="#wifi"
-    class="top-nav-hotspot top-hotspot-wifi"
-    data-section="wifi"
-    aria-label="WiFi">
-</a>
-
-<a
-    href="#beach-management"
-    class="top-nav-hotspot top-hotspot-beach"
-    data-section="beach-management"
-    aria-label="Beach Management">
-</a>
-
-<a
-    href="#check-out"
-    class="top-nav-hotspot top-hotspot-checkout"
-    data-section="check-out"
-    aria-label="Check Out">
-</a>
+    <img
+        src="Arrival Page top Nav Bar.png"
+        class="top-nav-art"
+        alt=""
+        aria-hidden="true"
+    >
 
 
+    <!-- ===================================================
+         ARRIVAL
+         DROPDOWN:
+         PRE-ARRIVAL
+         SELF CHECK-IN
+         =================================================== -->
 
-<!-- =========================================================
-     =========================================================
-     SECTION 1 — PRE-ARRIVAL
-     =========================================================
-     ========================================================= -->
+    <div
+        class="top-nav-hit top-nav-arrival"
+        data-nav="arrival"
+    >
+
+        <div
+            class="arrival-dropdown"
+            aria-label="Arrival menu"
+        >
+
+            <a
+                href="#pre-arrival"
+                data-section="pre-arrival"
+            >
+                PRE-ARRIVAL
+            </a>
+
+            <a
+                href="#self-check-in"
+                data-section="self-check-in"
+            >
+                SELF CHECK-IN
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         EMERGENCY
+         =================================================== -->
+
+    <a
+        href="#emergency"
+        class="top-nav-hit top-nav-emergency"
+        data-nav="emergency"
+        aria-label="Emergency and Essentials"
+    ></a>
+
+
+    <!-- ===================================================
+         WI-FI
+         =================================================== -->
+
+    <a
+        href="#wifi"
+        class="top-nav-hit top-nav-wifi"
+        data-nav="wifi"
+        aria-label="Wi-Fi"
+    ></a>
+
+
+    <!-- ===================================================
+         BEACH MANAGEMENT
+         =================================================== -->
+
+    <a
+        href="#beach-management"
+        class="top-nav-hit top-nav-beach"
+        data-nav="beach-management"
+        aria-label="Beach Management"
+    ></a>
+
+
+    <!-- ===================================================
+         CHECK OUT
+         =================================================== -->
+
+    <a
+        href="#check-out"
+        class="top-nav-hit top-nav-checkout"
+        data-nav="check-out"
+        aria-label="Check Out"
+    ></a>
+
+</nav>
+
+
+
+<main class="guide-page">
+
+
+<!-- =======================================================
+     1. PRE-ARRIVAL
+     ======================================================= -->
 
 <section
     id="pre-arrival"
-    class="guide-section pre-arrival"
+    class="guide-section arrival-section"
+    data-section="pre-arrival"
+    aria-label="Pre-Arrival"
 >
 
+
+<!-- =====================================================
+     ARRIVAL CONTENT BOX
+     ===================================================== -->
 
 <div class="arrival-content">
 
 
-<!-- GUEST FAVOURITE -->
+<!-- =====================================================
+     AIRBNB GUEST FAVOURITE
+     ===================================================== -->
 
 <a
     href="https://www.airbnb.co.in/h/303oysterbay"
@@ -1453,312 +1374,306 @@ body{
     aria-label="303 Oyster Bay on Airbnb"
 >
 
-<img
-    src="guest-favourite.png"
-    class="guest-favourite"
-    alt="Airbnb Guest Favourite"
->
+    <img
+        src="guest-favourite.png"
+        class="guest-favourite"
+        alt="Airbnb Guest Favourite"
+    >
 
 </a>
 
 
-<!-- HEADER -->
+<!-- =====================================================
+     ARRIVAL HEADER
+     ===================================================== -->
 
 <div class="arrival-header">
 
-<h1 class="arrival-title">
-PRE-ARRIVAL
-</h1>
+    <h1 class="arrival-title">
+        PRE-ARRIVAL
+    </h1>
 
-<p class="arrival-subtitle">
-Your seaside stay is closer than you think
-</p>
+    <p class="arrival-subtitle">
+        Your seaside stay is closer than you think
+    </p>
 
 </div>
 
 
-<!-- FOUR ARRIVAL OPTIONS -->
+<!-- =====================================================
+     FOUR ARRIVAL OPTIONS
+     ===================================================== -->
 
 <div class="arrival-options">
 
 
-<!-- AIRPORT -->
+<!-- =====================================================
+     AIRPORT
+     ===================================================== -->
 
 <div class="arrival-option">
 
 <svg
-    class="arrival-icon"
+    class="arrival-icon aircraft-icon"
     viewBox="0 0 64 64"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
 >
 
-<path
-d="M31.7 9
-C32.5 8.5 33.5 8.5 34.3 9
-L36.5 28.5
-L51.5 38.5
-C53 39.5 52.3 42 50.5 42
-H37.5
-L35.2 53
-H30.8
-L28.5 42
-H15.5
-C13.7 42 13 39.5 14.5 38.5
-L29.5 28.5
-L31.7 9Z"
-/>
+    <path
+        d="M31.7 9
+           C32.5 8.5 33.5 8.5 34.3 9
+           L36.5 28.5
+           L51.5 38.5
+           C53 39.5 52.3 42 50.5 42
+           H37.5
+           L35.2 53
+           H30.8
+           L28.5 42
+           H15.5
+           C13.7 42 13 39.5 14.5 38.5
+           L29.5 28.5
+           L31.7 9Z"
+    />
 
-<path d="M29.5 28.5L12 19"/>
-<path d="M36.5 28.5L54 19"/>
+    <path
+        d="M29.5 28.5L12 19"
+    />
+
+    <path
+        d="M36.5 28.5L54 19"
+    />
 
 </svg>
 
 <h3>
-Mangaluru International Airport (IXE)
+    Mangaluru International Airport (IXE)
 </h3>
 
 <p class="arrival-distance">
-18 km
+    18 km
 </p>
 
 <p>
-30 – 40 mins
+    30 – 40 mins
 </p>
 
 </div>
 
 
-<!-- MAJN -->
+<!-- =====================================================
+     MAJN
+     ===================================================== -->
 
 <div class="arrival-option">
 
 <svg
-    class="arrival-icon"
+    class="arrival-icon rail-icon"
     viewBox="0 0 64 64"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
 >
 
-<path d="M8 25L32 11L56 25"/>
+    <path
+        d="M8 25L32 11L56 25"
+    />
 
-<path
-d="M14 25V46
-M50 25V46
-M21 25V46
-M43 25V46"
-/>
+    <path
+        d="M14 25V46
+           M50 25V46
+           M21 25V46
+           M43 25V46"
+    />
 
-<path d="M26 46V31H38V46"/>
+    <path
+        d="M26 46V31H38V46"
+    />
 
-<path d="M8 50H56"/>
+    <path
+        d="M8 50H56"
+    />
 
-<path d="M25 20H39"/>
+    <path
+        d="M25 20H39"
+    />
 
 </svg>
 
 <h3>
-Mangaluru Junction Railway Station (MAJN)
+    Mangaluru Junction Railway Station (MAJN)
 </h3>
 
 <p class="arrival-distance">
-20 km
+    20 km
 </p>
 
 <p>
-35 – 45 mins
+    35 – 45 mins
 </p>
 
 </div>
 
 
-<!-- MAQ -->
+<!-- =====================================================
+     MAQ
+     ===================================================== -->
 
 <div class="arrival-option">
 
 <svg
-    class="arrival-icon"
+    class="arrival-icon rail-icon"
     viewBox="0 0 64 64"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
 >
 
-<path d="M8 25L32 11L56 25"/>
+    <path
+        d="M8 25L32 11L56 25"
+    />
 
-<path
-d="M14 25V46
-M50 25V46
-M21 25V46
-M43 25V46"
-/>
+    <path
+        d="M14 25V46
+           M50 25V46
+           M21 25V46
+           M43 25V46"
+    />
 
-<path d="M26 46V31H38V46"/>
+    <path
+        d="M26 46V31H38V46"
+    />
 
-<path d="M8 50H56"/>
+    <path
+        d="M8 50H56"
+    />
 
-<path d="M25 20H39"/>
+    <path
+        d="M25 20H39"
+    />
 
 </svg>
 
 <h3>
-Mangaluru Central Railway Station (MAQ)
+    Mangaluru Central Railway Station (MAQ)
 </h3>
 
 <p class="arrival-distance">
-17 km
+    17 km
 </p>
 
 <p>
-30 – 40 mins
+    30 – 40 mins
 </p>
 
 </div>
 
 
-<!-- CAR -->
+<!-- =====================================================
+     BY CAR
+     ===================================================== -->
 
 <div class="arrival-option">
 
 <svg
-    class="arrival-icon"
+    class="arrival-icon car-icon"
     viewBox="0 0 64 64"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
 >
 
-<path d="M12 39H52V48H12V39Z"/>
+    <path
+        d="M12 39H52V48H12V39Z"
+    />
 
-<path d="M17 39L21.5 26H42.5L47 39"/>
+    <path
+        d="M17 39L21.5 26H42.5L47 39"
+    />
 
-<path d="M23 27L20 37H44L41 27"/>
+    <path
+        d="M23 27L20 37H44L41 27"
+    />
 
-<path d="M12 43H8"/>
-<path d="M52 43H56"/>
+    <path
+        d="M12 43H8"
+    />
 
-<circle cx="21" cy="48" r="4"/>
-<circle cx="43" cy="48" r="4"/>
+    <path
+        d="M52 43H56"
+    />
 
-<path d="M24 32H40"/>
+    <circle
+        cx="21"
+        cy="48"
+        r="4"
+    />
+
+    <circle
+        cx="43"
+        cy="48"
+        r="4"
+    />
+
+    <path
+        d="M24 32H40"
+    />
 
 </svg>
 
 <h3>
-By Car / Road
+    By Car / Road
 </h3>
 
 <p>
-Well connected via NH66. A smooth and scenic drive along the coast.
+    Well connected via NH66. A smooth and scenic drive along the coast.
 </p>
 
 </div>
 
+
 </div>
 
 
-<!-- PHOTO + MAP -->
+<!-- =====================================================
+     EXTERIOR + GOOGLE MAPS
+     ===================================================== -->
 
 <div class="arrival-lower">
 
+
 <div class="arrival-photo">
 
-<img
-src="Exterior.jpg"
-alt="303 Oyster Bay"
->
+    <img
+        src="Exterior.jpg"
+        alt="303 Oyster Bay"
+    >
 
 </div>
 
 
 <div class="maps-box">
 
-<div class="maps-title">
-SCAN FOR DIRECTIONS
-</div>
+    <div class="maps-title">
+        SCAN FOR DIRECTIONS
+    </div>
 
-<img
-src="Directions.png"
-class="maps-qr"
-alt="Scan for directions to 303 Oyster Bay"
->
+    <img
+        src="Directions.png"
+        class="maps-qr"
+        alt="Scan for directions to 303 Oyster Bay"
+    >
 
-<a
-href="https://maps.google.com/?q=303+Oyster+Bay+Surathkal+Mangaluru"
-class="maps-link"
-target="_blank"
-rel="noopener"
->
-
-Open in Google Maps
-
-</a>
-
-</div>
-
-</div>
-
-
-<!-- PARKING -->
-
-<div class="parking-box">
-
-<svg
-class="parking-icon"
-viewBox="0 0 64 64"
-fill="none"
-xmlns="http://www.w3.org/2000/svg"
->
-
-<circle
-cx="32"
-cy="32"
-r="22"
-stroke="currentColor"
-stroke-width="3"
-/>
-
-<path
-d="M27 44V20H35
-C40 20 43 23 43 28
-C43 33 40 36 35 36
-H27"
-stroke="currentColor"
-stroke-width="3"
-stroke-linecap="round"
-stroke-linejoin="round"
-/>
-
-</svg>
-
-<div class="parking-copy">
-
-<div class="parking-title">
-PARKING
-</div>
-
-<p>
-Parking is available in the premises for our guests.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- GUEST IDS -->
-
-<div class="guest-id-box">
-
-<div class="guest-id-title">
-GUEST IDs &amp; ACCESS DETAILS
-</div>
-
-<p>
-Please share government approved photo IDs for all members of the travelling group, including children, at least 24 hours before check-in for pre-arrival verification.
-</p>
-
-<p>
-Once the verification is complete, your access codes and check-in instructions will be sent to you.
-</p>
+    <a
+        href="https://maps.google.com/?q=303+Oyster+Bay+Surathkal+Mangaluru"
+        class="maps-link"
+        target="_blank"
+        rel="noopener"
+        aria-label="Open 303 Oyster Bay in Google Maps"
+    >
+        Open in Google Maps
+    </a>
 
 </div>
 
@@ -1766,490 +1681,851 @@ Once the verification is complete, your access codes and check-in instructions w
 
 
 <!-- =====================================================
-     PRE-ARRIVAL LOGO
+     PARKING
      ===================================================== -->
 
-<a
-href="index.html"
-class="sand-logo"
-aria-label="303 Oyster Bay Home"
+<div class="parking-box">
+
+<svg
+    class="parking-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
 >
 
-<img
-src="logo.png"
-alt="303 Oyster Bay"
->
+    <circle
+        cx="32"
+        cy="32"
+        r="22"
+        stroke="currentColor"
+        stroke-width="3"
+    />
 
-</a>
+    <path
+        d="M27 44V20H35
+           C40 20 43 23 43 28
+           C43 33 40 36 35 36
+           H27"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
 
-</section>
+</svg>
 
 
+<div class="parking-copy">
 
-<!-- =========================================================
-     SECTION 2 — SELF CHECK-IN
-     ========================================================= -->
+    <div class="parking-title">
+        PARKING
+    </div>
 
-<section
-id="self-check-in"
-class="guide-section placeholder-section"
->
-
-<a
-href="https://www.airbnb.co.in/h/303oysterbay"
-class="guest-favourite-link"
-target="_blank"
-rel="noopener"
->
-
-<img
-src="guest-favourite.png"
-class="guest-favourite"
-alt="Airbnb Guest Favourite"
->
-
-</a>
-
-<div class="placeholder-box">
-
-<h2 class="placeholder-title">
-SELF CHECK-IN
-</h2>
+    <p>
+        Parking is available in the premises for our guests.
+    </p>
 
 </div>
 
-<a
-href="index.html"
-class="sand-logo"
-aria-label="303 Oyster Bay Home"
->
-
-<img
-src="logo.png"
-alt="303 Oyster Bay"
->
-
-</a>
-
-</section>
+</div>
 
 
+<!-- =====================================================
+     GUEST IDs & ACCESS DETAILS
+     ===================================================== -->
 
-<!-- =========================================================
-     SECTION 3 — EMERGENCY
-     ========================================================= -->
+<div class="guest-id-box">
 
-<section
-id="emergency"
-class="guide-section placeholder-section"
->
+    <div class="guest-id-title">
+        GUEST IDs &amp; ACCESS DETAILS
+    </div>
 
-<a
-href="https://www.airbnb.co.in/h/303oysterbay"
-class="guest-favourite-link"
-target="_blank"
-rel="noopener"
->
+    <p>
+        Please share government approved photo IDs for all members of the travelling group, including children, at least 24 hours before check-in for pre-arrival verification.
+    </p>
 
-<img
-src="guest-favourite.png"
-class="guest-favourite"
-alt="Airbnb Guest Favourite"
->
-
-</a>
-
-<div class="placeholder-box">
-
-<h2 class="placeholder-title">
-EMERGENCY
-</h2>
+    <p>
+        Once the verification is complete, your access codes and check-in instructions will be sent to you.
+    </p>
 
 </div>
 
-<a
-href="index.html"
-class="sand-logo"
-aria-label="303 Oyster Bay Home"
->
-
-<img
-src="logo.png"
-alt="303 Oyster Bay"
->
-
-</a>
-
-</section>
-
-
-
-<!-- =========================================================
-     SECTION 4 — WIFI
-     ========================================================= -->
-
-<section
-id="wifi"
-class="guide-section placeholder-section"
->
-
-<a
-href="https://www.airbnb.co.in/h/303oysterbay"
-class="guest-favourite-link"
-target="_blank"
-rel="noopener"
->
-
-<img
-src="guest-favourite.png"
-class="guest-favourite"
-alt="Airbnb Guest Favourite"
->
-
-</a>
-
-<div class="placeholder-box">
-
-<h2 class="placeholder-title">
-WIFI
-</h2>
 
 </div>
 
-<a
-href="index.html"
-class="sand-logo"
-aria-label="303 Oyster Bay Home"
->
-
-<img
-src="logo.png"
-alt="303 Oyster Bay"
->
-
-</a>
 
 </section>
 
 
 
-<!-- =========================================================
-     SECTION 5 — BEACH MANAGEMENT
-     ========================================================= -->
+<!-- =======================================================
+     2. SELF CHECK-IN
+     ======================================================= -->
 
 <section
-id="beach-management"
-class="guide-section placeholder-section"
+    id="self-check-in"
+    class="guide-section"
+    data-section="self-check-in"
+    aria-label="Self Check-In"
 >
 
-<a
-href="https://www.airbnb.co.in/h/303oysterbay"
-class="guest-favourite-link"
-target="_blank"
-rel="noopener"
->
+    <div class="guide-placeholder">
 
-<img
-src="guest-favourite.png"
-class="guest-favourite"
-alt="Airbnb Guest Favourite"
->
+        <h2>
+            SELF CHECK-IN
+        </h2>
 
-</a>
-
-<div class="placeholder-box">
-
-<h2 class="placeholder-title">
-BEACH MANAGEMENT
-</h2>
-
-</div>
-
-<a
-href="index.html"
-class="sand-logo"
-aria-label="303 Oyster Bay Home"
->
-
-<img
-src="logo.png"
-alt="303 Oyster Bay"
->
-
-</a>
+    </div>
 
 </section>
 
 
 
-<!-- =========================================================
-     SECTION 6 — CHECK OUT
-     ========================================================= -->
+<!-- =======================================================
+     3. EMERGENCY & ESSENTIALS
+     ======================================================= -->
 
 <section
-id="check-out"
-class="guide-section placeholder-section"
+    id="emergency"
+    class="guide-section"
+    data-section="emergency"
+    aria-label="Emergency and Essentials"
 >
 
-<a
-href="https://www.airbnb.co.in/h/303oysterbay"
-class="guest-favourite-link"
-target="_blank"
-rel="noopener"
->
+    <div class="guide-placeholder">
 
-<img
-src="guest-favourite.png"
-class="guest-favourite"
-alt="Airbnb Guest Favourite"
->
+        <h2>
+            EMERGENCY &amp; ESSENTIALS
+        </h2>
 
-</a>
-
-<div class="placeholder-box">
-
-<h2 class="placeholder-title">
-CHECK OUT
-</h2>
-
-</div>
-
-<a
-href="index.html"
-class="sand-logo"
-aria-label="303 Oyster Bay Home"
->
-
-<img
-src="logo.png"
-alt="303 Oyster Bay"
->
-
-</a>
+    </div>
 
 </section>
 
 
 
-<!-- =========================================================
-     =========================================================
-     FROZEN BOTTOM NAVIGATION
-     =========================================================
-     ========================================================= -->
+<!-- =======================================================
+     4. WI-FI
+     ======================================================= -->
+
+<section
+    id="wifi"
+    class="guide-section"
+    data-section="wifi"
+    aria-label="Wi-Fi"
+>
+
+    <div class="guide-placeholder">
+
+        <h2>
+            WI-FI
+        </h2>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     5. BEACH MANAGEMENT
+     ======================================================= -->
+
+<section
+    id="beach-management"
+    class="guide-section"
+    data-section="beach-management"
+    aria-label="Beach Management"
+>
+
+    <div class="guide-placeholder">
+
+        <h2>
+            BEACH MANAGEMENT
+        </h2>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     6. CHECK OUT
+     ======================================================= -->
+
+<section
+    id="check-out"
+    class="guide-section"
+    data-section="check-out"
+    aria-label="Check Out"
+>
+
+    <div class="guide-placeholder">
+
+        <h2>
+            CHECK OUT
+        </h2>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =======================================================
+     FROZEN BOTTOM NAV
+     SAME GEOMETRY AS STANDARD TEMPLATE
+     ======================================================= -->
 
 <nav
-class="bottom-nav"
-aria-label="Main navigation"
->
-
-<img
-src="Stay Page Bottom Nav.png"
-class="bottom-nav-image"
-alt=""
-aria-hidden="true"
+    class="bottom-nav"
+    aria-label="Main navigation"
 >
 
 
-<a
-href="index.html"
-class="nav-hotspot hotspot-home"
-aria-label="Home">
-</a>
+    <img
+        src="Stay Page Bottom Nav.png"
+        class="bottom-nav-image"
+        alt=""
+        aria-hidden="true"
+    >
 
 
-<a
-href="arrival.html"
-class="nav-hotspot hotspot-stay"
-aria-label="Stay">
-</a>
+    <!-- INDEPENDENT LOGO -->
+
+    <a
+        href="index.html"
+        class="sand-logo"
+        aria-label="303 Oyster Bay Home"
+    >
+
+        <img
+            src="logo.png"
+            alt="303 Oyster Bay"
+        >
+
+    </a>
 
 
-<a
-href="live.html"
-class="nav-hotspot hotspot-live"
-aria-label="Live">
-</a>
+    <!-- HOME -->
+
+    <a
+        href="index.html"
+        class="nav-hotspot hotspot-home"
+        aria-label="Home"
+    ></a>
 
 
-<a
-href="In%20and%20around.pdf"
-class="nav-hotspot hotspot-explore"
-aria-label="Explore">
-</a>
+    <!-- STAY -->
+
+    <a
+        href="arrival.html"
+        class="nav-hotspot hotspot-stay"
+        aria-label="Stay"
+    ></a>
+
+
+    <!-- LIVE -->
+
+    <a
+        href="live.html"
+        class="nav-hotspot hotspot-live"
+        aria-label="Live"
+    ></a>
+
+
+    <!-- EXPLORE -->
+
+    <a
+        href="In%20and%20around.pdf"
+        class="nav-hotspot hotspot-explore"
+        aria-label="Explore"
+    ></a>
 
 </nav>
 
 
 
-<!-- =========================================================
-     ACTIVE TOP NAV SCRIPT
-     ========================================================= -->
-
 <script>
 
-/*
-   =========================================================
-   TOP NAV — SECTION TRACKING
-   =========================================================
+/* =========================================================
+   SECTION NAVIGATION
+   ========================================================= */
 
-   The active pill follows whichever section is currently
-   occupying the viewport.
-
-   No manual clicking is required.
-*/
+const sections =
+    Array.from(
+        document.querySelectorAll(".guide-section")
+    );
 
 
-const sections = [
+const navArrival =
+    document.querySelector(".top-nav-arrival");
 
-    document.getElementById("pre-arrival"),
+const navEmergency =
+    document.querySelector(".top-nav-emergency");
 
-    document.getElementById("self-check-in"),
+const navWifi =
+    document.querySelector(".top-nav-wifi");
 
-    document.getElementById("emergency"),
+const navBeach =
+    document.querySelector(".top-nav-beach");
 
-    document.getElementById("wifi"),
-
-    document.getElementById("beach-management"),
-
-    document.getElementById("check-out")
-
-];
+const navCheckout =
+    document.querySelector(".top-nav-checkout");
 
 
-const navHotspots = {
+/* =========================================================
+   ACTIVE NAV MAPPING
+   ========================================================= */
+
+const navMap = {
 
     "pre-arrival":
-        document.querySelector(".top-hotspot-prearrival"),
+        navArrival,
 
     "self-check-in":
-        document.querySelector(".top-hotspot-emergency"),
+        navArrival,
 
     "emergency":
-        document.querySelector(".top-hotspot-emergency"),
+        navEmergency,
 
     "wifi":
-        document.querySelector(".top-hotspot-wifi"),
+        navWifi,
 
     "beach-management":
-        document.querySelector(".top-hotspot-beach"),
+        navBeach,
 
     "check-out":
-        document.querySelector(".top-hotspot-checkout")
+        navCheckout
 
 };
 
 
-/*
-   NOTE:
-   The visual Emergency pill corresponds to the second
-   navigation item in the supplied artwork.
-
-   Self Check-in is the first new content section reached
-   from that navigation area.
-*/
-
+/* =========================================================
+   SET ACTIVE NAV
+   ========================================================= */
 
 function setActiveSection(id){
 
-    Object.values(navHotspots).forEach(
-        hotspot => {
+    document
+        .querySelectorAll(".top-nav-hit")
+        .forEach(el => {
 
-            if(hotspot){
-                hotspot.classList.remove("active");
-            }
+            el.classList.remove("active");
 
-        }
-    );
+        });
 
 
-    const hotspot = navHotspots[id];
+    const active =
+        navMap[id];
 
-    if(hotspot){
-        hotspot.classList.add("active");
+
+    if(active){
+
+        active.classList.add("active");
+
     }
 
 }
 
 
-/*
-   Initial state
-*/
-
-setActiveSection("pre-arrival");
-
+/* =========================================================
+   ACTIVE SECTION OBSERVER
+   ========================================================= */
 
 /*
-   Intersection Observer
+   PRE-ARRIVAL and SELF CHECK-IN both belong
+   to the ARRIVAL navigation item.
 */
 
-const observer = new IntersectionObserver(
+const observer =
+    new IntersectionObserver(
 
-    entries => {
+        entries => {
 
-        entries.forEach(entry => {
+            entries.forEach(entry => {
 
-            if(entry.isIntersecting){
+                if(
+                    entry.isIntersecting &&
+                    entry.intersectionRatio >= .55
+                ){
 
-                setActiveSection(entry.target.id);
+                    setActiveSection(
+                        entry.target.dataset.section
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:[
+                .55,
+                .70,
+                .85
+            ]
+        }
+
+    );
+
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
+
+
+/* =========================================================
+   ARRIVAL DROPDOWN
+   ========================================================= */
+
+const arrivalMenu =
+    navArrival.querySelector(
+        ".arrival-dropdown"
+    );
+
+
+function closeArrivalMenu(){
+
+    navArrival.classList.remove(
+        "open"
+    );
+
+}
+
+
+/*
+   Touch/click opens the dropdown.
+   Desktop hover is handled by CSS.
+*/
+
+function toggleArrivalMenu(event){
+
+    event.preventDefault();
+
+    event.stopPropagation();
+
+    navArrival.classList.toggle(
+        "open"
+    );
+
+}
+
+
+navArrival.addEventListener(
+    "click",
+    toggleArrivalMenu
+);
+
+
+/* =========================================================
+   DROPDOWN DESTINATION LINKS
+   ========================================================= */
+
+arrivalMenu
+    .querySelectorAll(
+        "a[data-section]"
+    )
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+
+                const id =
+                    link.dataset.section;
+
+
+                const target =
+                    document.getElementById(id);
+
+
+                closeArrivalMenu();
+
+
+                if(target){
+
+                    target.scrollIntoView({
+
+                        behavior:"smooth",
+
+                        block:"start"
+
+                    });
+
+                }
 
             }
+        );
 
-        });
+    });
+
+
+/* =========================================================
+   CLOSE ARRIVAL DROPDOWN WHEN TAPPING ELSEWHERE
+   ========================================================= */
+
+document.addEventListener(
+    "click",
+    event => {
+
+        if(
+            !navArrival.contains(
+                event.target
+            )
+        ){
+
+            closeArrivalMenu();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   NORMAL TOP NAV CLICKS
+   ========================================================= */
+
+document
+    .querySelectorAll(
+        ".top-nav-hit:not(.top-nav-arrival)"
+    )
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+
+                const href =
+                    link.getAttribute(
+                        "href"
+                    );
+
+
+                if(
+                    !href ||
+                    href.charAt(0) !== "#"
+                ){
+
+                    return;
+
+                }
+
+
+                const target =
+                    document.querySelector(
+                        href
+                    );
+
+
+                if(target){
+
+                    target.scrollIntoView({
+
+                        behavior:"smooth",
+
+                        block:"start"
+
+                    });
+
+                }
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   ONE-GESTURE / ONE-SECTION SCROLLING
+   ========================================================= */
+
+let navigationLocked = false;
+
+let touchStartY = null;
+
+
+/* =========================================================
+   DETERMINE CURRENT SECTION
+   ========================================================= */
+
+function currentSectionIndex(){
+
+    const vh =
+        window.innerHeight || 1;
+
+
+    return Math.max(
+
+        0,
+
+        Math.min(
+
+            sections.length - 1,
+
+            Math.round(
+                window.scrollY / vh
+            )
+
+        )
+
+    );
+
+}
+
+
+/* =========================================================
+   GO TO SECTION
+   ========================================================= */
+
+function goToSection(index){
+
+    index =
+        Math.max(
+            0,
+            Math.min(
+                sections.length - 1,
+                index
+            )
+        );
+
+
+    sections[index].scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"start"
+
+    });
+
+}
+
+
+/* =========================================================
+   STEP ONE SECTION
+   ========================================================= */
+
+function stepSection(direction){
+
+    if(navigationLocked){
+
+        return;
+
+    }
+
+
+    navigationLocked = true;
+
+
+    const current =
+        currentSectionIndex();
+
+
+    goToSection(
+        current + direction
+    );
+
+
+    window.setTimeout(
+
+        () => {
+
+            navigationLocked = false;
+
+        },
+
+        750
+
+    );
+
+}
+
+
+/* =========================================================
+   MOUSE WHEEL / TRACKPAD
+   ========================================================= */
+
+window.addEventListener(
+
+    "wheel",
+
+    event => {
+
+        if(
+            Math.abs(
+                event.deltaY
+            ) < 4
+        ){
+
+            return;
+
+        }
+
+
+        event.preventDefault();
+
+
+        stepSection(
+            event.deltaY > 0
+                ? 1
+                : -1
+        );
 
     },
 
     {
-        threshold:0.55
+        passive:false
     }
 
 );
 
 
-sections.forEach(section => {
+/* =========================================================
+   TOUCH START
+   ========================================================= */
 
-    if(section){
-        observer.observe(section);
-    }
+window.addEventListener(
 
-});
+    "touchstart",
 
+    event => {
 
-/*
-   When a top-nav pill is clicked, let the section scroll
-   into place normally.
-*/
+        if(
+            event.touches.length === 1
+        ){
 
-document
-.querySelectorAll(".top-nav-hotspot")
-.forEach(hotspot => {
-
-    hotspot.addEventListener(
-        "click",
-        () => {
-
-            const target =
-                document.querySelector(
-                    hotspot.getAttribute("href")
-                );
-
-            if(target){
-
-                target.scrollIntoView({
-                    behavior:"smooth",
-                    block:"start"
-                });
-
-            }
+            touchStartY =
+                event.touches[0].clientY;
 
         }
-    );
 
-});
+    },
 
+    {
+        passive:true
+    }
+
+);
+
+
+/* =========================================================
+   TOUCH END
+   ========================================================= */
+
+window.addEventListener(
+
+    "touchend",
+
+    event => {
+
+        if(
+            touchStartY === null ||
+            !event.changedTouches.length
+        ){
+
+            touchStartY = null;
+
+            return;
+
+        }
+
+
+        const endY =
+            event.changedTouches[0].clientY;
+
+
+        const delta =
+            touchStartY - endY;
+
+
+        touchStartY = null;
+
+
+        /*
+           Ignore ordinary taps.
+        */
+
+        if(
+            Math.abs(delta) < 30
+        ){
+
+            return;
+
+        }
+
+
+        stepSection(
+            delta > 0
+                ? 1
+                : -1
+        );
+
+    },
+
+    {
+        passive:true
+    }
+
+);
+
+
+/* =========================================================
+   RESIZE / ROTATION
+   ========================================================= */
+
+window.addEventListener(
+
+    "resize",
+
+    () => {
+
+        const index =
+            currentSectionIndex();
+
+
+        window.setTimeout(
+
+            () => {
+
+                goToSection(index);
+
+            },
+
+            50
+
+        );
+
+    }
+
+);
+
+
+/* =========================================================
+   INITIAL ACTIVE STATE
+   ========================================================= */
+
+setActiveSection(
+    "pre-arrival"
+);
 
 </script>
 
-
 </body>
-
 </html>
