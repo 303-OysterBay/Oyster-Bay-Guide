@@ -74,25 +74,24 @@ body{
     position:fixed;
     top:0px;
     left:0;
-
     width:100%;
     height:auto;
-
     z-index:200;
-   pointer-events:none;
+    pointer-events:none;
 }
 
 .top-nav-art{
     display:block;
     width:100%;
     height:auto;
-position:relative;
-z-index:220;
-transform:translateY(-44px);
+    position:relative;
+    z-index:220;
+    transform:translateY(-44px);
     pointer-events:none;
     user-select:none;
     -webkit-user-drag:none;
 }
+
 
 /* =========================================================
    INVISIBLE TOP-NAV INTERACTION AREAS
@@ -100,24 +99,19 @@ transform:translateY(-44px);
 
 .top-nav-hit{
     position:absolute;
-
     top:0%;
     height:28%;
-
     z-index:210;
-
     display:block;
-
     pointer-events:auto;
     text-decoration:none;
-
     -webkit-tap-highlight-color:transparent;
 }
 
 
-/*
-   Five existing pills in the supplied artwork.
-*/
+/* =========================================================
+   FIVE PILL AREAS
+   ========================================================= */
 
 .top-nav-arrival{
     left:0;
@@ -146,51 +140,40 @@ transform:translateY(-44px);
 
 
 /* =========================================================
-   READABILITY WHITENER
-   Very subtle — keeps beach visible.
+   READABILITY BLUR
+   SITS BEHIND THE FROZEN PNG
    ========================================================= */
 
 .top-nav-hit::before{
     content:"";
-
     position:absolute;
     inset:4px 3px;
-
     border-radius:999px;
-
     background:rgba(255,255,255,.15);
-
     backdrop-filter:blur(1.5px);
     -webkit-backdrop-filter:blur(1.5px);
-
-    z-index:0;
+    z-index:-1;
 }
 
 
 /* =========================================================
-   ACTIVE TOP-NAV HIGHLIGHT
-   NO CIRCLE.
-   NO FILLED COLOUR.
-   ONLY A PILL-SHAPED OUTLINE.
+   ACTIVE STATE
+   SUBTLE ILLUMINATION — NO OUTLINE
    ========================================================= */
 
 .top-nav-hit::after{
     content:"";
-
     position:absolute;
     inset:2px 1px;
-
-    border:1.5px solid transparent;
     border-radius:999px;
-
     pointer-events:none;
+    background:transparent;
+    z-index:-1;
 }
 
 .top-nav-hit.active::after{
-    background:rgba(255,255,255,.10);
-    filter:brightness(1.25);
-    border-radius:999px;
-    pointer-events:none;
+    background:rgba(255,255,255,.18);
+    box-shadow:0 0 12px rgba(255,255,255,.22);
 }
 
 
