@@ -2290,17 +2290,14 @@ function goToSection(index){
             )
         );
 
+    const target = sections[index];
 
-    sections[index].scrollIntoView({
-
-        behavior:"smooth",
-
-        block:"start"
-
+    window.scrollTo({
+        top: target.offsetTop,
+        behavior:"smooth"
     });
 
 }
-
 
 /* =========================================================
    STEP ONE SECTION
