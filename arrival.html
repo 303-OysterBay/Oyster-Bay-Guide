@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>303 OYSTER BAY • Arrival Guide</title>
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<title>303 OYSTER BAY • Stay</title>
+
 
 <style>
+
 /* =========================================================
-   303 OYSTER BAY — ARRIVAL GUIDE
-   MASTER LAYOUT
+   303 OYSTER BAY — STAY PAGE
+   MASTER / FROZEN LAYOUT
+
+   DO NOT CHANGE THESE MASTER ELEMENTS WHILE
+   WORKING ON INDIVIDUAL SECTIONS:
+
+   1. Sand background
+   2. Top navigation artwork + position
+   3. Top navigation hit areas
+   4. Beige content frame
+   5. Guest Favourite position
+   6. Bottom navigation
+   7. Sand logo position
+   8. Bottom navigation hotspots
+   9. Section height / snap behaviour
+
+   ONLY SECTION CONTENT SHOULD CHANGE.
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
    ========================================================= */
 
 *{
@@ -24,8 +53,7 @@ body{
 }
 
 html{
-    scroll-behavior:smooth;
-    scroll-snap-type:y mandatory;
+    scroll-behavior:auto;
     overscroll-behavior-y:none;
 }
 
@@ -33,13 +61,16 @@ body{
     font-family:Georgia,"Times New Roman",serif;
     background:#e8d8bd;
     color:#463322;
+
     overflow-x:hidden;
     overflow-y:auto;
+
+    -webkit-overflow-scrolling:touch;
 }
 
 
 /* =========================================================
-   SIX FULL-VIEWPORT SECTIONS
+   MASTER PAGE / SIX FULL VIEWPORT SECTIONS
    ========================================================= */
 
 .guide-page{
@@ -49,9 +80,11 @@ body{
 
 .guide-section{
     position:relative;
+
     width:100%;
     height:100svh;
     min-height:100svh;
+
     overflow:hidden;
 
     scroll-snap-align:start;
@@ -65,53 +98,63 @@ body{
 
 
 /* =========================================================
-   FIXED TOP NAV
-   Existing artwork is NOT altered.
+   FROZEN TOP NAVIGATION
    ========================================================= */
 
 .top-nav{
     position:fixed;
-    top:0px;
+
+    top:0;
     left:0;
+
     width:100%;
     height:auto;
+
     z-index:200;
+
     pointer-events:none;
 }
 
 .top-nav-art{
     display:block;
+
     width:105%;
     height:auto;
+
     position:relative;
     left:50%;
+
     z-index:220;
+
     transform:translate(-50%, -47px);
+
     pointer-events:none;
+
     user-select:none;
     -webkit-user-drag:none;
 }
 
 
 /* =========================================================
-   INVISIBLE TOP-NAV INTERACTION AREAS
+   FROZEN TOP NAV HIT AREAS
    ========================================================= */
 
 .top-nav-hit{
     position:absolute;
-    top:0%;
+
+    top:0;
     height:28%;
+
     z-index:210;
+
     display:block;
+
     pointer-events:auto;
+
     text-decoration:none;
+
     -webkit-tap-highlight-color:transparent;
 }
-
-
-/* =========================================================
-   FIVE PILL AREAS
-   ========================================================= */
 
 .top-nav-arrival{
     left:0;
@@ -140,37 +183,53 @@ body{
 
 
 /* =========================================================
-   READABILITY BLUR
+   TOP NAV — NO OLD CLOUD / BLUR
    ========================================================= */
 
 .top-nav-hit::before{
     content:"";
+
     position:absolute;
+
     inset:4px 3px;
+
     border-radius:999px;
+
     background:transparent;
+
     backdrop-filter:none;
     -webkit-backdrop-filter:none;
+
     z-index:-1;
 }
 
 
 /* =========================================================
-   ACTIVE STATE
+   TOP NAV ACTIVE STATE
+   CURRENTLY NEUTRAL.
+   JS STILL TRACKS ACTIVE SECTION.
    ========================================================= */
 
 .top-nav-hit::after{
     content:"";
+
     position:absolute;
+
     inset:2px 1px;
+
     border-radius:999px;
+
     pointer-events:none;
+
     background:transparent;
+
+    box-shadow:none;
+
     z-index:-1;
 }
 
 .top-nav-hit.active::after{
-     background:transparent;
+    background:transparent;
     box-shadow:none;
 }
 
@@ -209,9 +268,9 @@ body{
     transform:translateY(-5px);
 
     transition:
-        opacity .18s ease,
-        transform .18s ease,
-        visibility .18s ease;
+        opacity .15s ease,
+        transform .15s ease,
+        visibility .15s ease;
 
     pointer-events:none;
 }
@@ -261,10 +320,18 @@ body{
 
 
 /* =========================================================
-   PRE-ARRIVAL CONTENT BOX
+   FROZEN MASTER BEIGE CONTENT FRAME
+
+   SAME FOR EVERY SECTION
+   ---------------------------------------------------------
+   left   = 12px
+   right  = 12px
+   top    = 40px
+   bottom = 100px
+   radius = 16px
    ========================================================= */
 
-.arrival-content{
+.section-frame{
     position:absolute;
 
     left:12px;
@@ -287,25 +354,15 @@ body{
         0 3px 10px rgba(70,42,20,.13);
 }
 
-.arrival-content::before{
-    content:none;
-}
-
-.arrival-header,
-.arrival-options,
-.arrival-lower,
-.parking-box,
-.guest-id-box{
-    position:relative;
-    z-index:5;
-}
-
 
 /* =========================================================
-   GUEST FAVOURITE
+   FROZEN GUEST FAVOURITE
+
+   THIS IS A MASTER ASSET.
+   SAME POSITION RELATIVE TO THE FRAME ON EVERY SECTION.
    ========================================================= */
 
-.arrival-content .guest-favourite-link{
+.guest-favourite-link{
     position:absolute;
 
     top:6px;
@@ -323,7 +380,7 @@ body{
     -webkit-tap-highlight-color:transparent;
 }
 
-.arrival-content .guest-favourite{
+.guest-favourite{
     display:block;
 
     width:100%;
@@ -332,10 +389,13 @@ body{
 
 
 /* =========================================================
-   PRE-ARRIVAL HEADER
+   PRE-ARRIVAL CONTENT
    ========================================================= */
 
 .arrival-header{
+    position:relative;
+    z-index:5;
+
     width:100%;
 
     text-align:center;
@@ -367,7 +427,6 @@ body{
     white-space:nowrap;
 
     color:#6b5540;
-   margin-bottom:0;
 }
 
 
@@ -376,6 +435,9 @@ body{
    ========================================================= */
 
 .arrival-options{
+    position:relative;
+    z-index:5;
+
     display:grid;
 
     grid-template-columns:
@@ -470,10 +532,13 @@ body{
 
 
 /* =========================================================
-   LOWER INFORMATION AREA
+   LOWER ARRIVAL AREA
    ========================================================= */
 
 .arrival-lower{
+    position:relative;
+    z-index:5;
+
     display:grid;
 
     grid-template-columns:
@@ -486,7 +551,7 @@ body{
 
 
 /* =========================================================
-   PARKING LOT IMAGE
+   PARKING IMAGE
    ========================================================= */
 
 .arrival-photo{
@@ -511,7 +576,7 @@ body{
 
 
 /* =========================================================
-   GOOGLE MAPS
+   GOOGLE MAPS BOX
    ========================================================= */
 
 .maps-box{
@@ -572,7 +637,7 @@ body{
 
     background:#4285F4;
 
-    color:#ffffff;
+    color:#fff;
 
     text-decoration:none;
 
@@ -596,10 +661,13 @@ body{
 
 
 /* =========================================================
-   YOUR PARKING SLOT
+   PARKING BOX
    ========================================================= */
 
 .parking-box{
+    position:relative;
+    z-index:5;
+
     display:flex;
 
     align-items:center;
@@ -654,10 +722,13 @@ body{
 
 
 /* =========================================================
-   GUEST ID SECTION
+   GUEST ID BOX
    ========================================================= */
 
 .guest-id-box{
+    position:relative;
+    z-index:5;
+
     width:100%;
 
     margin-top:13px;
@@ -697,35 +768,21 @@ body{
 
 
 /* =========================================================
-   OTHER SECTIONS
+   STANDARD OTHER-SECTION FRAME CONTENT
    ========================================================= */
 
-.guide-placeholder{
-    position:absolute;
+.standard-section{
+    position:relative;
 
-    left:12px;
-    right:12px;
-
-    top:40px;
-    bottom:100px;
-
-    padding:12px 18px 14px;
-
-    border-radius:16px;
-
-    background:#f8f0df;
-
-    box-shadow:
-        0 3px 10px rgba(70,42,20,.13);
+    width:100%;
+    height:100%;
 
     text-align:center;
 
-    overflow:hidden;
-
-    z-index:10;
+    z-index:5;
 }
 
-.guide-placeholder h2{
+.standard-section h2{
     font-size:26px;
 
     font-weight:normal;
@@ -739,7 +796,7 @@ body{
 
 
 /* =========================================================
-   FROZEN 303 OYSTER BAY BOTTOM NAVIGATION
+   FROZEN BOTTOM NAVIGATION
    ========================================================= */
 
 .bottom-nav{
@@ -778,7 +835,7 @@ body{
 
 
 /* =========================================================
-   FROZEN INDEPENDENT 303 LOGO
+   FROZEN INDEPENDENT SAND LOGO
    ========================================================= */
 
 .sand-logo{
@@ -810,7 +867,7 @@ body{
 
 
 /* =========================================================
-   FROZEN INVISIBLE BOTTOM-NAV HOTSPOTS
+   FROZEN BOTTOM NAV HOTSPOTS
    ========================================================= */
 
 .nav-hotspot{
@@ -869,22 +926,19 @@ body{
 
     .arrival-dropdown{
         left:4%;
-
         width:92%;
-
         min-width:145px;
-
         padding:5px;
     }
 
     .arrival-dropdown a{
         padding:8px 9px;
-
         font-size:8.5px;
     }
 
 
-    .arrival-content{
+    /* MASTER FRAME — MOBILE SCALE */
+    .section-frame{
         left:8px;
         right:8px;
 
@@ -896,7 +950,8 @@ body{
         border-radius:13px;
     }
 
-    .arrival-content .guest-favourite-link{
+
+    .guest-favourite-link{
         width:82px;
 
         top:5px;
@@ -906,15 +961,12 @@ body{
 
     .arrival-header{
         padding:7px 88px 0;
-
         margin-bottom:10px;
     }
 
     .arrival-title{
         font-size:20px;
-
         letter-spacing:1.2px;
-
         margin-bottom:3px;
     }
 
@@ -934,21 +986,17 @@ body{
     .arrival-icon{
         width:21px;
         height:21px;
-
         margin-bottom:4px;
     }
 
     .arrival-option h3{
         font-size:8px;
-
         line-height:1.15;
-
         margin-bottom:4px;
     }
 
     .arrival-option p{
         font-size:7.3px;
-
         line-height:1.18;
     }
 
@@ -972,81 +1020,59 @@ body{
 
     .maps-title{
         font-size:6.7px;
-
         margin-bottom:3px;
     }
 
     .maps-qr{
         width:46px;
         height:46px;
-
         margin-bottom:4px;
     }
 
     .maps-link{
         min-height:20px;
-
         padding:4px 7px;
-
         font-size:6.1px;
     }
 
 
     .parking-box{
         margin-top:5px;
-
         padding:6px 9px;
     }
 
     .parking-icon{
         width:20px;
         height:20px;
-
         flex-basis:20px;
-
         margin-right:8px;
     }
 
     .parking-title,
     .guest-id-title{
         font-size:7px;
-
         letter-spacing:.4px;
-
         margin-bottom:3px;
     }
 
     .parking-copy p{
         font-size:7.5px;
-
         line-height:1.18;
     }
 
     .guest-id-box{
         margin-top:8px;
-
         padding:7px 9px;
     }
 
     .guest-id-box p{
         font-size:7.2px;
-
         line-height:1.2;
     }
 
 
-    .guide-placeholder{
-        left:8px;
-        right:8px;
-
-        padding:20px 14px;
-
-        border-radius:13px;
-    }
-
-    .guide-placeholder h2{
+    .standard-section h2{
         font-size:20px;
-
         letter-spacing:1.2px;
     }
 
@@ -1077,7 +1103,8 @@ body{
         height:41%;
     }
 
-    .arrival-content{
+
+    .section-frame{
         left:7px;
         right:7px;
 
@@ -1087,13 +1114,14 @@ body{
         padding:8px 8px 8px;
     }
 
-    .arrival-content .guest-favourite-link{
+
+    .guest-favourite-link{
         width:76px;
     }
 
+
     .arrival-header{
         padding-right:81px;
-
         margin-bottom:8px;
     }
 
@@ -1135,9 +1163,7 @@ body{
 
     .maps-link{
         min-height:18px;
-
         padding:3px 5px;
-
         font-size:5.6px;
     }
 
@@ -1146,14 +1172,8 @@ body{
         font-size:6.6px;
     }
 
-    .guide-placeholder{
-        left:7px;
-        right:7px;
 
-        padding:17px 10px;
-    }
-
-    .guide-placeholder h2{
+    .standard-section h2{
         font-size:18px;
     }
 
@@ -1173,6 +1193,7 @@ body{
 }
 
 </style>
+
 </head>
 
 
@@ -1183,7 +1204,10 @@ body{
      FIXED TOP NAV
      ======================================================= -->
 
-<nav class="top-nav" aria-label="Arrival guide navigation">
+<nav
+    class="top-nav"
+    aria-label="Stay page navigation"
+>
 
     <img
         src="Arrival Page top Nav Bar.png"
@@ -1193,7 +1217,7 @@ body{
     >
 
 
-    <!-- ARRIVAL DROPDOWN -->
+    <!-- ARRIVAL -->
 
     <div
         class="top-nav-hit top-nav-arrival"
@@ -1276,401 +1300,333 @@ body{
 
 <section
     id="pre-arrival"
-    class="guide-section arrival-section"
+    class="guide-section"
     data-section="pre-arrival"
     aria-label="Pre-Arrival"
 >
 
-<div class="arrival-content">
+    <div class="section-frame">
 
 
-<!-- AIRBNB GUEST FAVOURITE -->
+        <!-- FROZEN GUEST FAVOURITE -->
 
-<a
-    href="https://www.airbnb.co.in/h/303oysterbay"
-    class="guest-favourite-link"
-    target="_blank"
-    rel="noopener"
-    aria-label="303 Oyster Bay on Airbnb"
->
+        <a
+            href="https://www.airbnb.co.in/h/303oysterbay"
+            class="guest-favourite-link"
+            target="_blank"
+            rel="noopener"
+            aria-label="303 Oyster Bay on Airbnb"
+        >
 
-    <img
-        src="guest-favourite.png"
-        class="guest-favourite"
-        alt="Airbnb Guest Favourite"
-    >
+            <img
+                src="guest-favourite.png"
+                class="guest-favourite"
+                alt="Airbnb Guest Favourite"
+            >
 
-</a>
+        </a>
 
 
-<!-- ARRIVAL HEADER -->
+        <!-- HEADER -->
 
-<div class="arrival-header">
+        <div class="arrival-header">
 
-    <h1 class="arrival-title">
-        PRE-ARRIVAL
-    </h1>
+            <h1 class="arrival-title">
+                PRE-ARRIVAL
+            </h1>
 
-    <p class="arrival-subtitle">
-        Your seaside stay is closer than you think
-    </p>
+            <p class="arrival-subtitle">
+                Your seaside stay is closer than you think
+            </p>
 
-</div>
+        </div>
 
 
-<!-- FOUR ARRIVAL OPTIONS -->
+        <!-- FOUR ARRIVAL OPTIONS -->
 
-<div class="arrival-options">
+        <div class="arrival-options">
 
 
-<!-- AIRPORT -->
+            <!-- AIRPORT -->
 
-<div class="arrival-option">
+            <div class="arrival-option">
 
-<svg
-    class="arrival-icon aircraft-icon"
-    viewBox="0 0 64 64"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
->
+                <svg
+                    class="arrival-icon"
+                    viewBox="0 0 64 64"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
 
-    <path
-        d="M31.7 9
-           C32.5 8.5 33.5 8.5 34.3 9
-           L36.5 28.5
-           L51.5 38.5
-           C53 39.5 52.3 42 50.5 42
-           H37.5
-           L35.2 53
-           H30.8
-           L28.5 42
-           H15.5
-           C13.7 42 13 39.5 14.5 38.5
-           L29.5 28.5
-           L31.7 9Z"
-    />
+                    <path
+                        d="M31.7 9
+                           C32.5 8.5 33.5 8.5 34.3 9
+                           L36.5 28.5
+                           L51.5 38.5
+                           C53 39.5 52.3 42 50.5 42
+                           H37.5
+                           L35.2 53
+                           H30.8
+                           L28.5 42
+                           H15.5
+                           C13.7 42 13 39.5 14.5 38.5
+                           L29.5 28.5
+                           L31.7 9Z"
+                    />
 
-    <path
-        d="M29.5 28.5L12 19"
-    />
+                    <path d="M29.5 28.5L12 19"/>
+                    <path d="M36.5 28.5L54 19"/>
 
-    <path
-        d="M36.5 28.5L54 19"
-    />
+                </svg>
 
-</svg>
+                <h3>
+                    Mangaluru International Airport (IXE)
+                </h3>
 
-<h3>
-    Mangaluru International Airport (IXE)
-</h3>
+                <p class="arrival-distance">
+                    18 km
+                </p>
 
-<p class="arrival-distance">
-    18 km
-</p>
+                <p>
+                    30 – 40 mins
+                </p>
 
-<p>
-    30 – 40 mins
-</p>
+            </div>
 
-</div>
 
+            <!-- MAJN -->
 
-<!-- MAJN -->
+            <div class="arrival-option">
 
-<div class="arrival-option">
+                <svg
+                    class="arrival-icon"
+                    viewBox="0 0 64 64"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
 
-<svg
-    class="arrival-icon rail-icon"
-    viewBox="0 0 64 64"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
->
+                    <path d="M8 25L32 11L56 25"/>
 
-    <path
-        d="M8 25L32 11L56 25"
-    />
+                    <path
+                        d="M14 25V46
+                           M50 25V46
+                           M21 25V46
+                           M43 25V46"
+                    />
 
-    <path
-        d="M14 25V46
-           M50 25V46
-           M21 25V46
-           M43 25V46"
-    />
+                    <path d="M26 46V31H38V46"/>
+                    <path d="M8 50H56"/>
+                    <path d="M25 20H39"/>
 
-    <path
-        d="M26 46V31H38V46"
-    />
+                </svg>
 
-    <path
-        d="M8 50H56"
-    />
+                <h3>
+                    Mangaluru Junction Railway Station (MAJN)
+                </h3>
 
-    <path
-        d="M25 20H39"
-    />
+                <p class="arrival-distance">
+                    20 km
+                </p>
 
-</svg>
+                <p>
+                    35 – 45 mins
+                </p>
 
-<h3>
-    Mangaluru Junction Railway Station (MAJN)
-</h3>
+            </div>
 
-<p class="arrival-distance">
-    20 km
-</p>
 
-<p>
-    35 – 45 mins
-</p>
+            <!-- MAQ -->
 
-</div>
-
-
-<!-- MAQ -->
+            <div class="arrival-option">
 
-<div class="arrival-option">
+                <svg
+                    class="arrival-icon"
+                    viewBox="0 0 64 64"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
 
-<svg
-    class="arrival-icon rail-icon"
-    viewBox="0 0 64 64"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
->
+                    <path d="M8 25L32 11L56 25"/>
 
-    <path
-        d="M8 25L32 11L56 25"
-    />
+                    <path
+                        d="M14 25V46
+                           M50 25V46
+                           M21 25V46
+                           M43 25V46"
+                    />
 
-    <path
-        d="M14 25V46
-           M50 25V46
-           M21 25V46
-           M43 25V46"
-    />
+                    <path d="M26 46V31H38V46"/>
+                    <path d="M8 50H56"/>
+                    <path d="M25 20H39"/>
 
-    <path
-        d="M26 46V31H38V46"
-    />
+                </svg>
 
-    <path
-        d="M8 50H56"
-    />
+                <h3>
+                    Mangaluru Central Railway Station (MAQ)
+                </h3>
 
-    <path
-        d="M25 20H39"
-    />
+                <p class="arrival-distance">
+                    17 km
+                </p>
 
-</svg>
+                <p>
+                    30 – 40 mins
+                </p>
 
-<h3>
-    Mangaluru Central Railway Station (MAQ)
-</h3>
+            </div>
 
-<p class="arrival-distance">
-    17 km
-</p>
 
-<p>
-    30 – 40 mins
-</p>
+            <!-- BY CAR -->
 
-</div>
+            <div class="arrival-option">
 
+                <svg
+                    class="arrival-icon"
+                    viewBox="0 0 64 64"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
 
-<!-- BY CAR -->
+                    <path d="M12 39H52V48H12V39Z"/>
+                    <path d="M17 39L21.5 26H42.5L47 39"/>
+                    <path d="M23 27L20 37H44L41 27"/>
+                    <path d="M12 43H8"/>
+                    <path d="M52 43H56"/>
 
-<div class="arrival-option">
+                    <circle cx="21" cy="48" r="4"/>
+                    <circle cx="43" cy="48" r="4"/>
 
-<svg
-    class="arrival-icon car-icon"
-    viewBox="0 0 64 64"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
->
+                    <path d="M24 32H40"/>
 
-    <path
-        d="M12 39H52V48H12V39Z"
-    />
+                </svg>
 
-    <path
-        d="M17 39L21.5 26H42.5L47 39"
-    />
+                <h3>
+                    By Car / Road
+                </h3>
 
-    <path
-        d="M23 27L20 37H44L41 27"
-    />
+                <p>
+                    Well connected via NH66. A smooth and scenic drive along the coast.
+                </p>
 
-    <path
-        d="M12 43H8"
-    />
+            </div>
 
-    <path
-        d="M52 43H56"
-    />
+        </div>
 
-    <circle
-        cx="21"
-        cy="48"
-        r="4"
-    />
 
-    <circle
-        cx="43"
-        cy="48"
-        r="4"
-    />
+        <!-- PARKING + MAPS -->
 
-    <path
-        d="M24 32H40"
-    />
+        <div class="arrival-lower">
 
-</svg>
 
-<h3>
-    By Car / Road
-</h3>
+            <div class="arrival-photo">
 
-<p>
-    Well connected via NH66. A smooth and scenic drive along the coast.
-</p>
+                <img
+                    src="Parking Lot.png"
+                    alt="Parking lot and route to the guest parking slot"
+                >
 
-</div>
+            </div>
 
 
-</div>
+            <div class="maps-box">
 
+                <div class="maps-title">
+                    SCAN FOR DIRECTIONS
+                </div>
 
-<!-- =====================================================
-     PARKING LOT IMAGE + GOOGLE MAPS
-     ===================================================== -->
+                <img
+                    src="Directions.png"
+                    class="maps-qr"
+                    alt="Scan for directions to 303 Oyster Bay"
+                >
 
-<div class="arrival-lower">
+                <a
+                    href="https://maps.google.com/?q=303+Oyster+Bay+Surathkal+Mangaluru"
+                    class="maps-link"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Open 303 Oyster Bay in Google Maps"
+                >
+                    Open in Google Maps
+                </a>
 
+            </div>
 
-<div class="arrival-photo">
+        </div>
 
-    <img
-        src="Parking Lot.png"
-        alt="Parking lot and route to the guest parking slot"
-    >
 
-</div>
+        <!-- PARKING -->
 
+        <div class="parking-box">
 
-<div class="maps-box">
+            <svg
+                class="parking-icon"
+                viewBox="0 0 64 64"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+            >
 
-    <div class="maps-title">
-        SCAN FOR DIRECTIONS
+                <circle
+                    cx="32"
+                    cy="32"
+                    r="22"
+                    stroke="currentColor"
+                    stroke-width="3"
+                />
+
+                <path
+                    d="M27 44V20H35
+                       C40 20 43 23 43 28
+                       C43 33 40 36 35 36
+                       H27"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+
+            </svg>
+
+
+            <div class="parking-copy">
+
+                <div class="parking-title">
+                    YOUR PARKING SLOT
+                </div>
+
+                <p>
+                    Your parking slot is shown in the image above. Enter through the main gate, follow the aisle and take the 4th slot on the right.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- GUEST IDS -->
+
+        <div class="guest-id-box">
+
+            <div class="guest-id-title">
+                GUEST IDs &amp; ACCESS DETAILS
+            </div>
+
+            <p>
+                Please share government approved photo IDs for all members of the travelling group, including children, at least 24 hours before check-in for pre-arrival verification.
+            </p>
+
+            <p>
+                Once the verification is complete, your access codes and check-in instructions will be sent to you.
+            </p>
+
+        </div>
+
     </div>
-
-    <img
-        src="Directions.png"
-        class="maps-qr"
-        alt="Scan for directions to 303 Oyster Bay"
-    >
-
-    <a
-        href="https://maps.google.com/?q=303+Oyster+Bay+Surathkal+Mangaluru"
-        class="maps-link"
-        target="_blank"
-        rel="noopener"
-        aria-label="Open 303 Oyster Bay in Google Maps"
-    >
-        Open in Google Maps
-    </a>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     YOUR PARKING SLOT
-     ===================================================== -->
-
-<div class="parking-box">
-
-<svg
-    class="parking-icon"
-    viewBox="0 0 64 64"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
->
-
-    <circle
-        cx="32"
-        cy="32"
-        r="22"
-        stroke="currentColor"
-        stroke-width="3"
-    />
-
-    <path
-        d="M27 44V20H35
-           C40 20 43 23 43 28
-           C43 33 40 36 35 36
-           H27"
-        stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-    />
-
-</svg>
-
-
-<div class="parking-copy">
-
-    <div class="parking-title">
-        YOUR PARKING SLOT
-    </div>
-
-    <p>
-        Your parking slot is shown in the image above. Enter through the main gate, follow the aisle and take the 4th slot on the right.
-    </p>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     GUEST IDs & ACCESS DETAILS
-     ===================================================== -->
-
-<div class="guest-id-box">
-
-    <div class="guest-id-title">
-        GUEST IDs &amp; ACCESS DETAILS
-    </div>
-
-    <p>
-        Please share government approved photo IDs for all members of the travelling group, including children, at least 24 hours before check-in for pre-arrival verification.
-    </p>
-
-    <p>
-        Once the verification is complete, your access codes and check-in instructions will be sent to you.
-    </p>
-
-</div>
-
-<a
-    href="index.html"
-    class="sand-logo"
-    aria-label="303 Oyster Bay Home"
->
-    <img
-        src="logo.png"
-        alt="303 Oyster Bay"
-    >
-</a>
-
-</div>
 
 </section>
 
@@ -1687,17 +1643,34 @@ body{
     aria-label="Self Check-In"
 >
 
-    <div class="guide-placeholder">
+    <div class="section-frame">
 
-        <img
-            src="Guest Favourite.png"
-            class="guest-favourite"
-            alt="Guest Favourite"
+        <!-- FROZEN GUEST FAVOURITE -->
+
+        <a
+            href="https://www.airbnb.co.in/h/303oysterbay"
+            class="guest-favourite-link"
+            target="_blank"
+            rel="noopener"
+            aria-label="303 Oyster Bay on Airbnb"
         >
 
-        <h2>
-            SELF CHECK-IN
-        </h2>
+            <img
+                src="guest-favourite.png"
+                class="guest-favourite"
+                alt="Airbnb Guest Favourite"
+            >
+
+        </a>
+
+
+        <div class="standard-section">
+
+            <h2>
+                SELF CHECK-IN
+            </h2>
+
+        </div>
 
     </div>
 
@@ -1716,11 +1689,34 @@ body{
     aria-label="Emergency and Essentials"
 >
 
-    <div class="guide-placeholder">
+    <div class="section-frame">
 
-        <h2>
-            EMERGENCY &amp; ESSENTIALS
-        </h2>
+        <!-- FROZEN GUEST FAVOURITE -->
+
+        <a
+            href="https://www.airbnb.co.in/h/303oysterbay"
+            class="guest-favourite-link"
+            target="_blank"
+            rel="noopener"
+            aria-label="303 Oyster Bay on Airbnb"
+        >
+
+            <img
+                src="guest-favourite.png"
+                class="guest-favourite"
+                alt="Airbnb Guest Favourite"
+            >
+
+        </a>
+
+
+        <div class="standard-section">
+
+            <h2>
+                EMERGENCY &amp; ESSENTIALS
+            </h2>
+
+        </div>
 
     </div>
 
@@ -1739,11 +1735,34 @@ body{
     aria-label="Wi-Fi"
 >
 
-    <div class="guide-placeholder">
+    <div class="section-frame">
 
-        <h2>
-            WI-FI
-        </h2>
+        <!-- FROZEN GUEST FAVOURITE -->
+
+        <a
+            href="https://www.airbnb.co.in/h/303oysterbay"
+            class="guest-favourite-link"
+            target="_blank"
+            rel="noopener"
+            aria-label="303 Oyster Bay on Airbnb"
+        >
+
+            <img
+                src="guest-favourite.png"
+                class="guest-favourite"
+                alt="Airbnb Guest Favourite"
+            >
+
+        </a>
+
+
+        <div class="standard-section">
+
+            <h2>
+                WI-FI
+            </h2>
+
+        </div>
 
     </div>
 
@@ -1762,11 +1781,34 @@ body{
     aria-label="Beach Management"
 >
 
-    <div class="guide-placeholder">
+    <div class="section-frame">
 
-        <h2>
-            BEACH MANAGEMENT
-        </h2>
+        <!-- FROZEN GUEST FAVOURITE -->
+
+        <a
+            href="https://www.airbnb.co.in/h/303oysterbay"
+            class="guest-favourite-link"
+            target="_blank"
+            rel="noopener"
+            aria-label="303 Oyster Bay on Airbnb"
+        >
+
+            <img
+                src="guest-favourite.png"
+                class="guest-favourite"
+                alt="Airbnb Guest Favourite"
+            >
+
+        </a>
+
+
+        <div class="standard-section">
+
+            <h2>
+                BEACH MANAGEMENT
+            </h2>
+
+        </div>
 
     </div>
 
@@ -1785,11 +1827,34 @@ body{
     aria-label="Check Out"
 >
 
-    <div class="guide-placeholder">
+    <div class="section-frame">
 
-        <h2>
-            CHECK OUT
-        </h2>
+        <!-- FROZEN GUEST FAVOURITE -->
+
+        <a
+            href="https://www.airbnb.co.in/h/303oysterbay"
+            class="guest-favourite-link"
+            target="_blank"
+            rel="noopener"
+            aria-label="303 Oyster Bay on Airbnb"
+        >
+
+            <img
+                src="guest-favourite.png"
+                class="guest-favourite"
+                alt="Airbnb Guest Favourite"
+            >
+
+        </a>
+
+
+        <div class="standard-section">
+
+            <h2>
+                CHECK OUT
+            </h2>
+
+        </div>
 
     </div>
 
@@ -1801,7 +1866,7 @@ body{
 
 
 <!-- =======================================================
-     FROZEN BOTTOM NAV
+     FROZEN BOTTOM NAV ARTWORK
      ======================================================= -->
 
 <nav
@@ -1819,7 +1884,14 @@ body{
 </nav>
 
 
-<nav class="bottom-nav">
+<!-- =======================================================
+     FROZEN BOTTOM NAV HOTSPOTS
+     ======================================================= -->
+
+<nav
+    class="bottom-nav"
+    aria-label="Main navigation links"
+>
 
     <a
         href="index.html"
@@ -1848,11 +1920,48 @@ body{
 </nav>
 
 
+<!-- =======================================================
+     FROZEN SAND LOGO
+     ======================================================= -->
+
+<a
+    href="index.html"
+    class="sand-logo"
+    aria-label="303 Oyster Bay Home"
+>
+
+    <img
+        src="logo.png"
+        alt="303 Oyster Bay"
+    >
+
+</a>
+
+
 
 <script>
 
 /* =========================================================
-   SECTION NAVIGATION
+   303 OYSTER BAY
+   MASTER SECTION NAVIGATION
+
+   IMPORTANT:
+   The browser handles normal touch scrolling and
+   scroll-snap.
+
+   JavaScript handles:
+   - top navigation
+   - Arrival dropdown
+   - active navigation state
+   - controlled mouse wheel / trackpad stepping
+   - direct section navigation
+
+   It does NOT continuously reposition the page.
+   ========================================================= */
+
+
+/* =========================================================
+   SECTION REFERENCES
    ========================================================= */
 
 const sections =
@@ -1860,6 +1969,10 @@ const sections =
         document.querySelectorAll(".guide-section")
     );
 
+
+/* =========================================================
+   NAV REFERENCES
+   ========================================================= */
 
 const navArrival =
     document.querySelector(".top-nav-arrival");
@@ -1905,7 +2018,7 @@ const navMap = {
 
 
 /* =========================================================
-   SET ACTIVE NAV
+   ACTIVE NAV
    ========================================================= */
 
 function setActiveSection(id){
@@ -1933,47 +2046,201 @@ function setActiveSection(id){
 
 
 /* =========================================================
-   ACTIVE SECTION OBSERVER
+   FIND CURRENT SECTION
+
+   Uses the actual section positions rather than assuming
+   section height == window.innerHeight.
+
+   This is important on mobile because browser UI can
+   change the visual viewport height.
    ========================================================= */
 
-const observer =
-    new IntersectionObserver(
+function currentSectionIndex(){
 
-        entries => {
+    const viewportMiddle =
+        window.scrollY +
+        (window.innerHeight / 2);
 
-            entries.forEach(entry => {
 
-                if(
-                    entry.isIntersecting &&
-                    entry.intersectionRatio >= .55
-                ){
+    let closestIndex = 0;
+    let closestDistance = Infinity;
 
-                    setActiveSection(
-                        entry.target.dataset.section
-                    );
 
-                }
+    sections.forEach(
+        (section,index) => {
 
-            });
+            const sectionMiddle =
+                section.offsetTop +
+                (section.offsetHeight / 2);
 
-        },
 
-        {
-            threshold:[
-                .55,
-                .70,
-                .85
-            ]
+            const distance =
+                Math.abs(
+                    viewportMiddle -
+                    sectionMiddle
+                );
+
+
+            if(distance < closestDistance){
+
+                closestDistance = distance;
+                closestIndex = index;
+
+            }
+
         }
-
     );
 
 
-sections.forEach(section => {
+    return closestIndex;
 
-    observer.observe(section);
+}
 
-});
+
+/* =========================================================
+   GO TO SECTION
+
+   Only explicit navigation uses smooth movement.
+   There is no continuous scroll correction.
+   ========================================================= */
+
+function goToSection(index){
+
+    index =
+        Math.max(
+            0,
+            Math.min(
+                sections.length - 1,
+                index
+            )
+        );
+
+
+    const target =
+        sections[index];
+
+
+    if(!target){
+
+        return;
+
+    }
+
+
+    window.scrollTo({
+
+        top:target.offsetTop,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+/* =========================================================
+   WHEEL / TRACKPAD CONTROL
+
+   One wheel gesture = one section.
+
+   A short lock prevents trackpad inertia from triggering
+   several sections in rapid succession.
+   ========================================================= */
+
+let wheelLocked = false;
+
+let wheelUnlockTimer = null;
+
+
+function stepSection(direction){
+
+    if(wheelLocked){
+
+        return;
+
+    }
+
+
+    wheelLocked = true;
+
+
+    const current =
+        currentSectionIndex();
+
+
+    const target =
+        Math.max(
+            0,
+            Math.min(
+                sections.length - 1,
+                current + direction
+            )
+        );
+
+
+    if(target !== current){
+
+        goToSection(target);
+
+    }
+
+
+    window.clearTimeout(
+        wheelUnlockTimer
+    );
+
+
+    wheelUnlockTimer =
+        window.setTimeout(
+            () => {
+
+                wheelLocked = false;
+
+            },
+            850
+        );
+
+}
+
+
+/* =========================================================
+   WHEEL EVENT
+
+   Prevents the browser's own long/inertia scroll from
+   fighting the one-section navigation.
+   ========================================================= */
+
+window.addEventListener(
+
+    "wheel",
+
+    event => {
+
+        if(
+            Math.abs(event.deltaY) < 8
+        ){
+
+            return;
+
+        }
+
+
+        event.preventDefault();
+
+
+        stepSection(
+            event.deltaY > 0
+                ? 1
+                : -1
+        );
+
+    },
+
+    {
+        passive:false
+    }
+
+);
 
 
 /* =========================================================
@@ -2015,7 +2282,7 @@ navArrival.addEventListener(
 
 
 /* =========================================================
-   DROPDOWN DESTINATION LINKS
+   ARRIVAL DROPDOWN DESTINATIONS
    ========================================================= */
 
 arrivalMenu
@@ -2037,22 +2304,19 @@ arrivalMenu
                     link.dataset.section;
 
 
-                const target =
-                    document.getElementById(id);
+                const index =
+                    sections.findIndex(
+                        section =>
+                            section.id === id
+                    );
 
 
                 closeArrivalMenu();
 
 
-                if(target){
+                if(index >= 0){
 
-                    target.scrollIntoView({
-
-                        behavior:"smooth",
-
-                        block:"start"
-
-                    });
+                    goToSection(index);
 
                 }
 
@@ -2063,11 +2327,13 @@ arrivalMenu
 
 
 /* =========================================================
-   CLOSE ARRIVAL DROPDOWN WHEN TAPPING ELSEWHERE
+   CLOSE ARRIVAL DROPDOWN ELSEWHERE
    ========================================================= */
 
 document.addEventListener(
+
     "click",
+
     event => {
 
         if(
@@ -2081,6 +2347,7 @@ document.addEventListener(
         }
 
     }
+
 );
 
 
@@ -2117,21 +2384,20 @@ document
                 }
 
 
-                const target =
-                    document.querySelector(
-                        href
+                const id =
+                    href.substring(1);
+
+
+                const index =
+                    sections.findIndex(
+                        section =>
+                            section.id === id
                     );
 
 
-                if(target){
+                if(index >= 0){
 
-                    target.scrollIntoView({
-
-                        behavior:"smooth",
-
-                        block:"start"
-
-                    });
+                    goToSection(index);
 
                 }
 
@@ -2142,241 +2408,81 @@ document
 
 
 /* =========================================================
-   ONE-GESTURE / ONE-SECTION SCROLLING
+   ACTIVE SECTION OBSERVER
+
+   Observer ONLY updates the nav highlight.
+
+   It NEVER scrolls the page.
    ========================================================= */
 
-let navigationLocked = false;
+const observer =
+    new IntersectionObserver(
 
-let touchStartY = null;
+        entries => {
 
-
-/* =========================================================
-   DETERMINE CURRENT SECTION
-   ========================================================= */
-
-function currentSectionIndex(){
-
-    const vh =
-        window.innerHeight || 1;
+            let bestEntry = null;
 
 
-    return Math.max(
+            entries.forEach(entry => {
 
-        0,
+                if(
+                    entry.isIntersecting &&
+                    (
+                        !bestEntry ||
+                        entry.intersectionRatio >
+                        bestEntry.intersectionRatio
+                    )
+                ){
 
-        Math.min(
+                    bestEntry = entry;
 
-            sections.length - 1,
+                }
 
-            Math.round(
-                window.scrollY / vh
-            )
-
-        )
-
-    );
-
-}
-
-
-/* =========================================================
-   GO TO SECTION
-   ========================================================= */
-
-function goToSection(index){
-
-    index =
-        Math.max(
-            0,
-            Math.min(
-                sections.length - 1,
-                index
-            )
-        );
-
-    const target = sections[index];
-
-    const targetTop =
-        target.getBoundingClientRect().top + window.scrollY;
-
-    window.scrollTo({
-
-        top: targetTop,
-
-        behavior:"smooth"
-
-    });
-
-}
+            });
 
 
-/* =========================================================
-   STEP ONE SECTION
-   ========================================================= */
+            if(bestEntry){
 
-function stepSection(direction){
+                setActiveSection(
+                    bestEntry.target.dataset.section
+                );
 
-    if(navigationLocked){
-
-        return;
-
-    }
-
-
-    navigationLocked = true;
-
-
-    const current =
-        currentSectionIndex();
-
-
-    goToSection(
-        current + direction
-    );
-
-
-    window.setTimeout(
-
-        () => {
-
-            navigationLocked = false;
+            }
 
         },
 
-        750
+        {
+            threshold:[
+                .55,
+                .70,
+                .85
+            ]
+        }
 
     );
 
-}
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
 
 
 /* =========================================================
-   MOUSE WHEEL / TRACKPAD
+   RESIZE
+
+   IMPORTANT:
+   Do NOT scroll/reposition the page on resize.
+
+   The previous version did this and could cause the
+   page to visibly jump / whirr when browser dimensions
+   changed.
+
+   CSS handles the new dimensions naturally.
    ========================================================= */
 
-window.addEventListener(
-
-    "wheel",
-
-    event => {
-
-        if(
-            Math.abs(
-                event.deltaY
-            ) < 4
-        ){
-
-            return;
-
-        }
-
-
-        event.preventDefault();
-
-
-        stepSection(
-            event.deltaY > 0
-                ? 1
-                : -1
-        );
-
-    },
-
-    {
-        passive:false
-    }
-
-);
-
-
-/* =========================================================
-   TOUCH START
-   ========================================================= */
-
-window.addEventListener(
-
-    "touchstart",
-
-    event => {
-
-        if(
-            event.touches.length === 1
-        ){
-
-            touchStartY =
-                event.touches[0].clientY;
-
-        }
-
-    },
-
-    {
-        passive:true
-    }
-
-);
-
-
-/* =========================================================
-   TOUCH END
-   ========================================================= */
-
-window.addEventListener(
-
-    "touchend",
-
-    event => {
-
-        if(
-            touchStartY === null ||
-            !event.changedTouches.length
-        ){
-
-            touchStartY = null;
-
-            return;
-
-        }
-
-
-        const endY =
-            event.changedTouches[0].clientY;
-
-
-        const delta =
-            touchStartY - endY;
-
-
-        touchStartY = null;
-
-
-        if(
-            Math.abs(delta) < 30
-        ){
-
-            return;
-
-        }
-
-
-        stepSection(
-            delta > 0
-                ? 1
-                : -1
-        );
-
-    },
-
-    {
-        passive:true
-    }
-
-);
-
-
-/* =========================================================
-   RESIZE / ROTATION
-   ========================================================= */
+let resizeTimer = null;
 
 window.addEventListener(
 
@@ -2384,29 +2490,58 @@ window.addEventListener(
 
     () => {
 
-        const index =
-            currentSectionIndex();
-
-
-        window.setTimeout(
-
-            () => {
-
-                goToSection(index);
-
-            },
-
-            50
-
+        window.clearTimeout(
+            resizeTimer
         );
 
+
+        resizeTimer =
+            window.setTimeout(
+                () => {
+
+                    setActiveSection(
+                        sections[
+                            currentSectionIndex()
+                        ].dataset.section
+                    );
+
+                },
+                150
+            );
+
+    },
+
+    {
+        passive:true
     }
 
 );
 
 
 /* =========================================================
-   INITIAL ACTIVE STATE
+   INITIAL POSITION
+
+   Always start at the very top when arrival.html loads.
+   ========================================================= */
+
+if(
+    "scrollRestoration" in history
+){
+
+    history.scrollRestoration =
+        "manual";
+
+}
+
+
+window.scrollTo(
+    0,
+    0
+);
+
+
+/* =========================================================
+   INITIAL ACTIVE NAV
    ========================================================= */
 
 setActiveSection(
@@ -2415,5 +2550,7 @@ setActiveSection(
 
 </script>
 
+
 </body>
+
 </html>
