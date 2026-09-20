@@ -6,10 +6,9 @@
 <title>303 OYSTER BAY • Arrival Guide</title>
 
 <style>
-
 /* =========================================================
    303 OYSTER BAY — ARRIVAL GUIDE
-   MASTER LAYOUT
+   MASTER TEMPLATE — FROZEN
    ========================================================= */
 
 *{
@@ -25,7 +24,7 @@ body{
 }
 
 html{
-    scroll-behavior:auto;
+    scroll-behavior:smooth;
     scroll-snap-type:y mandatory;
     overscroll-behavior-y:none;
 }
@@ -40,7 +39,7 @@ body{
 
 
 /* =========================================================
-   SIX FULL-VIEWPORT SECTIONS
+   SIX FULL-VIEWPORT SECTIONS — FROZEN
    ========================================================= */
 
 .guide-page{
@@ -54,10 +53,8 @@ body{
     height:100svh;
     min-height:100svh;
     overflow:hidden;
-
     scroll-snap-align:start;
     scroll-snap-stop:always;
-
     background-image:url("sand-background.jpg");
     background-size:cover;
     background-position:center;
@@ -66,13 +63,12 @@ body{
 
 
 /* =========================================================
-   FIXED TOP NAV
-   Existing artwork is NOT altered.
+   FIXED TOP NAV — FROZEN
    ========================================================= */
 
 .top-nav{
     position:fixed;
-    top:0px;
+    top:0;
     left:0;
     width:100%;
     height:auto;
@@ -87,7 +83,7 @@ body{
     position:relative;
     left:50%;
     z-index:220;
-    transform:translate(-50%, -47px);
+    transform:translate(-50%,-47px);
     pointer-events:none;
     user-select:none;
     -webkit-user-drag:none;
@@ -95,24 +91,19 @@ body{
 
 
 /* =========================================================
-   INVISIBLE TOP-NAV INTERACTION AREAS
+   TOP NAV HIT AREAS — FROZEN
    ========================================================= */
 
 .top-nav-hit{
     position:absolute;
-    top:0%;
+    top:0;
     height:28%;
-    z-index:210;
+    z-index:230;
     display:block;
     pointer-events:auto;
     text-decoration:none;
     -webkit-tap-highlight-color:transparent;
 }
-
-
-/* =========================================================
-   FIVE PILL AREAS
-   ========================================================= */
 
 .top-nav-arrival{
     left:0;
@@ -141,8 +132,7 @@ body{
 
 
 /* =========================================================
-   READABILITY BLUR
-   DISABLED — KEEP THIS
+   OLD READABILITY BLUR — PERMANENTLY DISABLED
    ========================================================= */
 
 .top-nav-hit::before{
@@ -158,26 +148,19 @@ body{
 
 
 /* =========================================================
-   ACTIVE NAV ILLUMINATION
+   ACTIVE NAV ILLUMINATION — MASTER
    ========================================================= */
 
 .top-nav-hit::after{
     content:"";
-
     position:absolute;
-
     inset:2px 1px;
-
     border-radius:999px;
-
     pointer-events:none;
-
     background:transparent;
-
     opacity:0;
-
-    z-index:0;
-
+    box-shadow:none;
+    z-index:1;
     transition:
         opacity .18s ease,
         background .18s ease,
@@ -186,53 +169,39 @@ body{
 
 .top-nav-hit.active::after{
     opacity:1;
-
     background:rgba(255,248,229,.25);
-
     box-shadow:
-        0 0 7px rgba(255,244,214,.85),
-        0 0 15px rgba(255,244,214,.48);
+        0 0 8px rgba(255,244,214,.75),
+        0 0 16px rgba(255,244,214,.42);
 }
 
 
 /* =========================================================
-   ARRIVAL DROPDOWN
+   ARRIVAL DROPDOWN — FROZEN
    ========================================================= */
 
 .top-nav-arrival{
-    z-index:220;
+    z-index:240;
 }
 
 .arrival-dropdown{
     position:absolute;
-
     left:8%;
     top:calc(100% - 4px);
-
     width:84%;
     min-width:150px;
-
     padding:6px;
-
     border-radius:12px;
-
     background:rgba(248,240,223,.96);
-
     border:1px solid rgba(112,69,31,.28);
-
-    box-shadow:
-        0 5px 14px rgba(70,42,20,.20);
-
+    box-shadow:0 5px 14px rgba(70,42,20,.20);
     opacity:0;
     visibility:hidden;
-
     transform:translateY(-5px);
-
     transition:
         opacity .18s ease,
         transform .18s ease,
         visibility .18s ease;
-
     pointer-events:none;
 }
 
@@ -240,32 +209,21 @@ body{
 .top-nav-arrival.open .arrival-dropdown{
     opacity:1;
     visibility:visible;
-
     transform:translateY(0);
-
     pointer-events:auto;
 }
 
 .arrival-dropdown a{
     display:block;
-
     padding:9px 10px;
-
     border-radius:8px;
-
     color:#463322;
-
     background:rgba(255,255,255,.18);
-
     font-family:Arial,sans-serif;
-
     font-size:10px;
     font-weight:700;
-
     letter-spacing:.45px;
-
     text-decoration:none;
-
     white-space:nowrap;
 }
 
@@ -281,35 +239,105 @@ body{
 
 
 /* =========================================================
-   PRE-ARRIVAL CONTENT BOX
+   MASTER BEIGE CONTENT FRAME
    ========================================================= */
 
-.arrival-content{
+.arrival-content,
+.guide-placeholder{
     position:absolute;
-
     left:12px;
     right:12px;
-
     top:40px;
     bottom:100px;
-
-    background:rgba(248,240,223,.88);
-
     border-radius:16px;
-
-    padding:12px 18px 14px;
-
     overflow:hidden;
-
     z-index:10;
-
-    box-shadow:
-        0 3px 10px rgba(70,42,20,.13);
+    box-shadow:0 3px 10px rgba(70,42,20,.13);
 }
 
-.arrival-content::before{
-    content:none;
+.arrival-content{
+    background:rgba(248,240,223,.88);
+    padding:12px 18px 14px;
 }
+
+.guide-placeholder{
+    background:rgba(248,240,223,.88);
+    padding:12px 18px 14px;
+    text-align:center;
+}
+
+
+/* =========================================================
+   GUEST FAVOURITE — MASTER / SAME ON EVERY SECTION
+   ========================================================= */
+
+.guest-favourite-link{
+    position:absolute;
+    top:6px;
+    right:6px;
+    width:92px;
+    max-width:none;
+    height:auto;
+    z-index:20;
+    display:block;
+    -webkit-tap-highlight-color:transparent;
+}
+
+.guest-favourite{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+
+/* =========================================================
+   MASTER SECTION TITLE
+   Reserved space on RIGHT for Guest Favourite
+   ========================================================= */
+
+.guide-placeholder h2{
+    margin:0;
+    padding:0 100px 0 0;
+    font-size:26px;
+    font-weight:normal;
+    line-height:1.1;
+    letter-spacing:1.5px;
+    color:#463322;
+}
+
+
+/* =========================================================
+   PRE-ARRIVAL HEADER
+   ========================================================= */
+
+.arrival-header{
+    width:100%;
+    text-align:center;
+    padding:2px 100px 0;
+    margin-bottom:5px;
+}
+
+.arrival-title{
+    font-size:24px;
+    font-weight:normal;
+    line-height:1;
+    letter-spacing:1.5px;
+    color:#463322;
+    margin-bottom:5px;
+}
+
+.arrival-subtitle{
+    font-size:10px;
+    line-height:1;
+    white-space:nowrap;
+    color:#6b5540;
+    margin-bottom:0;
+}
+
+
+/* =========================================================
+   FOUR ARRIVAL OPTIONS
+   ========================================================= */
 
 .arrival-header,
 .arrival-options,
@@ -320,105 +348,19 @@ body{
     z-index:5;
 }
 
-
-/* =========================================================
-   GUEST FAVOURITE
-   ========================================================= */
-
-.arrival-content .guest-favourite-link{
-    position:absolute;
-
-    top:6px;
-    right:6px;
-
-    width:92px;
-    max-width:none;
-
-    height:auto;
-
-    z-index:20;
-
-    display:block;
-
-    -webkit-tap-highlight-color:transparent;
-}
-
-.arrival-content .guest-favourite{
-    display:block;
-
-    width:100%;
-    height:auto;
-}
-
-
-/* =========================================================
-   PRE-ARRIVAL HEADER
-   ========================================================= */
-
-.arrival-header{
-    width:100%;
-
-    text-align:center;
-
-    padding:2px 100px 0;
-
-    margin-bottom:5px;
-}
-
-.arrival-title{
-    font-size:24px;
-
-    font-weight:normal;
-
-    line-height:1;
-
-    letter-spacing:1.5px;
-
-    color:#463322;
-
-    margin-bottom:5px;
-}
-
-.arrival-subtitle{
-    font-size:10px;
-
-    line-height:1;
-
-    white-space:nowrap;
-
-    color:#6b5540;
-
-    margin-bottom:0;
-}
-
-
-/* =========================================================
-   FOUR ARRIVAL OPTIONS
-   ========================================================= */
-
 .arrival-options{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,minmax(0,1fr));
-
+    grid-template-columns:repeat(4,minmax(0,1fr));
     width:100%;
-
     margin-bottom:17px;
 }
 
 .arrival-option{
     min-width:0;
-
     text-align:center;
-
-    padding:8px 10px 8px;
-
-    border-top:
-        1px solid rgba(112,69,31,.28);
-
-    border-right:
-        1px solid rgba(112,69,31,.30);
+    padding:8px 10px;
+    border-top:1px solid rgba(112,69,31,.28);
+    border-right:1px solid rgba(112,69,31,.30);
 }
 
 .arrival-option:last-child{
@@ -433,17 +375,11 @@ body{
 .arrival-icon{
     width:28px;
     height:28px;
-
     margin:0 auto 7px;
-
     display:block;
-
     color:#70451f;
-
     stroke:currentColor;
-
     stroke-width:2.1;
-
     stroke-linecap:round;
     stroke-linejoin:round;
 }
@@ -463,70 +399,48 @@ body{
 
 .arrival-option h3{
     font-size:10px;
-
     font-weight:normal;
-
     line-height:1.22;
-
     margin-bottom:6px;
-
     color:#463322;
 }
 
 .arrival-option p{
     font-size:9px;
-
     line-height:1.28;
-
     color:#6b5540;
 }
 
 .arrival-distance{
     font-size:9px !important;
-
     margin-bottom:2px;
-
     color:#463322 !important;
 }
 
 
 /* =========================================================
-   LOWER INFORMATION AREA
+   LOWER INFORMATION
    ========================================================= */
 
 .arrival-lower{
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
     gap:15px;
-
     width:100%;
 }
-
-
-/* =========================================================
-   PARKING LOT IMAGE
-   ========================================================= */
 
 .arrival-photo{
     width:100%;
     height:130px;
-
     overflow:hidden;
-
     border-radius:10px;
-
     background:#e4d4b9;
 }
 
 .arrival-photo img{
     display:block;
-
     width:100%;
     height:100%;
-
     object-fit:cover;
 }
 
@@ -537,113 +451,73 @@ body{
 
 .maps-box{
     height:130px;
-
     border-radius:10px;
-
     background:#eee2cc;
-
     padding:8px 12px;
-
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
     justify-content:center;
-
     text-align:center;
 }
 
 .maps-title{
     font-family:Arial,sans-serif;
-
     font-size:9px;
-
     font-weight:700;
-
     letter-spacing:.8px;
-
     color:#463322;
-
     margin-bottom:5px;
 }
 
 .maps-qr{
     width:70px;
     height:70px;
-
     object-fit:contain;
-
     display:block;
-
     margin:0 auto 5px;
 }
 
 .maps-link{
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     min-height:26px;
-
     padding:6px 12px;
-
     border-radius:14px;
-
     background:#4285F4;
-
-    color:#ffffff;
-
+    color:#fff;
     text-decoration:none;
-
     font-family:Arial,sans-serif;
-
     font-size:8.5px;
-
     font-weight:600;
-
     line-height:1;
-
     white-space:nowrap;
-
     cursor:pointer;
-
     -webkit-tap-highlight-color:transparent;
-
-    box-shadow:
-        0 1px 3px rgba(50,90,160,.25);
+    box-shadow:0 1px 3px rgba(50,90,160,.25);
 }
 
 
 /* =========================================================
-   YOUR PARKING SLOT
+   PARKING
    ========================================================= */
 
 .parking-box{
     display:flex;
-
     align-items:center;
-
     width:100%;
-
     margin-top:14px;
-
     padding:10px 14px;
-
     border-radius:9px;
-
     background:#eee2cc;
 }
 
 .parking-icon{
     width:27px;
     height:27px;
-
     flex:0 0 27px;
-
     margin-right:11px;
-
     color:#70451f;
 }
 
@@ -651,64 +525,38 @@ body{
     min-width:0;
 }
 
-.parking-title{
+.parking-title,
+.guest-id-title{
     font-family:Arial,sans-serif;
-
     font-size:8.5px;
-
     font-weight:700;
-
     letter-spacing:.6px;
-
     margin-bottom:4px;
-
     color:#463322;
 }
 
 .parking-copy p{
     font-size:10.5px;
-
     line-height:1.25;
-
     color:#6b5540;
 }
 
 
 /* =========================================================
-   GUEST ID SECTION
+   GUEST ID
    ========================================================= */
 
 .guest-id-box{
     width:100%;
-
     margin-top:13px;
-
     padding:11px 14px;
-
     border-radius:9px;
-
     background:#eee2cc;
-}
-
-.guest-id-title{
-    font-family:Arial,sans-serif;
-
-    font-size:8.5px;
-
-    font-weight:700;
-
-    letter-spacing:.6px;
-
-    margin-bottom:5px;
-
-    color:#463322;
 }
 
 .guest-id-box p{
     font-size:9px;
-
     line-height:1.27;
-
     color:#6b5540;
 }
 
@@ -718,45 +566,8 @@ body{
 
 
 /* =========================================================
-   OTHER SECTIONS
+   BEACH MANAGEMENT — TWO-LINE MASTER TITLE
    ========================================================= */
-
-.guide-placeholder{
-    position:absolute;
-
-    left:12px;
-    right:12px;
-
-    top:40px;
-    bottom:100px;
-
-    padding:12px 18px 14px;
-
-    border-radius:16px;
-
-    background:#f8f0df;
-
-    box-shadow:
-        0 3px 10px rgba(70,42,20,.13);
-
-    text-align:center;
-
-    overflow:hidden;
-
-    z-index:10;
-}
-
-.guide-placeholder h2{
-    font-size:26px;
-
-    font-weight:normal;
-
-    line-height:1.1;
-
-    letter-spacing:1.5px;
-
-    color:#463322;
-}
 
 #beach-management .guide-placeholder h2{
     line-height:1.05;
@@ -764,99 +575,70 @@ body{
 
 
 /* =========================================================
-   FROZEN 303 OYSTER BAY BOTTOM NAVIGATION
+   FIXED BOTTOM NAV — FROZEN
    ========================================================= */
 
 .bottom-nav{
     position:fixed;
-
     left:0;
     right:0;
-
     bottom:0;
-
     width:100%;
     height:135px;
-
     z-index:30;
-
     pointer-events:none;
 }
 
 .bottom-nav-image{
     position:absolute;
-
     left:0;
     bottom:0;
-
     width:100%;
     height:auto;
-
     display:block;
-
     pointer-events:none;
-
     user-select:none;
-
     -webkit-user-drag:none;
 }
 
 
 /* =========================================================
-   FROZEN INDEPENDENT 303 LOGO
+   FIXED SAND LOGO — FROZEN
    ========================================================= */
 
 .sand-logo{
     position:fixed;
-
     left:50%;
-
     bottom:20px;
-
     transform:translateX(-50%);
-
     width:125px;
-
     z-index:40;
-
     display:block;
-
     pointer-events:auto;
-
     -webkit-tap-highlight-color:transparent;
 }
 
 .sand-logo img{
     display:block;
-
     width:100%;
     height:auto;
 }
 
 
 /* =========================================================
-   FROZEN INVISIBLE BOTTOM-NAV HOTSPOTS
+   BOTTOM NAV HOTSPOTS — FROZEN
    ========================================================= */
 
 .nav-hotspot{
     position:absolute;
-
     bottom:0;
-
     height:110px;
-
     z-index:45;
-
     display:block;
-
     background:transparent;
-
     border:0;
-
     text-decoration:none;
-
     pointer-events:auto;
-
     -webkit-tap-highlight-color:transparent;
 }
 
@@ -894,52 +676,53 @@ body{
 
     .arrival-dropdown{
         left:4%;
-
         width:92%;
-
         min-width:145px;
-
         padding:5px;
     }
 
     .arrival-dropdown a{
         padding:8px 9px;
-
         font-size:8.5px;
     }
 
-
-    .arrival-content{
+    .arrival-content,
+    .guide-placeholder{
         left:8px;
         right:8px;
-
         top:130px;
         bottom:77px;
-
-        padding:9px 10px 9px;
-
         border-radius:13px;
     }
 
-    .arrival-content .guest-favourite-link{
-        width:82px;
+    .arrival-content{
+        padding:9px 10px 9px;
+    }
 
+    .guide-placeholder{
+        padding:20px 14px;
+    }
+
+    .guest-favourite-link{
+        width:82px;
         top:5px;
         right:5px;
     }
 
+    .guide-placeholder h2{
+        padding-right:82px;
+        font-size:20px;
+        letter-spacing:1.2px;
+    }
 
     .arrival-header{
         padding:7px 88px 0;
-
         margin-bottom:10px;
     }
 
     .arrival-title{
         font-size:20px;
-
         letter-spacing:1.2px;
-
         margin-bottom:3px;
     }
 
@@ -947,40 +730,34 @@ body{
         font-size:8.6px;
     }
 
-
     .arrival-options{
         margin-bottom:10px;
     }
 
     .arrival-option{
-        padding:5px 4px 5px;
+        padding:5px 4px;
     }
 
     .arrival-icon{
         width:21px;
         height:21px;
-
         margin-bottom:4px;
     }
 
     .arrival-option h3{
         font-size:8px;
-
         line-height:1.15;
-
         margin-bottom:4px;
     }
 
     .arrival-option p{
         font-size:7.3px;
-
         line-height:1.18;
     }
 
     .arrival-distance{
         font-size:7.3px !important;
     }
-
 
     .arrival-lower{
         gap:7px;
@@ -997,84 +774,54 @@ body{
 
     .maps-title{
         font-size:6.7px;
-
         margin-bottom:3px;
     }
 
     .maps-qr{
         width:46px;
         height:46px;
-
         margin-bottom:4px;
     }
 
     .maps-link{
         min-height:20px;
-
         padding:4px 7px;
-
         font-size:6.1px;
     }
 
-
     .parking-box{
         margin-top:5px;
-
         padding:6px 9px;
     }
 
     .parking-icon{
         width:20px;
         height:20px;
-
         flex-basis:20px;
-
         margin-right:8px;
     }
 
     .parking-title,
     .guest-id-title{
         font-size:7px;
-
         letter-spacing:.4px;
-
         margin-bottom:3px;
     }
 
     .parking-copy p{
         font-size:7.5px;
-
         line-height:1.18;
     }
 
     .guest-id-box{
         margin-top:8px;
-
         padding:7px 9px;
     }
 
     .guest-id-box p{
         font-size:7.2px;
-
         line-height:1.2;
     }
-
-
-    .guide-placeholder{
-        left:8px;
-        right:8px;
-
-        padding:20px 14px;
-
-        border-radius:13px;
-    }
-
-    .guide-placeholder h2{
-        font-size:20px;
-
-        letter-spacing:1.2px;
-    }
-
 
     .bottom-nav{
         height:108px;
@@ -1082,7 +829,6 @@ body{
 
     .sand-logo{
         width:110px;
-
         bottom:20px;
     }
 
@@ -1103,23 +849,33 @@ body{
         height:41%;
     }
 
-    .arrival-content{
+    .arrival-content,
+    .guide-placeholder{
         left:7px;
         right:7px;
-
         top:124px;
         bottom:72px;
-
-        padding:8px 8px 8px;
     }
 
-    .arrival-content .guest-favourite-link{
+    .arrival-content{
+        padding:8px;
+    }
+
+    .guide-placeholder{
+        padding:17px 10px;
+    }
+
+    .guest-favourite-link{
         width:76px;
+    }
+
+    .guide-placeholder h2{
+        padding-right:77px;
+        font-size:18px;
     }
 
     .arrival-header{
         padding-right:81px;
-
         margin-bottom:8px;
     }
 
@@ -1161,9 +917,7 @@ body{
 
     .maps-link{
         min-height:18px;
-
         padding:3px 5px;
-
         font-size:5.6px;
     }
 
@@ -1172,25 +926,12 @@ body{
         font-size:6.6px;
     }
 
-    .guide-placeholder{
-        left:7px;
-        right:7px;
-
-        padding:17px 10px;
-    }
-
-    .guide-placeholder h2{
-        font-size:18px;
-    }
-
-
     .bottom-nav{
         height:100px;
     }
 
     .sand-logo{
         width:85px;
-
         bottom:21px;
     }
 
@@ -1210,10 +951,7 @@ body{
      FIXED TOP NAV
      ======================================================= -->
 
-<nav
-    class="top-nav"
-    aria-label="Arrival guide navigation"
->
+<nav class="top-nav" aria-label="Arrival guide navigation">
 
     <img
         src="Arrival Page top Nav Bar.png"
@@ -1221,9 +959,6 @@ body{
         alt=""
         aria-hidden="true"
     >
-
-
-    <!-- ARRIVAL DROPDOWN -->
 
     <div
         class="top-nav-hit top-nav-arrival"
@@ -1254,8 +989,6 @@ body{
     </div>
 
 
-    <!-- EMERGENCY -->
-
     <a
         href="#emergency"
         class="top-nav-hit top-nav-emergency"
@@ -1263,8 +996,6 @@ body{
         aria-label="Emergency and Essentials"
     ></a>
 
-
-    <!-- WI-FI -->
 
     <a
         href="#wifi"
@@ -1274,8 +1005,6 @@ body{
     ></a>
 
 
-    <!-- BEACH MANAGEMENT -->
-
     <a
         href="#beach-management"
         class="top-nav-hit top-nav-beach"
@@ -1283,8 +1012,6 @@ body{
         aria-label="Beach Management"
     ></a>
 
-
-    <!-- CHECK OUT -->
 
     <a
         href="#check-out"
@@ -1314,8 +1041,6 @@ body{
 <div class="arrival-content">
 
 
-<!-- AIRBNB GUEST FAVOURITE -->
-
 <a
     href="https://www.airbnb.co.in/h/303oysterbay"
     class="guest-favourite-link"
@@ -1323,17 +1048,13 @@ body{
     rel="noopener"
     aria-label="303 Oyster Bay on Airbnb"
 >
-
     <img
         src="guest-favourite.png"
         class="guest-favourite"
         alt="Airbnb Guest Favourite"
     >
-
 </a>
 
-
-<!-- ARRIVAL HEADER -->
 
 <div class="arrival-header">
 
@@ -1347,8 +1068,6 @@ body{
 
 </div>
 
-
-<!-- FOUR ARRIVAL OPTIONS -->
 
 <div class="arrival-options">
 
@@ -1381,13 +1100,8 @@ body{
            L31.7 9Z"
     />
 
-    <path
-        d="M29.5 28.5L12 19"
-    />
-
-    <path
-        d="M36.5 28.5L54 19"
-    />
+    <path d="M29.5 28.5L12 19" />
+    <path d="M36.5 28.5L54 19" />
 
 </svg>
 
@@ -1418,9 +1132,7 @@ body{
     aria-hidden="true"
 >
 
-    <path
-        d="M8 25L32 11L56 25"
-    />
+    <path d="M8 25L32 11L56 25" />
 
     <path
         d="M14 25V46
@@ -1429,17 +1141,9 @@ body{
            M43 25V46"
     />
 
-    <path
-        d="M26 46V31H38V46"
-    />
-
-    <path
-        d="M8 50H56"
-    />
-
-    <path
-        d="M25 20H39"
-    />
+    <path d="M26 46V31H38V46" />
+    <path d="M8 50H56" />
+    <path d="M25 20H39" />
 
 </svg>
 
@@ -1470,9 +1174,7 @@ body{
     aria-hidden="true"
 >
 
-    <path
-        d="M8 25L32 11L56 25"
-    />
+    <path d="M8 25L32 11L56 25" />
 
     <path
         d="M14 25V46
@@ -1481,17 +1183,9 @@ body{
            M43 25V46"
     />
 
-    <path
-        d="M26 46V31H38V46"
-    />
-
-    <path
-        d="M8 50H56"
-    />
-
-    <path
-        d="M25 20H39"
-    />
+    <path d="M26 46V31H38V46" />
+    <path d="M8 50H56" />
+    <path d="M25 20H39" />
 
 </svg>
 
@@ -1522,41 +1216,19 @@ body{
     aria-hidden="true"
 >
 
-    <path
-        d="M12 39H52V48H12V39Z"
-    />
+    <path d="M12 39H52V48H12V39Z" />
 
-    <path
-        d="M17 39L21.5 26H42.5L47 39"
-    />
+    <path d="M17 39L21.5 26H42.5L47 39" />
 
-    <path
-        d="M23 27L20 37H44L41 27"
-    />
+    <path d="M23 27L20 37H44L41 27" />
 
-    <path
-        d="M12 43H8"
-    />
+    <path d="M12 43H8" />
+    <path d="M52 43H56" />
 
-    <path
-        d="M52 43H56"
-    />
+    <circle cx="21" cy="48" r="4" />
+    <circle cx="43" cy="48" r="4" />
 
-    <circle
-        cx="21"
-        cy="48"
-        r="4"
-    />
-
-    <circle
-        cx="43"
-        cy="48"
-        r="4"
-    />
-
-    <path
-        d="M24 32H40"
-    />
+    <path d="M24 32H40" />
 
 </svg>
 
@@ -1570,16 +1242,10 @@ body{
 
 </div>
 
-
 </div>
 
 
-<!-- =====================================================
-     PARKING LOT IMAGE + GOOGLE MAPS
-     ===================================================== -->
-
 <div class="arrival-lower">
-
 
 <div class="arrival-photo">
 
@@ -1617,10 +1283,6 @@ body{
 
 </div>
 
-
-<!-- =====================================================
-     YOUR PARKING SLOT
-     ===================================================== -->
 
 <div class="parking-box">
 
@@ -1669,10 +1331,6 @@ body{
 </div>
 
 
-<!-- =====================================================
-     GUEST IDs & ACCESS DETAILS
-     ===================================================== -->
-
 <div class="guest-id-box">
 
     <div class="guest-id-title">
@@ -1688,17 +1346,6 @@ body{
     </p>
 
 </div>
-
-<a
-    href="index.html"
-    class="sand-logo"
-    aria-label="303 Oyster Bay Home"
->
-    <img
-        src="logo.png"
-        alt="303 Oyster Bay"
-    >
-</a>
 
 </div>
 
@@ -1726,13 +1373,11 @@ body{
             rel="noopener"
             aria-label="303 Oyster Bay on Airbnb"
         >
-
             <img
                 src="guest-favourite.png"
                 class="guest-favourite"
                 alt="Airbnb Guest Favourite"
             >
-
         </a>
 
         <h2>
@@ -1765,13 +1410,11 @@ body{
             rel="noopener"
             aria-label="303 Oyster Bay on Airbnb"
         >
-
             <img
                 src="guest-favourite.png"
                 class="guest-favourite"
                 alt="Airbnb Guest Favourite"
             >
-
         </a>
 
         <h2>
@@ -1804,13 +1447,11 @@ body{
             rel="noopener"
             aria-label="303 Oyster Bay on Airbnb"
         >
-
             <img
                 src="guest-favourite.png"
                 class="guest-favourite"
                 alt="Airbnb Guest Favourite"
             >
-
         </a>
 
         <h2>
@@ -1843,13 +1484,11 @@ body{
             rel="noopener"
             aria-label="303 Oyster Bay on Airbnb"
         >
-
             <img
                 src="guest-favourite.png"
                 class="guest-favourite"
                 alt="Airbnb Guest Favourite"
             >
-
         </a>
 
         <h2>
@@ -1883,13 +1522,11 @@ body{
             rel="noopener"
             aria-label="303 Oyster Bay on Airbnb"
         >
-
             <img
                 src="guest-favourite.png"
                 class="guest-favourite"
                 alt="Airbnb Guest Favourite"
             >
-
         </a>
 
         <h2>
@@ -1921,11 +1558,6 @@ body{
         aria-hidden="true"
     >
 
-</nav>
-
-
-<nav class="bottom-nav">
-
     <a
         href="index.html"
         class="nav-hotspot hotspot-home"
@@ -1954,17 +1586,33 @@ body{
 
 
 
+<!-- =======================================================
+     FIXED SAND LOGO
+     ======================================================= -->
+
+<a
+    href="index.html"
+    class="sand-logo"
+    aria-label="303 Oyster Bay Home"
+>
+    <img
+        src="logo.png"
+        alt="303 Oyster Bay"
+    >
+</a>
+
+
+
 <script>
 
 /* =========================================================
-   SECTION NAVIGATION
+   MASTER SECTION NAVIGATION
    ========================================================= */
 
 const sections =
     Array.from(
         document.querySelectorAll(".guide-section")
     );
-
 
 const navArrival =
     document.querySelector(".top-nav-arrival");
@@ -1987,54 +1635,484 @@ const navCheckout =
    ========================================================= */
 
 const navMap = {
-
-    "pre-arrival":
-        navArrival,
-
-    "self-check-in":
-        navArrival,
-
-    "emergency":
-        navEmergency,
-
-    "wifi":
-        navWifi,
-
-    "beach-management":
-        navBeach,
-
-    "check-out":
-        navCheckout
-
+    "pre-arrival":navArrival,
+    "self-check-in":navArrival,
+    "emergency":navEmergency,
+    "wifi":navWifi,
+    "beach-management":navBeach,
+    "check-out":navCheckout
 };
 
 
 /* =========================================================
-   SET ACTIVE NAV
+   ACTIVE NAV
    ========================================================= */
 
 function setActiveSection(id){
 
     document
         .querySelectorAll(".top-nav-hit")
-        .forEach(el => {
-
+        .forEach(el=>{
             el.classList.remove("active");
+        });
+
+    const active = navMap[id];
+
+    if(active){
+        active.classList.add("active");
+    }
+}
+
+
+/* =========================================================
+   ARRIVAL DROPDOWN
+   ========================================================= */
+
+const arrivalMenu =
+    navArrival.querySelector(".arrival-dropdown");
+
+function closeArrivalMenu(){
+    navArrival.classList.remove("open");
+}
+
+navArrival.addEventListener("click",event=>{
+    event.preventDefault();
+    event.stopPropagation();
+    navArrival.classList.toggle("open");
+});
+
+arrivalMenu
+    .querySelectorAll("a[data-section]")
+    .forEach(link=>{
+
+        link.addEventListener("click",event=>{
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            const id =
+                link.dataset.section;
+
+            closeArrivalMenu();
+
+            goToSection(
+                sections.findIndex(
+                    section =>
+                        section.dataset.section === id
+                )
+            );
 
         });
 
-
-    const active =
-        navMap[id];
+    });
 
 
-    if(active){
+document.addEventListener("click",event=>{
 
-        active.classList.add("active");
+    if(!navArrival.contains(event.target)){
+        closeArrivalMenu();
+    }
+
+});
+
+
+/* =========================================================
+   CURRENT SECTION
+   Uses actual section positions rather than assuming
+   every section is exactly window.innerHeight.
+   ========================================================= */
+
+function currentSectionIndex(){
+
+    const viewportMiddle =
+        window.scrollY +
+        (window.innerHeight / 2);
+
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    sections.forEach((section,index)=>{
+
+        const sectionMiddle =
+            section.offsetTop +
+            (section.offsetHeight / 2);
+
+        const distance =
+            Math.abs(
+                viewportMiddle -
+                sectionMiddle
+            );
+
+        if(distance < closestDistance){
+
+            closestDistance = distance;
+            closestIndex = index;
+
+        }
+
+    });
+
+    return closestIndex;
+}
+
+
+/* =========================================================
+   SECTION MOVEMENT
+   ========================================================= */
+
+let navigationLocked = false;
+let unlockTimer = null;
+
+function goToSection(index){
+
+    index =
+        Math.max(
+            0,
+            Math.min(
+                sections.length - 1,
+                index
+            )
+        );
+
+    const target =
+        sections[index];
+
+    if(!target){
+        return;
+    }
+
+    navigationLocked = true;
+
+    closeArrivalMenu();
+
+    window.scrollTo({
+        top:target.offsetTop,
+        behavior:"smooth"
+    });
+
+    setActiveSection(
+        target.dataset.section
+    );
+
+    clearTimeout(unlockTimer);
+
+    unlockTimer =
+        setTimeout(()=>{
+
+            navigationLocked = false;
+
+        },850);
+
+}
+
+
+function stepSection(direction){
+
+    if(navigationLocked){
+        return;
+    }
+
+    const current =
+        currentSectionIndex();
+
+    const target =
+        current + direction;
+
+    if(target < 0){
+
+        goToSection(0);
+        return;
 
     }
 
+    if(target >= sections.length){
+
+        goToSection(
+            sections.length - 1
+        );
+
+        return;
+
+    }
+
+    goToSection(target);
+
 }
+
+
+/* =========================================================
+   TOP NAV CLICKS
+   ========================================================= */
+
+document
+    .querySelectorAll(
+        ".top-nav-hit:not(.top-nav-arrival)"
+    )
+    .forEach(link=>{
+
+        link.addEventListener("click",event=>{
+
+            event.preventDefault();
+
+            const href =
+                link.getAttribute("href");
+
+            if(
+                !href ||
+                href.charAt(0) !== "#"
+            ){
+                return;
+            }
+
+            const target =
+                document.querySelector(href);
+
+            if(!target){
+                return;
+            }
+
+            const index =
+                sections.indexOf(target);
+
+            if(index >= 0){
+                goToSection(index);
+            }
+
+        });
+
+    });
+
+
+/* =========================================================
+   MOUSE / TRACKPAD
+   ONE GESTURE = ONE COMPLETE SECTION
+   SAME BEHAVIOUR AS TOP NAV
+   ========================================================= */
+
+let wheelAccumulator = 0;
+let wheelResetTimer = null;
+
+window.addEventListener(
+    "wheel",
+    event=>{
+
+        event.preventDefault();
+
+        if(navigationLocked){
+            return;
+        }
+
+        wheelAccumulator += event.deltaY;
+
+        clearTimeout(wheelResetTimer);
+
+        wheelResetTimer =
+            setTimeout(()=>{
+                wheelAccumulator = 0;
+            },120);
+
+        const threshold = 45;
+
+        if(
+            Math.abs(wheelAccumulator) <
+            threshold
+        ){
+            return;
+        }
+
+        const direction =
+            wheelAccumulator > 0
+                ? 1
+                : -1;
+
+        wheelAccumulator = 0;
+
+        stepSection(direction);
+
+    },
+    {
+        passive:false
+    }
+);
+
+
+/* =========================================================
+   TOUCH / HAND SWIPE
+   ONE SWIPE = ONE COMPLETE SECTION
+   ========================================================= */
+
+let touchStartY = null;
+let touchStartX = null;
+let touchScrolling = false;
+
+window.addEventListener(
+    "touchstart",
+    event=>{
+
+        if(
+            event.touches.length !== 1
+        ){
+            return;
+        }
+
+        touchStartY =
+            event.touches[0].clientY;
+
+        touchStartX =
+            event.touches[0].clientX;
+
+        touchScrolling = false;
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+window.addEventListener(
+    "touchmove",
+    event=>{
+
+        if(
+            touchStartY === null ||
+            touchStartX === null ||
+            event.touches.length !== 1
+        ){
+            return;
+        }
+
+        const currentY =
+            event.touches[0].clientY;
+
+        const currentX =
+            event.touches[0].clientX;
+
+        const deltaY =
+            touchStartY - currentY;
+
+        const deltaX =
+            touchStartX - currentX;
+
+        if(
+            Math.abs(deltaY) > 10 &&
+            Math.abs(deltaY) >
+            Math.abs(deltaX)
+        ){
+
+            event.preventDefault();
+
+            touchScrolling = true;
+
+        }
+
+    },
+    {
+        passive:false
+    }
+);
+
+
+window.addEventListener(
+    "touchend",
+    event=>{
+
+        if(
+            touchStartY === null ||
+            !event.changedTouches.length
+        ){
+
+            touchStartY = null;
+            touchStartX = null;
+            touchScrolling = false;
+
+            return;
+        }
+
+        const endY =
+            event.changedTouches[0].clientY;
+
+        const delta =
+            touchStartY - endY;
+
+        touchStartY = null;
+        touchStartX = null;
+
+        if(
+            !touchScrolling ||
+            Math.abs(delta) < 30
+        ){
+
+            touchScrolling = false;
+            return;
+
+        }
+
+        touchScrolling = false;
+
+        stepSection(
+            delta > 0
+                ? 1
+                : -1
+        );
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+/* =========================================================
+   KEYBOARD
+   ========================================================= */
+
+window.addEventListener(
+    "keydown",
+    event=>{
+
+        if(
+            event.key === "ArrowDown" ||
+            event.key === "PageDown"
+        ){
+
+            event.preventDefault();
+            stepSection(1);
+
+        }
+
+        else if(
+            event.key === "ArrowUp" ||
+            event.key === "PageUp"
+        ){
+
+            event.preventDefault();
+            stepSection(-1);
+
+        }
+
+        else if(
+            event.key === "Home"
+        ){
+
+            event.preventDefault();
+            goToSection(0);
+
+        }
+
+        else if(
+            event.key === "End"
+        ){
+
+            event.preventDefault();
+            goToSection(
+                sections.length - 1
+            );
+
+        }
+
+    }
+);
 
 
 /* =========================================================
@@ -2043,10 +2121,9 @@ function setActiveSection(id){
 
 const observer =
     new IntersectionObserver(
+        entries=>{
 
-        entries => {
-
-            entries.forEach(entry => {
+            entries.forEach(entry=>{
 
                 if(
                     entry.isIntersecting &&
@@ -2062,7 +2139,6 @@ const observer =
             });
 
         },
-
         {
             threshold:[
                 .55,
@@ -2070,763 +2146,61 @@ const observer =
                 .85
             ]
         }
-
     );
 
 
-sections.forEach(section => {
-
+sections.forEach(section=>{
     observer.observe(section);
-
 });
 
 
 /* =========================================================
-   ARRIVAL DROPDOWN
-   ========================================================= */
-
-const arrivalMenu =
-    navArrival.querySelector(
-        ".arrival-dropdown"
-    );
-
-
-function closeArrivalMenu(){
-
-    navArrival.classList.remove(
-        "open"
-    );
-
-}
-
-
-function toggleArrivalMenu(event){
-
-    event.preventDefault();
-
-    event.stopPropagation();
-
-    navArrival.classList.toggle(
-        "open"
-    );
-
-}
-
-
-navArrival.addEventListener(
-    "click",
-    toggleArrivalMenu
-);
-
-
-/* =========================================================
-   DROPDOWN DESTINATION LINKS
-   ========================================================= */
-
-arrivalMenu
-    .querySelectorAll(
-        "a[data-section]"
-    )
-    .forEach(link => {
-
-        link.addEventListener(
-            "click",
-            event => {
-
-                event.preventDefault();
-
-                event.stopPropagation();
-
-
-                const id =
-                    link.dataset.section;
-
-
-                const target =
-                    document.getElementById(id);
-
-
-                closeArrivalMenu();
-
-
-                if(target){
-
-                    goToSection(
-                        sections.indexOf(target)
-                    );
-
-                }
-
-            }
-        );
-
-    });
-
-
-/* =========================================================
-   CLOSE ARRIVAL DROPDOWN WHEN TAPPING ELSEWHERE
-   ========================================================= */
-
-document.addEventListener(
-    "click",
-    event => {
-
-        if(
-            !navArrival.contains(
-                event.target
-            )
-        ){
-
-            closeArrivalMenu();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   NORMAL TOP NAV CLICKS
-   ========================================================= */
-
-document
-    .querySelectorAll(
-        ".top-nav-hit:not(.top-nav-arrival)"
-    )
-    .forEach(link => {
-
-        link.addEventListener(
-            "click",
-            event => {
-
-                event.preventDefault();
-
-
-                const href =
-                    link.getAttribute(
-                        "href"
-                    );
-
-
-                if(
-                    !href ||
-                    href.charAt(0) !== "#"
-                ){
-
-                    return;
-
-                }
-
-
-                const target =
-                    document.querySelector(
-                        href
-                    );
-
-
-                if(target){
-
-                    goToSection(
-                        sections.indexOf(target)
-                    );
-
-                }
-
-            }
-        );
-
-    });
-
-
-/* =========================================================
-   ONE-GESTURE / ONE-SECTION SCROLLING
-   ========================================================= */
-
-let navigationLocked = false;
-
-let wheelAccumulator = 0;
-
-let wheelResetTimer = null;
-
-let unlockTimer = null;
-
-
-/* =========================================================
-   DETERMINE CURRENT SECTION
-   ========================================================= */
-
-function currentSectionIndex(){
-
-    const viewportMiddle =
-        window.scrollY +
-        (window.innerHeight / 2);
-
-    let closestIndex = 0;
-
-    let closestDistance = Infinity;
-
-
-    sections.forEach(
-        (section,index) => {
-
-            const sectionMiddle =
-                section.offsetTop +
-                (section.offsetHeight / 2);
-
-
-            const distance =
-                Math.abs(
-                    viewportMiddle -
-                    sectionMiddle
-                );
-
-
-            if(distance < closestDistance){
-
-                closestDistance = distance;
-
-                closestIndex = index;
-
-            }
-
-        }
-    );
-
-
-    return closestIndex;
-
-}
-
-
-/* =========================================================
-   GO TO SECTION
-   ========================================================= */
-
-function goToSection(index){
-
-    index =
-        Math.max(
-            0,
-            Math.min(
-                sections.length - 1,
-                index
-            )
-        );
-
-
-    const target =
-        sections[index];
-
-
-    if(!target){
-
-        return;
-
-    }
-
-
-    navigationLocked = true;
-
-
-    closeArrivalMenu();
-
-
-    window.scrollTo({
-
-        top:target.offsetTop,
-
-        behavior:"smooth"
-
-    });
-
-
-    setActiveSection(
-        target.dataset.section
-    );
-
-
-    window.clearTimeout(
-        unlockTimer
-    );
-
-
-    unlockTimer =
-        window.setTimeout(
-
-            () => {
-
-                navigationLocked = false;
-
-                wheelAccumulator = 0;
-
-            },
-
-            850
-
-        );
-
-}
-
-
-/* =========================================================
-   MOVE ONE SECTION
-   ========================================================= */
-
-function stepSection(direction){
-
-    if(navigationLocked){
-
-        return;
-
-    }
-
-
-    const current =
-        currentSectionIndex();
-
-
-    const target =
-        current + direction;
-
-
-    if(target < 0){
-
-        window.scrollTo({
-
-            top:0,
-
-            behavior:"smooth"
-
-        });
-
-        return;
-
-    }
-
-
-    if(target >= sections.length){
-
-        goToSection(
-            sections.length - 1
-        );
-
-        return;
-
-    }
-
-
-    goToSection(
-        target
-    );
-
-}
-
-
-/* =========================================================
-   MOUSE WHEEL / TRACKPAD
-   ONE GESTURE = ONE SECTION
-   ========================================================= */
-
-window.addEventListener(
-
-    "wheel",
-
-    event => {
-
-        event.preventDefault();
-
-
-        if(navigationLocked){
-
-            return;
-
-        }
-
-
-        wheelAccumulator +=
-            event.deltaY;
-
-
-        window.clearTimeout(
-            wheelResetTimer
-        );
-
-
-        wheelResetTimer =
-            window.setTimeout(
-
-                () => {
-
-                    wheelAccumulator = 0;
-
-                },
-
-                120
-
-            );
-
-
-        const threshold = 45;
-
-
-        if(
-            Math.abs(
-                wheelAccumulator
-            ) < threshold
-        ){
-
-            return;
-
-        }
-
-
-        const direction =
-            wheelAccumulator > 0
-                ? 1
-                : -1;
-
-
-        wheelAccumulator = 0;
-
-
-        stepSection(
-            direction
-        );
-
-    },
-
-    {
-        passive:false
-    }
-
-);
-
-
-/* =========================================================
-   TOUCH / PHONE SWIPE
-   ONE SWIPE = ONE SECTION
-   ========================================================= */
-
-let touchStartY = null;
-
-let touchStartX = null;
-
-let touchScrolling = false;
-
-
-window.addEventListener(
-
-    "touchstart",
-
-    event => {
-
-        if(
-            event.touches.length !== 1
-        ){
-
-            return;
-
-        }
-
-
-        touchStartY =
-            event.touches[0].clientY;
-
-
-        touchStartX =
-            event.touches[0].clientX;
-
-
-        touchScrolling = false;
-
-    },
-
-    {
-        passive:true
-    }
-
-);
-
-
-window.addEventListener(
-
-    "touchmove",
-
-    event => {
-
-        if(
-            touchStartY === null ||
-            !event.touches.length
-        ){
-
-            return;
-
-        }
-
-
-        const deltaY =
-            touchStartY -
-            event.touches[0].clientY;
-
-
-        const deltaX =
-            touchStartX -
-            event.touches[0].clientX;
-
-
-        if(
-            Math.abs(deltaY) > 10 &&
-            Math.abs(deltaY) > Math.abs(deltaX)
-        ){
-
-            event.preventDefault();
-
-            touchScrolling = true;
-
-        }
-
-    },
-
-    {
-        passive:false
-    }
-
-);
-
-
-window.addEventListener(
-
-    "touchend",
-
-    event => {
-
-        if(
-            touchStartY === null ||
-            !event.changedTouches.length
-        ){
-
-            touchStartY = null;
-
-            touchStartX = null;
-
-            touchScrolling = false;
-
-            return;
-
-        }
-
-
-        const endY =
-            event.changedTouches[0].clientY;
-
-
-        const endX =
-            event.changedTouches[0].clientX;
-
-
-        const deltaY =
-            touchStartY - endY;
-
-
-        const deltaX =
-            touchStartX - endX;
-
-
-        touchStartY = null;
-
-        touchStartX = null;
-
-        touchScrolling = false;
-
-
-        if(
-            Math.abs(deltaX) >
-            Math.abs(deltaY)
-        ){
-
-            return;
-
-        }
-
-
-        if(
-            Math.abs(deltaY) < 35
-        ){
-
-            return;
-
-        }
-
-
-        stepSection(
-
-            deltaY > 0
-                ? 1
-                : -1
-
-        );
-
-    },
-
-    {
-        passive:true
-    }
-
-);
-
-
-/* =========================================================
-   KEYBOARD SECTION NAVIGATION
-   ========================================================= */
-
-window.addEventListener(
-
-    "keydown",
-
-    event => {
-
-        const keys = [
-
-            "ArrowDown",
-            "ArrowUp",
-            "PageDown",
-            "PageUp",
-            "Home",
-            "End"
-
-        ];
-
-
-        if(
-            !keys.includes(
-                event.key
-            )
-        ){
-
-            return;
-
-        }
-
-
-        event.preventDefault();
-
-
-        if(
-            event.key === "Home"
-        ){
-
-            goToSection(0);
-
-            return;
-
-        }
-
-
-        if(
-            event.key === "End"
-        ){
-
-            goToSection(
-                sections.length - 1
-            );
-
-            return;
-
-        }
-
-
-        if(
-            event.key === "ArrowDown" ||
-            event.key === "PageDown"
-        ){
-
-            stepSection(1);
-
-            return;
-
-        }
-
-
-        if(
-            event.key === "ArrowUp" ||
-            event.key === "PageUp"
-        ){
-
-            stepSection(-1);
-
-        }
-
-    }
-
-);
-
-
-/* =========================================================
    RESIZE / ROTATION
-   KEEP CURRENT SECTION WITHOUT SMOOTH JUMPING
+   Reposition to the current section without introducing
+   pixel-by-pixel movement.
    ========================================================= */
 
 let resizeTimer = null;
 
-
 window.addEventListener(
-
     "resize",
+    ()=>{
 
-    () => {
-
-        window.clearTimeout(
-            resizeTimer
-        );
-
+        clearTimeout(resizeTimer);
 
         resizeTimer =
-            window.setTimeout(
+            setTimeout(()=>{
 
-                () => {
+                if(navigationLocked){
+                    return;
+                }
 
-                    if(navigationLocked){
+                const index =
+                    currentSectionIndex();
 
-                        return;
+                const target =
+                    sections[index];
 
-                    }
-
-
-                    const index =
-                        currentSectionIndex();
-
+                if(target){
 
                     window.scrollTo({
-
-                        top:
-                            sections[index].offsetTop,
-
+                        top:target.offsetTop,
                         behavior:"auto"
-
                     });
 
-                },
+                }
 
-                150
+            },150);
 
-            );
-
-    },
-
-    {
-        passive:true
     }
-
 );
 
 
 /* =========================================================
-   INITIAL ACTIVE STATE
+   INITIAL STATE
    ========================================================= */
 
-setActiveSection(
-    "pre-arrival"
-);
+setActiveSection("pre-arrival");
 
 </script>
 
