@@ -14,7 +14,7 @@
    ========================================================= */
 
 *{
-    box-sizing:border-box;
+    box-sizing:border-box;xf
     margin:0;
     padding:0;
 }
@@ -765,20 +765,13 @@ body{
    Guest Favourite does not affect its position. */
 
 .emergency-title{
-    margin:0 0 7px;
-
+    margin:0 0 5px;
     padding:0;
-
     text-align:center;
-
-    font-size:24px;
-
+    font-size:23px;
     font-weight:normal;
-
-    line-height:1.05;
-
-    letter-spacing:1.2px;
-
+    line-height:0.92;
+    letter-spacing:1.1px;
     color:#463322;
 }
 
@@ -905,28 +898,16 @@ body{
 
 .essentials-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
-    grid-template-rows:
-        auto auto auto;
-
-    border-top:
-        1px solid rgba(112,69,31,.35);
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-rows:auto auto auto;
+    border-top:1px solid rgba(112,69,31,.35);
 }
 
 .essential-card{
     min-width:0;
-
-    padding:9px 12px 8px;
-
-    border-right:
-        1px solid rgba(112,69,31,.30);
-
-    border-bottom:
-        1px solid rgba(112,69,31,.30);
-
+    padding:7px 12px 6px;
+    border-right:1px solid rgba(112,69,31,.30);
+    border-bottom:1px solid rgba(112,69,31,.30);
     text-align:left;
 }
 
@@ -934,127 +915,143 @@ body{
     border-right:none;
 }
 
+/* ---------------------------------------------------------
+   PHARMACY + HOSPITAL — TOP ROW
+   --------------------------------------------------------- */
+
+.essential-card:nth-child(1),
+.essential-card:nth-child(2){
+    padding-top:7px;
+    padding-bottom:6px;
+}
+
+/* ---------------------------------------------------------
+   SUPER MARKET + ELECTRICAL & FIRST AID — SECOND ROW
+   --------------------------------------------------------- */
+
+.essential-card:nth-child(3),
+.essential-card:nth-child(4){
+    padding-top:7px;
+    padding-bottom:6px;
+}
+
+/* ---------------------------------------------------------
+   CAB SERVICES — FINAL ROW
+   --------------------------------------------------------- */
+
 .essential-card:nth-child(5){
     grid-column:1 / -1;
-
     border-right:none;
-
     border-bottom:none;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
-    gap:18px;
-
+    gap:16px;
     text-align:center;
-
-    padding:10px 15px;
+    padding:7px 15px;
 }
+
+/* ---------------------------------------------------------
+   ESSENTIAL ICONS
+   --------------------------------------------------------- */
 
 .essential-icon{
     text-align:center;
-
-    font-size:26px;
-
+    font-size:27px;
     line-height:1;
-
-    margin-bottom:4px;
+    margin-bottom:3px;
 }
 
 .essential-card:nth-child(5) .essential-icon{
     margin-bottom:0;
 }
 
+/* ---------------------------------------------------------
+   HEADINGS
+   --------------------------------------------------------- */
+
 .essential-card h3{
     text-align:center;
-
     font-family:Arial,sans-serif;
-
-    font-size:8px;
-
-    line-height:1.15;
-
+    font-size:8.5px;
+    line-height:1.02;
     font-weight:700;
-
     letter-spacing:.35px;
-
-    margin-bottom:6px;
+    margin:0 0 5px;
 }
+
+/* ---------------------------------------------------------
+   BODY TEXT
+   --------------------------------------------------------- */
 
 .essential-card p{
     font-family:Arial,sans-serif;
-
     font-size:7px;
-
-    line-height:1.25;
-
+    line-height:1.12;
     color:#5f4b38;
-
-    margin-bottom:5px;
+    margin:0 0 4px;
 }
+
+/* ---------------------------------------------------------
+   DISTANCE
+   --------------------------------------------------------- */
 
 .essential-card .distance{
     color:#b73528;
-
-    font-size:9px;
-
+    font-size:8.5px;
     font-weight:700;
-
     text-align:center;
 }
+
+/* ---------------------------------------------------------
+   PHONE
+   --------------------------------------------------------- */
 
 .essential-card .phone{
     text-align:center;
-
-    font-size:7px;
+    font-size:7.2px;
 }
+
+/* ---------------------------------------------------------
+   PLACE NAME
+   --------------------------------------------------------- */
 
 .essential-card .place{
     font-weight:700;
-
     color:#463322;
 }
 
-
-/* =========================================================
+/* ---------------------------------------------------------
    CAB CONTACT
-   ========================================================= */
+   --------------------------------------------------------- */
 
 .cab-contact{
-    margin-top:7px;
-
-    padding-top:6px;
-
-    border-top:
-        1px solid rgba(112,69,31,.25);
-
+    margin-top:4px;
+    padding-top:4px;
+    border-top:1px solid rgba(112,69,31,.25);
     text-align:center;
 }
 
 .cab-contact strong{
     display:inline-block;
-
     font-family:Arial,sans-serif;
-
     font-size:8px;
-
     margin-right:8px;
 }
 
 .cab-contact a{
     color:#463322;
-
     text-decoration:none;
-
     font-family:Arial,sans-serif;
-
     font-size:8px;
 }
 
 
+/* =========================================================
+   FROZEN BOTTOM NAV
+   ========================================================= */
 /* =========================================================
    FROZEN BOTTOM NAV
    ========================================================= */
@@ -2375,199 +2372,195 @@ body{
     </div>
 
 
-    <div class="essentials-grid">
+   <div class="essentials-grid">
 
+    <!-- PHARMACY -->
 
-        <!-- ELECTRICAL / FIRST AID -->
+    <div class="essential-card">
 
-        <div class="essential-card">
-
-            <div class="essential-icon">
-                ⚡
-            </div>
-
-            <h3>
-                ELECTRICAL &amp; FIRST AID
-            </h3>
-
-            <p>
-                ✓ A first aid box is available on the top shelf beside the guest washroom.
-            </p>
-
-            <p>
-                ✓ A spare fuse is also available nearby in case of an electrical trip.
-            </p>
-
-            <p>
-                ✓ If a power circuit trips - switch OFF heavy appliances first.
-            </p>
-
-            <p>
-                ✓ Contact the host if assistance is required.
-            </p>
-
+        <div class="essential-icon">
+            ✚
         </div>
 
+        <h3>
+            PHARMACY
+        </h3>
 
-        <!-- HOSPITAL -->
+        <p>
+            <span class="place">
+                Vijaya Medicals,<br>
+                Surathkal
+            </span>
+        </p>
 
-        <div class="essential-card">
+        <p class="phone">
+            0824 2403885
+        </p>
 
-            <div class="essential-icon">
-                H
-            </div>
+        <p class="distance">
+            2.3 kms
+        </p>
 
-            <h3>
-                HOSPITAL
-            </h3>
+        <p>
+            <span class="place">
+                Ganesh Medicals,<br>
+                Surathkal
+            </span>
+        </p>
 
-            <p>
-                <span class="place">
-                    Padmavati Hospital<br>
-                    Surathkal
-                </span>
-            </p>
+        <p class="phone">
+            0824 2200433
+        </p>
 
-            <p class="phone">
-                0824 2478600
-            </p>
-
-            <p class="distance">
-                2.5 kms
-            </p>
-
-        </div>
-
-
-        <!-- PHARMACY -->
-
-        <div class="essential-card">
-
-            <div class="essential-icon">
-                ✚
-            </div>
-
-            <h3>
-                PHARMACY
-            </h3>
-
-            <p>
-                <span class="place">
-                    Vijaya Medicals,<br>
-                    Surathkal
-                </span>
-            </p>
-
-            <p class="phone">
-                0824 2403885
-            </p>
-
-            <p class="distance">
-                2.3 kms
-            </p>
-
-            <p>
-                <span class="place">
-                    Ganesh Medicals,<br>
-                    Surathkal
-                </span>
-            </p>
-
-            <p class="phone">
-                0824 2200433
-            </p>
-
-            <p class="distance">
-                2.6 kms
-            </p>
-
-        </div>
-
-
-        <!-- SUPER MARKET -->
-
-        <div class="essential-card">
-
-            <div class="essential-icon">
-                🛒
-            </div>
-
-            <h3>
-                SUPER MARKET
-            </h3>
-
-            <p>
-                <span class="place">
-                    Sadanand Super Store
-                </span><br>
-                Phone: 0824 2475539
-            </p>
-
-            <p class="distance">
-                1.2 kms away
-            </p>
-
-            <p>
-                <span class="place">
-                    Maravu Super Store
-                </span><br>
-                Phone: 99642 45078
-            </p>
-
-            <p class="distance">
-                1 km away
-            </p>
-
-            <p>
-                More &amp; Reliance Smart are a little further.
-            </p>
-
-        </div>
-
-
-        <!-- CAB SERVICES -->
-
-        <div class="essential-card">
-
-            <div class="essential-icon">
-                🚕
-            </div>
-
-            <div>
-
-                <h3>
-                    CAB SERVICES
-                </h3>
-
-                <p>
-                    Cab services are available in the city under the flyover for pick-up and drop facilities.
-                </p>
-
-                <div class="cab-contact">
-
-                    <strong>
-                        RATNAKAR
-                    </strong>
-
-                    <a href="tel:9448983870">
-                        9448983870
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
+        <p class="distance">
+            2.6 kms
+        </p>
 
     </div>
+
+
+    <!-- HOSPITAL -->
+
+    <div class="essential-card">
+
+        <div class="essential-icon">
+            H
+        </div>
+
+        <h3>
+            HOSPITAL
+        </h3>
+
+        <p>
+            <span class="place">
+                Padmavati Hospital<br>
+                Surathkal
+            </span>
+        </p>
+
+        <p class="phone">
+            0824 2478600
+        </p>
+
+        <p class="distance">
+            2.5 kms
+        </p>
+
+    </div>
+
+
+    <!-- SUPER MARKET -->
+
+    <div class="essential-card">
+
+        <div class="essential-icon">
+            🛒
+        </div>
+
+        <h3>
+            SUPER MARKET
+        </h3>
+
+        <p>
+            <span class="place">
+                Sadanand Super Store
+            </span><br>
+            Phone: 0824 2475539
+        </p>
+
+        <p class="distance">
+            1.2 kms away
+        </p>
+
+        <p>
+            <span class="place">
+                Maravu Super Store
+            </span><br>
+            Phone: 99642 45078
+        </p>
+
+        <p class="distance">
+            1 km away
+        </p>
+
+        <p>
+            More &amp; Reliance Smart are a little further.
+        </p>
+
+    </div>
+
+
+    <!-- ELECTRICAL / FIRST AID -->
+
+    <div class="essential-card">
+
+        <div class="essential-icon">
+            ⚡
+        </div>
+
+        <h3>
+            ELECTRICAL &amp; FIRST AID
+        </h3>
+
+        <p>
+            ✓ A first aid box is available on the top shelf beside the guest washroom.
+        </p>
+
+        <p>
+            ✓ A spare fuse is also available nearby in case of an electrical trip.
+        </p>
+
+        <p>
+            ✓ If a power circuit trips - switch OFF heavy appliances first.
+        </p>
+
+        <p>
+            ✓ Contact the host if assistance is required.
+        </p>
+
+    </div>
+
+
+    <!-- CAB SERVICES -->
+
+    <div class="essential-card">
+
+        <div class="essential-icon">
+            🚕
+        </div>
+
+        <div>
+
+            <h3>
+                CAB SERVICES
+            </h3>
+
+            <p>
+                Cab services are available in the city under the flyover for pick-up and drop facilities.
+            </p>
+
+            <div class="cab-contact">
+
+                <strong>
+                    RATNAKAR
+                </strong>
+
+                <a href="tel:9448983870">
+                    9448983870
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
 
 </div>
 
 </section>
-
-
-
 <!-- =======================================================
      4. WI-FI
      ======================================================= -->
