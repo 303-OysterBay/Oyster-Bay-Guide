@@ -67,7 +67,6 @@ body{
 /* =========================================================
    FIXED TOP NAV
    Existing artwork is NOT altered.
-   It is simply positioned at the top.
    ========================================================= */
 
 .top-nav{
@@ -79,6 +78,7 @@ body{
     z-index:200;
     pointer-events:none;
 }
+
 .top-nav-art{
     display:block;
     width:105%;
@@ -91,6 +91,7 @@ body{
     user-select:none;
     -webkit-user-drag:none;
 }
+
 
 /* =========================================================
    INVISIBLE TOP-NAV INTERACTION AREAS
@@ -140,7 +141,6 @@ body{
 
 /* =========================================================
    READABILITY BLUR
-   SITS BEHIND THE FROZEN PNG
    ========================================================= */
 
 .top-nav-hit::before{
@@ -155,10 +155,8 @@ body{
 }
 
 
-
 /* =========================================================
    ACTIVE STATE
-   SUBTLE ILLUMINATION — NO OUTLINE
    ========================================================= */
 
 .top-nav-hit::after{
@@ -177,11 +175,8 @@ body{
 }
 
 
-
 /* =========================================================
    ARRIVAL DROPDOWN
-   CSS = HOVER
-   JS = TOUCH / CLICK
    ========================================================= */
 
 .top-nav-arrival{
@@ -221,12 +216,6 @@ body{
     pointer-events:none;
 }
 
-
-/*
-   Desktop hover.
-   Touch devices use the .open class via JavaScript.
-*/
-
 .top-nav-arrival:hover .arrival-dropdown,
 .top-nav-arrival.open .arrival-dropdown{
     opacity:1;
@@ -236,7 +225,6 @@ body{
 
     pointer-events:auto;
 }
-
 
 .arrival-dropdown a{
     display:block;
@@ -268,15 +256,12 @@ body{
 .arrival-dropdown a:hover,
 .arrival-dropdown a:focus-visible{
     background:rgba(255,255,255,.52);
-
     outline:none;
 }
 
 
 /* =========================================================
    PRE-ARRIVAL CONTENT BOX
-   BOTTOM EDGE RETAINED.
-   TOP MOVED UP.
    ========================================================= */
 
 .arrival-content{
@@ -285,18 +270,8 @@ body{
     left:12px;
     right:12px;
 
-    /*
-       The top has been moved upward.
-       The bottom remains at the established position.
-    */
-
     top:40px;
     bottom:100px;
-
-    /*
-       Translucent so the actual beach/wave image
-       can show through naturally.
-    */
 
     background:rgba(248,240,223,.88);
 
@@ -312,15 +287,9 @@ body{
         0 3px 10px rgba(70,42,20,.13);
 }
 
-
-/*
-   No artificial right-side cutout.
-*/
-
 .arrival-content::before{
     content:none;
 }
-
 
 .arrival-header,
 .arrival-options,
@@ -516,7 +485,7 @@ body{
 
 
 /* =========================================================
-   EXTERIOR IMAGE
+   PARKING LOT IMAGE
    ========================================================= */
 
 .arrival-photo{
@@ -626,7 +595,7 @@ body{
 
 
 /* =========================================================
-   PARKING
+   YOUR PARKING SLOT
    ========================================================= */
 
 .parking-box{
@@ -728,7 +697,6 @@ body{
 
 /* =========================================================
    OTHER SECTIONS
-   TITLE-ONLY PLACEHOLDER FOR NOW
    ========================================================= */
 
 .guide-placeholder{
@@ -755,6 +723,7 @@ body{
 
     z-index:10;
 }
+
 .guide-placeholder h2{
     font-size:26px;
 
@@ -770,7 +739,6 @@ body{
 
 /* =========================================================
    FROZEN 303 OYSTER BAY BOTTOM NAVIGATION
-   DO NOT CHANGE GEOMETRY
    ========================================================= */
 
 .bottom-nav{
@@ -914,12 +882,6 @@ body{
         font-size:8.5px;
     }
 
-
-    /*
-       PRE-ARRIVAL BOX
-       Top moves upward.
-       Bottom remains fixed.
-    */
 
     .arrival-content{
         left:8px;
@@ -1088,10 +1050,6 @@ body{
     }
 
 
-    /* =====================================================
-       FROZEN BOTTOM NAV
-       ===================================================== */
-
     .bottom-nav{
         height:108px;
     }
@@ -1199,10 +1157,6 @@ body{
     }
 
 
-    /* =====================================================
-       FROZEN BOTTOM NAV
-       ===================================================== */
-
     .bottom-nav{
         height:100px;
     }
@@ -1226,7 +1180,6 @@ body{
 
 <!-- =======================================================
      FIXED TOP NAV
-     AVAILABLE THROUGHOUT ENTIRE GUIDE
      ======================================================= -->
 
 <nav class="top-nav" aria-label="Arrival guide navigation">
@@ -1239,12 +1192,7 @@ body{
     >
 
 
-    <!-- ===================================================
-         ARRIVAL
-         DROPDOWN:
-         PRE-ARRIVAL
-         SELF CHECK-IN
-         =================================================== -->
+    <!-- ARRIVAL DROPDOWN -->
 
     <div
         class="top-nav-hit top-nav-arrival"
@@ -1275,9 +1223,7 @@ body{
     </div>
 
 
-    <!-- ===================================================
-         EMERGENCY
-         =================================================== -->
+    <!-- EMERGENCY -->
 
     <a
         href="#emergency"
@@ -1287,9 +1233,7 @@ body{
     ></a>
 
 
-    <!-- ===================================================
-         WI-FI
-         =================================================== -->
+    <!-- WI-FI -->
 
     <a
         href="#wifi"
@@ -1299,9 +1243,7 @@ body{
     ></a>
 
 
-    <!-- ===================================================
-         BEACH MANAGEMENT
-         =================================================== -->
+    <!-- BEACH MANAGEMENT -->
 
     <a
         href="#beach-management"
@@ -1311,9 +1253,7 @@ body{
     ></a>
 
 
-    <!-- ===================================================
-         CHECK OUT
-         =================================================== -->
+    <!-- CHECK OUT -->
 
     <a
         href="#check-out"
@@ -1340,17 +1280,10 @@ body{
     aria-label="Pre-Arrival"
 >
 
-
-<!-- =====================================================
-     ARRIVAL CONTENT BOX
-     ===================================================== -->
-
 <div class="arrival-content">
 
 
-<!-- =====================================================
-     AIRBNB GUEST FAVOURITE
-     ===================================================== -->
+<!-- AIRBNB GUEST FAVOURITE -->
 
 <a
     href="https://www.airbnb.co.in/h/303oysterbay"
@@ -1369,9 +1302,7 @@ body{
 </a>
 
 
-<!-- =====================================================
-     ARRIVAL HEADER
-     ===================================================== -->
+<!-- ARRIVAL HEADER -->
 
 <div class="arrival-header">
 
@@ -1386,16 +1317,12 @@ body{
 </div>
 
 
-<!-- =====================================================
-     FOUR ARRIVAL OPTIONS
-     ===================================================== -->
+<!-- FOUR ARRIVAL OPTIONS -->
 
 <div class="arrival-options">
 
 
-<!-- =====================================================
-     AIRPORT
-     ===================================================== -->
+<!-- AIRPORT -->
 
 <div class="arrival-option">
 
@@ -1448,9 +1375,7 @@ body{
 </div>
 
 
-<!-- =====================================================
-     MAJN
-     ===================================================== -->
+<!-- MAJN -->
 
 <div class="arrival-option">
 
@@ -1502,9 +1427,7 @@ body{
 </div>
 
 
-<!-- =====================================================
-     MAQ
-     ===================================================== -->
+<!-- MAQ -->
 
 <div class="arrival-option">
 
@@ -1556,9 +1479,7 @@ body{
 </div>
 
 
-<!-- =====================================================
-     BY CAR
-     ===================================================== -->
+<!-- BY CAR -->
 
 <div class="arrival-option">
 
@@ -1623,7 +1544,7 @@ body{
 
 
 <!-- =====================================================
-     EXTERIOR + GOOGLE MAPS
+     PARKING LOT IMAGE + GOOGLE MAPS
      ===================================================== -->
 
 <div class="arrival-lower">
@@ -1632,8 +1553,8 @@ body{
 <div class="arrival-photo">
 
     <img
-        src="Exterior.jpg"
-        alt="303 Oyster Bay"
+        src="Parking Lot.png"
+        alt="Parking lot and route to the guest parking slot"
     >
 
 </div>
@@ -1667,7 +1588,7 @@ body{
 
 
 <!-- =====================================================
-     PARKING
+     YOUR PARKING SLOT
      ===================================================== -->
 
 <div class="parking-box">
@@ -1705,11 +1626,11 @@ body{
 <div class="parking-copy">
 
     <div class="parking-title">
-        PARKING
+        YOUR PARKING SLOT
     </div>
 
     <p>
-        Parking is available in the premises for our guests.
+        Your parking slot is shown in the image above. Enter through the main gate, follow the aisle and take the 4th slot on the right.
     </p>
 
 </div>
@@ -1747,8 +1668,8 @@ body{
         alt="303 Oyster Bay"
     >
 </a>
-</div>
 
+</div>
 
 </section>
 
@@ -1766,8 +1687,17 @@ body{
 >
 
     <div class="guide-placeholder">
-        <img src="Guest Favourite.png" class="guest-favourite" alt="Guest Favourite">
-        <h2>SELF CHECK-IN</h2>
+
+        <img
+            src="Guest Favourite.png"
+            class="guest-favourite"
+            alt="Guest Favourite"
+        >
+
+        <h2>
+            SELF CHECK-IN
+        </h2>
+
     </div>
 
 </section>
@@ -1871,14 +1801,12 @@ body{
 
 <!-- =======================================================
      FROZEN BOTTOM NAV
-     SAME GEOMETRY AS STANDARD TEMPLATE
      ======================================================= -->
 
 <nav
     class="bottom-nav"
     aria-label="Main navigation"
 >
-
 
     <img
         src="Stay Page Bottom Nav.png"
@@ -1887,16 +1815,10 @@ body{
         aria-hidden="true"
     >
 
-
-    <!-- INDEPENDENT LOGO -->
-
-    
+</nav>
 
 
 <nav class="bottom-nav">
-
-
-    <!-- HOME -->
 
     <a
         href="index.html"
@@ -1904,26 +1826,17 @@ body{
         aria-label="Home"
     ></a>
 
-
-    <!-- STAY -->
-
     <a
         href="arrival.html"
         class="nav-hotspot hotspot-stay"
         aria-label="Stay"
     ></a>
 
-
-    <!-- LIVE -->
-
     <a
         href="live.html"
         class="nav-hotspot hotspot-live"
         aria-label="Live"
     ></a>
-
-
-    <!-- EXPLORE -->
 
     <a
         href="In%20and%20around.pdf"
@@ -2022,11 +1935,6 @@ function setActiveSection(id){
    ACTIVE SECTION OBSERVER
    ========================================================= */
 
-/*
-   PRE-ARRIVAL and SELF CHECK-IN both belong
-   to the ARRIVAL navigation item.
-*/
-
 const observer =
     new IntersectionObserver(
 
@@ -2085,11 +1993,6 @@ function closeArrivalMenu(){
 
 }
 
-
-/*
-   Touch/click opens the dropdown.
-   Desktop hover is handled by CSS.
-*/
 
 function toggleArrivalMenu(event){
 
@@ -2296,11 +2199,15 @@ function goToSection(index){
         target.getBoundingClientRect().top + window.scrollY;
 
     window.scrollTo({
+
         top: targetTop,
+
         behavior:"smooth"
+
     });
 
 }
+
 
 /* =========================================================
    STEP ONE SECTION
@@ -2441,10 +2348,6 @@ window.addEventListener(
 
         touchStartY = null;
 
-
-        /*
-           Ignore ordinary taps.
-        */
 
         if(
             Math.abs(delta) < 30
