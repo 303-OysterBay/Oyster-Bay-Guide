@@ -17,6 +17,11 @@
 
 /* =========================================================
    303 OYSTER BAY — ARRIVAL GUIDE
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL / FROZEN
    MASTER LAYOUT
    ========================================================= */
 
@@ -48,6 +53,7 @@ body{
 
 
 /* =========================================================
+   GLOBAL / FROZEN
    SIX FULL-SCREEN SECTIONS
    ========================================================= */
 
@@ -74,8 +80,8 @@ body{
 
 
 /* =========================================================
+   GLOBAL / FROZEN
    MASTER BEIGE FRAME
-   SAME GEOMETRY ON ALL SIX SECTIONS
    ========================================================= */
 
 .guide-placeholder{
@@ -103,6 +109,7 @@ body{
 
 
 /* =========================================================
+   GLOBAL / FROZEN
    FIXED TOP NAV
    ========================================================= */
 
@@ -131,6 +138,7 @@ body{
 
 
 /* =========================================================
+   GLOBAL / FROZEN
    TOP NAV HIT AREAS
    ========================================================= */
 
@@ -151,6 +159,7 @@ body{
 
 
 /* =========================================================
+   GLOBAL / FROZEN
    FIVE PILL AREAS
    ========================================================= */
 
@@ -181,6 +190,7 @@ body{
 
 
 /* =========================================================
+   GLOBAL / FROZEN
    READABILITY CLOUD — DISABLED
    ========================================================= */
 
@@ -202,6 +212,7 @@ body{
 
 
 /* =========================================================
+   GLOBAL / FROZEN
    ACTIVE NAV ILLUMINATION
    ========================================================= */
 
@@ -242,6 +253,7 @@ body{
 
 
 /* =========================================================
+   GLOBAL / FROZEN
    ARRIVAL DROPDOWN
    ========================================================= */
 
@@ -327,8 +339,8 @@ body{
 
 
 /* =========================================================
+   GLOBAL / FROZEN
    GUEST FAVOURITE
-   SAME POSITION ON ALL SIX SECTIONS
    ========================================================= */
 
 .guest-favourite-link{
@@ -358,6 +370,7 @@ body{
 
 
 /* =========================================================
+   GLOBAL / FROZEN
    COMMON SECTION TITLE
    ========================================================= */
 
@@ -380,7 +393,155 @@ body{
 
 
 /* =========================================================
-   PRE-ARRIVAL MASTER FRAME
+   GLOBAL / FROZEN
+   FIXED BOTTOM NAV
+   ========================================================= */
+
+.bottom-nav{
+    position:fixed;
+
+    left:0;
+    right:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:135px;
+
+    z-index:30;
+
+    pointer-events:none;
+}
+
+.bottom-nav-image{
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:auto;
+
+    display:block;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+}
+
+
+/* =========================================================
+   GLOBAL / FROZEN
+   FIXED SAND LOGO
+   ========================================================= */
+
+.sand-logo{
+    position:fixed;
+
+    left:50%;
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    width:125px;
+
+    z-index:40;
+
+    display:block;
+
+    pointer-events:auto;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+.sand-logo img{
+    display:block;
+
+    width:100%;
+    height:auto;
+}
+
+
+/* =========================================================
+   GLOBAL / FROZEN
+   BOTTOM NAV HOTSPOTS
+   ========================================================= */
+
+.nav-hotspot{
+    position:absolute;
+
+    bottom:0;
+
+    height:110px;
+
+    z-index:45;
+
+    display:block;
+
+    background:transparent;
+
+    border:0;
+
+    text-decoration:none;
+
+    pointer-events:auto;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+.hotspot-home{
+    left:0;
+    width:17%;
+}
+
+.hotspot-stay{
+    left:17%;
+    width:18%;
+}
+
+.hotspot-live{
+    right:18%;
+    width:18%;
+}
+
+.hotspot-explore{
+    right:0;
+    width:18%;
+}
+
+
+/* =========================================================
+   GLOBAL / FROZEN
+   PREVENT TEXT SELECTION
+   ========================================================= */
+
+.top-nav-art,
+.bottom-nav-image{
+    user-select:none;
+    -webkit-user-select:none;
+}
+
+
+/* =========================================================
+   GLOBAL / FROZEN
+   HIDE SCROLLBAR
+   ========================================================= */
+
+body::-webkit-scrollbar{
+    width:0;
+    height:0;
+}
+
+body{
+    scrollbar-width:none;
+}
+
+
+/* =========================================================
+   SECTION 1 — PRE-ARRIVAL
    ========================================================= */
 
 .arrival-content{
@@ -417,7 +578,8 @@ body{
 
 
 /* =========================================================
-   PRE-ARRIVAL HEADER
+   SECTION 1 — PRE-ARRIVAL
+   HEADER
    ========================================================= */
 
 .arrival-header{
@@ -456,6 +618,7 @@ body{
 
 
 /* =========================================================
+   SECTION 1 — PRE-ARRIVAL
    FOUR ARRIVAL OPTIONS
    ========================================================= */
 
@@ -490,6 +653,7 @@ body{
 
 
 /* =========================================================
+   SECTION 1 — PRE-ARRIVAL
    TRANSPORT ICONS
    ========================================================= */
 
@@ -521,6 +685,7 @@ body{
 
 
 /* =========================================================
+   SECTION 1 — PRE-ARRIVAL
    ARRIVAL TEXT
    ========================================================= */
 
@@ -554,7 +719,8 @@ body{
 
 
 /* =========================================================
-   ARRIVAL LOWER AREA
+   SECTION 1 — PRE-ARRIVAL
+   LOWER AREA
    ========================================================= */
 
 .arrival-lower{
@@ -570,6 +736,7 @@ body{
 
 
 /* =========================================================
+   SECTION 1 — PRE-ARRIVAL
    PARKING IMAGE
    ========================================================= */
 
@@ -595,6 +762,7 @@ body{
 
 
 /* =========================================================
+   SECTION 1 — PRE-ARRIVAL
    GOOGLE MAPS BOX
    ========================================================= */
 
@@ -648,6 +816,7 @@ body{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     min-height:24px;
@@ -678,6 +847,7 @@ body{
 
 
 /* =========================================================
+   SECTION 1 — PRE-ARRIVAL
    PARKING BOX
    ========================================================= */
 
@@ -737,6 +907,7 @@ body{
 
 
 /* =========================================================
+   SECTION 1 — PRE-ARRIVAL
    GUEST ID BOX
    ========================================================= */
 
@@ -781,7 +952,234 @@ body{
 
 
 /* =========================================================
-   EMERGENCY & ESSENTIALS
+   SECTION 2 — WELCOME IN / SELF CHECK-IN
+   ========================================================= */
+
+.welcome-in-content{
+    width:100%;
+    height:100%;
+
+    text-align:center;
+
+    position:relative;
+}
+
+.welcome-in-title{
+    font-size:26px;
+
+    line-height:1;
+
+    margin:0 0 2px;
+}
+
+.welcome-in-subtitle{
+    font-size:10px;
+
+    line-height:1.1;
+
+    margin:0 0 18px;
+
+    color:#6b5540;
+}
+
+
+/* =========================================================
+   SECTION 2 — LOCK SEQUENCE
+   ========================================================= */
+
+.lock-sequence{
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+    margin:0 auto 2px;
+}
+
+
+/* =========================================================
+   SECTION 2 — TEXT BELOW LOCK IMAGES
+   ========================================================= */
+
+.lock-text-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    width:100%;
+
+    margin:0 0 5px;
+}
+
+.lock-text-item{
+    min-width:0;
+
+    padding:0 6px;
+
+    text-align:center;
+
+    color:#6b5540;
+}
+
+.lock-text-item + .lock-text-item{
+    border-left:
+        1px solid rgba(112,69,31,.18);
+}
+
+.lock-step-title{
+    font-family:Arial,sans-serif;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    line-height:1.05;
+
+    letter-spacing:.35px;
+
+    color:#463322;
+
+    margin-bottom:3px;
+}
+
+.lock-step-copy{
+    font-size:7.6px;
+
+    line-height:1.18;
+
+    color:#6b5540;
+}
+
+.lock-step-copy strong{
+    color:#463322;
+}
+
+.lock-step-copy em{
+    color:#a51f1f;
+
+    font-style:normal;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   SECTION 2 — STEP 5
+   ========================================================= */
+
+.welcome-step-five{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    margin:2px 0 4px;
+}
+
+.welcome-step-number{
+    flex:0 0 auto;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    background:#463322;
+
+    color:#fff8e8;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-family:Arial,sans-serif;
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+.welcome-step-label{
+    font-family:Arial,sans-serif;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:.55px;
+
+    color:#463322;
+}
+
+
+/* =========================================================
+   SECTION 2 — ENTRANCE IMAGE
+   ========================================================= */
+
+.entrance-image{
+    display:block;
+
+    width:62%;
+
+    height:auto;
+
+    margin:0 auto 3px;
+
+    border-radius:9px;
+}
+
+.welcome-caption{
+    font-size:8px;
+
+    line-height:1.15;
+
+    color:#6b5540;
+
+    margin-bottom:4px;
+}
+
+
+/* =========================================================
+   SECTION 2 — WELCOME NOTES
+   ========================================================= */
+
+.welcome-notes{
+    width:100%;
+
+    text-align:left;
+
+    padding:6px 9px;
+
+    border-radius:9px;
+
+    background:rgba(255,255,255,.20);
+
+    border:
+        1px solid rgba(112,69,31,.20);
+}
+
+.welcome-notes p{
+    font-size:7.5px;
+
+    line-height:1.18;
+
+    color:#6b5540;
+}
+
+.welcome-notes p + p{
+    margin-top:3px;
+}
+
+
+/* =========================================================
+   SECTION 3 — EMERGENCY & ESSENTIALS
    ========================================================= */
 
 .emergency-placeholder{
@@ -804,8 +1202,7 @@ body{
 
 
 /* =========================================================
-   EMERGENCY CONTACTS
-   5-COLUMN ROW
+   SECTION 3 — EMERGENCY CONTACTS
    ========================================================= */
 
 .emergency-contacts{
@@ -900,7 +1297,9 @@ body{
 }
 
 
-/* HOST — NUMBER ONLY */
+/* =========================================================
+   SECTION 3 — HOST
+   ========================================================= */
 
 .host-number{
     color:#a51f1f !important;
@@ -918,7 +1317,7 @@ body{
 
 
 /* =========================================================
-   NEARBY ESSENTIALS
+   SECTION 3 — NEARBY ESSENTIALS
    ========================================================= */
 
 .nearby-title{
@@ -954,7 +1353,7 @@ body{
 
 
 /* =========================================================
-   ESSENTIAL CARD
+   SECTION 3 — ESSENTIAL CARD
    ========================================================= */
 
 .essential-card{
@@ -1013,7 +1412,7 @@ body{
 
 
 /* =========================================================
-   PHARMACY
+   SECTION 3 — PHARMACY
    ========================================================= */
 
 .pharmacy-list{
@@ -1098,7 +1497,7 @@ body{
 
 
 /* =========================================================
-   HOSPITAL
+   SECTION 3 — HOSPITAL
    ========================================================= */
 
 .hospital-card{
@@ -1169,7 +1568,7 @@ body{
 
 
 /* =========================================================
-   SUPERMARKET
+   SECTION 3 — SUPERMARKET
    ========================================================= */
 
 .supermarket-list{
@@ -1242,7 +1641,7 @@ body{
 
 
 /* =========================================================
-   ELECTRICAL & FIRST AID
+   SECTION 3 — ELECTRICAL & FIRST AID
    ========================================================= */
 
 .firstaid-copy{
@@ -1259,7 +1658,7 @@ body{
 
 
 /* =========================================================
-   CAB SERVICES
+   SECTION 3 — CAB SERVICES
    ========================================================= */
 
 .cab-card{
@@ -1313,7 +1712,7 @@ body{
 
 
 /* =========================================================
-   BEACH MANAGEMENT
+   SECTION 5 — BEACH MANAGEMENT
    ========================================================= */
 
 .beach-management-placeholder{
@@ -1334,7 +1733,8 @@ body{
 
 
 /* =========================================================
-   GLOBAL GUEST FAVOURITE
+   GLOBAL
+   SECTION FAVOURITE
    ========================================================= */
 
 .section-favourite{
@@ -1348,357 +1748,12 @@ body{
 
 
 /* =========================================================
-   FIXED BOTTOM NAV
+   RESPONSIVE CSS
    ========================================================= */
-
-.bottom-nav{
-    position:fixed;
-
-    left:0;
-    right:0;
-
-    bottom:0;
-
-    width:100%;
-
-    height:135px;
-
-    z-index:30;
-
-    pointer-events:none;
-}
-
-.bottom-nav-image{
-    position:absolute;
-
-    left:0;
-    bottom:0;
-
-    width:100%;
-    height:auto;
-
-    display:block;
-
-    pointer-events:none;
-
-    user-select:none;
-
-    -webkit-user-drag:none;
-}
-
-
-/* =========================================================
-   FIXED SAND LOGO
-   GLOBAL — OUTSIDE ALL SECTIONS
-   ========================================================= */
-
-.sand-logo{
-    position:fixed;
-
-    left:50%;
-    bottom:20px;
-
-    transform:translateX(-50%);
-
-    width:125px;
-
-    z-index:40;
-
-    display:block;
-
-    pointer-events:auto;
-
-    -webkit-tap-highlight-color:transparent;
-}
-
-.sand-logo img{
-    display:block;
-
-    width:100%;
-    height:auto;
-}
-
-
-/* =========================================================
-   BOTTOM NAV HOTSPOTS
-   ========================================================= */
-
-.nav-hotspot{
-    position:absolute;
-
-    bottom:0;
-
-    height:110px;
-
-    z-index:45;
-
-    display:block;
-
-    background:transparent;
-
-    border:0;
-
-    text-decoration:none;
-
-    pointer-events:auto;
-
-    -webkit-tap-highlight-color:transparent;
-}
-
-.hotspot-home{
-    left:0;
-    width:17%;
-}
-
-.hotspot-stay{
-    left:17%;
-    width:18%;
-}
-
-.hotspot-live{
-    right:18%;
-    width:18%;
-}
-
-.hotspot-explore{
-    right:0;
-    width:18%;
-}
-
-
-/* =========================================================
-   WELCOME IN / SELF CHECK-IN
-   ========================================================= */
-
-.welcome-in-content{
-    width:100%;
-    height:100%;
-
-    text-align:center;
-
-    position:relative;
-}
-
-.welcome-in-title{
-    font-size:26px;
-
-    line-height:1;
-
-    margin:0 0 2px;
-}
-
-.welcome-in-subtitle{
-    font-size:10px;
-
-    line-height:1.1;
-
-    margin:0 0 5px;
-
-    color:#6b5540;
-}
-
-
-/* =========================================================
-   LOCK SEQUENCE
-   THE IMAGE ITSELF CONTAINS ONLY THE FOUR LOCK IMAGES
-   NO NUMBERS ARE OVERLAID
-   ========================================================= */
-
-.lock-sequence{
-    display:block;
-
-    width:100%;
-
-    height:auto;
-
-    margin:0 auto 2px;
-}
-
-
-/* =========================================================
-   TEXT BELOW THE FOUR LOCK IMAGES
-   ========================================================= */
-
-.lock-text-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,minmax(0,1fr));
-
-    width:100%;
-
-    margin:0 0 5px;
-}
-
-.lock-text-item{
-    min-width:0;
-
-    padding:0 6px;
-
-    text-align:center;
-
-    color:#6b5540;
-}
-
-.lock-text-item + .lock-text-item{
-    border-left:
-        1px solid rgba(112,69,31,.18);
-}
-
-.lock-step-title{
-    font-family:Arial,sans-serif;
-
-    font-size:8px;
-
-    font-weight:700;
-
-    line-height:1.05;
-
-    letter-spacing:.35px;
-
-    color:#463322;
-
-    margin-bottom:3px;
-}
-
-.lock-step-copy{
-    font-size:7.6px;
-
-    line-height:1.18;
-
-    color:#6b5540;
-}
-
-.lock-step-copy strong{
-    color:#463322;
-}
-
-.lock-step-copy em{
-    color:#a51f1f;
-
-    font-style:normal;
-
-    font-weight:700;
-}
-
-
-/* =========================================================
-   STEP 5
-   ========================================================= */
-
-.welcome-step-five{
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:7px;
-
-    margin:2px 0 4px;
-}
-
-.welcome-step-number{
-    flex:0 0 auto;
-
-    width:22px;
-    height:22px;
-
-    border-radius:50%;
-
-    background:#463322;
-
-    color:#fff8e8;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-family:Arial,sans-serif;
-
-    font-size:10px;
-
-    font-weight:700;
-}
-
-.welcome-step-label{
-    font-family:Arial,sans-serif;
-
-    font-size:10px;
-
-    font-weight:700;
-
-    letter-spacing:.55px;
-
-    color:#463322;
-}
-
-
-/* =========================================================
-   ENTRANCE IMAGE
-   REDUCED — SECONDARY TO LOCK INSTRUCTIONS
-   ========================================================= */
-
-.entrance-image{
-    display:block;
-
-    width:62%;
-
-    height:auto;
-
-    margin:0 auto 3px;
-
-    border-radius:9px;
-}
-
-.welcome-caption{
-    font-size:8px;
-
-    line-height:1.15;
-
-    color:#6b5540;
-
-    margin-bottom:4px;
-}
-
-
-/* =========================================================
-   WELCOME IN NOTES
-   ========================================================= */
-
-.welcome-notes{
-    width:100%;
-
-    text-align:left;
-
-    padding:6px 9px;
-
-    border-radius:9px;
-
-    background:rgba(255,255,255,.20);
-
-    border:
-        1px solid rgba(112,69,31,.20);
-}
-
-.welcome-notes p{
-    font-size:7.5px;
-
-    line-height:1.18;
-
-    color:#6b5540;
-}
-
-.welcome-notes p + p{
-    margin-top:3px;
-}
 
 
 /* =========================================================
    RESPONSIVE TYPOGRAPHY
-   Keep the frame geometry FIXED.
    ========================================================= */
 
 @media(max-width:600px){
@@ -1883,7 +1938,6 @@ body{
 
 /* =========================================================
    VERY SMALL PHONES
-   NO FRAME POSITION OVERRIDES
    ========================================================= */
 
 @media(max-width:390px){
@@ -2013,6 +2067,10 @@ body{
     }
 }
 
+
+/* =========================================================
+   VERY SMALL PHONES — 360px
+   ========================================================= */
 
 @media(max-width:360px){
 
@@ -2146,7 +2204,7 @@ body{
 
 
 /* =========================================================
-   BEACH MANAGEMENT SMALL-SCREEN POSITION
+   BEACH MANAGEMENT — SMALL SCREEN
    ========================================================= */
 
 @media(max-width:390px){
@@ -2167,31 +2225,6 @@ body{
     }
 }
 
-
-/* =========================================================
-   PREVENT TEXT SELECTION ON NAV ART
-   ========================================================= */
-
-.top-nav-art,
-.bottom-nav-image{
-    user-select:none;
-    -webkit-user-select:none;
-}
-
-
-/* =========================================================
-   HIDE SCROLLBAR
-   ========================================================= */
-
-body::-webkit-scrollbar{
-    width:0;
-    height:0;
-}
-
-body{
-    scrollbar-width:none;
-}
-
 </style>
 
 </head>
@@ -2201,7 +2234,8 @@ body{
 
 
 <!-- =======================================================
-     FIXED TOP NAV
+     HTML
+     GLOBAL FIXED TOP NAV
      ======================================================= -->
 
 <nav
@@ -2295,7 +2329,7 @@ body{
 
 
 <!-- =======================================================
-     1. PRE-ARRIVAL
+     HTML SECTION 1 — PRE-ARRIVAL
      ======================================================= -->
 
 <section
@@ -2644,7 +2678,7 @@ body{
 
 
 <!-- =======================================================
-     2. WELCOME IN
+     HTML SECTION 2 — WELCOME IN / SELF CHECK-IN
      ======================================================= -->
 
 <section
@@ -2657,8 +2691,7 @@ body{
 <div class="guide-placeholder">
 
 
-<!-- GUEST FAVOURITE
-     POSITION IS UNCHANGED -->
+<!-- GUEST FAVOURITE -->
 
 <a
     href="https://www.airbnb.co.in/h/303oysterbay"
@@ -2793,7 +2826,7 @@ body{
 
 
 <!-- =================================================
-     ENTRANCE IMAGE — REDUCED
+     ENTRANCE IMAGE
      ================================================= -->
 
 <img
@@ -2809,7 +2842,7 @@ body{
 
 
 <!-- =================================================
-     IMPORTANT NOTES FROM SELF CHECK-IN PDF
+     IMPORTANT NOTES
      ================================================= -->
 
 <div class="welcome-notes">
@@ -2837,7 +2870,7 @@ body{
 
 
 <!-- =======================================================
-     3. EMERGENCY & ESSENTIALS
+     HTML SECTION 3 — EMERGENCY & ESSENTIALS
      ======================================================= -->
 
 <section
@@ -2868,8 +2901,6 @@ body{
 
 </a>
 
-
-<!-- TITLE -->
 
 <h2>
     EMERGENCY &amp; ESSENTIALS
@@ -3412,7 +3443,7 @@ body{
 
 
 <!-- =======================================================
-     4. WI-FI
+     HTML SECTION 4 — WI-FI
      ======================================================= -->
 
 <section
@@ -3451,7 +3482,7 @@ body{
 
 
 <!-- =======================================================
-     5. BEACH MANAGEMENT
+     HTML SECTION 5 — BEACH MANAGEMENT
      ======================================================= -->
 
 <section
@@ -3493,7 +3524,7 @@ body{
 
 
 <!-- =======================================================
-     6. CHECK OUT
+     HTML SECTION 6 — CHECK OUT
      ======================================================= -->
 
 <section
@@ -3535,7 +3566,7 @@ body{
 
 
 <!-- =======================================================
-     GLOBAL SAND LOGO
+     HTML GLOBAL — SAND LOGO
      MUST REMAIN OUTSIDE ALL SECTIONS
      ======================================================= -->
 
@@ -3555,7 +3586,7 @@ body{
 
 
 <!-- =======================================================
-     FIXED BOTTOM NAV ART
+     HTML GLOBAL — FIXED BOTTOM NAV ART
      ======================================================= -->
 
 <nav
@@ -3575,7 +3606,7 @@ body{
 
 
 <!-- =======================================================
-     BOTTOM NAV HOTSPOTS
+     HTML GLOBAL — BOTTOM NAV HOTSPOTS
      ======================================================= -->
 
 <nav
@@ -3610,6 +3641,10 @@ body{
 </nav>
 
 
+
+<!-- =======================================================
+     JAVASCRIPT
+     ======================================================= -->
 
 <script>
 
