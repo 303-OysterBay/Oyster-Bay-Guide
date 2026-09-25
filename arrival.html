@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>303 OYSTER BAY — Stay Guide</title>
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<title>303 OYSTER BAY • Arrival Guide</title>
+
 
 <style>
 
@@ -13,12 +21,21 @@
 
 
 /* =========================================================
-   GLOBAL / FROZEN TEMPLATE
+   GLOBAL / FROZEN
+   MASTER LAYOUT
    ========================================================= */
 
-/* ---------------------------------------------------------
-   SAND BACKGROUND
-   --------------------------------------------------------- */
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
 
 html{
     scroll-behavior:smooth;
@@ -27,92 +44,124 @@ html{
 }
 
 body{
-    margin:0;
-    padding:0;
-
+    font-family:Georgia,"Times New Roman",serif;
     background:#e8d8bd;
-
-    font-family:Arial,sans-serif;
-
     color:#463322;
-
+    overflow-x:hidden;
     overflow-y:auto;
-
-    -webkit-font-smoothing:antialiased;
 }
 
 
-/* ---------------------------------------------------------
-   FULL-SCREEN SECTIONS
-   --------------------------------------------------------- */
+/* =========================================================
+   GLOBAL / FROZEN
+   SIX FULL-SCREEN SECTIONS
+   ========================================================= */
+
+.guide-page{
+    width:100%;
+    min-height:100%;
+}
 
 .guide-section{
     position:relative;
-
     width:100%;
     height:100svh;
     min-height:100svh;
-
-    background-color:#e8d8bd;
-    background-image:url("sand-texture.jpg");
-    background-size:cover;
-    background-position:center;
+    overflow:hidden;
 
     scroll-snap-align:start;
     scroll-snap-stop:always;
 
-    overflow:hidden;
+    background-image:url("sand-background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
 
-/* ---------------------------------------------------------
-   FIXED TOP NAVIGATION
-   --------------------------------------------------------- */
+/* =========================================================
+   GLOBAL / FROZEN
+   MASTER BEIGE FRAME
+   ========================================================= */
+
+.guide-placeholder{
+    position:absolute;
+
+    left:12px;
+    right:12px;
+
+    top:40px;
+    bottom:100px;
+
+    padding:12px 18px 14px;
+
+    background:rgba(248,240,223,.88);
+
+    border-radius:16px;
+
+    box-shadow:
+        0 3px 10px rgba(70,42,20,.13);
+
+    overflow:hidden;
+
+    z-index:10;
+}
+
+
+/* =========================================================
+   GLOBAL / FROZEN
+   FIXED TOP NAV
+   ========================================================= */
 
 .top-nav{
     position:fixed;
-
-    top:0;
+    top:0px;
     left:0;
-
     width:100%;
-    height:54px;
-
+    height:auto;
     z-index:200;
-
     pointer-events:none;
 }
 
 .top-nav-art{
-    position:absolute;
-
-    top:0;
-    left:50%;
-
+    display:block;
     width:105%;
     height:auto;
-
-    transform:translate(-50%,-46px);
-
+    position:relative;
+    left:50%;
+    z-index:220;
+    transform:translate(-50%, -47px);
     pointer-events:none;
-
-    z-index:1;
+    user-select:none;
+    -webkit-user-drag:none;
 }
+
+
+/* =========================================================
+   GLOBAL / FROZEN
+   TOP NAV HIT AREAS
+   ========================================================= */
 
 .top-nav-hit{
     position:absolute;
-
     top:0;
-    height:54px;
-
-    z-index:5;
+    height:28%;
+    z-index:230;
 
     display:block;
 
+    pointer-events:auto;
+
     text-decoration:none;
 
-    pointer-events:auto;
+    -webkit-tap-highlight-color:transparent;
 }
+
+
+/* =========================================================
+   GLOBAL / FROZEN
+   FIVE PILL AREAS
+   ========================================================= */
 
 .top-nav-arrival{
     left:0;
@@ -130,33 +179,42 @@ body{
 }
 
 .top-nav-beach{
-    left:58%;
+    left:60%;
     width:21%;
 }
 
 .top-nav-checkout{
-    left:79%;
+    right:0;
     width:19%;
 }
 
 
-/* ---------------------------------------------------------
-   TOP NAV READABILITY / ACTIVE ILLUMINATION
-   --------------------------------------------------------- */
+/* =========================================================
+   GLOBAL / FROZEN
+   READABILITY CLOUD — DISABLED
+   ========================================================= */
 
 .top-nav-hit::before{
     content:"";
-
     position:absolute;
 
-    inset:0;
+    inset:4px 3px;
+
+    border-radius:999px;
 
     background:transparent;
 
-    pointer-events:none;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
 
-    z-index:0;
+    z-index:-1;
 }
+
+
+/* =========================================================
+   GLOBAL / FROZEN
+   ACTIVE NAV ILLUMINATION
+   ========================================================= */
 
 .top-nav-hit::after{
     content:"";
@@ -194,9 +252,10 @@ body{
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
+   GLOBAL / FROZEN
    ARRIVAL DROPDOWN
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .top-nav-arrival{
     z-index:240;
@@ -279,39 +338,10 @@ body{
 }
 
 
-/* ---------------------------------------------------------
-   BEIGE CONTENT FRAME
-   --------------------------------------------------------- */
-
-.guide-placeholder{
-    position:absolute;
-
-    left:12px;
-    right:12px;
-
-    top:40px;
-    bottom:100px;
-
-    box-sizing:border-box;
-
-    background:rgba(238,224,198,.94);
-
-    border-radius:16px;
-
-    padding:12px 18px 14px;
-
-    overflow:hidden;
-
-    z-index:10;
-
-    box-shadow:
-        0 3px 10px rgba(70,42,20,.13);
-}
-
-
-/* ---------------------------------------------------------
-   GUEST FAVOURITE — GLOBAL / FROZEN
-   --------------------------------------------------------- */
+/* =========================================================
+   GLOBAL / FROZEN
+   GUEST FAVOURITE
+   ========================================================= */
 
 .guest-favourite-link{
     position:absolute;
@@ -339,21 +369,20 @@ body{
 }
 
 
-/* ---------------------------------------------------------
-   TITLE — FROZEN TO PRE-ARRIVAL STANDARD
-   --------------------------------------------------------- */
+/* =========================================================
+   GLOBAL / FROZEN
+   COMMON SECTION TITLE
+   ========================================================= */
 
-.arrival-title,
 .guide-placeholder h2{
     margin:0;
-
     padding:0;
 
-    font-size:24px;
+    font-size:26px;
 
     font-weight:normal;
 
-    line-height:1;
+    line-height:1.1;
 
     letter-spacing:1.5px;
 
@@ -363,24 +392,51 @@ body{
 }
 
 
-/* ---------------------------------------------------------
-   SUBTITLE — FROZEN TO PRE-ARRIVAL STANDARD
-   --------------------------------------------------------- */
+/* =========================================================
+   GLOBAL / FROZEN
+   FIXED BOTTOM NAV
+   ========================================================= */
 
-.arrival-subtitle{
-    font-size:10px;
+.bottom-nav{
+    position:fixed;
 
-    line-height:1;
+    left:0;
+    right:0;
 
-    white-space:nowrap;
+    bottom:0;
 
-    color:#6b5540;
+    width:100%;
+
+    height:135px;
+
+    z-index:30;
+
+    pointer-events:none;
+}
+
+.bottom-nav-image{
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:auto;
+
+    display:block;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
+   GLOBAL / FROZEN
    FIXED SAND LOGO
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .sand-logo{
     position:fixed;
@@ -388,13 +444,17 @@ body{
     left:50%;
     bottom:20px;
 
-    width:125px;
-
     transform:translateX(-50%);
 
-    z-index:180;
+    width:125px;
+
+    z-index:40;
 
     display:block;
+
+    pointer-events:auto;
+
+    -webkit-tap-highlight-color:transparent;
 }
 
 .sand-logo img{
@@ -405,81 +465,58 @@ body{
 }
 
 
-/* ---------------------------------------------------------
-   FIXED BOTTOM NAV
-   --------------------------------------------------------- */
-
-.bottom-nav{
-    position:fixed;
-
-    left:0;
-    bottom:0;
-
-    width:100%;
-    height:100px;
-
-    z-index:170;
-
-    pointer-events:none;
-}
-
-.bottom-nav-image{
-    position:absolute;
-
-    left:50%;
-    bottom:0;
-
-    width:100%;
-    height:auto;
-
-    transform:translateX(-50%);
-
-    pointer-events:none;
-}
-
-
-/* ---------------------------------------------------------
+/* =========================================================
+   GLOBAL / FROZEN
    BOTTOM NAV HOTSPOTS
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .nav-hotspot{
     position:absolute;
 
     bottom:0;
 
-    height:100px;
+    height:110px;
 
-    z-index:5;
+    z-index:45;
+
+    display:block;
+
+    background:transparent;
+
+    border:0;
+
+    text-decoration:none;
 
     pointer-events:auto;
 
-    display:block;
+    -webkit-tap-highlight-color:transparent;
 }
 
 .hotspot-home{
     left:0;
-    width:25%;
+    width:17%;
 }
 
 .hotspot-stay{
-    left:25%;
-    width:25%;
+    left:17%;
+    width:18%;
 }
 
 .hotspot-live{
-    right:25%;
-    width:25%;
+    right:18%;
+    width:18%;
 }
 
 .hotspot-explore{
     right:0;
-    width:25%;
+    width:18%;
 }
 
 
-/* ---------------------------------------------------------
-   PREVENT TEXT SELECTION ON NAV ART
-   --------------------------------------------------------- */
+/* =========================================================
+   GLOBAL / FROZEN
+   PREVENT TEXT SELECTION
+   ========================================================= */
 
 .top-nav-art,
 .bottom-nav-image{
@@ -488,9 +525,10 @@ body{
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
+   GLOBAL / FROZEN
    HIDE SCROLLBAR
-   --------------------------------------------------------- */
+   ========================================================= */
 
 body::-webkit-scrollbar{
     width:0;
@@ -503,12 +541,7 @@ body{
 
 
 /* =========================================================
-   SECTION-SPECIFIC CSS
-   ========================================================= */
-
-
-/* =========================================================
-   1. PRE-ARRIVAL
+   SECTION 1 — PRE-ARRIVAL
    ========================================================= */
 
 .arrival-content{
@@ -520,13 +553,11 @@ body{
     top:40px;
     bottom:100px;
 
-    box-sizing:border-box;
-
-    padding:12px 18px 14px;
+    background:rgba(248,240,223,.88);
 
     border-radius:16px;
 
-    background:rgba(238,224,198,.94);
+    padding:12px 18px 14px;
 
     overflow:hidden;
 
@@ -545,6 +576,12 @@ body{
     z-index:5;
 }
 
+
+/* =========================================================
+   SECTION 1 — PRE-ARRIVAL
+   HEADER
+   ========================================================= */
+
 .arrival-header{
     width:100%;
 
@@ -556,8 +593,34 @@ body{
 }
 
 .arrival-title{
+    font-size:24px;
+
+    font-weight:normal;
+
+    line-height:1;
+
+    letter-spacing:1.5px;
+
+    color:#463322;
+
     margin-bottom:5px;
 }
+
+.arrival-subtitle{
+    font-size:10px;
+
+    line-height:1;
+
+    white-space:nowrap;
+
+    color:#6b5540;
+}
+
+
+/* =========================================================
+   SECTION 1 — PRE-ARRIVAL
+   FOUR ARRIVAL OPTIONS
+   ========================================================= */
 
 .arrival-options{
     display:grid;
@@ -588,6 +651,12 @@ body{
     border-right:none;
 }
 
+
+/* =========================================================
+   SECTION 1 — PRE-ARRIVAL
+   TRANSPORT ICONS
+   ========================================================= */
+
 .arrival-icon{
     width:28px;
     height:28px;
@@ -606,10 +675,19 @@ body{
     stroke-linejoin:round;
 }
 
-.arrival-icon path,
+.arrival-icon path{
+    fill:none;
+}
+
 .arrival-icon circle{
     fill:none;
 }
+
+
+/* =========================================================
+   SECTION 1 — PRE-ARRIVAL
+   ARRIVAL TEXT
+   ========================================================= */
 
 .arrival-option h3{
     font-size:10px;
@@ -639,6 +717,12 @@ body{
     color:#463322 !important;
 }
 
+
+/* =========================================================
+   SECTION 1 — PRE-ARRIVAL
+   LOWER AREA
+   ========================================================= */
+
 .arrival-lower{
     display:grid;
 
@@ -649,6 +733,12 @@ body{
 
     width:100%;
 }
+
+
+/* =========================================================
+   SECTION 1 — PRE-ARRIVAL
+   PARKING IMAGE
+   ========================================================= */
 
 .arrival-photo{
     width:100%;
@@ -670,6 +760,12 @@ body{
     object-fit:cover;
 }
 
+
+/* =========================================================
+   SECTION 1 — PRE-ARRIVAL
+   GOOGLE MAPS BOX
+   ========================================================= */
+
 .maps-box{
     height:130px;
 
@@ -680,112 +776,183 @@ body{
     border:
         1px solid rgba(112,69,31,.22);
 
-    padding:12px;
+    display:flex;
 
-    box-sizing:border-box;
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
 
     text-align:center;
+
+    padding:8px;
 }
 
 .maps-title{
+    font-family:Arial,sans-serif;
+
     font-size:9px;
 
     font-weight:700;
 
-    color:#463322;
-}
-
-.maps-qr{
-    width:50px;
-    height:50px;
-
-    margin:7px auto;
-
-    display:block;
-}
-
-.maps-link{
-    display:inline-block;
-
-    min-height:22px;
-
-    box-sizing:border-box;
-
-    padding:4px 7px;
-
-    border-radius:7px;
-
-    background:rgba(255,255,255,.38);
-
-    color:#463322;
-
-    font-size:7px;
-
-    text-decoration:none;
-}
-
-.parking-box{
-    width:100%;
-
-    margin-top:12px;
-
-    padding:9px;
-
-    box-sizing:border-box;
-
-    border-radius:10px;
-
-    background:rgba(255,255,255,.22);
-
-    border:
-        1px solid rgba(112,69,31,.22);
-}
-
-.parking-copy p,
-.guest-id-box p{
-    margin:0;
-
-    font-size:8.5px;
-
-    line-height:1.3;
-
-    color:#6b5540;
-}
-
-.guest-id-box{
-    width:100%;
-
-    margin-top:10px;
-
-    padding:9px 12px;
-
-    box-sizing:border-box;
-
-    border-radius:10px;
-
-    background:rgba(255,255,255,.22);
-
-    border:
-        1px solid rgba(112,69,31,.22);
-
-    text-align:center;
-}
-
-.guest-id-title{
-    font-size:9px;
-
-    font-weight:700;
-
-    letter-spacing:.5px;
+    letter-spacing:.8px;
 
     color:#463322;
 
     margin-bottom:5px;
 }
 
+.maps-qr{
+    width:62px;
+    height:62px;
+
+    object-fit:contain;
+
+    margin-bottom:5px;
+}
+
+.maps-link{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:24px;
+
+    padding:4px 8px;
+
+    border-radius:7px;
+
+    background:#463322;
+
+    color:#fff8e8;
+
+    font-family:Arial,sans-serif;
+
+    font-size:7px;
+
+    font-weight:700;
+
+    letter-spacing:.25px;
+
+    text-decoration:none;
+}
+
+.maps-link:hover,
+.maps-link:focus-visible{
+    background:#70451f;
+}
+
 
 /* =========================================================
-   2. WELCOME IN / SELF CHECK-IN
+   SECTION 1 — PRE-ARRIVAL
+   PARKING BOX
+   ========================================================= */
+
+.parking-box{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:12px;
+
+    padding:9px 11px;
+
+    border-radius:9px;
+
+    background:rgba(255,255,255,.20);
+
+    border:
+        1px solid rgba(112,69,31,.20);
+}
+
+.parking-icon{
+    flex:0 0 auto;
+
+    width:30px;
+    height:30px;
+
+    color:#70451f;
+}
+
+.parking-copy{
+    min-width:0;
+}
+
+.parking-title{
+    font-family:Arial,sans-serif;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:.65px;
+
+    color:#463322;
+
+    margin-bottom:3px;
+}
+
+.parking-copy p{
+    font-size:8.5px;
+
+    line-height:1.28;
+
+    color:#6b5540;
+}
+
+
+/* =========================================================
+   SECTION 1 — PRE-ARRIVAL
+   GUEST ID BOX
+   ========================================================= */
+
+.guest-id-box{
+    margin-top:10px;
+
+    padding:8px 11px;
+
+    border-radius:9px;
+
+    background:rgba(255,255,255,.20);
+
+    border:
+        1px solid rgba(112,69,31,.20);
+}
+
+.guest-id-title{
+    font-family:Arial,sans-serif;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:.65px;
+
+    color:#463322;
+
+    margin-bottom:4px;
+}
+
+.guest-id-box p{
+    font-size:8.2px;
+
+    line-height:1.25;
+
+    color:#6b5540;
+}
+
+.guest-id-box p + p{
+    margin-top:3px;
+}
+
+
+/* =========================================================
+   SECTION 2 — WELCOME IN / SELF CHECK-IN
    ========================================================= */
 
 .welcome-in-content{
@@ -798,40 +965,42 @@ body{
 }
 
 .welcome-in-title{
-    margin:0 0 4px;
-
-    font-size:24px;
-
-    font-weight:normal;
+    font-size:26px;
 
     line-height:1;
 
-    letter-spacing:1.5px;
-
-    color:#463322;
+    margin:0 0 2px;
 }
 
 .welcome-in-subtitle{
-    margin:0;
-
     font-size:10px;
 
-    line-height:1;
+    line-height:1.1;
+
+    margin:0 0 18px;
 
     color:#6b5540;
-
-    white-space:nowrap;
 }
+
+
+/* =========================================================
+   SECTION 2 — LOCK SEQUENCE
+   ========================================================= */
 
 .lock-sequence{
     display:block;
 
-    width:62%;
+    width:100%;
 
     height:auto;
 
-    margin:10px auto 5px;
+    margin:0 auto 2px;
 }
+
+
+/* =========================================================
+   SECTION 2 — TEXT BELOW LOCK IMAGES
+   ========================================================= */
 
 .lock-text-grid{
     display:grid;
@@ -839,70 +1008,167 @@ body{
     grid-template-columns:
         repeat(4,minmax(0,1fr));
 
-    gap:6px;
-
     width:100%;
+
+    margin:0 0 5px;
 }
 
 .lock-text-item{
+    min-width:0;
+
+    padding:0 6px;
+
     text-align:center;
+
+    color:#6b5540;
+}
+
+.lock-text-item + .lock-text-item{
+    border-left:
+        1px solid rgba(112,69,31,.18);
 }
 
 .lock-step-title{
+    font-family:Arial,sans-serif;
+
     font-size:8px;
 
     font-weight:700;
 
-    line-height:1.08;
+    line-height:1.05;
+
+    letter-spacing:.35px;
 
     color:#463322;
+
+    margin-bottom:3px;
 }
 
 .lock-step-copy{
-    margin-top:3px;
+    font-size:7.6px;
 
-    font-size:7px;
-
-    line-height:1.2;
+    line-height:1.18;
 
     color:#6b5540;
 }
 
+.lock-step-copy strong{
+    color:#463322;
+}
+
+.lock-step-copy em{
+    color:#a51f1f;
+
+    font-style:normal;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   SECTION 2 — STEP 5
+   ========================================================= */
+
+.welcome-step-five{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    margin:2px 0 4px;
+}
+
+.welcome-step-number{
+    flex:0 0 auto;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    background:#463322;
+
+    color:#fff8e8;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-family:Arial,sans-serif;
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
 .welcome-step-label{
-    font-size:8px;
+    font-family:Arial,sans-serif;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:.55px;
 
     color:#463322;
 }
 
+
+/* =========================================================
+   SECTION 2 — ENTRANCE IMAGE
+   ========================================================= */
+
+.entrance-image{
+    display:block;
+
+    width:62%;
+
+    height:auto;
+
+    margin:0 auto 3px;
+
+    border-radius:9px;
+}
+
 .welcome-caption{
-    font-size:7px;
+    font-size:8px;
+
+    line-height:1.15;
 
     color:#6b5540;
+
+    margin-bottom:4px;
 }
+
+
+/* =========================================================
+   SECTION 2 — WELCOME NOTES
+   ========================================================= */
 
 .welcome-notes{
     width:100%;
 
-    box-sizing:border-box;
+    text-align:left;
 
-    margin-top:8px;
+    padding:6px 9px;
 
-    padding:8px 10px;
+    border-radius:9px;
 
-    border-radius:10px;
-
-    background:rgba(255,255,255,.22);
+    background:rgba(255,255,255,.20);
 
     border:
-        1px solid rgba(112,69,31,.22);
+        1px solid rgba(112,69,31,.20);
 }
 
 .welcome-notes p{
-    margin:0;
+    font-size:7.5px;
 
-    font-size:7px;
-
-    line-height:1.25;
+    line-height:1.18;
 
     color:#6b5540;
 }
@@ -913,56 +1179,196 @@ body{
 
 
 /* =========================================================
-   3. EMERGENCY & ESSENTIALS
+   SECTION 3 — EMERGENCY & ESSENTIALS
    ========================================================= */
 
 .emergency-placeholder{
-    text-align:center;
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+    justify-content:flex-start;
+
+    padding-top:14px;
 }
 
 .emergency-placeholder h2{
-    font-size:24px;
+    flex:0 0 auto;
+
+    margin-bottom:12px;
+}
+
+
+/* =========================================================
+   SECTION 3 — EMERGENCY CONTACTS
+   ========================================================= */
+
+.emergency-contacts{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,minmax(0,1fr));
+
+    width:100%;
+
+    border-top:
+        1px solid rgba(112,69,31,.25);
+
+    border-bottom:
+        1px solid rgba(112,69,31,.25);
+
+    padding:9px 0 10px;
+
+    margin-bottom:12px;
+}
+
+.emergency-contact{
+    min-width:0;
+
+    text-align:center;
+
+    padding:0 8px;
+
+    border-right:
+        1px solid rgba(112,69,31,.22);
+}
+
+.emergency-contact:last-child{
+    border-right:none;
+}
+
+.emergency-icon{
+    width:28px;
+    height:28px;
+
+    display:block;
+
+    margin:0 auto 4px;
+
+    color:#70451f;
+
+    stroke:currentColor;
+
+    stroke-width:2;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
 }
 
 .emergency-label{
-    font-size:7px;
+    font-family:Arial,sans-serif;
+
+    font-size:8px;
 
     font-weight:700;
 
-    letter-spacing:.35px;
+    letter-spacing:.55px;
+
+    line-height:1.1;
 
     color:#463322;
+
+    margin-bottom:3px;
 }
 
 .emergency-number{
-    font-size:9px;
+    font-family:Arial,sans-serif;
+
+    font-size:10px;
 
     font-weight:700;
+
+    line-height:1.1;
 
     color:#463322;
 }
 
 .emergency-sub{
-    font-size:7px;
+    font-size:7.5px;
+
+    line-height:1.15;
 
     color:#6b5540;
+
+    margin-top:2px;
 }
 
-.emergency-grid{
+
+/* =========================================================
+   SECTION 3 — HOST
+   ========================================================= */
+
+.host-number{
+    color:#a51f1f !important;
+
+    font-weight:700 !important;
+}
+
+.host-sub{
+    font-size:7.2px;
+
+    color:#6b5540;
+
+    margin-top:2px;
+}
+
+
+/* =========================================================
+   SECTION 3 — NEARBY ESSENTIALS
+   ========================================================= */
+
+.nearby-title{
+    font-family:Arial,sans-serif;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+    text-align:center;
+
+    color:#463322;
+
+    margin-bottom:7px;
+}
+
+.nearby-grid{
     display:grid;
 
     grid-template-columns:
-        repeat(2,minmax(0,1fr));
+        1fr 1fr;
+
+    grid-template-rows:
+        auto auto auto;
+
+    column-gap:12px;
+    row-gap:8px;
 
     width:100%;
 }
 
+
+/* =========================================================
+   SECTION 3 — ESSENTIAL CARD
+   ========================================================= */
+
 .essential-card{
+    position:relative;
+
     min-width:0;
 
-    padding:8px;
+    padding:7px 10px;
 
-    text-align:center;
+    border-radius:9px;
+
+    background:rgba(255,255,255,.19);
+
+    border:
+        1px solid rgba(112,69,31,.19);
 }
 
 .essential-card-header{
@@ -970,40 +1376,200 @@ body{
 
     align-items:center;
 
-    justify-content:center;
+    gap:7px;
 
-    gap:4px;
-
-    margin-bottom:3px;
+    margin-bottom:5px;
 }
 
-.essential-card-icon{
-    width:15px;
-    height:15px;
+.essential-icon{
+    flex:0 0 auto;
+
+    width:30px;
+    height:30px;
+
+    color:#70451f;
+
+    stroke:currentColor;
+
+    stroke-width:2;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
 }
 
-.pharmacy-name,
-.hospital-name,
-.supermarket-name{
+.essential-card-title{
+    font-family:Arial,sans-serif;
+
     font-size:9px;
 
     font-weight:700;
 
+    letter-spacing:.55px;
+
     color:#463322;
 }
 
-.pharmacy-location,
-.hospital-location,
-.pharmacy-phone,
-.pharmacy-distance,
-.hospital-phone,
-.hospital-distance,
-.supermarket-phone,
-.supermarket-distance{
+
+/* =========================================================
+   SECTION 3 — PHARMACY
+   ========================================================= */
+
+.pharmacy-list{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    width:100%;
+}
+
+.pharmacy-item{
+    min-width:0;
+
+    text-align:center;
+
+    padding:0 7px;
+}
+
+.pharmacy-item + .pharmacy-item{
+    border-left:
+        1px solid rgba(112,69,31,.25);
+}
+
+.pharmacy-name{
+    font-family:Arial,sans-serif;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    line-height:1.1;
+
+    color:#463322;
+
+    white-space:nowrap;
+}
+
+.pharmacy-location{
     font-size:8px;
 
+    line-height:1.15;
+
     color:#6b5540;
+
+    margin-top:2px;
 }
+
+.pharmacy-phone-row{
+    display:flex;
+
+    align-items:baseline;
+
+    justify-content:center;
+
+    gap:5px;
+
+    margin-top:3px;
+
+    white-space:nowrap;
+}
+
+.pharmacy-phone{
+    font-family:Arial,sans-serif;
+
+    font-size:8px;
+
+    line-height:1.1;
+
+    color:#463322;
+}
+
+.pharmacy-distance{
+    font-family:Arial,sans-serif;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    color:#a51f1f;
+}
+
+
+/* =========================================================
+   SECTION 3 — HOSPITAL
+   ========================================================= */
+
+.hospital-card{
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+.hospital-name{
+    font-family:Arial,sans-serif;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    line-height:1.1;
+
+    color:#463322;
+}
+
+.hospital-location{
+    font-size:8px;
+
+    line-height:1.15;
+
+    color:#6b5540;
+
+    margin-top:2px;
+}
+
+.hospital-phone-row{
+    display:flex;
+
+    align-items:baseline;
+
+    justify-content:center;
+
+    gap:5px;
+
+    margin-top:3px;
+
+    white-space:nowrap;
+}
+
+.hospital-phone{
+    font-family:Arial,sans-serif;
+
+    font-size:8px;
+
+    color:#463322;
+}
+
+.hospital-distance{
+    font-family:Arial,sans-serif;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    color:#a51f1f;
+}
+
+
+/* =========================================================
+   SECTION 3 — SUPERMARKET
+   ========================================================= */
 
 .supermarket-list{
     display:grid;
@@ -1028,6 +1594,8 @@ body{
 }
 
 .supermarket-name{
+    font-family:Arial,sans-serif;
+
     font-size:9px;
 
     font-weight:700;
@@ -1044,14 +1612,24 @@ body{
 }
 
 .supermarket-phone{
-    margin-top:3px;
+    font-family:Arial,sans-serif;
+
+    font-size:8px;
 
     line-height:1.1;
+
+    color:#463322;
+
+    margin-top:3px;
 
     white-space:nowrap;
 }
 
 .supermarket-distance{
+    font-family:Arial,sans-serif;
+
+    font-size:8px;
+
     font-weight:700;
 
     line-height:1.1;
@@ -1060,6 +1638,11 @@ body{
 
     margin-top:2px;
 }
+
+
+/* =========================================================
+   SECTION 3 — ELECTRICAL & FIRST AID
+   ========================================================= */
 
 .firstaid-copy{
     font-size:8.3px;
@@ -1072,6 +1655,11 @@ body{
 .firstaid-copy p + p{
     margin-top:4px;
 }
+
+
+/* =========================================================
+   SECTION 3 — CAB SERVICES
+   ========================================================= */
 
 .cab-card{
     grid-column:
@@ -1099,6 +1687,8 @@ body{
 }
 
 .cab-contact{
+    font-family:Arial,sans-serif;
+
     font-size:9px;
 
     font-weight:700;
@@ -1109,6 +1699,8 @@ body{
 }
 
 .cab-number{
+    font-family:Arial,sans-serif;
+
     font-size:12px;
 
     font-weight:700;
@@ -1120,12 +1712,7 @@ body{
 
 
 /* =========================================================
-   4. WI-FI
-   ========================================================= */
-
-
-/* =========================================================
-   5. BEACH MANAGEMENT
+   SECTION 5 — BEACH MANAGEMENT
    ========================================================= */
 
 .beach-management-placeholder{
@@ -1146,19 +1733,42 @@ body{
 
 
 /* =========================================================
-   6. CHECK OUT
+   GLOBAL
+   SECTION FAVOURITE
    ========================================================= */
+
+.section-favourite{
+    position:absolute;
+
+    top:46px;
+    right:18px;
+
+    z-index:20;
+}
 
 
 /* =========================================================
    RESPONSIVE CSS
    ========================================================= */
 
+
+/* =========================================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================================= */
+
 @media(max-width:600px){
 
     .arrival-header{
-        padding-left:80px;
-        padding-right:80px;
+        padding-left:55px;
+        padding-right:55px;
+    }
+
+    .arrival-title{
+        font-size:clamp(19px,5vw,24px);
+    }
+
+    .arrival-subtitle{
+        font-size:clamp(8px,2vw,10px);
     }
 
     .arrival-option{
@@ -1166,40 +1776,347 @@ body{
         padding-right:5px;
     }
 
-    .arrival-option h3{
-        font-size:8px;
+    .arrival-icon{
+        width:24px;
+        height:24px;
     }
 
-    .arrival-option p,
-    .arrival-distance{
-        font-size:7.5px !important;
+    .arrival-option h3{
+        font-size:clamp(7px,2vw,10px);
+    }
+
+    .arrival-option p{
+        font-size:clamp(7px,1.8vw,9px);
+    }
+
+    .arrival-lower{
+        gap:8px;
+    }
+
+    .parking-copy p{
+        font-size:clamp(7px,1.8vw,8.5px);
+    }
+
+    .guest-id-box p{
+        font-size:clamp(7px,1.75vw,8.2px);
+    }
+
+    .emergency-placeholder{
+        padding-top:12px;
+    }
+
+    .emergency-placeholder h2{
+        font-size:clamp(20px,5.2vw,26px);
+
+        margin-bottom:9px;
+    }
+
+    .emergency-contacts{
+        padding-top:7px;
+        padding-bottom:8px;
+
+        margin-bottom:9px;
+    }
+
+    .emergency-contact{
+        padding-left:3px;
+        padding-right:3px;
+    }
+
+    .emergency-icon{
+        width:23px;
+        height:23px;
+    }
+
+    .emergency-label{
+        font-size:clamp(6px,1.7vw,8px);
+    }
+
+    .emergency-number{
+        font-size:clamp(7px,2vw,10px);
+    }
+
+    .emergency-sub{
+        font-size:clamp(6px,1.55vw,7.5px);
+    }
+
+    .host-sub{
+        font-size:clamp(6px,1.5vw,7.2px);
+    }
+
+    .nearby-title{
+        font-size:8px;
+
+        margin-bottom:5px;
+    }
+
+    .nearby-grid{
+        column-gap:7px;
+        row-gap:6px;
+    }
+
+    .essential-card{
+        padding:6px 7px;
+    }
+
+    .essential-card-header{
+        gap:5px;
+
+        margin-bottom:4px;
+    }
+
+    .essential-icon{
+        width:25px;
+        height:25px;
+    }
+
+    .essential-card-title{
+        font-size:clamp(7px,1.7vw,9px);
+    }
+
+    .pharmacy-name,
+    .hospital-name,
+    .supermarket-name{
+        font-size:clamp(7px,1.8vw,9px);
+    }
+
+    .pharmacy-location,
+    .hospital-location{
+        font-size:clamp(6.5px,1.6vw,8px);
+    }
+
+    .pharmacy-phone,
+    .pharmacy-distance,
+    .hospital-phone,
+    .hospital-distance,
+    .supermarket-phone,
+    .supermarket-distance{
+        font-size:clamp(6.5px,1.65vw,8px);
+    }
+
+    .firstaid-copy{
+        font-size:clamp(6.8px,1.7vw,8.3px);
+    }
+
+    .cab-copy{
+        font-size:clamp(7px,1.75vw,8.5px);
+    }
+
+    .cab-contact{
+        font-size:clamp(7px,1.8vw,9px);
+    }
+
+    .cab-number{
+        font-size:clamp(9px,2.4vw,12px);
+    }
+
+    .welcome-in-subtitle{
+        font-size:9px;
+    }
+
+    .lock-step-title{
+        font-size:clamp(7px,1.7vw,8px);
+    }
+
+    .lock-step-copy{
+        font-size:clamp(6.5px,1.6vw,7.6px);
+    }
+
+    .welcome-step-label{
+        font-size:clamp(8px,2vw,10px);
+    }
+
+    .welcome-caption{
+        font-size:clamp(7px,1.7vw,8px);
+    }
+
+    .welcome-notes p{
+        font-size:clamp(6.5px,1.6vw,7.5px);
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media(max-width:390px){
+
+    .top-nav-hit{
+        height:28%;
+    }
+
+    .arrival-header{
+        padding-left:45px;
+        padding-right:45px;
+    }
+
+    .arrival-options{
+        margin-bottom:10px;
+    }
+
+    .arrival-option{
+        padding-top:5px;
+        padding-bottom:5px;
+    }
+
+    .arrival-icon{
+        width:20px;
+        height:20px;
+
+        margin-bottom:4px;
+    }
+
+    .arrival-lower{
+        gap:6px;
     }
 
     .arrival-photo,
     .maps-box{
-        height:105px;
-    }
-
-    .maps-title{
-        font-size:7.5px;
+        height:102px;
     }
 
     .maps-qr{
-        width:45px;
-        height:45px;
+        width:46px;
+        height:46px;
+    }
+
+    .parking-box{
+        margin-top:8px;
+
+        padding:7px 8px;
+    }
+
+    .guest-id-box{
+        margin-top:7px;
+
+        padding:7px 8px;
+    }
+
+    .emergency-placeholder{
+        padding-top:9px;
+    }
+
+    .emergency-placeholder h2{
+        font-size:19px;
+
+        margin-bottom:7px;
+    }
+
+    .emergency-contacts{
+        padding-top:5px;
+        padding-bottom:6px;
+
+        margin-bottom:7px;
+    }
+
+    .emergency-icon{
+        width:20px;
+        height:20px;
+
+        margin-bottom:2px;
+    }
+
+    .nearby-grid{
+        row-gap:5px;
+    }
+
+    .essential-card{
+        padding:5px 5px;
+    }
+
+    .essential-icon{
+        width:22px;
+        height:22px;
+    }
+
+    .guest-favourite-link{
+        width:82px;
+    }
+
+    .welcome-in-subtitle{
+        font-size:9px;
+    }
+
+    .lock-step-title{
+        font-size:7px;
+    }
+
+    .lock-step-copy{
+        font-size:6.5px;
+    }
+
+    .welcome-step-five{
+        margin-top:1px;
+        margin-bottom:4px;
+    }
+
+    .welcome-step-number{
+        width:20px;
+        height:20px;
+        font-size:9px;
+    }
+
+    .welcome-caption{
+        font-size:7px;
+        margin-bottom:4px;
+    }
+
+    .welcome-notes{
+        padding:6px 8px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES — 360px
+   ========================================================= */
+
+@media(max-width:360px){
+
+    .arrival-header{
+        padding-left:36px;
+        padding-right:36px;
+    }
+
+    .arrival-subtitle{
+        font-size:7px;
+    }
+
+    .arrival-option h3{
+        font-size:6.8px;
+    }
+
+    .arrival-option p,
+    .arrival-distance{
+        font-size:6.5px !important;
+    }
+
+    .arrival-photo,
+    .maps-box{
+        height:92px;
+    }
+
+    .maps-title{
+        font-size:6.5px;
+    }
+
+    .maps-qr{
+        width:40px;
+        height:40px;
     }
 
     .maps-link{
-        min-height:20px;
+        min-height:19px;
 
-        padding:3px 6px;
+        padding:3px 5px;
 
-        font-size:6.5px;
+        font-size:5.8px;
     }
 
     .parking-copy p,
     .guest-id-box p{
-        font-size:7.5px;
+        font-size:6.5px;
     }
 
     .guide-placeholder{
@@ -1285,6 +2202,11 @@ body{
     }
 }
 
+
+/* =========================================================
+   BEACH MANAGEMENT — SMALL SCREEN
+   ========================================================= */
+
 @media(max-width:390px){
 
     .beach-management-placeholder{
@@ -1303,11 +2225,6 @@ body{
     }
 }
 
-
-/* =========================================================
-   END OF CSS
-   ========================================================= */
-
 </style>
 
 </head>
@@ -1317,7 +2234,8 @@ body{
 
 
 <!-- =======================================================
-     FIXED TOP NAV
+     HTML
+     GLOBAL FIXED TOP NAV
      ======================================================= -->
 
 <nav
@@ -1332,6 +2250,8 @@ body{
         aria-hidden="true"
     >
 
+
+    <!-- ARRIVAL DROPDOWN -->
 
     <div
         class="top-nav-hit top-nav-arrival"
@@ -1362,6 +2282,8 @@ body{
     </div>
 
 
+    <!-- EMERGENCY -->
+
     <a
         href="#emergency"
         class="top-nav-hit top-nav-emergency"
@@ -1369,6 +2291,8 @@ body{
         aria-label="Emergency and Essentials"
     ></a>
 
+
+    <!-- WI-FI -->
 
     <a
         href="#wifi"
@@ -1378,6 +2302,8 @@ body{
     ></a>
 
 
+    <!-- BEACH MANAGEMENT -->
+
     <a
         href="#beach-management"
         class="top-nav-hit top-nav-beach"
@@ -1385,6 +2311,8 @@ body{
         aria-label="Beach Management"
     ></a>
 
+
+    <!-- CHECK OUT -->
 
     <a
         href="#check-out"
@@ -1396,11 +2324,12 @@ body{
 </nav>
 
 
+
 <main class="guide-page">
 
 
 <!-- =======================================================
-     1. PRE-ARRIVAL
+     HTML SECTION 1 — PRE-ARRIVAL
      ======================================================= -->
 
 <section
@@ -1412,6 +2341,8 @@ body{
 
 <div class="arrival-content">
 
+
+<!-- AIRBNB GUEST FAVOURITE -->
 
 <a
     href="https://www.airbnb.co.in/h/303oysterbay"
@@ -1430,6 +2361,8 @@ body{
 </a>
 
 
+<!-- ARRIVAL HEADER -->
+
 <div class="arrival-header">
 
     <h1 class="arrival-title">
@@ -1443,8 +2376,12 @@ body{
 </div>
 
 
+<!-- FOUR ARRIVAL OPTIONS -->
+
 <div class="arrival-options">
 
+
+<!-- AIRPORT -->
 
 <div class="arrival-option">
 
@@ -1492,6 +2429,8 @@ body{
 </div>
 
 
+<!-- MAJN -->
+
 <div class="arrival-option">
 
 <svg
@@ -1525,6 +2464,8 @@ body{
 </div>
 
 
+<!-- SURATHKAL -->
+
 <div class="arrival-option">
 
 <svg
@@ -1541,27 +2482,34 @@ body{
         r="13"
     />
 
-    <path d="M32 17V11"/>
-    <path d="M32 49V43"/>
-    <path d="M19 30H13"/>
-    <path d="M51 30H45"/>
+    <path d="M32 17V9"/>
+    <path d="M32 51V43"/>
+    <path d="M19 30H11"/>
+    <path d="M53 30H45"/>
+
+    <path d="M23 22L17 16"/>
+    <path d="M41 22L47 16"/>
+    <path d="M23 38L17 44"/>
+    <path d="M41 38L47 44"/>
 
 </svg>
 
 <h3>
-    Surathkal Railway Station
+    Surathkal
 </h3>
 
 <p class="arrival-distance">
-    4 km
+    2.5 km
 </p>
 
 <p>
-    10 – 15 mins
+    5 – 10 mins
 </p>
 
 </div>
 
+
+<!-- BY CAR -->
 
 <div class="arrival-option">
 
@@ -1573,38 +2521,53 @@ body{
     aria-hidden="true"
 >
 
-    <path d="M10 43H54"/>
-    <path d="M14 43L20 29H44L50 43"/>
-    <path d="M22 29V22H42V29"/>
-    <circle cx="22" cy="46" r="3"/>
-    <circle cx="42" cy="46" r="3"/>
+    <path d="M12 39H52V48H12V39Z"/>
+    <path d="M17 39L21.5 26H42.5L47 39"/>
+    <path d="M23 27L20 37H44L41 27"/>
+    <path d="M12 43H8"/>
+    <path d="M52 43H56"/>
+
+    <circle
+        cx="21"
+        cy="48"
+        r="4"
+    />
+
+    <circle
+        cx="43"
+        cy="48"
+        r="4"
+    />
+
+    <path d="M24 32H40"/>
 
 </svg>
 
 <h3>
-    Mangaluru City
+    By Car / Road
 </h3>
 
-<p class="arrival-distance">
-    15 km
-</p>
-
 <p>
-    30 – 40 mins
+    Well connected via NH66. A smooth and scenic drive along the coast.
 </p>
 
 </div>
 
+
 </div>
 
+
+<!-- =====================================================
+     PARKING LOT IMAGE + GOOGLE MAPS
+     ===================================================== -->
 
 <div class="arrival-lower">
 
 <div class="arrival-photo">
 
     <img
-        src="Parking.jpg"
-        alt="Parking location"
+        src="Parking Lot.png"
+        alt="Parking lot and route to the guest parking slot"
     >
 
 </div>
@@ -1613,22 +2576,23 @@ body{
 <div class="maps-box">
 
     <div class="maps-title">
-        GOOGLE MAPS
+        SCAN FOR DIRECTIONS
     </div>
 
     <img
-        src="Google Maps QR.png"
+        src="Directions.png"
         class="maps-qr"
-        alt="Google Maps QR code"
+        alt="Scan for directions to 303 Oyster Bay"
     >
 
     <a
-        href="https://maps.google.com/"
+        href="https://maps.google.com/?q=303+Oyster+Bay+Surathkal+Mangaluru"
         class="maps-link"
         target="_blank"
         rel="noopener"
+        aria-label="Open 303 Oyster Bay in Google Maps"
     >
-        OPEN LOCATION
+        Open in Google Maps
     </a>
 
 </div>
@@ -1636,22 +2600,60 @@ body{
 </div>
 
 
+<!-- =====================================================
+     YOUR PARKING SLOT
+     ===================================================== -->
+
 <div class="parking-box">
 
-    <div class="guest-id-title">
-        PARKING
+<svg
+    class="parking-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+>
+
+    <circle
+        cx="32"
+        cy="32"
+        r="22"
+        stroke="currentColor"
+        stroke-width="3"
+    />
+
+    <path
+        d="M27 44V20H35
+           C40 20 43 23 43 28
+           C43 33 40 36 35 36
+           H27"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
+
+</svg>
+
+
+<div class="parking-copy">
+
+    <div class="parking-title">
+        YOUR PARKING SLOT
     </div>
 
-    <div class="parking-copy">
-
-        <p>
-            Your parking slot is shown in the image above. Enter through the main gate, follow the aisle and take the 4th slot on the right.
-        </p>
-
-    </div>
+    <p>
+        Your parking slot is shown in the image above. Enter through the main gate, follow the aisle and take the 4th slot on the right.
+    </p>
 
 </div>
 
+</div>
+
+
+<!-- =====================================================
+     GUEST IDs & ACCESS DETAILS
+     ===================================================== -->
 
 <div class="guest-id-box">
 
@@ -1674,8 +2676,9 @@ body{
 </section>
 
 
+
 <!-- =======================================================
-     2. WELCOME IN / SELF CHECK-IN
+     HTML SECTION 2 — WELCOME IN / SELF CHECK-IN
      ======================================================= -->
 
 <section
@@ -1687,6 +2690,8 @@ body{
 
 <div class="guide-placeholder">
 
+
+<!-- GUEST FAVOURITE -->
 
 <a
     href="https://www.airbnb.co.in/h/303oysterbay"
@@ -1707,14 +2712,21 @@ body{
 
 <div class="welcome-in-content">
 
+
 <h2 class="welcome-in-title">
     WELCOME IN
 </h2>
+
 
 <p class="welcome-in-subtitle">
     Your easy guide to unlocking your seaside stay
 </p>
 
+
+<!--
+     LOCK.png CONTAINS ONLY THE FOUR LOCK IMAGES.
+     NO NUMBERS ARE OVERLAID ON THIS IMAGE.
+-->
 
 <img
     src="Lock.png"
@@ -1723,7 +2735,13 @@ body{
 >
 
 
+<!-- =================================================
+     TEXT BELOW THE FOUR LOCK IMAGES
+     NO NUMBERS
+     ================================================= -->
+
 <div class="lock-text-grid">
+
 
 <div class="lock-text-item">
 
@@ -1786,20 +2804,62 @@ body{
 
 </div>
 
+
 </div>
 
+
+<!-- =================================================
+     STEP FIVE
+     ================================================= -->
+
+<div class="welcome-step-five">
+
+    <div class="welcome-step-number">
+        5
+    </div>
+
+    <div class="welcome-step-label">
+        ENTER &amp; RELAX
+    </div>
+
+</div>
+
+
+<!-- =================================================
+     ENTRANCE IMAGE
+     ================================================= -->
+
+<img
+    src="Entrance.png"
+    class="entrance-image"
+    alt="Entrance into 303 Oyster Bay"
+>
+
+
+<p class="welcome-caption">
+    Enter the apartment and allow the door to close behind you.
+</p>
+
+
+<!-- =================================================
+     IMPORTANT NOTES
+     ================================================= -->
 
 <div class="welcome-notes">
 
     <p>
-        If the lock does not respond, wait a few seconds and wake the keypad again.
+        If the wrong access code is entered continuously multiple times,
+        the alarm will go off. Allow some time between attempts and then
+        enter the access code.
     </p>
 
     <p>
-        Please do not share your access code with anyone outside your travelling group.
+        Before you step out, remember to carry the access code or the phone
+        containing the access code. Call your host if there is any problem.
     </p>
 
 </div>
+
 
 </div>
 
@@ -1808,8 +2868,9 @@ body{
 </section>
 
 
+
 <!-- =======================================================
-     3. EMERGENCY & ESSENTIALS
+     HTML SECTION 3 — EMERGENCY & ESSENTIALS
      ======================================================= -->
 
 <section
@@ -1820,6 +2881,9 @@ body{
 >
 
 <div class="guide-placeholder emergency-placeholder">
+
+
+<!-- GUEST FAVOURITE -->
 
 <a
     href="https://www.airbnb.co.in/h/303oysterbay"
@@ -1843,235 +2907,529 @@ body{
 </h2>
 
 
-<div class="emergency-grid">
+<!-- =================================================
+     EMERGENCY CONTACTS
+     ================================================= -->
+
+<div class="emergency-contacts">
 
 
-<div class="essential-card">
+<!-- POLICE -->
 
-    <div class="essential-card-header">
+<div class="emergency-contact">
 
-        <div class="emergency-label">
-            POLICE
-        </div>
+<svg
+    class="emergency-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    aria-hidden="true"
+>
 
-    </div>
+    <path d="M20 27H44"/>
+    <path d="M24 27V47"/>
+    <path d="M40 27V47"/>
+    <path d="M18 47H46"/>
 
-    <div class="emergency-number">
-        112
-    </div>
+    <path d="M32 12L46 18V27C46 37 40 43 32 47C24 43 18 37 18 27V18L32 12Z"/>
+
+</svg>
+
+<div class="emergency-label">
+    POLICE
+</div>
+
+<div class="emergency-number">
+    100
+</div>
+
+<div class="emergency-sub">
+    Surathkal PS<br>
+    0824 2220540
+</div>
 
 </div>
 
 
-<div class="essential-card">
+<!-- AMBULANCE -->
 
-    <div class="essential-card-header">
+<div class="emergency-contact">
 
-        <div class="emergency-label">
-            AMBULANCE
-        </div>
+<svg
+    class="emergency-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    aria-hidden="true"
+>
 
-    </div>
+    <rect
+        x="9"
+        y="21"
+        width="36"
+        height="25"
+        rx="3"
+    />
 
-    <div class="emergency-number">
-        108
-    </div>
+    <path d="M45 29H51L56 36V46H45"/>
+
+    <circle
+        cx="20"
+        cy="47"
+        r="5"
+    />
+
+    <circle
+        cx="47"
+        cy="47"
+        r="5"
+    />
+
+    <path d="M22 33H34"/>
+    <path d="M28 27V39"/>
+
+</svg>
+
+<div class="emergency-label">
+    AMBULANCE
+</div>
+
+<div class="emergency-number">
+    108
+</div>
+
+<div class="emergency-sub">
+    Emergency Medical<br>
+    Service
+</div>
 
 </div>
 
 
-<div class="essential-card">
+<!-- FIRE -->
 
-    <div class="essential-card-header">
+<div class="emergency-contact">
 
-        <div class="emergency-label">
-            FIRE
-        </div>
+<svg
+    class="emergency-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    aria-hidden="true"
+>
 
-    </div>
+    <path d="M32 53C22 53 17 46 18 38C19 31 25 27 25 20C25 17 27 13 30 10C31 18 39 20 40 28C43 25 44 22 43 19C50 25 52 32 50 39C48 48 42 53 32 53Z"/>
 
-    <div class="emergency-number">
-        101
-    </div>
+    <path d="M32 47C27 47 25 44 26 40C27 37 30 35 31 31C35 34 38 38 38 42C38 45 36 47 32 47Z"/>
+
+</svg>
+
+<div class="emergency-label">
+    FIRE
+</div>
+
+<div class="emergency-number">
+    101
+</div>
+
+<div class="emergency-sub">
+    Fire &amp; Rescue<br>
+    Services
+</div>
 
 </div>
 
 
-<div class="essential-card">
+<!-- COAST GUARD -->
 
-    <div class="essential-card-header">
+<div class="emergency-contact">
 
-        <div class="emergency-label">
-            COAST GUARD
-        </div>
+<svg
+    class="emergency-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    aria-hidden="true"
+>
 
-    </div>
+    <path d="M10 44H54"/>
+    <path d="M15 44C18 37 23 33 32 33C41 33 46 37 49 44"/>
+    <path d="M24 33V21H40V33"/>
+    <path d="M20 21H44"/>
+    <path d="M27 21V14H37V21"/>
 
-    <div class="emergency-number">
-        1554
-    </div>
+</svg>
+
+<div class="emergency-label">
+    COAST GUARD
+</div>
+
+<div class="emergency-number">
+    1554
+</div>
+
+<div class="emergency-sub">
+    Toll Free
+</div>
 
 </div>
 
 
-<div class="essential-card">
+<!-- YOUR HOST -->
 
-    <div class="essential-card-header">
+<div class="emergency-contact">
 
-        <div class="emergency-label">
-            HOST
-        </div>
+<svg
+    class="emergency-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    aria-hidden="true"
+>
 
-    </div>
+    <circle
+        cx="32"
+        cy="22"
+        r="9"
+    />
 
-    <div class="emergency-number">
-        24 × 7
-    </div>
+    <path d="M16 50C17 40 23 35 32 35C41 35 47 40 48 50"/>
+
+</svg>
+
+<div class="emergency-label">
+    YOUR HOST
+</div>
+
+<div class="emergency-number host-number">
+    +91 99101 00561
+</div>
+
+<div class="host-sub">
+    (Call / WhatsApp)
+</div>
 
 </div>
 
 
+</div>
+
+
+<!-- =================================================
+     NEARBY ESSENTIALS
+     ================================================= -->
+
+<div class="nearby-title">
+    NEARBY ESSENTIALS
+</div>
+
+
+<div class="nearby-grid">
+
+
+<!-- PHARMACY -->
+
 <div class="essential-card">
 
-    <div class="essential-card-header">
+<div class="essential-card-header">
 
-        <div class="emergency-label">
-            ELECTRICAL &amp; FIRST AID
-        </div>
+<svg
+    class="essential-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    aria-hidden="true"
+>
 
-    </div>
+    <rect
+        x="12"
+        y="12"
+        width="40"
+        height="40"
+        rx="6"
+    />
 
-    <div class="firstaid-copy">
+    <path d="M32 22V42"/>
+    <path d="M22 32H42"/>
 
-        <p>
-            For urgent electrical or basic first-aid assistance, please contact the host.
-        </p>
+</svg>
 
-    </div>
+<div class="essential-card-title">
+    PHARMACY
+</div>
 
 </div>
 
 
-<div class="essential-card">
+<div class="pharmacy-list">
 
-    <div class="essential-card-header">
 
-        <div class="emergency-label">
-            HOSPITAL
-        </div>
+<div class="pharmacy-item">
 
-    </div>
+<div class="pharmacy-name">
+    Vijaya Medicals
+</div>
 
-    <div class="hospital-name">
-        KMC Hospital
-    </div>
+<div class="pharmacy-location">
+    Surathkal
+</div>
 
-    <div class="hospital-location">
-        Attavar
-    </div>
+<div class="pharmacy-phone-row">
 
-    <div class="hospital-phone-row">
+<span class="pharmacy-phone">
+    0824 2403885
+</span>
 
-        <span class="hospital-phone">
-            Emergency
-        </span>
+<span class="pharmacy-distance">
+    2.3 km
+</span>
 
-        <span class="hospital-distance">
-            15 km
-        </span>
-
-    </div>
+</div>
 
 </div>
 
 
-<div class="essential-card">
+<div class="pharmacy-item">
 
-    <div class="essential-card-header">
+<div class="pharmacy-name">
+    Ganesh Medicals
+</div>
 
-        <div class="emergency-label">
-            PHARMACY
-        </div>
+<div class="pharmacy-location">
+    Surathkal
+</div>
 
-    </div>
+<div class="pharmacy-phone-row">
 
-    <div class="pharmacy-name">
-        Apollo Pharmacy
-    </div>
+<span class="pharmacy-phone">
+    0824 2200433
+</span>
 
-    <div class="pharmacy-location">
-        Surathkal
-    </div>
+<span class="pharmacy-distance">
+    2.6 km
+</span>
 
-    <div class="pharmacy-phone">
-        Nearby
-    </div>
+</div>
 
 </div>
 
 
-<div class="essential-card">
-
-    <div class="essential-card-header">
-
-        <div class="emergency-label">
-            SUPERMARKET
-        </div>
-
-    </div>
-
-    <div class="supermarket-list">
-
-        <div class="supermarket-item">
-
-            <div class="supermarket-name">
-                More
-            </div>
-
-            <div class="supermarket-phone">
-                Nearby
-            </div>
-
-        </div>
-
-        <div class="supermarket-item">
-
-            <div class="supermarket-name">
-                Reliance Smart
-            </div>
-
-            <div class="supermarket-phone">
-                Nearby
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </div>
 
 
-<div class="cab-card">
+<!-- HOSPITAL -->
 
-    <div class="essential-card-header">
+<div class="essential-card hospital-card">
 
-        <div class="emergency-label">
-            CAB SERVICES
-        </div>
+<div class="essential-card-header">
 
-    </div>
+<svg
+    class="essential-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    aria-hidden="true"
+>
 
-    <div class="cab-copy">
-        Local cab service available through Ratnakar.
-    </div>
+    <path d="M10 52H54"/>
+    <path d="M14 52V22H50V52"/>
+    <path d="M24 22V14H40V22"/>
+    <path d="M24 32H40"/>
+    <path d="M32 24V40"/>
 
-    <div class="cab-contact">
-        RATNAKAR
-    </div>
+</svg>
 
-    <div class="cab-number">
-        Contact host for number
-    </div>
+<div class="essential-card-title">
+    HOSPITAL
+</div>
+
+</div>
+
+
+<div class="hospital-name">
+    Padmavati Hospital
+</div>
+
+<div class="hospital-location">
+    Surathkal
+</div>
+
+<div class="hospital-phone-row">
+
+<span class="hospital-phone">
+    0824 2478600
+</span>
+
+<span class="hospital-distance">
+    2.5 km
+</span>
+
+</div>
+
+</div>
+
+
+<!-- SUPERMARKET -->
+
+<div class="essential-card">
+
+<div class="essential-card-header">
+
+<svg
+    class="essential-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    aria-hidden="true"
+>
+
+    <path d="M12 20H52"/>
+    <path d="M16 20L20 48H44L48 20"/>
+    <path d="M25 20C25 15 28 12 32 12C36 12 39 15 39 20"/>
+    <path d="M24 30H40"/>
+
+</svg>
+
+<div class="essential-card-title">
+    SUPER MARKET
+</div>
+
+</div>
+
+
+<div class="supermarket-list">
+
+
+<div class="supermarket-item">
+
+<div class="supermarket-name">
+    Sadanand Super Store
+</div>
+
+<div class="supermarket-phone">
+    0824 2475539
+</div>
+
+<div class="supermarket-distance">
+    1.2 km
+</div>
+
+</div>
+
+
+<div class="supermarket-item">
+
+<div class="supermarket-name">
+    Marwa Super Store
+</div>
+
+<div class="supermarket-phone">
+    99642 45078
+</div>
+
+<div class="supermarket-distance">
+    1 km
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ELECTRICAL & FIRST AID -->
+
+<div class="essential-card">
+
+<div class="essential-card-header">
+
+<svg
+    class="essential-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    aria-hidden="true"
+>
+
+    <path d="M36 8L18 34H30L27 56L46 29H34L36 8Z"/>
+
+</svg>
+
+<div class="essential-card-title">
+    ELECTRICAL &amp; FIRST AID
+</div>
+
+</div>
+
+
+<div class="firstaid-copy">
+
+<p>
+    A first aid box is available on the shelf next to the Kitchen Sink.
+</p>
+
+<p>
+    A spare fuse is also available nearby in case of an electrical trip.
+</p>
+
+<p>
+    If a power circuit trips - switch OFF heavy appliances first.
+</p>
+
+<p>
+    Contact the host if assistance is required.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CAB SERVICES -->
+
+<div class="essential-card cab-card">
+
+<div class="essential-card-header">
+
+<svg
+    class="essential-icon"
+    viewBox="0 0 64 64"
+    fill="none"
+    aria-hidden="true"
+>
+
+    <path d="M10 39H54V48H10V39Z"/>
+    <path d="M16 39L21 25H43L48 39"/>
+
+    <circle
+        cx="20"
+        cy="48"
+        r="4"
+    />
+
+    <circle
+        cx="44"
+        cy="48"
+        r="4"
+    />
+
+    <path d="M25 31H39"/>
+
+</svg>
+
+<div class="essential-card-title">
+    CAB SERVICES
+</div>
+
+</div>
+
+
+<div class="cab-copy">
+    Cab services are available in the city under the flyover for pick-up and drop facilities.
+</div>
+
+<div class="cab-contact">
+    Contact Ratnakar for Cabs.
+</div>
+
+<div class="cab-number">
+    9448983870
+</div>
 
 </div>
 
@@ -2083,8 +3441,9 @@ body{
 </section>
 
 
+
 <!-- =======================================================
-     4. WI-FI
+     HTML SECTION 4 — WI-FI
      ======================================================= -->
 
 <section
@@ -2121,8 +3480,9 @@ body{
 </section>
 
 
+
 <!-- =======================================================
-     5. BEACH MANAGEMENT
+     HTML SECTION 5 — BEACH MANAGEMENT
      ======================================================= -->
 
 <section
@@ -2132,7 +3492,9 @@ body{
     aria-label="Beach Management"
 >
 
-<div class="guide-placeholder beach-management-placeholder">
+<div
+    class="guide-placeholder beach-management-placeholder"
+>
 
 <a
     href="https://www.airbnb.co.in/h/303oysterbay"
@@ -2151,7 +3513,8 @@ body{
 </a>
 
 <h2>
-    BEACH MANAGEMENT
+    BEACH<br>
+    MANAGEMENT
 </h2>
 
 </div>
@@ -2159,8 +3522,9 @@ body{
 </section>
 
 
+
 <!-- =======================================================
-     6. CHECK OUT
+     HTML SECTION 6 — CHECK OUT
      ======================================================= -->
 
 <section
@@ -2200,8 +3564,9 @@ body{
 </main>
 
 
+
 <!-- =======================================================
-     GLOBAL SAND LOGO
+     HTML GLOBAL — SAND LOGO
      MUST REMAIN OUTSIDE ALL SECTIONS
      ======================================================= -->
 
@@ -2219,8 +3584,9 @@ body{
 </a>
 
 
+
 <!-- =======================================================
-     FIXED BOTTOM NAV ART
+     HTML GLOBAL — FIXED BOTTOM NAV ART
      ======================================================= -->
 
 <nav
@@ -2238,8 +3604,9 @@ body{
 </nav>
 
 
+
 <!-- =======================================================
-     BOTTOM NAV HOTSPOTS
+     HTML GLOBAL — BOTTOM NAV HOTSPOTS
      ======================================================= -->
 
 <nav
@@ -2273,6 +3640,11 @@ body{
 
 </nav>
 
+
+
+<!-- =======================================================
+     JAVASCRIPT
+     ======================================================= -->
 
 <script>
 
@@ -2382,9 +3754,12 @@ const observer =
             });
 
         },
+
         {
             threshold:[
-                .55
+                .55,
+                .70,
+                .85
             ]
         }
 
@@ -2402,22 +3777,27 @@ sections.forEach(section => {
    ARRIVAL DROPDOWN
    ========================================================= */
 
+function closeArrivalMenu(){
+
+    navArrival.classList.remove("open");
+
+}
+
+
 navArrival.addEventListener(
     "click",
     event => {
 
-        const link =
+        if(
             event.target.closest(
                 ".arrival-dropdown a"
-            );
-
-        if(link){
-
+            )
+        ){
             return;
-
         }
 
         event.preventDefault();
+        event.stopPropagation();
 
         navArrival.classList.toggle("open");
 
@@ -2425,25 +3805,13 @@ navArrival.addEventListener(
 );
 
 
-document.addEventListener(
-    "click",
-    event => {
+/* =========================================================
+   ARRIVAL DROPDOWN LINKS
+   ========================================================= */
 
-        if(
-            !navArrival.contains(event.target)
-        ){
-
-            navArrival.classList.remove("open");
-
-        }
-
-    }
-);
-
-
-document
+navArrival
     .querySelectorAll(
-        ".arrival-dropdown a"
+        ".arrival-dropdown a[data-section]"
     )
     .forEach(link => {
 
@@ -2452,13 +3820,15 @@ document
             event => {
 
                 event.preventDefault();
+                event.stopPropagation();
+
+                const id =
+                    link.dataset.section;
 
                 const target =
-                    document.querySelector(
-                        link.getAttribute("href")
-                    );
+                    document.getElementById(id);
 
-                navArrival.classList.remove("open");
+                closeArrivalMenu();
 
                 if(target){
 
@@ -2475,51 +3845,85 @@ document
 
 
 /* =========================================================
-   NAVIGATION LOCK
+   CLOSE ARRIVAL MENU ELSEWHERE
+   ========================================================= */
+
+document.addEventListener(
+    "click",
+    event => {
+
+        if(
+            !navArrival.contains(
+                event.target
+            )
+        ){
+
+            closeArrivalMenu();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SECTION NAVIGATION LOCK
    ========================================================= */
 
 let navigationLocked = false;
 
-const navigationLockTime = 850;
+let wheelAccumulator = 0;
+
+let wheelResetTimer = null;
+
+let unlockTimer = null;
 
 
 /* =========================================================
-   CURRENT SECTION
+   FIND CURRENT SECTION
    ========================================================= */
 
 function currentSectionIndex(){
 
-    const scrollPosition =
+    const viewportMiddle =
         window.scrollY +
-        window.innerHeight * .5;
+        (window.innerHeight / 2);
 
     let closestIndex = 0;
 
-    let closestDistance =
-        Infinity;
+    let closestDistance = Infinity;
+
 
     sections.forEach(
         (section,index) => {
 
+            const sectionMiddle =
+                section.offsetTop +
+                (section.offsetHeight / 2);
+
             const distance =
                 Math.abs(
-                    section.offsetTop -
-                    scrollPosition
+                    viewportMiddle -
+                    sectionMiddle
                 );
+
 
             if(
                 distance <
                 closestDistance
             ){
 
-                closestDistance = distance;
+                closestDistance =
+                    distance;
 
-                closestIndex = index;
+                closestIndex =
+                    index;
 
             }
 
         }
     );
+
 
     return closestIndex;
 
@@ -2532,129 +3936,181 @@ function currentSectionIndex(){
 
 function goToSection(index){
 
-    if(
-        navigationLocked ||
-        index < 0 ||
-        index >= sections.length
-    ){
-
-        return;
-
-    }
-
-    navigationLocked = true;
-
-    sections[index].scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-    });
-
-    setActiveSection(
-        sections[index].dataset.section
-    );
-
-    window.setTimeout(
-        () => {
-
-            navigationLocked = false;
-
-        },
-        navigationLockTime
-    );
-
-}
-
-
-/* =========================================================
-   STEP SECTION
-   ========================================================= */
-
-function stepSection(direction){
-
-    if(navigationLocked){
-
-        return;
-
-    }
-
-    const index =
-        currentSectionIndex();
-
-    const nextIndex =
+    index =
         Math.max(
             0,
             Math.min(
                 sections.length - 1,
-                index + direction
+                index
             )
         );
 
-    if(nextIndex !== index){
 
-        goToSection(nextIndex);
+    const target =
+        sections[index];
 
-    }
+
+    if(!target) return;
+
+
+    navigationLocked = true;
+
+    closeArrivalMenu();
+
+
+    window.scrollTo({
+
+        top:
+            target.offsetTop,
+
+        behavior:
+            "smooth"
+
+    });
+
+
+    setActiveSection(
+        target.dataset.section
+    );
+
+
+    clearTimeout(
+        unlockTimer
+    );
+
+
+    unlockTimer =
+        setTimeout(
+            () => {
+
+                navigationLocked =
+                    false;
+
+                wheelAccumulator =
+                    0;
+
+            },
+            850
+        );
 
 }
 
 
 /* =========================================================
-   WHEEL — ONE GESTURE = ONE SECTION
+   STEP ONE SECTION
    ========================================================= */
 
-let wheelAccumulation = 0;
+function stepSection(direction){
 
-let wheelResetTimer = null;
+    if(navigationLocked) return;
+
+
+    const current =
+        currentSectionIndex();
+
+
+    const target =
+        current + direction;
+
+
+    if(target < 0){
+
+        goToSection(0);
+
+        return;
+
+    }
+
+
+    if(
+        target >=
+        sections.length
+    ){
+
+        goToSection(
+            sections.length - 1
+        );
+
+        return;
+
+    }
+
+
+    goToSection(target);
+
+}
+
+
+/* =========================================================
+   MOUSE / TRACKPAD
+   ONE GESTURE = ONE SECTION
+   ========================================================= */
 
 window.addEventListener(
     "wheel",
+
     event => {
 
         event.preventDefault();
 
+
         if(navigationLocked){
-
             return;
-
         }
 
-        wheelAccumulation += event.deltaY;
+
+        wheelAccumulator +=
+            event.deltaY;
+
 
         clearTimeout(
             wheelResetTimer
         );
 
+
         wheelResetTimer =
-            window.setTimeout(
+            setTimeout(
                 () => {
 
-                    wheelAccumulation = 0;
+                    wheelAccumulator =
+                        0;
 
                 },
                 120
             );
 
+
+        const threshold = 45;
+
+
         if(
-            Math.abs(wheelAccumulation) < 25
+            Math.abs(
+                wheelAccumulator
+            ) < threshold
         ){
-
             return;
-
         }
 
+
         const direction =
-            wheelAccumulation > 0
+            wheelAccumulator > 0
                 ? 1
                 : -1;
 
-        wheelAccumulation = 0;
 
-        stepSection(direction);
+        wheelAccumulator = 0;
+
+
+        stepSection(
+            direction
+        );
 
     },
+
     {
         passive:false
     }
+
 );
 
 
@@ -2662,69 +4118,164 @@ window.addEventListener(
    TOUCH NAVIGATION
    ========================================================= */
 
-let touchStartY = 0;
+let touchStartY = null;
 
-let touchEndY = 0;
+let touchStartX = null;
 
-document.addEventListener(
+let touchScrolling = false;
+
+
+window.addEventListener(
     "touchstart",
+
     event => {
 
         if(
             event.touches.length !== 1
         ){
-
             return;
-
         }
+
 
         touchStartY =
             event.touches[0].clientY;
 
+        touchStartX =
+            event.touches[0].clientX;
+
+        touchScrolling =
+            false;
+
     },
+
     {
         passive:true
     }
+
 );
 
 
-document.addEventListener(
-    "touchend",
+window.addEventListener(
+    "touchmove",
+
     event => {
 
         if(
-            event.changedTouches.length !== 1
+            touchStartY === null ||
+            touchStartX === null ||
+            event.touches.length !== 1
         ){
-
             return;
-
         }
 
-        touchEndY =
-            event.changedTouches[0].clientY;
 
-        const difference =
+        const currentY =
+            event.touches[0].clientY;
+
+        const currentX =
+            event.touches[0].clientX;
+
+
+        const deltaY =
             touchStartY -
-            touchEndY;
+            currentY;
+
+        const deltaX =
+            touchStartX -
+            currentX;
+
 
         if(
-            Math.abs(difference) < 45
+            Math.abs(deltaY) > 10 &&
+            Math.abs(deltaY) >
+            Math.abs(deltaX)
         ){
+
+            event.preventDefault();
+
+            touchScrolling =
+                true;
+
+        }
+
+    },
+
+    {
+        passive:false
+    }
+
+);
+
+
+window.addEventListener(
+    "touchend",
+
+    event => {
+
+        if(
+            touchStartY === null ||
+            !event.changedTouches.length
+        ){
+
+            touchStartY =
+                null;
+
+            touchStartX =
+                null;
+
+            touchScrolling =
+                false;
 
             return;
 
         }
 
+
+        const endY =
+            event.changedTouches[0].clientY;
+
+
+        const delta =
+            touchStartY -
+            endY;
+
+
+        touchStartY =
+            null;
+
+        touchStartX =
+            null;
+
+
+        if(
+            !touchScrolling ||
+            Math.abs(delta) < 30
+        ){
+
+            touchScrolling =
+                false;
+
+            return;
+
+        }
+
+
+        touchScrolling =
+            false;
+
+
         stepSection(
-            difference > 0
+            delta > 0
                 ? 1
                 : -1
         );
 
     },
+
     {
         passive:true
     }
+
 );
 
 
@@ -2732,8 +4283,9 @@ document.addEventListener(
    KEYBOARD NAVIGATION
    ========================================================= */
 
-document.addEventListener(
+window.addEventListener(
     "keydown",
+
     event => {
 
         if(
@@ -2745,9 +4297,12 @@ document.addEventListener(
 
             stepSection(1);
 
+            return;
+
         }
 
-        else if(
+
+        if(
             event.key === "ArrowUp" ||
             event.key === "PageUp"
         ){
@@ -2756,9 +4311,12 @@ document.addEventListener(
 
             stepSection(-1);
 
+            return;
+
         }
 
-        else if(
+
+        if(
             event.key === "Home"
         ){
 
@@ -2766,9 +4324,12 @@ document.addEventListener(
 
             goToSection(0);
 
+            return;
+
         }
 
-        else if(
+
+        if(
             event.key === "End"
         ){
 
@@ -2778,9 +4339,12 @@ document.addEventListener(
                 sections.length - 1
             );
 
+            return;
+
         }
 
     }
+
 );
 
 
@@ -2790,16 +4354,17 @@ document.addEventListener(
 
 window.addEventListener(
     "resize",
+
     () => {
 
         if(navigationLocked){
-
             return;
-
         }
+
 
         const index =
             currentSectionIndex();
+
 
         window.setTimeout(
             () => {
@@ -2823,6 +4388,7 @@ window.addEventListener(
         );
 
     }
+
 );
 
 
@@ -2842,19 +4408,21 @@ document
 
                 event.preventDefault();
 
+
                 const href =
                     link.getAttribute("href");
 
+
                 if(!href){
-
                     return;
-
                 }
+
 
                 const target =
                     document.querySelector(
                         href
                     );
+
 
                 if(target){
 
@@ -2882,6 +4450,7 @@ if(
         document.querySelector(
             window.location.hash
         );
+
 
     if(initialTarget){
 
@@ -2932,5 +4501,7 @@ if(
 
 </script>
 
+
 </body>
+
 </html>
