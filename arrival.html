@@ -997,14 +997,15 @@ margin:2px 0 0;
    ========================================================= */
 
 .lock-text-grid{
+    .lock-text-grid{
     display:grid;
 
     grid-template-columns:
         repeat(4,minmax(0,1fr));
 
-    width:100%;
+    width:calc(100% + 16px);
 
-    margin:0 0 5px;
+    margin:0 -8px 5px;
 }
 
 .lock-text-item{
@@ -1025,7 +1026,7 @@ margin:2px 0 0;
 .lock-step-title{
     font-family:Arial,sans-serif;
 
-    font-size:9px;
+    font-size:10px;
 
     font-weight:700;
 
@@ -1039,7 +1040,7 @@ margin:2px 0 0;
 }
 
 .lock-step-copy{
-    font-size:8.5px;
+    font-size:9px;
 
     line-height:1.2;
 
@@ -1164,9 +1165,9 @@ margin:2px 0 0;
 }
 
 .welcome-notes p{
-    font-size:7.5px;
+    font-size:8.5px;
 
-    line-height:1.18;
+    line-height:1.2;
 
     color:#6b5540;
 }
@@ -1912,13 +1913,13 @@ margin:2px 0 0;
         font-size:9px;
     }
 
-    .lock-step-title{
-    font-size:9px;
+   .lock-step-title{
+    font-size:10px;
 }
 
 .lock-step-copy{
-    font-size:8.5px;
-    }
+    font-size:9px;
+}
 
     .welcome-step-label{
         font-size:clamp(8px,2vw,10px);
@@ -1929,7 +1930,7 @@ margin:2px 0 0;
     }
 
     .welcome-notes p{
-        font-size:clamp(6.5px,1.6vw,7.5px);
+       font-size:8.5px;
     }
 }
 
@@ -2037,12 +2038,12 @@ margin:2px 0 0;
     }
 
     .lock-step-title{
-        font-size:9px;
-    }
+    font-size:10px;
+}
 
-    .lock-step-copy{
-        font-size:8.5px;
-    }
+.lock-step-copy{
+    font-size:9px;
+}
 
     .welcome-step-five{
         margin-top:1px;
@@ -2196,7 +2197,7 @@ margin:2px 0 0;
     }
 
     .welcome-notes p{
-        font-size:6.2px;
+       font-size:8.5px;
     }
 }
 
@@ -3060,10 +3061,6 @@ margin:2px 0 0;
      ================================================= -->
 
 <div class="welcome-step-five">
-
-    <div class="welcome-step-number">
-        5
-    </div>
 
     <div class="welcome-step-label">
         ENTER &amp; RELAX
