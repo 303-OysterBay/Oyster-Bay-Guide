@@ -2218,7 +2218,298 @@ margin:2px 0 0;
         padding-top:12px;
     }
 }
+/* =========================================================
+   SECTION — WI-FI
+   ========================================================= */
 
+.wifi-page{
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    text-align:center;
+
+    padding:10px 8px 6px;
+
+    color:#073b58;
+}
+
+
+/* =========================================================
+   AIRTEL AIRFIBER
+   ========================================================= */
+
+.airtel-block{
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    margin-bottom:12px;
+}
+
+.airtel-logo{
+    display:block;
+
+    width:115px;
+    height:auto;
+
+    margin-bottom:2px;
+}
+
+.airfiber{
+    margin:0;
+
+    color:#e51b2a;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:23px;
+
+    font-weight:700;
+
+    line-height:1;
+}
+
+
+/* =========================================================
+   WI-FI TITLE
+   ========================================================= */
+
+.wifi-title{
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:12px;
+
+    margin-bottom:16px;
+}
+
+.wifi-title::before,
+.wifi-title::after{
+    content:"";
+
+    height:2px;
+
+    flex:1;
+
+    max-width:65px;
+
+    background:#073b58;
+
+    border-radius:10px;
+}
+
+.wifi-title span{
+    flex:0 0 auto;
+
+    color:#073b58;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:27px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    line-height:1;
+}
+
+
+/* =========================================================
+   WI-FI INFORMATION CARDS
+   ========================================================= */
+
+.wifi-information{
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.wifi-card{
+    width:100%;
+
+    min-height:98px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:12px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.28);
+
+    border:
+        1px solid rgba(112,69,31,.18);
+
+    box-shadow:
+        0 2px 7px rgba(70,42,20,.08);
+
+    text-align:left;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.wifi-card-icon{
+    width:57px;
+
+    min-width:57px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding-right:9px;
+
+    border-right:
+        2px solid #073b58;
+}
+
+.wifi-card-icon svg{
+    width:41px;
+    height:41px;
+
+    display:block;
+
+    fill:#073b58;
+
+    stroke:#073b58;
+
+    stroke-width:1;
+}
+
+
+/* =========================================================
+   CARD TEXT
+   ========================================================= */
+
+.wifi-card-content{
+    flex:1;
+
+    padding-left:11px;
+
+    min-width:0;
+}
+
+.wifi-label{
+    margin:0 0 5px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:1.8px;
+
+    color:#073b58;
+}
+
+.wifi-value{
+    margin:0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:17px;
+
+    line-height:1.1;
+
+    color:#073b58;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media(max-width:360px){
+
+    .wifi-page{
+        padding:8px 6px 5px;
+    }
+
+    .airtel-logo{
+        width:105px;
+    }
+
+    .airfiber{
+        font-size:21px;
+    }
+
+    .wifi-title{
+        margin-bottom:13px;
+    }
+
+    .wifi-title span{
+        font-size:25px;
+        letter-spacing:2.5px;
+    }
+
+    .wifi-card{
+        min-height:92px;
+
+        padding:10px;
+    }
+
+    .wifi-card-icon{
+        width:52px;
+        min-width:52px;
+
+        padding-right:8px;
+    }
+
+    .wifi-card-icon svg{
+        width:38px;
+        height:38px;
+    }
+
+    .wifi-card-content{
+        padding-left:9px;
+    }
+
+    .wifi-label{
+        font-size:9px;
+        letter-spacing:1.5px;
+    }
+
+    .wifi-value{
+        font-size:16px;
+    }
+}
 </style>
 
 </head>
@@ -3398,6 +3689,10 @@ margin:2px 0 0;
      HTML SECTION 4 — WI-FI
      ======================================================= -->
 
+<!-- =======================================================
+     4. WI-FI
+     ======================================================= -->
+
 <section
     id="wifi"
     class="guide-section"
@@ -3405,32 +3700,182 @@ margin:2px 0 0;
     aria-label="Wi-Fi"
 >
 
-<div class="guide-placeholder">
+<div class="arrival-content">
 
-<a
-    href="https://www.airbnb.co.in/h/303oysterbay"
-    class="guest-favourite-link"
-    target="_blank"
-    rel="noopener"
-    aria-label="303 Oyster Bay on Airbnb"
->
+    <div class="wifi-page">
 
-    <img
-        src="guest-favourite.png"
-        class="guest-favourite"
-        alt="Airbnb Guest Favourite"
-    >
+        <!-- AIRTEL AIRFIBER -->
 
-</a>
+        <header class="airtel-block">
 
-<h2>
-    WI-FI
-</h2>
+            <img
+                class="airtel-logo"
+                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Airtel_logo.svg"
+                alt="Airtel"
+            >
+
+            <div class="airfiber">
+                AIRFIBER
+            </div>
+
+        </header>
+
+
+        <!-- WI-FI TITLE -->
+
+        <div class="wifi-title">
+
+            <span>WI-FI</span>
+
+        </div>
+
+
+        <!-- WI-FI INFORMATION -->
+
+        <main class="wifi-information">
+
+
+            <!-- GATEWAY -->
+
+            <section class="wifi-card">
+
+                <div class="wifi-card-icon">
+
+                    <svg
+                        viewBox="0 0 64 64"
+                        aria-hidden="true"
+                    >
+
+                        <path d="
+                            M4 20
+                            C20 4 44 4 60 20
+                            L53 28
+                            C41 16 23 16 11 28
+                            Z
+                        "/>
+
+                        <path d="
+                            M14 32
+                            C24 22 40 22 50 32
+                            L43 40
+                            C36 33 28 33 21 40
+                            Z
+                        "/>
+
+                        <path d="
+                            M24 44
+                            C28 40 36 40 40 44
+                            L32 53
+                            Z
+                        "/>
+
+                        <circle
+                            cx="32"
+                            cy="57"
+                            r="4"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div class="wifi-card-content">
+
+                    <p class="wifi-label">
+                        GATEWAY
+                    </p>
+
+                    <p class="wifi-value">
+                        Airtel_303 Oyster Bay
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ACCESS CODE -->
+
+            <section class="wifi-card">
+
+                <div class="wifi-card-icon">
+
+                    <svg
+                        viewBox="0 0 64 64"
+                        aria-hidden="true"
+                    >
+
+                        <path d="
+                            M18 27
+                            V20
+                            C18 12 24 6 32 6
+                            C40 6 46 12 46 20
+                            V27
+                            H40
+                            V20
+                            C40 15.6 36.4 12 32 12
+                            C27.6 12 24 15.6 24 20
+                            V27
+                            Z
+                        "/>
+
+                        <path d="
+                            M10 26
+                            H54
+                            C57.3 26 60 28.7 60 32
+                            V55
+                            C60 58.3 57.3 61 54 61
+                            H10
+                            C6.7 61 4 58.3 4 55
+                            V32
+                            C4 28.7 6.7 26 10 26
+                            Z
+                        "/>
+
+                        <circle
+                            cx="32"
+                            cy="43"
+                            r="5"
+                            fill="#f4d6a3"
+                        />
+
+                        <rect
+                            x="29"
+                            y="43"
+                            width="6"
+                            height="10"
+                            rx="3"
+                            fill="#f4d6a3"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div class="wifi-card-content">
+
+                    <p class="wifi-label">
+                        ACCESS CODE
+                    </p>
+
+                    <p class="wifi-value">
+                        15Aug1947!
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
 
 </div>
 
 </section>
-
 
 
 <!-- =======================================================
