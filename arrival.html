@@ -1215,10 +1215,13 @@ margin:2px 0 0;
 .emergency-contacts{
     display:grid;
     grid-template-columns:repeat(5,minmax(0,1fr));
-    width:100%;
+    width:calc(100% + 24px);
+    margin-left:-12px;
+    margin-right:-12px;
+    box-sizing:border-box;
     border-top:1px solid rgba(112,69,31,.25);
     border-bottom:1px solid rgba(112,69,31,.25);
-    padding:20px 0 20px;
+    padding:20px 0;
     margin-bottom:22px;
 }
 
@@ -1278,10 +1281,10 @@ margin:2px 0 0;
 .host-number{
     color:#a51f1f !important;
     font-family:Arial,sans-serif !important;
-    font-size:16px !important;
+    font-size:13px !important;
     font-weight:700 !important;
     line-height:1.2 !important;
-    overflow-wrap:anywhere;
+    white-space:nowrap;
 }
 
 .host-sub{
