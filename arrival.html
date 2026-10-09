@@ -1214,32 +1214,19 @@ margin:2px 0 0;
 
 .emergency-contacts{
     display:grid;
-
-    grid-template-columns:
-        repeat(5,minmax(0,1fr));
-
+    grid-template-columns:repeat(5,minmax(0,1fr));
     width:100%;
-
-    border-top:
-        1px solid rgba(112,69,31,.25);
-
-    border-bottom:
-        1px solid rgba(112,69,31,.25);
-
-    padding:9px 0 10px;
-
-    margin-bottom:12px;
+    border-top:1px solid rgba(112,69,31,.25);
+    border-bottom:1px solid rgba(112,69,31,.25);
+    padding:12px 0 13px;
+    margin-bottom:17px;
 }
 
 .emergency-contact{
     min-width:0;
-
     text-align:center;
-
-    padding:0 8px;
-
-    border-right:
-        1px solid rgba(112,69,31,.22);
+    padding:0 5px;
+    border-right:1px solid rgba(112,69,31,.22);
 }
 
 .emergency-contact:last-child{
@@ -1247,60 +1234,40 @@ margin:2px 0 0;
 }
 
 .emergency-icon{
-    width:28px;
-    height:28px;
-
+    width:30px;
+    height:30px;
     display:block;
-
-    margin:0 auto 4px;
-
+    margin:0 auto 6px;
     color:#70451f;
-
     stroke:currentColor;
-
     stroke-width:2;
-
     stroke-linecap:round;
-
     stroke-linejoin:round;
 }
 
 .emergency-label{
     font-family:Arial,sans-serif;
-
-    font-size:8px;
-
+    font-size:9px;
     font-weight:700;
-
-    letter-spacing:.55px;
-
-    line-height:1.1;
-
+    letter-spacing:.4px;
+    line-height:1.2;
     color:#463322;
-
-    margin-bottom:3px;
+    margin-bottom:5px;
 }
 
 .emergency-number{
     font-family:Arial,sans-serif;
-
-    font-size:10px;
-
+    font-size:12px;
     font-weight:700;
-
-    line-height:1.1;
-
+    line-height:1.2;
     color:#463322;
 }
 
 .emergency-sub{
-    font-size:7.5px;
-
-    line-height:1.15;
-
+    font-size:8.5px;
+    line-height:1.25;
     color:#6b5540;
-
-    margin-top:2px;
+    margin-top:4px;
 }
 
 
@@ -1310,16 +1277,14 @@ margin:2px 0 0;
 
 .host-number{
     color:#a51f1f !important;
-
     font-weight:700 !important;
 }
 
 .host-sub{
-    font-size:7.2px;
-
+    font-size:8px;
+    line-height:1.2;
     color:#6b5540;
-
-    margin-top:2px;
+    margin-top:4px;
 }
 
 
@@ -1329,32 +1294,20 @@ margin:2px 0 0;
 
 .nearby-title{
     font-family:Arial,sans-serif;
-
-    font-size:9px;
-
+    font-size:10px;
     font-weight:700;
-
     letter-spacing:.8px;
-
     text-align:center;
-
     color:#463322;
-
-    margin-bottom:7px;
+    margin-bottom:11px;
 }
 
 .nearby-grid{
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    grid-template-rows:
-        auto auto auto;
-
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto auto auto;
     column-gap:12px;
-    row-gap:8px;
-
+    row-gap:12px;
     width:100%;
 }
 
@@ -1365,55 +1318,37 @@ margin:2px 0 0;
 
 .essential-card{
     position:relative;
-
     min-width:0;
-
-    padding:7px 10px;
-
+    padding:11px 10px;
     border-radius:9px;
-
     background:rgba(255,255,255,.19);
-
-    border:
-        1px solid rgba(112,69,31,.19);
+    border:1px solid rgba(112,69,31,.19);
 }
 
 .essential-card-header{
     display:flex;
-
     align-items:center;
-
-    gap:7px;
-
-    margin-bottom:5px;
+    gap:8px;
+    margin-bottom:8px;
 }
 
 .essential-icon{
     flex:0 0 auto;
-
-    width:30px;
-    height:30px;
-
+    width:31px;
+    height:31px;
     color:#70451f;
-
     stroke:currentColor;
-
     stroke-width:2;
-
     stroke-linecap:round;
-
     stroke-linejoin:round;
 }
 
 .essential-card-title{
     font-family:Arial,sans-serif;
-
-    font-size:9px;
-
+    font-size:10px;
     font-weight:700;
-
-    letter-spacing:.55px;
-
+    letter-spacing:.4px;
+    line-height:1.2;
     color:#463322;
 }
 
@@ -1424,81 +1359,56 @@ margin:2px 0 0;
 
 .pharmacy-list{
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
     width:100%;
 }
 
 .pharmacy-item{
     min-width:0;
-
     text-align:center;
-
-    padding:0 7px;
+    padding:0 4px;
 }
 
 .pharmacy-item + .pharmacy-item{
-    border-left:
-        1px solid rgba(112,69,31,.25);
+    border-left:1px solid rgba(112,69,31,.25);
 }
 
 .pharmacy-name{
     font-family:Arial,sans-serif;
-
     font-size:9px;
-
     font-weight:700;
-
-    line-height:1.1;
-
+    line-height:1.2;
     color:#463322;
-
-    white-space:nowrap;
+    white-space:normal;
 }
 
 .pharmacy-location{
-    font-size:8px;
-
-    line-height:1.15;
-
+    font-size:9px;
+    line-height:1.2;
     color:#6b5540;
-
-    margin-top:2px;
+    margin-top:4px;
 }
 
 .pharmacy-phone-row{
     display:flex;
-
     align-items:baseline;
-
     justify-content:center;
-
-    gap:5px;
-
-    margin-top:3px;
-
-    white-space:nowrap;
+    flex-wrap:wrap;
+    gap:3px 5px;
+    margin-top:5px;
 }
 
 .pharmacy-phone{
     font-family:Arial,sans-serif;
-
-    font-size:8px;
-
-    line-height:1.1;
-
+    font-size:8.5px;
+    line-height:1.2;
     color:#463322;
 }
 
 .pharmacy-distance{
     font-family:Arial,sans-serif;
-
-    font-size:8px;
-
+    font-size:8.5px;
     font-weight:700;
-
     color:#a51f1f;
 }
 
@@ -1509,67 +1419,46 @@ margin:2px 0 0;
 
 .hospital-card{
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
 }
 
 .hospital-name{
     font-family:Arial,sans-serif;
-
-    font-size:9px;
-
+    font-size:10px;
     font-weight:700;
-
-    line-height:1.1;
-
+    line-height:1.2;
     color:#463322;
 }
 
 .hospital-location{
-    font-size:8px;
-
-    line-height:1.15;
-
+    font-size:9px;
+    line-height:1.2;
     color:#6b5540;
-
-    margin-top:2px;
+    margin-top:4px;
 }
 
 .hospital-phone-row{
     display:flex;
-
     align-items:baseline;
-
     justify-content:center;
-
-    gap:5px;
-
-    margin-top:3px;
-
-    white-space:nowrap;
+    flex-wrap:wrap;
+    gap:3px 5px;
+    margin-top:5px;
 }
 
 .hospital-phone{
     font-family:Arial,sans-serif;
-
-    font-size:8px;
-
+    font-size:8.5px;
     color:#463322;
 }
 
 .hospital-distance{
     font-family:Arial,sans-serif;
-
-    font-size:8px;
-
+    font-size:8.5px;
     font-weight:700;
-
     color:#a51f1f;
 }
 
@@ -1580,70 +1469,47 @@ margin:2px 0 0;
 
 .supermarket-list{
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
     width:100%;
 }
 
 .supermarket-item{
     min-width:0;
-
     text-align:center;
-
-    padding:0 7px;
+    padding:0 4px;
 }
 
 .supermarket-item + .supermarket-item{
-    border-left:
-        1px solid rgba(112,69,31,.25);
+    border-left:1px solid rgba(112,69,31,.25);
 }
 
 .supermarket-name{
     font-family:Arial,sans-serif;
-
     font-size:9px;
-
     font-weight:700;
-
-    line-height:1.1;
-
+    line-height:1.2;
     color:#463322;
-
-    white-space:nowrap;
-
+    white-space:normal;
     border:0 !important;
-
     text-decoration:none !important;
 }
 
 .supermarket-phone{
     font-family:Arial,sans-serif;
-
-    font-size:8px;
-
-    line-height:1.1;
-
+    font-size:8.5px;
+    line-height:1.2;
     color:#463322;
-
-    margin-top:3px;
-
-    white-space:nowrap;
+    margin-top:5px;
+    white-space:normal;
 }
 
 .supermarket-distance{
     font-family:Arial,sans-serif;
-
-    font-size:8px;
-
+    font-size:8.5px;
     font-weight:700;
-
-    line-height:1.1;
-
+    line-height:1.2;
     color:#a51f1f;
-
-    margin-top:2px;
+    margin-top:3px;
 }
 
 
@@ -1652,15 +1518,13 @@ margin:2px 0 0;
    ========================================================= */
 
 .firstaid-copy{
-    font-size:8.3px;
-
-    line-height:1.25;
-
+    font-size:9.5px;
+    line-height:1.4;
     color:#6b5540;
 }
 
 .firstaid-copy p + p{
-    margin-top:4px;
+    margin-top:7px;
 }
 
 
@@ -1669,52 +1533,37 @@ margin:2px 0 0;
    ========================================================= */
 
 .cab-card{
-    grid-column:
-        1 / -1;
-
+    grid-column:1 / -1;
     text-align:center;
-
-    padding:8px 14px;
-
-    min-height:68px;
+    padding:12px 14px;
+    min-height:78px;
 }
 
 .cab-card .essential-card-header{
     justify-content:center;
-
-    margin-bottom:3px;
+    margin-bottom:7px;
 }
 
 .cab-copy{
-    font-size:8.5px;
-
-    line-height:1.25;
-
+    font-size:9.5px;
+    line-height:1.4;
     color:#6b5540;
 }
 
 .cab-contact{
     font-family:Arial,sans-serif;
-
-    font-size:9px;
-
+    font-size:10px;
     font-weight:700;
-
     color:#463322;
-
-    margin-top:4px;
+    margin-top:6px;
 }
 
 .cab-number{
     font-family:Arial,sans-serif;
-
-    font-size:12px;
-
+    font-size:13px;
     font-weight:700;
-
     color:#463322;
-
-    margin-top:2px;
+    margin-top:3px;
 }
 
 
