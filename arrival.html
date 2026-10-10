@@ -1308,20 +1308,22 @@ margin:2px 0 0;
 
 .nearby-title{
     font-family:Arial,sans-serif;
-    font-size:12px;
+    font-size:14px !important;
     font-weight:700;
     letter-spacing:.8px;
     text-align:center;
     color:#463322;
     margin-bottom:14px;
-} 
+}
 
 .nearby-grid{
     display:grid;
     grid-template-columns:repeat(6,minmax(0,1fr));
-    column-gap:12px;
-    row-gap:14px;
-    width:100%;
+    column-gap:8px;
+    row-gap:12px;
+    width:calc(100% + 24px);
+    margin-left:-12px;
+    margin-right:-12px;
 }
 
 .pharmacy-card{
