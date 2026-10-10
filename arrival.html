@@ -3847,6 +3847,326 @@ padding-bottom:0;
     MANAGEMENT
 </h2>
 
+<style>
+/* BEACH MANAGEMENT — CONTENT ONLY */
+.beach-journal {
+  color: #463322;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.beach-row {
+  display: grid;
+  grid-template-columns: 29% minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed #b88a4c;
+  box-sizing: border-box;
+}
+
+.beach-row.reverse .beach-art { order: 2; }
+.beach-row.reverse .beach-copy { order: 1; }
+
+.beach-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #80552b;
+  min-width: 0;
+}
+
+.beach-art svg {
+  width: 100%;
+  max-width: 88px;
+  max-height: 66px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.beach-copy { min-width: 0; }
+
+.beach-heading {
+  margin: 0 0 5px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #b88a4c;
+  color: #25475a;
+  font: bold clamp(12px, 3vw, 16px)/1.05 Georgia, serif;
+}
+
+.beach-point {
+  display: grid;
+  grid-template-columns: 13px minmax(0, 1fr);
+  gap: 5px;
+  align-items: start;
+  margin: 4px 0;
+  font-size: clamp(9px, 2.4vw, 11px);
+  line-height: 1.2;
+}
+
+.beach-check {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #a8752d;
+  border-radius: 50%;
+  color: #a8752d;
+  text-align: center;
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 11px;
+  box-sizing: border-box;
+}
+
+.beach-warning { color: #b42323; }
+.beach-warning .beach-check {
+  color: white;
+  background: #c62828;
+  border-color: #c62828;
+}
+
+.beach-divider {
+  text-align: center;
+  height: 8px;
+  color: #b88a4c;
+  font-size: 10px;
+  line-height: 8px;
+}
+
+.beach-safety {
+  margin-top: 7px;
+  padding: 7px 5px 5px;
+  border: 1px solid #a8752d;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.beach-safety-heading {
+  margin: 0 0 7px;
+  color: #25475a;
+  font: bold clamp(11px, 2.8vw, 15px)/1.1 Georgia, serif;
+}
+
+.beach-safety-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.beach-tip {
+  min-width: 0;
+  padding: 0 3px;
+  text-align: center;
+  border-right: 1px solid #c9ae88;
+}
+
+.beach-tip:last-child { border-right: 0; }
+
+.beach-tip svg {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 3px;
+  fill: none;
+  stroke: #80552b;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.beach-tip-title {
+  margin-bottom: 4px;
+  color: #25475a;
+  font-size: clamp(6px, 1.65vw, 8px);
+  font-weight: bold;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.beach-tip-text {
+  font-size: clamp(6px, 1.55vw, 8px);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .beach-row {
+    grid-template-columns: 25% minmax(0, 1fr);
+    gap: 6px;
+    padding: 5px 0;
+  }
+
+  .beach-art svg {
+    max-width: 72px;
+    max-height: 54px;
+  }
+
+  .beach-heading {
+    margin-bottom: 3px;
+    font-size: clamp(11px, 3vw, 14px);
+  }
+
+  .beach-point {
+    grid-template-columns: 11px minmax(0, 1fr);
+    gap: 4px;
+    margin: 3px 0;
+    font-size: clamp(8px, 2.35vw, 10px);
+    line-height: 1.17;
+  }
+
+  .beach-check {
+    width: 10px;
+    height: 10px;
+    font-size: 7px;
+    line-height: 9px;
+  }
+
+  .beach-divider { height: 5px; line-height: 5px; }
+
+  .beach-safety {
+    margin-top: 5px;
+    padding: 5px 3px 4px;
+  }
+
+  .beach-safety-heading {
+    margin-bottom: 5px;
+    font-size: clamp(10px, 2.8vw, 13px);
+  }
+
+  .beach-tip { padding: 0 2px; }
+  .beach-tip svg { width: 17px; height: 17px; }
+  .beach-tip-title { font-size: clamp(5.5px, 1.55vw, 7px); }
+  .beach-tip-text { font-size: clamp(5.5px, 1.45vw, 7px); }
+}
+</style>
+
+<div class="beach-journal">
+
+  <!-- BEACH ACCESS -->
+  <div class="beach-row">
+    <div class="beach-art" aria-hidden="true">
+      <svg viewBox="0 0 100 80">
+        <path d="M5 59q8-7 16 0t16 0t16 0t16 0t16 0"/>
+        <path d="M5 69q8-7 16 0t16 0t16 0t16 0t16 0"/>
+        <path d="M61 58q14-9 24-25M61 58q16 3 27-6"/>
+        <path d="M76 31q-7-11 0-22q7 11 0 22ZM76 28 61 15M76 28l15-13M76 28V9"/>
+        <circle cx="28" cy="29" r="8"/>
+        <path d="M20 29v13l8 7 8-7V29M20 35h16"/>
+      </svg>
+    </div>
+    <div class="beach-copy">
+      <h3 class="beach-heading">BEACH ACCESS</h3>
+      <div class="beach-point"><span class="beach-check">✓</span><span>Cross the road to enter the beach directly.</span></div>
+      <div class="beach-point"><span class="beach-check">✓</span><span>No long walks — the beach is across the road.</span></div>
+    </div>
+  </div>
+
+  <div class="beach-divider">❧</div>
+
+  <!-- BEACH ETIQUETTE -->
+  <div class="beach-row reverse">
+    <div class="beach-art" aria-hidden="true">
+      <svg viewBox="0 0 100 80">
+        <circle cx="27" cy="12" r="7"/>
+        <path d="M17 26q10-9 20 0l4 19-7 2-4-13v34M25 68V46l-5-14-6 15-7-2 6-18q2-7 8-7"/>
+        <path d="M57 35h34l-4 34H61Z M54 35h40 M67 29h15"/>
+        <path d="M68 44v14M76 44v14M84 44v14"/>
+      </svg>
+    </div>
+    <div class="beach-copy">
+      <h3 class="beach-heading">BEACH ETIQUETTE</h3>
+      <div class="beach-point"><span class="beach-check">✓</span><span>Please do not litter on the beach.</span></div>
+      <div class="beach-point"><span class="beach-check">✓</span><span>Respect nature, marine life and the local community.</span></div>
+      <div class="beach-point"><span class="beach-check">✓</span><span>Please supervise children at all times.</span></div>
+    </div>
+  </div>
+
+  <div class="beach-divider">❧</div>
+
+  <!-- SAND CARE -->
+  <div class="beach-row">
+    <div class="beach-art" aria-hidden="true">
+      <svg viewBox="0 0 100 80">
+        <path d="M18 72V18a13 13 0 0 1 26 0v9M38 27h14l-4 7H42Z"/>
+        <path d="M45 34v6m-5 2v5m10-5v5m-10 3v5m10-5v5m-10 3v5m10-5v5"/>
+        <path d="M75 72V25M75 39 61 28M75 50l14-11M75 61 61 50"/>
+        <path d="M61 28q0-9 8-13q2 8-8 13M89 39q0-9 8-13q2 8-8 13M61 50q0-9 8-13q2 8-8 13"/>
+      </svg>
+    </div>
+    <div class="beach-copy">
+      <h3 class="beach-heading">SAND CARE</h3>
+      <div class="beach-point"><span class="beach-check">✓</span><span>A shower/wash area is available near the well at the rear side of the property.</span></div>
+      <div class="beach-point beach-warning"><span class="beach-check">✓</span><span>Before entering the lift or apartment after the beach, rinse off as much sand and salt water as possible.</span></div>
+    </div>
+  </div>
+
+  <div class="beach-divider">❧</div>
+
+  <!-- BEACH COMFORT -->
+  <div class="beach-row reverse">
+    <div class="beach-art" aria-hidden="true">
+      <svg viewBox="0 0 100 80">
+        <path d="M10 30h40l-4 36H14Z M17 30q0-20 13-20t13 20"/>
+        <path d="M27 44h8M61 50q-9-11-3-19q7-5 10 8q4-13 11-8q6 8-4 19l-7 13Z"/>
+        <path d="M60 51l8 12m11-12-7 12M57 70h27"/>
+      </svg>
+    </div>
+    <div class="beach-copy">
+      <h3 class="beach-heading">BEACH COMFORT</h3>
+      <div class="beach-point"><span class="beach-check">✓</span><span>Beach slippers are provided for use while at the apartment. Please do not take them away.</span></div>
+      <div class="beach-point"><span class="beach-check">✓</span><span>Beach towels are available in the cupboard.</span></div>
+      <div class="beach-point beach-warning"><span class="beach-check">✓</span><span>If you return with wet swimwear, please rinse and dry before entering.</span></div>
+      <div class="beach-point beach-warning"><span class="beach-check">✓</span><span>Do not sit on sofas or beds with wet swimwear.</span></div>
+    </div>
+  </div>
+
+  <!-- LOCAL BEACH TIPS & SAFETY -->
+  <div class="beach-safety">
+    <h3 class="beach-safety-heading">LOCAL BEACH TIPS &amp; SAFETY</h3>
+    <div class="beach-safety-grid">
+
+      <div class="beach-tip">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 19q7-12 14 0t14 0M2 25q7-8 14 0t14 0"/></svg>
+        <div class="beach-tip-title">Sea</div>
+        <div class="beach-tip-text">The sea can be unpredictable.</div>
+      </div>
+
+      <div class="beach-tip">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 10q5-4 10 0t10 0t8 0M2 17q5-4 10 0t10 0t8 0M2 24q5-4 10 0t10 0t8 0"/></svg>
+        <div class="beach-tip-title">Currents</div>
+        <div class="beach-tip-text">Strong currents may be present, especially during monsoons.</div>
+      </div>
+
+      <div class="beach-tip">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 10q5-4 10 0t10 0t8 0M2 17q5-4 10 0t10 0t8 0M2 24q5-4 10 0t10 0t8 0"/></svg>
+        <div class="beach-tip-title">Swimming</div>
+        <div class="beach-tip-text">At your own risk. There are no lifeguards on duty.</div>
+      </div>
+
+      <div class="beach-tip">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 26 8H6Z M8 8v17M24 8v17M5 25h22M11 12h10M11 16h10"/></svg>
+        <div class="beach-tip-title">After dark</div>
+        <div class="beach-tip-text">Avoid swimming after dark for your safety.</div>
+      </div>
+
+      <div class="beach-tip">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="8" r="5"/><path d="M6 28v-6q0-8 10-8t10 8v6"/></svg>
+        <div class="beach-tip-title">Children</div>
+        <div class="beach-tip-text">Children should be supervised at all times.</div>
+      </div>
+
+      <div class="beach-tip">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="6"/><path d="M16 2v5M16 25v5M2 16h5M25 16h5M6 6l4 4M22 22l4 4M26 6l-4 4M10 22l-4 4"/></svg>
+        <div class="beach-tip-title">Sun</div>
+        <div class="beach-tip-text">Apply sunscreen, stay hydrated and take breaks from the sun.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
 </div>
 
 </section>
