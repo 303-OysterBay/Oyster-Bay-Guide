@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +7,7 @@
 <title>303 OYSTER BAY • Salt Sand Stories</title>
 
 <style>
-/* =====================================================
-   GLOBAL / FROZEN — MASTER LAYOUT
-   Based on arrival.html
-   ===================================================== */
+/* GLOBAL — MASTER LAYOUT */
 
 * {
     box-sizing: border-box;
@@ -55,16 +53,14 @@ body {
     background-repeat: no-repeat;
 }
 
-/* =====================================================
-   GLOBAL / FROZEN — BEIGE FRAME
-   ===================================================== */
+/* BEIGE FRAME — CORRECTED HEIGHT */
 
 .guide-placeholder {
     position: absolute;
     left: 12px;
     right: 12px;
     top: 40px;
-    bottom: 100px;
+    bottom: 90px;
     padding: 12px 18px 14px;
     background: rgba(248,240,223,.88);
     border-radius: 16px;
@@ -73,20 +69,20 @@ body {
     z-index: 10;
 }
 
+/* SECTION HEADING */
+
 .guide-placeholder h2 {
     margin: 0;
     padding: 0;
-    font-size: 26px;
+    font-size: 27px;
     font-weight: normal;
-    line-height: 1.1;
+    line-height: 1.05;
     letter-spacing: 1.5px;
     color: #463322;
     text-align: center;
 }
 
-/* =====================================================
-   GLOBAL / FROZEN — FIXED TOP NAV
-   ===================================================== */
+/* FIXED TOP NAVIGATION */
 
 .top-nav {
     position: fixed;
@@ -104,13 +100,15 @@ body {
     height: auto;
     position: relative;
     left: 50%;
+    z-index: 220;
+    opacity: 1;
     transform: translate(-50%,-47px);
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
 }
 
-/* Clickable areas over the five navigation labels */
+/* CLICKABLE TOP NAV AREAS */
 
 .top-nav-hit {
     position: absolute;
@@ -151,9 +149,7 @@ body {
     width: 19%;
 }
 
-/* =====================================================
-   DROPDOWNS — BOTH CLOSED INITIALLY
-   ===================================================== */
+/* DROPDOWNS — CLOSED INITIALLY */
 
 .top-nav-dropdown-holder {
     position: absolute;
@@ -220,9 +216,7 @@ body {
     background: rgba(200,180,145,.25);
 }
 
-/* =====================================================
-   GLOBAL / FROZEN — GUEST FAVOURITE BADGE
-   ===================================================== */
+/* GUEST FAVOURITE BADGE */
 
 .guest-favourite-link {
     position: absolute;
@@ -241,10 +235,7 @@ body {
     height: auto;
 }
 
-/* =====================================================
-   GLOBAL / FROZEN — FIXED BOTTOM NAV
-   Same artwork as arrival.html
-   ===================================================== */
+/* FIXED BOTTOM NAVIGATION */
 
 .bottom-nav {
     position: fixed;
@@ -302,9 +293,7 @@ body {
     width: 18%;
 }
 
-/* =====================================================
-   GLOBAL / FROZEN — FIXED SAND LOGO
-   ===================================================== */
+/* FIXED SAND LOGO */
 
 .sand-logo {
     position: fixed;
@@ -324,17 +313,16 @@ body {
     height: auto;
 }
 
-/* =====================================================
-   LIVE GUIDE — CONTENT AREA
-   Content will be developed section by section.
-   ===================================================== */
+/* CONTENT — HEADING ALIGNED NEAR TOP OF FRAME */
 
 .section-content {
     position: absolute;
     inset: 0;
-    padding: 44px 12px 12px;
+    padding: 2px 100px 12px;
     overflow: auto;
 }
+
+/* HIDE SCROLLBAR */
 
 body::-webkit-scrollbar {
     width: 0;
@@ -344,6 +332,8 @@ body::-webkit-scrollbar {
 body {
     scrollbar-width: none;
 }
+
+/* MOBILE */
 
 @media (max-width: 600px) {
     .guide-placeholder h2 {
@@ -368,10 +358,7 @@ body {
 
 <body>
 
-<!-- =====================================================
-     FIXED TOP NAVIGATION
-     Artwork contains both dropdown chevrons.
-     ===================================================== -->
+<!-- FIXED TOP NAVIGATION -->
 
 <nav class="top-nav" aria-label="Live Guide navigation">
 
@@ -406,38 +393,27 @@ body {
        class="top-nav-hit top-nav-rules"
        aria-label="House Rules"></a>
 
-    <!-- BEDROOMS DROPDOWN -->
-
     <div class="top-nav-dropdown-holder bedrooms-holder"
          id="bedroomsHolder">
-
         <div class="dropdown">
             <a href="#green-room">Green Room</a>
             <a href="#blue-room">Blue Room</a>
         </div>
-
     </div>
-
-    <!-- MANUALS DROPDOWN -->
 
     <div class="top-nav-dropdown-holder manuals-holder"
          id="manualsHolder">
-
         <div class="dropdown">
             <a href="#hob-chimney">Hob &amp; Chimney</a>
             <a href="#water-purifier">Water Purifier</a>
             <a href="#sliding-folding-door">Sliding &amp; Folding Door</a>
             <a href="#curtains-sliding-door">Curtains &amp; Sliding Door</a>
         </div>
-
     </div>
 
 </nav>
 
-
-<!-- =====================================================
-     NINE FROZEN FULL-SCREEN SECTIONS
-     ===================================================== -->
+<!-- NINE FULL-SCREEN SECTIONS -->
 
 <main class="guide-page">
 
@@ -560,20 +536,14 @@ body {
 
 </main>
 
-
-<!-- =====================================================
-     FIXED SAND LOGO — SAME AS ARRIVAL
-     ===================================================== -->
+<!-- FIXED SAND LOGO -->
 
 <a href="index.html" class="sand-logo"
    aria-label="303 Oyster Bay Home">
     <img src="logo.png" alt="303 Oyster Bay">
 </a>
 
-
-<!-- =====================================================
-     FIXED BOTTOM NAV ART — SAME AS ARRIVAL
-     ===================================================== -->
+<!-- FIXED BOTTOM NAV ART -->
 
 <nav class="bottom-nav" aria-label="Main navigation">
     <img
@@ -604,12 +574,8 @@ body {
 
 </nav>
 
-
 <script>
-/* =====================================================
-   DROPDOWN INTERACTION
-   Both dropdowns start closed.
-   ===================================================== */
+/* DROPDOWN INTERACTION — BOTH CLOSED INITIALLY */
 
 function closeDropdowns() {
     document.querySelectorAll(".top-nav-dropdown-holder")
@@ -650,3 +616,4 @@ document.querySelectorAll(".dropdown a").forEach(link => {
 
 </body>
 </html>
+
