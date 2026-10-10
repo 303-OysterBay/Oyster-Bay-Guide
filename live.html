@@ -87,7 +87,7 @@ body::-webkit-scrollbar {
     left: var(--frame-left);
     right: var(--frame-right);
     top: var(--frame-top);
-    bottom: var(--frame-bottom);
+    bottom: 90px;
     padding: 12px 18px 14px;
     background: var(--frame);
     border-radius: var(--frame-radius);
@@ -96,18 +96,24 @@ body::-webkit-scrollbar {
     z-index: 10;
 }
 
-/* SECTION HEADING */
+/* SECTION HEADING — MATCH ARRIVAL */
 .guide-placeholder h2 {
     margin: 0;
     padding: 0;
-    font-size: 22px;
+    font-size: 27px;
     font-weight: normal;
     line-height: 1.05;
     letter-spacing: 1.5px;
-    color: var(--ink);
+    color: #463322;
     text-align: center;
 }
-
+/* SECTION CONTENT — MATCH ARRIVAL HEADER POSITION */
+.section-content {
+    position: absolute;
+    inset: 0;
+    padding: 14px 100px 12px;
+    overflow: auto;
+}
 /* TOP NAVIGATION ARTWORK */
 .top-nav {
     position: fixed;
@@ -126,7 +132,7 @@ body::-webkit-scrollbar {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0.85;
+    opacity: 0.65;
     z-index: 220;
     pointer-events: none;
     user-select: none;
