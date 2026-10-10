@@ -1324,7 +1324,6 @@ margin:2px 0 0;
     width:100%;
 }
 
-/* First row: Pharmacy and Hospital */
 .pharmacy-card{
     grid-column:span 4;
     grid-row:1;
@@ -1335,8 +1334,7 @@ margin:2px 0 0;
     grid-row:1;
 }
 
-/* Second row: Super Market and Cab Services */
-.nearby-grid > .essential-card:nth-of-type(3){
+.supermarket-card{
     grid-column:span 3;
     grid-row:2;
 }
@@ -1346,13 +1344,10 @@ margin:2px 0 0;
     grid-row:2;
 }
 
-/* Third row: Electrical & First Aid */
-.nearby-grid > .essential-card:nth-of-type(4){
+.electrical-card{
     grid-column:1 / -1;
     grid-row:3;
 }
-
-
 
 /* =========================================================
    SECTION 3 — ESSENTIAL CARD
@@ -1372,7 +1367,6 @@ margin:2px 0 0;
 .pharmacy-card .essential-card-header{
     justify-content:center;
 }
-
 
 .essential-card-header{
     display:flex;
@@ -1588,7 +1582,8 @@ margin:2px 0 0;
    ========================================================= */
 
 .cab-card{
-    grid-column:1 / -1;
+    grid-column:span 3;
+    grid-row:2;
     text-align:center;
     padding:15px 16px;
     min-height:88px;
@@ -3422,7 +3417,7 @@ margin:2px 0 0;
 
 <!-- SUPERMARKET -->
 
-<div class="essential-card">
+<div class="essential-card supermarket-card">
 
 <div class="essential-card-header">
 
@@ -3491,7 +3486,7 @@ margin:2px 0 0;
 
 <!-- ELECTRICAL & FIRST AID -->
 
-<div class="essential-card">
+<div class="essential-card electrical-card">
 
 <div class="essential-card-header">
 
