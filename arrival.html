@@ -1565,15 +1565,27 @@ margin:2px 0 0;
 /* =========================================================
    SECTION 3 — ELECTRICAL & FIRST AID
    ========================================================= */
-
 .firstaid-copy{
-    font-size:11px;
-    line-height:1.45;
+    font-size:13px;
+    line-height:1.5;
     color:#6b5540;
 }
 
-.firstaid-copy p + p{
-    margin-top:10px;
+.firstaid-copy ul{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:24px;
+    row-gap:5px;
+    margin:0;
+    padding-left:18px;
+}
+
+.firstaid-copy li{
+    padding-right:4px;
+}
+
+.firstaid-copy li + li{
+    margin-top:0;
 }
 
 
@@ -3509,27 +3521,13 @@ margin:2px 0 0;
 
 
 <div class="firstaid-copy">
-
-<p>
-    A first aid box is available on the shelf next to the Kitchen Sink.
-</p>
-
-<p>
-    A spare fuse is also available nearby in case of an electrical trip.
-</p>
-
-<p>
-    If a power circuit trips - switch OFF heavy appliances first.
-</p>
-
-<p>
-    Contact the host if assistance is required.
-</p>
-
+    <ul>
+        <li>A first aid box is on the shelf next to the kitchen sink.</li>
+        <li>A spare fuse is available nearby.</li>
+        <li>If a power circuit trips, switch off heavy appliances first.</li>
+        <li>Contact the host if assistance is required.</li>
+    </ul>
 </div>
-
-</div>
-
 
 <!-- CAB SERVICES -->
 
