@@ -1314,17 +1314,28 @@ margin:2px 0 0;
     text-align:center;
     color:#463322;
     margin-bottom:14px;
-}
-
+} 
 .nearby-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(6,minmax(0,1fr));
     grid-template-rows:auto auto auto;
     column-gap:12px;
     row-gap:14px;
     width:100%;
 }
 
+.nearby-grid > .essential-card:not(.pharmacy-card):not(.hospital-card){
+    grid-column:span 3;
+}
+
+.pharmacy-card{
+    grid-column:span 4;
+}
+
+.hospital-card{
+    grid-column:span 2;
+}
+```
 
 /* =========================================================
    SECTION 3 — ESSENTIAL CARD
@@ -3245,7 +3256,7 @@ margin:2px 0 0;
 
 <!-- PHARMACY -->
 
-<div class="essential-card">
+<div class="essential-card pharmacy-card">
 
 <div class="essential-card-header">
 
