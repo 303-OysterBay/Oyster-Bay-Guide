@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,29 @@
 <title>303 OYSTER BAY • Salt Sand Stories</title>
 
 <style>
-/* GLOBAL LAYOUT */
+/* =========================================================
+   303 OYSTER BAY — FINAL GLOBAL STYLE FRAMEWORK
+   Keep this framework unchanged for future guide pages.
+   Change page content and section headings only.
+   ========================================================= */
+
+:root {
+    --sand: #e8d8bd;
+    --ink: #463322;
+    --frame: rgba(248, 240, 223, 0.88);
+    --frame-left: 12px;
+    --frame-right: 12px;
+    --frame-top: 40px;
+    --frame-bottom: 90px;
+    --frame-radius: 16px;
+    --frame-shadow: 0 3px 10px rgba(70, 42, 20, 0.13);
+    --top-nav-width: 105%;
+    --bottom-nav-height: 135px;
+    --bottom-hotspot-height: 110px;
+    --logo-width: 125px;
+    --logo-bottom: 20px;
+    --guest-badge-width: 92px;
+}
 
 * {
     box-sizing: border-box;
@@ -27,8 +50,8 @@ html {
 
 body {
     font-family: Georgia, "Times New Roman", serif;
-    background: #e8d8bd;
-    color: #463322;
+    background: var(--sand);
+    color: var(--ink);
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: none;
@@ -59,23 +82,21 @@ body::-webkit-scrollbar {
 }
 
 /* BEIGE CONTENT FRAME */
-
 .guide-placeholder {
     position: absolute;
-    left: 12px;
-    right: 12px;
-    top: 40px;
-    bottom: 90px;
+    left: var(--frame-left);
+    right: var(--frame-right);
+    top: var(--frame-top);
+    bottom: var(--frame-bottom);
     padding: 12px 18px 14px;
-    background: rgba(248,240,223,.88);
-    border-radius: 16px;
-    box-shadow: 0 3px 10px rgba(70,42,20,.13);
+    background: var(--frame);
+    border-radius: var(--frame-radius);
+    box-shadow: var(--frame-shadow);
     overflow: hidden;
     z-index: 10;
 }
 
 /* SECTION HEADING */
-
 .guide-placeholder h2 {
     margin: 0;
     padding: 0;
@@ -83,12 +104,11 @@ body::-webkit-scrollbar {
     font-weight: normal;
     line-height: 1.05;
     letter-spacing: 1.5px;
-    color: #463322;
+    color: var(--ink);
     text-align: center;
 }
 
 /* TOP NAVIGATION ARTWORK */
-
 .top-nav {
     position: fixed;
     top: 0;
@@ -101,7 +121,7 @@ body::-webkit-scrollbar {
 
 .top-nav-art {
     display: block;
-    width: 105%;
+    width: var(--top-nav-width);
     height: auto;
     position: relative;
     left: 50%;
@@ -114,7 +134,6 @@ body::-webkit-scrollbar {
 }
 
 /* TOP NAVIGATION CLICK AREAS */
-
 .top-nav-hit {
     position: absolute;
     top: 0;
@@ -154,8 +173,7 @@ body::-webkit-scrollbar {
     width: 19%;
 }
 
-/* DROPDOWN MENUS — CLOSED INITIALLY */
-
+/* DROPDOWNS — CLOSED INITIALLY */
 .top-nav-dropdown-holder {
     position: absolute;
     top: 0;
@@ -182,13 +200,13 @@ body::-webkit-scrollbar {
     max-width: 85vw;
     padding: 6px;
     border-radius: 12px;
-    background: rgba(248,240,223,.97);
-    border: 1px solid rgba(112,69,31,.28);
-    box-shadow: 0 5px 14px rgba(70,42,20,.20);
+    background: rgba(248, 240, 223, 0.97);
+    border: 1px solid rgba(112, 69, 31, 0.28);
+    box-shadow: 0 5px 14px rgba(70, 42, 20, 0.20);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-5px);
-    transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
     pointer-events: none;
 }
 
@@ -206,11 +224,11 @@ body::-webkit-scrollbar {
 .dropdown a {
     display: block;
     padding: 12px 10px;
-    color: #463322;
+    color: var(--ink);
     text-decoration: none;
     font-size: 14px;
     line-height: 1.3;
-    border-bottom: 1px solid rgba(112,69,31,.16);
+    border-bottom: 1px solid rgba(112, 69, 31, 0.16);
 }
 
 .dropdown a:last-child {
@@ -218,16 +236,15 @@ body::-webkit-scrollbar {
 }
 
 .dropdown a:active {
-    background: rgba(200,180,145,.25);
+    background: rgba(200, 180, 145, 0.25);
 }
 
 /* GUEST FAVOURITE BADGE */
-
 .guest-favourite-link {
     position: absolute;
     top: 5px;
     right: 6px;
-    width: 92px;
+    width: var(--guest-badge-width);
     max-width: none;
     height: auto;
     z-index: 20;
@@ -240,15 +257,14 @@ body::-webkit-scrollbar {
     height: auto;
 }
 
-/* FIXED BOTTOM NAVIGATION */
-
+/* FIXED BOTTOM NAVIGATION ARTWORK */
 .bottom-nav {
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 135px;
+    height: var(--bottom-nav-height);
     z-index: 30;
     pointer-events: none;
 }
@@ -266,11 +282,10 @@ body::-webkit-scrollbar {
 }
 
 /* BOTTOM NAVIGATION CLICK AREAS */
-
 .nav-hotspot {
     position: absolute;
     bottom: 0;
-    height: 110px;
+    height: var(--bottom-hotspot-height);
     z-index: 45;
     display: block;
     background: transparent;
@@ -300,14 +315,13 @@ body::-webkit-scrollbar {
     width: 18%;
 }
 
-/* FIXED SAND LOGO */
-
+/* FIXED CENTRAL LOGO */
 .sand-logo {
     position: fixed;
     left: 50%;
-    bottom: 20px;
+    bottom: var(--logo-bottom);
     transform: translateX(-50%);
-    width: 125px;
+    width: var(--logo-width);
     z-index: 40;
     display: block;
     pointer-events: auto;
@@ -320,17 +334,15 @@ body::-webkit-scrollbar {
     height: auto;
 }
 
-/* SECTION CONTENT — HEADING NEAR TOP OF FRAME */
-
+/* CONTENT AREA — HEADING POSITION */
 .section-content {
     position: absolute;
     inset: 0;
-    padding: 0 100px 12px;
+    padding: 24px 100px 12px;
     overflow: auto;
 }
 
-/* MOBILE RESPONSIVE RULES */
-
+/* RESPONSIVE RULES */
 @media (max-width: 600px) {
     .guide-placeholder h2 {
         font-size: 22px;
@@ -355,15 +367,9 @@ body::-webkit-scrollbar {
 <body>
 
 <!-- FIXED TOP NAVIGATION -->
-
 <nav class="top-nav" aria-label="Live Guide navigation">
-
-    <img
-        src="Room%20top%20nav%20bar.png"
-        class="top-nav-art"
-        alt=""
-        aria-hidden="true"
-    >
+    <img src="Room%20top%20nav%20bar.png"
+         class="top-nav-art" alt="" aria-hidden="true">
 
     <a href="#story"
        class="top-nav-hit top-nav-story"
@@ -389,16 +395,14 @@ body::-webkit-scrollbar {
        class="top-nav-hit top-nav-rules"
        aria-label="House Rules"></a>
 
-    <div class="top-nav-dropdown-holder bedrooms-holder"
-         id="bedroomsHolder">
+    <div class="top-nav-dropdown-holder bedrooms-holder" id="bedroomsHolder">
         <div class="dropdown">
             <a href="#green-room">Green Room</a>
             <a href="#blue-room">Blue Room</a>
         </div>
     </div>
 
-    <div class="top-nav-dropdown-holder manuals-holder"
-         id="manualsHolder">
+    <div class="top-nav-dropdown-holder manuals-holder" id="manualsHolder">
         <div class="dropdown">
             <a href="#hob-chimney">Hob &amp; Chimney</a>
             <a href="#water-purifier">Water Purifier</a>
@@ -406,19 +410,15 @@ body::-webkit-scrollbar {
             <a href="#curtains-sliding-door">Curtains &amp; Sliding Door</a>
         </div>
     </div>
-
 </nav>
 
 <!-- NINE FULL-SCREEN SECTIONS -->
-
 <main class="guide-page">
 
     <section class="guide-section" id="story">
         <div class="guide-placeholder">
             <a class="guest-favourite-link" href="#story">
-                <img src="guest-favourite.png"
-                     class="guest-favourite"
-                     alt="Airbnb Guest Favourite">
+                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
             </a>
             <div class="section-content">
                 <h2>THE STORY</h2>
@@ -429,9 +429,7 @@ body::-webkit-scrollbar {
     <section class="guide-section" id="green-room">
         <div class="guide-placeholder">
             <a class="guest-favourite-link" href="#green-room">
-                <img src="guest-favourite.png"
-                     class="guest-favourite"
-                     alt="Airbnb Guest Favourite">
+                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
             </a>
             <div class="section-content">
                 <h2>GREEN ROOM</h2>
@@ -442,9 +440,7 @@ body::-webkit-scrollbar {
     <section class="guide-section" id="blue-room">
         <div class="guide-placeholder">
             <a class="guest-favourite-link" href="#blue-room">
-                <img src="guest-favourite.png"
-                     class="guest-favourite"
-                     alt="Airbnb Guest Favourite">
+                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
             </a>
             <div class="section-content">
                 <h2>BLUE ROOM</h2>
@@ -455,9 +451,7 @@ body::-webkit-scrollbar {
     <section class="guide-section" id="kitchen">
         <div class="guide-placeholder">
             <a class="guest-favourite-link" href="#kitchen">
-                <img src="guest-favourite.png"
-                     class="guest-favourite"
-                     alt="Airbnb Guest Favourite">
+                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
             </a>
             <div class="section-content">
                 <h2>KITCHEN</h2>
@@ -468,9 +462,7 @@ body::-webkit-scrollbar {
     <section class="guide-section" id="hob-chimney">
         <div class="guide-placeholder">
             <a class="guest-favourite-link" href="#hob-chimney">
-                <img src="guest-favourite.png"
-                     class="guest-favourite"
-                     alt="Airbnb Guest Favourite">
+                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
             </a>
             <div class="section-content">
                 <h2>HOB &amp; CHIMNEY</h2>
@@ -481,9 +473,7 @@ body::-webkit-scrollbar {
     <section class="guide-section" id="water-purifier">
         <div class="guide-placeholder">
             <a class="guest-favourite-link" href="#water-purifier">
-                <img src="guest-favourite.png"
-                     class="guest-favourite"
-                     alt="Airbnb Guest Favourite">
+                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
             </a>
             <div class="section-content">
                 <h2>WATER PURIFIER</h2>
@@ -494,9 +484,7 @@ body::-webkit-scrollbar {
     <section class="guide-section" id="sliding-folding-door">
         <div class="guide-placeholder">
             <a class="guest-favourite-link" href="#sliding-folding-door">
-                <img src="guest-favourite.png"
-                     class="guest-favourite"
-                     alt="Airbnb Guest Favourite">
+                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
             </a>
             <div class="section-content">
                 <h2>SLIDING &amp; FOLDING DOOR</h2>
@@ -507,9 +495,7 @@ body::-webkit-scrollbar {
     <section class="guide-section" id="curtains-sliding-door">
         <div class="guide-placeholder">
             <a class="guest-favourite-link" href="#curtains-sliding-door">
-                <img src="guest-favourite.png"
-                     class="guest-favourite"
-                     alt="Airbnb Guest Favourite">
+                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
             </a>
             <div class="section-content">
                 <h2>CURTAINS &amp; SLIDING DOOR</h2>
@@ -520,9 +506,7 @@ body::-webkit-scrollbar {
     <section class="guide-section" id="house-rules">
         <div class="guide-placeholder">
             <a class="guest-favourite-link" href="#house-rules">
-                <img src="guest-favourite.png"
-                     class="guest-favourite"
-                     alt="Airbnb Guest Favourite">
+                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
             </a>
             <div class="section-content">
                 <h2>HOUSE RULES</h2>
@@ -532,47 +516,27 @@ body::-webkit-scrollbar {
 
 </main>
 
-<!-- FIXED SAND LOGO -->
-
-<a href="index.html" class="sand-logo"
-   aria-label="303 Oyster Bay Home">
+<!-- FIXED CENTRAL LOGO -->
+<a href="index.html" class="sand-logo" aria-label="303 Oyster Bay Home">
     <img src="logo.png" alt="303 Oyster Bay">
 </a>
 
-<!-- FIXED BOTTOM NAVIGATION ART -->
-
-<nav class="bottom-nav" aria-label="Main navigation">
-    <img
-        src="Stay%20Page%20Bottom%20Nav.png"
-        class="bottom-nav-image"
-        alt=""
-        aria-hidden="true"
-    >
+<!-- FIXED BOTTOM NAVIGATION ARTWORK -->
+<nav class="bottom-nav" aria-label="Main navigation artwork">
+    <img src="Stay%20Page%20Bottom%20Nav.png"
+         class="bottom-nav-image" alt="" aria-hidden="true">
 </nav>
 
+<!-- FIXED BOTTOM NAVIGATION CLICK AREAS -->
 <nav class="bottom-nav" aria-label="Navigation links">
-
-    <a href="index.html"
-       class="nav-hotspot hotspot-home"
-       aria-label="Home"></a>
-
-    <a href="arrival.html"
-       class="nav-hotspot hotspot-stay"
-       aria-label="Stay"></a>
-
-    <a href="live.html"
-       class="nav-hotspot hotspot-live"
-       aria-label="Live"></a>
-
-    <a href="In%20and%20around.pdf"
-       class="nav-hotspot hotspot-explore"
-       aria-label="Explore"></a>
-
+    <a href="index.html" class="nav-hotspot hotspot-home" aria-label="Home"></a>
+    <a href="arrival.html" class="nav-hotspot hotspot-stay" aria-label="Stay"></a>
+    <a href="live.html" class="nav-hotspot hotspot-live" aria-label="Live"></a>
+    <a href="In%20and%20around.pdf" class="nav-hotspot hotspot-explore" aria-label="Explore"></a>
 </nav>
 
 <script>
-/* DROPDOWN INTERACTION — BOTH CLOSED INITIALLY */
-
+/* DROPDOWN INTERACTION — BOTH MENUS START CLOSED */
 function closeDropdowns() {
     document.querySelectorAll(".top-nav-dropdown-holder")
         .forEach(holder => holder.classList.remove("open"));
