@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -381,6 +380,141 @@ body {
   }
 }
 </style>
+
+<style>
+/* =====================================================
+   HOUSE RULES — SECTION-SPECIFIC STYLES ONLY
+   The shared page frame and title remain controlled by
+   the original global CSS above.
+   ===================================================== */
+
+.house-rules-content {
+  color: #572713;
+  font-family: Georgia, "Times New Roman", serif;
+  width: 100%;
+  padding: 4px 0 0;
+}
+
+.house-rules-subtitle {
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.3;
+  margin: 0 0 9px;
+  font-style: italic;
+}
+
+.house-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 8px;
+  row-gap: 12px;
+}
+
+.house-rule {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 2px;
+}
+
+.house-rule svg {
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.house-rule h3 {
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+.house-rule p {
+  font-size: 9px;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.house-rules-additional {
+  margin-top: 10px;
+  padding-top: 7px;
+  border-top: 1px solid rgba(87, 39, 19, 0.35);
+}
+
+.house-rules-additional h3 {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  margin: 0 0 7px;
+}
+
+.house-rules-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.house-rules-info {
+  text-align: center;
+  font-size: 9px;
+  line-height: 1.25;
+}
+
+.house-rules-info svg {
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin: 0 auto 3px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Narrow screens: retain four columns and fit the content */
+
+@media (max-width: 390px) {
+  .house-rules-content {
+    padding-top: 2px;
+  }
+
+  .house-rules-grid {
+    column-gap: 4px;
+    row-gap: 9px;
+  }
+
+  .house-rule svg {
+    width: 43px;
+    height: 43px;
+    flex-basis: 43px;
+  }
+
+  .house-rule h3 {
+    font-size: 9px;
+  }
+
+  .house-rule p,
+  .house-rules-info {
+    font-size: 8px;
+  }
+
+  .house-rules-additional {
+    margin-top: 8px;
+    padding-top: 6px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -466,7 +600,7 @@ body {
 
   <section class="guide-section" id="green-room">
     <div class="arrival-content">
-      <a class="guest-favourite-link" href="#story">
+      <a class="guest-favourite-link" href="#green-room">
         <img
           src="guest-favourite.png"
           class="guest-favourite"
@@ -481,7 +615,7 @@ body {
 
   <section class="guide-section" id="blue-room">
     <div class="arrival-content">
-      <a class="guest-favourite-link" href="#story">
+      <a class="guest-favourite-link" href="#blue-room">
         <img
           src="guest-favourite.png"
           class="guest-favourite"
@@ -496,7 +630,7 @@ body {
 
   <section class="guide-section" id="kitchen">
     <div class="arrival-content">
-      <a class="guest-favourite-link" href="#story">
+      <a class="guest-favourite-link" href="#kitchen">
         <img
           src="guest-favourite.png"
           class="guest-favourite"
@@ -511,7 +645,7 @@ body {
 
   <section class="guide-section" id="hob-chimney">
     <div class="arrival-content">
-      <a class="guest-favourite-link" href="#story">
+      <a class="guest-favourite-link" href="#hob-chimney">
         <img
           src="guest-favourite.png"
           class="guest-favourite"
@@ -526,7 +660,7 @@ body {
 
   <section class="guide-section" id="water-purifier">
     <div class="arrival-content">
-      <a class="guest-favourite-link" href="#story">
+      <a class="guest-favourite-link" href="#water-purifier">
         <img
           src="guest-favourite.png"
           class="guest-favourite"
@@ -541,7 +675,7 @@ body {
 
   <section class="guide-section" id="sliding-folding-door">
     <div class="arrival-content">
-      <a class="guest-favourite-link" href="#story">
+      <a class="guest-favourite-link" href="#sliding-folding-door">
         <img
           src="guest-favourite.png"
           class="guest-favourite"
@@ -556,7 +690,7 @@ body {
 
   <section class="guide-section" id="curtains-sliding-door">
     <div class="arrival-content">
-      <a class="guest-favourite-link" href="#story">
+      <a class="guest-favourite-link" href="#curtains-sliding-door">
         <img
           src="guest-favourite.png"
           class="guest-favourite"
@@ -571,15 +705,200 @@ body {
 
   <section class="guide-section" id="house-rules">
     <div class="arrival-content">
-      <a class="guest-favourite-link" href="#story">
+
+      <a class="guest-favourite-link" href="#house-rules">
         <img
           src="guest-favourite.png"
           class="guest-favourite"
           alt="Airbnb Guest Favourite">
       </a>
+
+      <!-- Title comes from the existing global CSS -->
       <header class="arrival-header">
         <h2 class="arrival-title">HOUSE RULES</h2>
       </header>
+
+      <div class="house-rules-content">
+
+        <p class="house-rules-subtitle">
+          For a comfortable stay for everyone.
+        </p>
+
+        <div class="house-rules-grid">
+
+          <div class="house-rule">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 2"/>
+            </svg>
+            <h3>CHECK-IN</h3>
+            <p>12:00 PM</p>
+          </div>
+
+          <div class="house-rule">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 2"/>
+            </svg>
+            <h3>CHECK-OUT</h3>
+            <p>11:00 AM</p>
+          </div>
+
+          <div class="house-rule">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 4l16 16M9 9c-1-2 0-4 3-4 3 0 4 2 3 4"/>
+              <path d="M7 12c0 4 2 7 5 7s5-3 5-7"/>
+              <path d="M3 21L21 3"/>
+            </svg>
+            <h3>NO SMOKING</h3>
+            <p>Strictly prohibited indoors.</p>
+          </div>
+
+          <div class="house-rule">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 10v4h4l5 4V6l-5 4H4z"/>
+              <path d="M17 9l4 6M21 9l-4 6"/>
+            </svg>
+            <h3>NO LOUD MUSIC</h3>
+            <p>Keep music and TV volume low. Respect neighbours.</p>
+          </div>
+
+          <div class="house-rule">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="9" cy="8" r="3"/>
+              <circle cx="17" cy="9" r="2.5"/>
+              <path d="M3 20v-2a6 6 0 0 1 12 0v2M15 15a5 5 0 0 1 6 5"/>
+              <path d="M3 3l18 18"/>
+            </svg>
+            <h3>NO PARTIES</h3>
+            <p>No parties, gatherings or events.</p>
+          </div>
+
+          <div class="house-rule">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 2"/>
+            </svg>
+            <h3>SILENT HOURS</h3>
+            <p>10 PM – 7 AM. Respect the neighbourhood.</p>
+          </div>
+
+          <div class="house-rule">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="9" cy="8" r="3"/>
+              <path d="M3 20v-2a6 6 0 0 1 12 0v2"/>
+              <path d="M17 8h5M19.5 5.5v5"/>
+            </svg>
+            <h3>MAX GUESTS</h3>
+            <p>Registered guests only. No visitors.</p>
+          </div>
+
+          <div class="house-rule">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 13c0-5 3-8 8-8s8 3 8 8v3a3 3 0 0 1-3 3h-2v-5h5"/>
+              <path d="M4 13v3a3 3 0 0 0 3 3h2v-5H4"/>
+              <path d="M9 10h.01M15 10h.01"/>
+            </svg>
+            <h3>NO PETS</h3>
+            <p>Pets are not allowed.</p>
+          </div>
+
+          <div class="house-rule">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7l8-4 8 4-8 4-8-4z"/>
+              <path d="M4 7v10l8 4 8-4V7M12 11v10"/>
+            </svg>
+            <h3>YOUR BELONGINGS</h3>
+            <p>Please safeguard personal belongings.</p>
+          </div>
+
+          <div class="house-rule">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16M10 11v6M14 11v6"/>
+              <path d="M6 7l1 14h10l1-14M9 7V4h6v3"/>
+              <path d="M3 3l18 18"/>
+            </svg>
+            <h3>SEGREGATE WASTE</h3>
+            <p>Separate dry and wet waste.</p>
+          </div>
+
+          <div class="house-rule">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 17l4-5 4 3 4-7 6 9"/>
+              <path d="M3 21h18"/>
+              <path d="M5 5l14 14"/>
+            </svg>
+            <h3>KEEP SAND OUTSIDE</h3>
+            <p>Please clean off sand before entering.</p>
+          </div>
+
+          <div class="house-rule">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 11l9-7 9 7v9H3z"/>
+              <path d="M7 20v-6h10v6"/>
+              <path d="M4 3l16 18"/>
+            </svg>
+            <h3>DRY BEFORE SITTING</h3>
+            <p>No sitting on sofas or beds in wet towels or clothes.</p>
+          </div>
+
+        </div>
+
+        <div class="house-rules-additional">
+          <h3>ADDITIONAL INFORMATION</h3>
+
+          <div class="house-rules-info-grid">
+
+            <div class="house-rules-info">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2 9a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8 15a5 5 0 0 1 8 0M12 19h.01"/>
+              </svg>
+              Wi-Fi details are provided in the apartment.
+            </div>
+
+            <div class="house-rules-info">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 4h14v16H5zM9 8h6M9 12h6"/>
+                <path d="M9 16h3"/>
+              </svg>
+              Contact your host if you need assistance.
+            </div>
+
+            <div class="house-rules-info">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10 3h4v6h-4zM7 9h10v12H7z"/>
+                <path d="M12 12v6M9 15h6"/>
+              </svg>
+              First-aid kit available.
+            </div>
+
+            <div class="house-rules-info">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 3v7M15 3v7M7 10h10v3a5 5 0 0 1-10 0zM12 18v3"/>
+              </svg>
+              Universal adapters available.
+            </div>
+
+            <div class="house-rules-info">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3l8 4v5c0 5-3 8-8 9-5-1-8-4-8-9V7z"/>
+                <path d="M8 12l3 3 5-6"/>
+              </svg>
+              Please keep the space clean and tidy.
+            </div>
+
+            <div class="house-rules-info">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
+              </svg>
+              Thank you for being a considerate guest.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
