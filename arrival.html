@@ -1315,31 +1315,49 @@ margin:2px 0 0;
     color:#463322;
     margin-bottom:14px;
 } 
+
 .nearby-grid{
     display:grid;
     grid-template-columns:repeat(6,minmax(0,1fr));
-    grid-template-rows:auto auto auto;
     column-gap:12px;
     row-gap:14px;
     width:100%;
 }
 
-.nearby-grid > .essential-card:not(.pharmacy-card):not(.hospital-card){
-    grid-column:span 3;
-}
-
+/* First row: Pharmacy and Hospital */
 .pharmacy-card{
     grid-column:span 4;
+    grid-row:1;
 }
 
 .hospital-card{
     grid-column:span 2;
+    grid-row:1;
 }
-```
+
+/* Second row: Super Market and Cab Services */
+.nearby-grid > .essential-card:nth-of-type(3){
+    grid-column:span 3;
+    grid-row:2;
+}
+
+.cab-card{
+    grid-column:span 3;
+    grid-row:2;
+}
+
+/* Third row: Electrical & First Aid */
+.nearby-grid > .essential-card:nth-of-type(4){
+    grid-column:1 / -1;
+    grid-row:3;
+}
+
+
 
 /* =========================================================
    SECTION 3 — ESSENTIAL CARD
    ========================================================= */
+
 
 .essential-card{
     position:relative;
@@ -1347,8 +1365,14 @@ margin:2px 0 0;
     padding:14px 12px;
     border-radius:9px;
     background:rgba(255,255,255,.19);
-    border:1px solid rgba(112,69,31,.19);
+    border:1px solid rgba(112,69,31,.45);
+    box-sizing:border-box;
 }
+
+.pharmacy-card .essential-card-header{
+    justify-content:center;
+}
+
 
 .essential-card-header{
     display:flex;
