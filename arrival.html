@@ -3863,7 +3863,7 @@ padding-bottom:0;
 
 .beach-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 88px;
+ grid-template-columns: 88px minmax(0, 1fr);
   align-items: center;
   gap: 10px;
   padding: 7px 0;
@@ -4012,7 +4012,7 @@ padding-bottom:0;
   }
 
   .beach-row {
-    grid-template-columns: minmax(0, 1fr) 110px;
+     grid-template-columns: 110px minmax(0, 1fr);
     gap: 16px;
     padding: 10px 0;
   }
@@ -4032,13 +4032,17 @@ padding-bottom:0;
 
 /* MOBILE */
 @media (max-width: 600px) {
-  .beach-row,
+  .beach-row {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 8px;
+    padding: 6px 0;
+  }
+
   .beach-row.reverse {
     grid-template-columns: minmax(0, 1fr) 64px;
     gap: 8px;
     padding: 6px 0;
   }
-
   .beach-row.reverse .beach-art { order: 2; }
   .beach-row.reverse .beach-copy { order: 1; }
 
