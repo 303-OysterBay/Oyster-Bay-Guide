@@ -1346,15 +1346,44 @@ margin:2px 0 0;
     grid-row:2;
 }
 
+.delivery-card{
+    grid-column:1 / -1;
+    grid-row:3;
+}
+
 .electrical-card{
     grid-column:1 / -1;
     grid-row:4;
 }
 
-.delivery-card{
-    grid-column:1 / -1;
-    grid-row:3;
+
+.delivery-card .essential-card-header{
+    justify-content:center;
+    margin-bottom:8px;
 }
+
+.delivery-list{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    align-items:center;
+    gap:8px;
+    width:100%;
+    text-align:center;
+}
+
+.delivery-service{
+    min-width:0;
+    padding:5px 2px;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+.delivery-swiggy{color:#fc8019;}
+.delivery-zomato{color:#cb202d;}
+.delivery-blinkit{color:#e8a000;}
+.delivery-jiomart{color:#0078ad;}
 
 /* =========================================================
    SECTION 3 — ESSENTIAL CARD
@@ -1856,8 +1885,10 @@ margin:2px 0 0;
         font-size:12px !important;
     }
 
-    .cab-number{
-        font-size:13px !important;
+  .cab-number{
+    font-size:10px !important;
+    font-weight:400 !important;
+
     }
 
     .welcome-in-subtitle{
@@ -2128,9 +2159,10 @@ margin:2px 0 0;
         font-size:12px !important;
     }
 
-    .cab-number{
-        font-size:13px !important;
-    }
+   .cab-number{
+    font-size:10px !important;
+    font-weight:400 !important;
+}
 
     .welcome-in-subtitle{
         font-size:11px;
@@ -3522,8 +3554,27 @@ margin:2px 0 0;
 </div>
 
 </div>
+   </div>
 
+    <div class="delivery-list">
+        <div class="delivery-service">
+            <span class="delivery-swiggy">Swiggy</span>
+        </div>
 
+        <div class="delivery-service">
+            <span class="delivery-zomato">Zomato</span>
+        </div>
+
+        <div class="delivery-service">
+            <span class="delivery-blinkit">blinkit</span>
+        </div>
+
+        <div class="delivery-service">
+            <span class="delivery-jiomart">JioMart</span>
+        </div>
+    </div>
+
+</div>
 <!-- ELECTRICAL & FIRST AID -->
 
 <div class="essential-card electrical-card">
