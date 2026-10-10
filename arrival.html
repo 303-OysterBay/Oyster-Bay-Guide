@@ -1364,7 +1364,9 @@ margin:2px 0 0;
     box-sizing:border-box;
 }
 
-.pharmacy-card .essential-card-header{
+.pharmacy-card .essential-card-header,
+.supermarket-card .essential-card-header,
+.electrical-card .essential-card-header{
     justify-content:center;
 }
 
@@ -1418,7 +1420,7 @@ margin:2px 0 0;
 
 .pharmacy-name{
     font-family:Arial,sans-serif;
-    font-size:10px;
+    font-size:11px;
     font-weight:700;
     line-height:1.3;
     color:#463322;
@@ -1427,7 +1429,7 @@ margin:2px 0 0;
 }
 
 .pharmacy-location{
-    font-size:10px;
+    font-size:11px;
     line-height:1.3;
     color:#6b5540;
     margin-top:5px;
@@ -1444,14 +1446,14 @@ margin:2px 0 0;
 
 .pharmacy-phone{
     font-family:Arial,sans-serif;
-    font-size:9px;
+    font-size:10px;
     line-height:1.3;
     color:#463322;
 }
 
 .pharmacy-distance{
     font-family:Arial,sans-serif;
-    font-size:9px;
+    font-size:10px;
     font-weight:700;
     line-height:1.3;
     color:#a51f1f;
@@ -1472,14 +1474,14 @@ margin:2px 0 0;
 
 .hospital-name{
     font-family:Arial,sans-serif;
-    font-size:11px;
+    font-size:12px;
     font-weight:700;
     line-height:1.3;
     color:#463322;
 }
 
 .hospital-location{
-    font-size:10px;
+    font-size:11px;
     line-height:1.3;
     color:#6b5540;
     margin-top:5px;
@@ -1496,14 +1498,14 @@ margin:2px 0 0;
 
 .hospital-phone{
     font-family:Arial,sans-serif;
-    font-size:9px;
+    font-size:10px;
     line-height:1.3;
     color:#463322;
 }
 
 .hospital-distance{
     font-family:Arial,sans-serif;
-    font-size:9px;
+    font-size:10px;
     font-weight:700;
     line-height:1.3;
     color:#a51f1f;
@@ -1532,7 +1534,7 @@ margin:2px 0 0;
 
 .supermarket-name{
     font-family:Arial,sans-serif;
-    font-size:10px;
+    font-size:11px;
     font-weight:700;
     line-height:1.3;
     color:#463322;
@@ -1544,7 +1546,7 @@ margin:2px 0 0;
 
 .supermarket-phone{
     font-family:Arial,sans-serif;
-    font-size:9px;
+    font-size:10px;
     line-height:1.3;
     color:#463322;
     margin-top:7px;
@@ -1554,7 +1556,7 @@ margin:2px 0 0;
 
 .supermarket-distance{
     font-family:Arial,sans-serif;
-    font-size:9px;
+    font-size:10px;
     font-weight:700;
     line-height:1.3;
     color:#a51f1f;
@@ -1566,33 +1568,31 @@ margin:2px 0 0;
    SECTION 3 — ELECTRICAL & FIRST AID
    ========================================================= */
 .firstaid-copy{
-    font-size:13px;
+    font-size:13px !important;
     line-height:1.5;
     color:#6b5540;
 }
 
 .firstaid-copy ul{
-    display:flex;
-    flex-wrap:wrap;
-    column-gap:24px;
-    row-gap:5px;
+    display:block;
     margin:0;
-    padding-left:18px;
+    padding:0;
+    list-style:none;
 }
 
 .firstaid-copy li{
-    padding-right:4px;
+    display:inline;
+    font-size:13px !important;
 }
 
-.firstaid-copy li + li{
-    margin-top:0;
+.firstaid-copy li::after{
+    content:"  •  ";
+    padding:0 8px;
 }
 
-
-/* =========================================================
-   SECTION 3 — CAB SERVICES
-   ========================================================= */
-
+.firstaid-copy li:last-child::after{
+    content:"";
+}
 .cab-card{
     grid-column:span 3;
     grid-row:2;
@@ -1607,11 +1607,8 @@ margin:2px 0 0;
 }
 
 .cab-copy{
-    font-size:11px;
-    line-height:1.45;
-    color:#6b5540;
+    display:none;
 }
-
 .cab-contact{
     font-family:Arial,sans-serif;
     font-size:11px;
@@ -3572,16 +3569,18 @@ margin:2px 0 0;
 </div>
 
 
-<div class="cab-copy">
-    Cab services are available in the city under the flyover for pick-up and drop facilities.
-</div>
+<div class="cab-contacts-list">
 
-<div class="cab-contact">
-    Contact Ratnakar for Cabs.
-</div>
+    <div class="cab-person">
+        <div class="cab-contact">Ratnakar</div>
+        <div class="cab-number">9448983870</div>
+    </div>
 
-<div class="cab-number">
-    9448983870
+    <div class="cab-person">
+        <div class="cab-contact">Kusumdhara</div>
+        <div class="cab-number">9902387656</div>
+    </div>
+
 </div>
 
 </div>
