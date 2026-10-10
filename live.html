@@ -3,580 +3,664 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>303 OYSTER BAY • Salt Sand Stories</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salt Sand Stories | Live</title>
 
 <style>
-/* =========================================================
-   303 OYSTER BAY — FINAL GLOBAL STYLE FRAMEWORK
-   Keep this framework unchanged for future guide pages.
-   Change page content and section headings only.
-   ========================================================= */
-
-:root {
-    --sand: #e8d8bd;
-    --ink: #463322;
-    --frame: rgba(248, 240, 223, 0.88);
-    --frame-left: 12px;
-    --frame-right: 12px;
-    --frame-top: 46px;
-    --frame-bottom: 90px;
-    --frame-radius: 16px;
-    --frame-shadow: 0 3px 10px rgba(70, 42, 20, 0.13);
-    --top-nav-width: 105%;
-    --bottom-nav-height: 135px;
-    --bottom-hotspot-height: 110px;
-    --logo-width: 125px;
-    --logo-bottom: 20px;
-    --guest-badge-width: 92px;
-}
+/* =====================================================
+   SHARED PAGE FRAMEWORK
+   Keep these global layout values consistent with Arrival.
+   Change section content inside the beige frames only.
+   ===================================================== */
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html, body {
-    width: 100%;
-    height: 100%;
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    overscroll-behavior-y: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: none;
 }
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: var(--sand);
-    color: var(--ink);
-    overflow-x: hidden;
-    overflow-y: auto;
-    scrollbar-width: none;
-}
-
-body::-webkit-scrollbar {
-    width: 0;
-    height: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: #e8d8bd;
+  color: #463322;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .guide-page {
-    width: 100%;
-    min-height: 100%;
+  width: 100%;
+  min-height: 100%;
 }
 
 .guide-section {
-    position: relative;
-    width: 100%;
-    height: 100svh;
-    min-height: 100svh;
-    overflow: hidden;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    background-image: url("sand-background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background-image: url("sand-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* BEIGE CONTENT FRAME */
-.guide-placeholder {
-    position: absolute;
-    left: var(--frame-left);
-    right: var(--frame-right);
-    top: var(--frame-top);
-    bottom: 90px;
-    padding: 12px 18px 14px;
-    background: var(--frame);
-    border-radius: var(--frame-radius);
-    box-shadow: var(--frame-shadow);
-    overflow: hidden;
-    z-index: 10;
+/* The beige frame: same dimensions and treatment as Arrival */
+
+.arrival-content {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 40px;
+  bottom: 90px;
+  background: rgba(248, 240, 223, 0.88);
+  border-radius: 16px;
+  padding: 12px 18px 4px;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 3px 10px rgba(70, 42, 20, 0.13);
 }
 
-/* SECTION HEADING — MATCH ARRIVAL */
-.guide-placeholder h2 {
-    margin: 0;
-    padding: 0;
-    font-size: 27px;
-    font-weight: normal;
-    line-height: 1.05;
-    letter-spacing: 1.5px;
-    color: #463322;
-    text-align: center;
-}
-/* SECTION CONTENT — MATCH ARRIVAL HEADER POSITION */
-.section-content {
-    position: absolute;
-    inset: 0;
-    padding: 14px 100px 12px;
-    overflow: auto;
-}
-/* TOP NAVIGATION ARTWORK */
-.top-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 200;
-    pointer-events: none;
+/* Heading: same structure and typography as Arrival */
+
+.arrival-header {
+  width: 100%;
+  text-align: center;
+  padding: 2px 100px 0;
+  margin-bottom: 5px;
 }
 
-.top-nav-art {
-    display: block;
-    width: var(--top-nav-width);
-    height: auto;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.65;
-    z-index: 220;
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-drag: none;
+.arrival-title {
+  font-size: 27px;
+  font-weight: normal;
+  line-height: 1.05;
+  letter-spacing: 1.5px;
+  color: #463322;
+  margin-bottom: 7px;
 }
 
-/* TOP NAVIGATION CLICK AREAS */
-.top-nav-hit {
-    position: absolute;
-    top: 0;
-    height: 28%;
-    z-index: 230;
-    display: block;
-    pointer-events: auto;
-    border: 0;
-    background: transparent;
-    text-decoration: none;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-}
+/* Guest Favourite badge */
 
-.top-nav-story {
-    left: 0;
-    width: 21%;
-}
-
-.top-nav-bedrooms {
-    left: 21%;
-    width: 21%;
-}
-
-.top-nav-kitchen {
-    left: 42%;
-    width: 16%;
-}
-
-.top-nav-manuals {
-    left: 60%;
-    width: 21%;
-}
-
-.top-nav-rules {
-    right: 0;
-    width: 19%;
-}
-
-/* DROPDOWNS — CLOSED INITIALLY */
-.top-nav-dropdown-holder {
-    position: absolute;
-    top: 0;
-    height: 28%;
-    pointer-events: auto;
-    z-index: 240;
-}
-
-.bedrooms-holder {
-    left: 21%;
-    width: 21%;
-}
-
-.manuals-holder {
-    left: 60%;
-    width: 21%;
-}
-
-.dropdown {
-    position: absolute;
-    top: 100%;
-    left: 8%;
-    width: 180px;
-    max-width: 85vw;
-    padding: 6px;
-    border-radius: 12px;
-    background: rgba(248, 240, 223, 0.97);
-    border: 1px solid rgba(112, 69, 31, 0.28);
-    box-shadow: 0 5px 14px rgba(70, 42, 20, 0.20);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-5px);
-    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
-    pointer-events: none;
-}
-
-.manuals-holder .dropdown {
-    width: 245px;
-}
-
-.top-nav-dropdown-holder.open .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.dropdown a {
-    display: block;
-    padding: 12px 10px;
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 1.3;
-    border-bottom: 1px solid rgba(112, 69, 31, 0.16);
-}
-
-.dropdown a:last-child {
-    border-bottom: none;
-}
-
-.dropdown a:active {
-    background: rgba(200, 180, 145, 0.25);
-}
-
-/* GUEST FAVOURITE BADGE */
 .guest-favourite-link {
-    position: absolute;
-    top: 5px;
-    right: 6px;
-    width: var(--guest-badge-width);
-    max-width: none;
-    height: auto;
-    z-index: 20;
-    display: block;
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  width: 92px;
+  max-width: none;
+  height: auto;
+  z-index: 20;
+  display: block;
 }
 
 .guest-favourite {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-/* FIXED BOTTOM NAVIGATION ARTWORK */
+/* =====================================================
+   TOP NAVIGATION
+   Same positioning as Arrival.
+   Live artwork opacity is the only intended visual change.
+   ===================================================== */
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.top-nav-art {
+  display: block;
+  width: 105%;
+  height: auto;
+  position: relative;
+  left: 50%;
+  z-index: 220;
+  transform: translate(-50%, -47px);
+  opacity: 0.6;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Transparent clickable areas over the navigation artwork */
+
+.top-nav-hit {
+  position: absolute;
+  top: 0;
+  height: 58px;
+  display: block;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+  z-index: 230;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Adjust these hit areas only if the artwork's labels require it. */
+
+.top-nav-story {
+  left: 2%;
+  width: 15%;
+}
+
+.top-nav-bedrooms {
+  left: 18%;
+  width: 19%;
+}
+
+.top-nav-kitchen {
+  left: 38%;
+  width: 15%;
+}
+
+.top-nav-manuals {
+  left: 54%;
+  width: 19%;
+}
+
+.top-nav-rules {
+  left: 74%;
+  width: 23%;
+}
+
+/* Dropdown menus */
+
+.top-nav-dropdown-holder {
+  position: absolute;
+  top: 45px;
+  z-index: 240;
+  display: none;
+  min-width: 150px;
+  pointer-events: auto;
+}
+
+.top-nav-dropdown-holder.open {
+  display: block;
+}
+
+.bedrooms-holder {
+  left: 19%;
+}
+
+.manuals-holder {
+  left: 55%;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 165px;
+  padding: 6px 0;
+  background: rgba(248, 240, 223, 0.97);
+  border: 1px solid rgba(70, 51, 34, 0.22);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(70, 42, 20, 0.16);
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 13px;
+  color: #463322;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  line-height: 1.25;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown a:hover,
+.dropdown a:focus {
+  background: rgba(232, 216, 189, 0.7);
+}
+
+/* =====================================================
+   BOTTOM NAVIGATION
+   Same measurements and positions as Arrival.
+   ===================================================== */
+
 .bottom-nav {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: var(--bottom-nav-height);
-    z-index: 30;
-    pointer-events: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 135px;
+  z-index: 30;
+  pointer-events: none;
 }
 
 .bottom-nav-image {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    display: block;
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-drag: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-/* BOTTOM NAVIGATION CLICK AREAS */
-.nav-hotspot {
-    position: absolute;
-    bottom: 0;
-    height: var(--bottom-hotspot-height);
-    z-index: 45;
-    display: block;
-    background: transparent;
-    border: 0;
-    text-decoration: none;
-    pointer-events: auto;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.hotspot-home {
-    left: 0;
-    width: 17%;
-}
-
-.hotspot-stay {
-    left: 17%;
-    width: 18%;
-}
-
-.hotspot-live {
-    right: 18%;
-    width: 18%;
-}
-
-.hotspot-explore {
-    right: 0;
-    width: 18%;
-}
-
-/* FIXED CENTRAL LOGO */
 .sand-logo {
-    position: fixed;
-    left: 50%;
-    bottom: var(--logo-bottom);
-    transform: translateX(-50%);
-    width: var(--logo-width);
-    z-index: 40;
-    display: block;
-    pointer-events: auto;
-    -webkit-tap-highlight-color: transparent;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: 125px;
+  z-index: 40;
+  display: block;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .sand-logo img {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-/* CONTENT AREA — HEADING POSITION */
-.section-content {
-    position: absolute;
-    inset: 0;
-    padding: 2px 100px 12px;
-    overflow: auto;
+.nav-hotspot {
+  position: absolute;
+  bottom: 0;
+  height: 110px;
+  z-index: 45;
+  display: block;
+  background: transparent;
+  border: 0;
+  text-decoration: none;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* RESPONSIVE RULES */
+.hotspot-home {
+  left: 0;
+  width: 17%;
+}
+
+.hotspot-stay {
+  left: 17%;
+  width: 18%;
+}
+
+.hotspot-live {
+  right: 18%;
+  width: 18%;
+}
+
+.hotspot-explore {
+  right: 0;
+  width: 18%;
+}
+
+/* =====================================================
+   RESPONSIVE HEADING SPACING
+   ===================================================== */
+
 @media (max-width: 600px) {
-    .guide-placeholder h2 {
-        font-size: 22px;
-    }
+  .arrival-header {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
 
-    .dropdown {
-        width: 155px;
-    }
+  .arrival-title {
+    font-size: 25px;
+  }
 
-    .manuals-holder .dropdown {
-        width: 205px;
-    }
+  .top-nav-hit {
+    height: 48px;
+  }
 
-    .dropdown a {
-        padding: 11px 8px;
-        font-size: 13px;
-    }
+  .top-nav-dropdown-holder {
+    top: 38px;
+  }
+
+  .dropdown a {
+    font-size: 13px;
+    padding: 9px 11px;
+  }
+}
+
+@media (max-width: 390px) {
+  .arrival-header {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .arrival-title {
+    font-size: 23px;
+    letter-spacing: 1.2px;
+  }
+
+  .guest-favourite-link {
+    width: 78px;
+  }
+}
+
+@media (max-width: 360px) {
+  .arrival-header {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
+  .arrival-title {
+    font-size: 21px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- FIXED TOP NAVIGATION -->
+<!-- TOP NAVIGATION -->
+
 <nav class="top-nav" aria-label="Live Guide navigation">
-    <img src="Room%20top%20nav%20bar.png"
-         class="top-nav-art" alt="" aria-hidden="true">
 
-    <a href="#story"
-       class="top-nav-hit top-nav-story"
-       aria-label="Story"></a>
+  <img
+    src="Room%20top%20nav%20bar.png"
+    class="top-nav-art"
+    alt=""
+    aria-hidden="true"
+  >
 
-    <button type="button"
-        class="top-nav-hit top-nav-bedrooms"
-        aria-label="Bedrooms dropdown"
-        aria-expanded="false"
-        onclick="toggleDropdown('bedroomsHolder', this)"></button>
+  <a href="#story"
+     class="top-nav-hit top-nav-story"
+     aria-label="The Story"></a>
 
-    <a href="#kitchen"
-       class="top-nav-hit top-nav-kitchen"
-       aria-label="Kitchen"></a>
+  <button
+    type="button"
+    class="top-nav-hit top-nav-bedrooms"
+    aria-label="Bedrooms dropdown"
+    aria-expanded="false"
+    onclick="toggleDropdown('bedroomsHolder', this)">
+  </button>
 
-    <button type="button"
-        class="top-nav-hit top-nav-manuals"
-        aria-label="Manuals dropdown"
-        aria-expanded="false"
-        onclick="toggleDropdown('manualsHolder', this)"></button>
+  <a href="#kitchen"
+     class="top-nav-hit top-nav-kitchen"
+     aria-label="Kitchen"></a>
 
-    <a href="#house-rules"
-       class="top-nav-hit top-nav-rules"
-       aria-label="House Rules"></a>
+  <button
+    type="button"
+    class="top-nav-hit top-nav-manuals"
+    aria-label="Manuals dropdown"
+    aria-expanded="false"
+    onclick="toggleDropdown('manualsHolder', this)">
+  </button>
 
-    <div class="top-nav-dropdown-holder bedrooms-holder" id="bedroomsHolder">
-        <div class="dropdown">
-            <a href="#green-room">Green Room</a>
-            <a href="#blue-room">Blue Room</a>
-        </div>
+  <a href="#house-rules"
+     class="top-nav-hit top-nav-rules"
+     aria-label="House Rules"></a>
+
+  <div class="top-nav-dropdown-holder bedrooms-holder"
+       id="bedroomsHolder">
+    <div class="dropdown">
+      <a href="#green-room">Green Room</a>
+      <a href="#blue-room">Blue Room</a>
     </div>
+  </div>
 
-    <div class="top-nav-dropdown-holder manuals-holder" id="manualsHolder">
-        <div class="dropdown">
-            <a href="#hob-chimney">Hob &amp; Chimney</a>
-            <a href="#water-purifier">Water Purifier</a>
-            <a href="#sliding-folding-door">Sliding &amp; Folding Door</a>
-            <a href="#curtains-sliding-door">Curtains &amp; Sliding Door</a>
-        </div>
+  <div class="top-nav-dropdown-holder manuals-holder"
+       id="manualsHolder">
+    <div class="dropdown">
+      <a href="#hob-chimney">Hob &amp; Chimney</a>
+      <a href="#water-purifier">Water Purifier</a>
+      <a href="#sliding-folding-door">Sliding &amp; Folding Door</a>
+      <a href="#curtains-sliding-door">Curtains &amp; Sliding Door</a>
     </div>
+  </div>
+
 </nav>
 
-<!-- NINE FULL-SCREEN SECTIONS -->
+
+<!-- LIVE GUIDE SECTIONS -->
+
 <main class="guide-page">
 
-    <section class="guide-section" id="story">
-        <div class="guide-placeholder">
-            <a class="guest-favourite-link" href="#story">
-                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
-            </a>
-            <div class="section-content">
-                <h2>THE STORY</h2>
-            </div>
-        </div>
-    </section>
+  <section class="guide-section" id="story">
+    <div class="arrival-content">
+      <a class="guest-favourite-link" href="#story">
+        <img
+          src="guest-favourite.png"
+          class="guest-favourite"
+          alt="Airbnb Guest Favourite">
+      </a>
+      <header class="arrival-header">
+        <h1 class="arrival-title">THE STORY</h1>
+      </header>
+    </div>
+  </section>
 
-    <section class="guide-section" id="green-room">
-        <div class="guide-placeholder">
-            <a class="guest-favourite-link" href="#green-room">
-                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
-            </a>
-            <div class="section-content">
-                <h2>GREEN ROOM</h2>
-            </div>
-        </div>
-    </section>
 
-    <section class="guide-section" id="blue-room">
-        <div class="guide-placeholder">
-            <a class="guest-favourite-link" href="#blue-room">
-                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
-            </a>
-            <div class="section-content">
-                <h2>BLUE ROOM</h2>
-            </div>
-        </div>
-    </section>
+  <section class="guide-section" id="green-room">
+    <div class="arrival-content">
+      <a class="guest-favourite-link" href="#story">
+        <img
+          src="guest-favourite.png"
+          class="guest-favourite"
+          alt="Airbnb Guest Favourite">
+      </a>
+      <header class="arrival-header">
+        <h2 class="arrival-title">GREEN ROOM</h2>
+      </header>
+    </div>
+  </section>
 
-    <section class="guide-section" id="kitchen">
-        <div class="guide-placeholder">
-            <a class="guest-favourite-link" href="#kitchen">
-                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
-            </a>
-            <div class="section-content">
-                <h2>KITCHEN</h2>
-            </div>
-        </div>
-    </section>
 
-    <section class="guide-section" id="hob-chimney">
-        <div class="guide-placeholder">
-            <a class="guest-favourite-link" href="#hob-chimney">
-                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
-            </a>
-            <div class="section-content">
-                <h2>HOB &amp; CHIMNEY</h2>
-            </div>
-        </div>
-    </section>
+  <section class="guide-section" id="blue-room">
+    <div class="arrival-content">
+      <a class="guest-favourite-link" href="#story">
+        <img
+          src="guest-favourite.png"
+          class="guest-favourite"
+          alt="Airbnb Guest Favourite">
+      </a>
+      <header class="arrival-header">
+        <h2 class="arrival-title">BLUE ROOM</h2>
+      </header>
+    </div>
+  </section>
 
-    <section class="guide-section" id="water-purifier">
-        <div class="guide-placeholder">
-            <a class="guest-favourite-link" href="#water-purifier">
-                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
-            </a>
-            <div class="section-content">
-                <h2>WATER PURIFIER</h2>
-            </div>
-        </div>
-    </section>
 
-    <section class="guide-section" id="sliding-folding-door">
-        <div class="guide-placeholder">
-            <a class="guest-favourite-link" href="#sliding-folding-door">
-                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
-            </a>
-            <div class="section-content">
-                <h2>SLIDING &amp; FOLDING DOOR</h2>
-            </div>
-        </div>
-    </section>
+  <section class="guide-section" id="kitchen">
+    <div class="arrival-content">
+      <a class="guest-favourite-link" href="#story">
+        <img
+          src="guest-favourite.png"
+          class="guest-favourite"
+          alt="Airbnb Guest Favourite">
+      </a>
+      <header class="arrival-header">
+        <h2 class="arrival-title">KITCHEN</h2>
+      </header>
+    </div>
+  </section>
 
-    <section class="guide-section" id="curtains-sliding-door">
-        <div class="guide-placeholder">
-            <a class="guest-favourite-link" href="#curtains-sliding-door">
-                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
-            </a>
-            <div class="section-content">
-                <h2>CURTAINS &amp; SLIDING DOOR</h2>
-            </div>
-        </div>
-    </section>
 
-    <section class="guide-section" id="house-rules">
-        <div class="guide-placeholder">
-            <a class="guest-favourite-link" href="#house-rules">
-                <img src="guest-favourite.png" class="guest-favourite" alt="Airbnb Guest Favourite">
-            </a>
-            <div class="section-content">
-                <h2>HOUSE RULES</h2>
-            </div>
-        </div>
-    </section>
+  <section class="guide-section" id="hob-chimney">
+    <div class="arrival-content">
+      <a class="guest-favourite-link" href="#story">
+        <img
+          src="guest-favourite.png"
+          class="guest-favourite"
+          alt="Airbnb Guest Favourite">
+      </a>
+      <header class="arrival-header">
+        <h2 class="arrival-title">HOB &amp; CHIMNEY</h2>
+      </header>
+    </div>
+  </section>
+
+
+  <section class="guide-section" id="water-purifier">
+    <div class="arrival-content">
+      <a class="guest-favourite-link" href="#story">
+        <img
+          src="guest-favourite.png"
+          class="guest-favourite"
+          alt="Airbnb Guest Favourite">
+      </a>
+      <header class="arrival-header">
+        <h2 class="arrival-title">WATER PURIFIER</h2>
+      </header>
+    </div>
+  </section>
+
+
+  <section class="guide-section" id="sliding-folding-door">
+    <div class="arrival-content">
+      <a class="guest-favourite-link" href="#story">
+        <img
+          src="guest-favourite.png"
+          class="guest-favourite"
+          alt="Airbnb Guest Favourite">
+      </a>
+      <header class="arrival-header">
+        <h2 class="arrival-title">SLIDING &amp; FOLDING DOOR</h2>
+      </header>
+    </div>
+  </section>
+
+
+  <section class="guide-section" id="curtains-sliding-door">
+    <div class="arrival-content">
+      <a class="guest-favourite-link" href="#story">
+        <img
+          src="guest-favourite.png"
+          class="guest-favourite"
+          alt="Airbnb Guest Favourite">
+      </a>
+      <header class="arrival-header">
+        <h2 class="arrival-title">CURTAINS &amp; SLIDING DOOR</h2>
+      </header>
+    </div>
+  </section>
+
+
+  <section class="guide-section" id="house-rules">
+    <div class="arrival-content">
+      <a class="guest-favourite-link" href="#story">
+        <img
+          src="guest-favourite.png"
+          class="guest-favourite"
+          alt="Airbnb Guest Favourite">
+      </a>
+      <header class="arrival-header">
+        <h2 class="arrival-title">HOUSE RULES</h2>
+      </header>
+    </div>
+  </section>
 
 </main>
 
-<!-- FIXED CENTRAL LOGO -->
-<a href="index.html" class="sand-logo" aria-label="303 Oyster Bay Home">
-    <img src="logo.png" alt="303 Oyster Bay">
+
+<!-- BOTTOM NAVIGATION -->
+
+<div class="bottom-nav" aria-hidden="true">
+  <img
+    src="Stay%20Page%20Bottom%20Nav.png"
+    class="bottom-nav-image"
+    alt="">
+</div>
+
+<a class="sand-logo" href="index.html" aria-label="303 Oyster Bay Home">
+  <img src="logo.png" alt="303 Oyster Bay">
 </a>
 
-<!-- FIXED BOTTOM NAVIGATION ARTWORK -->
-<nav class="bottom-nav" aria-label="Main navigation artwork">
-    <img src="Stay%20Page%20Bottom%20Nav.png"
-         class="bottom-nav-image" alt="" aria-hidden="true">
+<nav aria-label="Main navigation">
+  <a href="index.html"
+     class="nav-hotspot hotspot-home"
+     aria-label="Home"></a>
+
+  <a href="arrival.html"
+     class="nav-hotspot hotspot-stay"
+     aria-label="Stay"></a>
+
+  <a href="live.html"
+     class="nav-hotspot hotspot-live"
+     aria-label="Live"></a>
+
+  <a href="In%20and%20around.pdf"
+     class="nav-hotspot hotspot-explore"
+     aria-label="Explore"></a>
 </nav>
 
-<!-- FIXED BOTTOM NAVIGATION CLICK AREAS -->
-<nav class="bottom-nav" aria-label="Navigation links">
-    <a href="index.html" class="nav-hotspot hotspot-home" aria-label="Home"></a>
-    <a href="arrival.html" class="nav-hotspot hotspot-stay" aria-label="Stay"></a>
-    <a href="live.html" class="nav-hotspot hotspot-live" aria-label="Live"></a>
-    <a href="In%20and%20around.pdf" class="nav-hotspot hotspot-explore" aria-label="Explore"></a>
-</nav>
 
 <script>
-/* DROPDOWN INTERACTION — BOTH MENUS START CLOSED */
 function closeDropdowns() {
-    document.querySelectorAll(".top-nav-dropdown-holder")
-        .forEach(holder => holder.classList.remove("open"));
+  document
+    .querySelectorAll(".top-nav-dropdown-holder")
+    .forEach(function (holder) {
+      holder.classList.remove("open");
+    });
 
-    document.querySelectorAll(".top-nav-hit[aria-expanded]")
-        .forEach(button => button.setAttribute("aria-expanded", "false"));
+  document
+    .querySelectorAll(".top-nav-hit[aria-expanded]")
+    .forEach(function (button) {
+      button.setAttribute("aria-expanded", "false");
+    });
 }
 
 function toggleDropdown(holderId, button) {
-    const holder = document.getElementById(holderId);
-    const wasOpen = holder.classList.contains("open");
+  const holder = document.getElementById(holderId);
+  if (!holder) return;
 
-    closeDropdowns();
+  const wasOpen = holder.classList.contains("open");
 
-    if (!wasOpen) {
-        holder.classList.add("open");
-        button.setAttribute("aria-expanded", "true");
-    }
+  closeDropdowns();
+
+  if (!wasOpen) {
+    holder.classList.add("open");
+    button.setAttribute("aria-expanded", "true");
+  }
 }
 
-document.addEventListener("click", function(event) {
-    if (!event.target.closest(".top-nav")) {
-        closeDropdowns();
-    }
+document.addEventListener("click", function (event) {
+  if (!event.target.closest(".top-nav")) {
+    closeDropdowns();
+  }
 });
 
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-        closeDropdowns();
-    }
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeDropdowns();
+  }
 });
 
-document.querySelectorAll(".dropdown a").forEach(link => {
-    link.addEventListener("click", closeDropdowns);
+document.querySelectorAll(".dropdown a").forEach(function (link) {
+  link.addEventListener("click", closeDropdowns);
 });
 </script>
 
