@@ -1,1 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>303 OYSTER BAY • Salt Sand Stories</title>
 
+<style>
+/* =====================================================
+   GLOBAL / FROZEN — MASTER LAYOUT
+   Based on arrival.html
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overscroll-behavior-y: none;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #e8d8bd;
+    color: #463322;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.guide-page {
+    width: 100%;
+    min-height: 100%;
+}
+
+.guide-section {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 100svh;
+    overflow: hidden;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    background-image: url("sand-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* =====================================================
+   GLOBAL / FROZEN — BEIGE FRAME
+   ===================================================== */
+
+.guide-placeholder {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 40px;
+    bottom: 100px;
+    padding: 12px 18px 14px;
+    background: rgba(248,240,223,.88);
+    border-radius: 16px;
+    box-shadow: 0 3px 10px rgba(70,42,20,.13);
+    overflow: hidden;
+    z-index: 10;
+}
+
+.guide-placeholder h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 1.1;
+    letter-spacing: 1.5px;
+    color: #463322;
+    text-align: center;
+}
+
+/* =====================================================
+   GLOBAL / FROZEN — FIXED TOP NAV
+   ===================================================== */
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 200;
+    pointer-events: none;
+}
+
+.top-nav-art {
+    display: block;
+    width: 105%;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,-47px);
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Clickable areas over the five navigation labels */
+
+.top-nav-hit {
+    position: absolute;
+    top: 0;
+    height: 28%;
+    z-index: 230;
+    display: block;
+    pointer-events: auto;
+    border: 0;
+    background: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.top-nav-story {
+    left: 0;
+    width: 21%;
+}
+
+.top-nav-bedrooms {
+    left: 21%;
+    width: 21%;
+}
+
+.top-nav-kitchen {
+    left: 42%;
+    width: 16%;
+}
+
+.top-nav-manuals {
+    left: 60%;
+    width: 21%;
+}
+
+.top-nav-rules {
+    right: 0;
+    width: 19%;
+}
+
+/* =====================================================
+   DROPDOWNS — BOTH CLOSED INITIALLY
+   ===================================================== */
+
+.top-nav-dropdown-holder {
+    position: absolute;
+    top: 0;
+    height: 28%;
+    pointer-events: auto;
+    z-index: 240;
+}
+
+.bedrooms-holder {
+    left: 21%;
+    width: 21%;
+}
+
+.manuals-holder {
+    left: 60%;
+    width: 21%;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 8%;
+    width: 180px;
+    max-width: 85vw;
+    padding: 6px;
+    border-radius: 12px;
+    background: rgba(248,240,223,.97);
+    border: 1px solid rgba(112,69,31,.28);
+    box-shadow: 0 5px 14px rgba(70,42,20,.20);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+    pointer-events: none;
+}
+
+.manuals-holder .dropdown {
+    width: 245px;
+}
+
+.top-nav-dropdown-holder.open .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown a {
+    display: block;
+    padding: 12px 10px;
+    color: #463322;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.3;
+    border-bottom: 1px solid rgba(112,69,31,.16);
+}
+
+.dropdown a:last-child {
+    border-bottom: none;
+}
+
+.dropdown a:active {
+    background: rgba(200,180,145,.25);
+}
+
+/* =====================================================
+   GLOBAL / FROZEN — GUEST FAVOURITE BADGE
+   ===================================================== */
+
+.guest-favourite-link {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    width: 92px;
+    max-width: none;
+    height: auto;
+    z-index: 20;
+    display: block;
+}
+
+.guest-favourite {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* =====================================================
+   GLOBAL / FROZEN — FIXED BOTTOM NAV
+   Same artwork as arrival.html
+   ===================================================== */
+
+.bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 135px;
+    z-index: 30;
+    pointer-events: none;
+}
+
+.bottom-nav-image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.nav-hotspot {
+    position: absolute;
+    bottom: 0;
+    height: 110px;
+    z-index: 45;
+    display: block;
+    background: transparent;
+    border: 0;
+    text-decoration: none;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hotspot-home {
+    left: 0;
+    width: 17%;
+}
+
+.hotspot-stay {
+    left: 17%;
+    width: 18%;
+}
+
+.hotspot-live {
+    right: 18%;
+    width: 18%;
+}
+
+.hotspot-explore {
+    right: 0;
+    width: 18%;
+}
+
+/* =====================================================
+   GLOBAL / FROZEN — FIXED SAND LOGO
+   ===================================================== */
+
+.sand-logo {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    width: 125px;
+    z-index: 40;
+    display: block;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.sand-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* =====================================================
+   LIVE GUIDE — CONTENT AREA
+   Content will be developed section by section.
+   ===================================================== */
+
+.section-content {
+    position: absolute;
+    inset: 0;
+    padding: 44px 12px 12px;
+    overflow: auto;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+body {
+    scrollbar-width: none;
+}
+
+@media (max-width: 600px) {
+    .guide-placeholder h2 {
+        font-size: 22px;
+    }
+
+    .dropdown {
+        width: 155px;
+    }
+
+    .manuals-holder .dropdown {
+        width: 205px;
+    }
+
+    .dropdown a {
+        padding: 11px 8px;
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     FIXED TOP NAVIGATION
+     Artwork contains both dropdown chevrons.
+     ===================================================== -->
+
+<nav class="top-nav" aria-label="Live Guide navigation">
+
+    <img
+        src="Room%20top%20nav%20bar.png"
+        class="top-nav-art"
+        alt=""
+        aria-hidden="true"
+    >
+
+    <a href="#story"
+       class="top-nav-hit top-nav-story"
+       aria-label="Story"></a>
+
+    <button type="button"
+        class="top-nav-hit top-nav-bedrooms"
+        aria-label="Bedrooms dropdown"
+        aria-expanded="false"
+        onclick="toggleDropdown('bedroomsHolder', this)"></button>
+
+    <a href="#kitchen"
+       class="top-nav-hit top-nav-kitchen"
+       aria-label="Kitchen"></a>
+
+    <button type="button"
+        class="top-nav-hit top-nav-manuals"
+        aria-label="Manuals dropdown"
+        aria-expanded="false"
+        onclick="toggleDropdown('manualsHolder', this)"></button>
+
+    <a href="#house-rules"
+       class="top-nav-hit top-nav-rules"
+       aria-label="House Rules"></a>
+
+    <!-- BEDROOMS DROPDOWN -->
+
+    <div class="top-nav-dropdown-holder bedrooms-holder"
+         id="bedroomsHolder">
+
+        <div class="dropdown">
+            <a href="#green-room">Green Room</a>
+            <a href="#blue-room">Blue Room</a>
+        </div>
+
+    </div>
+
+    <!-- MANUALS DROPDOWN -->
+
+    <div class="top-nav-dropdown-holder manuals-holder"
+         id="manualsHolder">
+
+        <div class="dropdown">
+            <a href="#hob-chimney">Hob &amp; Chimney</a>
+            <a href="#water-purifier">Water Purifier</a>
+            <a href="#sliding-folding-door">Sliding &amp; Folding Door</a>
+            <a href="#curtains-sliding-door">Curtains &amp; Sliding Door</a>
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     NINE FROZEN FULL-SCREEN SECTIONS
+     ===================================================== -->
+
+<main class="guide-page">
+
+    <section class="guide-section" id="story">
+        <div class="guide-placeholder">
+            <a class="guest-favourite-link" href="#story">
+                <img src="guest-favourite.png"
+                     class="guest-favourite"
+                     alt="Airbnb Guest Favourite">
+            </a>
+            <div class="section-content">
+                <h2>THE STORY</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-section" id="green-room">
+        <div class="guide-placeholder">
+            <a class="guest-favourite-link" href="#green-room">
+                <img src="guest-favourite.png"
+                     class="guest-favourite"
+                     alt="Airbnb Guest Favourite">
+            </a>
+            <div class="section-content">
+                <h2>GREEN ROOM</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-section" id="blue-room">
+        <div class="guide-placeholder">
+            <a class="guest-favourite-link" href="#blue-room">
+                <img src="guest-favourite.png"
+                     class="guest-favourite"
+                     alt="Airbnb Guest Favourite">
+            </a>
+            <div class="section-content">
+                <h2>BLUE ROOM</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-section" id="kitchen">
+        <div class="guide-placeholder">
+            <a class="guest-favourite-link" href="#kitchen">
+                <img src="guest-favourite.png"
+                     class="guest-favourite"
+                     alt="Airbnb Guest Favourite">
+            </a>
+            <div class="section-content">
+                <h2>KITCHEN</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-section" id="hob-chimney">
+        <div class="guide-placeholder">
+            <a class="guest-favourite-link" href="#hob-chimney">
+                <img src="guest-favourite.png"
+                     class="guest-favourite"
+                     alt="Airbnb Guest Favourite">
+            </a>
+            <div class="section-content">
+                <h2>HOB &amp; CHIMNEY</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-section" id="water-purifier">
+        <div class="guide-placeholder">
+            <a class="guest-favourite-link" href="#water-purifier">
+                <img src="guest-favourite.png"
+                     class="guest-favourite"
+                     alt="Airbnb Guest Favourite">
+            </a>
+            <div class="section-content">
+                <h2>WATER PURIFIER</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-section" id="sliding-folding-door">
+        <div class="guide-placeholder">
+            <a class="guest-favourite-link" href="#sliding-folding-door">
+                <img src="guest-favourite.png"
+                     class="guest-favourite"
+                     alt="Airbnb Guest Favourite">
+            </a>
+            <div class="section-content">
+                <h2>SLIDING &amp; FOLDING DOOR</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-section" id="curtains-sliding-door">
+        <div class="guide-placeholder">
+            <a class="guest-favourite-link" href="#curtains-sliding-door">
+                <img src="guest-favourite.png"
+                     class="guest-favourite"
+                     alt="Airbnb Guest Favourite">
+            </a>
+            <div class="section-content">
+                <h2>CURTAINS &amp; SLIDING DOOR</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide-section" id="house-rules">
+        <div class="guide-placeholder">
+            <a class="guest-favourite-link" href="#house-rules">
+                <img src="guest-favourite.png"
+                     class="guest-favourite"
+                     alt="Airbnb Guest Favourite">
+            </a>
+            <div class="section-content">
+                <h2>HOUSE RULES</h2>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FIXED SAND LOGO — SAME AS ARRIVAL
+     ===================================================== -->
+
+<a href="index.html" class="sand-logo"
+   aria-label="303 Oyster Bay Home">
+    <img src="logo.png" alt="303 Oyster Bay">
+</a>
+
+
+<!-- =====================================================
+     FIXED BOTTOM NAV ART — SAME AS ARRIVAL
+     ===================================================== -->
+
+<nav class="bottom-nav" aria-label="Main navigation">
+    <img
+        src="Stay%20Page%20Bottom%20Nav.png"
+        class="bottom-nav-image"
+        alt=""
+        aria-hidden="true"
+    >
+</nav>
+
+<nav class="bottom-nav" aria-label="Navigation links">
+
+    <a href="index.html"
+       class="nav-hotspot hotspot-home"
+       aria-label="Home"></a>
+
+    <a href="arrival.html"
+       class="nav-hotspot hotspot-stay"
+       aria-label="Stay"></a>
+
+    <a href="live.html"
+       class="nav-hotspot hotspot-live"
+       aria-label="Live"></a>
+
+    <a href="In%20and%20around.pdf"
+       class="nav-hotspot hotspot-explore"
+       aria-label="Explore"></a>
+
+</nav>
+
+
+<script>
+/* =====================================================
+   DROPDOWN INTERACTION
+   Both dropdowns start closed.
+   ===================================================== */
+
+function closeDropdowns() {
+    document.querySelectorAll(".top-nav-dropdown-holder")
+        .forEach(holder => holder.classList.remove("open"));
+
+    document.querySelectorAll(".top-nav-hit[aria-expanded]")
+        .forEach(button => button.setAttribute("aria-expanded", "false"));
+}
+
+function toggleDropdown(holderId, button) {
+    const holder = document.getElementById(holderId);
+    const wasOpen = holder.classList.contains("open");
+
+    closeDropdowns();
+
+    if (!wasOpen) {
+        holder.classList.add("open");
+        button.setAttribute("aria-expanded", "true");
+    }
+}
+
+document.addEventListener("click", function(event) {
+    if (!event.target.closest(".top-nav")) {
+        closeDropdowns();
+    }
+});
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeDropdowns();
+    }
+});
+
+document.querySelectorAll(".dropdown a").forEach(link => {
+    link.addEventListener("click", closeDropdowns);
+});
+</script>
+
+</body>
+</html>
