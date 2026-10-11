@@ -515,6 +515,81 @@ body {
   }
 }
 </style>
+
+   
+<style>
+/* STORY ONLY — first-pass layout inside the existing beige frame */
+#story .story-subtitle {
+  text-align: center;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #80502f;
+  margin: 0 0 8px;
+}
+
+#story .story-copy {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  line-height: 1.28;
+  color: #463322;
+  text-align: left;
+  overflow: hidden;
+}
+
+#story .story-copy p {
+  margin: 0 0 7px;
+}
+
+#story .story-copy .story-highlight {
+  font-weight: bold;
+  color: #4c2c18;
+}
+
+#story .story-photo {
+  width: 31%;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 0;
+  margin-bottom: 5px;
+}
+
+#story .story-photo-right {
+  float: right;
+  margin-left: 10px;
+}
+
+#story .story-photo-left {
+  float: left;
+  margin-right: 10px;
+}
+
+#story .story-ending {
+  font-weight: bold;
+  font-size: 11.5px;
+  line-height: 1.25;
+  text-align: center;
+  margin-top: 5px !important;
+}
+
+@media (max-width: 390px) {
+  #story .story-copy {
+    font-size: 10.5px;
+    line-height: 1.25;
+  }
+
+  #story .story-photo {
+    width: 30%;
+    height: 98px;
+  }
+
+  #story .story-subtitle {
+    font-size: 12px;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -583,19 +658,92 @@ body {
 
 <main class="guide-page">
 
-  <section class="guide-section" id="story">
-    <div class="arrival-content">
-      <a class="guest-favourite-link" href="#story">
-        <img
-          src="guest-favourite.png"
-          class="guest-favourite"
-          alt="Airbnb Guest Favourite">
-      </a>
-      <header class="arrival-header">
-        <h1 class="arrival-title">THE STORY</h1>
-      </header>
+ 
+<section class="guide-section" id="story">
+  <div class="arrival-content">
+
+    <a class="guest-favourite-link" href="#story">
+      <img
+        src="guest-favourite.png"
+        class="guest-favourite"
+        alt="Airbnb Guest Favourite">
+    </a>
+
+    <header class="arrival-header">
+      <h1 class="arrival-title">THE STORY</h1>
+    </header>
+
+    <div class="story-subtitle">
+      Weathered by Sun, Sand and Salt Spray
     </div>
-  </section>
+
+    <div class="story-copy">
+
+      <img
+        src="Anchor%20Board.PNG"
+        alt="Weathered anchor board"
+        class="story-photo story-photo-right">
+
+      <p>
+        Every boat has a story. Imagine one that rode the high waves in
+        her prime, guided by a ship’s wheel and an oar, her rest secured
+        by an anchor. Time has weathered her wood, softened her edges
+        and left behind a beauty no new thing can possess.
+      </p>
+
+      <p class="story-highlight">
+        303 Oyster Bay was born from this love of things that have lived.
+      </p>
+
+      <p>
+        Inspired by Iddya’s fishing village, we brought the fisherman’s
+        world home. Sea-weathered logs have found a second life as a
+        table, their grain and scars carrying the memory of the boats
+        they came from. Ropes that once secured boats to shore, and a
+        surfboard shaped by waves and turbulence, carry the spirit of
+        journeys past.
+      </p>
+
+      <img
+        src="Oar.JPG"
+        alt="Weathered oar"
+        class="story-photo story-photo-left">
+
+      <p>
+        Our travels added distant shores to the story. Shells from
+        Rameshwaram, memories of Caribbean beachside cafés and bars,
+        and the unhurried rhythm of life by the sea found their way
+        into this home. Even the simplest pleasures — like slipping
+        on beach slippers and wandering towards the water — belong
+        to this way of life.
+      </p>
+
+      <img
+        src="Shell%20wall.png"
+        alt="Shells gathered from the sea"
+        class="story-photo story-photo-right">
+
+      <p>
+        The colours, too, recall the ocean: natural sand beige,
+        aquamarine, turquoise, teal and deep ocean blue, flowing
+        through the rooms like the changing tides.
+      </p>
+
+      <p>
+        Different objects. Different journeys. One shared soul.
+        A little of Iddya, a little of the Caribbean, beneath the
+        skies of Surathkal.
+      </p>
+
+      <p class="story-ending">
+        Welcome to 303 Oyster Bay — where every weathered thing
+        has a story, and the sea brings them together.
+      </p>
+
+    </div>
+  </div>
+</section>
+
 
 
   <section class="guide-section" id="green-room">
