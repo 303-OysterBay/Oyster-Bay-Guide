@@ -611,17 +611,20 @@ body {
   padding: 0 2px 8px;
 }
 
+#green-room .green-room-item:nth-last-child(-n+2) {
+  border-bottom: none;
+}
 #green-room .green-room-item h3 {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.2;
-  letter-spacing: 0.35px;
-  margin: 0 0 5px;
+  letter-spacing: 0.2px;
+  margin: 0 0 6px;
   font-weight: bold;
 }
 
 #green-room .green-room-item p {
-  font-size: 9px;
-  line-height: 1.3;
+  font-size: 11px;
+  line-height: 1.35;
   margin: 0 0 5px;
   text-align: left;
 }
@@ -634,23 +637,19 @@ body {
   margin: 0 auto 5px;
 }
 
-#green-room .green-room-icon {
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 5px;
+#green-room .green-room-illustration {
+  display: block;
+  width: 100%;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto 6px;
 }
 
-#green-room .green-room-icon svg {
-  width: 66px;
-  height: 66px;
-  fill: none;
-  stroke: #80502f;
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+
+
+   
+
+
 
 #green-room .green-room-item .green-room-note {
   margin-top: 5px;
@@ -678,13 +677,13 @@ body {
   }
 
   #green-room .green-room-item h3 {
-    font-size: 10px;
-  }
+  font-size: 12px;
+}
 
-  #green-room .green-room-item p {
-    font-size: 8.5px;
-    line-height: 1.27;
-  }
+#green-room .green-room-item p {
+  font-size: 10.5px;
+  line-height: 1.3;
+}
 
   #green-room .green-room-item img,
   #green-room .green-room-icon {
@@ -884,9 +883,7 @@ body {
           src="green-room-curtains.png"
           alt="Green Room curtains and window">
         <p>
-          The bedroom glass is tinted. During the day, visibility
-          from outside is almost zero. At night, visibility
-          increases when indoor lights are switched on.
+The tinted bedroom window offers near-total privacy during the day. At night, indoor lights make the room more visible from outside. Please draw the curtains at night.
         </p>
       </article>
 
@@ -906,16 +903,10 @@ body {
       <article class="green-room-item">
         <h3>LIGHTS &amp; FAN</h3>
 
-        <div class="green-room-icon" aria-hidden="true">
-          <svg viewBox="0 0 80 80">
-            <path d="M40 12v8M25 19l5 7M55 19l-5 7"/>
-            <circle cx="40" cy="37" r="13"/>
-            <path d="M34 50h12M35 55h10M37 59h6"/>
-            <path d="M15 66h50"/>
-            <path d="M20 66V57M60 66V57"/>
-            <path d="M40 24v-4"/>
-          </svg>
-        </div>
+        <img
+  class="green-room-illustration"
+  src="green-room-lights-fan.png"
+  alt="Bedroom fan, lights and switches">
 
         <p>
         Bedroom lights can be controlled by two-way switches at the entrance and headboard. Fan controls are provided on both sides of the bed. Bathroom lights switch on automatically via a motion sensor.
@@ -934,7 +925,7 @@ body {
         <p>
            A tri-fold mattress is stored under the bed. Sheets, pillows
   and pillow covers for the extra bed are in the cupboard,
-  along with beach towels and a clothes drying stand..
+  along with beach towels and a clothes drying stand.
         </p>
       </article>
 
@@ -954,16 +945,10 @@ body {
       <article class="green-room-item">
         <h3>24-HOUR POWER BACKUP</h3>
 
-        <div class="green-room-icon" aria-hidden="true">
-          <svg viewBox="0 0 80 80">
-            <rect x="12" y="23" width="56" height="39" rx="3"/>
-            <path d="M20 23v-7h40v7"/>
-            <circle cx="26" cy="52" r="4"/>
-            <circle cx="54" cy="52" r="4"/>
-            <path d="M36 31l-5 10h8l-3 9 12-14h-8l3-5z"/>
-            <path d="M20 62v5M60 62v5"/>
-          </svg>
-        </div>
+       <img
+  class="green-room-illustration"
+  src="green-room-power-backup.png"
+  alt="Standby diesel generator">
 
         <p>
           Oyster Bay is supported by 24-hour power backup through
