@@ -751,7 +751,20 @@ body {
 }
 #blue-room .green-room-item:first-child img {
   transform: scale(1.4);
+
 }
+#blue-room .blue-room-image-crop {
+  width: 100%;
+  height: 72px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+#blue-room .blue-room-image-crop img {
+  margin: 0 auto;
+}
+
+
 #blue-room .green-room-illustration {
   display: block;
   width: 100%;
@@ -1098,18 +1111,21 @@ src="DG%20set.png"
       <!-- ROW 1 — LEFT: SEA VIEWS & PRIVACY -->
       <article class="green-room-item">
         <h3>SEA VIEWS &amp; PRIVACY</h3>
-        <img
-          src="Fully%20Closed%20with%20lady.png"
-          alt="Sliding and folding doors fully closed">
 
-        <p>
-           Wake up to uninterrupted sea views from the bed.
-For complete privacy, close the sliding &amp; folding
-doors. Read the
-<a href="#sliding-folding-door">manual</a>
-for instructions.
-        </p>
-      </article>
+<div class="blue-room-image-crop">
+  <img
+    src="Fully%20Closed%20with%20lady.png"
+    alt="Sliding and folding doors fully closed">
+</div>
+
+<p>
+  Wake up to uninterrupted sea views from the bed.
+  For complete privacy, close the sliding &amp; folding
+  doors. Read the
+  <a href="#sliding-folding-door">manual</a>
+  for instructions.
+</p>
+</article>
 
       <!-- ROW 1 — RIGHT: AIR CONDITIONING -->
       <article class="green-room-item">
