@@ -703,6 +703,117 @@ body {
 }
 </style>
 
+/* BLUE ROOM — exact copy of Green Room styling */
+
+#blue-room .green-room-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, auto);
+  column-gap: 14px;
+  row-gap: 8px;
+  color: #463322;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+#blue-room .green-room-item {
+  min-width: 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(70, 51, 34, 0.18);
+  padding: 0 2px 2px;
+}
+
+#blue-room .green-room-item:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+#blue-room .green-room-item h3 {
+  font-size: 12px;
+  line-height: 1.1;
+  letter-spacing: 0.1px;
+  margin: 0 0 4px;
+  font-weight: bold;
+}
+
+#blue-room .green-room-item p {
+  font-size: 11px;
+  line-height: 1.35;
+  margin: 0 0 5px;
+  text-align: left;
+}
+
+#blue-room .green-room-item img {
+  display: block;
+  width: 100%;
+  height: 72px;
+  object-fit: contain;
+  margin: 0 auto 5px;
+}
+
+#blue-room .green-room-illustration {
+  display: block;
+  width: 100%;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto 6px;
+  border: none;
+}
+
+#blue-room .green-room-item .green-room-note {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(70, 51, 34, 0.15);
+}
+
+#blue-room .cupboard-photo {
+  height: 80px;
+  object-fit: contain;
+}
+
+#blue-room .green-room-item:first-child a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+@media (max-width: 390px) {
+  #blue-room .arrival-content {
+    padding: 10px 13px 4px;
+  }
+
+  #blue-room .green-room-grid {
+    column-gap: 10px;
+    row-gap: 3px;
+  }
+
+  #blue-room .green-room-item {
+    padding-bottom: 3px;
+  }
+
+  #blue-room .green-room-item h3 {
+    font-size: 11px;
+    line-height: 1.1;
+    margin: 0 0 4px;
+  }
+
+  #blue-room .green-room-item p {
+    font-size: 10.5px;
+    line-height: 1.3;
+  }
+
+  #blue-room .green-room-item img,
+  #blue-room .green-room-icon {
+    height: 62px;
+  }
+
+  #blue-room .green-room-icon svg {
+    width: 56px;
+    height: 56px;
+  }
+
+  #blue-room .cupboard-photo {
+    height: 68px;
+  }
+}
+
    
 </head>
 
@@ -963,19 +1074,114 @@ src="DG%20set.png"
 
 
 
-  <section class="guide-section" id="blue-room">
-    <div class="arrival-content">
-      <a class="guest-favourite-link" href="#blue-room">
+<section class="guide-section" id="blue-room">
+  <div class="arrival-content">
+
+    <a class="guest-favourite-link" href="#blue-room">
+      <img
+        src="guest-favourite.png"
+        class="guest-favourite"
+        alt="Airbnb Guest Favourite">
+    </a>
+
+    <header class="arrival-header">
+      <h2 class="arrival-title">BLUE ROOM</h2>
+    </header>
+
+    <div class="green-room-grid">
+
+      <!-- ROW 1 — LEFT: SEA VIEWS & PRIVACY -->
+      <article class="green-room-item">
+        <h3>SEA VIEWS &amp; PRIVACY</h3>
         <img
-          src="guest-favourite.png"
-          class="guest-favourite"
-          alt="Airbnb Guest Favourite">
-      </a>
-      <header class="arrival-header">
-        <h2 class="arrival-title">BLUE ROOM</h2>
-      </header>
+          src="Fully%20Closed%20with%20lady.png"
+          alt="Sliding and folding doors fully closed">
+
+        <p>
+          Wake up to uninterrupted sea views from the bed.
+          For complete privacy, close the sliding and folding
+          doors as you wish. Read the
+          <a href="#sliding-folding-door">Sliding &amp; Folding Door manual</a>
+          for instructions.
+        </p>
+      </article>
+
+      <!-- ROW 1 — RIGHT: AIR CONDITIONING -->
+      <article class="green-room-item">
+        <h3>AIR CONDITIONING</h3>
+        <img
+          src="green-room-air-conditioning.png"
+          alt="Green Room air conditioner">
+        <p>
+          The bedroom is equipped with dedicated air conditioning.
+          Recommended setting: 24°C–26°C.
+        </p>
+      </article>
+
+      <!-- ROW 2 — LEFT: SWITCHES FOR LIGHTS & FAN -->
+      <article class="green-room-item">
+        <h3>SWITCHES FOR LIGHTS & FAN</h3>
+
+        <img
+          class="green-room-illustration"
+          src="Light%20%26%20Fan.png"
+          alt="Bedroom fan, lights and switches">
+
+        <p>
+          Bedroom lights have two-way switches at the entrance
+          and headboard. Fan controls are on both sides of the
+          bed. Bathroom lights have a motion sensor.
+        </p>
+      </article>
+
+      <!-- ROW 2 — RIGHT: MATTRESS & CUPBOARD -->
+      <article class="green-room-item">
+        <h3>ADDITIONAL MATTRESS &amp; DRYER</h3>
+
+        <img
+          class="cupboard-photo"
+          src="Cupboard%20Inside.PNG"
+          alt="Inside the cupboard">
+
+        <p>
+          A tri-fold mattress is under the bed. Sheets, pillows
+          and cover for the extra bed, beach towels and a clothes
+          drying stand are in the cupboard.
+        </p>
+      </article>
+
+      <!-- ROW 3 — LEFT: BATHROOM GEYSER -->
+      <article class="green-room-item">
+        <h3>BATHROOM GEYSER</h3>
+        <img
+          src="green-room-bathroom-geyser.png"
+          alt="Bathroom instant water heater">
+        <p>
+          The bathroom has an instant water heater. Please switch
+          it on only when required and switch it off after use.
+        </p>
+      </article>
+
+      <!-- ROW 3 — RIGHT: POWER BACKUP -->
+      <article class="green-room-item">
+        <h3>POWER BACKUP</h3>
+
+        <img
+          class="green-room-illustration"
+          src="DG%20set.png"
+          alt="Standby diesel generator">
+
+        <p>
+          We have a 24-hour power backup through
+          a DG, ensuring uninterrupted comfort
+          during power outages.
+        </p>
+      </article>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
 
   <section class="guide-section" id="kitchen">
