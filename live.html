@@ -1656,7 +1656,19 @@ src="DG%20set.png"
 }
 
 #hob-chimney .chimney-grid {
+  position: relative;
   margin-top: 24px;
+}
+
+#hob-chimney .chimney-grid::before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 30%;
+  width: 40%;
+  height: 1px;
+  background: rgba(110, 88, 63, 0.24);
+  pointer-events: none;
 }
 
 #hob-chimney .appliance-card {
