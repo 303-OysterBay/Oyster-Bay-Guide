@@ -1742,21 +1742,22 @@ src="DG%20set.png"
 </style>
 
 
-```html
+
 <!-- WATER PURIFIER — section-specific styles only -->
 <style>
 #water-purifier .water-purifier-subtitle {
   font-size: 0.85rem;
   line-height: 1.25;
-  margin: 6px 0 10px;
+  margin: 4px 0 8px;
   text-align: center;
 }
 
 #water-purifier .water-purifier-guide {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 14px;
-  padding: 0 4px;
+  column-gap: 14px;
+  row-gap: 26px;
+  padding: 0 2px;
   color: #463322;
   font-family: Georgia, "Times New Roman", serif;
 }
@@ -1773,13 +1774,36 @@ src="DG%20set.png"
   height: clamp(125px, 21vh, 190px);
   object-fit: cover;
   object-position: center;
-  margin: 0 auto 4px;
+  margin: 0 auto 6px;
 }
 
 #water-purifier .water-purifier-step figcaption {
-  font-size: 0.72rem;
-  line-height: 1.25;
-  padding: 0 2px;
+  font-size: 0.82rem;
+  line-height: 1.32;
+  padding: 0 1px;
+}
+
+#water-purifier .water-saving-reminder {
+  text-align: center;
+  margin: 18px 0 0;
+  padding: 8px 4px 0;
+  border-top: 1px solid rgba(70, 51, 34, 0.25);
+  color: #463322;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+#water-purifier .water-saving-reminder h3 {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  font-weight: normal;
+  margin: 0 0 4px;
+}
+
+#water-purifier .water-saving-reminder p {
+  font-size: 0.82rem;
+  line-height: 1.3;
+  margin: 0;
 }
 
 @media (max-width: 390px) {
@@ -1798,12 +1822,13 @@ src="DG%20set.png"
   }
 
   #water-purifier .water-purifier-subtitle {
-    margin: 5px 0 8px;
+    margin: 4px 0 7px;
   }
 
   #water-purifier .water-purifier-guide {
-    gap: 10px 12px;
-    padding: 0 2px;
+    column-gap: 12px;
+    row-gap: 24px;
+    padding: 0;
   }
 
   #water-purifier .water-purifier-step img {
@@ -1811,8 +1836,21 @@ src="DG%20set.png"
   }
 
   #water-purifier .water-purifier-step figcaption {
-    font-size: 0.68rem;
-    line-height: 1.22;
+    font-size: 0.78rem;
+    line-height: 1.3;
+  }
+
+  #water-purifier .water-saving-reminder {
+    margin-top: 15px;
+    padding-top: 7px;
+  }
+
+  #water-purifier .water-saving-reminder h3 {
+    font-size: 0.85rem;
+  }
+
+  #water-purifier .water-saving-reminder p {
+    font-size: 0.78rem;
   }
 }
 </style>
@@ -1836,10 +1874,10 @@ src="DG%20set.png"
 
       <figure class="water-purifier-step">
         <img src="water-purifier-step-1.jpg"
-             alt="Switch on the water purifier"
+             alt="Switching on the water purifier"
              loading="lazy">
         <figcaption>
-          1. Switch on the water purifier at the wall switch.
+          1. Switch on the purifier using the power switch on the wall.
         </figcaption>
       </figure>
 
@@ -1848,16 +1886,16 @@ src="DG%20set.png"
              alt="Purifier dial illuminated"
              loading="lazy">
         <figcaption>
-          2. Wait for the dial to go round a few times.
+          2. Let the illuminated dial rotate a few times.
         </figcaption>
       </figure>
 
       <figure class="water-purifier-step">
         <img src="water-purifier-step-3.jpg"
-             alt="Purifier dial at a full stop"
+             alt="Purifier dial coming to a stop"
              loading="lazy">
         <figcaption>
-          3. Allow the dial to come to a full stop.
+          3. Allow the dial to come to a complete stop.
         </figcaption>
       </figure>
 
@@ -1866,15 +1904,20 @@ src="DG%20set.png"
              alt="Pressing the teardrop switch to dispense water"
              loading="lazy">
         <figcaption>
-          4. Press the teardrop switch to dispense water.
-          Press again to stop.
+          4. Press the teardrop switch to dispense water. Press again to stop.
         </figcaption>
       </figure>
 
     </div>
+
+    <div class="water-saving-reminder">
+      <h3>SAVE WATER</h3>
+      <p>Switch off the purifier when not in use.</p>
+    </div>
+
   </div>
 </section>
-```
+
 
 
   <section class="guide-section" id="sliding-folding-door">
