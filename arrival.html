@@ -3824,6 +3824,12 @@ padding-bottom:0;
      REPLACEMENT BLOCK ONLY
      ======================================================= -->
 
+
+<!-- =======================================================
+     HTML SECTION 5 — BEACH MANAGEMENT
+     REVISED REPLACEMENT BLOCK
+     ======================================================= -->
+
 <section
     id="beach-management"
     class="guide-section"
@@ -3852,7 +3858,8 @@ padding-bottom:0;
     </h2>
 
     <style>
-      /* BEACH MANAGEMENT ONLY */
+      /* BEACH MANAGEMENT — SCOPED STYLES */
+
       .beach-management-placeholder .beach-journal {
         width: 100%;
         box-sizing: border-box;
@@ -3866,13 +3873,15 @@ padding-bottom:0;
         box-sizing: border-box;
       }
 
+      /* MAIN ROWS — NO SEPARATOR LINES */
+
       .beach-management-placeholder .beach-row {
         display: grid;
         grid-template-columns: 54px minmax(0, 1fr);
         align-items: center;
         gap: 8px;
         padding: 4px 0;
-        border-bottom: 1px solid #d7c2a3;
+        border-bottom: none;
       }
 
       .beach-management-placeholder .beach-row.reverse {
@@ -3888,6 +3897,8 @@ padding-bottom:0;
         grid-column: 1;
         grid-row: 1;
       }
+
+      /* ELEGANT SOLID NAVY ICONS */
 
       .beach-management-placeholder .beach-art {
         display: flex;
@@ -3910,13 +3921,20 @@ padding-bottom:0;
         overflow-wrap: anywhere;
       }
 
+      /* ALL FOUR HEADINGS IDENTICAL */
+
       .beach-management-placeholder .beach-heading {
-        margin: 0 0 3px;
-        padding-bottom: 3px;
-        border-bottom: 1px solid #b88a4c;
+        margin: 0 0 4px;
+        padding: 0;
+        border: none;
         color: #25475a;
-        font: bold 14px/1.1 Georgia, serif;
+        font-family: Georgia, serif;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.15;
       }
+
+      /* SHELL BULLETS AND COMPACT COPY */
 
       .beach-management-placeholder .beach-points {
         margin: 0;
@@ -3949,9 +3967,11 @@ padding-bottom:0;
         font-weight: 600;
       }
 
+      /* LOCAL BEACH SAFETY — ONE CONTINUOUS BOX */
+
       .beach-management-placeholder .beach-safety {
         width: 100%;
-        margin-top: 5px;
+        margin-top: 10px;
         padding: 5px 3px 4px;
         border: 1px solid #a8752d;
         border-radius: 8px;
@@ -3960,11 +3980,16 @@ padding-bottom:0;
       .beach-management-placeholder .beach-safety-heading {
         margin: 0 0 5px;
         color: #25475a;
-        font: bold 12px/1.1 Georgia, serif;
+        font-family: Georgia, serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.1;
         text-align: center;
+        white-space: nowrap;
       }
 
-      /* SIX SAFETY ITEMS — ONE HORIZONTAL ROW */
+      /* SIX ITEMS — ONE HORIZONTAL ROW */
+
       .beach-management-placeholder .beach-safety-grid {
         display: grid;
         grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -4006,6 +4031,8 @@ padding-bottom:0;
         line-height: 1.2;
         overflow-wrap: anywhere;
       }
+
+      /* TABLETS AND DESKTOP */
 
       @media (min-width: 601px) {
         .beach-management-placeholder .beach-journal {
@@ -4056,6 +4083,8 @@ padding-bottom:0;
         }
       }
 
+      /* VERY NARROW PHONES */
+
       @media (max-width: 360px) {
         .beach-management-placeholder .beach-row {
           grid-template-columns: 44px minmax(0, 1fr);
@@ -4094,14 +4123,27 @@ padding-bottom:0;
 
     <div class="beach-journal">
 
-      <!-- BEACH ACCESS -->
+      <!-- BEACH ACCESS — WAVES AND SHORELINE -->
+
       <div class="beach-row">
         <div class="beach-art" aria-hidden="true">
           <svg viewBox="0 0 48 48">
-            <path d="M3 29c4-5 8-5 12 0s8 5 12 0 8-5 12 0 5 3 6 2v7H3z"/>
-            <path d="M3 39c4-4 8-4 12 0s8 4 12 0 8-4 12 0 5 2 6 1v5H3z"/>
-            <path d="M27 8c5 4 7 9 7 15h-5c0-4-1-7-4-10z"/>
-            <path d="M34 5l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
+            <path d="M3 25
+              C8 25 8 19 13 19
+              C18 19 18 25 23 25
+              C28 25 28 19 33 19
+              C38 19 38 25 45 25
+              V34
+              C40 34 38 30 33 30
+              C28 30 28 36 23 36
+              C18 36 18 30 13 30
+              C8 30 8 34 3 34Z"/>
+            <path d="M3 39
+              C8 39 8 35 13 35
+              C18 35 18 41 23 41
+              C28 41 28 35 33 35
+              C38 35 40 39 45 39
+              V44H3Z"/>
           </svg>
         </div>
 
@@ -4114,12 +4156,17 @@ padding-bottom:0;
         </div>
       </div>
 
-      <!-- BEACH ETIQUETTE -->
+      <!-- BEACH ETIQUETTE — RUBBISH BIN -->
+
       <div class="beach-row reverse">
         <div class="beach-art" aria-hidden="true">
           <svg viewBox="0 0 48 48">
-            <path d="M12 14h24l-2 29H14zM9 10h30v4H9zM18 5h12l3 4H15z"/>
-            <path d="M20 19h3v19h-3zM27 19h3v19h-3z" fill="#f4ead9"/>
+            <path d="M12 14H36L34 42H14Z"/>
+            <path d="M9 10H39V14H9Z"/>
+            <path d="M18 6H30L33 9H15Z"/>
+            <path d="M20 19H23V36H20Z
+                     M27 19H30V36H27Z"
+                  fill="#f4ead9"/>
           </svg>
         </div>
 
@@ -4133,13 +4180,21 @@ padding-bottom:0;
         </div>
       </div>
 
-      <!-- SAND CARE -->
+      <!-- SAND CARE — SHOWER -->
+
       <div class="beach-row">
         <div class="beach-art" aria-hidden="true">
           <svg viewBox="0 0 48 48">
-            <path d="M8 7h12c7 0 11 5 11 12v2h-5v-2c0-4-2-7-7-7h-6v8H8z"/>
-            <path d="M25 21h13l-2 5H27z"/>
-            <path d="M28 29l-2 4 2 3-2 4M33 29l-2 4 2 3-2 4M38 29l-2 4 2 3-2 4"/>
+            <path d="M7 8H19
+              C29 8 35 14 35 23
+              V25H29V23
+              C29 17 25 14 19 14H13V22H7Z"/>
+            <path d="M29 24H42L39 29H31Z"/>
+            <path d="M32 32L30 35L32 38L30 41
+                     M37 32L35 35L37 38L35 41
+                     M42 32L40 35L42 38L40 41"
+                  fill="none" stroke="currentColor"
+                  stroke-width="1.8" stroke-linecap="round"/>
           </svg>
         </div>
 
@@ -4152,14 +4207,29 @@ padding-bottom:0;
         </div>
       </div>
 
-      <!-- BEACH COMFORT -->
+      <!-- BEACH COMFORT — FOOTPRINTS -->
+
       <div class="beach-row reverse">
         <div class="beach-art" aria-hidden="true">
           <svg viewBox="0 0 48 48">
-            <path d="M14 5c-4 0-6 5-5 10l3 10c1 4 5 6 8 4s4-6 2-10l-3-10c-1-3-3-4-5-4z"/>
-            <circle cx="9" cy="5" r="2.5"/><circle cx="13" cy="2.8" r="2.2"/><circle cx="17" cy="3.5" r="2"/><circle cx="20" cy="6" r="1.7"/>
-            <path d="M33 18c-4 0-6 5-5 10l3 10c1 4 5 6 8 4s4-6 2-10l-3-10c-1-3-3-4-5-4z"/>
-            <circle cx="28" cy="18" r="2.5"/><circle cx="32" cy="15.8" r="2.2"/><circle cx="36" cy="16.5" r="2"/><circle cx="39" cy="19" r="1.7"/>
+            <path d="M13 20
+              C10 16 10 10 13 7
+              C16 4 20 7 21 12
+              C23 17 22 23 18 26
+              C16 28 14 25 13 20Z"/>
+            <circle cx="11" cy="5" r="2.1"/>
+            <circle cx="15" cy="3.5" r="2"/>
+            <circle cx="19" cy="5" r="1.8"/>
+            <circle cx="22" cy="8" r="1.5"/>
+            <path d="M30 36
+              C27 32 27 26 30 23
+              C33 20 37 23 38 28
+              C40 33 39 39 35 42
+              C33 44 31 41 30 36Z"/>
+            <circle cx="28" cy="21" r="2.1"/>
+            <circle cx="32" cy="19.5" r="2"/>
+            <circle cx="36" cy="21" r="1.8"/>
+            <circle cx="39" cy="24" r="1.5"/>
           </svg>
         </div>
 
@@ -4174,11 +4244,14 @@ padding-bottom:0;
         </div>
       </div>
 
-      <!-- LOCAL BEACH TIPS & SAFETY — SIX ITEMS, ONE HORIZONTAL ROW -->
+      <!-- LOCAL BEACH TIPS & SAFETY — ONE ROW -->
+
       <div class="beach-safety">
         <h3 class="beach-safety-heading">LOCAL BEACH TIPS &amp; SAFETY</h3>
+
         <div class="beach-safety-grid">
 
+          <!-- SEA -->
           <div class="beach-tip">
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <path d="M2 13c4-7 8-7 12 0s8 7 12 0c2-3 3-3 4-2v6c-4 6-8 6-12 0s-8-6-12 0c-2 3-3 3-4 2z"/>
@@ -4188,6 +4261,7 @@ padding-bottom:0;
             <div class="beach-tip-text">The sea can be unpredictable.</div>
           </div>
 
+          <!-- CURRENTS -->
           <div class="beach-tip">
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <path d="M3 7h17l-4-4 3-2 8 8-8 8-3-3 4-4H3zM29 25H12l4 4-3 2-8-8 8-8 3 3-4 4h17z"/>
@@ -4196,6 +4270,7 @@ padding-bottom:0;
             <div class="beach-tip-text">Strong currents may be present, especially during monsoons.</div>
           </div>
 
+          <!-- SWIMMING -->
           <div class="beach-tip">
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <path fill-rule="evenodd" d="M16 2a14 14 0 1 0 0 28 14 14 0 0 0 0-28zm0 6a8 8 0 1 1 0 16 8 8 0 0 1 0-16z"/>
@@ -4205,6 +4280,7 @@ padding-bottom:0;
             <div class="beach-tip-text">At your own risk. There are no lifeguards on duty.</div>
           </div>
 
+          <!-- AFTER DARK -->
           <div class="beach-tip">
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <path d="M21 3a13 13 0 1 0 8 22A12 12 0 0 1 21 3z"/>
@@ -4214,6 +4290,7 @@ padding-bottom:0;
             <div class="beach-tip-text">Avoid swimming after dark for your safety.</div>
           </div>
 
+          <!-- CHILDREN -->
           <div class="beach-tip">
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <circle cx="11" cy="7" r="5"/>
@@ -4225,6 +4302,7 @@ padding-bottom:0;
             <div class="beach-tip-text">Children should be supervised at all times.</div>
           </div>
 
+          <!-- SUN -->
           <div class="beach-tip">
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <circle cx="16" cy="16" r="7"/>
@@ -4240,6 +4318,7 @@ padding-bottom:0;
     </div>
   </div>
 </section>
+
 
 
 <!-- =======================================================
