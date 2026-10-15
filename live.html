@@ -1865,6 +1865,129 @@ src="DG%20set.png"
 }
 </style>
 
+
+<style>
+.door-placeholder .water-purifier-subtitle {
+  font-size: 0.85rem;
+  line-height: 1.25;
+  margin: 4px 0 8px;
+  text-align: center;
+}
+
+.door-placeholder .water-purifier-guide {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 14px;
+  row-gap: 20px;
+  padding: 0 2px;
+  color: #463322;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.door-placeholder .water-purifier-step {
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.door-placeholder .water-purifier-step:nth-child(3),
+.door-placeholder .water-purifier-step:nth-child(4) {
+  transform: translateY(-3px);
+}
+
+.door-placeholder .water-purifier-step img {
+  display: block;
+  width: 100%;
+  height: clamp(125px, 21vh, 190px);
+  object-fit: cover;
+  object-position: center;
+  margin: 0 auto 6px;
+}
+
+.door-placeholder .water-purifier-step figcaption {
+  font-size: 0.82rem;
+  line-height: 1.32;
+  padding: 0 1px;
+}
+
+.door-placeholder .water-saving-reminder {
+  text-align: center;
+  margin: 18px 0 0;
+  padding: 8px 4px 0;
+  border-top: 1px solid rgba(70, 51, 34, 0.25);
+  color: #463322;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.door-placeholder .water-saving-reminder h3 {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  font-weight: normal;
+  margin: 0 0 4px;
+}
+
+.door-placeholder .water-saving-reminder p {
+  font-size: 0.82rem;
+  line-height: 1.3;
+  margin: 0;
+}
+
+@media (max-width: 390px) {
+  .door-placeholder .arrival-content {
+    padding: 10px 13px 4px;
+  }
+
+  .door-placeholder .arrival-header {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .door-placeholder .arrival-title {
+    font-size: 23px;
+    letter-spacing: 1.2px;
+  }
+
+  .door-placeholder .water-purifier-subtitle {
+    margin: 4px 0 7px;
+  }
+
+  .door-placeholder .water-purifier-guide {
+    column-gap: 12px;
+    row-gap: 18px;
+    padding: 0;
+  }
+
+  .door-placeholder .water-purifier-step img {
+    height: clamp(125px, 19vh, 160px);
+  }
+
+  .door-placeholder .water-purifier-step:first-child img {
+    object-position: 75% 25%;
+  }
+
+  .door-placeholder .water-purifier-step figcaption {
+    font-size: 0.78rem;
+    line-height: 1.3;
+  }
+
+  .door-placeholder .water-saving-reminder {
+    margin-top: 15px;
+    padding-top: 7px;
+  }
+
+  .door-placeholder .water-saving-reminder h3 {
+    font-size: 0.85rem;
+  }
+
+  .door-placeholder .water-saving-reminder p {
+    font-size: 0.78rem;
+  }
+}
+</style>
+
+
+   
 <section class="guide-section" id="water-purifier">
   <div class="arrival-content">
 
