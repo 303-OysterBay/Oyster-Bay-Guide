@@ -1756,7 +1756,7 @@ src="DG%20set.png"
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 14px;
-  row-gap: 23px;
+  row-gap: 20px;
   padding: 0 2px;
   color: #463322;
   font-family: Georgia, "Times New Roman", serif;
@@ -1827,17 +1827,16 @@ src="DG%20set.png"
 
   #water-purifier .water-purifier-guide {
     column-gap: 12px;
-    row-gap: 21px;
+    row-gap: 18px;
     padding: 0;
   }
 
   #water-purifier .water-purifier-step img {
-    height: clamp(125px, 19vh, 160px);
-  }
+  height: clamp(125px, 19vh, 160px);
+}
 
 #water-purifier .water-purifier-step:first-child img {
-  transform: scale(1.2);
-  transform-origin: 75% 25%;
+  object-position: 75% 25%;
 }
 
 
